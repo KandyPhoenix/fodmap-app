@@ -957,6 +957,7 @@
     const weekTitle = `${days[0].date} ${months[days[0].month-1]} – ${days[6].date} ${months[days[6].month-1]}`;
     const weekKey = days[0].key;
     const ingredientMap = {};
+
     days.forEach(d => {
       MEAL_TYPES.forEach(m => {
         const meal = meals[`${d.key}-${m.id}`];
@@ -965,21 +966,67 @@
         if (!recipe) return;
         (recipe.ingredients || []).forEach(ing => {
           if (ing.item === '—') return;
-          const key = ing.item.toLowerCase();
-          if (!ingredientMap[key]) ingredientMap[key] = { name: ing.item, qtys: [] };
-          ingredientMap[key].qtys.push(convertGrams(ing.qty));
+          const key = ing.item.toLowerCase().trim();
+          if (!ingredientMap[key]) ingredientMap[key] = { name: ing.item, lines: [] };
+          ingredientMap[key].lines.push({
+            qty:    convertGrams(ing.qty || ''),
+            recipe: recipe.name,
+          });
         });
       });
     });
-    const items = Object.values(ingredientMap);
+
+    // Sort: ingredients with quantities first, then "to taste" type items
+    const items = Object.values(ingredientMap).sort((a, b) => {
+      const aHasQty = a.lines.some(l => !/^(to taste|as needed|pinch|dash|—)/i.test(l.qty.trim()));
+      const bHasQty = b.lines.some(l => !/^(to taste|as needed|pinch|dash|—)/i.test(l.qty.trim()));
+      if (aHasQty && !bHasQty) return -1;
+      if (!aHasQty && bHasQty) return 1;
+      return a.name.localeCompare(b.name);
+    });
+
     const checked = new Set(loadShoppingChecks(weekKey));
+
+    function buildItemHtml(ing, i) {
+      const isChecked = checked.has(i);
+      const qtys = ing.lines.map(l => l.qty);
+      const total = getShoppingDisplay(ing.name, qtys);
+
+      // Deduplicate recipe lines that are completely identical
+      const seen = new Set();
+      const uniqueLines = ing.lines.filter(l => {
+        const k = `${l.qty}||${l.recipe}`;
+        if (seen.has(k)) return false;
+        seen.add(k); return true;
+      });
+
+      // Only show breakdown if more than one line (or one line with a qty worth showing)
+      const showBreakdown = uniqueLines.length > 1;
+      const breakdownHtml = showBreakdown
+        ? `<div class="si-breakdown">${uniqueLines.map(l => {
+            const isToTaste = /^(to taste|as needed|pinch|dash|—)/i.test(l.qty.trim());
+            return `<div class="si-line">
+              <span class="si-line-qty">${isToTaste ? l.qty : l.qty}</span>
+              <span class="si-line-recipe">— ${l.recipe}</span>
+            </div>`;
+          }).join('')}</div>`
+        : '';
+
+      return `<div class="shopping-item${isChecked ? ' checked' : ''}" data-si="${i}">
+        <div class="shopping-checkbox"></div>
+        <div class="si-body">
+          <div class="si-top">
+            <span class="si-name">${ing.name}</span>
+            <span class="si-total">${total}</span>
+          </div>
+          ${breakdownHtml}
+        </div>
+      </div>`;
+    }
 
     let content = items.length
       ? `<div class="shopping-week-title">Week of ${weekTitle}</div>` +
-        items.map((ing, i) => {
-          const isChecked = checked.has(i);
-          return `<div class="shopping-item${isChecked ? ' checked' : ''}" data-si="${i}"><div class="shopping-checkbox"></div><span>${getShoppingDisplay(ing.name, ing.qtys)} — ${ing.name}</span></div>`;
-        }).join('')
+        items.map((ing, i) => buildItemHtml(ing, i)).join('')
       : `<div class="shopping-empty">No recipes planned this week.<br>Add meals to your planner first!</div>`;
 
     document.getElementById('shopping-content').innerHTML = content;

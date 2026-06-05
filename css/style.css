@@ -682,12 +682,42 @@ main { max-width: 1280px; margin: 0 auto; padding: 20px; }
 .shopping-week-title { font-size: 14px; font-weight: 700; color: var(--text-muted); margin-bottom: 16px; }
 .shopping-category { margin-bottom: 20px; }
 .shopping-cat-title { font-size: 13px; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-.shopping-item { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text); cursor: pointer; }
+.shopping-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 0; border-bottom: 1px solid var(--border); cursor: pointer;
+}
 .shopping-item:last-child { border-bottom: none; }
-.shopping-checkbox { width: 16px; height: 16px; border: 2px solid var(--border); border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.shopping-checkbox {
+  width: 18px; height: 18px; border: 2px solid var(--border); border-radius: 4px;
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  margin-top: 2px;
+}
 .shopping-item.checked .shopping-checkbox { background: var(--green); border-color: var(--green); color: white; }
-.shopping-item.checked .shopping-checkbox::after { content: '✓'; font-size: 10px; }
-.shopping-item.checked span { text-decoration: line-through; opacity: 0.5; }
+.shopping-item.checked .shopping-checkbox::after { content: '✓'; font-size: 11px; }
+.shopping-item.checked .si-body { opacity: 0.45; }
+.shopping-item.checked .si-name { text-decoration: line-through; }
+.si-body { flex: 1; min-width: 0; }
+.si-top {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+}
+.si-name {
+  font-size: 15px; font-weight: 700; color: var(--text);
+}
+.si-total {
+  font-size: 14px; font-weight: 600; color: var(--primary);
+  white-space: nowrap; flex-shrink: 0;
+}
+.si-breakdown {
+  margin-top: 4px; padding-left: 4px;
+  border-left: 2px solid var(--border);
+  margin-left: 2px;
+}
+.si-line {
+  display: flex; gap: 6px; font-size: 12px; color: var(--text-muted);
+  padding: 1px 0 1px 8px;
+}
+.si-line-qty { font-weight: 600; color: var(--text); white-space: nowrap; }
+.si-line-recipe { flex: 1; }
 .shopping-empty { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 15px; }
 
 /* ── SCROLL TOP ──────────────────────────────── */
