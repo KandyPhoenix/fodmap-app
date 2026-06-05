@@ -22,6 +22,22 @@
   --nav-h: 48px;
 }
 
+body.dark {
+  --green-bg: #0d2b1a;
+  --yellow-bg: #2b2200;
+  --red-bg: #2b0f0d;
+  --primary: #22c47a;
+  --primary-dark: #1a9e6e;
+  --primary-light: #0d2b1a;
+  --text: #e8f0ec;
+  --text-muted: #8aa898;
+  --bg: #0f1a14;
+  --card: #1a2820;
+  --border: #2a3d32;
+  --shadow: 0 2px 12px rgba(0,0,0,0.4);
+  --shadow-hover: 0 6px 24px rgba(0,0,0,0.6);
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg);
@@ -1171,4 +1187,76 @@ main { max-width: 1280px; margin: 0 auto; padding: 20px; }
   box-shadow: 0 20px 60px rgba(0,0,0,0.25); animation: slideUp 0.2s ease;
   display: flex; flex-direction: column; max-height: 90vh; overflow-y: auto;
 }
+
+/* ── DARK MODE OVERRIDES ─────────────────────── */
+body.dark .main-nav,
+body.dark .category-bar,
+body.dark .filter-bar,
+body.dark .subs-filter-bar,
+body.dark .finds-filter-bar,
+body.dark .data-bar { background: var(--card); border-color: var(--border); }
+
+body.dark .nav-btn { background: var(--card); color: var(--text-muted); }
+body.dark .nav-btn:hover { background: var(--primary-light); color: var(--primary); }
+body.dark .nav-btn.active { color: var(--primary); background: var(--card); }
+
+body.dark .modal,
+body.dark .picker-modal,
+body.dark .recipe-form-modal,
+body.dark .find-form-modal,
+body.dark .rmodal,
+body.dark .shopping-modal { background: var(--card) !important; }
+
+body.dark .modal-overlay { background: rgba(0,0,0,0.7); }
+
+body.dark input,
+body.dark textarea,
+body.dark select { background: #0f1a14 !important; color: var(--text) !important; border-color: var(--border) !important; }
+
+body.dark .food-card,
+body.dark .recipe-card,
+body.dark .sub-card,
+body.dark .find-card,
+body.dark .subs-card,
+body.dark .checker-input-card { background: var(--card); border-color: var(--border); }
+
+body.dark .rmodal-meta-item,
+body.dark .rmodal-tag { background: var(--bg); }
+
+body.dark .category-btn,
+body.dark .rating-filter { background: var(--bg); color: var(--text-muted); border-color: var(--border); }
+body.dark .category-btn.active,
+body.dark .rating-filter.active { background: var(--primary-light); color: var(--primary); }
+
+body.dark .planner-cell { background: var(--card); border-color: var(--border); }
+body.dark .meal-chip { background: var(--bg); }
+
+body.dark .picker-cats button { background: var(--bg); }
+body.dark .picker-list { background: var(--card); }
+body.dark .picker-item:hover { background: var(--primary-light); }
+
+body.dark .form-group label { color: var(--text-muted); }
+body.dark .form-section-title { color: var(--primary); border-color: var(--border); }
+
+body.dark .checker-verdict-safe { background: var(--green-bg); }
+body.dark .checker-verdict-warn { background: var(--yellow-bg); }
+body.dark .checker-verdict-danger { background: var(--red-bg); }
+body.dark .checker-flag-card { background: var(--card); border-color: var(--border); }
+
+body.dark .shopping-item { border-color: var(--border); }
+body.dark .si-breakdown { border-color: var(--border); }
+
+body.dark .action-btn { background: var(--bg); color: var(--text); border-color: var(--border); }
+body.dark .action-btn.primary { background: var(--primary); color: white; border-color: var(--primary); }
+body.dark .action-btn.danger { background: #2b0f0d; color: #ff8a80; border-color: #5c2020; }
+
+body.dark .scroll-top,
+body.dark #scroll-top { background: var(--primary); }
+
+/* Dark mode toggle button */
+.dark-toggle {
+  background: none; border: none; cursor: pointer; font-size: 20px;
+  padding: 4px 8px; border-radius: 8px; transition: opacity 0.2s; flex-shrink: 0;
+}
+.dark-toggle:hover { opacity: 0.75; }
 

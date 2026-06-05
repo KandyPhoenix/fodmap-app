@@ -2448,6 +2448,15 @@ const FOODS = [
     tip: 'Plain dill pickles and gherkins are low FODMAP. Avoid garlic dill pickles. Check ingredients — a plain brine of water, vinegar, salt, and dill is safe. Pickled jalapeños are also low FODMAP.'
   },
   {
+    id: 'sauerkraut', name: 'Sauerkraut', emoji: '🥬', category: 'condiments', rating: 'green',
+    servings: [
+      { amount: '2 tbsp (30g)', rating: 'green', label: 'Low FODMAP' },
+      { amount: '½ cup (75g)', rating: 'yellow', label: 'Moderate — excess fructans possible' },
+    ],
+    fodmaps: ['Fructans (small amounts)'],
+    tip: 'Sauerkraut is fermented cabbage — the fermentation process breaks down most of the fructans, making small servings low FODMAP. Stick to 2 tbsp per serving. Look for plain sauerkraut (just cabbage and salt). Avoid versions with added garlic or onion. Great as a condiment on sausages, wraps, or grain bowls.'
+  },
+  {
     id: 'agave', name: 'Agave Syrup', emoji: '🍯', category: 'condiments', rating: 'red',
     servings: [
       { amount: 'Any amount', rating: 'red', label: 'High FODMAP — Avoid' }

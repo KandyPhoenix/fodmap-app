@@ -1413,6 +1413,24 @@
   })();
 
   // ══════════════════════════════════════════
+  //  DARK MODE
+  // ══════════════════════════════════════════
+  (() => {
+    const btn = document.getElementById('dark-toggle');
+    if (!btn) return;
+    const apply = dark => {
+      document.body.classList.toggle('dark', dark);
+      btn.textContent = dark ? '☀️' : '🌙';
+    };
+    apply(localStorage.getItem('fodmap-dark') === '1');
+    btn.addEventListener('click', () => {
+      const dark = !document.body.classList.contains('dark');
+      apply(dark);
+      localStorage.setItem('fodmap-dark', dark ? '1' : '0');
+    });
+  })();
+
+  // ══════════════════════════════════════════
   //  INIT
   // ══════════════════════════════════════════
   renderPlanner();
