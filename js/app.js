@@ -10,6 +10,7 @@
   function saveUserRecipes(list) {
     try { localStorage.setItem('fodmap-user-recipes', JSON.stringify(list)); }
     catch(e) {}
+    if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
   }
   function getAllRecipes() {
     return [...getUserRecipes(), ...(typeof KANDY_RECIPES !== 'undefined' ? KANDY_RECIPES : []), ...RECIPES];
@@ -998,6 +999,7 @@
   // ── Persistence ───────────────────────────────────────
   function saveMeals() {
     try { localStorage.setItem('fodmap-meals', JSON.stringify(meals)); } catch(e) {}
+    if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
   }
   function loadMeals() {
     try { return JSON.parse(localStorage.getItem('fodmap-meals') || '{}'); } catch(e) { return {}; }
@@ -1030,6 +1032,7 @@
   function saveFinds(list) {
     try { localStorage.setItem('fodmap-finds', JSON.stringify(list)); }
     catch(e) {}
+    if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
   }
   function genFindId() {
     return 'f' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
@@ -1280,6 +1283,69 @@
         ${cardHtml}
       </div>`;
   }
+
+  // ══════════════════════════════════════════
+  //  EXPORT / IMPORT DATA
+  // ══════════════════════════════════════════
+  function exportData() {
+    const data = { version: 1, exported: new Date().toISOString() };
+
+    // Grab all fodmap-* keys from localStorage
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith('fodmap-')) {
+        try { data[key] = JSON.parse(localStorage.getItem(key)); }
+        catch(e) { data[key] = localStorage.getItem(key); }
+      }
+    }
+
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = `fodmap-backup-${new Date().toISOString().slice(0,10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function importData(file) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      try {
+        const data = JSON.parse(e.target.result);
+        if (!data.version) throw new Error('Not a FODMAP backup file');
+        let count = 0;
+        Object.keys(data).forEach(key => {
+          if (key.startsWith('fodmap-')) {
+            localStorage.setItem(key, JSON.stringify(data[key]));
+            count++;
+          }
+        });
+        meals = loadMeals();
+        renderPlanner();
+        renderFindsView();
+        alert(`✅ Imported successfully! ${count} data categories restored.`);
+      } catch(err) {
+        alert('❌ Could not read that file. Make sure it\'s a FODMAP backup file.');
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  (() => {
+    const exportBtn  = document.getElementById('export-data-btn');
+    const importBtn  = document.getElementById('import-data-btn');
+    const importFile = document.getElementById('import-file-input');
+    if (exportBtn) exportBtn.addEventListener('click', exportData);
+    if (importBtn) importBtn.addEventListener('click', () => importFile && importFile.click());
+    if (importFile) importFile.addEventListener('change', () => {
+      importData(importFile.files[0]);
+      importFile.value = '';
+    });
+  })();
 
   // ══════════════════════════════════════════
   //  INIT

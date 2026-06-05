@@ -7,6 +7,7 @@ const ASSETS = [
   './js/recipes.js',
   './js/kandy-recipes.js',
   './js/app.js',
+  './js/firebase-sync.js',
   './manifest.json',
   './icons/icon.svg',
   './icons/icon-maskable.svg'
@@ -27,6 +28,11 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
+  // Always pass Firebase and CDN requests straight to network
+  const url = e.request.url;
+  if (url.includes('firebase') || url.includes('gstatic.com') || url.includes('googleapis.com')) {
+    return;
+  }
   e.respondWith(
     caches.match(e.request).then(cached => {
       if (cached) return cached;
