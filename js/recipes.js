@@ -1190,8 +1190,8 @@ const RECIPES = [
     ingredients: [
       { qty: '2', item: 'salmon fillets (180g each)' },
       { qty: '2 cups', item: 'cooked white rice' },
-      { qty: '1 cup', item: 'edamame, shelled and cooked' },
-      { qty: '1/2', item: 'cucumber, sliced' },
+      { qty: '1', item: 'cucumber, sliced' },
+      { qty: '1 cup', item: 'shredded carrots' },
       { qty: '1 tbsp', item: 'sesame seeds' },
       { qty: '3 tbsp', item: 'spring onion green tops, sliced' },
       { qty: '—', item: 'Teriyaki Sauce:' },
@@ -1206,10 +1206,10 @@ const RECIPES = [
       'Stir in cornstarch mixture and cook 1 minute until slightly thickened. Remove from heat.',
       'Brush salmon fillets with half the sauce. Heat a non-stick pan over medium-high heat.',
       'Cook salmon skin-side up for 4 minutes, flip, and cook another 3–4 minutes.',
-      'Assemble bowls: rice, edamame, cucumber, and salmon. Drizzle remaining teriyaki sauce on top.',
+      'Assemble bowls: rice, cucumber, shredded carrots, and salmon. Drizzle remaining teriyaki sauce on top.',
       'Scatter spring onion greens and sesame seeds over each bowl.',
     ],
-    fodmapNote: 'Maple syrup is the low-FODMAP sweetener here — do not substitute honey (high fructose). Edamame is low FODMAP at 1/2 cup shelled per person.'
+    fodmapNote: 'Maple syrup is the low-FODMAP sweetener here — do not substitute honey (high fructose). Carrots and cucumber are both safe unlimited vegetables on the elimination diet.'
   },
 
   {
@@ -2451,29 +2451,6 @@ const RECIPES = [
       'Sprinkle with cinnamon and a tiny pinch of salt to enhance the flavour.',
     ],
     fodmapNote: 'Keep almond butter to 1 tbsp per rice cake (2 tbsp total) — this is the safe FODMAP serving. Use a firm, slightly green banana — ripe bananas are higher in fructans. Rice cakes have no FODMAPs.'
-  },
-
-  {
-    id: 'edamame-snack',
-    name: 'Salted Edamame',
-    emoji: '🫛',
-    category: 'snacks',
-    time: '5 min',
-    serves: 2,
-    difficulty: 'easy',
-    tags: ['gluten-free', 'vegan', 'dairy-free', 'high-protein'],
-    ingredients: [
-      { qty: '1½ cups (210g)', item: 'frozen edamame in pods (or shelled)' },
-      { qty: '½ tsp', item: 'flaky sea salt' },
-      { qty: '½ tsp', item: 'sesame oil (optional)' },
-      { qty: 'pinch', item: 'red pepper flakes (optional)' },
-    ],
-    steps: [
-      'Cook edamame per package instructions — microwave or boil for 4–5 minutes.',
-      'Drain and toss with sea salt and sesame oil.',
-      'Serve warm in the pods — pop the beans out to eat.',
-    ],
-    fodmapNote: 'Edamame (young soybeans) is low FODMAP at ½ cup (75g) shelled per serving. At larger amounts, GOS content rises. Measure shelled beans. A protein and fibre-rich snack that satisfies real hunger.'
   },
 
   {

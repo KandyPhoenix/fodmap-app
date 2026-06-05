@@ -1005,12 +1005,13 @@ const FOODS = [
     tip: 'Rinsed canned lentils are lower in GOS than boiled-from-dry lentils. A small 1/4 cup serving is well tolerated by most people.'
   },
   {
-    id: 'edamame', name: 'Edamame', emoji: '🫛', category: 'legumes', rating: 'green',
+    id: 'edamame', name: 'Edamame', emoji: '🫛', category: 'legumes', rating: 'yellow',
     servings: [
-      { amount: '1/2 cup shelled (90g)', rating: 'green', label: 'Low FODMAP' }
+      { amount: '½ cup shelled (90g)', rating: 'yellow', label: 'Borderline — strict portion only' },
+      { amount: '¾ cup+', rating: 'red', label: 'High FODMAP — avoid' },
     ],
-    fodmaps: [],
-    tip: 'Edamame (immature green soybeans) are low FODMAP in moderate servings. A great snack or addition to salads.'
+    fodmaps: ['GOS'],
+    tip: 'Edamame sits right on the FODMAP edge. The safe window is tiny — exactly ½ cup shelled per serving — and it\'s very easy to go over. During the elimination phase, it\'s safest to avoid it entirely. Reintroduce in the testing phase to check your personal tolerance.'
   },
   {
     id: 'kidney-beans', name: 'Kidney Beans', emoji: '🫘', category: 'legumes', rating: 'red',

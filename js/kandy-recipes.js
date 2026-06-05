@@ -482,7 +482,7 @@ const KANDY_RECIPES = [
     ingredients: [
       { qty: '4',       item: 'bone-in chicken thighs (skin-on or skinless)' },
       { qty: '1 cup',   item: 'cubed sweet potato (½ cup per person — do not exceed)' },
-      { qty: '2 cups',  item: 'broccoli florets' },
+      { qty: '1½ cups', item: 'broccoli florets (¾ cup per person — do not exceed)' },
       { qty: '3 tbsp',  item: 'olive oil, divided' },
       { qty: '1',       item: 'lemon, sliced' },
       { qty: 'to taste', item: 'salt and pepper' },
