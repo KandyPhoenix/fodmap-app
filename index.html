@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FODMAP Diet Guide</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1a9e6e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="FODMAP">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────── -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🍀</span>
+        <div>
+          <div class="logo-title">FODMAP</div>
+          <div class="logo-sub">Diet Guide</div>
+        </div>
+      </div>
+      <div class="search-wrap" id="search-wrap">
+        <input type="text" id="search-input" placeholder="Search foods or recipes…" autocomplete="off" spellcheck="false">
+        <button class="clear-btn" id="clear-btn" aria-label="Clear">✕</button>
+        <span class="search-icon">🔍</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN NAV ───────────────────────── -->
+  <nav class="main-nav" id="main-nav">
+    <button class="nav-btn active" data-view="foods">🍎 Food Guide</button>
+    <button class="nav-btn" data-view="recipes">🍳 Recipes</button>
+    <button class="nav-btn" data-view="planner">📅 Meal Planner</button>
+    <button class="nav-btn" data-view="subs">🔄 Substitutions</button>
+    <button class="nav-btn" data-view="checker">🔍 Recipe Check</button>
+    <button class="nav-btn" data-view="finds">📍 My Finds</button>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       VIEW 1 — FOOD GUIDE
+  ════════════════════════════════════════ -->
+  <div id="view-foods">
+
+    <div class="filter-bar">
+      <span class="filter-label">Filter:</span>
+      <div class="rating-filters">
+        <button class="rating-filter active" data-rating="all">All Foods</button>
+        <button class="rating-filter" data-rating="green"><span class="dot green"></span> Low</button>
+        <button class="rating-filter" data-rating="yellow"><span class="dot yellow"></span> Moderate</button>
+        <button class="rating-filter" data-rating="red"><span class="dot red"></span> High</button>
+      </div>
+    </div>
+
+    <div class="category-bar">
+      <div class="categories" id="food-categories"></div>
+    </div>
+
+    <main>
+      <div class="results-bar">
+        <div class="food-count" id="food-count"></div>
+      </div>
+      <div class="food-grid" id="food-grid"></div>
+      <div class="no-results hidden" id="food-no-results">
+        <div class="no-results-icon">🔍</div>
+        <p>No foods found. Try a different search or filter.</p>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       VIEW 2 — RECIPES
+  ════════════════════════════════════════ -->
+  <div id="view-recipes" class="hidden">
+
+    <div class="category-bar">
+      <div class="categories" id="recipe-categories"></div>
+    </div>
+
+    <main>
+      <div class="results-bar">
+        <div class="food-count" id="recipe-count"></div>
+        <button class="add-recipe-btn" id="add-recipe-btn">✏️ Add My Recipe</button>
+      </div>
+      <div class="recipe-grid" id="recipe-grid"></div>
+      <div class="no-results hidden" id="recipe-no-results">
+        <div class="no-results-icon">🔍</div>
+        <p>No recipes found. Try a different search or category.</p>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       VIEW 3 — MEAL PLANNER
+  ════════════════════════════════════════ -->
+  <div id="view-planner" class="hidden">
+    <main>
+
+      <div class="planner-header">
+        <div class="planner-nav">
+          <button id="prev-week" class="week-btn">‹</button>
+          <span class="week-label" id="week-label"></span>
+          <button id="next-week" class="week-btn">›</button>
+        </div>
+        <div class="planner-actions">
+          <button id="clear-week-btn" class="action-btn danger">🗑 Clear Week</button>
+          <button id="shopping-list-btn" class="action-btn primary">🛒 Shopping List</button>
+        </div>
+      </div>
+
+      <div class="planner-grid-wrap">
+        <div class="planner-grid" id="planner-grid">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       VIEW 4 — SUBSTITUTIONS
+  ════════════════════════════════════════ -->
+  <div id="view-subs" class="hidden">
+    <div class="subs-hero">
+      <div class="subs-hero-text">
+        <div class="subs-hero-title">FODMAP Ingredient Swaps</div>
+        <div class="subs-hero-sub">Out of an ingredient? Can't tolerate a FODMAP? Here's exactly what to use instead.</div>
+      </div>
+    </div>
+    <div class="subs-filter-bar">
+      <div class="subs-cats" id="subs-cats"></div>
+    </div>
+    <main>
+      <div id="subs-grid"></div>
+    </main>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       VIEW 5 — RECIPE CHECKER
+  ════════════════════════════════════════ -->
+  <div id="view-checker" class="hidden">
+    <div class="checker-hero">
+      <div class="checker-hero-text">
+        <div class="checker-hero-title">🔍 FODMAP Recipe Checker</div>
+        <div class="checker-hero-sub">Paste any recipe's ingredient list below — I'll flag every high-FODMAP ingredient and tell you exactly what to swap.</div>
+      </div>
+    </div>
+    <main>
+      <div class="checker-input-card">
+        <label class="checker-label">Paste ingredients (one per line)</label>
+        <textarea id="checker-textarea" placeholder="e.g.
+2 cloves garlic
+1 cup wheat flour
+1/2 onion, diced
+1 cup whole milk
+2 tbsp honey"></textarea>
+        <div class="checker-actions">
+          <button id="checker-analyze-btn" class="action-btn primary">🔍 Analyze Recipe</button>
+          <button id="checker-clear-btn" class="action-btn">Clear</button>
+        </div>
+      </div>
+      <div id="checker-results"></div>
+    </main>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       VIEW 6 — MY FINDS
+  ════════════════════════════════════════ -->
+  <div id="view-finds" class="hidden">
+    <div class="finds-hero">
+      <div class="finds-hero-text">
+        <div class="finds-hero-title">📍 My Finds</div>
+        <div class="finds-hero-sub">Save the brands and stores where you found your FODMAP-safe products.</div>
+      </div>
+      <button class="finds-add-btn" id="add-find-btn">+ Add a Find</button>
+    </div>
+    <div class="finds-filter-bar">
+      <div class="finds-cats" id="finds-cats"></div>
+    </div>
+    <main>
+      <div class="finds-grid" id="finds-grid"></div>
+      <div class="no-results hidden" id="finds-no-results">
+        <div class="no-results-icon">📍</div>
+        <p>No finds yet. Hit <strong>+ Add a Find</strong> to save your first one!</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Find Form Modal -->
+  <div class="modal-overlay hidden" id="find-form-overlay">
+    <div class="find-form-modal" id="find-form-modal">
+      <div class="form-header">
+        <div class="form-title" id="find-form-title">📍 Add a Find</div>
+        <button class="modal-close" id="find-form-close">✕</button>
+      </div>
+      <div class="form-body">
+        <div class="form-row">
+          <div class="form-group flex-grow">
+            <label>Product / Food Name <span class="required">*</span></label>
+            <input type="text" id="ff-food" placeholder="e.g. GF Bread, Lactose-Free Milk">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group flex-grow">
+            <label>Brand Name</label>
+            <input type="text" id="ff-brand" placeholder="e.g. Canyon Bakehouse, Green Valley">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group flex-grow">
+            <label>Store / Where to Find It <span class="required">*</span></label>
+            <input type="text" id="ff-store" placeholder="e.g. HEB, Walmart, Whole Foods, Amazon">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Category</label>
+            <select id="ff-category">
+              <option value="bread">🍞 Bread &amp; Grains</option>
+              <option value="dairy">🥛 Dairy &amp; Alternatives</option>
+              <option value="condiments">🫙 Condiments &amp; Sauces</option>
+              <option value="pasta">🍝 Pasta &amp; Rice</option>
+              <option value="protein">🥩 Meat &amp; Protein</option>
+              <option value="snacks">🥕 Snacks</option>
+              <option value="produce">🥦 Produce</option>
+              <option value="beverages">☕ Beverages</option>
+              <option value="supplements">💊 Supplements</option>
+              <option value="other">📦 Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group flex-grow">
+            <label>Notes</label>
+            <input type="text" id="ff-notes" placeholder="e.g. aisle 6, freezer section, online only, ~$4">
+          </div>
+        </div>
+      </div>
+      <div class="form-footer">
+        <button id="ff-delete-btn" class="action-btn danger hidden">🗑 Delete</button>
+        <button id="ff-cancel-btn" class="action-btn" style="background:var(--bg);color:var(--text)">Cancel</button>
+        <button id="ff-save-btn" class="action-btn primary">💾 Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MODALS ──────────────────────────── -->
+  <div class="modal-overlay hidden" id="modal-overlay"></div>
+
+  <!-- Meal picker modal -->
+  <div class="modal-overlay hidden" id="picker-overlay">
+    <div class="picker-modal" id="picker-modal">
+      <div class="picker-header">
+        <div class="picker-title" id="picker-title">Choose a Meal</div>
+        <button class="modal-close" id="picker-close">✕</button>
+      </div>
+      <div class="picker-search-wrap">
+        <input type="text" id="picker-search" placeholder="Search recipes…" autocomplete="off">
+      </div>
+      <div class="picker-cats" id="picker-cats"></div>
+      <div class="picker-list" id="picker-list"></div>
+      <div class="picker-custom">
+        <div class="picker-custom-label">Or add a custom meal:</div>
+        <div class="picker-custom-row">
+          <input type="text" id="custom-meal-input" placeholder="e.g. Leftover chicken and rice">
+          <button id="add-custom-btn" class="action-btn primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping list modal -->
+  <div class="modal-overlay hidden" id="shopping-overlay">
+    <div class="modal" id="shopping-modal">
+      <button class="modal-close" id="shopping-close">✕</button>
+      <div style="padding:24px">
+        <div class="modal-title" style="margin-bottom:16px">🛒 Shopping List</div>
+        <div id="shopping-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recipe Form Modal -->
+  <div class="modal-overlay hidden" id="recipe-form-overlay">
+    <div class="recipe-form-modal" id="recipe-form-modal">
+      <div class="form-header">
+        <div class="form-title" id="form-modal-title">✏️ Add My Recipe</div>
+        <button class="modal-close" id="recipe-form-close">✕</button>
+      </div>
+      <div class="form-body">
+
+        <div class="form-section">
+          <div class="form-section-title">Basic Info</div>
+          <div class="form-row">
+            <div class="form-group" style="width:72px">
+              <label>Emoji</label>
+              <input type="text" id="rf-emoji" placeholder="🍽️" maxlength="4">
+            </div>
+            <div class="form-group flex-grow">
+              <label>Recipe Name <span class="required">*</span></label>
+              <input type="text" id="rf-name" placeholder="e.g. My FODMAP Pasta">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Category <span class="required">*</span></label>
+              <select id="rf-category">
+                <option value="breakfast">🌅 Breakfast</option>
+                <option value="lunch">🥗 Lunch</option>
+                <option value="dinner" selected>🍴 Dinner</option>
+                <option value="snacks">🥕 Snacks</option>
+                <option value="desserts">🍓 Desserts</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Cook Time</label>
+              <input type="text" id="rf-time" placeholder="30 min">
+            </div>
+            <div class="form-group" style="width:80px">
+              <label>Serves</label>
+              <input type="number" id="rf-serves" min="1" max="30" value="2">
+            </div>
+            <div class="form-group">
+              <label>Difficulty</label>
+              <select id="rf-difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group flex-grow">
+              <label>Tags (comma-separated)</label>
+              <input type="text" id="rf-tags" placeholder="e.g. gluten-free, vegetarian, dairy-free">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">Ingredients</div>
+          <div id="rf-ingredients-list"></div>
+          <button type="button" id="add-ingredient-btn" class="add-row-btn">+ Add Ingredient</button>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">Instructions</div>
+          <div id="rf-steps-list"></div>
+          <button type="button" id="add-step-btn" class="add-row-btn">+ Add Step</button>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">FODMAP Notes <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--text-muted)">(optional)</span></div>
+          <textarea id="rf-fodmap-note" placeholder="Any notes about FODMAP safety, serving sizes, or substitutions…"></textarea>
+        </div>
+
+      </div>
+      <div class="form-footer">
+        <button id="rf-delete-btn" class="action-btn danger hidden">🗑 Delete Recipe</button>
+        <button id="rf-cancel-btn" class="action-btn" style="background:var(--bg);color:var(--text)">Cancel</button>
+        <button id="rf-save-btn" class="action-btn primary">💾 Save Recipe</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="scroll-top" aria-label="Back to top">↑</button>
+
+  <script src="js/data.js"></script>
+  <script src="js/recipes.js"></script>
+  <script src="js/kandy-recipes.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js');
+      });
+    }
+  </script>
+</body>
+</html>

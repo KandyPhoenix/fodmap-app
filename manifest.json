@@ -1,0 +1,25 @@
+{
+  "name": "FODMAP Diet Guide",
+  "short_name": "FODMAP",
+  "description": "Your personal FODMAP food guide, recipes, meal planner, and ingredient checker.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f9fafb",
+  "theme_color": "#1a9e6e",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["food", "health", "lifestyle"]
+}
