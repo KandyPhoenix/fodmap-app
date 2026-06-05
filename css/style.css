@@ -56,19 +56,9 @@ header {
 .logo-title { font-size: 18px; font-weight: 800; color: white; letter-spacing: 1px; line-height: 1.1; }
 .logo-sub { font-size: 11px; color: rgba(255,255,255,0.8); letter-spacing: 0.5px; }
 
-.header-data-btns {
-  display: flex; gap: 8px; margin-left: auto; flex-shrink: 0;
-}
-.data-btn {
-  background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3);
-  color: white; border-radius: 20px; padding: 6px 14px; font-size: 13px;
-  font-weight: 600; cursor: pointer; transition: background 0.2s; white-space: nowrap;
-}
-.data-btn:hover { background: rgba(255,255,255,0.3); }
-
 .sync-status {
   font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 20px;
-  white-space: nowrap; letter-spacing: 0.3px;
+  white-space: nowrap; letter-spacing: 0.3px; flex-shrink: 0; margin-left: auto;
 }
 .sync-syncing { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.8); }
 .sync-ok      { background: rgba(100,255,180,0.25); color: #b8ffe0; }
@@ -119,6 +109,18 @@ header {
 }
 .nav-btn:hover { color: var(--primary); background: var(--primary-light); }
 .nav-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+/* ── DATA BAR ────────────────────────────────── */
+.data-bar {
+  display: flex; gap: 10px; align-items: center; justify-content: flex-end;
+  padding: 6px 16px; background: var(--bg); border-bottom: 1px solid var(--border);
+}
+.data-bar-btn {
+  background: var(--bg); border: 1px solid var(--border); color: var(--text-muted);
+  border-radius: 16px; padding: 5px 14px; font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.data-bar-btn:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-light); }
 
 /* ── FILTER & CATEGORY BARS ─────────────────── */
 .filter-bar {

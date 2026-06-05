@@ -24,12 +24,7 @@
           <div class="logo-sub">Diet Guide</div>
         </div>
       </div>
-      <div class="header-data-btns">
-        <span id="sync-status" class="sync-status sync-syncing">⟳ Syncing…</span>
-        <button id="export-data-btn" class="data-btn" title="Export all your data to a file">⬇️ Export</button>
-        <button id="import-data-btn" class="data-btn" title="Import data from a backup file">⬆️ Import</button>
-        <input type="file" id="import-file-input" accept=".json" style="display:none">
-      </div>
+      <span id="sync-status" class="sync-status sync-syncing">⟳ Syncing…</span>
       <div class="search-wrap" id="search-wrap">
         <input type="text" id="search-input" placeholder="Search foods or recipes…" autocomplete="off" spellcheck="false">
         <button class="clear-btn" id="clear-btn" aria-label="Clear">✕</button>
@@ -47,6 +42,13 @@
     <button class="nav-btn" data-view="checker">🔍 Recipe Check</button>
     <button class="nav-btn" data-view="finds">📍 My Finds</button>
   </nav>
+
+  <!-- ── DATA BAR ──────────────────────────── -->
+  <div class="data-bar">
+    <button id="export-data-btn" class="data-bar-btn">⬇️ Export Data</button>
+    <button id="import-data-btn" class="data-bar-btn">⬆️ Import Data</button>
+    <input type="file" id="import-file-input" accept=".json" style="display:none">
+  </div>
 
   <!-- ═══════════════════════════════════════
        VIEW 1 — FOOD GUIDE
