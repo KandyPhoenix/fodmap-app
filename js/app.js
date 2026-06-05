@@ -19,7 +19,7 @@
   // ══════════════════════════════════════════
   //  STATE
   // ══════════════════════════════════════════
-  let currentView = 'foods';
+  let currentView = 'planner';
   let foodCategory = 'all', foodRating = 'all', searchQuery = '';
   let recipeCategory = 'all';
   let pickerCategory = 'all', pickerSearch = '';
