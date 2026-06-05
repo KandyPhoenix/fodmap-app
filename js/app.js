@@ -951,6 +951,24 @@
     catch(e) {}
   }
 
+  const PREP_WORDS = /[,\s]+(sliced|diced|chopped|minced|crushed|peeled|grated|shredded|julienned|halved|quartered|torn|rinsed|drained|thawed|frozen|fresh|dried|cooked|raw|thinly|roughly|finely|coarsely|lightly|well|about|optional|garnish|to garnish|for garnish|for serving|to serve)\b.*/gi;
+
+  function normalizeIngredientKey(name) {
+    return name
+      .toLowerCase()
+      .replace(/\(.*?\)/g, '')   // strip (garnish), (optional), (about 2 tbsp) etc.
+      .replace(PREP_WORDS, '')   // strip ", sliced", ", finely chopped" etc.
+      .replace(/[,;]+$/, '')     // trailing punctuation
+      .trim();
+  }
+
+  function cleanIngredientName(name) {
+    return name
+      .replace(/\(.*?\)/g, '')   // strip parentheticals
+      .replace(/[,;]+$/, '')
+      .trim();
+  }
+
   function openShoppingList() {
     const days = getWeekDays();
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -966,8 +984,8 @@
         if (!recipe) return;
         (recipe.ingredients || []).forEach(ing => {
           if (ing.item === '—') return;
-          const key = ing.item.toLowerCase().trim();
-          if (!ingredientMap[key]) ingredientMap[key] = { name: ing.item, lines: [] };
+          const key = normalizeIngredientKey(ing.item);
+          if (!ingredientMap[key]) ingredientMap[key] = { name: cleanIngredientName(ing.item), lines: [] };
           ingredientMap[key].lines.push({
             qty:    convertGrams(ing.qty || ''),
             recipe: recipe.name,
