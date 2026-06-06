@@ -1260,3 +1260,122 @@ body.dark #scroll-top { background: var(--primary); }
 }
 .dark-toggle:hover { opacity: 0.75; }
 
+/* ══════════════════════════════════════════════
+   MOBILE — comprehensive overhaul (≤ 640px)
+══════════════════════════════════════════════ */
+@media (max-width: 640px) {
+
+  /* Header */
+  :root { --header-h: 56px; --nav-h: 56px; }
+  header { padding: 0 12px; }
+  .logo-icon { font-size: 24px; }
+  .logo-title { font-size: 15px; }
+  .logo-sub { display: none; }
+  .search-wrap { max-width: none; }
+  .sync-status { display: none; }
+
+  /* Nav — emoji only, taller tap targets */
+  .main-nav { height: var(--nav-h); overflow-x: auto; scrollbar-width: none; }
+  .main-nav::-webkit-scrollbar { display: none; }
+  .nav-btn { font-size: 22px; flex: 1 0 56px; padding: 4px 0; }
+  .nav-label { display: none; }
+
+  /* Data bar */
+  .data-bar { padding: 6px 12px; }
+  .data-bar-btn { font-size: 12px; padding: 5px 10px; }
+
+  /* Main content */
+  main { padding: 10px; }
+
+  /* Food grid — 2 columns */
+  .food-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .food-card { padding: 12px 10px; }
+  .food-name { font-size: 13px; }
+
+  /* Recipe grid — single column */
+  .recipe-grid { grid-template-columns: 1fr; gap: 10px; }
+
+  /* Filter & category bars */
+  .filter-bar { padding: 8px 10px; gap: 8px; flex-wrap: wrap; }
+  .category-bar { padding: 0; }
+
+  /* Planner */
+  .planner-header { flex-direction: column; gap: 10px; align-items: stretch; }
+  .planner-actions { display: flex; gap: 8px; }
+  .planner-actions .action-btn { flex: 1; text-align: center; }
+  .planner-grid-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .planner-grid { min-width: 560px; }
+  .planner-cell { min-height: 90px; padding: 6px; }
+  .meal-chip { font-size: 11px; padding: 3px 6px; }
+  .add-meal-btn { font-size: 11px; padding: 3px 8px; }
+  .day-label { font-size: 11px; }
+  .meal-type-label { font-size: 10px; }
+
+  /* Modals — full screen on mobile */
+  .modal-overlay { align-items: flex-end; padding: 0; }
+  .modal,
+  .picker-modal,
+  .recipe-form-modal,
+  .find-form-modal {
+    border-radius: 20px 20px 0 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    max-height: 92vh;
+    margin: 0;
+    animation: slideUpMobile 0.25s ease !important;
+  }
+  /* Shopping modal is narrower — keep it centered */
+  #shopping-modal {
+    border-radius: 20px !important;
+    max-height: 85vh;
+    margin: 16px;
+    width: calc(100% - 32px) !important;
+  }
+
+  @keyframes slideUpMobile {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+  }
+
+  /* Recipe modal */
+  .rmodal { border-radius: 20px 20px 0 0 !important; max-height: 92vh; width: 100% !important; max-width: 100% !important; }
+  .rmodal-title { font-size: 18px; }
+
+  /* Picker modal */
+  .picker-modal { max-height: 85vh; }
+  .picker-list { max-height: 35vh; }
+
+  /* Forms */
+  .form-row { flex-direction: column; gap: 10px; }
+  .form-group { width: 100% !important; }
+  .form-body { padding: 12px 16px; }
+  .form-footer { padding: 12px 16px; gap: 8px; }
+  .rf-ingredients-list .ingredient-row,
+  .rf-steps-list .step-row { gap: 6px; }
+
+  /* Subs & checker */
+  .subs-hero { padding: 20px 16px; }
+  .subs-hero-title { font-size: 18px; }
+  .checker-hero { padding: 20px 16px; }
+  .checker-hero-title { font-size: 18px; }
+  .checker-actions { flex-direction: column; }
+  .subs-cards { grid-template-columns: 1fr; }
+
+  /* Finds */
+  .finds-hero { flex-direction: column; align-items: flex-start; gap: 10px; padding: 20px 16px; }
+  .finds-hero-title { font-size: 18px; }
+  .finds-grid { grid-template-columns: 1fr; gap: 10px; }
+
+  /* Shopping list */
+  .si-top { gap: 4px; }
+  .si-name { font-size: 14px; }
+  .si-total { font-size: 13px; }
+
+  /* Scroll top btn */
+  #scroll-top { bottom: 16px; right: 12px; width: 40px; height: 40px; font-size: 16px; }
+
+  /* Results bar */
+  .results-bar { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .add-recipe-btn { align-self: flex-end; }
+}
+
