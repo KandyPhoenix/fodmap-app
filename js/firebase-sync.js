@@ -100,8 +100,8 @@ const firebaseConfig = {
           await docRef.set(localData);
         } else {
           applyRemoteData(remote);
-          // Tell the app to re-render with fresh data
-          window.dispatchEvent(new CustomEvent('fodmap-sync-loaded'));
+          // Re-render in place — never reload the page (reload wipes unsaved edits)
+          if (typeof window.fodmapRefresh === 'function') window.fodmapRefresh();
         }
       } else {
         // Local is newer or equal — push up

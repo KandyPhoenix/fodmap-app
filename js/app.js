@@ -1431,6 +1431,16 @@
   })();
 
   // ══════════════════════════════════════════
+  //  FIREBASE SYNC REFRESH (no page reload)
+  // ══════════════════════════════════════════
+  window.fodmapRefresh = function() {
+    meals = loadMeals();
+    renderPlanner();
+    renderFindsView();
+    renderRecipeGrid();
+  };
+
+  // ══════════════════════════════════════════
   //  INIT
   // ══════════════════════════════════════════
   renderPlanner();

@@ -394,11 +394,6 @@
         navigator.serviceWorker.register('./sw.js');
       });
     }
-    // Re-render after Firebase pulls fresher data
-    window.addEventListener('fodmap-sync-loaded', () => {
-      // Reload the page so all views pick up the new localStorage
-      location.reload();
-    });
   </script>
 </body>
 </html>
