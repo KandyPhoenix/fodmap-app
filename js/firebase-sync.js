@@ -114,14 +114,39 @@ const firebaseConfig = {
     }
   }
 
+  // ── Force push button ────────────────────────
+  function wireForceSync() {
+    const btn = document.getElementById('force-sync-btn');
+    if (!btn) return;
+    btn.addEventListener('click', async () => {
+      if (!docRef) { alert('Not connected to cloud. Check your internet connection.'); return; }
+      btn.textContent = '⟳ Pushing…';
+      btn.disabled = true;
+      setSyncStatus('syncing');
+      try {
+        await docRef.set(gatherLocalData());
+        setSyncStatus('synced');
+        btn.textContent = '✓ Pushed!';
+        setTimeout(() => { btn.textContent = '☁️ Push to Cloud'; btn.disabled = false; }, 2000);
+      } catch(e) {
+        setSyncStatus('offline');
+        btn.textContent = '☁️ Push to Cloud';
+        btn.disabled = false;
+        alert('Push failed — check your internet connection.');
+      }
+    });
+  }
+
   // ── Boot ────────────────────────────────────
   try {
     firebase.initializeApp(firebaseConfig);
     db     = firebase.firestore();
     docRef = db.collection('fodmap').doc('data');
     syncFromFirebase();
+    wireForceSync();
   } catch(e) {
     console.warn('Firebase init failed (offline?):', e);
     setSyncStatus('offline');
+    wireForceSync();
   }
 })();
