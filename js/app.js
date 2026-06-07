@@ -618,6 +618,8 @@
       days.forEach(d => {
         const cell = document.createElement('div');
         cell.className = `planner-cell meal-row-${mtype.id}${d.isToday ? ' today-col' : ''}`;
+        cell.dataset.dateKey = d.key;
+        cell.dataset.mealType = mtype.id;
         const mealKey = `${d.key}-${mtype.id}`;
         const meal = meals[mealKey];
 
@@ -643,6 +645,7 @@
             delete meals[mealKey];
             saveMeals(); renderPlanner();
           });
+          attachChipDrag(chip, mealKey);
           cell.appendChild(chip);
         }
 
@@ -653,6 +656,106 @@
         cell.appendChild(addBtn);
         grid.appendChild(cell);
       });
+    });
+  }
+
+  // ── Drag meals between days (long-press to grab) ───────
+  let mealDragState = null;
+
+  function moveMeal(sourceKey, targetKey) {
+    const src = meals[sourceKey];
+    if (!src) return;
+    const dst = meals[targetKey];          // swap if the target slot is taken
+    meals[targetKey] = src;
+    if (dst) meals[sourceKey] = dst; else delete meals[sourceKey];
+    saveMeals();
+  }
+
+  function attachChipDrag(chip, sourceKey) {
+    chip.addEventListener('pointerdown', e => {
+      if (mealDragState) return;                                     // another drag in progress
+      if (e.target.closest('.meal-chip-lf, .meal-chip-remove')) return; // let the buttons handle taps
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+
+      const startX = e.clientX, startY = e.clientY;
+      let started = false;
+      const longPress = setTimeout(beginDrag, 220);
+
+      function beginDrag() {
+        started = true;
+        const rect = chip.getBoundingClientRect();
+        const clone = chip.cloneNode(true);
+        clone.classList.add('meal-chip-dragging');
+        clone.style.width = rect.width + 'px';
+        document.body.appendChild(clone);
+        mealDragState = { sourceKey, clone, targetCell: null,
+                          offsetX: startX - rect.left, offsetY: startY - rect.top };
+        chip.classList.add('meal-chip-source');
+        document.body.classList.add('dragging-meal');
+        if (navigator.vibrate) navigator.vibrate(15);
+        positionClone(startX, startY);
+      }
+
+      function positionClone(x, y) {
+        const s = mealDragState;
+        if (!s) return;
+        s.clone.style.left = (x - s.offsetX) + 'px';
+        s.clone.style.top  = (y - s.offsetY) + 'px';
+        const under = document.elementFromPoint(x, y);
+        const cell = under ? under.closest('.planner-cell') : null;
+        if (s.targetCell && s.targetCell !== cell) s.targetCell.classList.remove('drop-target');
+        if (cell) cell.classList.add('drop-target');
+        s.targetCell = cell;
+      }
+
+      function onMove(ev) {
+        if (!started) {
+          if (Math.abs(ev.clientX - startX) > 8 || Math.abs(ev.clientY - startY) > 8) {
+            clearTimeout(longPress); cleanup();   // moved first → it's a scroll, not a drag
+          }
+          return;
+        }
+        ev.preventDefault();
+        positionClone(ev.clientX, ev.clientY);
+      }
+
+      function onUp(ev) {
+        clearTimeout(longPress);
+        if (started) {
+          ev.preventDefault();
+          const cell = mealDragState.targetCell;
+          if (cell) {
+            const targetKey = `${cell.dataset.dateKey}-${cell.dataset.mealType}`;
+            if (targetKey !== sourceKey) moveMeal(sourceKey, targetKey);
+          }
+          // swallow the click that fires right after a drag
+          const swallow = ce => { ce.stopPropagation(); ce.preventDefault(); };
+          document.addEventListener('click', swallow, { capture: true, once: true });
+          setTimeout(() => document.removeEventListener('click', swallow, true), 350);
+          endDrag();
+        }
+        cleanup();
+      }
+
+      function endDrag() {
+        const s = mealDragState;
+        if (!s) return;
+        s.clone.remove();
+        if (s.targetCell) s.targetCell.classList.remove('drop-target');
+        document.body.classList.remove('dragging-meal');
+        mealDragState = null;
+        renderPlanner();
+      }
+
+      function cleanup() {
+        document.removeEventListener('pointermove', onMove);
+        document.removeEventListener('pointerup', onUp);
+        document.removeEventListener('pointercancel', onUp);
+      }
+
+      document.addEventListener('pointermove', onMove);
+      document.addEventListener('pointerup', onUp);
+      document.addEventListener('pointercancel', onUp);
     });
   }
 
