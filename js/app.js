@@ -770,6 +770,7 @@
   }
   function saveProgress() {
     try { localStorage.setItem('fodmap-planner-progress', JSON.stringify(progress)); } catch(e) {}
+    if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
   }
   function isoKey(year, month, day) {
     return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
