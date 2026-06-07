@@ -14,9 +14,23 @@ const firebaseConfig = {
 };
 
 (function initFodmapSync() {
-  // Collect all fodmap-* keys from localStorage
+  // Where this device records when its data was last edited. Deliberately NOT
+  // prefixed "fodmap-" so it stays out of the synced payload itself.
+  const MTIME_KEY = 'fodmapSyncMtime';
+
+  function getLocalMtime() {
+    const v = parseInt(localStorage.getItem(MTIME_KEY) || '0', 10);
+    return isNaN(v) ? 0 : v;
+  }
+  function setLocalMtime(t) {
+    try { localStorage.setItem(MTIME_KEY, String(t)); } catch(e) {}
+  }
+
+  // Collect all fodmap-* keys from localStorage. lastModified is the stored
+  // edit time for THIS device — never Date.now() — so cloud-vs-local
+  // comparisons are meaningful instead of "local is always newer".
   function gatherLocalData() {
-    const data = { lastModified: Date.now() };
+    const data = { lastModified: getLocalMtime() };
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       if (key && key.startsWith('fodmap-')) {
@@ -27,22 +41,54 @@ const firebaseConfig = {
     return data;
   }
 
-  // Write all fodmap-* keys from a remote snapshot back to localStorage
-  function applyRemoteData(remoteData) {
-    Object.keys(remoteData).forEach(key => {
+  // Write all fodmap-* keys from a snapshot back to localStorage
+  function writeKeys(src) {
+    Object.keys(src).forEach(key => {
       if (key.startsWith('fodmap-')) {
-        try { localStorage.setItem(key, JSON.stringify(remoteData[key])); }
+        try { localStorage.setItem(key, JSON.stringify(src[key])); }
         catch(e) {}
       }
     });
   }
 
-  // Count fodmap data keys (for safety checks)
   function countKeys(data) {
     return Object.keys(data).filter(k => k.startsWith('fodmap-')).length;
   }
 
-  let db = null, docRef = null, debounceTimer = null;
+  function isPlainObject(v) {
+    return v && typeof v === 'object' && !Array.isArray(v);
+  }
+
+  // One-time, non-destructive merge used the first time this device runs the
+  // new sync scheme — keeps every device's data instead of one clobbering the
+  // other. Objects (meals map, progress stars) are unioned; arrays (finds,
+  // user recipes) are concatenated and de-duped; on a true conflict, local wins.
+  function unionMerge(localData, remote) {
+    const out = {};
+    const keys = new Set();
+    Object.keys(localData).forEach(k => { if (k.startsWith('fodmap-')) keys.add(k); });
+    Object.keys(remote).forEach(k => { if (k.startsWith('fodmap-')) keys.add(k); });
+    keys.forEach(k => {
+      const l = localData[k], r = remote[k];
+      if (l === undefined) { out[k] = r; return; }
+      if (r === undefined) { out[k] = l; return; }
+      if (isPlainObject(l) && isPlainObject(r)) {
+        out[k] = Object.assign({}, r, l);            // union of entries, local wins ties
+      } else if (Array.isArray(l) && Array.isArray(r)) {
+        const seen = new Set(), merged = [];
+        l.concat(r).forEach(item => {
+          const sig = JSON.stringify(item);
+          if (!seen.has(sig)) { seen.add(sig); merged.push(item); }
+        });
+        out[k] = merged;
+      } else {
+        out[k] = l;                                   // fallback: keep local
+      }
+    });
+    return out;
+  }
+
+  let db = null, docRef = null, debounceTimer = null, applyingRemote = false;
 
   // ── Status indicator ────────────────────────
   function setSyncStatus(status) {
@@ -58,60 +104,96 @@ const firebaseConfig = {
     el.className   = 'sync-status ' + s.cls;
   }
 
-  // ── Push local → Firebase ───────────────────
+  // Pull a remote snapshot into local storage and refresh the UI in place.
+  function adoptRemote(remote) {
+    applyingRemote = true;
+    writeKeys(remote);
+    setLocalMtime(remote.lastModified || Date.now());
+    applyingRemote = false;
+    if (typeof window.fodmapRefresh === 'function') window.fodmapRefresh();
+  }
+
+  async function pushLocal() {
+    await docRef.set(gatherLocalData());
+  }
+
+  // ── Push local → Firebase (debounced) — called on every save ──
   window.syncFodmapToFirebase = function() {
-    if (!docRef) return;
+    if (!docRef || applyingRemote) return;     // don't echo a freshly-pulled change back up
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(async () => {
       setSyncStatus('syncing');
       try {
-        await docRef.set(gatherLocalData());
+        setLocalMtime(Date.now());             // this device is now the latest writer
+        await pushLocal();
         setSyncStatus('synced');
       } catch(e) {
         console.warn('FODMAP sync push failed:', e);
         setSyncStatus('offline');
       }
-    }, 1500);
+    }, 1200);
   };
 
-  // ── Pull Firebase → local ───────────────────
+  // ── Initial reconcile on boot ───────────────
   async function syncFromFirebase() {
     if (!docRef) return;
     setSyncStatus('syncing');
     try {
       const snap = await docRef.get();
+
       if (!snap.exists) {
-        // Nothing remote yet — push what we have
-        await docRef.set(gatherLocalData());
+        setLocalMtime(Date.now());
+        await pushLocal();
         setSyncStatus('synced');
         return;
       }
-      const remote = snap.data();
+
+      const remote         = snap.data();
       const remoteModified = remote.lastModified || 0;
-      const localData      = gatherLocalData();
-      const localModified  = localData.lastModified || 0;
+      const localModified  = getLocalMtime();
+
+      // First run under the new scheme: merge so neither device loses data.
+      if (localModified === 0) {
+        const merged = unionMerge(gatherLocalData(), remote);
+        applyingRemote = true;
+        writeKeys(merged);
+        applyingRemote = false;
+        setLocalMtime(Date.now());
+        await pushLocal();
+        if (typeof window.fodmapRefresh === 'function') window.fodmapRefresh();
+        setSyncStatus('synced');
+        return;
+      }
 
       if (remoteModified > localModified) {
-        const remoteKeys = countKeys(remote);
-        const localKeys  = countKeys(localData);
-        // Safety: don't overwrite richer local state with an empty remote
-        if (localKeys > remoteKeys && localKeys > 2) {
-          console.warn('FODMAP sync: remote newer but fewer keys — pushing local instead');
-          await docRef.set(localData);
+        // Remote is newer — adopt it, unless it's empty while we hold real data.
+        if (countKeys(remote) === 0 && countKeys(gatherLocalData()) > 0) {
+          setLocalMtime(Date.now());
+          await pushLocal();
         } else {
-          applyRemoteData(remote);
-          // Re-render in place — never reload the page (reload wipes unsaved edits)
-          if (typeof window.fodmapRefresh === 'function') window.fodmapRefresh();
+          adoptRemote(remote);
         }
-      } else {
-        // Local is newer or equal — push up
-        await docRef.set(localData);
+      } else if (localModified > remoteModified) {
+        await pushLocal();                     // local is newer — push it up
       }
       setSyncStatus('synced');
     } catch(e) {
       console.warn('FODMAP sync pull failed:', e);
       setSyncStatus('offline');
     }
+  }
+
+  // ── Live updates from other devices ─────────
+  function listenForRemoteChanges() {
+    if (!docRef) return;
+    docRef.onSnapshot(snap => {
+      if (!snap.exists) return;
+      const remote = snap.data();
+      if ((remote.lastModified || 0) > getLocalMtime()) {
+        adoptRemote(remote);
+        setSyncStatus('synced');
+      }
+    }, err => console.warn('FODMAP live sync error:', err));
   }
 
   // ── Force push button ────────────────────────
@@ -124,7 +206,8 @@ const firebaseConfig = {
       btn.disabled = true;
       setSyncStatus('syncing');
       try {
-        await docRef.set(gatherLocalData());
+        setLocalMtime(Date.now());
+        await pushLocal();
         setSyncStatus('synced');
         btn.textContent = '✓ Pushed!';
         setTimeout(() => { btn.textContent = '☁️ Push to Cloud'; btn.disabled = false; }, 2000);
@@ -142,7 +225,7 @@ const firebaseConfig = {
     firebase.initializeApp(firebaseConfig);
     db     = firebase.firestore();
     docRef = db.collection('fodmap').doc('data');
-    syncFromFirebase();
+    syncFromFirebase().then(listenForRemoteChanges);
     wireForceSync();
   } catch(e) {
     console.warn('Firebase init failed (offline?):', e);
