@@ -27,6 +27,8 @@
   let meals = loadMeals();
   let pendingCell = null;
   let editingRecipeId = null;
+  let progressMonthOffset = 0;        // 0 = latest visible month is the current month
+  let progress = loadProgress();      // { 'YYYY-MM-DD': true } map of days the plan was followed
 
   // ══════════════════════════════════════════
   //  DOM
@@ -652,6 +654,98 @@
         grid.appendChild(cell);
       });
     });
+  }
+
+  // ══════════════════════════════════════════
+  //  ③b  PROGRESS TRACKER (gold-star calendar)
+  // ══════════════════════════════════════════
+  const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const WEEKDAY_LETTERS = ['S','M','T','W','T','F','S'];
+
+  function loadProgress() {
+    try { return JSON.parse(localStorage.getItem('fodmap-planner-progress') || '{}'); } catch(e) { return {}; }
+  }
+  function saveProgress() {
+    try { localStorage.setItem('fodmap-planner-progress', JSON.stringify(progress)); } catch(e) {}
+  }
+  function isoKey(year, month, day) {
+    return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+  }
+
+  const progPrevBtn = document.getElementById('progress-prev');
+  const progNextBtn = document.getElementById('progress-next');
+  if (progPrevBtn) progPrevBtn.addEventListener('click', () => { progressMonthOffset--; renderProgress(); });
+  if (progNextBtn) progNextBtn.addEventListener('click', () => { if (progressMonthOffset < 0) { progressMonthOffset++; renderProgress(); } });
+
+  function renderProgress() {
+    const carousel = document.getElementById('progress-carousel');
+    if (!carousel) return;
+    const today = new Date();
+    const todayKey = isoKey(today.getFullYear(), today.getMonth(), today.getDate());
+    carousel.innerHTML = '';
+    // Show three consecutive months, ending at (current month + offset).
+    for (let i = -2; i <= 0; i++) {
+      const first = new Date(today.getFullYear(), today.getMonth() + progressMonthOffset + i, 1);
+      carousel.appendChild(buildMonthBox(first, todayKey));
+    }
+    // Can't peek past the current month — disable the "later" arrow when we're there.
+    if (progNextBtn) progNextBtn.disabled = progressMonthOffset >= 0;
+  }
+
+  function buildMonthBox(firstOfMonth, todayKey) {
+    const year = firstOfMonth.getFullYear();
+    const month = firstOfMonth.getMonth();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const startWeekday = new Date(year, month, 1).getDay();
+
+    let count = 0;
+    for (let day = 1; day <= daysInMonth; day++) if (progress[isoKey(year, month, day)]) count++;
+
+    const box = document.createElement('div');
+    box.className = 'month-box';
+
+    const title = document.createElement('div');
+    title.className = 'month-box-title';
+    title.innerHTML = `<span class="month-box-name">${MONTH_NAMES[month]} ${year}</span>` +
+      `<span class="month-box-count">${count ? '⭐ ' + count : ''}</span>`;
+    box.appendChild(title);
+
+    const grid = document.createElement('div');
+    grid.className = 'month-grid';
+
+    WEEKDAY_LETTERS.forEach(w => {
+      const h = document.createElement('div');
+      h.className = 'month-weekday';
+      h.textContent = w;
+      grid.appendChild(h);
+    });
+
+    for (let b = 0; b < startWeekday; b++) {
+      const blank = document.createElement('div');
+      blank.className = 'month-day blank';
+      grid.appendChild(blank);
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const key = isoKey(year, month, day);
+      const cell = document.createElement('button');
+      cell.className = 'month-day';
+      if (key === todayKey) cell.classList.add('today');
+      if (progress[key]) cell.classList.add('followed');
+      const isFuture = key > todayKey;
+      if (isFuture) { cell.classList.add('future'); cell.disabled = true; }
+      cell.innerHTML = `<span class="month-day-num">${day}</span><span class="month-day-star">⭐</span>`;
+      if (!isFuture) {
+        cell.addEventListener('click', () => {
+          if (progress[key]) delete progress[key]; else progress[key] = true;
+          saveProgress(); renderProgress();
+        });
+      }
+      grid.appendChild(cell);
+    }
+
+    box.appendChild(grid);
+    return box;
   }
 
   // ── Picker ────────────────────────────────────────────
@@ -1390,7 +1484,9 @@
           }
         });
         meals = loadMeals();
+        progress = loadProgress();
         renderPlanner();
+        renderProgress();
         renderFindsView();
         alert(`✅ Imported successfully! ${count} data categories restored.`);
       } catch(err) {
@@ -1435,7 +1531,9 @@
   // ══════════════════════════════════════════
   window.fodmapRefresh = function() {
     meals = loadMeals();
+    progress = loadProgress();
     renderPlanner();
+    renderProgress();
     renderFindsView();
     renderRecipeGrid();
   };
@@ -1444,5 +1542,6 @@
   //  INIT
   // ══════════════════════════════════════════
   renderPlanner();
+  renderProgress();
 
 })();

@@ -633,6 +633,104 @@ main { max-width: 1280px; margin: 0 auto; padding: 20px; }
   background: var(--primary-light);
 }
 
+/* ── PROGRESS TRACKER (gold-star calendar) ───── */
+.progress-section { margin-top: 36px; }
+
+.progress-header { margin-bottom: 16px; }
+.progress-title {
+  font-size: 20px; font-weight: 800; color: var(--text);
+  display: flex; align-items: center; gap: 6px;
+}
+.progress-sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; max-width: 640px; }
+
+.progress-carousel-wrap {
+  display: flex; align-items: stretch; gap: 10px;
+}
+
+.progress-nav-btn {
+  flex: 0 0 auto;
+  width: 40px; border-radius: 14px; border: 2px solid var(--border);
+  background: var(--card); font-size: 24px; cursor: pointer;
+  color: var(--primary); transition: all 0.15s; box-shadow: var(--shadow);
+  display: flex; align-items: center; justify-content: center;
+}
+.progress-nav-btn:hover:not(:disabled) { background: var(--primary); color: white; border-color: var(--primary); }
+.progress-nav-btn:disabled { opacity: 0.35; cursor: default; }
+
+.progress-carousel {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 4px;
+}
+
+.month-box {
+  scroll-snap-align: start;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 14px 16px;
+  min-width: 0;
+}
+
+.month-box-title {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px; gap: 8px;
+}
+.month-box-name { font-size: 14px; font-weight: 800; color: var(--text); }
+.month-box-count { font-size: 12px; font-weight: 800; color: #d99700; white-space: nowrap; }
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.month-weekday {
+  text-align: center; font-size: 10px; font-weight: 800;
+  color: var(--text-muted); text-transform: uppercase;
+  padding-bottom: 4px;
+}
+
+.month-day {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  font-size: 12px; font-weight: 700; color: var(--text);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+  transition: all 0.12s;
+}
+.month-day:hover:not(.followed):not(.future) {
+  border-color: var(--primary); background: var(--primary-light);
+}
+.month-day.blank { border: none; background: none; cursor: default; }
+.month-day.today { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); }
+.month-day.future { opacity: 0.4; cursor: default; }
+
+.month-day-num { line-height: 1; transition: opacity 0.12s; }
+.month-day-star {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 19px; opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 0.18s, transform 0.18s;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 1px rgba(180,130,0,0.5));
+}
+.month-day.followed {
+  background: #fff8e1; border-color: #f4cf52;
+}
+.month-day.followed .month-day-num { opacity: 0; }
+.month-day.followed .month-day-star { opacity: 1; transform: scale(1); }
+
 /* ── PICKER MODAL ────────────────────────────── */
 .picker-modal {
   background: white; border-radius: 20px; width: 100%; max-width: 500px;
@@ -1231,6 +1329,11 @@ body.dark .rating-filter.active { background: var(--primary-light); color: var(-
 body.dark .planner-cell { background: var(--card); border-color: var(--border); }
 body.dark .meal-chip { background: var(--bg); }
 
+body.dark .month-box { background: var(--card); border-color: var(--border); }
+body.dark .month-day { background: var(--bg); border-color: var(--border); }
+body.dark .month-day.followed { background: #3a2f0a; border-color: #8a6d1a; }
+body.dark .month-box-count { color: #f4cf52; }
+
 body.dark .picker-cats button { background: var(--bg); }
 body.dark .picker-list { background: var(--card); }
 body.dark .picker-item:hover { background: var(--primary-light); }
@@ -1310,6 +1413,19 @@ body.dark #scroll-top { background: var(--primary); }
   .add-meal-btn { font-size: 11px; padding: 3px 8px; }
   .day-label { font-size: 11px; }
   .meal-type-label { font-size: 10px; }
+
+  /* Progress tracker — keep all 3 months on screen, tighter spacing */
+  .progress-carousel { gap: 7px; }
+  .progress-carousel-wrap { gap: 5px; }
+  .progress-nav-btn { width: 28px; font-size: 18px; border-radius: 10px; }
+  .month-box { padding: 8px 7px 10px; border-radius: 12px; }
+  .month-box-title { flex-direction: column; align-items: flex-start; gap: 1px; margin-bottom: 7px; }
+  .month-box-name { font-size: 11px; }
+  .month-box-count { font-size: 10px; }
+  .month-grid { gap: 2px; }
+  .month-weekday { font-size: 8px; padding-bottom: 2px; }
+  .month-day { font-size: 10px; border-radius: 5px; }
+  .month-day-star { font-size: 13px; }
 
   /* Modals — full screen on mobile */
   .modal-overlay { align-items: flex-end; padding: 0; }
