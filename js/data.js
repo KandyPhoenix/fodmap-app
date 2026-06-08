@@ -2842,6 +2842,27 @@ const SUBSTITUTIONS = [
       { avoid: 'Panko breadcrumbs', use: 'Crushed rice crackers or crushed corn flakes (GF)', note: 'Pulse plain rice crackers in a zip bag or processor until coarse crumbs. GF corn flakes work great as a crunchy coating or casserole topping. Both crisp up beautifully in the oven.' },
     ]
   },
+  {
+    id: 'cant-find',
+    label: '🔁 If You Can\'t Find It',
+    items: [
+      { avoid: 'Bok choy', use: 'Common/green cabbage (¾ cup), choy sum or gai lan, kale, or silverbeet (Swiss chard)', note: 'Bok choy is already low FODMAP (safe to ~1 cup/75g) — this is just for when you can\'t find it or want variety. All of these stir-fry the same way; cabbage and silverbeet give the same crunchy stalk. Note: "pak choi" is just another name for bok choy, not a substitute.' },
+      { avoid: 'Choy sum / gai lan (Chinese broccoli)', use: 'Bok choy, broccolini, or regular broccoli florets (¾ cup)', note: 'All are low FODMAP and behave the same in stir-fries and steaming. Broccolini is the closest in look and bite; broccoli florets (no big stalks) work too.' },
+      { avoid: 'Silverbeet / Swiss chard', use: 'Kale, baby spinach, or collard greens', note: 'All low FODMAP. Kale holds up best to heat; baby spinach wilts fast so add it at the end. Use the leaves the same way the recipe uses chard.' },
+      { avoid: 'Barramundi or a specific white fish', use: 'Any firm white fish — cod, haddock, snapper, basa, or tilapia', note: 'All plain fish is naturally FODMAP-free, so any white fish swaps 1:1. Match the thickness for cook time; thinner fillets need a couple of minutes less.' },
+      { avoid: 'Halloumi', use: 'Firm feta (low-lactose) or extra-firm tofu for grilling', note: 'Hard/aged cheeses are low in lactose. For the same grill-and-hold texture, press extra-firm tofu and pan-sear it. Both take on marinades well.' },
+      { avoid: 'Rice noodles', use: 'Rice vermicelli, flat rice noodles, GF spaghetti, or zucchini noodles', note: 'Any rice-based noodle is a direct swap. GF spaghetti works for saucy dishes; spiralised zucchini is a lighter, lower-carb option for stir-fries (add at the end).' },
+      { avoid: 'Tamari', use: 'Coconut aminos, or regular soy sauce only if gluten isn\'t an issue', note: 'Coconut aminos are a 1:1 swap and slightly sweeter (use a touch less). Tamari is the GF version of soy sauce — if you don\'t need gluten-free, regular soy sauce works but check it\'s plain.' },
+      { avoid: 'Coconut aminos', use: 'Tamari (GF soy sauce) — use a little less', note: 'Tamari is saltier than coconut aminos, so start with about ¾ of the amount and adjust. Both are low FODMAP.' },
+      { avoid: 'Garlic-infused olive oil', use: 'Make your own, or use plain olive oil + a pinch of asafoetida', note: 'Gently warm 2–3 smashed garlic cloves in oil for a few minutes, then remove the cloves — the flavour is oil-soluble but the FODMAPs are not. A pinch of asafoetida (hing) in plain oil also mimics that garlicky depth.' },
+      { avoid: 'Maple syrup', use: 'Rice malt syrup, or golden syrup / cane sugar in small amounts', note: 'Rice malt syrup is fructose-free and pours the same. Golden syrup or dissolved cane sugar work for sweetness — all low FODMAP at normal amounts.' },
+      { avoid: 'Quinoa', use: 'White rice, millet, or buckwheat', note: 'All naturally gluten-free and low FODMAP. Cook to the grain\'s own ratio; they slot straight into bowls, salads, and sides where quinoa is used.' },
+      { avoid: 'Fresh herbs (basil, thyme, rosemary, etc.)', use: 'Dried version — use about ⅓ the amount', note: 'Dried herbs are more concentrated, so 1 tbsp fresh ≈ 1 tsp dried. Add dried herbs earlier in cooking so they soften; save fresh for the end.' },
+      { avoid: 'Polenta / cornmeal', use: 'Fine cornmeal/grits, or creamy mashed potato as the base', note: 'Any ground corn (cornmeal, grits) makes polenta. If you can\'t find it at all, a soft mashed potato gives the same creamy bed under stews and proteins — both low FODMAP.' },
+      { avoid: 'Kewpie / a specific mayo', use: 'Any plain mayonnaise (Hellmann\'s, etc.)', note: 'Most plain mayo is low FODMAP — just avoid versions listing garlic or onion. For the Kewpie tang, stir in a few drops of rice wine vinegar.' },
+      { avoid: 'Lactose-free milk', use: 'Unsweetened almond milk', note: 'A 1:1 swap in cooking, smoothies, and baking. Avoid oat milk (fructans) and large amounts of cashew milk. Macadamia and rice milk are also low FODMAP.' },
+    ]
+  },
 ];
 
 // ── RECIPE CALORIES (estimated per serving) ────────────────────────────────
