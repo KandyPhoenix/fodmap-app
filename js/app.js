@@ -1203,7 +1203,7 @@
     catch(e) {}
   }
 
-  const PREP_WORDS = /[,\s]+(sliced|diced|chopped|minced|crushed|peeled|grated|shredded|julienned|halved|quartered|cubed|crumbled|mashed|trimmed|stemmed|seeded|deseeded|pitted|zested|juiced|squeezed|beaten|whisked|softened|melted|divided|separated|cut|broken|snapped|shaved|warmed|chilled|torn|rinsed|drained|thawed|frozen|fresh|dried|cooked|raw|boiled|hard-boiled|soft-boiled|fried|poached|scrambled|thinly|roughly|finely|coarsely|lightly|well|about|optional|garnish|lengthways|lengthwise|to garnish|for garnish|for serving|to serve)\b.*/gi;
+  const PREP_WORDS = /[,\s]+(sliced|diced|chopped|minced|crushed|peeled|grated|shredded|julienned|halved|quartered|cubed|crumbled|mashed|trimmed|stemmed|seeded|deseeded|pitted|zested|juiced|squeezed|beaten|whisked|softened|melted|divided|separated|cut|broken|snapped|shaved|wedges|wedge|rounds|slices|warmed|chilled|torn|rinsed|drained|thawed|frozen|fresh|dried|cooked|raw|boiled|hard-boiled|soft-boiled|fried|poached|scrambled|thinly|roughly|finely|coarsely|lightly|well|about|optional|garnish|lengthways|lengthwise|to garnish|for garnish|for serving|to serve)\b.*/gi;
 
   // Leading words that describe size/freshness/cooking-state but not what you buy
   const LEADING_QUALIFIERS = /^\s*(baby|fresh|large|small|medium|ripe|lean|smooth|crunchy|boiled|hard-boiled|soft-boiled|fried|poached|scrambled)\s+/;
@@ -1276,6 +1276,15 @@
     return '';
   }
 
+  // Different names for the same thing → one canonical label.
+  const INGREDIENT_SYNONYMS = [
+    { canon: 'green onions', re: /\b(scallions?|green onions?|spring onions?)\b/ },
+  ];
+  function applyIngredientSynonym(base) {
+    for (const s of INGREDIENT_SYNONYMS) if (s.re.test(base)) return s.canon;
+    return base;
+  }
+
   // Returns { key, label } for the shopping list: a merge key and a display name,
   // with any product form (canned/frozen/dried/…) preserved as a prefix.
   function shoppingIdentity(item, qty) {
@@ -1289,11 +1298,11 @@
         if (/^(canned|tinned|frozen|dried|dehydrated|jarred|pickled)\b/.test(inner)) { form = ingredientForm(inner, ''); break; }
       }
     }
-    const base = stripIngredientDescriptors(raw)
+    const base = applyIngredientSynonym(stripIngredientDescriptors(raw)
       .replace(/\b(canned|tinned|frozen|dried|dehydrated|jarred|pickled)\b/g, ' ')
       .replace(/^\s*or\s+|\s+or\s*$/g, '')
       .replace(/[,;.\s]+$/, '')
-      .replace(/\s+/g, ' ').trim();
+      .replace(/\s+/g, ' ').trim());
 
     const canon = canonicalSeasoning(base);
     if (canon) return { key: canon, label: prettyIngredientName(canon) };
