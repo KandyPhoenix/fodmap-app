@@ -1267,6 +1267,45 @@
     return canonicalSeasoning(base) || singularizeHead(base);
   }
 
+  // Detect the product form so fresh / canned / frozen / dried stay distinct
+  // ("fresh corn" vs "canned corn" vs "frozen corn" are different things to buy).
+  function ingredientForm(itemMain, qtyLower) {
+    if ((/\bcanned\b|\btinned\b/.test(itemMain) || /\btins?\b|\bcans?\b/.test(qtyLower)) && !/not\s+canned/.test(itemMain)) return 'canned';
+    if (/\bfrozen\b/.test(itemMain))            return 'frozen';
+    if (/\b(dried|dehydrated)\b/.test(itemMain)) return 'dried';
+    if (/\bjarred\b/.test(itemMain))            return 'jarred';
+    if (/\bpickled\b/.test(itemMain))           return 'pickled';
+    return '';
+  }
+
+  // Returns { key, label } for the shopping list: a merge key and a display name,
+  // with any product form (canned/frozen/dried/…) preserved as a prefix.
+  function shoppingIdentity(item, qty) {
+    // "canned or frozen" / "fresh or frozen" → keep the first form
+    const raw  = item.toLowerCase().replace(/\b(fresh|canned|tinned|frozen|dried|jarred|pickled)\s+or\s+(fresh|canned|tinned|frozen|dried|jarred|pickled)\b/g, '$1');
+    const main = raw.replace(/\([^)]*\)/g, ' ');     // form from the main text/qty, ignoring notes like "(or 1 tsp dried)"
+    let form = ingredientForm(main, (qty || '').toLowerCase());
+    if (!form) {                                     // …but do honour a parenthetical that *is* a form, e.g. "(canned, full-fat)"
+      for (const p of (raw.match(/\(([^)]*)\)/g) || [])) {
+        const inner = p.slice(1, -1).trim();
+        if (/^(canned|tinned|frozen|dried|dehydrated|jarred|pickled)\b/.test(inner)) { form = ingredientForm(inner, ''); break; }
+      }
+    }
+    const base = stripIngredientDescriptors(raw)
+      .replace(/\b(canned|tinned|frozen|dried|dehydrated|jarred|pickled)\b/g, ' ')
+      .replace(/^\s*or\s+|\s+or\s*$/g, '')
+      .replace(/[,;.\s]+$/, '')
+      .replace(/\s+/g, ' ').trim();
+
+    const canon = canonicalSeasoning(base);
+    if (canon) return { key: canon, label: prettyIngredientName(canon) };
+
+    const simple = base && !/[,&]| and /.test(base);   // don't prefix forms onto compound lines
+    const label  = (form && simple) ? `${form} ${base}` : base;
+    const key    = (form && simple ? `${form} ` : '') + singularizeHead(base);
+    return { key, label: prettyIngredientName(label) };
+  }
+
   // Title-case the first letter for a clean display name ("carrots" → "Carrots")
   function prettyIngredientName(label) {
     return label ? label.charAt(0).toUpperCase() + label.slice(1) : label;
@@ -1294,16 +1333,15 @@
         if (!recipe) return;
         (recipe.ingredients || []).forEach(ing => {
           if (ing.item === '—') return;
-          const base  = stripIngredientDescriptors(ing.item) || cleanIngredientName(ing.item);
-          const canon = canonicalSeasoning(base);
-          const key   = canon || singularizeHead(base);
-          const label = prettyIngredientName(canon || base);
-          if (!ingredientMap[key]) {
-            ingredientMap[key] = { name: label, lines: [] };
-          } else if (!canon && /s$/.test(base) && !/s$/.test(ingredientMap[key].name.toLowerCase())) {
-            ingredientMap[key].name = label;   // prefer a plural label ("Carrots")
+          const { key, label } = shoppingIdentity(ing.item, ing.qty);
+          const k   = key   || cleanIngredientName(ing.item).toLowerCase();
+          const lab = label || prettyIngredientName(cleanIngredientName(ing.item));
+          if (!ingredientMap[k]) {
+            ingredientMap[k] = { name: lab, lines: [] };
+          } else if (/s$/.test(lab) && !/s$/.test(ingredientMap[k].name)) {
+            ingredientMap[k].name = lab;   // prefer a plural label ("Carrots")
           }
-          ingredientMap[key].lines.push({
+          ingredientMap[k].lines.push({
             qty:    convertGrams(ing.qty || ''),
             recipe: recipe.name,
           });
