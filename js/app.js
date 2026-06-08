@@ -73,10 +73,12 @@
       document.getElementById('view-planner').classList.toggle('hidden', currentView !== 'planner');
       document.getElementById('view-subs').classList.toggle('hidden',    currentView !== 'subs');
       document.getElementById('view-checker').classList.toggle('hidden', currentView !== 'checker');
+      document.getElementById('view-snacks').classList.toggle('hidden',  currentView !== 'snacks');
       document.getElementById('view-finds').classList.toggle('hidden',   currentView !== 'finds');
       if (currentView === 'subs') renderSubsView();
       if (currentView === 'finds') renderFindsView();
-      searchInput.placeholder = currentView === 'recipes' ? 'Search recipes…' : currentView === 'subs' ? 'Search substitutions…' : currentView === 'checker' ? 'Search foods or recipes…' : currentView === 'finds' ? 'Search finds…' : currentView === 'planner' ? 'Search foods or recipes…' : 'Search foods…';
+      if (currentView === 'snacks') renderSnacksView();
+      searchInput.placeholder = currentView === 'recipes' ? 'Search recipes…' : currentView === 'subs' ? 'Search substitutions…' : currentView === 'checker' ? 'Search foods or recipes…' : currentView === 'finds' ? 'Search finds…' : currentView === 'snacks' ? 'Search snacks…' : currentView === 'planner' ? 'Search foods or recipes…' : 'Search foods…';
     });
   });
 
@@ -90,6 +92,7 @@
     else if (currentView === 'recipes') renderRecipeGrid();
     else if (currentView === 'subs') renderSubsView();
     else if (currentView === 'finds') renderFindsView();
+    else if (currentView === 'snacks') renderSnacksView();
   });
   clearBtn.addEventListener('click', () => {
     searchInput.value = ''; searchQuery = '';
@@ -99,6 +102,7 @@
     else if (currentView === 'recipes') renderRecipeGrid();
     else if (currentView === 'subs') renderSubsView();
     else if (currentView === 'finds') renderFindsView();
+    else if (currentView === 'snacks') renderSnacksView();
   });
 
   // ══════════════════════════════════════════
@@ -610,6 +614,34 @@
 
   function escHtml(str) {
     return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ══════════════════════════════════════════
+  //  SNACKS (on-the-go low-FODMAP ideas)
+  // ══════════════════════════════════════════
+  function renderSnacksView() {
+    const data = typeof SNACKS !== 'undefined' ? SNACKS : [];
+    const q = searchQuery.toLowerCase();
+    const el = document.getElementById('snacks-content');
+    if (!el) return;
+    el.innerHTML = '';
+    data.forEach(group => {
+      const items = group.items.filter(it =>
+        !q || it.name.toLowerCase().includes(q) || it.note.toLowerCase().includes(q));
+      if (!items.length) return;
+      const section = document.createElement('div');
+      section.className = 'snack-group' + (group.id === 'avoid' ? ' snack-group-avoid' : '');
+      section.innerHTML = `<div class="snack-group-title">${group.label}</div>` +
+        items.map(it => `
+          <div class="snack-card">
+            <div class="snack-name">${escHtml(it.name)}</div>
+            <div class="snack-note">${escHtml(it.note)}</div>
+          </div>`).join('');
+      el.appendChild(section);
+    });
+    if (!el.children.length) {
+      el.innerHTML = '<div class="no-results"><div class="no-results-icon">🥨</div><p>No snacks match your search.</p></div>';
+    }
   }
 
   // ══════════════════════════════════════════
