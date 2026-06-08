@@ -1149,15 +1149,71 @@
     catch(e) {}
   }
 
-  const PREP_WORDS = /[,\s]+(sliced|diced|chopped|minced|crushed|peeled|grated|shredded|julienned|halved|quartered|torn|rinsed|drained|thawed|frozen|fresh|dried|cooked|raw|thinly|roughly|finely|coarsely|lightly|well|about|optional|garnish|to garnish|for garnish|for serving|to serve)\b.*/gi;
+  const PREP_WORDS = /[,\s]+(sliced|diced|chopped|minced|crushed|peeled|grated|shredded|julienned|halved|quartered|cubed|crumbled|mashed|trimmed|stemmed|seeded|deseeded|pitted|zested|juiced|squeezed|beaten|whisked|softened|melted|divided|separated|cut|broken|snapped|shaved|rounds|wedges|strips|florets|spears|ribbons|batons|matchsticks|sticks|warmed|chilled|torn|rinsed|drained|thawed|frozen|fresh|dried|cooked|raw|boiled|hard-boiled|soft-boiled|fried|poached|scrambled|thinly|roughly|finely|coarsely|lightly|well|about|optional|garnish|lengthways|lengthwise|to garnish|for garnish|for serving|to serve)\b.*/gi;
 
+  // Leading words that describe size/freshness/cooking-state but not what you buy
+  const LEADING_QUALIFIERS = /^\s*(baby|fresh|large|small|medium|ripe|smooth|crunchy|boiled|hard-boiled|soft-boiled|fried|poached|scrambled)\s+/;
+
+  // Reduce a head-noun to singular so "eggs" == "egg", "tomatoes" == "tomato"
+  function singularize(w) {
+    if (w.length <= 3) return w;
+    if (/(ss|us|is|os)$/.test(w)) return w;          // asparagus, hummus, couscous, molasses
+    if (/ies$/.test(w)) return w.replace(/ies$/, 'y'); // berries → berry
+    if (/oes$/.test(w)) return w.replace(/oes$/, 'o'); // tomatoes → tomato, potatoes → potato
+    if (/s$/.test(w))  return w.replace(/s$/, '');     // eggs → egg, carrots → carrot
+    return w;
+  }
+
+  // Strip qty/prep/usage descriptors down to the base ingredient, but keep plural form
+  // (used for the display label so the header reads naturally, e.g. "Carrots").
+  function stripIngredientDescriptors(name) {
+    let s = name.toLowerCase();
+    s = s.replace(/^\s*\d+([.\/]\d+)?\s+/, ''); // drop a leading quantity a user may have typed ("2 eggs")
+    s = s.replace(/\(.*?\)/g, ' ');        // strip (garnish), (optional), (about 2 tbsp) etc.
+    s = s.replace(/\bfor\b.*$/, '');       // drop usage phrases: "for toast", "for the pan", "for squeezing"
+    s = s.replace(/\bper\b.*$/, '');       // drop "per person", "per serve"
+    s = s.replace(/\bplus\b.*$/, '');      // drop "plus more", "plus extra"
+    s = s.replace(PREP_WORDS, '');         // strip ", sliced", " halved …", "divided", "cut into chunks", etc.
+    // drop leading size/freshness/state words so "baby bok choy" == "bok choy", "boiled eggs" == "eggs"
+    let prev;
+    do { prev = s; s = s.replace(LEADING_QUALIFIERS, ''); } while (s !== prev);
+    return s.replace(/[,;.\s]+$/, '').replace(/\s+/g, ' ').trim();
+  }
+
+  function singularizeHead(s) {
+    if (!s) return s;
+    const w = s.split(' ');
+    w[w.length - 1] = singularize(w[w.length - 1]);
+    return w.join(' ');
+  }
+
+  // Collapse pure salt/pepper seasoning lines ("salt and black pepper",
+  // "sea salt & cracked pepper") to one canonical label. Returns null for
+  // anything that isn't purely salt and/or pepper — so "bell pepper",
+  // "black beans", "salt …and fresh lemon juice" are left alone.
+  function canonicalSeasoning(base) {
+    const t = base
+      .replace(/\b(sea|kosher|table|flaky|fine|coarse|ground|freshly|cracked|black|white|pink|himalayan|rock)\b/g, ' ')
+      .replace(/\band\b/g, ' ')
+      .replace(/[,&]/g, ' ')
+      .replace(/\s+/g, ' ').trim();
+    const tokens = t.split(' ').filter(Boolean);
+    if (!tokens.length || !tokens.every(tok => tok === 'salt' || tok === 'pepper')) return null;
+    const hasSalt = tokens.includes('salt'), hasPepper = tokens.includes('pepper');
+    if (hasSalt && hasPepper) return 'salt and pepper';
+    return hasSalt ? 'salt' : 'pepper';
+  }
+
+  // The merge identity: a canonical seasoning, or the base with its head noun
+  // singularized so "egg" == "eggs", "carrot" == "carrots". Different ingredients stay distinct.
   function normalizeIngredientKey(name) {
-    return name
-      .toLowerCase()
-      .replace(/\(.*?\)/g, '')   // strip (garnish), (optional), (about 2 tbsp) etc.
-      .replace(PREP_WORDS, '')   // strip ", sliced", ", finely chopped" etc.
-      .replace(/[,;]+$/, '')     // trailing punctuation
-      .trim();
+    const base = stripIngredientDescriptors(name);
+    return canonicalSeasoning(base) || singularizeHead(base);
+  }
+
+  // Title-case the first letter for a clean display name ("carrots" → "Carrots")
+  function prettyIngredientName(label) {
+    return label ? label.charAt(0).toUpperCase() + label.slice(1) : label;
   }
 
   function cleanIngredientName(name) {
@@ -1182,8 +1238,15 @@
         if (!recipe) return;
         (recipe.ingredients || []).forEach(ing => {
           if (ing.item === '—') return;
-          const key = normalizeIngredientKey(ing.item);
-          if (!ingredientMap[key]) ingredientMap[key] = { name: cleanIngredientName(ing.item), lines: [] };
+          const base  = stripIngredientDescriptors(ing.item) || cleanIngredientName(ing.item);
+          const canon = canonicalSeasoning(base);
+          const key   = canon || singularizeHead(base);
+          const label = prettyIngredientName(canon || base);
+          if (!ingredientMap[key]) {
+            ingredientMap[key] = { name: label, lines: [] };
+          } else if (!canon && /s$/.test(base) && !/s$/.test(ingredientMap[key].name.toLowerCase())) {
+            ingredientMap[key].name = label;   // prefer a plural label ("Carrots")
+          }
           ingredientMap[key].lines.push({
             qty:    convertGrams(ing.qty || ''),
             recipe: recipe.name,
@@ -1216,17 +1279,13 @@
         seen.add(k); return true;
       });
 
-      // Only show breakdown if more than one line (or one line with a qty worth showing)
-      const showBreakdown = uniqueLines.length > 1;
-      const breakdownHtml = showBreakdown
-        ? `<div class="si-breakdown">${uniqueLines.map(l => {
-            const isToTaste = /^(to taste|as needed|pinch|dash|—)/i.test(l.qty.trim());
-            return `<div class="si-line">
-              <span class="si-line-qty">${isToTaste ? l.qty : l.qty}</span>
-              <span class="si-line-recipe">— ${l.recipe}</span>
-            </div>`;
-          }).join('')}</div>`
-        : '';
+      // Always show which recipe(s) each ingredient is for. Repeat the per-line
+      // quantity only when an item spans more than one recipe (otherwise it just
+      // echoes the total).
+      const showLineQty = uniqueLines.length > 1;
+      const breakdownHtml = `<div class="si-breakdown">${uniqueLines.map(l =>
+        `<div class="si-line">${showLineQty ? `<span class="si-line-qty">${l.qty}</span>` : ''}<span class="si-line-recipe">— ${l.recipe}</span></div>`
+      ).join('')}</div>`;
 
       return `<div class="shopping-item${isChecked ? ' checked' : ''}" data-si="${i}">
         <div class="shopping-checkbox"></div>
