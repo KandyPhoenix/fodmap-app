@@ -2865,6 +2865,71 @@ const SUBSTITUTIONS = [
   },
 ];
 
+// ── ON-THE-GO SNACKS (quick low-FODMAP grab-and-go ideas) ──────────────────
+const SNACKS = [
+  {
+    id: 'packaged',
+    label: '🛒 Packaged & Shelf-Stable',
+    items: [
+      { name: 'Plain rice cakes / corn thins', note: 'Naturally low FODMAP. Top with peanut butter or a slice of cheese for staying power.' },
+      { name: 'Plain rice crackers', note: 'Check the label for onion/garlic powder. Rice- and corn-based are safest.' },
+      { name: 'Plain popcorn', note: 'Low FODMAP up to about 7 cups popped. Lightly salted; skip toffee/“gourmet” flavours.' },
+      { name: 'Plain potato or corn chips', note: 'Just potato/corn, oil and salt. Avoid onion, sour-cream, or “BBQ” seasoned varieties.' },
+      { name: 'GF pretzels', note: 'A great crunchy fix. Watch portion if they contain added inulin/chicory root.' },
+      { name: 'Nuts — peanuts, walnuts, pecans, macadamias, Brazil', note: 'Stick to a small handful (~10–15). 🚫 Avoid cashews and pistachios — both high FODMAP.' },
+      { name: 'Pumpkin or sunflower seeds', note: 'Low FODMAP at ~2 tbsp; great protein and crunch for a trail-mix base.' },
+      { name: 'Certified low-FODMAP snack bars', note: 'Look for the Monash or FODMAP Friendly logo (e.g. FODY, Casa de Sante). Most regular bars have honey/inulin.' },
+      { name: 'Beef jerky / biltong', note: 'High protein and portable — but check the label: many have onion or garlic. Choose a plain one.' },
+    ]
+  },
+  {
+    id: 'fruit',
+    label: '🍎 Fresh Fruit',
+    items: [
+      { name: 'Firm banana', note: 'Low FODMAP when firm/just-ripe (1 medium). Overripe bananas climb into moderate FODMAP.' },
+      { name: 'Orange or mandarin', note: 'Citrus is reliably low FODMAP — easy to peel and pack.' },
+      { name: 'Kiwifruit', note: 'Low FODMAP at 2 small. Also helps keep things regular.' },
+      { name: 'Grapes', note: 'Low FODMAP at any normal handful — easy no-prep snack.' },
+      { name: 'Strawberries', note: 'Low FODMAP at ~5–10. Pack in a small tub.' },
+      { name: 'Blueberries', note: 'Low FODMAP at a small handful (~¼ cup). Great mixed with lactose-free yogurt.' },
+      { name: 'Cantaloupe / rockmelon', note: 'Low FODMAP at ~¾ cup. (Watermelon and mango are high — skip those.)' },
+    ]
+  },
+  {
+    id: 'veg-protein',
+    label: '🥕 Veg & Protein',
+    items: [
+      { name: 'Carrot or cucumber sticks', note: 'Both low FODMAP and very portable. Pair with 2 tbsp peanut butter.' },
+      { name: 'Cherry tomatoes', note: 'Low FODMAP and snackable straight from the tub.' },
+      { name: 'Bell pepper (capsicum) strips', note: 'Sweet and crunchy — low FODMAP at ~½ medium.' },
+      { name: 'Hard-boiled eggs', note: 'Zero FODMAPs, all protein. Boil a batch to grab through the week.' },
+      { name: 'Aged cheese — cheddar, swiss, parmesan', note: 'Hard cheeses are very low in lactose. Babybel and string cheese travel well.' },
+      { name: 'Lactose-free yogurt', note: 'A safe creamy snack — add blueberries or a few walnuts.' },
+      { name: 'Olives', note: 'Low FODMAP and shelf-stable in single-serve packs.' },
+    ]
+  },
+  {
+    id: 'sweet',
+    label: '🍫 Sweet Fix',
+    items: [
+      { name: 'Dark chocolate', note: 'Low FODMAP at ~5 squares (30g). Milk chocolate is fine at ~4 squares.' },
+      { name: 'Rice-malt-syrup or maple energy balls', note: 'Make with oats, peanut butter, seeds; sweeten with maple or rice malt syrup (not honey).' },
+      { name: 'Lactose-free ice cream or sorbet', note: 'Sorbet is usually safe — check it isn’t apple/pear/mango based or sweetened with honey.' },
+    ]
+  },
+  {
+    id: 'avoid',
+    label: '⚠️ Skip These On the Go',
+    items: [
+      { name: 'Trail mix with cashews, raisins or apple', note: 'Cashews, dried fruit and apple are all high FODMAP — a classic trigger combo.' },
+      { name: 'Granola / “healthy” bars with honey, inulin or chicory root', note: 'These three are common high-FODMAP add-ins hiding in “gut-friendly” bars.' },
+      { name: 'Dried fruit', note: 'Drying concentrates the FODMAPs — a few pieces can add up fast.' },
+      { name: 'Hummus & garlic dips', note: 'Chickpeas (large serve) plus garlic. Grab a plain cheese or nut snack instead.' },
+      { name: 'Apples, pears, watermelon, mango', note: 'High in excess fructose and/or polyols — keep to the fruit list above.' },
+    ]
+  },
+];
+
 // ── RECIPE CALORIES (estimated per serving) ────────────────────────────────
 const RECIPE_CALORIES = {
   // ── Breakfast ──
