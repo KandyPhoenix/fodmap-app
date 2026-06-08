@@ -815,7 +815,9 @@ body.dragging-meal { cursor: grabbing; user-select: none; -webkit-user-select: n
 .picker-custom-row input:focus { border-color: var(--primary); }
 
 /* ── SHOPPING LIST MODAL ─────────────────────── */
-.shopping-week-title { font-size: 14px; font-weight: 700; color: var(--text-muted); margin-bottom: 16px; }
+.shopping-list-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.shopping-week-title { font-size: 14px; font-weight: 700; color: var(--text-muted); }
+#uncheck-all-btn { flex-shrink: 0; border: 1px solid var(--border); }
 .shopping-category { margin-bottom: 20px; }
 .shopping-cat-title { font-size: 13px; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
 .shopping-item {
