@@ -802,6 +802,11 @@ body.dragging-meal { cursor: grabbing; user-select: none; -webkit-user-select: n
 .picker-item-info { flex: 1; }
 .picker-item-name { font-size: 14px; font-weight: 700; color: var(--text); }
 .picker-item-meta { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+.picker-group-label {
+  font-size: 11px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;
+  color: var(--primary); background: var(--primary-light);
+  padding: 6px 20px; position: sticky; top: 0; z-index: 1;
+}
 
 .picker-custom {
   padding: 12px 20px 20px; border-top: 1px solid var(--border); flex-shrink: 0;

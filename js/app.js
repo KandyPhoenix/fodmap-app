@@ -980,35 +980,90 @@
     openOverlay(pickerOverlay);
   }
 
+  // Flatten the snack list (minus the "skip these" group) into quick-pick options
+  function getSnackOptions() {
+    const out = [];
+    (typeof SNACKS !== 'undefined' ? SNACKS : []).forEach(g => {
+      if (g.id === 'avoid') return;
+      const emoji = (g.label.match(/^\S+/) || ['🥨'])[0];
+      g.items.forEach(it => out.push({ name: it.name, note: it.note, emoji }));
+    });
+    return out;
+  }
+
   function renderPickerList() {
+    const el = document.getElementById('picker-list');
+    el.innerHTML = '';
+    const isSnackSlot = pendingCell?.mealType === 'snack' && !!pendingCell?.dateKey;
+    let any = false;
+
+    // Quick snack options when filling a Snack slot
+    if (isSnackSlot) {
+      const snacks = getSnackOptions().filter(s =>
+        !pickerSearch || (s.name + ' ' + s.note).toLowerCase().includes(pickerSearch));
+      if (snacks.length) {
+        any = true;
+        const header = document.createElement('div');
+        header.className = 'picker-group-label';
+        header.textContent = '🥨 Quick Snacks';
+        el.appendChild(header);
+        snacks.forEach(s => {
+          const item = document.createElement('div');
+          item.className = 'picker-item';
+          item.innerHTML = `
+            <div class="picker-item-emoji">${s.emoji}</div>
+            <div class="picker-item-info">
+              <div class="picker-item-name">${escHtml(s.name)}</div>
+              <div class="picker-item-meta">${escHtml(s.note)}</div>
+            </div>`;
+          item.addEventListener('click', () => {
+            meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'custom', text: s.name };
+            saveMeals(); renderPlanner(); closeAll();
+          });
+          el.appendChild(item);
+        });
+      }
+    }
+
+    // Recipes
     const list = getAllRecipes().filter(r => {
       if (pickerCategory !== 'all' && r.category !== pickerCategory) return false;
       if (pickerSearch) return (r.name + ' ' + r.category).toLowerCase().includes(pickerSearch);
       return true;
     });
-    const el = document.getElementById('picker-list');
-    el.innerHTML = '';
-    if (!list.length) { el.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-muted)">No recipes found</div>'; return; }
-    list.forEach(r => {
-      const isUser = r.isCustom === true;
-      const item = document.createElement('div');
-      item.className = 'picker-item';
-      item.innerHTML = `
-        <div class="picker-item-emoji">${r.emoji || '🍽️'}</div>
-        <div class="picker-item-info">
-          <div class="picker-item-name">${isUser ? '<span style="color:#ff7043;font-size:10px;font-weight:800;margin-right:4px">⭐ MINE</span>' : ''}${r.name}</div>
-          <div class="picker-item-meta">⏱ ${r.time || '—'} · Serves ${r.serves || '—'}</div>
-        </div>`;
-      item.addEventListener('click', () => {
-        if (pendingCell?.dateKey) {
-          meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'recipe', id: r.id };
-          saveMeals(); renderPlanner(); closeAll();
-        } else {
-          closeAll(); openRecipeModal(r);
-        }
+    if (list.length) {
+      if (isSnackSlot) {
+        const header = document.createElement('div');
+        header.className = 'picker-group-label';
+        header.textContent = '🍳 Recipes';
+        el.appendChild(header);
+      }
+      list.forEach(r => {
+        any = true;
+        const isUser = r.isCustom === true;
+        const item = document.createElement('div');
+        item.className = 'picker-item';
+        item.innerHTML = `
+          <div class="picker-item-emoji">${r.emoji || '🍽️'}</div>
+          <div class="picker-item-info">
+            <div class="picker-item-name">${isUser ? '<span style="color:#ff7043;font-size:10px;font-weight:800;margin-right:4px">⭐ MINE</span>' : ''}${r.name}</div>
+            <div class="picker-item-meta">⏱ ${r.time || '—'} · Serves ${r.serves || '—'}</div>
+          </div>`;
+        item.addEventListener('click', () => {
+          if (pendingCell?.dateKey) {
+            meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'recipe', id: r.id };
+            saveMeals(); renderPlanner(); closeAll();
+          } else {
+            closeAll(); openRecipeModal(r);
+          }
+        });
+        el.appendChild(item);
       });
-      el.appendChild(item);
-    });
+    }
+
+    if (!any) {
+      el.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-muted)">No matches found</div>';
+    }
   }
 
   // ── Substitutions ─────────────────────────────────────
