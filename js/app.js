@@ -12,8 +12,26 @@
     catch(e) {}
     if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
   }
+  function getBuiltinRecipes() {
+    return [...(typeof KANDY_RECIPES !== 'undefined' ? KANDY_RECIPES : []), ...RECIPES];
+  }
+  function isBuiltinId(id) {
+    return getBuiltinRecipes().some(b => b.id === id);
+  }
+  function hasUserOverride(id) {
+    return getUserRecipes().some(r => r.id === id);
+  }
   function getAllRecipes() {
-    return [...getUserRecipes(), ...(typeof KANDY_RECIPES !== 'undefined' ? KANDY_RECIPES : []), ...RECIPES];
+    const builtins   = getBuiltinRecipes();
+    const builtinIds = new Set(builtins.map(b => b.id));
+    const userList   = getUserRecipes();
+    const overrides  = new Map(userList.map(r => [r.id, r]));
+    const merged = [];
+    // User-created recipes (those that aren't edits of a built-in) stay at the top
+    userList.forEach(r => { if (!builtinIds.has(r.id)) merged.push(r); });
+    // Built-ins, swapped for the user's edited copy when one exists
+    builtins.forEach(b => merged.push(overrides.get(b.id) || b));
+    return merged;
   }
 
   // ══════════════════════════════════════════
@@ -275,6 +293,8 @@
 
   function openRecipeModal(recipe) {
     const isUser = recipe.isCustom === true;
+    const isUserCreated  = !isBuiltinId(recipe.id);          // a recipe the user made from scratch
+    const isEditedBuiltin = !isUserCreated && hasUserOverride(recipe.id); // a built-in the user has edited
     const baseServes = recipe.serves || 2;
     const recipeCal = (typeof RECIPE_CALORIES !== 'undefined' && RECIPE_CALORIES[recipe.id]) ? RECIPE_CALORIES[recipe.id] : null;
 
@@ -291,16 +311,21 @@
 
     const ingList = buildIngList(1);
     const stepsList = (recipe.steps || []).map((step, i) => `<li class="step-item" data-step="${i}"><div class="step-num">${i + 1}</div><div class="step-text">${step}</div></li>`).join('');
-    const userControls = isUser ? `
+    const userControls = `
       <div style="padding:0 24px 8px;display:flex;gap:10px">
         <button class="action-btn" style="background:#fff3e0;color:#ff7043;flex:1" id="edit-recipe-btn">✏️ Edit Recipe</button>
-        <button class="action-btn danger" id="delete-recipe-btn">🗑 Delete</button>
-      </div>` : '';
+        ${isUserCreated
+          ? '<button class="action-btn danger" id="delete-recipe-btn">🗑 Delete</button>'
+          : (isEditedBuiltin ? '<button class="action-btn" id="reset-recipe-btn" style="background:var(--bg);color:var(--text)">↩️ Reset</button>' : '')}
+      </div>`;
     const addPlannerBtn = `<div style="padding:0 24px 24px"><button class="action-btn primary" id="add-to-planner-btn" style="width:100%;padding:12px">📅 Add to Meal Planner</button></div>`;
     const bannerClass = isUser ? 'rmodal-banner user-recipe-banner' : 'rmodal-banner';
     const badgeHtml   = isUser ? `<div style="display:inline-block;background:#ff7043;color:white;padding:4px 12px;border-radius:12px;font-size:11px;font-weight:800;letter-spacing:0.5px;margin-bottom:8px">⭐ MY RECIPE</div>` : '';
     const fodmapNoteHtml = (recipe.fodmapNote || recipe.fodmapnote)
       ? `<div class="rmodal-section"><div class="rmodal-section-title">💡 FODMAP Notes</div><div class="fodmap-note-box"><div class="fodmap-note-text">${recipe.fodmapNote || recipe.fodmapnote}</div></div></div>`
+      : '';
+    const notesHtml = recipe.notes
+      ? `<div class="rmodal-section"><div class="rmodal-section-title">📝 My Notes</div><div class="my-notes-box">${escHtml(recipe.notes).replace(/\n/g, '<br>')}</div></div>`
       : '';
 
     const alerts = getPortionAlerts(recipe);
@@ -365,6 +390,7 @@
         </div>
         <div class="rmodal-section"><div class="rmodal-section-title">👩‍🍳 Instructions</div><ul class="steps-list">${stepsList}</ul></div>
         ${fodmapNoteHtml}
+        ${notesHtml}
         ${alertsHtml}
         ${swapsHtml}
         ${addPlannerBtn}
@@ -400,9 +426,11 @@
       document.querySelector('[data-view="planner"]').click();
       setTimeout(() => openPicker(null, null, recipe), 120);
     });
-    if (isUser) {
-      document.getElementById('edit-recipe-btn').addEventListener('click', () => { closeAll(); openRecipeForm(recipe); });
+    document.getElementById('edit-recipe-btn').addEventListener('click', () => { closeAll(); openRecipeForm(recipe); });
+    if (isUserCreated) {
       document.getElementById('delete-recipe-btn').addEventListener('click', () => deleteUserRecipe(recipe.id, recipe.name));
+    } else if (isEditedBuiltin) {
+      document.getElementById('reset-recipe-btn').addEventListener('click', () => resetBuiltinRecipe(recipe.id, recipe.name));
     }
     openOverlay(modalOverlay);
   }
@@ -416,8 +444,7 @@
   function openRecipeForm(existing) {
     editingRecipeId = existing ? existing.id : null;
     const isEdit = !!existing;
-    document.getElementById('form-modal-title').textContent = isEdit ? '✏️ Edit My Recipe' : '✏️ Add My Recipe';
-    document.getElementById('rf-delete-btn').classList.toggle('hidden', !isEdit);
+    document.getElementById('form-modal-title').textContent = isEdit ? '✏️ Edit Recipe' : '✏️ Add My Recipe';
 
     // Populate fields
     document.getElementById('rf-emoji').value      = existing ? (existing.emoji || '') : '';
@@ -428,6 +455,7 @@
     document.getElementById('rf-difficulty').value = existing ? (existing.difficulty || 'easy') : 'easy';
     document.getElementById('rf-tags').value       = existing ? (existing.tags || []).join(', ') : '';
     document.getElementById('rf-fodmap-note').value = existing ? (existing.fodmapNote || '') : '';
+    document.getElementById('rf-notes').value      = existing ? (existing.notes || '') : '';
     document.getElementById('rf-name').classList.remove('error');
 
     // Ingredients
@@ -446,9 +474,20 @@
     document.getElementById('recipe-form-close').onclick = closeAll;
     document.getElementById('rf-cancel-btn').onclick     = closeAll;
     document.getElementById('rf-save-btn').onclick       = saveRecipeFromForm;
-    document.getElementById('rf-delete-btn').onclick     = () => {
-      if (existing) deleteUserRecipe(existing.id, existing.name);
-    };
+
+    // Delete (own recipes) vs. Reset to original (edited built-ins) vs. nothing yet
+    const delBtn = document.getElementById('rf-delete-btn');
+    if (isEdit && !isBuiltinId(existing.id)) {
+      delBtn.classList.remove('hidden');
+      delBtn.textContent = '🗑 Delete Recipe';
+      delBtn.onclick = () => deleteUserRecipe(existing.id, existing.name);
+    } else if (isEdit && hasUserOverride(existing.id)) {
+      delBtn.classList.remove('hidden');
+      delBtn.textContent = '↩️ Reset to Original';
+      delBtn.onclick = () => resetBuiltinRecipe(existing.id, existing.name);
+    } else {
+      delBtn.classList.add('hidden');
+    }
     document.getElementById('add-ingredient-btn').onclick = () => {
       ingredientRows.push({ qty: '', item: '' });
       renderIngredientRows();
@@ -518,7 +557,9 @@
     const tagRaw = document.getElementById('rf-tags').value;
     const tags   = tagRaw.split(',').map(t => t.trim()).filter(Boolean);
 
-    const recipe = {
+    // Start from the existing recipe so any fields the form doesn't cover survive an edit
+    const existing = editingRecipeId ? getAllRecipes().find(r => r.id === editingRecipeId) : null;
+    const recipe = Object.assign({}, existing || {}, {
       id:         editingRecipeId || 'user-' + Date.now(),
       name,
       emoji:      document.getElementById('rf-emoji').value.trim() || '🍽️',
@@ -530,8 +571,10 @@
       ingredients,
       steps,
       fodmapNote: document.getElementById('rf-fodmap-note').value.trim(),
-      isCustom:   true,
-    };
+      notes:      document.getElementById('rf-notes').value.trim(),
+      // Keep a built-in looking built-in; only scratch-made recipes get the "My Recipe" badge
+      isCustom:   existing ? (existing.isCustom === true) : true,
+    });
 
     const list = getUserRecipes();
     if (editingRecipeId) {
@@ -547,6 +590,15 @@
 
   function deleteUserRecipe(id, name) {
     if (!confirm(`Delete "${name}"? This cannot be undone.`)) return;
+    const list = getUserRecipes().filter(r => r.id !== id);
+    saveUserRecipes(list);
+    renderRecipeGrid();
+    closeAll();
+  }
+
+  // Drop a user's edits to a built-in recipe, restoring the original
+  function resetBuiltinRecipe(id, name) {
+    if (!confirm(`Reset "${name}" back to the original recipe? Your changes will be removed.`)) return;
     const list = getUserRecipes().filter(r => r.id !== id);
     saveUserRecipes(list);
     renderRecipeGrid();
