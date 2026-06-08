@@ -1,4 +1,4 @@
-const CACHE = 'fodmap-v17';
+const CACHE = 'fodmap-v18';
 const ASSETS = [
   './',
   './index.html',
@@ -28,20 +28,25 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  // Always pass Firebase and CDN requests straight to network
   const url = e.request.url;
+  if (e.request.method !== 'GET') return;
+  // Always pass Firebase and CDN requests straight to network
   if (url.includes('firebase') || url.includes('gstatic.com') || url.includes('googleapis.com')) {
     return;
   }
+
+  // Network-first for our own app shell, so a new version shows up on a normal
+  // reload — no hard refresh (Ctrl+Shift+R) needed. Falls back to the cache
+  // when offline, so the app still works without a signal (e.g. in a store).
   e.respondWith(
-    caches.match(e.request).then(cached => {
-      if (cached) return cached;
-      return fetch(e.request).then(res => {
-        if (!res || res.status !== 200 || res.type === 'opaque') return res;
-        const clone = res.clone();
-        caches.open(CACHE).then(c => c.put(e.request, clone));
+    fetch(e.request)
+      .then(res => {
+        if (res && res.status === 200 && res.type !== 'opaque') {
+          const clone = res.clone();
+          caches.open(CACHE).then(c => c.put(e.request, clone));
+        }
         return res;
-      }).catch(() => caches.match('./index.html'));
-    })
+      })
+      .catch(() => caches.match(e.request).then(cached => cached || caches.match('./index.html')))
   );
 });
