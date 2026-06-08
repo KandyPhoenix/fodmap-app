@@ -1063,6 +1063,10 @@
   // ── Shopping quantity helpers ────────────────────────
   function parseQtyNum(str) {
     let s = str.trim().toLowerCase().replace(/\([^)]*\)/g, '').trim();
+    // Fold unicode fractions so "10½ oz" → "10.5 oz" and "½ cup" → "0.5 cup"
+    const GLYPH = { '½':0.5, '¼':0.25, '¾':0.75, '⅓':1/3, '⅔':2/3, '⅛':0.125, '⅜':0.375, '⅝':0.625, '⅞':0.875 };
+    s = s.replace(/(\d+)\s*([½¼¾⅓⅔⅛⅜⅝⅞])/g, (_, d, g) => (parseInt(d) + GLYPH[g]).toString());
+    s = s.replace(/([½¼¾⅓⅔⅛⅜⅝⅞])/g, (_, g) => GLYPH[g].toString());
     let num = 0, matched = false;
     const mixed = s.match(/^(\d+)\s+(\d+)\/(\d+)/);
     const frac  = s.match(/^(\d+)\/(\d+)/);
@@ -1201,10 +1205,10 @@
     catch(e) {}
   }
 
-  const PREP_WORDS = /[,\s]+(sliced|diced|chopped|minced|crushed|peeled|grated|shredded|julienned|halved|quartered|cubed|crumbled|mashed|trimmed|stemmed|seeded|deseeded|pitted|zested|juiced|squeezed|beaten|whisked|softened|melted|divided|separated|cut|broken|snapped|shaved|rounds|wedges|strips|florets|spears|ribbons|batons|matchsticks|sticks|warmed|chilled|torn|rinsed|drained|thawed|frozen|fresh|dried|cooked|raw|boiled|hard-boiled|soft-boiled|fried|poached|scrambled|thinly|roughly|finely|coarsely|lightly|well|about|optional|garnish|lengthways|lengthwise|to garnish|for garnish|for serving|to serve)\b.*/gi;
+  const PREP_WORDS = /[,\s]+(sliced|diced|chopped|minced|crushed|peeled|grated|shredded|julienned|halved|quartered|cubed|crumbled|mashed|trimmed|stemmed|seeded|deseeded|pitted|zested|juiced|squeezed|beaten|whisked|softened|melted|divided|separated|cut|broken|snapped|shaved|warmed|chilled|torn|rinsed|drained|thawed|frozen|fresh|dried|cooked|raw|boiled|hard-boiled|soft-boiled|fried|poached|scrambled|thinly|roughly|finely|coarsely|lightly|well|about|optional|garnish|lengthways|lengthwise|to garnish|for garnish|for serving|to serve)\b.*/gi;
 
   // Leading words that describe size/freshness/cooking-state but not what you buy
-  const LEADING_QUALIFIERS = /^\s*(baby|fresh|large|small|medium|ripe|smooth|crunchy|boiled|hard-boiled|soft-boiled|fried|poached|scrambled)\s+/;
+  const LEADING_QUALIFIERS = /^\s*(baby|fresh|large|small|medium|ripe|lean|smooth|crunchy|boiled|hard-boiled|soft-boiled|fried|poached|scrambled)\s+/;
 
   // Reduce a head-noun to singular so "eggs" == "egg", "tomatoes" == "tomato"
   function singularize(w) {
