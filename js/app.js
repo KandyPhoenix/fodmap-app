@@ -585,6 +585,7 @@
     }
     saveUserRecipes(list);
     renderRecipeGrid();
+    renderPlanner();
     closeAll();
   }
 
@@ -593,6 +594,7 @@
     const list = getUserRecipes().filter(r => r.id !== id);
     saveUserRecipes(list);
     renderRecipeGrid();
+    renderPlanner();
     closeAll();
   }
 
@@ -602,6 +604,7 @@
     const list = getUserRecipes().filter(r => r.id !== id);
     saveUserRecipes(list);
     renderRecipeGrid();
+    renderPlanner();
     closeAll();
   }
 

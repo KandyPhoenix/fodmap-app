@@ -410,8 +410,23 @@
   <script src="js/firebase-sync.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
+      // If a new version activates, reload once so the page runs the fresh code
+      // (no manual Ctrl+Shift+R needed). Only reload on an update, not first install.
+      let refreshing = false;
+      const hadController = !!navigator.serviceWorker.controller;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (refreshing) return;
+        refreshing = true;
+        if (hadController) window.location.reload();
+      });
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js');
+        navigator.serviceWorker.register('./sw.js').then(reg => {
+          reg.update();
+          // Check for a new version whenever the app comes back into focus
+          document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') reg.update();
+          });
+        }).catch(() => {});
       });
     }
   </script>
