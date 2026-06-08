@@ -1163,28 +1163,26 @@
     if (!sane.length) return qtys[0] || '—';
     const groups = {}, skipped = [];
     sane.forEach(q => {
-      const { num, unit } = parseQtyNum(q);
+      let { num, unit } = parseQtyNum(q);
       if (num === null) { skipped.push(q); return; }
+      // a "medium"/"large"/"small" item is still one item to buy — count them together
+      if (unit === 'medium' || unit === 'large' || unit === 'small') unit = 'each';
       groups[unit] = (groups[unit] || 0) + num;
     });
     if (!Object.keys(groups).length) return qtys.join(' + ');
 
-    // Check for shopping hint on count-type units
-    const countUnits = ['each','medium','large','small'];
-    for (const [u, total] of Object.entries(groups)) {
-      if (countUnits.includes(u)) {
-        const nameLower = itemName.toLowerCase();
+    const nameLower = itemName.toLowerCase();
+    const parts = Object.entries(groups).map(([unit, total]) => {
+      if (unit === 'each') {
+        // apply a shopping hint to the combined count (e.g. "1 bag"), else just the number
         for (const hint of SHOPPING_HINTS) {
           if (hint.match.some(m => nameLower.includes(m))) {
             const h = hint.fn(Math.ceil(total));
             if (h) return h;
           }
         }
+        return formatQtyNum(total);
       }
-    }
-
-    const parts = Object.entries(groups).map(([unit, total]) => {
-      if (unit === 'each') return formatQtyNum(total);
       if (unit === 'oz') return ozToDisplay(total);
       return `${formatQtyNum(total)} ${unit}`;
     });
@@ -1394,7 +1392,10 @@
     }
 
     let content = items.length
-      ? `<div class="shopping-week-title">Week of ${weekTitle}</div>` +
+      ? `<div class="shopping-list-head">
+           <div class="shopping-week-title">Week of ${weekTitle}</div>
+           <button class="action-btn" id="uncheck-all-btn" style="background:var(--bg);color:var(--text)">↺ Uncheck All</button>
+         </div>` +
         items.map((ing, i) => buildItemHtml(ing, i)).join('')
       : `<div class="shopping-empty">No recipes planned this week.<br>Add meals to your planner first!</div>`;
 
@@ -1408,6 +1409,12 @@
         else checked.delete(si);
         saveShoppingChecks(weekKey, [...checked]);
       });
+    });
+    const uncheckBtn = document.getElementById('uncheck-all-btn');
+    if (uncheckBtn) uncheckBtn.addEventListener('click', () => {
+      checked.clear();
+      saveShoppingChecks(weekKey, []);
+      document.querySelectorAll('.shopping-item.checked').forEach(el => el.classList.remove('checked'));
     });
     openOverlay(shoppingOverlay);
   }
