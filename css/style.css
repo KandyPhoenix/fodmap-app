@@ -381,6 +381,7 @@ main { max-width: 1280px; margin: 0 auto; padding: 20px; }
 .fodmap-note-box { background: var(--primary-light); border-radius: 12px; padding: 14px 16px; border-left: 4px solid var(--primary); margin-top: 4px; }
 .fodmap-note-text { font-size: 14px; color: var(--text); line-height: 1.6; }
 .my-notes-box { background: var(--yellow-bg); border-radius: 12px; padding: 14px 16px; border-left: 4px solid var(--yellow); margin-top: 4px; font-size: 14px; color: var(--text); line-height: 1.6; white-space: pre-wrap; }
+.airfryer-tip { font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 8px; padding-left: 4px; }
 
 /* ── SERVES SCALER ──────────────────────────── */
 .rmodal-section-header {

@@ -331,6 +331,13 @@
     const notesHtml = recipe.notes
       ? `<div class="rmodal-section"><div class="rmodal-section-title">📝 My Notes</div><div class="my-notes-box">${escHtml(recipe.notes).replace(/\n/g, '<br>')}</div></div>`
       : '';
+    const afSteps = (typeof AIRFRYER !== 'undefined' && AIRFRYER[recipe.id]) ? AIRFRYER[recipe.id] : null;
+    const airfryerHtml = afSteps ? `
+      <div class="rmodal-section airfryer-section">
+        <div class="rmodal-section-title">🌬️ Air Fryer Method</div>
+        <ul class="steps-list">${afSteps.map((s, i) => `<li class="step-item"><div class="step-num">${i + 1}</div><div class="step-text">${escHtml(s)}</div></li>`).join('')}</ul>
+        <div class="airfryer-tip">Times vary by model and basket size — check a few minutes early the first time. Cook in batches if the basket is crowded.</div>
+      </div>` : '';
 
     const alerts = getPortionAlerts(recipe);
     const alertsHtml = alerts.length ? `
@@ -393,6 +400,7 @@
           <ul class="ingredient-list" id="ing-list">${ingList}</ul>
         </div>
         <div class="rmodal-section"><div class="rmodal-section-title">👩‍🍳 Instructions</div><ul class="steps-list">${stepsList}</ul></div>
+        ${airfryerHtml}
         ${fodmapNoteHtml}
         ${notesHtml}
         ${alertsHtml}
