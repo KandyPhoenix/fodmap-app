@@ -2930,6 +2930,144 @@ const SNACKS = [
   },
 ];
 
+// ── AIR FRYER METHODS (per recipe id) ──────────────────────────────────────
+// Concise air-fryer instructions for recipes that suit one. Shown as an
+// "Air Fryer Method" section in the recipe view when present.
+const AIRFRYER = {
+  // ── Kandy weekly plan ──
+  'kandy-mon-breakfast': [
+    'Lay the bacon flat in the basket and air fry at 380°F (195°C) for 8–10 min, flipping halfway, until crisp.',
+    'Pour the beaten eggs into a small greased air-fryer-safe dish and cook at 300°F (150°C) for 8–10 min, stirring once or twice, until just set. Serve with the bacon.',
+  ],
+  'kandy-mon-dinner': [
+    'Preheat to 400°F (200°C). Toss the cubed potato with 1½ tbsp oil, salt and pepper; air fry 10 min, shaking once.',
+    'Add the green beans (tossed with ~1 tbsp oil, salt and pepper) on top and cook 5 min more.',
+    'Add the salmon (rubbed with the remaining oil, salt and pepper, lemon slice on top) and cook everything 7–9 min, until the salmon reaches 145°F (63°C). Squeeze the warm lemon over to serve.',
+  ],
+  'kandy-thu-dinner': [
+    'Rub the pork chops with oil, salt and pepper and air fry at 380°F (195°C) for 12–14 min, flipping halfway, until 145°F (63°C); rest 3 min.',
+    'Toss the zucchini with oil, salt and pepper and air fry at 400°F (200°C) for 8–10 min, shaking once. Make the mash on the stovetop.',
+  ],
+  'kandy-fri-dinner': [
+    'Toss the roasting veg with oil, salt and pepper and air fry at 400°F (200°C) for 12–15 min, shaking halfway.',
+    'Add the shrimp (lightly oiled) for the last 6–8 min, until pink and opaque. Cook the quinoa separately and serve together.',
+  ],
+  'kandy-sat-breakfast': [
+    'Air fry the bacon at 380°F (195°C) for 8–10 min until crisp. Scramble or air-fry the eggs, then wrap with the bacon in warm corn tortillas.',
+  ],
+  'kandy-sat-dinner': [
+    'Rub the chicken thighs with oil, lemon, salt and pepper and air fry at 380°F (195°C) for 18–22 min, flipping once, until 175°F (80°C).',
+    'Air fry the cubed sweet potato at 400°F (200°C) for 15–18 min, shaking twice.',
+    'Add the broccoli florets (lightly oiled) for the last 6–8 min, until tender-crisp.',
+  ],
+  'kandy-sun-breakfast': [
+    'Dip the bread in the egg mixture and air fry at 350°F (175°C) for 8–10 min, flipping halfway, until golden. Top with berries.',
+  ],
+  'kandy-sun-dinner': [
+    'Air fry the potato wedges (tossed with oil, salt and pepper) at 400°F (200°C) for 18–20 min, shaking twice.',
+    'Add the carrots (lightly oiled) for the last 12–15 min.',
+    'Air fry the seasoned steak at 400°F (200°C) for 8–12 min depending on thickness/doneness, flipping halfway; rest 5 min before slicing.',
+  ],
+
+  // ── Recipe library ──
+  'lemon-herb-chicken': [
+    'Rub the chicken with oil, lemon, herbs, salt and pepper. Air fry at 380°F (195°C) for 18–22 min, flipping once, until 175°F (80°C).',
+    'Toss the vegetables with oil and air fry at 400°F (200°C) for 12–15 min, shaking halfway — use a second batch if the basket is crowded.',
+  ],
+  'baked-salmon': [
+    'Air fry the cubed potato (oiled, seasoned) at 400°F (200°C) for 10 min, shaking once.',
+    'Add the green beans on top and cook 5 min more.',
+    'Add the salmon (oiled and seasoned, lemon on top) and cook 7–9 min, until it reaches 145°F (63°C).',
+  ],
+  'fish-tacos': [
+    'Coat the fish in the GF crumb, spray lightly with oil and air fry at 400°F (200°C) for 8–10 min, flipping halfway, until crisp and cooked through.',
+    'Warm the corn tortillas in the air fryer for 1–2 min, then assemble.',
+  ],
+  'lamb-chops': [
+    'Rub the chops with oil, rosemary, salt and pepper and air fry at 400°F (200°C) for 8–12 min, flipping halfway (≈130°F/54°C for medium-rare); rest 5 min.',
+    'Air fry the oiled roasting veg at 400°F (200°C) for 12–15 min, shaking once.',
+  ],
+  'pork-meatballs': [
+    'Roll the meatballs and air fry at 380°F (195°C) for 10–12 min, shaking once, until 160°F (71°C) inside. Cook the GF pasta and sauce on the stovetop and combine.',
+  ],
+  'baked-potato-bar': [
+    'Prick the potatoes, rub with oil and salt, and air fry at 400°F (200°C) for 35–40 min, turning once, until tender. Split and add toppings.',
+  ],
+  'baked-banana': [
+    'Slice the banana, dust with cinnamon and air fry at 375°F (190°C) for 6–8 min, until soft and caramelised.',
+  ],
+  'egg-muffin-cups': [
+    'Pour the egg mixture into silicone muffin cups (don’t overfill) and air fry at 300°F (150°C) for 8–12 min, until set. Work in batches if needed.',
+  ],
+  'corn-tortilla-breakfast-wrap': [
+    'Air fry the bacon at 380°F (195°C) for 8–10 min until crisp. Scramble or air-fry the egg, then roll up in a warm tortilla.',
+  ],
+  'teriyaki-salmon-bowl': [
+    'Air fry the salmon at 400°F (200°C) for 7–9 min, until 145°F (63°C). Brush on the teriyaki for the last 2 min so it glazes without burning. Serve over rice.',
+  ],
+  'stuffed-bell-peppers': [
+    'Spoon the par-cooked rice-and-beef filling into the pepper halves and air fry at 360°F (180°C) for 10–13 min, until the peppers are tender and the tops are golden.',
+  ],
+  'pork-tenderloin-roasted-veg': [
+    'Rub the tenderloin with oil, salt and pepper and air fry at 400°F (200°C) for 18–22 min, turning once, until 145°F (63°C); rest 5 min before slicing.',
+    'Air fry the oiled carrots at 400°F (200°C) for 12–15 min, shaking once.',
+  ],
+  'turkey-burgers': [
+    'Shape the patties and air fry at 360°F (180°C) for 12–15 min, flipping halfway, until 165°F (74°C). Add cheese (if using) for the last minute.',
+  ],
+  'turkey-burger': [
+    'Shape the patties and air fry at 360°F (180°C) for 12–15 min, flipping halfway, until 165°F (74°C). Add cheese (if using) for the last minute.',
+  ],
+  'sheet-pan-sausage-veg': [
+    'Toss the sausages and chopped veg with oil and air fry at 400°F (200°C) for 12–15 min, shaking halfway, until the sausages reach 165°F (74°C) and the veg is golden. Use two batches if crowded.',
+  ],
+  'maple-dijon-salmon': [
+    'Air fry the salmon at 400°F (200°C) for 8–10 min, until 145°F (63°C). Brush on the maple-Dijon glaze for the last 2–3 min so it caramelises without scorching.',
+  ],
+  'maple-glazed-salmon': [
+    'Air fry the salmon at 400°F (200°C) for 8–10 min, until 145°F (63°C). Brush on the maple-ginger glaze for the last 2–3 min so it caramelises without scorching.',
+  ],
+  'gf-chocolate-brownies': [
+    'Pour the batter into a greased tin that fits your basket and air fry at 320°F (160°C) for 18–22 min, until a skewer comes out with a few moist crumbs. Cool before slicing.',
+  ],
+  'sweet-potato-hash': [
+    'Toss the diced sweet potato with oil, salt and pepper and air fry at 380°F (195°C) for 12–15 min, shaking twice, until tender with crisp edges.',
+  ],
+  'gf-granola': [
+    'Spread the granola in a thin layer and air fry at 300°F (150°C) for 10–12 min, stirring every 3–4 min so it toasts evenly and doesn’t catch. It crisps further as it cools.',
+  ],
+  'breakfast-frittata': [
+    'Pour the egg mixture into a greased dish that fits your basket and air fry at 320°F (160°C) for 12–18 min, until set in the centre. Rest a few minutes before slicing.',
+  ],
+  'chicken-veggie-frittata-lunch': [
+    'Pour the egg mixture into a greased dish that fits your basket and air fry at 320°F (160°C) for 12–18 min, until set in the centre. Rest a few minutes before slicing.',
+  ],
+  'shrimp-scampi': [
+    'Air fry the shrimp at 400°F (200°C) for 6–8 min, until pink and opaque, then toss with the warm garlic-infused-oil sauce and cooked GF pasta.',
+  ],
+  'baked-cod': [
+    'Air fry the cod at 380°F (195°C) for 8–10 min, until it flakes easily (145°F/63°C). Spoon the lemon-caper sauce over to serve.',
+  ],
+  'tofu-stir-fry': [
+    'Toss the pressed, cubed tofu with a little oil and cornstarch and air fry at 400°F (200°C) for 12–15 min, shaking twice, until golden and crisp. Fold into the stir-fried veg and sauce at the end.',
+  ],
+  'roasted-sweet-potato-salad': [
+    'Toss the cubed sweet potato with oil, salt and pepper and air fry at 400°F (200°C) for 15–18 min, shaking once. Cool slightly, then toss through the salad.',
+  ],
+  'pork-carnitas-bowl': [
+    'Air fry the seasoned pork at 380°F (195°C) for 18–20 min, then spread it out and blast at 400°F (200°C) for 3–5 min to crisp the edges. Pile into bowls.',
+  ],
+  'banana-oat-cookies': [
+    'Spoon the dough onto parchment cut to fit the basket and air fry at 325°F (160°C) for 8–10 min, until set. Leave space between cookies and cook in batches.',
+  ],
+  'deviled-eggs': [
+    'Make air-fryer “hard-boiled” eggs: cook whole eggs at 270°F (132°C) for 13–15 min, then plunge into ice water before peeling. Halve and fill as usual.',
+  ],
+  'lemon-polenta-cake': [
+    'Pour the batter into a greased tin that fits your basket and air fry at 320°F (160°C) for 25–30 min, until a skewer comes out clean (loosely cover with foil if the top browns too fast). Cool before glazing.',
+  ],
+};
+
 // ── RECIPE CALORIES (estimated per serving) ────────────────────────────────
 const RECIPE_CALORIES = {
   // ── Breakfast ──
