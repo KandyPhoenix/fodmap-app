@@ -1330,6 +1330,75 @@ body.dragging-meal { cursor: grabbing; user-select: none; -webkit-user-select: n
 .snack-group-avoid .snack-card { border-left-color: var(--red); background: var(--red-bg); }
 .snack-group-avoid .snack-group-title { color: var(--red); border-bottom-color: var(--red); }
 
+/* ── REMINDERS & TIMERS ──────────────────────────── */
+.notif-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--yellow-bg); border: 1px solid var(--yellow); border-radius: 12px;
+  padding: 12px 14px; margin: 0 auto 16px; max-width: 760px; font-size: 13px; color: var(--text);
+}
+.rem-section { max-width: 760px; margin: 0 auto 22px; }
+.rem-section-title { font-size: 15px; font-weight: 800; color: var(--text); margin: 0 4px 12px; padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+.rem-empty { font-size: 13px; color: var(--text-muted); padding: 6px 4px 12px; }
+
+.reminder-row {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 10px 12px; margin-bottom: 8px; box-shadow: var(--shadow);
+}
+.reminder-row.off { opacity: 0.55; }
+.rem-info { flex: 1; }
+.rem-time { font-size: 15px; font-weight: 800; color: var(--primary); }
+.rem-label { font-size: 13px; color: var(--text); }
+.rem-toggle {
+  width: 44px; height: 26px; border-radius: 13px; border: none; flex-shrink: 0;
+  background: var(--border); position: relative; cursor: pointer; transition: background 0.15s;
+}
+.rem-toggle::after {
+  content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px;
+  border-radius: 50%; background: white; transition: transform 0.15s; box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.rem-toggle.on { background: var(--primary); }
+.rem-toggle.on::after { transform: translateX(18px); }
+.rem-del, .timer-cancel {
+  background: none; border: none; color: var(--text-muted); font-size: 16px; cursor: pointer;
+  flex-shrink: 0; padding: 4px 6px; border-radius: 6px;
+}
+.rem-del:hover, .timer-cancel:hover { color: var(--red); background: var(--red-bg); }
+
+.rem-add-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.rem-add-row input[type="text"] { flex: 1; min-width: 140px; }
+.rem-add-row input[type="time"], .rem-add-row input[type="number"] { width: 110px; flex-shrink: 0; }
+.rem-add-row input { padding: 9px 11px; border: 1px solid var(--border); border-radius: 10px; font-size: 14px; background: var(--card); color: var(--text); }
+
+.timer-presets { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.timer-preset {
+  padding: 8px 14px; border-radius: 20px; border: 1px solid var(--border); background: var(--card);
+  font-size: 13px; font-weight: 700; color: var(--primary); cursor: pointer; transition: all 0.15s;
+}
+.timer-preset:hover { background: var(--primary); color: white; border-color: var(--primary); }
+.timer-card {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--primary-light); border: 1px solid #c8edd9; border-radius: 12px;
+  padding: 10px 14px; margin-top: 8px;
+}
+.timer-info { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.timer-label { font-size: 14px; font-weight: 700; color: var(--primary-dark); }
+.timer-countdown { font-size: 20px; font-weight: 800; color: var(--primary-dark); font-variant-numeric: tabular-nums; }
+.rem-note { max-width: 760px; margin: 4px auto 0; font-size: 12px; color: var(--text-muted); line-height: 1.5; font-style: italic; }
+
+.app-toast {
+  position: fixed; left: 50%; bottom: calc(var(--nav-h) + 20px); transform: translateX(-50%) translateY(20px);
+  background: var(--text); color: var(--card); padding: 12px 18px; border-radius: 24px;
+  font-size: 13px; font-weight: 600; box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+  max-width: 90vw; text-align: center; z-index: 99999; opacity: 0; pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+}
+.app-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+body.dark .timer-card { background: var(--bg); border-color: var(--border); }
+body.dark .timer-label, body.dark .timer-countdown { color: var(--primary); }
+body.dark .app-toast { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+
 /* ── DARK MODE OVERRIDES ─────────────────────── */
 body.dark .main-nav,
 body.dark .category-bar,
