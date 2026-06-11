@@ -74,10 +74,12 @@
       document.getElementById('view-subs').classList.toggle('hidden',    currentView !== 'subs');
       document.getElementById('view-checker').classList.toggle('hidden', currentView !== 'checker');
       document.getElementById('view-snacks').classList.toggle('hidden',  currentView !== 'snacks');
+      document.getElementById('view-reminders').classList.toggle('hidden', currentView !== 'reminders');
       document.getElementById('view-finds').classList.toggle('hidden',   currentView !== 'finds');
       if (currentView === 'subs') renderSubsView();
       if (currentView === 'finds') renderFindsView();
       if (currentView === 'snacks') renderSnacksView();
+      if (currentView === 'reminders') renderRemindersView();
       searchInput.placeholder = currentView === 'recipes' ? 'Search recipes…' : currentView === 'subs' ? 'Search substitutions…' : currentView === 'checker' ? 'Search foods or recipes…' : currentView === 'finds' ? 'Search finds…' : currentView === 'snacks' ? 'Search snacks…' : currentView === 'planner' ? 'Search foods or recipes…' : 'Search foods…';
     });
   });
@@ -1898,15 +1900,244 @@
   })();
 
   // ══════════════════════════════════════════
+  //  ⑥  REMINDERS & TIMERS
+  // ══════════════════════════════════════════
+  let reminders = loadReminders();
+  let timers = loadTimers();
+
+  function loadReminders() {
+    try { return JSON.parse(localStorage.getItem('fodmap-reminders') || '[]'); } catch(e) { return []; }
+  }
+  function saveReminders() {
+    try { localStorage.setItem('fodmap-reminders', JSON.stringify(reminders)); } catch(e) {}
+    if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
+  }
+  // Timers are device-local & short-lived — not synced to the cloud
+  function loadTimers() {
+    try { return (JSON.parse(localStorage.getItem('fodmapTimers') || '[]')).filter(t => t.endsAt > Date.now()); } catch(e) { return []; }
+  }
+  function saveTimers() {
+    try { localStorage.setItem('fodmapTimers', JSON.stringify(timers)); } catch(e) {}
+  }
+
+  function fmtTime(hhmm) {
+    const [h, m] = hhmm.split(':').map(Number);
+    const ap = h < 12 ? 'AM' : 'PM';
+    const h12 = h % 12 === 0 ? 12 : h % 12;
+    return `${h12}:${String(m).padStart(2, '0')} ${ap}`;
+  }
+
+  // ── Notifications / sound / vibrate ──
+  let audioCtx = null;
+  function beep(times) {
+    try {
+      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      let t = audioCtx.currentTime;
+      for (let i = 0; i < (times || 3); i++) {
+        const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+        o.type = 'sine'; o.frequency.value = 880;
+        o.connect(g); g.connect(audioCtx.destination);
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.exponentialRampToValueAtTime(0.35, t + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + 0.28);
+        o.start(t); o.stop(t + 0.3);
+        t += 0.42;
+      }
+    } catch(e) {}
+  }
+  function notifBannerState() {
+    const b = document.getElementById('notif-banner');
+    if (!b) return;
+    const supported = 'Notification' in window;
+    b.classList.toggle('hidden', !supported || Notification.permission !== 'default');
+  }
+  function ding(title, body) {
+    beep(3);
+    if (navigator.vibrate) try { navigator.vibrate([200, 100, 200, 100, 200]); } catch(e) {}
+    try {
+      if ('Notification' in window && Notification.permission === 'granted') {
+        const opts = { body: body || '', icon: './icons/icon.svg', badge: './icons/icon.svg', tag: 'fodmap-' + Date.now(), renotify: true };
+        if (navigator.serviceWorker && navigator.serviceWorker.ready) {
+          navigator.serviceWorker.ready.then(reg => reg.showNotification(title, opts)).catch(() => { try { new Notification(title, opts); } catch(e) {} });
+        } else { new Notification(title, opts); }
+      }
+    } catch(e) {}
+    showToast('🔔 ' + title + (body ? ' — ' + body : ''));
+  }
+
+  let toastTimer = null;
+  function showToast(msg) {
+    let el = document.getElementById('app-toast');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'app-toast';
+      el.className = 'app-toast';
+      document.body.appendChild(el);
+    }
+    el.textContent = msg;
+    el.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.classList.remove('show'), 6000);
+  }
+
+  // ── Reminder add/remove/toggle ──
+  function addReminder(label, time) {
+    reminders.push({ id: 'r' + Date.now().toString(36), label: label || 'Reminder', time, enabled: true, lastFired: '' });
+    reminders.sort((a, b) => a.time.localeCompare(b.time));
+    saveReminders(); renderRemindersView();
+  }
+  function removeReminder(id) {
+    reminders = reminders.filter(r => r.id !== id);
+    saveReminders(); renderRemindersView();
+  }
+  function toggleReminder(id) {
+    const r = reminders.find(x => x.id === id);
+    if (r) { r.enabled = !r.enabled; saveReminders(); renderRemindersView(); }
+  }
+
+  // Fire daily reminders whose time has arrived (15-min grace if the app opens late)
+  function checkReminders() {
+    const now = new Date();
+    const nowMin = now.getHours() * 60 + now.getMinutes();
+    const today = now.toISOString().slice(0, 10);
+    let changed = false;
+    reminders.forEach(r => {
+      if (!r.enabled) return;
+      const [h, m] = r.time.split(':').map(Number);
+      const rMin = h * 60 + m;
+      if (r.lastFired !== today && nowMin >= rMin && nowMin < rMin + 15) {
+        r.lastFired = today; changed = true;
+        ding('⏰ ' + (r.label || 'Reminder'), 'Scheduled for ' + fmtTime(r.time));
+      }
+    });
+    if (changed) saveReminders();
+  }
+
+  // ── Timers ──
+  function startTimer(min, label) {
+    min = parseInt(min, 10);
+    if (!min || min < 1) return;
+    timers.push({ id: 't' + Date.now().toString(36), label: (label || 'Timer').trim() || 'Timer', endsAt: Date.now() + min * 60000 });
+    saveTimers(); renderTimers();
+  }
+  function cancelTimer(id) {
+    timers = timers.filter(t => t.id !== id);
+    saveTimers(); renderTimers();
+  }
+  function tickTimers() {
+    const now = Date.now();
+    const done = timers.filter(t => now >= t.endsAt);
+    if (done.length) {
+      timers = timers.filter(t => now < t.endsAt);
+      saveTimers();
+      done.forEach(t => ding('⏲️ ' + t.label + ' done!', 'Your timer is up.'));
+    }
+    updateTimerDisplays();
+  }
+  function updateTimerDisplays() {
+    document.querySelectorAll('.timer-card[data-ends]').forEach(card => {
+      const ends = parseInt(card.dataset.ends, 10);
+      const left = Math.max(0, ends - Date.now());
+      const mm = Math.floor(left / 60000), ss = Math.floor((left % 60000) / 1000);
+      const cd = card.querySelector('.timer-countdown');
+      if (cd) cd.textContent = `${mm}:${String(ss).padStart(2, '0')}`;
+    });
+  }
+
+  // ── Rendering ──
+  function renderRemindersView() {
+    notifBannerState();
+    const list = document.getElementById('reminders-list');
+    if (list) {
+      list.innerHTML = '';
+      if (!reminders.length) {
+        list.innerHTML = '<div class="rem-empty">No reminders yet. Add one below — e.g. “Start cooking dinner” at 4:30 PM, and a backup at 5:00 PM.</div>';
+      }
+      reminders.forEach(r => {
+        const row = document.createElement('div');
+        row.className = 'reminder-row' + (r.enabled ? '' : ' off');
+        row.innerHTML = `
+          <button class="rem-toggle ${r.enabled ? 'on' : ''}" title="${r.enabled ? 'On' : 'Off'}"></button>
+          <div class="rem-info"><div class="rem-time">${fmtTime(r.time)}</div><div class="rem-label">${escHtml(r.label)}</div></div>
+          <button class="rem-del" title="Delete">✕</button>`;
+        row.querySelector('.rem-toggle').addEventListener('click', () => toggleReminder(r.id));
+        row.querySelector('.rem-del').addEventListener('click', () => removeReminder(r.id));
+        list.appendChild(row);
+      });
+    }
+    renderTimers();
+  }
+
+  function renderTimers() {
+    const el = document.getElementById('timers-list');
+    if (!el) return;
+    el.innerHTML = '';
+    timers.forEach(t => {
+      const card = document.createElement('div');
+      card.className = 'timer-card';
+      card.dataset.ends = t.endsAt;
+      card.innerHTML = `
+        <div class="timer-info"><span class="timer-label">${escHtml(t.label)}</span><span class="timer-countdown">--:--</span></div>
+        <button class="timer-cancel" title="Cancel">✕</button>`;
+      card.querySelector('.timer-cancel').addEventListener('click', () => cancelTimer(t.id));
+      el.appendChild(card);
+    });
+    updateTimerDisplays();
+  }
+
+  // ── Wire up controls (run once) ──
+  (function initReminders() {
+    const enableBtn = document.getElementById('enable-notif-btn');
+    if (enableBtn) enableBtn.addEventListener('click', () => {
+      if ('Notification' in window) Notification.requestPermission().then(() => { notifBannerState(); beep(1); });
+    });
+    const addBtn = document.getElementById('rem-add-btn');
+    if (addBtn) addBtn.addEventListener('click', () => {
+      const label = document.getElementById('rem-label').value.trim();
+      const time = document.getElementById('rem-time').value;
+      if (!time) return;
+      addReminder(label, time);
+      document.getElementById('rem-label').value = '';
+    });
+    const timerAdd = document.getElementById('timer-add-btn');
+    if (timerAdd) timerAdd.addEventListener('click', () => {
+      const min = document.getElementById('timer-min').value;
+      const label = document.getElementById('timer-label').value;
+      startTimer(min, label);
+      document.getElementById('timer-min').value = '';
+      document.getElementById('timer-label').value = '';
+    });
+    document.querySelectorAll('.timer-preset').forEach(b => {
+      b.addEventListener('click', () => startTimer(b.dataset.min, document.getElementById('timer-label').value));
+    });
+
+    // Unlock audio on the first tap so a later reminder/timer can actually beep
+    document.addEventListener('click', function unlock() {
+      try {
+        audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+      } catch(e) {}
+      document.removeEventListener('click', unlock);
+    }, { once: true });
+
+    setInterval(checkReminders, 20000);
+    setInterval(tickTimers, 1000);
+    checkReminders();
+  })();
+
+  // ══════════════════════════════════════════
   //  FIREBASE SYNC REFRESH (no page reload)
   // ══════════════════════════════════════════
   window.fodmapRefresh = function() {
     meals = loadMeals();
     progress = loadProgress();
+    reminders = loadReminders();
     renderPlanner();
     renderProgress();
     renderFindsView();
     renderRecipeGrid();
+    if (currentView === 'reminders') renderRemindersView();
   };
 
   // ══════════════════════════════════════════
@@ -1914,5 +2145,6 @@
   // ══════════════════════════════════════════
   renderPlanner();
   renderProgress();
+  renderRemindersView();
 
 })();

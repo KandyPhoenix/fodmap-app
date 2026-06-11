@@ -42,6 +42,7 @@
     <button class="nav-btn" data-view="subs">🔄 <span class="nav-label">Substitutions</span></button>
     <button class="nav-btn" data-view="checker">🔍 <span class="nav-label">Recipe Check</span></button>
     <button class="nav-btn" data-view="snacks">🥨 <span class="nav-label">Snacks</span></button>
+    <button class="nav-btn" data-view="reminders">⏰ <span class="nav-label">Reminders</span></button>
     <button class="nav-btn" data-view="finds">📍 <span class="nav-label">My Finds</span></button>
   </nav>
 
@@ -208,6 +209,53 @@
     </div>
     <main>
       <div id="snacks-content"></div>
+    </main>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       VIEW 5c — REMINDERS & TIMERS
+  ════════════════════════════════════════ -->
+  <div id="view-reminders" class="hidden">
+    <div class="subs-hero">
+      <div class="subs-hero-text">
+        <div class="subs-hero-title">⏰ Reminders &amp; Timers</div>
+        <div class="subs-hero-sub">Daily meal reminders and quick cooking timers that ding on this device while the app is open.</div>
+      </div>
+    </div>
+    <main>
+      <div id="notif-banner" class="notif-banner hidden">
+        <span>🔔 Turn on notifications so reminders can ding you on this device.</span>
+        <button id="enable-notif-btn" class="action-btn primary">Enable</button>
+      </div>
+
+      <div class="rem-section">
+        <div class="rem-section-title">🗓️ Daily Reminders</div>
+        <div id="reminders-list"></div>
+        <div class="rem-add-row">
+          <input type="text" id="rem-label" placeholder="e.g. Start cooking dinner" maxlength="60">
+          <input type="time" id="rem-time" value="16:30">
+          <button id="rem-add-btn" class="action-btn primary">+ Add</button>
+        </div>
+      </div>
+
+      <div class="rem-section">
+        <div class="rem-section-title">⏲️ Quick Cooking Timer</div>
+        <div class="timer-presets">
+          <button class="timer-preset" data-min="5">5 min</button>
+          <button class="timer-preset" data-min="10">10 min</button>
+          <button class="timer-preset" data-min="15">15 min</button>
+          <button class="timer-preset" data-min="20">20 min</button>
+          <button class="timer-preset" data-min="30">30 min</button>
+        </div>
+        <div class="rem-add-row">
+          <input type="text" id="timer-label" placeholder="Label (optional)" maxlength="40">
+          <input type="number" id="timer-min" min="1" max="240" placeholder="min">
+          <button id="timer-add-btn" class="action-btn primary">Start</button>
+        </div>
+        <div id="timers-list"></div>
+      </div>
+
+      <div class="rem-note">⚠️ These ding on whatever device has the app open (and in the background on desktop). To be reminded when the app is fully closed — especially on iPhone/iPad — keep your phone/OS alarm as a backup.</div>
     </main>
   </div>
 
