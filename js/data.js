@@ -3066,6 +3066,26 @@ const AIRFRYER = {
   'lemon-polenta-cake': [
     'Pour the batter into a greased tin that fits your basket and air fry at 320°F (160°C) for 25–30 min, until a skewer comes out clean (loosely cover with foil if the top browns too fast). Cool before glazing.',
   ],
+  'lemon-garlic-shrimp-rice': [
+    'Toss the shrimp with the garlic-infused oil, salt and pepper and air fry at 400°F (200°C) for 6–8 min, shaking once, until pink and opaque.',
+    'Melt the butter with the lemon juice, zest and parsley, then toss the hot shrimp through it. Serve over rice with the steamed greens.',
+  ],
+  'parmesan-crusted-chicken': [
+    'Coat the chicken in egg then the parmesan crumb. Spray both sides with a little oil and air fry at 380°F (195°C) for 12–15 min, flipping halfway, until golden and 165°F (74°C) inside. Cook the GF pasta on the stovetop.',
+  ],
+  'roast-chicken-thighs-veg': [
+    'Toss the potato and carrot with oil, salt and pepper and air fry at 400°F (200°C) for 12 min, shaking once.',
+    'Add the bell pepper and the oiled, seasoned chicken thighs (skin-side up) and cook 18–22 min more, until the chicken reaches 175°F (80°C) and the veg is tender. Squeeze over the lemon.',
+  ],
+  'lemon-pepper-tilapia': [
+    'Rub the fish with garlic-infused oil, lemon juice, cracked pepper, paprika and salt. Air fry at 380°F (195°C) for 8–10 min, until it flakes easily. Air fry the baby potatoes separately at 400°F (200°C) for 15–18 min, shaking twice.',
+  ],
+  'turkey-meatloaf': [
+    'Press the mix into a small loaf pan or foil tray that fits your basket, brush with the glaze, and air fry at 350°F (175°C) for 25–30 min, until 165°F (74°C) inside. Rest 10 min before slicing.',
+  ],
+  'beef-tacos': [
+    'Brown the seasoned beef in an air-fryer-safe dish at 380°F (195°C) for 10–12 min, stirring twice and draining any fat, then stir in the tomato paste and water. Warm the corn tortillas in the basket for 1–2 min and assemble.',
+  ],
 };
 
 // ── RECIPE CALORIES (estimated per serving) ────────────────────────────────
@@ -3095,6 +3115,10 @@ const RECIPE_CALORIES = {
   'zucchini-noodle-bowl':       290,
   'teriyaki-salmon-bowl':       540,
   'thai-chicken-soup':          350,
+  'greek-chicken-bowl':         470,
+  'turkey-cheese-wrap':         420,
+  'tuna-nicoise-salad':         440,
+  'carrot-ginger-soup':         210,
   // ── Dinner ──
   'lemon-herb-chicken':         480,
   'beef-bok-choy-stir-fry':     520,
@@ -3116,6 +3140,18 @@ const RECIPE_CALORIES = {
   'prawn-coconut-curry':        440,
   'sheet-pan-sausage-veg':      520,
   'maple-dijon-salmon':         420,
+  'lemon-garlic-shrimp-rice':   430,
+  'parmesan-crusted-chicken':   560,
+  'ginger-pork-rice':           490,
+  'roast-chicken-thighs-veg':   540,
+  'beef-pepper-stir-fry':       500,
+  'steak-chimichurri':          620,
+  'beef-tacos':                 480,
+  'chicken-quesadilla':         520,
+  'lemon-pepper-tilapia':       420,
+  'turkey-meatloaf':            440,
+  'baked-ziti':                 560,
+  'roast-pork-loin':            520,
   // ── Snacks ──
   'peanut-butter-smoothie':     280,
   'strawberry-smoothie':        210,
