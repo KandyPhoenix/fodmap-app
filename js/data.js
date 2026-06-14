@@ -3022,10 +3022,10 @@ const AIRFRYER = {
     'Toss the sausages and chopped veg with oil and air fry at 400°F (200°C) for 12–15 min, shaking halfway, until the sausages reach 165°F (74°C) and the veg is golden. Use two batches if crowded.',
   ],
   'maple-dijon-salmon': [
-    'Air fry the salmon at 400°F (200°C) for 8–10 min, until 145°F (63°C). Brush on the maple-Dijon glaze for the last 2–3 min so it caramelises without scorching.',
+    'Air fry the salmon at 400°F (200°C) for 8–10 min, until 145°F (63°C). Brush on the brown-sugar Dijon glaze for the last 2–3 min so it caramelises without scorching.',
   ],
   'maple-glazed-salmon': [
-    'Air fry the salmon at 400°F (200°C) for 8–10 min, until 145°F (63°C). Brush on the maple-ginger glaze for the last 2–3 min so it caramelises without scorching.',
+    'Air fry the salmon at 400°F (200°C) for 8–10 min, until 145°F (63°C). Brush on the ginger glaze for the last 2–3 min so it caramelises without scorching.',
   ],
   'gf-chocolate-brownies': [
     'Pour the batter into a greased tin that fits your basket and air fry at 320°F (160°C) for 18–22 min, until a skewer comes out with a few moist crumbs. Cool before slicing.',
@@ -3114,7 +3114,6 @@ const RECIPE_CALORIES = {
   'fodmap-caesar-salad':        440,
   'zucchini-noodle-bowl':       290,
   'teriyaki-salmon-bowl':       540,
-  'thai-chicken-soup':          350,
   'greek-chicken-bowl':         470,
   'turkey-cheese-wrap':         420,
   'tuna-nicoise-salad':         440,
@@ -3167,7 +3166,6 @@ const RECIPE_CALORIES = {
   'strawberry-nice-cream':      160,
   'peanut-butter-bites':        140,   // per 2 bites
   'lemon-polenta-cake':         380,   // per slice
-  'coconut-rice-pudding':       280,
   'passionfruit-chia-pots':     200,
   'vanilla-panna-cotta':        220,
   'gf-chocolate-brownies':      250,   // per brownie

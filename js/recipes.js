@@ -1212,38 +1212,6 @@ const RECIPES = [
     fodmapNote: 'Maple syrup is the low-FODMAP sweetener here — do not substitute honey (high fructose). Carrots and cucumber are both safe unlimited vegetables on the elimination diet.'
   },
 
-  {
-    id: 'thai-chicken-soup',
-    name: 'Thai-Style Coconut Chicken Soup',
-    emoji: '🥣',
-    category: 'lunch',
-    time: '30 min',
-    serves: 3,
-    difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
-    ingredients: [
-      { qty: '400g', item: 'chicken breast, thinly sliced' },
-      { qty: '1 × 400ml tin', item: 'light coconut milk' },
-      { qty: '2 cups', item: 'low-FODMAP chicken stock' },
-      { qty: '1 cup', item: 'oyster mushrooms, sliced' },
-      { qty: '2', item: 'bok choy, halved or quartered' },
-      { qty: '2 tsp', item: 'fresh ginger, grated' },
-      { qty: '2 tbsp', item: 'fish sauce' },
-      { qty: '1 tbsp', item: 'fresh lime juice' },
-      { qty: '1 tsp', item: 'maple syrup (or rice malt syrup / brown sugar)' },
-      { qty: '1', item: 'lemongrass stalk, bruised' },
-      { qty: '3 tbsp', item: 'spring onion green tops, sliced' },
-    ],
-    steps: [
-      'Combine stock, coconut milk, lemongrass, and ginger in a pot. Bring to a gentle simmer.',
-      'Add chicken and oyster mushrooms. Cook 8–10 minutes until chicken is cooked.',
-      'Add bok choy and cook 2 more minutes.',
-      'Remove lemongrass. Season with fish sauce, lime juice, and maple syrup.',
-      'Ladle into bowls. Top with spring onion greens.',
-    ],
-    fodmapNote: 'Use light coconut milk and limit to about 1/3 cup per serve for safe sorbitol levels. Oyster mushrooms are low FODMAP. Fish sauce is FODMAP-free.'
-  },
-
   // ─── DINNER (continued) ─────────────────────────────────
   {
     id: 'shrimp-pad-thai',
@@ -1482,7 +1450,7 @@ const RECIPES = [
 
   {
     id: 'prawn-coconut-curry',
-    name: 'Prawn & Bok Choy Coconut Curry',
+    name: 'Prawn & Bok Choy Curry',
     emoji: '🍤',
     category: 'dinner',
     time: '25 min',
@@ -1548,7 +1516,7 @@ const RECIPES = [
 
   {
     id: 'maple-dijon-salmon',
-    name: 'Maple Dijon Baked Salmon',
+    name: 'Brown Sugar Dijon Salmon',
     emoji: '🐟',
     category: 'dinner',
     time: '20 min',
@@ -1557,7 +1525,7 @@ const RECIPES = [
     tags: ['gluten-free', 'dairy-free', 'high-protein'],
     ingredients: [
       { qty: '2', item: 'salmon fillets (180g each)' },
-      { qty: '2 tbsp', item: 'maple syrup (or rice malt syrup / brown sugar)' },
+      { qty: '2 tbsp', item: 'brown sugar (or rice malt syrup / maple syrup)' },
       { qty: '1 tbsp', item: 'Dijon mustard' },
       { qty: '1 tbsp', item: 'soy sauce (or tamari)' },
       { qty: '1 tsp', item: 'garlic-infused olive oil' },
@@ -1565,7 +1533,7 @@ const RECIPES = [
     ],
     steps: [
       'Preheat oven to 200°C / 400°F. Line a baking tray with baking paper.',
-      'Mix maple syrup, Dijon, soy sauce, and garlic-infused oil.',
+      'Mix brown sugar, Dijon, soy sauce, and garlic-infused oil.',
       'Place salmon on the tray. Spoon the glaze over the top.',
       'Bake 12–15 minutes until salmon is just cooked through and glaze is caramelised.',
       'Serve with steamed rice and vegetables.',
@@ -1708,35 +1676,6 @@ const RECIPES = [
   },
 
   // ─── DESSERTS (continued) ────────────────────────────────
-  {
-    id: 'coconut-rice-pudding',
-    name: 'Coconut Rice Pudding',
-    emoji: '🍚',
-    category: 'desserts',
-    time: '35 min',
-    serves: 4,
-    difficulty: 'easy',
-    tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'make-ahead'],
-    ingredients: [
-      { qty: '1/2 cup', item: 'arborio or short-grain white rice' },
-      { qty: '1.5 cups', item: 'coconut milk drink (carton — not canned)' },
-      { qty: '1.5 cups', item: 'water' },
-      { qty: '3 tbsp', item: 'maple syrup' },
-      { qty: '1 tsp', item: 'vanilla extract' },
-      { qty: '1/2 tsp', item: 'cinnamon' },
-      { qty: '1 cup', item: 'fresh strawberries, sliced, to serve' },
-      { qty: 'optional', item: '1 tbsp toasted coconut flakes per serve' },
-    ],
-    steps: [
-      'Combine rice, coconut milk drink, and water in a saucepan.',
-      'Bring to a boil over medium heat, stirring frequently.',
-      'Reduce heat to low. Cook, stirring often, for 25–30 minutes until thick and creamy.',
-      'Stir in maple syrup, vanilla, and cinnamon.',
-      'Serve warm or cold, topped with fresh strawberries and toasted coconut.',
-    ],
-    fodmapNote: 'Using coconut milk drink from a carton (not canned) keeps this low FODMAP — it is much more diluted. Canned coconut milk at this volume would push sorbitol too high.'
-  },
-
   {
     id: 'passionfruit-chia-pots',
     name: 'Passionfruit Chia Pots',
@@ -2154,7 +2093,7 @@ const RECIPES = [
   // ─── DINNER (additional) ──────────────────────────────────────────────────
   {
     id: 'maple-glazed-salmon',
-    name: 'Maple & Ginger Glazed Salmon',
+    name: 'Ginger Glazed Salmon',
     emoji: '🐟',
     category: 'dinner',
     time: '20 min',
@@ -2163,7 +2102,7 @@ const RECIPES = [
     tags: ['gluten-free', 'dairy-free', 'high-protein'],
     ingredients: [
       { qty: '2', item: 'salmon fillets (about 6 oz / 170g each)' },
-      { qty: '2 tbsp', item: 'maple syrup (or rice malt syrup / brown sugar)' },
+      { qty: '2 tbsp', item: 'brown sugar (or rice malt syrup / maple syrup)' },
       { qty: '1 tbsp', item: 'tamari' },
       { qty: '1 tsp', item: 'fresh ginger, grated' },
       { qty: '1 tsp', item: 'sesame oil' },
@@ -2173,7 +2112,7 @@ const RECIPES = [
       { qty: '1 tbsp', item: 'sesame seeds, to garnish' },
     ],
     steps: [
-      'Mix maple syrup, tamari, ginger, sesame oil, and rice vinegar in a small bowl.',
+      'Mix brown sugar, tamari, ginger, sesame oil, and rice vinegar in a small bowl.',
       'Pat salmon dry and season with pepper.',
       'Heat an oven-safe skillet over medium-high heat. Sear salmon skin-side up for 2 minutes until golden.',
       'Flip salmon and brush generously with glaze.',
@@ -2181,7 +2120,7 @@ const RECIPES = [
       'Brush with remaining glaze and sprinkle with sesame seeds.',
       'Serve over rice with steamed greens. Drizzle any pan glaze over the top.',
     ],
-    fodmapNote: 'Tamari (GF) is low FODMAP at this amount. Maple syrup is low FODMAP. Ginger is low FODMAP. Bok choy and broccolini are both low FODMAP at ½ cup per person. A complete, balanced FODMAP-friendly dinner.'
+    fodmapNote: 'Tamari (GF) is low FODMAP at this amount. Brown sugar (or rice malt syrup / maple syrup) is low FODMAP. Ginger is low FODMAP. Bok choy and broccolini are both low FODMAP at ½ cup per person. A complete, balanced FODMAP-friendly dinner.'
   },
 
   {
@@ -2564,37 +2503,6 @@ const RECIPES = [
   },
 
   // ─── DESSERTS (additional) ────────────────────────────────────────────────
-  {
-    id: 'coconut-rice-pudding',
-    name: 'Creamy Coconut Rice Pudding',
-    emoji: '🍮',
-    category: 'desserts',
-    time: '35 min',
-    serves: 4,
-    difficulty: 'easy',
-    tags: ['gluten-free', 'vegan', 'dairy-free'],
-    ingredients: [
-      { qty: '1 cup (200g)', item: 'short-grain white rice (arborio or sushi rice)' },
-      { qty: '1 cup (240ml)', item: 'coconut milk (canned, full-fat)' },
-      { qty: '2 cups (480ml)', item: 'lactose-free milk or carton coconut milk' },
-      { qty: '3 tbsp', item: 'maple syrup' },
-      { qty: '1 tsp', item: 'vanilla extract' },
-      { qty: '½ tsp', item: 'cinnamon' },
-      { qty: 'pinch', item: 'salt' },
-      { qty: '—', item: 'To serve' },
-      { qty: '1 cup (150g)', item: 'fresh strawberries or raspberries' },
-      { qty: '1 tsp', item: 'cinnamon, extra' },
-    ],
-    steps: [
-      'Combine rice, coconut milk, lactose-free milk, maple syrup, vanilla, cinnamon, and salt in a medium saucepan.',
-      'Bring to a gentle simmer over medium heat, stirring frequently.',
-      'Reduce heat to low and cook 25–30 minutes, stirring every 3–4 minutes, until thick and creamy.',
-      'The pudding thickens further as it cools — add a splash of milk if it becomes too thick.',
-      'Serve warm or chilled, topped with fresh berries and a dust of cinnamon.',
-    ],
-    fodmapNote: 'Canned coconut milk is moderate FODMAP — keep to ¼ cup (60ml) per serving, which is respected in this 4-serve recipe. Carton coconut milk (drink) is lower FODMAP and can be used for the remaining liquid freely. Strawberries and raspberries are both low FODMAP at these amounts.'
-  },
-
   {
     id: 'banana-oat-cookies',
     name: 'Banana Oat Cookies',
