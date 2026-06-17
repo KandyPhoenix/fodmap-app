@@ -152,7 +152,7 @@ const KANDY_RECIPES = [
     ingredients: [
       { qty: '1 lb',     item: 'ground beef (80/20)' },
       { qty: '1 tbsp',   item: 'ground flaxseed' },
-      { qty: '1.5 cups', item: 'cooked brown rice' },
+      { qty: '1.5 cups', item: 'cooked brown rice (or white rice for a quicker option)' },
       { qty: '1 cup',    item: 'corn kernels, canned or frozen, drained' },
       { qty: '1 cup',    item: 'cherry tomatoes, halved' },
       { qty: '1.5 cups', item: 'shredded iceberg lettuce' },

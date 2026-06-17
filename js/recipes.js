@@ -447,7 +447,7 @@ const RECIPES = [
       { qty: '1 tsp', item: 'fresh ginger, grated' },
       { qty: '1 tbsp', item: 'cornstarch (cornflour) mixed with 2 tbsp water' },
       { qty: '3 tbsp', item: 'spring onion green tops' },
-      { qty: '2 cups', item: 'cooked brown rice, to serve' },
+      { qty: '2 cups', item: 'cooked brown rice (or white rice for a quicker option), to serve' },
     ],
     steps: [
       'Mix soy sauce, oyster sauce, sesame oil, and ginger in a small bowl. Set aside.',
@@ -534,7 +534,7 @@ const RECIPES = [
     difficulty: 'easy',
     tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
-      { qty: '2 cups', item: 'cooked brown rice (cold — day-old is best)' },
+      { qty: '2 cups', item: 'cooked brown rice (cold — day-old is best; or white rice for a quicker option)' },
       { qty: '200g', item: 'cooked chicken, shredded or diced' },
       { qty: '2', item: 'eggs, lightly beaten' },
       { qty: '2', item: 'medium carrots, skin on, finely diced' },
@@ -613,7 +613,7 @@ const RECIPES = [
       { qty: 'to taste', item: 'salt and pepper' },
       { qty: '2 cups', item: 'baby spinach' },
       { qty: '3 tbsp', item: 'spring onion green tops (garnish)' },
-      { qty: '2 cups', item: 'cooked brown rice, to serve' },
+      { qty: '2 cups', item: 'cooked brown rice (or white rice for a quicker option), to serve' },
     ],
     steps: [
       'Heat garlic-infused oil in a large pot over medium-high heat.',
@@ -1269,7 +1269,7 @@ const RECIPES = [
     ingredients: [
       { qty: '4 large', item: 'red or yellow bell peppers' },
       { qty: '400g', item: 'ground (minced) beef' },
-      { qty: '1.5 cups', item: 'cooked brown rice' },
+      { qty: '1.5 cups', item: 'cooked brown rice (or white rice for a quicker option)' },
       { qty: '1 tbsp', item: 'ground flaxseed' },
       { qty: '1 × 400g tin', item: 'crushed tomatoes' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
@@ -1340,7 +1340,7 @@ const RECIPES = [
     tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '4', item: 'chicken thighs, bone-in skin-on' },
-      { qty: '1.5 cups', item: 'long-grain brown rice, rinsed' },
+      { qty: '1.5 cups', item: 'long-grain brown rice, rinsed (white rice also works — see note)' },
       { qty: '3 cups', item: 'low-FODMAP chicken stock' },
       { qty: '1', item: 'medium carrot, skin on, grated' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
@@ -1361,7 +1361,7 @@ const RECIPES = [
       'Bake 50–55 minutes until chicken is golden and the brown rice has absorbed all liquid and is tender.',
       'Rest 5 minutes. Garnish with spring onion greens and serve from the pan.',
     ],
-    fodmapNote: 'One pan = less washing, more flavour from the drippings going into the rice. An effortless dinner that looks impressive. All ingredients are low FODMAP. Brown rice (with a little extra stock and a longer cook) and a grated skin-on carrot add fibre.'
+    fodmapNote: 'One pan = less washing, more flavour from the drippings going into the rice. An effortless dinner that looks impressive. All ingredients are low FODMAP. Brown rice (with a little extra stock and a longer cook) and a grated skin-on carrot add fibre. For a quicker, easier meal use white rice instead: reduce the stock to 2.25 cups and bake about 25 minutes.'
   },
 
   {
@@ -1481,7 +1481,7 @@ const RECIPES = [
       { qty: '1 tsp', item: 'curry powder' },
       { qty: '1 tsp', item: 'turmeric' },
       { qty: '2 cups', item: 'baby spinach' },
-      { qty: '2 cups', item: 'cooked brown rice or rice noodles, to serve' },
+      { qty: '2 cups', item: 'cooked brown rice or rice noodles (or white rice for a quicker option), to serve' },
       { qty: '3 tbsp', item: 'spring onion green tops, to garnish' },
     ],
     steps: [
@@ -1544,7 +1544,7 @@ const RECIPES = [
       { qty: '1 tbsp', item: 'soy sauce (or tamari)' },
       { qty: '1 tsp', item: 'garlic-infused olive oil' },
       { qty: '2 cups', item: 'green beans (1 cup per serve), steamed' },
-      { qty: 'to serve', item: 'steamed brown rice' },
+      { qty: 'to serve', item: 'steamed brown rice (or white rice for a quicker option)' },
     ],
     steps: [
       'Preheat oven to 200°C / 400°F. Line a baking tray with baking paper.',
@@ -2123,7 +2123,7 @@ const RECIPES = [
       { qty: '1 tsp', item: 'fresh ginger, grated' },
       { qty: '1 tsp', item: 'sesame oil' },
       { qty: '1 tsp', item: 'rice vinegar' },
-      { qty: '1 cup (180g)', item: 'brown rice, cooked, to serve' },
+      { qty: '1 cup (180g)', item: 'brown rice, cooked (or white rice for a quicker option), to serve' },
       { qty: '1.5 cups', item: 'bok choy or broccolini, steamed, to serve (¾ cup per serve)' },
       { qty: '1 tbsp', item: 'sesame seeds, to garnish' },
     ],
@@ -2187,7 +2187,7 @@ const RECIPES = [
     tags: ['gluten-free', 'dairy-free', 'make-ahead', 'higher-fibre'],
     ingredients: [
       { qty: '1 lb (454g)', item: 'chicken breast or thighs, bone-in or boneless' },
-      { qty: '1 cup (180g)', item: 'brown rice, uncooked' },
+      { qty: '1 cup (180g)', item: 'brown rice, uncooked (or white rice for a quicker option)' },
       { qty: '3', item: 'medium carrots, skin on, sliced' },
       { qty: '2 stalks', item: 'celery, thinly sliced (½ stalk per serve)' },
       { qty: '1', item: 'zucchini, skin on, diced' },
@@ -2207,7 +2207,7 @@ const RECIPES = [
       'Remove bay leaves. Stir in fresh parsley. Season well.',
       'Serve hot. Keeps refrigerated 4 days — rice thickens as it sits, add a splash of stock when reheating.',
     ],
-    fodmapNote: 'Keep celery to ½ stalk per person (10g) — more accumulates mannitol quickly. Most commercial stock contains onion and garlic — make your own or find a certified low-FODMAP brand. Carrots are fully safe at this quantity. Brown rice (with a longer simmer), skin-on carrot and zucchini, and an extra carrot add fibre.'
+    fodmapNote: 'Keep celery to ½ stalk per person (10g) — more accumulates mannitol quickly. Most commercial stock contains onion and garlic — make your own or find a certified low-FODMAP brand. Carrots are fully safe at this quantity. Brown rice (with a longer simmer), skin-on carrot and zucchini, and an extra carrot add fibre. For a quicker meal use white rice and simmer just 12–15 minutes (Step 5) until tender.'
   },
 
   {
@@ -2296,7 +2296,7 @@ const RECIPES = [
       { qty: '1', item: 'orange, juice only' },
       { qty: '1', item: 'lime, juice only' },
       { qty: 'to taste', item: 'salt and black pepper' },
-      { qty: '2 cups (360g)', item: 'brown rice, cooked, to serve' },
+      { qty: '2 cups (360g)', item: 'brown rice, cooked (or white rice for a quicker option), to serve' },
       { qty: '—', item: 'Bowl toppings' },
       { qty: '2', item: 'tomatoes, diced' },
       { qty: '½', item: 'cucumber, skin on, diced' },
@@ -2373,7 +2373,7 @@ const RECIPES = [
       { qty: '1 tbsp', item: 'maple syrup (or rice malt syrup / brown sugar)' },
       { qty: '1 tsp', item: 'fresh ginger, grated' },
       { qty: '1 tsp', item: 'sesame oil' },
-      { qty: '1 cup (180g)', item: 'brown rice, cooked, to serve' },
+      { qty: '1 cup (180g)', item: 'brown rice, cooked (or white rice for a quicker option), to serve' },
       { qty: '1 tbsp', item: 'sesame seeds, to garnish' },
     ],
     steps: [
@@ -2787,7 +2787,7 @@ const RECIPES = [
       { qty: '1', item: 'lemon, juice and zest' },
       { qty: '¼ tsp', item: 'red pepper flakes (optional)' },
       { qty: '¼ cup', item: 'fresh parsley, chopped' },
-      { qty: '1 cup (180g)', item: 'brown rice, cooked, to serve' },
+      { qty: '1 cup (180g)', item: 'brown rice, cooked (or white rice for a quicker option), to serve' },
       { qty: '2 cups', item: 'green beans, steamed, to serve (1 cup per serve)' },
       { qty: 'to taste', item: 'salt and black pepper' },
     ],
@@ -2851,7 +2851,7 @@ const RECIPES = [
       { qty: '1 tbsp', item: 'mirin (or 1 tsp maple syrup + splash rice vinegar)' },
       { qty: '1 tbsp', item: 'maple syrup (or rice malt syrup / brown sugar)' },
       { qty: '1 tbsp', item: 'garlic-infused olive oil' },
-      { qty: '1 cup (180g)', item: 'brown rice, cooked, to serve' },
+      { qty: '1 cup (180g)', item: 'brown rice, cooked (or white rice for a quicker option), to serve' },
       { qty: '1.5 cups', item: 'shredded green cabbage, to serve' },
       { qty: '2 tbsp', item: 'spring onion green tops, sliced, to garnish' },
       { qty: '1 tbsp', item: 'sesame seeds, to garnish' },
@@ -2919,7 +2919,7 @@ const RECIPES = [
       { qty: '1 tbsp', item: 'fresh ginger, grated' },
       { qty: '1 tsp', item: 'cornstarch mixed with 2 tbsp water' },
       { qty: '1 tsp', item: 'sesame oil' },
-      { qty: '1.5 cups (270g)', item: 'brown rice, cooked, to serve' },
+      { qty: '1.5 cups (270g)', item: 'brown rice, cooked (or white rice for a quicker option), to serve' },
       { qty: '2 tbsp', item: 'spring onion green tops, sliced, to garnish' },
     ],
     steps: [
@@ -3287,7 +3287,7 @@ const RECIPES = [
       { qty: '2 tsp', item: 'ground coriander' },
       { qty: '1 tsp', item: 'ground turmeric' },
       { qty: '1/2 tsp', item: 'chilli powder (optional)' },
-      { qty: '2 cups', item: 'cooked brown rice, to serve' },
+      { qty: '2 cups', item: 'cooked brown rice (or white rice for a quicker option), to serve' },
       { qty: 'to taste', item: 'salt and black pepper' },
     ],
     steps: [
