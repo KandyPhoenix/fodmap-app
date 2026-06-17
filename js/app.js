@@ -228,6 +228,16 @@
     renderRecipeGrid();
   })();
 
+  function getRecipeNutrition(id) {
+    const n = (typeof RECIPE_NUTRITION !== 'undefined' && RECIPE_NUTRITION[id]) ? RECIPE_NUTRITION[id] : null;
+    const cal = n ? n.cal : ((typeof RECIPE_CALORIES !== 'undefined' && RECIPE_CALORIES[id]) ? RECIPE_CALORIES[id] : null);
+    return {
+      cal,
+      protein: n ? n.protein : null,
+      fiber:   n ? n.fiber   : null,
+    };
+  }
+
   function renderRecipeGrid() {
     const grid  = document.getElementById('recipe-grid');
     const noRes = document.getElementById('recipe-no-results');
@@ -249,8 +259,10 @@
       const card = document.createElement('div');
       card.className = 'recipe-card' + (isUser ? ' user-recipe' : '');
       const tags = (r.tags || []).map(t => `<span class="recipe-tag">${t}</span>`).join('');
-      const cal = (typeof RECIPE_CALORIES !== 'undefined' && RECIPE_CALORIES[r.id]) ? RECIPE_CALORIES[r.id] : null;
-      const calHtml = cal ? `<span class="recipe-cal">🔥 ${cal} cal</span>` : '';
+      const nut = getRecipeNutrition(r.id);
+      const calHtml     = nut.cal     != null ? `<span class="recipe-cal">🔥 ${nut.cal} cal</span>` : '';
+      const proteinHtml = nut.protein != null ? `<span class="recipe-nut recipe-protein">💪 ${nut.protein}g protein</span>` : '';
+      const fiberHtml   = nut.fiber   != null ? `<span class="recipe-nut recipe-fiber">🌾 ${nut.fiber}g fibre</span>` : '';
       card.innerHTML = `
         <div class="recipe-card-banner">
           ${isUser ? '<span class="my-recipe-badge">⭐ My Recipe</span>' : ''}
@@ -259,7 +271,8 @@
         </div>
         <div class="recipe-card-body">
           <div class="recipe-name">${r.name}</div>
-          <div class="recipe-meta"><span>⏱ ${r.time || '—'}</span><span>👥 Serves ${r.serves || '—'}</span>${calHtml}</div>
+          <div class="recipe-meta"><span>⏱ ${r.time || '—'}</span><span>👥 Serves ${r.serves || '—'}</span></div>
+          <div class="recipe-nutrition">${calHtml}${proteinHtml}${fiberHtml}</div>
           <div class="recipe-tags">${tags}</div>
         </div>`;
       card.addEventListener('click', () => openRecipeModal(r));
@@ -302,7 +315,8 @@
     const isUserCreated  = !isBuiltinId(recipe.id);          // a recipe the user made from scratch
     const isEditedBuiltin = !isUserCreated && hasUserOverride(recipe.id); // a built-in the user has edited
     const baseServes = recipe.serves || 2;
-    const recipeCal = (typeof RECIPE_CALORIES !== 'undefined' && RECIPE_CALORIES[recipe.id]) ? RECIPE_CALORIES[recipe.id] : null;
+    const recipeNut = getRecipeNutrition(recipe.id);
+    const recipeCal = recipeNut.cal;
 
     function buildIngList(multiplier) {
       return (recipe.ingredients || []).map((ing, i) => {
@@ -383,8 +397,14 @@
             <div class="rmodal-meta-item">⏱ ${recipe.time || '—'}</div>
             <div class="rmodal-meta-item">👥 Serves ${recipe.serves || '—'}</div>
             <div class="rmodal-meta-item" style="text-transform:capitalize">📊 ${recipe.difficulty || 'easy'}</div>
-            ${recipeCal ? `<div class="rmodal-meta-item rmodal-cal">🔥 ${recipeCal} cal / serving <span style="font-size:10px;opacity:0.75">(est.)</span></div>` : ''}
           </div>
+          ${(recipeNut.cal != null || recipeNut.protein != null || recipeNut.fiber != null) ? `
+          <div class="rmodal-nutrition">
+            ${recipeNut.cal != null     ? `<div class="rmodal-nut-item"><div class="rmodal-nut-val">${recipeNut.cal}</div><div class="rmodal-nut-label">🔥 calories</div></div>` : ''}
+            ${recipeNut.protein != null ? `<div class="rmodal-nut-item"><div class="rmodal-nut-val">${recipeNut.protein}g</div><div class="rmodal-nut-label">💪 protein</div></div>` : ''}
+            ${recipeNut.fiber != null   ? `<div class="rmodal-nut-item"><div class="rmodal-nut-val">${recipeNut.fiber}g</div><div class="rmodal-nut-label">🌾 fibre</div></div>` : ''}
+          </div>
+          <div class="rmodal-nut-note">Per serving · estimated</div>` : ''}
           <div class="rmodal-tags">${(recipe.tags || []).map(t => `<span class="rmodal-tag">${t}</span>`).join('')}</div>
         </div>
         ${userControls}

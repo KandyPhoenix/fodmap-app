@@ -403,12 +403,12 @@ const RECIPES = [
     time: '55 min',
     serves: 4,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '4', item: 'bone-in chicken thighs' },
-      { qty: '3', item: 'medium potatoes, cut into chunks' },
+      { qty: '3', item: 'medium potatoes, skin on, cut in chunks' },
       { qty: '2', item: 'medium carrots, sliced' },
-      { qty: '2', item: 'zucchini, sliced into rounds' },
+      { qty: '3', item: 'zucchini, sliced into rounds' },
       { qty: '3 tbsp', item: 'garlic-infused olive oil' },
       { qty: '1', item: 'lemon, juice and zest' },
       { qty: '1 tbsp', item: 'fresh thyme leaves (or 1 tsp dried)' },
@@ -418,13 +418,13 @@ const RECIPES = [
     steps: [
       'Preheat oven to 200°C / 400°F.',
       'Mix garlic-infused oil, lemon juice, lemon zest, thyme, rosemary, salt, and pepper in a bowl.',
-      'Toss potatoes and carrots in half the herb oil and spread on a large baking tray.',
+      'Scrub the potatoes and leave the skins on, then toss potatoes and carrots in half the herb oil and spread on a large baking tray.',
       'Roast for 15 minutes.',
       'Place chicken thighs on top and pour over remaining herb oil. Add zucchini to the tray.',
       'Return to oven and roast for 35–40 minutes until chicken is golden and cooked through.',
       'Rest 5 minutes before serving.',
     ],
-    fodmapNote: 'Garlic-infused oil delivers full garlic flavour. This dish is entirely low FODMAP — a great family dinner. Add a simple green salad on the side.'
+    fodmapNote: 'Garlic-infused oil delivers full garlic flavour. This dish is entirely low FODMAP — a great family dinner. Add a simple green salad on the side. Leaving the potato skins on and adding an extra zucchini boosts the fibre.'
   },
 
   {
@@ -435,11 +435,11 @@ const RECIPES = [
     time: '25 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '300g', item: 'beef strips (sirloin or rump)' },
       { qty: '2 heads', item: 'bok choy, halved lengthways' },
-      { qty: '1', item: 'medium carrot, julienned' },
+      { qty: '2', item: 'medium carrots, skin on, julienned' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '2 tbsp', item: 'soy sauce (or tamari)' },
       { qty: '1 tbsp', item: 'oyster sauce (check for no garlic/onion)' },
@@ -447,7 +447,7 @@ const RECIPES = [
       { qty: '1 tsp', item: 'fresh ginger, grated' },
       { qty: '1 tbsp', item: 'cornstarch (cornflour) mixed with 2 tbsp water' },
       { qty: '3 tbsp', item: 'spring onion green tops' },
-      { qty: '2 cups', item: 'cooked white rice, to serve' },
+      { qty: '2 cups', item: 'cooked brown rice (or white rice for a quicker option), to serve' },
     ],
     steps: [
       'Mix soy sauce, oyster sauce, sesame oil, and ginger in a small bowl. Set aside.',
@@ -456,9 +456,9 @@ const RECIPES = [
       'Add carrot to the pan and stir-fry 2 minutes. Add bok choy and toss until wilted, about 2 minutes.',
       'Return beef to the pan. Pour sauce over everything and toss.',
       'Add cornstarch mixture and toss until sauce thickens, about 30 seconds.',
-      'Garnish with spring onion greens. Serve over white rice.',
+      'Garnish with spring onion greens. Serve over brown rice.',
     ],
-    fodmapNote: 'High heat and quick cooking are key to a good stir-fry. Check your oyster sauce label — most are fine, but some brands add garlic or onion. Use tamari for strictly gluten-free.'
+    fodmapNote: 'High heat and quick cooking are key to a good stir-fry. Check your oyster sauce label — most are fine, but some brands add garlic or onion. Use tamari for strictly gluten-free. Brown rice and an extra skin-on carrot add fibre.'
   },
 
   {
@@ -469,10 +469,10 @@ const RECIPES = [
     time: '35 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '2', item: 'salmon fillets (about 180g each)' },
-      { qty: '3', item: 'medium potatoes, cut into wedges' },
+      { qty: '3', item: 'medium potatoes, skin on, cut into wedges' },
       { qty: '200g', item: 'green beans, trimmed' },
       { qty: '2 tbsp', item: 'olive oil' },
       { qty: '1', item: 'lemon, sliced' },
@@ -482,13 +482,13 @@ const RECIPES = [
     ],
     steps: [
       'Preheat oven to 200°C / 400°F.',
-      'Toss potato wedges in 1 tbsp olive oil, salt, and pepper. Spread on a baking tray and roast for 20 minutes.',
+      'Leave the skins on the potato wedges, toss in 1 tbsp olive oil, salt, and pepper. Spread on a baking tray and roast for 20 minutes.',
       'Push potatoes to the sides. Place salmon in the centre, drizzle with remaining oil, and lay lemon slices on top.',
       'Scatter green beans around the salmon. Season with salt, pepper, and dill.',
       'Return to oven and bake 12–15 minutes until salmon flakes easily.',
       'Scatter capers over if using. Serve hot.',
     ],
-    fodmapNote: 'All ingredients are naturally FODMAP-free. Green beans are safe at this serving size. An elegant and effortless meal with minimal cleanup.'
+    fodmapNote: 'All ingredients are naturally FODMAP-free. Green beans are safe at this serving size. An elegant and effortless meal with minimal cleanup. Skin-on potato wedges and a generous serve of green beans lift the fibre.'
   },
 
   {
@@ -499,12 +499,13 @@ const RECIPES = [
     time: '25 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['vegetarian', 'gluten-free', 'dairy-free option'],
+    tags: ['vegetarian', 'gluten-free', 'dairy-free option', 'higher-fibre'],
     ingredients: [
-      { qty: '200g', item: 'gluten-free pasta (penne or spaghetti)' },
+      { qty: '200g', item: 'brown-rice gluten-free pasta (penne or spaghetti)' },
       { qty: '1 × 400g tin', item: 'crushed tomatoes (no onion/garlic added)' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '12', item: 'cherry tomatoes, halved' },
+      { qty: '1 cup', item: 'baby spinach' },
       { qty: '1/2 tsp', item: 'dried oregano' },
       { qty: '1/2 tsp', item: 'sugar (balances acidity)' },
       { qty: 'handful', item: 'fresh basil leaves' },
@@ -515,11 +516,12 @@ const RECIPES = [
       'Cook GF pasta according to packet directions until al dente. Reserve 1/2 cup pasta water before draining.',
       'Heat garlic-infused oil in a pan over medium heat. Add cherry tomatoes and cook 3 minutes until softening.',
       'Add crushed tomatoes, oregano, sugar, salt, and pepper. Simmer 10 minutes.',
+      'Stir in the baby spinach and let it wilt into the sauce, about 1 minute.',
       'Add drained pasta to the sauce. Toss, adding pasta water a little at a time to loosen the sauce.',
       'Remove from heat, tear in fresh basil leaves, and toss again.',
       'Serve with grated parmesan on top.',
     ],
-    fodmapNote: 'Never add actual garlic to the sauce — use garlic-infused oil only. Canned tomatoes are low FODMAP at 100g per serve. Check the tin has no added onion or garlic.'
+    fodmapNote: 'Never add actual garlic to the sauce — use garlic-infused oil only. Canned tomatoes are low FODMAP at 100g per serve. Check the tin has no added onion or garlic. Brown-rice pasta and wilted spinach add fibre.'
   },
 
   {
@@ -530,12 +532,12 @@ const RECIPES = [
     time: '20 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
-      { qty: '2 cups', item: 'cooked white rice (cold — day-old is best)' },
+      { qty: '2 cups', item: 'cooked brown rice (cold — day-old is best; or white rice for a quicker option)' },
       { qty: '200g', item: 'cooked chicken, shredded or diced' },
       { qty: '2', item: 'eggs, lightly beaten' },
-      { qty: '1', item: 'medium carrot, finely diced' },
+      { qty: '2', item: 'medium carrots, skin on, finely diced' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '2 tbsp', item: 'soy sauce (or tamari)' },
       { qty: '1 tsp', item: 'sesame oil' },
@@ -544,13 +546,13 @@ const RECIPES = [
     ],
     steps: [
       'Heat garlic-infused oil in a wok or large frying pan over very high heat.',
-      'Add carrot and stir-fry for 2 minutes.',
+      'Add carrots and stir-fry for 2 minutes.',
       'Push vegetables to the side. Pour in eggs and scramble until just set.',
-      'Add cold rice and chicken. Toss everything together over high heat for 3–4 minutes.',
+      'Add cold brown rice and chicken. Toss everything together over high heat for 3–4 minutes.',
       'Add soy sauce and sesame oil. Toss well and cook 1 more minute.',
       'Remove from heat. Top with spring onion greens and sesame seeds.',
     ],
-    fodmapNote: 'Cold, day-old rice is essential for proper fried rice — freshly cooked rice makes it soggy. This is a great way to use leftover rotisserie chicken (plain, no seasoning).'
+    fodmapNote: 'Cold, day-old rice is essential for proper fried rice — freshly cooked rice makes it soggy. This is a great way to use leftover rotisserie chicken (plain, no seasoning). Cold brown rice and an extra skin-on carrot add fibre.'
   },
 
   {
@@ -561,7 +563,7 @@ const RECIPES = [
     time: '30 min',
     serves: 2,
     difficulty: 'medium',
-    tags: ['gluten-free', 'dairy-free'],
+    tags: ['gluten-free', 'dairy-free', 'higher-fibre'],
     ingredients: [
       { qty: '300g', item: 'white fish fillets (cod, tilapia, or snapper)' },
       { qty: '6', item: 'small corn tortillas' },
@@ -570,21 +572,21 @@ const RECIPES = [
       { qty: '1/2 tsp', item: 'cumin' },
       { qty: 'to taste', item: 'salt and pepper' },
       { qty: '—', item: 'Quick Slaw:' },
-      { qty: '1.5 cups', item: 'green cabbage, thinly shredded' },
-      { qty: '1', item: 'medium carrot, grated' },
+      { qty: '2 cups', item: 'green cabbage, thinly shredded' },
+      { qty: '2', item: 'medium carrots, skin on, grated' },
       { qty: '2 tbsp', item: 'mayonnaise' },
       { qty: '1 tbsp', item: 'lime juice' },
       { qty: '1', item: 'lime, cut into wedges' },
       { qty: '3 tbsp', item: 'spring onion green tops' },
     ],
     steps: [
-      'Mix mayonnaise and lime juice in a bowl. Toss with shredded cabbage and carrot. Set slaw aside.',
+      'Mix mayonnaise and lime juice in a bowl. Toss with shredded cabbage and grated carrots. Set slaw aside.',
       'Pat fish dry and coat with olive oil, paprika, cumin, salt, and pepper.',
       'Heat a non-stick pan over medium-high heat. Cook fish 3–4 minutes per side until golden and cooked through. Flake into large chunks.',
       'Warm corn tortillas in a dry pan or wrap in damp paper towels and microwave 30 seconds.',
       'Build tacos: tortilla → slaw → fish → spring onion greens → lime squeeze.',
     ],
-    fodmapNote: 'Corn tortillas are low FODMAP — wheat tortillas are not. Green cabbage at this serving is low FODMAP. Corn tortillas vary in size; 3 small ones per person is a standard serving.'
+    fodmapNote: 'Corn tortillas are low FODMAP — wheat tortillas are not. Green cabbage at this serving is low FODMAP. Corn tortillas vary in size; 3 small ones per person is a standard serving. Extra grated carrot and a bit more cabbage in the slaw add fibre.'
   },
 
   {
@@ -595,11 +597,11 @@ const RECIPES = [
     time: '40 min',
     serves: 4,
     difficulty: 'medium',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '600g', item: 'chicken breast or thigh, cut into chunks' },
-      { qty: '2', item: 'medium carrots, sliced' },
-      { qty: '2', item: 'zucchini, cubed' },
+      { qty: '2', item: 'medium carrots, skin on, sliced' },
+      { qty: '2', item: 'zucchini, skin on, cubed' },
       { qty: '1 × 400g tin', item: 'crushed tomatoes' },
       { qty: '1/4 cup (60ml)', item: 'canned coconut milk' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
@@ -609,8 +611,9 @@ const RECIPES = [
       { qty: '1 tsp', item: 'ground turmeric' },
       { qty: '1/2 tsp', item: 'paprika' },
       { qty: 'to taste', item: 'salt and pepper' },
+      { qty: '2 cups', item: 'baby spinach' },
       { qty: '3 tbsp', item: 'spring onion green tops (garnish)' },
-      { qty: '2 cups', item: 'cooked white rice, to serve' },
+      { qty: '2 cups', item: 'cooked brown rice (or white rice for a quicker option), to serve' },
     ],
     steps: [
       'Heat garlic-infused oil in a large pot over medium-high heat.',
@@ -619,9 +622,10 @@ const RECIPES = [
       'Add carrots, crushed tomatoes, salt, and pepper. Stir well.',
       'Bring to a boil, then reduce heat and simmer 20 minutes.',
       'Add zucchini and coconut milk. Simmer 10 more minutes until zucchini is tender and chicken is cooked.',
-      'Garnish with spring onion greens. Serve over white rice.',
+      'Stir in the baby spinach and let it wilt through at the end, about 1 minute.',
+      'Garnish with spring onion greens. Serve over brown rice.',
     ],
-    fodmapNote: 'Keep coconut milk to 1/4 cup for the whole batch (about 1 tbsp per person) to stay within FODMAP limits. Use garlic-infused oil rather than real garlic.'
+    fodmapNote: 'Keep coconut milk to 1/4 cup for the whole batch (about 1 tbsp per person) to stay within FODMAP limits. Use garlic-infused oil rather than real garlic. Skin-on carrot and zucchini, wilted spinach, and brown rice add fibre.'
   },
 
   {
@@ -632,12 +636,12 @@ const RECIPES = [
     time: '40 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '4', item: 'lamb loin chops' },
-      { qty: '2', item: 'medium carrots, cut into sticks' },
-      { qty: '2', item: 'zucchini, cut into sticks' },
-      { qty: '1 cup', item: 'green beans' },
+      { qty: '2', item: 'medium carrots, skin on, cut into sticks' },
+      { qty: '2', item: 'zucchini, skin on, cut into sticks' },
+      { qty: '1.5 cups', item: 'green beans' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '2 tbsp', item: 'fresh rosemary, finely chopped' },
       { qty: '1', item: 'lemon, zest and juice' },
@@ -651,7 +655,7 @@ const RECIPES = [
       'Add green beans to the roasting tray for the last 8 minutes.',
       'Rest lamb 3 minutes, then serve with roasted vegetables and a squeeze of lemon.',
     ],
-    fodmapNote: 'Lamb is naturally FODMAP-free. All vegetables in this dish are low FODMAP at these serving sizes. A beautiful, simple dish that feels restaurant-quality.'
+    fodmapNote: 'Lamb is naturally FODMAP-free. All vegetables in this dish are low FODMAP at these serving sizes. A beautiful, simple dish that feels restaurant-quality. Skin-on carrots and zucchini plus a bigger serve of green beans add fibre.'
   },
 
   {
@@ -662,10 +666,11 @@ const RECIPES = [
     time: '45 min',
     serves: 4,
     difficulty: 'medium',
-    tags: ['gluten-free'],
+    tags: ['gluten-free', 'higher-fibre'],
     ingredients: [
       { qty: '500g', item: 'ground (minced) pork' },
       { qty: '1/4 cup', item: 'gluten-free breadcrumbs' },
+      { qty: '1 tbsp', item: 'ground flaxseed' },
       { qty: '1', item: 'egg' },
       { qty: '3 tbsp', item: 'spring onion green tops, finely chopped' },
       { qty: '1 tsp', item: 'dried Italian herbs' },
@@ -676,18 +681,18 @@ const RECIPES = [
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '1 tsp', item: 'dried oregano' },
       { qty: '1/2 tsp', item: 'sugar' },
-      { qty: '400g', item: 'gluten-free pasta, cooked to serve' },
+      { qty: '400g', item: 'brown-rice gluten-free pasta, cooked to serve' },
       { qty: 'to serve', item: 'parmesan, grated' },
     ],
     steps: [
-      'Combine pork, GF breadcrumbs, egg, spring onion, herbs, fennel seeds, salt, and pepper. Mix well with your hands.',
+      'Combine pork, GF breadcrumbs, ground flaxseed, egg, spring onion, herbs, fennel seeds, salt, and pepper. Mix well with your hands.',
       'Roll into balls about the size of a golf ball (makes ~20).',
       'Heat garlic-infused oil in a large oven-safe pan over medium-high heat. Brown meatballs on all sides, about 5 minutes. Remove and set aside.',
       'In the same pan, add crushed tomatoes, oregano, sugar, salt, and pepper. Stir and simmer 5 minutes.',
       'Return meatballs to the sauce. Cover and simmer on low heat 20 minutes until cooked through.',
-      'Serve over cooked GF pasta with parmesan.',
+      'Serve over cooked brown-rice GF pasta with parmesan.',
     ],
-    fodmapNote: 'GF breadcrumbs and pasta avoid wheat fructans. Fennel seeds add an authentic Italian flavour and are very low FODMAP. These meatballs freeze beautifully in the sauce.'
+    fodmapNote: 'GF breadcrumbs and pasta avoid wheat fructans. Fennel seeds add an authentic Italian flavour and are very low FODMAP. These meatballs freeze beautifully in the sauce. Ground flaxseed in the mix and brown-rice pasta add fibre.'
   },
 
   {
@@ -698,7 +703,7 @@ const RECIPES = [
     time: '60 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['vegetarian', 'gluten-free'],
+    tags: ['vegetarian', 'gluten-free', 'higher-fibre'],
     ingredients: [
       { qty: '2 large', item: 'baking potatoes (brushed clean)' },
       { qty: '1 tin (95g)', item: 'canned tuna in water (optional)' },
@@ -706,18 +711,18 @@ const RECIPES = [
       { qty: '1 tbsp', item: 'butter' },
       { qty: '4 tbsp', item: 'spring onion green tops, sliced' },
       { qty: '2 tbsp', item: 'sour cream (optional — check tolerance)' },
-      { qty: '8', item: 'cherry tomatoes, halved' },
+      { qty: '12', item: 'cherry tomatoes, halved' },
       { qty: 'to taste', item: 'salt, pepper, and paprika' },
     ],
     steps: [
       'Preheat oven to 200°C / 400°F. Pierce potatoes all over with a fork.',
       'Rub with a little olive oil and salt. Place directly on oven rack.',
       'Bake 50–60 minutes until skin is crispy and flesh is completely soft.',
-      'Cut open and fluff interior with a fork. Add butter and salt.',
+      'Cut open and fluff interior with a fork, keeping and eating the skins. Add butter and salt.',
       'Pile on your toppings: cheddar, spring onion greens, tuna, sour cream, and cherry tomatoes.',
       'Season with pepper and a pinch of paprika.',
     ],
-    fodmapNote: 'Potatoes are wonderfully low FODMAP. Cheddar is low in lactose. Sour cream — use just 1 tbsp per person and test your tolerance. Spring onion green tops replace chives safely.'
+    fodmapNote: 'Potatoes are wonderfully low FODMAP. Cheddar is low in lactose. Sour cream — use just 1 tbsp per person and test your tolerance. Spring onion green tops replace chives safely. Eating the potato skins and extra cherry tomatoes adds fibre.'
   },
 
   // ─── SNACKS ────────────────────────────────────────────
@@ -1221,16 +1226,16 @@ const RECIPES = [
     time: '30 min',
     serves: 2,
     difficulty: 'medium',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '200g', item: 'dried flat rice noodles' },
       { qty: '250g', item: 'raw shrimp/prawns, peeled and deveined' },
       { qty: '2', item: 'eggs, lightly beaten' },
-      { qty: '1 cup', item: 'bean sprouts' },
-      { qty: '1', item: 'medium carrot, julienned' },
+      { qty: '1.5 cups', item: 'bean sprouts' },
+      { qty: '2', item: 'medium carrots, skin on, julienned' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '3 tbsp', item: 'spring onion green tops, sliced' },
-      { qty: '2 tbsp', item: 'roasted peanuts, roughly chopped' },
+      { qty: '3 tbsp', item: 'roasted peanuts, roughly chopped' },
       { qty: '1', item: 'lime, quartered' },
       { qty: '—', item: 'Pad Thai Sauce:' },
       { qty: '3 tbsp', item: 'soy sauce (or tamari)' },
@@ -1245,11 +1250,11 @@ const RECIPES = [
       'Heat garlic-infused oil in a large wok over very high heat.',
       'Cook shrimp 2 minutes until pink. Push to the side.',
       'Add eggs to the pan and scramble until just set.',
-      'Add noodles, carrot, and sauce. Toss vigorously over high heat for 2–3 minutes.',
+      'Add noodles, carrots, and sauce. Toss vigorously over high heat for 2–3 minutes.',
       'Stir in bean sprouts and spring onion greens.',
       'Serve topped with peanuts and a lime wedge.',
     ],
-    fodmapNote: 'Bean sprouts are low FODMAP. Maple syrup replaces traditional palm sugar. Always use tamari for a strictly gluten-free version.'
+    fodmapNote: 'Bean sprouts are low FODMAP. Maple syrup replaces traditional palm sugar. Always use tamari for a strictly gluten-free version. An extra skin-on carrot, more bean sprouts, and extra peanuts add fibre.'
   },
 
   {
@@ -1260,11 +1265,12 @@ const RECIPES = [
     time: '55 min',
     serves: 4,
     difficulty: 'medium',
-    tags: ['gluten-free', 'dairy-free option', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free option', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '4 large', item: 'red or yellow bell peppers' },
       { qty: '400g', item: 'ground (minced) beef' },
-      { qty: '1.5 cups', item: 'cooked white rice' },
+      { qty: '1.5 cups', item: 'cooked brown rice (or white rice for a quicker option)' },
+      { qty: '1 tbsp', item: 'ground flaxseed' },
       { qty: '1 × 400g tin', item: 'crushed tomatoes' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '1 tsp', item: 'ground cumin' },
@@ -1278,13 +1284,13 @@ const RECIPES = [
       'Slice tops off peppers and remove seeds and membranes.',
       'Heat garlic-infused oil in a pan. Cook beef until browned, about 5 minutes. Drain excess fat.',
       'Stir in cumin, paprika, spring onion, and half the crushed tomatoes. Season well. Cook 5 minutes.',
-      'Remove from heat and stir in cooked rice.',
+      'Remove from heat and stir in cooked brown rice and ground flaxseed.',
       'Pour remaining tomatoes into the bottom of a baking dish.',
       'Fill each pepper with the beef-rice mixture and stand them in the dish.',
       'Top each with grated cheddar if using.',
       'Cover with foil and bake 30 minutes. Uncover and bake 10 more minutes until peppers are tender.',
     ],
-    fodmapNote: 'Red and yellow peppers are low FODMAP — avoid green for this recipe as they have more fructans. Great for meal prep — refrigerate up to 3 days.'
+    fodmapNote: 'Red and yellow peppers are low FODMAP — avoid green for this recipe as they have more fructans. Great for meal prep — refrigerate up to 3 days. Brown rice and ground flaxseed in the filling add fibre.'
   },
 
   {
@@ -1295,14 +1301,15 @@ const RECIPES = [
     time: '40 min',
     serves: 4,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '500g', item: 'ground (minced) turkey' },
-      { qty: '400g', item: 'gluten-free pasta' },
+      { qty: '400g', item: 'brown-rice gluten-free pasta' },
       { qty: '2 × 400g tins', item: 'crushed tomatoes' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
-      { qty: '2', item: 'medium carrots, finely diced' },
+      { qty: '3', item: 'medium carrots, grated' },
       { qty: '1/4 stalk', item: 'celery (10g), finely diced' },
+      { qty: '1 cup', item: 'baby spinach' },
       { qty: '1 tsp', item: 'dried oregano' },
       { qty: '1 tsp', item: 'dried basil' },
       { qty: '1/2 tsp', item: 'sugar' },
@@ -1311,14 +1318,15 @@ const RECIPES = [
     ],
     steps: [
       'Heat garlic-infused oil in a large pot over medium-high heat.',
-      'Add carrot and celery; cook 5 minutes, stirring.',
+      'Add grated carrots and celery; cook 5 minutes, stirring.',
       'Add turkey and cook, breaking up, until browned — about 7 minutes.',
       'Add crushed tomatoes, oregano, basil, sugar, salt, and pepper.',
       'Simmer on low heat 20 minutes, stirring occasionally.',
-      'Cook GF pasta per packet directions. Toss with the sauce.',
+      'Stir in the baby spinach and let it wilt into the sauce, about 1 minute.',
+      'Cook brown-rice GF pasta per packet directions. Toss with the sauce.',
       'Serve with grated parmesan and fresh basil.',
     ],
-    fodmapNote: 'Turkey is lighter than beef and completely FODMAP-free. Keep celery small (1/4 stalk per serve). Carrot adds natural sweetness without any FODMAPs.'
+    fodmapNote: 'Turkey is lighter than beef and completely FODMAP-free. Keep celery small (1/4 stalk per serve). Carrot adds natural sweetness without any FODMAPs. Grated carrots, an extra carrot, wilted spinach, and brown-rice pasta add fibre.'
   },
 
   {
@@ -1329,11 +1337,12 @@ const RECIPES = [
     time: '50 min',
     serves: 4,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '4', item: 'chicken thighs, bone-in skin-on' },
-      { qty: '1.5 cups', item: 'long-grain white rice, rinsed' },
-      { qty: '2.5 cups', item: 'low-FODMAP chicken stock' },
+      { qty: '1.5 cups', item: 'long-grain brown rice, rinsed (white rice also works — see note)' },
+      { qty: '3 cups', item: 'low-FODMAP chicken stock' },
+      { qty: '1', item: 'medium carrot, skin on, grated' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '1', item: 'lemon, juice and zest' },
       { qty: '1 tsp', item: 'dried thyme' },
@@ -1346,13 +1355,13 @@ const RECIPES = [
       'Mix garlic-infused oil, lemon zest, half the lemon juice, thyme, paprika, salt, and pepper.',
       'Rub this mixture all over the chicken thighs.',
       'Sear chicken skin-side down in an oven-safe pan over high heat, 4 minutes until golden. Remove and set aside.',
-      'Add rice to pan and stir to coat in the drippings.',
+      'Add brown rice and grated carrot to the pan and stir to coat in the drippings.',
       'Pour in stock and remaining lemon juice. Bring to a boil.',
       'Place chicken on top, skin-side up. Transfer to oven.',
-      'Bake 35–40 minutes until chicken is golden and rice has absorbed all liquid.',
+      'Bake 50–55 minutes until chicken is golden and the brown rice has absorbed all liquid and is tender.',
       'Rest 5 minutes. Garnish with spring onion greens and serve from the pan.',
     ],
-    fodmapNote: 'One pan = less washing, more flavour from the drippings going into the rice. An effortless dinner that looks impressive. All ingredients are low FODMAP.'
+    fodmapNote: 'One pan = less washing, more flavour from the drippings going into the rice. An effortless dinner that looks impressive. All ingredients are low FODMAP. Brown rice (with a little extra stock and a longer cook) and a grated skin-on carrot add fibre. For a quicker, easier meal use white rice instead: reduce the stock to 2.25 cups and bake about 25 minutes.'
   },
 
   {
@@ -1363,12 +1372,13 @@ const RECIPES = [
     time: '30 min',
     serves: 3,
     difficulty: 'medium',
-    tags: ['vegetarian', 'gluten-free'],
+    tags: ['vegetarian', 'gluten-free', 'higher-fibre'],
     ingredients: [
-      { qty: '250g', item: 'gluten-free macaroni or pasta' },
+      { qty: '250g', item: 'brown-rice gluten-free macaroni or pasta' },
       { qty: '2 tbsp', item: 'butter' },
       { qty: '2 tbsp', item: 'rice flour or GF plain flour' },
       { qty: '1.5 cups', item: 'lactose-free milk' },
+      { qty: '1/2 cup', item: 'zucchini, skin on, finely grated' },
       { qty: '150g', item: 'sharp cheddar, grated' },
       { qty: '30g', item: 'parmesan, grated' },
       { qty: '1 tsp', item: 'Dijon mustard' },
@@ -1378,12 +1388,12 @@ const RECIPES = [
     steps: [
       'Cook GF pasta until just al dente. Drain, reserving 1/4 cup pasta water.',
       'Melt butter in a saucepan over medium heat. Whisk in flour and cook 1 minute.',
-      'Gradually pour in lactose-free milk, whisking constantly to avoid lumps. Cook until thickened, about 5 minutes.',
+      'Gradually pour in lactose-free milk, whisking constantly to avoid lumps. Add the grated zucchini and cook until thickened, about 5 minutes.',
       'Remove from heat. Stir in cheddar, parmesan, mustard, and paprika. Season generously.',
       'Add pasta and toss to coat. Loosen with pasta water as needed.',
       'Optional: pour into a baking dish, top with GF breadcrumbs, and grill/broil for 5 minutes until golden.',
     ],
-    fodmapNote: 'Cheddar is low in lactose. Using lactose-free milk and GF flour makes this entirely low FODMAP. Comfort food — done right.'
+    fodmapNote: 'Cheddar is low in lactose. Using lactose-free milk and GF flour makes this entirely low FODMAP. Comfort food — done right. Brown-rice macaroni and finely grated zucchini hidden in the sauce add fibre.'
   },
 
   {
@@ -1394,11 +1404,11 @@ const RECIPES = [
     time: '40 min',
     serves: 3,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '500g', item: 'pork tenderloin' },
-      { qty: '4', item: 'medium carrots, cut into sticks' },
-      { qty: '3', item: 'medium potatoes, cubed' },
+      { qty: '5', item: 'medium carrots, skin on, cut into sticks' },
+      { qty: '3', item: 'medium potatoes, skin on, cubed' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '1 tbsp', item: 'Dijon mustard' },
       { qty: '1 tbsp', item: 'maple syrup (or rice malt syrup / brown sugar)' },
@@ -1408,14 +1418,14 @@ const RECIPES = [
     ],
     steps: [
       'Preheat oven to 200°C / 400°F.',
-      'Toss carrots and potatoes in 1 tbsp garlic-infused oil, salt, and pepper. Spread on a baking tray.',
+      'Leave the skins on the carrots and potatoes, then toss in 1 tbsp garlic-infused oil, salt, and pepper. Spread on a baking tray.',
       'Roast vegetables for 15 minutes.',
       'Mix remaining oil, mustard, maple syrup, rosemary, salt, and pepper. Rub all over pork.',
       'Place pork on the tray alongside the vegetables.',
       'Roast 20–25 minutes until pork reaches 63°C / 145°F internal temperature.',
       'Rest pork 5 minutes before slicing. Serve with roasted vegetables and spring onion greens.',
     ],
-    fodmapNote: 'Pork is completely FODMAP-free. The maple-mustard glaze is one of the best low-FODMAP flavor combinations. Make sure your Dijon has no added garlic or onion powder.'
+    fodmapNote: 'Pork is completely FODMAP-free. The maple-mustard glaze is one of the best low-FODMAP flavor combinations. Make sure your Dijon has no added garlic or onion powder. Skin-on potatoes and carrots plus an extra carrot add fibre.'
   },
 
   {
@@ -1426,9 +1436,11 @@ const RECIPES = [
     time: '25 min',
     serves: 4,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '500g', item: 'ground (minced) turkey' },
+      { qty: '1 tbsp', item: 'ground flaxseed' },
+      { qty: '1/4 cup', item: 'zucchini or carrot, skin on, grated' },
       { qty: '3 tbsp', item: 'spring onion green tops, finely chopped' },
       { qty: '2 tbsp', item: 'fresh parsley, chopped' },
       { qty: '1 tsp', item: 'Dijon mustard' },
@@ -1439,13 +1451,13 @@ const RECIPES = [
       { qty: 'Toppings:', item: 'lettuce, tomato, mayonnaise, mustard' },
     ],
     steps: [
-      'Combine turkey, spring onion, parsley, mustard, paprika, oregano, salt, and pepper. Mix gently.',
+      'Combine turkey, ground flaxseed, grated zucchini or carrot, spring onion, parsley, mustard, paprika, oregano, salt, and pepper. Mix gently.',
       'Shape into 4 equal patties, about 2cm thick.',
       'Heat a lightly oiled pan or grill over medium-high heat.',
       'Cook patties 5–6 minutes per side until cooked through (internal temp 74°C / 165°F).',
       'Rest 2 minutes. Serve in GF buns with your favourite toppings.',
     ],
-    fodmapNote: 'Most burger buns contain wheat — choose a GF option or serve in lettuce leaves for a low-carb version. All seasonings used here are FODMAP-free. Add a slice of cheddar for extra richness.'
+    fodmapNote: 'Most burger buns contain wheat — choose a GF option or serve in lettuce leaves for a low-carb version. All seasonings used here are FODMAP-free. Add a slice of cheddar for extra richness. Ground flaxseed and grated skin-on zucchini or carrot in the patties add fibre.'
   },
 
   {
@@ -1456,7 +1468,7 @@ const RECIPES = [
     time: '25 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '300g', item: 'raw prawns/shrimp, peeled' },
       { qty: '2 heads', item: 'bok choy, quartered' },
@@ -1468,7 +1480,8 @@ const RECIPES = [
       { qty: '1 tbsp', item: 'soy sauce or tamari' },
       { qty: '1 tsp', item: 'curry powder' },
       { qty: '1 tsp', item: 'turmeric' },
-      { qty: '2 cups', item: 'cooked rice or rice noodles, to serve' },
+      { qty: '2 cups', item: 'baby spinach' },
+      { qty: '2 cups', item: 'cooked brown rice or rice noodles (or white rice for a quicker option), to serve' },
       { qty: '3 tbsp', item: 'spring onion green tops, to garnish' },
     ],
     steps: [
@@ -1477,9 +1490,10 @@ const RECIPES = [
       'Add carrot and cook 2 minutes.',
       'Add prawns and cook 2–3 minutes until pink.',
       'Add bok choy, stock, coconut milk, and soy sauce. Toss and cook 2 more minutes.',
-      'Serve over rice or rice noodles. Garnish with spring onion greens.',
+      'Stir in the baby spinach and let it wilt into the curry, about 1 minute.',
+      'Serve over brown rice or rice noodles. Garnish with spring onion greens.',
     ],
-    fodmapNote: 'Keep canned coconut milk to 1/4 cup for the entire recipe (about 2 tbsp per person). Prawns are completely FODMAP-free. Ready in under 30 minutes.'
+    fodmapNote: 'Keep canned coconut milk to 1/4 cup for the entire recipe (about 2 tbsp per person). Prawns are completely FODMAP-free. Ready in under 30 minutes. Wilted spinach and brown rice add fibre.'
   },
 
   {
@@ -1490,13 +1504,13 @@ const RECIPES = [
     time: '40 min',
     serves: 3,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free'],
+    tags: ['gluten-free', 'dairy-free', 'higher-fibre'],
     ingredients: [
       { qty: '6', item: 'GF pork sausages (check: no onion/garlic in ingredients)' },
-      { qty: '3', item: 'medium carrots, cut into chunks' },
-      { qty: '2', item: 'zucchini, cut into thick rounds' },
+      { qty: '3', item: 'medium carrots, skin on, cut into chunks' },
+      { qty: '3', item: 'zucchini, skin on, cut into thick rounds' },
       { qty: '1', item: 'red bell pepper, cut into strips' },
-      { qty: '300g', item: 'baby potatoes, halved' },
+      { qty: '300g', item: 'baby potatoes, skin on, halved' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '1 tsp', item: 'smoked paprika' },
       { qty: '1 tsp', item: 'dried thyme' },
@@ -1505,13 +1519,13 @@ const RECIPES = [
     ],
     steps: [
       'Preheat oven to 200°C / 400°F.',
-      'Toss all vegetables in garlic-infused oil, paprika, thyme, salt, and pepper.',
+      'Leave the skins on the baby potatoes, carrots, and zucchini, then toss all vegetables in garlic-infused oil, paprika, thyme, salt, and pepper.',
       'Spread on a large baking tray in a single layer.',
       'Nestle sausages between the vegetables.',
       'Roast 30–35 minutes, turning once halfway, until sausages are browned and vegetables are tender.',
       'Serve with Dijon mustard on the side.',
     ],
-    fodmapNote: '⚠️ Sausages are a FODMAP minefield — most commercial brands contain garlic and onion powder. Look for plain pork sausages from a butcher, or a certified low-FODMAP brand. Read every label.'
+    fodmapNote: '⚠️ Sausages are a FODMAP minefield — most commercial brands contain garlic and onion powder. Look for plain pork sausages from a butcher, or a certified low-FODMAP brand. Read every label. Skin-on potatoes, carrots and zucchini plus an extra zucchini add fibre.'
   },
 
   {
@@ -1522,23 +1536,25 @@ const RECIPES = [
     time: '20 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '2', item: 'salmon fillets (180g each)' },
       { qty: '2 tbsp', item: 'brown sugar (or rice malt syrup / maple syrup)' },
       { qty: '1 tbsp', item: 'Dijon mustard' },
       { qty: '1 tbsp', item: 'soy sauce (or tamari)' },
       { qty: '1 tsp', item: 'garlic-infused olive oil' },
-      { qty: 'to serve', item: 'steamed rice and green vegetables of choice' },
+      { qty: '2 cups', item: 'green beans (1 cup per serve), steamed' },
+      { qty: 'to serve', item: 'steamed brown rice (or white rice for a quicker option)' },
     ],
     steps: [
       'Preheat oven to 200°C / 400°F. Line a baking tray with baking paper.',
       'Mix brown sugar, Dijon, soy sauce, and garlic-infused oil.',
       'Place salmon on the tray. Spoon the glaze over the top.',
       'Bake 12–15 minutes until salmon is just cooked through and glaze is caramelised.',
-      'Serve with steamed rice and vegetables.',
+      'Meanwhile, steam the green beans until just tender.',
+      'Serve with steamed brown rice and the green beans.',
     ],
-    fodmapNote: 'One of the easiest, most impressive dinners you can make. The 4-ingredient glaze is entirely FODMAP-safe. Works equally well with chicken breast (cook 20–25 min).'
+    fodmapNote: 'One of the easiest, most impressive dinners you can make. The 4-ingredient glaze is entirely FODMAP-safe. Works equally well with chicken breast (cook 20–25 min). Steamed green beans and brown rice add fibre.'
   },
 
   // ─── SNACKS (continued) ──────────────────────────────────
@@ -2099,7 +2115,7 @@ const RECIPES = [
     time: '20 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '2', item: 'salmon fillets (about 6 oz / 170g each)' },
       { qty: '2 tbsp', item: 'brown sugar (or rice malt syrup / maple syrup)' },
@@ -2107,8 +2123,8 @@ const RECIPES = [
       { qty: '1 tsp', item: 'fresh ginger, grated' },
       { qty: '1 tsp', item: 'sesame oil' },
       { qty: '1 tsp', item: 'rice vinegar' },
-      { qty: '1 cup (180g)', item: 'white rice, cooked, to serve' },
-      { qty: '1 cup', item: 'bok choy or broccolini, steamed, to serve' },
+      { qty: '1 cup (180g)', item: 'brown rice, cooked (or white rice for a quicker option), to serve' },
+      { qty: '1.5 cups', item: 'bok choy or broccolini, steamed, to serve (¾ cup per serve)' },
       { qty: '1 tbsp', item: 'sesame seeds, to garnish' },
     ],
     steps: [
@@ -2118,9 +2134,9 @@ const RECIPES = [
       'Flip salmon and brush generously with glaze.',
       'Transfer pan to oven (or continue on stovetop, covered) at 200°C / 400°F for 8–10 minutes until cooked through.',
       'Brush with remaining glaze and sprinkle with sesame seeds.',
-      'Serve over rice with steamed greens. Drizzle any pan glaze over the top.',
+      'Serve over brown rice with steamed greens. Drizzle any pan glaze over the top.',
     ],
-    fodmapNote: 'Tamari (GF) is low FODMAP at this amount. Brown sugar (or rice malt syrup / maple syrup) is low FODMAP. Ginger is low FODMAP. Bok choy and broccolini are both low FODMAP at ½ cup per person. A complete, balanced FODMAP-friendly dinner.'
+    fodmapNote: 'Tamari (GF) is low FODMAP at this amount. Brown sugar (or rice malt syrup / maple syrup) is low FODMAP. Ginger is low FODMAP. Bok choy and broccolini are both low FODMAP at ¾ cup per person. A complete, balanced FODMAP-friendly dinner. Brown rice and a bigger serve of steamed greens add fibre.'
   },
 
   {
@@ -2131,9 +2147,11 @@ const RECIPES = [
     time: '25 min',
     serves: 4,
     difficulty: 'easy',
-    tags: ['gluten-free', 'high-protein'],
+    tags: ['gluten-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '1 lb (454g)', item: 'ground turkey' },
+      { qty: '1 tbsp', item: 'ground flaxseed' },
+      { qty: '¼ cup', item: 'zucchini or carrot, skin on, grated' },
       { qty: '1 tbsp', item: 'garlic-infused olive oil' },
       { qty: '2 tbsp', item: 'spring onion green tops, finely chopped' },
       { qty: '1 tbsp', item: 'fresh parsley, chopped' },
@@ -2148,14 +2166,14 @@ const RECIPES = [
       { qty: '½', item: 'cucumber, thinly sliced' },
     ],
     steps: [
-      'Mix turkey with garlic-infused oil, spring onion tops, parsley, paprika, cumin, salt, and pepper.',
+      'Mix turkey with ground flaxseed, grated zucchini or carrot, garlic-infused oil, spring onion tops, parsley, paprika, cumin, salt, and pepper.',
       'Divide into 4 equal patties. Press a small indent in the centre of each (prevents puffing).',
       'Heat a skillet or grill over medium-high heat. Cook patties 5–6 minutes per side until cooked through (internal temp 74°C / 165°F).',
       'Toast GF buns lightly if desired.',
       'Assemble: bun base, lettuce, patty, tomato, cucumber, mayo, and bun top.',
       'Serve immediately with oven fries or a simple green salad.',
     ],
-    fodmapNote: 'Ground turkey is plain protein — no FODMAPs. Garlic-infused oil is the safe garlic swap. Plain mayo (Hellmann\'s, Kewpie) is low FODMAP — avoid aioli or garlic mayo. GF buns can have variable ingredients — check for onion or honey.'
+    fodmapNote: 'Ground turkey is plain protein — no FODMAPs. Garlic-infused oil is the safe garlic swap. Plain mayo (Hellmann\'s, Kewpie) is low FODMAP — avoid aioli or garlic mayo. GF buns can have variable ingredients — check for onion or honey. Ground flaxseed and grated skin-on zucchini or carrot in the patties add fibre.'
   },
 
   {
@@ -2166,13 +2184,13 @@ const RECIPES = [
     time: '40 min',
     serves: 4,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'make-ahead'],
+    tags: ['gluten-free', 'dairy-free', 'make-ahead', 'higher-fibre'],
     ingredients: [
       { qty: '1 lb (454g)', item: 'chicken breast or thighs, bone-in or boneless' },
-      { qty: '1 cup (180g)', item: 'white rice, uncooked' },
-      { qty: '2', item: 'medium carrots, sliced' },
+      { qty: '1 cup (180g)', item: 'brown rice, uncooked (or white rice for a quicker option)' },
+      { qty: '3', item: 'medium carrots, skin on, sliced' },
       { qty: '2 stalks', item: 'celery, thinly sliced (½ stalk per serve)' },
-      { qty: '1', item: 'zucchini, diced' },
+      { qty: '1', item: 'zucchini, skin on, diced' },
       { qty: '6 cups (1.4L)', item: 'low-FODMAP chicken stock (homemade or certified GF/no onion)' },
       { qty: '1 tsp', item: 'dried thyme' },
       { qty: '2', item: 'bay leaves' },
@@ -2185,11 +2203,11 @@ const RECIPES = [
       'Add chicken, stock, thyme, and bay leaves. Bring to a boil.',
       'Reduce heat, cover, and simmer 20 minutes until chicken is cooked through.',
       'Remove chicken, shred with two forks, and return to pot.',
-      'Add rice and zucchini. Simmer 15 minutes until rice is cooked.',
+      'Add brown rice and zucchini. Simmer 35–40 minutes until the brown rice is cooked and tender.',
       'Remove bay leaves. Stir in fresh parsley. Season well.',
       'Serve hot. Keeps refrigerated 4 days — rice thickens as it sits, add a splash of stock when reheating.',
     ],
-    fodmapNote: 'Keep celery to ½ stalk per person (10g) — more accumulates mannitol quickly. Most commercial stock contains onion and garlic — make your own or find a certified low-FODMAP brand. Carrots are fully safe at this quantity.'
+    fodmapNote: 'Keep celery to ½ stalk per person (10g) — more accumulates mannitol quickly. Most commercial stock contains onion and garlic — make your own or find a certified low-FODMAP brand. Carrots are fully safe at this quantity. Brown rice (with a longer simmer), skin-on carrot and zucchini, and an extra carrot add fibre. For a quicker meal use white rice and simmer just 12–15 minutes (Step 5) until tender.'
   },
 
   {
@@ -2200,11 +2218,12 @@ const RECIPES = [
     time: '20 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'high-protein'],
+    tags: ['gluten-free', 'high-protein', 'higher-fibre'],
     ingredients: [
-      { qty: '8 oz (227g)', item: 'GF spaghetti or linguine' },
+      { qty: '8 oz (227g)', item: 'brown-rice GF spaghetti or linguine' },
       { qty: '12 oz (340g)', item: 'large shrimp, peeled and deveined' },
       { qty: '3 tbsp', item: 'garlic-infused olive oil' },
+      { qty: '2 cups', item: 'baby spinach' },
       { qty: '½ cup (120ml)', item: 'dry white wine or extra stock' },
       { qty: '2 tbsp', item: 'butter' },
       { qty: '1', item: 'lemon, juice and zest' },
@@ -2218,10 +2237,11 @@ const RECIPES = [
       'Add shrimp in a single layer; cook 1–2 minutes per side until pink. Remove and set aside.',
       'Add wine to the pan and cook 2 minutes, scraping up any bits.',
       'Add butter, lemon juice, zest, and red pepper flakes. Stir until butter melts.',
+      'Add the baby spinach and let it wilt into the pan, about 1 minute.',
       'Add pasta and toss, adding pasta water a splash at a time until the sauce coats the noodles.',
       'Return shrimp to the pan, toss together, and finish with fresh parsley.',
     ],
-    fodmapNote: 'Garlic-infused oil is the safe garlic swap — the fructans stay behind in the garlic clove and do not transfer to the oil. Wine is low FODMAP at ½ cup total for the recipe. GF pasta is fully safe. No onion or garlic — FODMAP-friendly scampi at its best.'
+    fodmapNote: 'Garlic-infused oil is the safe garlic swap — the fructans stay behind in the garlic clove and do not transfer to the oil. Wine is low FODMAP at ½ cup total for the recipe. GF pasta is fully safe. No onion or garlic — FODMAP-friendly scampi at its best. Brown-rice pasta and wilted spinach add fibre.'
   },
 
   {
@@ -2232,7 +2252,7 @@ const RECIPES = [
     time: '25 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '2', item: 'cod fillets (about 6 oz / 170g each)' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
@@ -2243,8 +2263,8 @@ const RECIPES = [
       { qty: '½ tsp', item: 'smoked paprika' },
       { qty: 'to taste', item: 'salt and black pepper' },
       { qty: '—', item: 'To serve' },
-      { qty: '2 cups (310g)', item: 'steamed or roasted potatoes' },
-      { qty: '2 cups', item: 'green beans or broccolini, steamed' },
+      { qty: '2 cups (310g)', item: 'steamed or roasted potatoes, skin on' },
+      { qty: '2 cups', item: 'green beans, steamed (1 cup per serve)' },
     ],
     steps: [
       'Preheat oven to 200°C / 400°F.',
@@ -2252,9 +2272,9 @@ const RECIPES = [
       'Bake 12–15 minutes until the fish flakes easily and is opaque throughout.',
       'While fish bakes, melt butter in a small saucepan over low heat.',
       'Add capers, lemon juice, lemon zest, and parsley. Warm through for 1–2 minutes.',
-      'Spoon lemon caper sauce over the fish and serve immediately with potatoes and greens.',
+      'Spoon lemon caper sauce over the fish and serve immediately with skin-on potatoes and green beans.',
     ],
-    fodmapNote: 'Capers are low FODMAP per Monash — a great way to add big flavour. Plain potatoes are fully safe. Green beans are low FODMAP at 1 cup per person; broccolini at ½ cup. White fish like cod, tilapia, and halibut are all zero-FODMAP proteins.'
+    fodmapNote: 'Capers are low FODMAP per Monash — a great way to add big flavour. Plain potatoes are fully safe. Green beans are low FODMAP at 1 cup per person; broccolini at ½ cup. White fish like cod, tilapia, and halibut are all zero-FODMAP proteins. Skin-on potatoes and a full serve of green beans add fibre.'
   },
 
   {
@@ -2265,7 +2285,7 @@ const RECIPES = [
     time: '20 min (+ marinate)',
     serves: 4,
     difficulty: 'medium',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '1½ lb (680g)', item: 'pork shoulder or tenderloin, cut into chunks' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
@@ -2276,10 +2296,10 @@ const RECIPES = [
       { qty: '1', item: 'orange, juice only' },
       { qty: '1', item: 'lime, juice only' },
       { qty: 'to taste', item: 'salt and black pepper' },
-      { qty: '2 cups (360g)', item: 'white rice, cooked, to serve' },
+      { qty: '2 cups (360g)', item: 'brown rice, cooked (or white rice for a quicker option), to serve' },
       { qty: '—', item: 'Bowl toppings' },
-      { qty: '1', item: 'tomato, diced' },
-      { qty: '¼', item: 'cucumber, diced' },
+      { qty: '2', item: 'tomatoes, diced' },
+      { qty: '½', item: 'cucumber, skin on, diced' },
       { qty: '2 tbsp', item: 'fresh cilantro' },
       { qty: '2', item: 'limes, cut into wedges' },
     ],
@@ -2289,9 +2309,9 @@ const RECIPES = [
       'Cook in a slow cooker on low 6–8 hours, or in a pressure cooker 45 minutes, until fall-apart tender.',
       'Shred pork with forks and return to the cooking juices.',
       'Optional: spread shredded pork on a tray and broil/grill 5 minutes for crispy edges.',
-      'Serve over rice with tomato, cucumber, fresh cilantro, and lime wedges.',
+      'Serve over brown rice with diced tomato, cucumber, fresh cilantro, and lime wedges.',
     ],
-    fodmapNote: 'Orange juice in small amounts adds sweetness without a FODMAP load. Garlic-infused oil is the safe garlic swap. All spices used are low FODMAP. A crowd-pleasing dinner that works equally well in corn tortillas or lettuce wraps.'
+    fodmapNote: 'Orange juice in small amounts adds sweetness without a FODMAP load. Garlic-infused oil is the safe garlic swap. All spices used are low FODMAP. A crowd-pleasing dinner that works equally well in corn tortillas or lettuce wraps. Brown rice plus extra diced tomato and skin-on cucumber add fibre.'
   },
 
   {
@@ -2302,7 +2322,7 @@ const RECIPES = [
     time: '55 min',
     serves: 4,
     difficulty: 'medium',
-    tags: ['gluten-free', 'comfort-food'],
+    tags: ['gluten-free', 'comfort-food', 'higher-fibre'],
     ingredients: [
       { qty: '1 lb (454g)', item: 'lean ground beef' },
       { qty: '2', item: 'medium carrots, diced small' },
@@ -2310,25 +2330,26 @@ const RECIPES = [
       { qty: '1 cup (135g)', item: 'green beans, cut into 1cm pieces' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '2 tbsp', item: 'tomato paste' },
+      { qty: '1 tbsp', item: 'ground flaxseed' },
       { qty: '1 cup (240ml)', item: 'low-FODMAP beef or chicken stock' },
       { qty: '1 tbsp', item: 'tamari' },
       { qty: '1 tsp', item: 'dried thyme' },
       { qty: '—', item: 'Potato topping' },
-      { qty: '4', item: 'large potatoes (about 2 lb / 900g), peeled and quartered' },
+      { qty: '4', item: 'large potatoes (about 2 lb / 900g), skin on, quartered' },
       { qty: '2 tbsp', item: 'butter' },
       { qty: '½ cup (120ml)', item: 'lactose-free milk, warmed' },
       { qty: 'to taste', item: 'salt and black pepper' },
     ],
     steps: [
       'Preheat oven to 190°C / 375°F.',
-      'Boil potatoes until tender (15–18 min). Drain, mash with butter and warm milk. Season well. Set aside.',
+      'Boil potatoes until tender (15–18 min). Drain, then mash with the skins on (a rustic, skin-on mash) with butter and warm milk. Season well. Set aside.',
       'Heat garlic-infused oil in a large oven-safe skillet. Brown beef over high heat, breaking it up.',
       'Add carrots and cook 3 minutes. Add zucchini and green beans.',
-      'Stir in tomato paste, stock, tamari, and thyme. Simmer 8–10 minutes until thickened.',
+      'Stir in tomato paste, ground flaxseed, stock, tamari, and thyme. Simmer 8–10 minutes until thickened.',
       'Spread mashed potato evenly over the beef mixture. Drag a fork over the top for texture.',
       'Bake 20–25 minutes until the potato top is golden. Rest 5 minutes before serving.',
     ],
-    fodmapNote: 'Classic comfort food, completely FODMAPified. Potatoes are fully low FODMAP. Check your stock — most commercial stock contains onion and garlic; use homemade or a certified low-FODMAP brand. Tamari adds depth without wheat or high-FODMAP ingredients.'
+    fodmapNote: 'Classic comfort food, completely FODMAPified. Potatoes are fully low FODMAP. Check your stock — most commercial stock contains onion and garlic; use homemade or a certified low-FODMAP brand. Tamari adds depth without wheat or high-FODMAP ingredients. Skin-on rustic mash and ground flaxseed in the filling add fibre.'
   },
 
   {
@@ -2339,7 +2360,7 @@ const RECIPES = [
     time: '25 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'vegan', 'dairy-free', 'vegetarian'],
+    tags: ['gluten-free', 'vegan', 'dairy-free', 'vegetarian', 'higher-fibre'],
     ingredients: [
       { qty: '12 oz (340g)', item: 'firm tofu, pressed and cubed' },
       { qty: '2 tbsp', item: 'cornstarch / cornflour' },
@@ -2347,12 +2368,12 @@ const RECIPES = [
       { qty: '1', item: 'red bell pepper, sliced' },
       { qty: '1 cup', item: 'bok choy, chopped' },
       { qty: '1 cup', item: 'broccoli florets (¾ cup per serve)' },
-      { qty: '1 cup', item: 'bean sprouts' },
+      { qty: '1.5 cups', item: 'bean sprouts' },
       { qty: '2 tbsp', item: 'tamari' },
       { qty: '1 tbsp', item: 'maple syrup (or rice malt syrup / brown sugar)' },
       { qty: '1 tsp', item: 'fresh ginger, grated' },
       { qty: '1 tsp', item: 'sesame oil' },
-      { qty: '1 cup (180g)', item: 'white rice, cooked, to serve' },
+      { qty: '1 cup (180g)', item: 'brown rice, cooked (or white rice for a quicker option), to serve' },
       { qty: '1 tbsp', item: 'sesame seeds, to garnish' },
     ],
     steps: [
@@ -2362,9 +2383,9 @@ const RECIPES = [
       'Add remaining oil. Stir-fry broccoli and bell pepper 3 minutes.',
       'Add bok choy and bean sprouts; stir-fry 1–2 minutes more.',
       'Return tofu to the pan, pour over sauce, and toss to coat.',
-      'Serve over rice, garnished with sesame seeds.',
+      'Serve over brown rice, garnished with sesame seeds.',
     ],
-    fodmapNote: 'Keep broccoli to ¾ cup florets (75g) per person — larger amounts are moderate FODMAP. Firm tofu is low FODMAP at 170g per serve. Bean sprouts are fully safe. Cornstarch is low FODMAP. A complete plant-based meal.'
+    fodmapNote: 'Keep broccoli to ¾ cup florets (75g) per person — larger amounts are moderate FODMAP. Firm tofu is low FODMAP at 170g per serve. Bean sprouts are fully safe. Cornstarch is low FODMAP. A complete plant-based meal. Brown rice and extra bean sprouts add fibre.'
   },
 
   // ─── SNACKS (additional) ─────────────────────────────────────────────────
@@ -2758,7 +2779,7 @@ const RECIPES = [
     time: '20 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'high-protein'],
+    tags: ['gluten-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '12 oz (340g)', item: 'large shrimp, peeled and deveined' },
       { qty: '3 tbsp', item: 'garlic-infused olive oil' },
@@ -2766,8 +2787,8 @@ const RECIPES = [
       { qty: '1', item: 'lemon, juice and zest' },
       { qty: '¼ tsp', item: 'red pepper flakes (optional)' },
       { qty: '¼ cup', item: 'fresh parsley, chopped' },
-      { qty: '1 cup (180g)', item: 'white rice, cooked, to serve' },
-      { qty: '2 cups', item: 'green beans or zucchini, steamed, to serve' },
+      { qty: '1 cup (180g)', item: 'brown rice, cooked (or white rice for a quicker option), to serve' },
+      { qty: '2 cups', item: 'green beans, steamed, to serve (1 cup per serve)' },
       { qty: 'to taste', item: 'salt and black pepper' },
     ],
     steps: [
@@ -2776,9 +2797,9 @@ const RECIPES = [
       'Add shrimp in a single layer; cook 1–2 minutes per side until pink and opaque. Do not overcook.',
       'Reduce heat to low. Add butter, lemon juice, zest, and red pepper flakes; swirl until the butter melts into a glossy sauce.',
       'Stir in the parsley.',
-      'Serve over rice with steamed greens, spooning the pan sauce over everything.',
+      'Serve over brown rice with steamed green beans, spooning the pan sauce over everything.',
     ],
-    fodmapNote: 'Garlic-infused oil gives all the garlic flavour with none of the fructans. Shrimp is zero-FODMAP. Green beans are safe at 1 cup per person; zucchini at ⅓ cup. A fast, restaurant-quality weeknight dinner.'
+    fodmapNote: 'Garlic-infused oil gives all the garlic flavour with none of the fructans. Shrimp is zero-FODMAP. Green beans are safe at 1 cup per person; zucchini at ⅓ cup. A fast, restaurant-quality weeknight dinner. Brown rice and a full serve of green beans add fibre.'
   },
 
   {
@@ -2789,28 +2810,29 @@ const RECIPES = [
     time: '30 min',
     serves: 4,
     difficulty: 'easy',
-    tags: ['gluten-free', 'high-protein'],
+    tags: ['gluten-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '4', item: 'chicken breasts, pounded to even thickness' },
       { qty: '½ cup (50g)', item: 'parmesan, finely grated' },
       { qty: '½ cup (60g)', item: 'GF breadcrumbs' },
+      { qty: '1 tbsp', item: 'ground flaxseed' },
       { qty: '1 tsp', item: 'dried oregano' },
       { qty: '½ tsp', item: 'smoked paprika' },
       { qty: '2', item: 'large eggs, beaten' },
       { qty: '3 tbsp', item: 'garlic-infused olive oil' },
-      { qty: '8 oz (227g)', item: 'GF spaghetti, to serve' },
+      { qty: '8 oz (227g)', item: 'brown-rice GF spaghetti, to serve' },
       { qty: '2 tbsp', item: 'butter' },
       { qty: '2 tbsp', item: 'fresh parsley, chopped' },
       { qty: 'to taste', item: 'salt and black pepper' },
     ],
     steps: [
-      'Mix parmesan, GF breadcrumbs, oregano, paprika, salt, and pepper in a shallow dish.',
+      'Mix parmesan, GF breadcrumbs, ground flaxseed, oregano, paprika, salt, and pepper in a shallow dish.',
       'Dip each chicken breast in the beaten egg, then press firmly into the parmesan crumb to coat.',
       'Heat garlic-infused oil in a large skillet over medium heat. Cook chicken 5–6 minutes per side until golden and cooked through (74°C / 165°F). Lower the heat if the crust browns too fast.',
-      'Meanwhile, cook the GF spaghetti al dente per package directions. Drain and toss with butter, parsley, salt, and pepper.',
+      'Meanwhile, cook the brown-rice GF spaghetti al dente per package directions. Drain and toss with butter, parsley, salt, and pepper.',
       'Serve the crusted chicken over or alongside the buttered pasta.',
     ],
-    fodmapNote: 'Hard parmesan is naturally very low in lactose. Check GF breadcrumbs for onion and garlic powder. Garlic-infused oil is the safe swap. GF pasta is fully low FODMAP. Comfort food without the gluten or FODMAPs.'
+    fodmapNote: 'Hard parmesan is naturally very low in lactose. Check GF breadcrumbs for onion and garlic powder. Garlic-infused oil is the safe swap. GF pasta is fully low FODMAP. Comfort food without the gluten or FODMAPs. Ground flaxseed in the crumb and brown-rice pasta add fibre.'
   },
 
   {
@@ -2821,7 +2843,7 @@ const RECIPES = [
     time: '20 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '12 oz (340g)', item: 'thinly sliced pork loin or tenderloin' },
       { qty: '1 tbsp', item: 'fresh ginger, grated' },
@@ -2829,8 +2851,8 @@ const RECIPES = [
       { qty: '1 tbsp', item: 'mirin (or 1 tsp maple syrup + splash rice vinegar)' },
       { qty: '1 tbsp', item: 'maple syrup (or rice malt syrup / brown sugar)' },
       { qty: '1 tbsp', item: 'garlic-infused olive oil' },
-      { qty: '1 cup (180g)', item: 'white rice, cooked, to serve' },
-      { qty: '1 cup', item: 'shredded green cabbage, to serve' },
+      { qty: '1 cup (180g)', item: 'brown rice, cooked (or white rice for a quicker option), to serve' },
+      { qty: '1.5 cups', item: 'shredded green cabbage, to serve' },
       { qty: '2 tbsp', item: 'spring onion green tops, sliced, to garnish' },
       { qty: '1 tbsp', item: 'sesame seeds, to garnish' },
     ],
@@ -2839,10 +2861,10 @@ const RECIPES = [
       'Heat garlic-infused oil in a skillet over medium-high heat.',
       'Add the pork in a single layer and cook 2 minutes per side until lightly browned.',
       'Pour in the ginger sauce and toss for 1–2 minutes until the pork is glazed and cooked through.',
-      'Serve over rice with a pile of shredded cabbage on the side.',
+      'Serve over brown rice with a pile of shredded cabbage on the side.',
       'Garnish with spring onion green tops and sesame seeds.',
     ],
-    fodmapNote: 'Tamari (GF soy sauce) is low FODMAP at this amount. Ginger and green cabbage are fully safe (cabbage to 1 cup per serve). Mirin is low FODMAP in small amounts. Use only the green tops of spring onion.'
+    fodmapNote: 'Tamari (GF soy sauce) is low FODMAP at this amount. Ginger and green cabbage are fully safe (cabbage to 1 cup per serve). Mirin is low FODMAP in small amounts. Use only the green tops of spring onion. Brown rice and extra shredded cabbage add fibre.'
   },
 
   {
@@ -2853,11 +2875,11 @@ const RECIPES = [
     time: '40 min',
     serves: 4,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein', 'one-pan'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'one-pan', 'higher-fibre'],
     ingredients: [
       { qty: '8', item: 'bone-in, skin-on chicken thighs' },
-      { qty: '4', item: 'medium potatoes, cut into chunks' },
-      { qty: '3', item: 'medium carrots, cut into batons' },
+      { qty: '4', item: 'medium potatoes, skin on, cut into chunks' },
+      { qty: '4', item: 'medium carrots, skin on, cut into batons' },
       { qty: '1', item: 'red bell pepper, cut into chunks' },
       { qty: '3 tbsp', item: 'garlic-infused olive oil' },
       { qty: '1 tsp', item: 'dried thyme' },
@@ -2868,13 +2890,13 @@ const RECIPES = [
     ],
     steps: [
       'Preheat oven to 200°C / 400°F.',
-      'Toss potatoes, carrots, and bell pepper with 2 tbsp garlic-infused oil, salt, and pepper. Spread on a large sheet pan.',
+      'Leave the skins on the potatoes and carrots, then toss with the bell pepper, 2 tbsp garlic-infused oil, salt, and pepper. Spread on a large sheet pan.',
       'Rub chicken thighs with the remaining oil, thyme, rosemary, paprika, salt, and pepper. Nestle them skin-side up among the vegetables.',
       'Tuck the lemon wedges around the pan.',
       'Roast 35–40 minutes until the chicken skin is crisp and reaches 75°C / 165°F and the vegetables are tender.',
       'Squeeze the roasted lemon over everything before serving.',
     ],
-    fodmapNote: 'Potatoes, carrots, and bell pepper are all low FODMAP at these servings. Garlic-infused oil is the safe garlic swap. One pan, minimal cleanup — a reliable family dinner. Great in the air fryer too (see the tip on the card).'
+    fodmapNote: 'Potatoes, carrots, and bell pepper are all low FODMAP at these servings. Garlic-infused oil is the safe garlic swap. One pan, minimal cleanup — a reliable family dinner. Great in the air fryer too (see the tip on the card). Skin-on potatoes and carrots plus an extra carrot add fibre.'
   },
 
   {
@@ -2885,19 +2907,19 @@ const RECIPES = [
     time: '25 min',
     serves: 3,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '1 lb (454g)', item: 'beef sirloin or rump steak, thinly sliced' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '1', item: 'red bell pepper, sliced' },
       { qty: '1', item: 'green bell pepper, sliced' },
-      { qty: '1 cup', item: 'green beans, trimmed' },
+      { qty: '1.5 cups', item: 'green beans, trimmed' },
       { qty: '3 tbsp', item: 'tamari' },
       { qty: '1 tbsp', item: 'rice vinegar' },
       { qty: '1 tbsp', item: 'fresh ginger, grated' },
       { qty: '1 tsp', item: 'cornstarch mixed with 2 tbsp water' },
       { qty: '1 tsp', item: 'sesame oil' },
-      { qty: '1.5 cups (270g)', item: 'white rice, cooked, to serve' },
+      { qty: '1.5 cups (270g)', item: 'brown rice, cooked (or white rice for a quicker option), to serve' },
       { qty: '2 tbsp', item: 'spring onion green tops, sliced, to garnish' },
     ],
     steps: [
@@ -2905,9 +2927,9 @@ const RECIPES = [
       'Heat 1 tbsp garlic-infused oil in a wok or large skillet over high heat. Sear the beef in batches, 1–2 minutes, until browned. Remove and set aside.',
       'Add the remaining oil. Stir-fry the peppers and green beans 3–4 minutes until tender-crisp.',
       'Return the beef to the pan and pour in the sauce. Toss 1–2 minutes until glossy and thickened.',
-      'Serve over rice, garnished with spring onion green tops.',
+      'Serve over brown rice, garnished with spring onion green tops.',
     ],
-    fodmapNote: 'Beef is a zero-FODMAP protein. Bell peppers and green beans are low FODMAP at these servings. Tamari is the GF soy sauce — low FODMAP at this amount. Garlic-infused oil and green onion tops give the aromatic base without the fructans.'
+    fodmapNote: 'Beef is a zero-FODMAP protein. Bell peppers and green beans are low FODMAP at these servings. Tamari is the GF soy sauce — low FODMAP at this amount. Garlic-infused oil and green onion tops give the aromatic base without the fructans. Brown rice and a bigger serve of green beans add fibre.'
   },
 
   {
@@ -2918,14 +2940,14 @@ const RECIPES = [
     time: '30 min',
     serves: 2,
     difficulty: 'medium',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '2', item: 'steaks (sirloin, ribeye, or strip — about 8 oz / 225g each)' },
-      { qty: '4', item: 'medium potatoes, cut into wedges' },
+      { qty: '4', item: 'medium potatoes, skin on, cut into wedges' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: 'to taste', item: 'salt and black pepper' },
       { qty: '—', item: 'Chimichurri' },
-      { qty: '1 cup', item: 'fresh parsley, finely chopped' },
+      { qty: '1.5 cups', item: 'fresh parsley, finely chopped' },
       { qty: '2 tbsp', item: 'fresh oregano (or 2 tsp dried)' },
       { qty: '½ cup (120ml)', item: 'olive oil' },
       { qty: '2 tbsp', item: 'red wine vinegar' },
@@ -2933,13 +2955,13 @@ const RECIPES = [
       { qty: '2 tbsp', item: 'spring onion green tops, finely chopped' },
     ],
     steps: [
-      'Preheat oven to 220°C / 425°F. Toss potato wedges with 1 tbsp garlic-infused oil, salt, and pepper. Roast 25–30 minutes, turning once, until golden.',
+      'Preheat oven to 220°C / 425°F. Leave the skins on the potato wedges and toss with 1 tbsp garlic-infused oil, salt, and pepper. Roast 25–30 minutes, turning once, until golden.',
       'Make the chimichurri: combine parsley, oregano, olive oil, vinegar, red pepper flakes, spring onion tops, and a pinch of salt. Let it sit so the flavours meld.',
       'Rub steaks with the remaining garlic-infused oil, salt, and pepper. Let them come to room temperature.',
       'Heat a grill pan or skillet over high heat. Cook steaks 3–4 minutes per side for medium-rare (adjust to taste). Rest 5 minutes.',
       'Slice the steak and spoon over the chimichurri. Serve with the roasted potato wedges.',
     ],
-    fodmapNote: 'Steak and potatoes are both zero-FODMAP. The chimichurri uses garlic-infused oil and green onion tops instead of raw garlic and onion — all the punch, none of the fructans. Fresh herbs are unlimited.'
+    fodmapNote: 'Steak and potatoes are both zero-FODMAP. The chimichurri uses garlic-infused oil and green onion tops instead of raw garlic and onion — all the punch, none of the fructans. Fresh herbs are unlimited. Skin-on potato wedges and an extra-parsley chimichurri add fibre.'
   },
 
   {
@@ -2950,7 +2972,7 @@ const RECIPES = [
     time: '25 min',
     serves: 4,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '1 lb (454g)', item: 'lean ground beef' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
@@ -2959,11 +2981,12 @@ const RECIPES = [
       { qty: '1 tsp', item: 'dried oregano' },
       { qty: '½ tsp', item: 'cayenne pepper (optional)' },
       { qty: '2 tbsp', item: 'tomato paste' },
+      { qty: '1 tbsp', item: 'ground flaxseed' },
       { qty: '¼ cup (60ml)', item: 'water' },
       { qty: '8', item: 'corn tortillas, warmed' },
       { qty: '—', item: 'Toppings' },
-      { qty: '2 cups', item: 'shredded lettuce' },
-      { qty: '1', item: 'tomato, diced' },
+      { qty: '3 cups', item: 'shredded lettuce' },
+      { qty: '2', item: 'tomatoes, diced' },
       { qty: '½ cup (56g)', item: 'cheddar cheese, grated' },
       { qty: '2 tbsp', item: 'spring onion green tops, sliced' },
       { qty: '1', item: 'lime, cut into wedges' },
@@ -2971,12 +2994,12 @@ const RECIPES = [
     steps: [
       'Heat garlic-infused oil in a skillet over medium-high heat. Brown the beef, breaking it up, 5–6 minutes.',
       'Stir in cumin, paprika, oregano, and cayenne; cook 1 minute until fragrant.',
-      'Add tomato paste and water. Simmer 3–4 minutes until thickened. Season with salt.',
+      'Add tomato paste, ground flaxseed, and water. Simmer 3–4 minutes until thickened. Season with salt.',
       'Warm the corn tortillas in a dry pan or microwave.',
       'Fill each tortilla with beef, lettuce, tomato, cheese, and spring onion tops.',
       'Serve with lime wedges to squeeze over.',
     ],
-    fodmapNote: 'Corn tortillas are low FODMAP (2 per serve). The homemade spice mix replaces store taco seasoning, which almost always contains onion and garlic powder. Aged cheddar is very low in lactose. Garlic-infused oil is the safe garlic swap.'
+    fodmapNote: 'Corn tortillas are low FODMAP (2 per serve). The homemade spice mix replaces store taco seasoning, which almost always contains onion and garlic powder. Aged cheddar is very low in lactose. Garlic-infused oil is the safe garlic swap. Ground flaxseed in the beef plus extra lettuce and tomato add fibre.'
   },
 
   {
@@ -2987,17 +3010,18 @@ const RECIPES = [
     time: '20 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'high-protein'],
+    tags: ['gluten-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '1', item: 'cooked chicken breast, shredded (about 1.5 cups)' },
       { qty: '4', item: 'corn tortillas (or 2 large GF wraps)' },
       { qty: '1 cup (112g)', item: 'cheddar or Monterey Jack cheese, grated' },
-      { qty: '1', item: 'red bell pepper, finely diced' },
+      { qty: '1 cup', item: 'red bell pepper, finely diced (≤½ cup per serve)' },
       { qty: '2 tbsp', item: 'spring onion green tops, sliced' },
       { qty: '1 tbsp', item: 'garlic-infused olive oil' },
       { qty: '1 tsp', item: 'ground cumin' },
       { qty: '½ tsp', item: 'smoked paprika' },
       { qty: 'to taste', item: 'salt and black pepper' },
+      { qty: '2', item: 'tomatoes, diced, for a side salad' },
     ],
     steps: [
       'Toss the shredded chicken with cumin, paprika, salt, and pepper.',
@@ -3005,9 +3029,9 @@ const RECIPES = [
       'Lay a tortilla in the pan. Scatter over cheese, chicken, bell pepper, and spring onion tops. Top with a second tortilla.',
       'Cook 2–3 minutes until golden underneath, then carefully flip and cook the other side until the cheese melts.',
       'Slide onto a board, cut into wedges, and repeat with the remaining tortillas.',
-      'Serve warm with a green salad or extra diced tomato.',
+      'Serve warm with a side salad of diced tomato.',
     ],
-    fodmapNote: 'Corn tortillas are low FODMAP (2 per serve). Aged cheddar and Monterey Jack are very low in lactose. Bell pepper and spring onion green tops are safe. Garlic-infused oil keeps the savoury base FODMAP-friendly.'
+    fodmapNote: 'Corn tortillas are low FODMAP (2 per serve). Aged cheddar and Monterey Jack are very low in lactose. Bell pepper and spring onion green tops are safe. Garlic-infused oil keeps the savoury base FODMAP-friendly. Extra diced red pepper and a diced tomato side salad add fibre.'
   },
 
   {
@@ -3018,7 +3042,7 @@ const RECIPES = [
     time: '25 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
     ingredients: [
       { qty: '2', item: 'tilapia fillets (or other white fish, about 6 oz / 170g each)' },
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
@@ -3028,17 +3052,17 @@ const RECIPES = [
       { qty: '2 tbsp', item: 'fresh parsley, chopped' },
       { qty: 'to taste', item: 'salt' },
       { qty: '—', item: 'To serve' },
-      { qty: '2 cups (310g)', item: 'roasted baby potatoes' },
-      { qty: '2 cups', item: 'green beans, steamed' },
+      { qty: '2 cups (310g)', item: 'roasted baby potatoes, skin on' },
+      { qty: '2 cups', item: 'green beans, steamed (1 cup per serve)' },
     ],
     steps: [
       'Preheat oven to 200°C / 400°F.',
       'Pat the fish dry and place in a baking dish. Drizzle with garlic-infused oil and lemon juice.',
       'Season with cracked pepper, paprika, and salt. Lay lemon slices over the top.',
       'Bake 12–15 minutes until the fish flakes easily and is opaque throughout.',
-      'Scatter parsley over the fish and serve with roasted potatoes and steamed green beans.',
+      'Scatter parsley over the fish and serve with the skin-on roasted potatoes and steamed green beans.',
     ],
-    fodmapNote: 'White fish like tilapia, cod, and haddock are zero-FODMAP proteins. Potatoes are fully safe and green beans are low FODMAP at 1 cup per person. Garlic-infused oil delivers the garlic flavour without the FODMAPs. Easy in the air fryer too.'
+    fodmapNote: 'White fish like tilapia, cod, and haddock are zero-FODMAP proteins. Potatoes are fully safe and green beans are low FODMAP at 1 cup per person. Garlic-infused oil delivers the garlic flavour without the FODMAPs. Easy in the air fryer too. Skin-on baby potatoes and a full serve of green beans add fibre.'
   },
 
   {
@@ -3139,6 +3163,285 @@ const RECIPES = [
       'Rest the pork 10 minutes, then slice. Serve with the roasted vegetables and pan juices.',
     ],
     fodmapNote: 'Pork loin, potatoes, and carrots are all low FODMAP. Garlic-infused oil and fresh herbs build a roast-dinner flavour without onion or garlic. Most commercial stock contains onion/garlic — use a certified low-FODMAP brand or homemade.'
+  },
+
+  // ─── HIGH-FIBRE RECIPES (low-FODMAP) ───────────────────
+  // Built to pack in as much fibre as possible while staying within safe
+  // low-FODMAP serving sizes (canned lentils/chickpeas ¼ cup pp, oats ¼–½ cup,
+  // chia 2 tbsp, raspberries ~30 berries, edamame ½ cup pp, etc.).
+  {
+    id: 'hf-oat-berry-bowl',
+    name: 'Super-Fibre Oat & Berry Bowl',
+    emoji: '🥣',
+    category: 'breakfast',
+    time: '10 min',
+    serves: 2,
+    difficulty: 'easy',
+    tags: ['vegetarian', 'gluten-free', 'high-fibre', 'make-ahead'],
+    ingredients: [
+      { qty: '1 cup (88g)', item: 'rolled oats (GF certified)' },
+      { qty: '2 tbsp', item: 'oat bran' },
+      { qty: '2 tbsp', item: 'chia seeds' },
+      { qty: '1 tbsp', item: 'ground flaxseed (linseed)' },
+      { qty: '2 cups', item: 'lactose-free milk or almond milk' },
+      { qty: '1 cup (60g)', item: 'raspberries' },
+      { qty: '2', item: 'kiwi fruits, peeled and sliced' },
+      { qty: '2 tbsp', item: 'walnuts, chopped' },
+      { qty: '2 tsp', item: 'maple syrup (optional)' },
+      { qty: '1/2 tsp', item: 'cinnamon' },
+    ],
+    steps: [
+      'Combine oats, oat bran, chia, flaxseed, milk, and cinnamon in a bowl or jar.',
+      'Stir well, then leave 5 minutes (or overnight in the fridge) until thick and creamy.',
+      'Warm gently on the stove for 3–4 minutes if you prefer it hot, adding a splash more milk to loosen.',
+      'Divide between two bowls. Top with raspberries, kiwi, and walnuts.',
+      'Drizzle with maple syrup if you like it sweeter.',
+    ],
+    fodmapNote: 'A serious fibre hit (~15g per serve) from oats, oat bran, chia, flax, and berries. Keep oat bran to 2 tbsp total and raspberries to about 30 per person to stay low FODMAP. Increase fibre slowly and drink plenty of water.'
+  },
+
+  {
+    id: 'hf-lentil-veg-soup',
+    name: 'Hearty Lentil & Vegetable Soup',
+    emoji: '🍲',
+    category: 'lunch',
+    time: '35 min',
+    serves: 4,
+    difficulty: 'easy',
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'high-fibre', 'make-ahead'],
+    ingredients: [
+      { qty: '2 tbsp', item: 'garlic-infused olive oil' },
+      { qty: '2 tbsp', item: 'spring onion green tops, sliced' },
+      { qty: '2', item: 'medium carrots, diced' },
+      { qty: '1', item: 'medium potato, diced (skin on)' },
+      { qty: '1', item: 'medium zucchini, diced' },
+      { qty: '1 cup (190g)', item: 'canned lentils, drained and rinsed' },
+      { qty: '1 cup (200g)', item: 'canned chopped tomatoes' },
+      { qty: '4 cups (1L)', item: 'low-FODMAP vegetable stock' },
+      { qty: '2 cups', item: 'baby spinach' },
+      { qty: '1 tsp', item: 'ground cumin' },
+      { qty: '1 tsp', item: 'smoked paprika' },
+      { qty: 'to taste', item: 'salt and black pepper' },
+    ],
+    steps: [
+      'Heat the garlic-infused oil in a large pot over medium heat. Add spring onion tops, carrot, and potato; cook 5 minutes.',
+      'Stir in the cumin and paprika and cook 30 seconds until fragrant.',
+      'Add the zucchini, lentils, tomatoes, and stock. Bring to a simmer.',
+      'Simmer 18–20 minutes until the vegetables are tender.',
+      'Stir through the spinach until wilted, season to taste, and serve.',
+    ],
+    fodmapNote: 'Canned (not dried) lentils are low FODMAP at ¼ cup per serve — this recipe keeps to 1 cup across 4 servings. Rinse them well. Use only spring onion green tops, not the white base, and a certified onion/garlic-free stock.'
+  },
+
+  {
+    id: 'hf-quinoa-tofu-bowl',
+    name: 'Quinoa, Tofu & Greens Power Bowl',
+    emoji: '🥗',
+    category: 'lunch',
+    time: '30 min',
+    serves: 2,
+    difficulty: 'easy',
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'high-fibre', 'high-protein'],
+    ingredients: [
+      { qty: '1 cup', item: 'cooked quinoa (about 1/3 cup dry)' },
+      { qty: '200g', item: 'firm tofu, cubed' },
+      { qty: '1 tbsp', item: 'garlic-infused olive oil' },
+      { qty: '1 tbsp', item: 'soy sauce or tamari' },
+      { qty: '2 cups', item: 'kale, stems removed and chopped' },
+      { qty: '1', item: 'medium carrot, grated' },
+      { qty: '1/2 cup (90g)', item: 'shelled edamame' },
+      { qty: '2 tbsp', item: 'pumpkin seeds (pepitas)' },
+      { qty: '1 tbsp', item: 'tahini' },
+      { qty: '1 tbsp', item: 'lemon juice' },
+      { qty: '1 tsp', item: 'maple syrup' },
+    ],
+    steps: [
+      'Press the tofu to remove moisture, then toss with the soy sauce.',
+      'Heat the garlic-infused oil in a pan over medium-high and fry the tofu 6–8 minutes until golden on all sides.',
+      'Add the kale to the pan for the last 2 minutes to wilt slightly.',
+      'Whisk tahini, lemon juice, maple syrup, and 1–2 tbsp water into a pourable dressing.',
+      'Divide quinoa between bowls; top with tofu, kale, grated carrot, and edamame.',
+      'Drizzle with the tahini dressing and scatter with pumpkin seeds.',
+    ],
+    fodmapNote: 'Firm tofu, quinoa, kale, carrot, and pumpkin seeds are all low FODMAP. Edamame is safe at ½ cup (90g) per serve and adds plant protein and fibre. Keep tahini to 1 tbsp per person.'
+  },
+
+  {
+    id: 'hf-chickpea-spinach-curry',
+    name: 'Chickpea & Spinach Curry',
+    emoji: '🍛',
+    category: 'dinner',
+    time: '30 min',
+    serves: 4,
+    difficulty: 'easy',
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'high-fibre'],
+    ingredients: [
+      { qty: '2 tbsp', item: 'garlic-infused olive oil' },
+      { qty: '2 tbsp', item: 'spring onion green tops, sliced' },
+      { qty: '1 tbsp', item: 'fresh ginger, grated' },
+      { qty: '1 cup (160g)', item: 'canned chickpeas, drained and rinsed' },
+      { qty: '1 cup (200g)', item: 'canned chopped tomatoes' },
+      { qty: '1 cup (240ml)', item: 'canned coconut milk' },
+      { qty: '4 cups', item: 'baby spinach' },
+      { qty: '2 tsp', item: 'ground cumin' },
+      { qty: '2 tsp', item: 'ground coriander' },
+      { qty: '1 tsp', item: 'ground turmeric' },
+      { qty: '1/2 tsp', item: 'chilli powder (optional)' },
+      { qty: '2 cups', item: 'cooked brown rice (or white rice for a quicker option), to serve' },
+      { qty: 'to taste', item: 'salt and black pepper' },
+    ],
+    steps: [
+      'Heat the garlic-infused oil in a pan. Add spring onion tops and ginger; cook 1 minute.',
+      'Add the cumin, coriander, turmeric, and chilli; stir 30 seconds until fragrant.',
+      'Pour in the tomatoes and coconut milk and simmer 10 minutes.',
+      'Add the chickpeas and simmer a further 5 minutes.',
+      'Stir through the spinach until wilted, then season to taste.',
+      'Serve over brown rice.',
+    ],
+    fodmapNote: 'Canned chickpeas are low FODMAP at ¼ cup per serve — this recipe keeps to 1 cup across 4 servings, so rinse them well and stick to one portion. Brown rice adds extra fibre over white rice. Use spring onion green tops only.'
+  },
+
+  {
+    id: 'hf-chicken-buddha-bowl',
+    name: 'High-Fibre Chicken Buddha Bowl',
+    emoji: '🥙',
+    category: 'dinner',
+    time: '35 min',
+    serves: 2,
+    difficulty: 'easy',
+    tags: ['gluten-free', 'dairy-free', 'high-fibre', 'high-protein'],
+    ingredients: [
+      { qty: '2 (250g)', item: 'chicken breasts' },
+      { qty: '2 tbsp', item: 'garlic-infused olive oil' },
+      { qty: '1 cup', item: 'cooked quinoa' },
+      { qty: '1', item: 'medium carrot, cut into batons' },
+      { qty: '1', item: 'medium zucchini, sliced' },
+      { qty: '1', item: 'red bell pepper, sliced' },
+      { qty: '1 cup', item: 'green beans, trimmed' },
+      { qty: '2 cups', item: 'baby spinach' },
+      { qty: '2 tbsp', item: 'pumpkin seeds (pepitas)' },
+      { qty: '1 tbsp', item: 'lemon juice' },
+      { qty: '1 tsp', item: 'smoked paprika' },
+      { qty: 'to taste', item: 'salt and black pepper' },
+    ],
+    steps: [
+      'Preheat oven to 200°C / 400°F.',
+      'Toss the carrot, zucchini, bell pepper, and green beans with 1 tbsp garlic-infused oil, paprika, salt, and pepper. Roast on a tray 20–25 minutes until tender.',
+      'Rub the chicken with the remaining oil, salt, and pepper. Pan-fry over medium heat 6–7 minutes per side until cooked through (74°C / 165°F). Rest, then slice.',
+      'Divide quinoa and raw spinach between two bowls.',
+      'Top with the roasted vegetables and sliced chicken.',
+      'Finish with a squeeze of lemon and a scatter of pumpkin seeds.',
+    ],
+    fodmapNote: 'A high-protein, high-fibre bowl (~11g fibre) from quinoa, green beans, and a rainbow of low-FODMAP veg. Keep bell pepper to about half a cup per serve and use spinach freely. Add fibre gradually if your gut is sensitive.'
+  },
+
+  {
+    id: 'hf-raspberry-chia-pudding',
+    name: 'Raspberry Chia Fibre Pudding',
+    emoji: '🍓',
+    category: 'snacks',
+    time: '5 min + chill',
+    serves: 2,
+    difficulty: 'easy',
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'high-fibre', 'make-ahead', 'no-cook'],
+    ingredients: [
+      { qty: '4 tbsp', item: 'chia seeds' },
+      { qty: '1.5 cups', item: 'almond milk or lactose-free milk' },
+      { qty: '1 cup (60g)', item: 'raspberries' },
+      { qty: '1', item: 'kiwi fruit, diced' },
+      { qty: '1 tbsp', item: 'maple syrup' },
+      { qty: '1/2 tsp', item: 'vanilla extract' },
+      { qty: '1 tbsp', item: 'pumpkin seeds, to top' },
+    ],
+    steps: [
+      'Whisk chia seeds, milk, maple syrup, and vanilla together in a jar.',
+      'Stir again after 5 minutes to stop clumping, then cover and chill at least 2 hours or overnight.',
+      'Lightly mash half the raspberries and fold through the pudding.',
+      'Spoon into two glasses and top with the remaining raspberries, kiwi, and pumpkin seeds.',
+    ],
+    fodmapNote: 'Chia seeds are a fibre powerhouse — 2 tbsp per serve is the low-FODMAP limit and exactly what this makes. Raspberries are safe at ~30 berries and kiwi adds gut-friendly fibre. Great prepped ahead for the week.'
+  },
+
+  {
+    id: 'hf-energy-balls',
+    name: 'No-Bake High-Fibre Energy Balls',
+    emoji: '🍫',
+    category: 'snacks',
+    time: '15 min',
+    serves: 10,
+    difficulty: 'easy',
+    tags: ['vegetarian', 'gluten-free', 'high-fibre', 'make-ahead', 'no-cook'],
+    ingredients: [
+      { qty: '1 cup (88g)', item: 'rolled oats (GF certified)' },
+      { qty: '1/2 cup', item: 'natural peanut butter' },
+      { qty: '3 tbsp', item: 'maple syrup' },
+      { qty: '2 tbsp', item: 'chia seeds' },
+      { qty: '2 tbsp', item: 'ground flaxseed (linseed)' },
+      { qty: '2 tbsp', item: 'dark chocolate chips (70%+)' },
+      { qty: '1 tsp', item: 'vanilla extract' },
+      { qty: 'pinch', item: 'salt' },
+    ],
+    steps: [
+      'Mix all ingredients in a bowl until a sticky dough forms.',
+      'If too dry, add 1 tsp water at a time; if too wet, add a little more oats.',
+      'Chill the mixture 10 minutes to firm up.',
+      'Roll into 20 small balls (about 1 tbsp each).',
+      'Store in an airtight container in the fridge for up to 1 week.',
+    ],
+    fodmapNote: 'Serving size is 2 balls. Oats, peanut butter, chia, and flax all bring fibre while staying low FODMAP at these amounts. Keep to the suggested serve — a much larger portion of oats or peanut butter can tip into moderate FODMAP territory.'
+  },
+
+  {
+    id: 'hf-roasted-chickpeas',
+    name: 'Crispy Roasted Chickpeas',
+    emoji: '🫘',
+    category: 'snacks',
+    time: '35 min',
+    serves: 4,
+    difficulty: 'easy',
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'high-fibre', 'make-ahead'],
+    ingredients: [
+      { qty: '1 cup (160g)', item: 'canned chickpeas, drained and rinsed' },
+      { qty: '1 tbsp', item: 'garlic-infused olive oil' },
+      { qty: '1 tsp', item: 'smoked paprika' },
+      { qty: '1/2 tsp', item: 'ground cumin' },
+      { qty: '1/2 tsp', item: 'salt' },
+      { qty: 'pinch', item: 'cayenne pepper (optional)' },
+    ],
+    steps: [
+      'Preheat oven to 200°C / 400°F.',
+      'Pat the chickpeas very dry with a towel — this is the key to crispiness.',
+      'Toss with the garlic-infused oil, paprika, cumin, salt, and cayenne.',
+      'Spread in a single layer on a lined tray.',
+      'Roast 25–30 minutes, shaking halfway, until golden and crunchy.',
+      'Cool slightly — they crisp up more as they cool. Best eaten the same day.',
+    ],
+    fodmapNote: 'Canned chickpeas are low FODMAP at ¼ cup (about 42g) per serve, which is exactly one portion of this recipe — enjoy one serve at a time. Garlic-infused oil gives the flavour without the fructans.'
+  },
+
+  {
+    id: 'hf-edamame',
+    name: 'Sea Salt & Sesame Edamame',
+    emoji: '🫛',
+    category: 'snacks',
+    time: '8 min',
+    serves: 2,
+    difficulty: 'easy',
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'high-fibre', 'high-protein'],
+    ingredients: [
+      { qty: '1 cup (180g)', item: 'frozen edamame in pods' },
+      { qty: '1 tsp', item: 'sesame oil' },
+      { qty: '1/2 tsp', item: 'flaky sea salt' },
+      { qty: '1 tsp', item: 'sesame seeds' },
+      { qty: 'optional', item: 'pinch of chilli flakes' },
+    ],
+    steps: [
+      'Bring a pot of water to the boil and cook the edamame 4–5 minutes (or steam) until tender.',
+      'Drain well and tip into a bowl.',
+      'Toss with sesame oil, sea salt, sesame seeds, and chilli flakes if using.',
+      'Serve warm — squeeze the beans straight from the pods.',
+    ],
+    fodmapNote: 'Edamame is low FODMAP at ½ cup of shelled beans (about 90g) per serve — one cup of pods yields roughly that. A quick, satisfying snack rich in plant protein and fibre.'
   },
 
 ];
