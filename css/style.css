@@ -1084,18 +1084,45 @@ body.dragging-meal { cursor: grabbing; user-select: none; -webkit-user-select: n
   font-size: 15px;
 }
 
-/* ── CALORIE DISPLAY ─────────────────────────────────── */
-.recipe-cal {
-  background: #fff3e0; color: #e65100;
+/* ── CALORIE / NUTRITION DISPLAY ─────────────────────── */
+.recipe-nutrition {
+  display: flex; flex-wrap: wrap; gap: 5px;
+  margin: 6px 0 2px;
+}
+.recipe-cal, .recipe-nut {
   border-radius: 10px; padding: 2px 8px;
-  font-size: 12px; font-weight: 700;
+  font-size: 11px; font-weight: 700;
   white-space: nowrap;
 }
+.recipe-cal { background: #fff3e0; color: #e65100; }
+.recipe-protein { background: #ffebee; color: #c2185b; }
+.recipe-fiber { background: #e8f5e9; color: #2e7d32; }
 
 .rmodal-cal {
   background: rgba(255,255,255,0.25);
   border-radius: 10px; padding: 4px 10px;
   font-size: 12px; font-weight: 700;
+}
+
+/* nutrition panel inside the recipe modal banner */
+.rmodal-nutrition {
+  display: flex; gap: 8px;
+  margin: 12px auto 0; max-width: 360px;
+}
+.rmodal-nut-item {
+  flex: 1; text-align: center;
+  background: rgba(255,255,255,0.2);
+  border-radius: 12px; padding: 8px 6px;
+}
+.rmodal-nut-val {
+  font-size: 18px; font-weight: 800; line-height: 1.1;
+}
+.rmodal-nut-label {
+  font-size: 11px; font-weight: 600; opacity: 0.9; margin-top: 2px;
+}
+.rmodal-nut-note {
+  text-align: center; font-size: 10px; opacity: 0.75;
+  margin-top: 6px; font-weight: 600;
 }
 
 /* ── RECIPE CHECKER ──────────────────────────────────── */
