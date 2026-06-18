@@ -5,6 +5,7 @@ const RECIPE_CATEGORIES = [
   { id: 'dinner',    label: 'Dinner',       emoji: '🍴' },
   { id: 'snacks',    label: 'Snacks',       emoji: '🥕' },
   { id: 'desserts',  label: 'Desserts',     emoji: '🍓' },
+  { id: 'dietician-plan', label: 'Dietician Plan', emoji: '🩺' },
 ];
 
 const RECIPES = [
