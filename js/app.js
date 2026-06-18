@@ -244,7 +244,8 @@
     const count = document.getElementById('recipe-count');
     const all = getAllRecipes();
     const list = all.filter(r => {
-      if (recipeCategory !== 'all' && r.category !== recipeCategory) return false;
+      if (recipeCategory === 'dietician-plan') { if (!(r.tags || []).includes('dietician-plan')) return false; }
+      else if (recipeCategory !== 'all' && r.category !== recipeCategory) return false;
       if (searchQuery) return (r.name + ' ' + r.category).toLowerCase().includes(searchQuery);
       return true;
     });
