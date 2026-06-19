@@ -1,1207 +1,605 @@
 // Recipes from Kandy's weekly meal plan — marked isCustom so they show as "MY RECIPE" (amber cards)
-
 const KANDY_RECIPES = [
 
-
-
   // ─── MONDAY ─────────────────────────────────────────────
-
   {
-
     id: 'kandy-mon-breakfast',
-
     name: 'Scrambled Eggs & Bacon',
-
     emoji: '🥓',
-
     category: 'breakfast',
-
     time: '15 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['gluten-free', 'high-protein', 'dairy-free option'],
-
     ingredients: [
-
       { qty: '5–6',      item: 'large eggs' },
-
       { qty: '4 strips', item: 'bacon' },
-
       { qty: '1 tbsp',   item: 'butter' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
       { qty: '4',        item: 'plain rice cakes (2 per person), to serve' },
-
     ],
-
     steps: [
-
       'Cook bacon in skillet over medium heat until crispy, 6–8 min. Set aside on paper towels.',
-
       'Crack eggs into bowl and whisk with salt and pepper.',
-
       'Melt butter in skillet over medium-low heat.',
-
       'Pour in eggs and gently fold with spatula until just set — do not overcook.',
-
       'Serve eggs alongside bacon and rice cakes.',
-
     ],
-
     fodmapNote: 'Eggs and bacon are naturally FODMAP-free. Rice cakes replace wheat toast to avoid fructans. Check bacon packaging for added onion or garlic seasoning.',
-
     isCustom: true,
-
   },
 
-
-
   {
-
     id: 'kandy-mon-lunch',
-
     name: 'Chicken & Rice Bowl',
-
     emoji: '🍚',
-
     category: 'lunch',
-
     time: '15 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['gluten-free', 'dairy-free', 'high-protein'],
-
     ingredients: [
-
       { qty: '1.5 cups', item: 'cooked white rice, warmed' },
-
       { qty: '1.5 cups', item: 'cooked chicken, shredded or sliced' },
-
       { qty: '1 medium', item: 'cucumber, thinly sliced' },
-
       { qty: '1 large',  item: 'carrot, peeled and shredded or cut into matchsticks' },
-
       { qty: '2 tbsp',   item: 'olive oil' },
-
       { qty: '1',        item: 'lemon, juiced' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
     ],
-
     steps: [
-
       'Divide warm rice between two bowls.',
-
       'Top each with chicken, cucumber, and carrot.',
-
       'Drizzle each bowl with 1 tbsp olive oil and lemon juice.',
-
       'Season with salt and pepper. Serve immediately.',
-
     ],
-
     fodmapNote: 'All ingredients are naturally FODMAP-free. Use rotisserie chicken (plain, no seasoning). Great for meal prep — keep components separate and assemble when eating.',
-
     isCustom: true,
-
   },
-
-
 
   {
-
     id: 'kandy-mon-dinner',
-
     name: 'Baked Salmon with Roasted Potatoes & Green Beans',
-
     emoji: '🐟',
-
     category: 'dinner',
-
     time: '35 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['gluten-free', 'dairy-free', 'high-protein'],
-
     ingredients: [
-
       { qty: '2',        item: 'salmon fillets (6 oz each)' },
-
       { qty: '2 medium', item: 'potatoes, skins on, cubed into 1-inch pieces' },
-
       { qty: '2½ cups',  item: 'fresh green beans, trimmed' },
-
       { qty: '3 tbsp',   item: 'olive oil, divided' },
-
       { qty: '1',        item: 'lemon, sliced' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
     ],
-
     steps: [
-
       'Preheat oven to 400°F (200°C).',
-
       'Toss the skin-on potato cubes with 1.5 tbsp olive oil, salt, and pepper. Spread on baking sheet.',
-
       'Roast potatoes 10 min, then push to one side.',
-
       'Add green beans to the other side, toss with remaining olive oil, salt, and pepper.',
-
       'Place salmon fillets on pan and top each with a lemon slice.',
-
       'Bake everything together 12–15 min until salmon flakes easily and potatoes are golden.',
-
     ],
-
     fodmapNote: 'This meal is completely FODMAP-free. Potatoes and green beans are both safe. Make sure salmon is plain with no pre-added marinades or seasonings containing garlic or onion. Leaving the skins on the potatoes and keeping a generous serve of green beans adds extra fibre while staying low FODMAP.',
-
     isCustom: true,
-
   },
-
-
 
   // ─── TUESDAY ────────────────────────────────────────────
-
   {
-
     id: 'kandy-tue-breakfast',
-
     name: 'GF Oatmeal with Blueberries',
-
     emoji: '🫐',
-
     category: 'breakfast',
-
     time: '10 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free'],
-
     ingredients: [
-
       { qty: '1.5 cups', item: 'gluten-free rolled oats' },
-
       { qty: '2.5 cups', item: 'unsweetened almond milk' },
-
       { qty: '1 cup',    item: 'fresh or frozen blueberries' },
-
       { qty: '2 tbsp',   item: 'maple syrup' },
-
       { qty: 'pinch',    item: 'salt' },
-
     ],
-
     steps: [
-
       'Bring almond milk to a gentle boil in a saucepan over medium heat.',
-
       'Stir in oats and salt. Reduce heat to medium-low.',
-
       'Cook 4–5 min, stirring occasionally, until thickened to your liking.',
-
       'Divide between two bowls. Top with blueberries and drizzle with maple syrup.',
-
     ],
-
     fodmapNote: 'Use GF-certified oats. Keep to 3/4 cup dry oats per person. Blueberries are low FODMAP at 1/2 cup per person — the 1 cup in this recipe is shared between 2 people, which is fine.',
-
     isCustom: true,
-
   },
 
-
-
   {
-
     id: 'kandy-tue-lunch',
-
     name: 'Tuna & Veggie Rice Cakes',
-
     emoji: '🫓',
-
     category: 'lunch',
-
     time: '10 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['gluten-free', 'dairy-free', 'high-protein'],
-
     ingredients: [
-
       { qty: '2 cans (5 oz)', item: 'tuna in water, drained' },
-
       { qty: '2–3 tbsp',     item: 'mayonnaise (plain, no garlic/onion added)' },
-
       { qty: '1 tsp',        item: 'mustard (optional)' },
-
       { qty: '1 small',      item: 'cucumber, finely diced' },
-
       { qty: '1 medium',     item: 'carrot, peeled and grated' },
-
       { qty: 'to taste',     item: 'salt and pepper' },
-
       { qty: '8',            item: 'plain rice cakes (4 per person), to serve' },
-
     ],
-
     steps: [
-
       'In a bowl, mix drained tuna with mayo, mustard (if using), cucumber, and carrot.',
-
       'Season with salt and pepper. Mix well.',
-
       'Divide and spoon onto rice cakes. Serve immediately.',
-
     ],
-
     fodmapNote: 'Check mayo label — avoid brands with garlic or onion added. Tuna, cucumber, and carrot are all FODMAP-free. A fast and filling low-FODMAP lunch.',
-
     isCustom: true,
-
   },
-
-
 
   {
-
     id: 'kandy-tue-dinner',
-
     name: 'Ground Beef Taco Bowls',
-
     emoji: '🥩',
-
     category: 'dinner',
-
     time: '25 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['gluten-free', 'high-protein'],
-
     ingredients: [
-
       { qty: '1 lb',     item: 'ground beef (80/20)' },
-
       { qty: '1 tbsp',   item: 'ground flaxseed' },
-
       { qty: '1.5 cups', item: 'cooked brown rice (or white rice for a quicker option)' },
-
       { qty: '1 cup',    item: 'corn kernels, canned or frozen, drained' },
-
       { qty: '1 cup',    item: 'cherry tomatoes, halved' },
-
       { qty: '1.5 cups', item: 'shredded iceberg lettuce' },
-
       { qty: '1/4 cup',  item: 'crumbled feta cheese' },
-
       { qty: '1 tsp',    item: 'ground cumin' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
       { qty: '1 tbsp',   item: 'olive oil' },
-
     ],
-
     steps: [
-
       'Heat olive oil in skillet over medium-high heat.',
-
       'Add ground beef, breaking it apart. Cook 8–10 min until browned.',
-
       'Season with cumin, salt, and pepper. Stir in the ground flaxseed while the beef finishes browning, then remove from heat.',
-
       'Build bowls: brown rice on bottom, then beef, corn, tomatoes, lettuce, and feta on top.',
-
     ],
-
     fodmapNote: 'Ground beef and cumin are safe. Keep corn to 1/2 cup per person. Feta contains some lactose — keep to about 2 tbsp per person. Cherry tomatoes and lettuce are FODMAP-free. Swapping to brown rice and stirring 1 tbsp ground flaxseed into the beef boosts the fibre while staying low FODMAP.',
-
     isCustom: true,
-
   },
-
-
 
   // ─── WEDNESDAY ──────────────────────────────────────────
-
   {
-
     id: 'kandy-wed-breakfast',
-
     name: 'Spinach & Egg Scramble with Sourdough Toast',
-
     emoji: '🍳',
-
     category: 'breakfast',
-
     time: '15 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['vegetarian', 'high-protein'],
-
     ingredients: [
-
       { qty: '5–6',      item: 'large eggs' },
-
       { qty: '2 handfuls', item: 'fresh spinach' },
-
       { qty: '1 medium', item: 'bell pepper (red or yellow), diced' },
-
       { qty: '1 tbsp',   item: 'olive oil' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
       { qty: '4 slices', item: 'spelt or wheat sourdough bread (2 per person) — MAX 2 slices per person' },
-
       { qty: 'optional', item: 'butter for toast' },
-
     ],
-
     steps: [
-
       'Heat olive oil in skillet over medium heat.',
-
       'Add bell pepper and cook 2–3 min until slightly softened.',
-
       'Add spinach and stir until wilted, about 1 min.',
-
       'Whisk eggs with salt and pepper, pour into skillet.',
-
       'Gently fold and scramble until just set.',
-
       'Toast sourdough. Serve eggs alongside toast with butter if desired.',
-
     ],
-
     fodmapNote: '⚠️ Maximum 2 slices of sourdough per person — do not exceed. Long-fermented sourdough has reduced fructans, but the limit still applies. Red and yellow bell peppers are lower in fructans than green.',
-
     isCustom: true,
-
   },
 
-
-
   {
-
     id: 'kandy-wed-lunch',
-
-    name: 'Chickpea & Veggie Salad',
-
+    name: 'Tofu & Veggie Salad',
     emoji: '🥗',
-
     category: 'lunch',
-
     time: '15 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
-    tags: ['vegetarian', 'gluten-free'],
-
+    tags: ['vegetarian', 'gluten-free', 'high-protein'],
     ingredients: [
-
-      { qty: '2/3 cup',  item: 'canned chickpeas, rinsed and drained well (⅓ cup per person — do not exceed)' },
-
+      { qty: '1 cup',    item: 'firm tofu, cubed' },
+      { qty: '1 tbsp',   item: 'garlic-infused olive oil (for pan-frying the tofu)' },
       { qty: '1 medium', item: 'cucumber, diced' },
-
       { qty: '1 cup',    item: 'cherry tomatoes, halved' },
-
       { qty: '1',        item: 'bell pepper, diced' },
-
       { qty: '1/4 cup',  item: 'crumbled feta cheese' },
-
       { qty: '2 handfuls', item: 'butter or iceberg lettuce' },
-
       { qty: '3 tbsp',   item: 'olive oil' },
-
       { qty: '1',        item: 'lemon, juiced' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
     ],
-
     steps: [
-
-      'Rinse chickpeas thoroughly under cold water. Drain completely.',
-
-      'Combine chickpeas, cucumber, cherry tomatoes, and bell pepper in a large bowl.',
-
+      'Press the tofu to remove moisture, then cube. Pan-fry in the garlic-infused oil over medium-high heat until golden, about 6 minutes. Let cool slightly. (Or use it raw if you prefer.)',
+      'Combine tofu, cucumber, cherry tomatoes, and bell pepper in a large bowl.',
       'Dress with olive oil, lemon juice, salt, and pepper. Toss well.',
-
-      'Divide lettuce between two plates, top with chickpea mixture and feta.',
-
+      'Divide lettuce between two plates, top with the tofu mixture and feta.',
     ],
-
-    fodmapNote: '⚠️ Chickpeas: maximum ⅓ cup (42g) per person — this is the safe FODMAP limit. Rinsing canned chickpeas well is essential. Feta: keep to about 2 tbsp per person.',
-
+    fodmapNote: 'Firm tofu replaces chickpeas here — it is naturally FODMAP-free and high in protein, with no legume/GOS portion limit to watch. Feta: keep to about 2 tbsp per person. Red or yellow bell peppers are lower in fructans than green.',
     isCustom: true,
-
   },
-
-
 
   {
-
     id: 'kandy-wed-dinner',
-
     name: 'Chicken Stir-Fry with Bok Choy & Rice Noodles',
-
     emoji: '🍜',
-
     category: 'dinner',
-
     time: '30 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['gluten-free', 'dairy-free', 'high-protein'],
-
     ingredients: [
-
       { qty: '2',        item: 'boneless chicken breasts, thinly sliced' },
-
       { qty: '6 oz',     item: 'rice noodles (dry weight)' },
-
       { qty: '2 heads',  item: 'baby bok choy, halved or roughly chopped' },
-
       { qty: '3 medium', item: 'carrots, skin on, cut into thin matchsticks' },
-
       { qty: '1–2 cups', item: 'baby spinach' },
-
       { qty: '3',        item: 'scallions — GREEN TOPS ONLY, sliced (discard white/bulb end)' },
-
       { qty: '1 tsp',    item: 'fresh ginger, grated' },
-
       { qty: '2 tbsp',   item: 'gluten-free soy sauce or tamari' },
-
       { qty: '2 tbsp',   item: 'olive oil' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
     ],
-
     steps: [
-
       'Cook rice noodles according to package directions. Drain and set aside.',
-
       'Heat olive oil in a large skillet or wok over high heat.',
-
       'Season chicken with salt and pepper. Cook 4–5 min until cooked through. Remove and set aside.',
-
       'In same pan, add more oil if needed. Add carrots and cook 2 min.',
-
       'Add bok choy and ginger, stir-fry 2–3 min until wilted.',
-
       'Return chicken to pan. Add rice noodles and soy sauce. Toss everything together 1–2 min.',
-
       'Add the baby spinach and toss until just wilted, about 1 min.',
-
       'Top with sliced scallion greens and serve immediately.',
-
     ],
-
     fodmapNote: '⚠️ Use GREEN TOPS of scallions only — the white bulb end is high in fructans. Bok choy, carrots, ginger, and rice noodles are all FODMAP-safe. Use tamari (not regular soy sauce) if strictly gluten-free. An extra carrot (skin on) and a handful of wilted baby spinach add fibre while keeping the dish low FODMAP.',
-
     isCustom: true,
-
   },
-
-
 
   // ─── THURSDAY ───────────────────────────────────────────
-
   {
-
     id: 'kandy-thu-breakfast',
-
     name: 'Lactose-Free Yogurt Parfait',
-
     emoji: '🫙',
-
     category: 'breakfast',
-
     time: '5 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['vegetarian', 'gluten-free', 'no-cook'],
-
     ingredients: [
-
       { qty: '2 cups',  item: 'lactose-free plain or vanilla yogurt' },
-
       { qty: '1 cup',   item: 'strawberries, sliced' },
-
       { qty: '1/2 cup', item: 'blueberries' },
-
       { qty: '4 tbsp',  item: 'pumpkin seeds or chopped walnuts' },
-
       { qty: '2 tbsp',  item: 'maple syrup (optional)' },
-
     ],
-
     steps: [
-
       'Spoon yogurt into two bowls or glasses.',
-
       'Top with strawberries and blueberries.',
-
       'Sprinkle pumpkin seeds or walnuts over the top.',
-
       'Drizzle with maple syrup if desired. Serve immediately.',
-
     ],
-
     fodmapNote: 'Lactose-free yogurt is essential here — regular yogurt is high in lactose. Strawberries are low FODMAP. Keep blueberries to 1/4 cup per person. Pumpkin seeds and walnuts are both safe.',
-
     isCustom: true,
-
   },
-
-
 
   {
-
     id: 'kandy-thu-dinner',
-
     name: 'Pork Chops with Mashed Potato & Sautéed Zucchini',
-
     emoji: '🥩',
-
     category: 'dinner',
-
     time: '35 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['gluten-free', 'high-protein'],
-
     ingredients: [
-
       { qty: '2',        item: 'boneless pork chops (6–8 oz each)' },
-
       { qty: '3 medium', item: 'potatoes, skin on, cubed' },
-
       { qty: '1/4 cup',  item: 'lactose-free milk, warmed' },
-
       { qty: '2 tbsp',   item: 'butter, divided' },
-
       { qty: '2 medium', item: 'zucchini, skin on, sliced into rounds' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
       { qty: '1 tbsp',   item: 'olive oil' },
-
     ],
-
     steps: [
-
       'Boil potato cubes in salted water 12–15 min until fork tender. Drain.',
-
       'Mash with warm lactose-free milk, 1 tbsp butter, salt and pepper, leaving the skins in for a rustic mash. Keep warm.',
-
       'While potatoes cook, heat olive oil in skillet over medium-high heat.',
-
       'Season pork chops generously with salt and pepper.',
-
       'Cook pork chops 4 min per side until golden and cooked through (internal temp 145°F). Rest 2 min.',
-
       'In same skillet, melt remaining butter and sauté zucchini 3–4 min until golden. Season with salt and pepper.',
-
       'Plate pork chops with mashed potato and zucchini.',
-
     ],
-
     fodmapNote: 'Potatoes and pork are FODMAP-free. Use lactose-free milk for the mash. Zucchini is low FODMAP at a moderate serving (1 medium per person). Season simply with salt and pepper — avoid garlic or onion powder. Keeping the skins on the potatoes (rustic mash) and on the zucchini adds extra fibre while staying low FODMAP.',
-
     isCustom: true,
-
   },
-
-
 
   // ─── FRIDAY ─────────────────────────────────────────────
-
   {
-
     id: 'kandy-fri-breakfast',
-
     name: 'Peanut Butter Strawberry Smoothie',
-
     emoji: '🥤',
-
     category: 'breakfast',
-
     time: '5 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free'],
-
     ingredients: [
-
       { qty: '2 cups',    item: 'unsweetened almond milk' },
-
       { qty: '4 tbsp',    item: 'smooth peanut butter (2 tbsp per person — do not exceed)' },
-
       { qty: '1.5 cups',  item: 'frozen or fresh strawberries' },
-
       { qty: '2 tsp',     item: 'maple syrup' },
-
       { qty: '1 cup',     item: 'ice' },
-
     ],
-
     steps: [
-
       'Add all ingredients to a blender.',
-
       'Blend on high 30–45 seconds until smooth.',
-
       'Taste and add more maple syrup if needed.',
-
       'Pour into two glasses. Drink immediately.',
-
     ],
-
     fodmapNote: '⚠️ Peanut butter is limited to 2 tbsp per person — do not exceed. Use plain smooth peanut butter (just peanuts + salt). Strawberries are FODMAP-free. Maple syrup is the safe sweetener here — never use honey.',
-
     isCustom: true,
-
   },
 
-
-
   {
-
     id: 'kandy-fri-lunch',
-
     name: 'Egg Fried Rice',
-
     emoji: '🍳',
-
     category: 'lunch',
-
     time: '15 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['vegetarian', 'gluten-free', 'dairy-free'],
-
     ingredients: [
-
       { qty: '2 cups',  item: 'day-old cooked white rice, cold (works best)' },
-
       { qty: '3',       item: 'large eggs, beaten' },
-
       { qty: '1/2 cup', item: 'corn kernels, canned or frozen, drained' },
-
       { qty: '1 large', item: 'carrot, peeled and finely diced' },
-
       { qty: '2 tbsp',  item: 'gluten-free soy sauce or tamari' },
-
       { qty: '1 tbsp',  item: 'olive oil or butter' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
     ],
-
     steps: [
-
       'Heat oil in a large skillet or wok over high heat.',
-
       'Add carrot and cook 2 min.',
-
       'Push veggies to the side. Pour eggs into the empty side and scramble until just set.',
-
       'Add corn and rice. Break up any clumps and stir everything together.',
-
       'Add soy sauce and toss well. Cook 2–3 more min until rice is heated through and slightly crispy.',
-
       'Season with salt and pepper. Serve hot.',
-
     ],
-
     fodmapNote: 'Cold day-old rice is essential — it separates better and gets crispier. Keep corn to 1/4 cup per person. Use tamari for strictly gluten-free. No garlic or onion — the dish gets all its flavour from soy sauce and the caramelised rice.',
-
     isCustom: true,
-
   },
-
-
 
   {
-
     id: 'kandy-fri-dinner',
-
     name: 'Shrimp & Quinoa with Roasted Veggies',
-
     emoji: '🍤',
-
     category: 'dinner',
-
     time: '35 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['gluten-free', 'dairy-free', 'high-protein'],
-
     ingredients: [
-
       { qty: '1 lb',    item: 'shrimp, peeled and deveined (or 2 chicken breasts, cubed)' },
-
       { qty: '1 cup',   item: 'dry quinoa, rinsed' },
-
       { qty: '2 cups',  item: 'water or low-sodium chicken broth' },
-
       { qty: '1',       item: 'bell pepper, sliced' },
-
       { qty: '2 medium', item: 'zucchini, skin on, sliced into half-moons' },
-
       { qty: '1 cup',   item: 'cherry tomatoes' },
-
       { qty: '1–2 cups', item: 'baby spinach' },
-
       { qty: '3 tbsp',  item: 'olive oil, divided' },
-
       { qty: '1',       item: 'lemon, juiced' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
     ],
-
     steps: [
-
       'Rinse quinoa well. Cook in 2 cups water or broth: bring to boil, cover, reduce to low, cook 15 min. Fluff with fork.',
-
       'Heat 2 tbsp olive oil in a large skillet over medium-high heat.',
-
       'Add bell pepper and zucchini. Cook 4–5 min until softened. Add tomatoes and cook 2 more min.',
-
       'Push veggies to one side. Add remaining oil and cook shrimp 2 min per side (or chicken 5–6 min total) until cooked through.',
-
       'Squeeze lemon over everything. Season with salt and pepper. Stir to combine.',
-
       'Stir the baby spinach through the veg at the end and toss until just wilted, about 1 min.',
-
       'Serve shrimp and veggies over quinoa.',
-
     ],
-
     fodmapNote: 'Shrimp, quinoa, and all vegetables here are low FODMAP. Red bell pepper is preferable to green (lower fructans). Zucchini is safe at this serving size. No garlic needed — lemon and olive oil do all the work. Keeping the zucchini skins on, adding a second zucchini, and wilting in a handful of baby spinach all boost the fibre while staying low FODMAP.',
-
     isCustom: true,
-
   },
-
-
 
   // ─── SATURDAY ───────────────────────────────────────────
-
   {
-
     id: 'kandy-sat-breakfast',
-
     name: 'Bacon & Egg Corn Tortilla Wraps',
-
     emoji: '🌮',
-
     category: 'breakfast',
-
     time: '20 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['gluten-free', 'high-protein'],
-
     ingredients: [
-
       { qty: '4',        item: 'corn tortillas (2 per person)' },
-
       { qty: '4–5',      item: 'large eggs' },
-
       { qty: '4 strips', item: 'bacon' },
-
       { qty: '1 medium', item: 'tomato, diced' },
-
       { qty: '1 handful', item: 'fresh spinach' },
-
       { qty: '1/4 cup',  item: 'crumbled feta or shredded cheddar' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
       { qty: '1 tbsp',   item: 'butter' },
-
     ],
-
     steps: [
-
       'Cook bacon in skillet until crispy. Remove and crumble or break into pieces.',
-
       'Melt butter in same skillet over medium-low heat.',
-
       'Scramble eggs with salt and pepper until just set.',
-
       'Warm corn tortillas in a dry pan or directly over flame for 20 seconds per side.',
-
       'Fill each tortilla with eggs, bacon, spinach, diced tomato, and cheese.',
-
       'Fold and eat immediately.',
-
     ],
-
     fodmapNote: 'Corn tortillas are low FODMAP — wheat tortillas are not. Cheddar is very low in lactose. Feta has slightly more lactose, so keep to about 2 tbsp per person. Spinach and tomato are FODMAP-free.',
-
     isCustom: true,
-
   },
 
-
-
   {
-
     id: 'kandy-sat-lunch',
-
     name: 'Tuna & Tomato Quinoa Bowl',
-
     emoji: '🥗',
-
     category: 'lunch',
-
     time: '10 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['gluten-free', 'dairy-free', 'high-protein', 'no-cook'],
-
     ingredients: [
-
       { qty: '1.5 cups',      item: 'leftover cooked quinoa (from Friday dinner)' },
-
       { qty: '2 cans (5 oz)', item: 'tuna in water, drained' },
-
       { qty: '1 cup',         item: 'cherry tomatoes, halved' },
-
       { qty: '2 tbsp',        item: 'olive oil' },
-
       { qty: '1/2',           item: 'lemon, juiced' },
-
       { qty: 'to taste',      item: 'salt and pepper' },
-
     ],
-
     steps: [
-
       'Divide cold or room-temperature quinoa between two bowls.',
-
       'Top each with drained tuna and cherry tomatoes.',
-
       'Drizzle with olive oil and lemon juice.',
-
       'Season with salt and pepper. Toss lightly and serve.',
-
     ],
-
     fodmapNote: 'A great no-cook lunch using Friday\'s leftover quinoa. All ingredients are FODMAP-free. Tuna in water is best — avoid tuna in brine or flavoured varieties.',
-
     isCustom: true,
-
   },
-
-
 
   {
-
     id: 'kandy-sat-dinner',
-
     name: 'Lemon Baked Chicken Thighs with Sweet Potato & Broccoli',
-
     emoji: '🍗',
-
     category: 'dinner',
-
     time: '50 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['gluten-free', 'dairy-free', 'high-protein'],
-
     ingredients: [
-
       { qty: '4',       item: 'bone-in chicken thighs (skin-on or skinless)' },
-
       { qty: '1 cup',   item: 'cubed sweet potato, skin on (½ cup per person — do not exceed)' },
-
       { qty: '1½ cups', item: 'broccoli florets (¾ cup per person — do not exceed)' },
-
       { qty: '1 cup',   item: 'fresh green beans, trimmed (½ cup per person)' },
-
       { qty: '3 tbsp',  item: 'olive oil, divided' },
-
       { qty: '1',       item: 'lemon, sliced' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
     ],
-
     steps: [
-
       'Preheat oven to 425°F (220°C).',
-
       'Place the skin-on sweet potato cubes on baking sheet, toss with 1 tbsp olive oil, salt and pepper.',
-
       'Pat chicken thighs dry. Rub with 1 tbsp olive oil, salt and pepper. Place on same baking sheet.',
-
       'Lay lemon slices over chicken. Roast 20 min.',
-
       'Add broccoli and green beans to pan, toss with remaining oil and season.',
-
       'Roast another 15 min until chicken is golden and reaches 165°F internal temp.',
-
       'Serve immediately.',
-
     ],
-
     fodmapNote: '⚠️ Sweet potato is limited to ½ cup cooked per person — do not exceed. Broccoli florets (not the stalk) are moderate FODMAP — keep to 3/4 cup per person. Chicken and lemon are FODMAP-free. Leaving the skin on the sweet potato (same ½ cup serve) and adding a small side of green beans (½ cup per person) adds fibre while staying low FODMAP.',
-
     isCustom: true,
-
   },
-
-
 
   // ─── SUNDAY ─────────────────────────────────────────────
-
   {
-
     id: 'kandy-sun-breakfast',
-
     name: 'GF French Toast with Berries',
-
     emoji: '🍞',
-
     category: 'breakfast',
-
     time: '20 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['vegetarian', 'gluten-free', 'dairy-free'],
-
     ingredients: [
-
       { qty: '4 slices', item: 'gluten-free bread' },
-
       { qty: '3',        item: 'large eggs' },
-
       { qty: '1/2 cup',  item: 'unsweetened almond milk' },
-
       { qty: '1 tsp',    item: 'pure vanilla extract (check label)' },
-
       { qty: '2 tbsp',   item: 'butter, for pan' },
-
       { qty: '2 tbsp',   item: 'maple syrup, to serve' },
-
       { qty: '1 cup',    item: 'strawberries, sliced, or blueberries' },
-
     ],
-
     steps: [
-
       'In a shallow bowl, whisk together eggs, almond milk, and vanilla.',
-
       'Heat 1 tbsp butter in skillet over medium heat.',
-
       'Dip each bread slice in egg mixture, letting it soak 10–15 seconds per side.',
-
       'Cook 2–3 min per side until golden brown. Add more butter between batches.',
-
       'Serve topped with fresh berries and a drizzle of maple syrup.',
-
     ],
-
     fodmapNote: 'GF bread avoids wheat fructans. Check vanilla extract label — pure vanilla is fine, but some imitation vanillas contain additives. Strawberries are FODMAP-free; keep blueberries to 1/4 cup per person.',
-
     isCustom: true,
-
   },
 
-
-
   {
-
     id: 'kandy-sun-lunch',
-
     name: 'Lentil & Veggie Soup',
-
     emoji: '🍵',
-
     category: 'lunch',
-
     time: '30 min',
-
     serves: 2,
-
     difficulty: 'easy',
-
     tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free'],
-
     ingredients: [
-
       { qty: '2/3 cup',  item: 'canned green or brown lentils, rinsed thoroughly (⅓ cup per person — do not exceed)' },
-
       { qty: '2 medium', item: 'carrots, peeled and diced' },
-
       { qty: '1 medium', item: 'zucchini, diced' },
-
       { qty: '2 handfuls', item: 'fresh spinach' },
-
       { qty: '3 cups',   item: 'low-sodium chicken or vegetable broth (no garlic/onion)' },
-
       { qty: '1 tsp',    item: 'fresh ginger, grated' },
-
       { qty: '1 tbsp',   item: 'olive oil' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
       { qty: '1',        item: 'lemon wedge per bowl, to serve' },
-
     ],
-
     steps: [
-
       'Heat olive oil in a medium saucepan over medium heat.',
-
       'Add carrots and cook 3–4 min, stirring occasionally.',
-
       'Add zucchini and ginger. Cook 2 more min.',
-
       'Add rinsed lentils and broth. Bring to a boil.',
-
       'Reduce heat and simmer 10 min.',
-
       'Stir in spinach until wilted, about 1 min.',
-
       'Season with salt and pepper. Squeeze lemon over bowls before serving.',
-
     ],
-
     fodmapNote: '⚠️ Rinse canned lentils thoroughly under cold water — this reduces FODMAP content significantly. Maximum ⅓ cup lentils per person. Ginger is low FODMAP and great for digestion. Use a broth with no added garlic or onion.',
-
     isCustom: true,
-
   },
-
-
 
   {
-
     id: 'kandy-sun-dinner',
-
     name: 'Pan-Seared Steak with Roasted Carrots & Potato Wedges',
-
     emoji: '🥩',
-
     category: 'dinner',
-
     time: '40 min',
-
     serves: 2,
-
     difficulty: 'medium',
-
     tags: ['gluten-free', 'dairy-free', 'high-protein'],
-
     ingredients: [
-
       { qty: '2',        item: 'steaks (ribeye, sirloin, or NY strip — 6–8 oz each)' },
-
       { qty: '4 medium', item: 'carrots, skin on, cut into sticks' },
-
       { qty: '2 medium', item: 'potatoes, skins on, cut into wedges' },
-
       { qty: '3 tbsp',   item: 'olive oil, divided' },
-
       { qty: 'to taste', item: 'salt and pepper' },
-
       { qty: '1 tbsp',   item: 'butter (optional, for basting)' },
-
     ],
-
     steps: [
-
       'Preheat oven to 425°F (220°C).',
-
       'Toss the skin-on carrot sticks and potato wedges with 2 tbsp olive oil, salt and pepper. Spread on baking sheet.',
-
       'Roast 25 min, flipping halfway, until golden and tender.',
-
       'When veggies have about 8 min left, heat remaining olive oil in a cast-iron or heavy skillet over high heat until very hot.',
-
       'Pat steaks completely dry. Season generously with salt and pepper on both sides.',
-
       'Sear steaks 3–4 min per side for medium-rare (or longer to your preference).',
-
       'Add butter to pan in the last minute and baste steaks if desired.',
-
       'Rest steaks 5 min before cutting. Serve with roasted veggies.',
-
     ],
-
     fodmapNote: 'Steak, carrots, and potatoes are all completely FODMAP-free — a safe and satisfying end to the week. Season simply with salt and pepper only — avoid steak seasonings that contain garlic or onion powder. Leaving the skins on the potato wedges and carrots, plus an extra carrot, adds fibre while staying low FODMAP.',
-
     isCustom: true,
-
   },
-
-
-
     {
     id: 'kandy-sourdough-bread',
     name: 'Homemade Sourdough Bread',
@@ -1242,8 +640,4 @@ const KANDY_RECIPES = [
     fodmapNote: '⚠️ Max 2 slices per person. The overnight fridge fermentation is what makes this low FODMAP — the long cold rise breaks down most of the fructans. Do NOT skip it. Longer fridge time (up to 16 hrs) = lower fructans. Store bread wrapped in a kitchen towel at room temp, not plastic — plastic softens the crust.',
     isCustom: true,
   },
-
-
-
 ];
-
