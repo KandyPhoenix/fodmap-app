@@ -43,6 +43,9 @@
     <button class="nav-btn" data-view="checker">🔍 <span class="nav-label">Recipe Check</span></button>
     <button class="nav-btn" data-view="snacks">🥨 <span class="nav-label">Snacks</span></button>
     <button class="nav-btn" data-view="reminders">⏰ <span class="nav-label">Reminders</span></button>
+    <button class="nav-btn" data-view="diary">📔 <span class="nav-label">Diary</span></button>
+    <button class="nav-btn" data-view="reintro">🧪 <span class="nav-label">Reintro</span></button>
+    <button class="nav-btn" data-view="dining">🥡 <span class="nav-label">Eating Out</span></button>
     <button class="nav-btn" data-view="finds">📍 <span class="nav-label">My Finds</span></button>
   </nav>
 
@@ -95,9 +98,23 @@
       <div class="categories" id="recipe-categories"></div>
     </div>
 
+    <div class="recipe-filter-bar">
+      <div class="recipe-filters" id="recipe-filters">
+        <button class="rfilter active" data-filter="all">All</button>
+        <button class="rfilter" data-filter="favorites">❤️ Favorites</button>
+        <button class="rfilter" data-filter="chicken">🍗 Chicken</button>
+        <button class="rfilter" data-filter="redmeat">🥩 Beef &amp; Pork</button>
+        <button class="rfilter" data-filter="seafood">🐟 Seafood</button>
+        <button class="rfilter" data-filter="veggie">🌱 Veggie</button>
+        <button class="rfilter" data-filter="quick">⏱️ Quick ≤20m</button>
+        <button class="rfilter" data-filter="airfryer">🌬️ Air Fryer</button>
+      </div>
+    </div>
+
     <main>
       <div class="results-bar">
         <div class="food-count" id="recipe-count"></div>
+        <button class="add-recipe-btn" id="surprise-recipe-btn">🎲 Surprise Me</button>
         <button class="add-recipe-btn" id="add-recipe-btn">✏️ Add My Recipe</button>
       </div>
       <div class="recipe-grid" id="recipe-grid"></div>
@@ -256,6 +273,51 @@
       </div>
 
       <div class="rem-note">⚠️ These ding on whatever device has the app open (and in the background on desktop). To be reminded when the app is fully closed — especially on iPhone/iPad — keep your phone/OS alarm as a backup.</div>
+    </main>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       VIEW 5d — SYMPTOM & FOOD DIARY
+  ════════════════════════════════════════ -->
+  <div id="view-diary" class="hidden">
+    <div class="subs-hero">
+      <div class="subs-hero-text">
+        <div class="subs-hero-title">📔 Symptom &amp; Food Diary</div>
+        <div class="subs-hero-sub">Log what you ate and how you felt. Over time this reveals <em>your</em> triggers — the whole point of the FODMAP journey.</div>
+      </div>
+    </div>
+    <main>
+      <div id="diary-content"></div>
+    </main>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       VIEW 5e — REINTRODUCTION TRACKER
+  ════════════════════════════════════════ -->
+  <div id="view-reintro" class="hidden">
+    <div class="subs-hero">
+      <div class="subs-hero-text">
+        <div class="subs-hero-title">🧪 Reintroduction Tracker</div>
+        <div class="subs-hero-sub">Once you've settled on the elimination phase, test one FODMAP group at a time to learn which ones you actually tolerate — and expand your diet.</div>
+      </div>
+    </div>
+    <main>
+      <div id="reintro-content"></div>
+    </main>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       VIEW 5f — EATING OUT GUIDE
+  ════════════════════════════════════════ -->
+  <div id="view-dining" class="hidden">
+    <div class="subs-hero">
+      <div class="subs-hero-text">
+        <div class="subs-hero-title">🥡 Eating-Out Cheat Sheet</div>
+        <div class="subs-hero-sub">Safe low-FODMAP orders by cuisine, plus what to ask for and what to skip. Stay on track even when you're out.</div>
+      </div>
+    </div>
+    <main>
+      <div id="dining-content"></div>
     </main>
   </div>
 

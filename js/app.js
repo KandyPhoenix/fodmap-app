@@ -82,6 +82,10 @@
 
   let recipeCategory = 'all';
 
+  let recipeFilter = 'all';
+
+  let lastRecipeList = [];
+
   let pickerCategory = 'all', pickerSearch = '';
 
   let weekOffset = 0;
@@ -152,6 +156,12 @@
 
       document.getElementById('view-reminders').classList.toggle('hidden', currentView !== 'reminders');
 
+      document.getElementById('view-diary').classList.toggle('hidden',   currentView !== 'diary');
+
+      document.getElementById('view-reintro').classList.toggle('hidden', currentView !== 'reintro');
+
+      document.getElementById('view-dining').classList.toggle('hidden',  currentView !== 'dining');
+
       document.getElementById('view-finds').classList.toggle('hidden',   currentView !== 'finds');
 
       if (currentView === 'subs') renderSubsView();
@@ -161,6 +171,12 @@
       if (currentView === 'snacks') renderSnacksView();
 
       if (currentView === 'reminders') renderRemindersView();
+
+      if (currentView === 'diary') renderDiaryView();
+
+      if (currentView === 'reintro') renderReintroView();
+
+      if (currentView === 'dining') renderDiningView();
 
       searchInput.placeholder = currentView === 'recipes' ? 'Search recipes…' : currentView === 'subs' ? 'Search substitutions…' : currentView === 'checker' ? 'Search foods or recipes…' : currentView === 'finds' ? 'Search finds…' : currentView === 'snacks' ? 'Search snacks…' : currentView === 'planner' ? 'Search foods or recipes…' : 'Search foods…';
 
@@ -452,9 +468,57 @@
 
     document.getElementById('add-recipe-btn').addEventListener('click', () => openRecipeForm(null));
 
+    document.querySelectorAll('#recipe-filters .rfilter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#recipe-filters .rfilter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        recipeFilter = btn.dataset.filter;
+        renderRecipeGrid();
+      });
+    });
+
+    const surpriseBtn = document.getElementById('surprise-recipe-btn');
+    if (surpriseBtn) surpriseBtn.addEventListener('click', () => {
+      const pool = lastRecipeList.length ? lastRecipeList
+        : getAllRecipes().filter(r => r.category === 'lunch' || r.category === 'dinner');
+      if (!pool.length) return;
+      const pick = pool[Math.floor(Math.random() * pool.length)];
+      openRecipeModal(pick);
+    });
+
     renderRecipeGrid();
 
   })();
+
+  // ── Recipe favorites + smart filters ──────────────────────
+  function getFavorites() {
+    try { return JSON.parse(localStorage.getItem('fodmap-favorites') || '[]'); } catch(e) { return []; }
+  }
+  function isFavorite(id) { return getFavorites().includes(id); }
+  function toggleFavorite(id) {
+    let favs = getFavorites();
+    favs = favs.includes(id) ? favs.filter(x => x !== id) : favs.concat(id);
+    try { localStorage.setItem('fodmap-favorites', JSON.stringify(favs)); } catch(e) {}
+    if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
+  }
+
+  function recipeMinutes(r) {
+    const m = String(r.time || '').match(/\d+/);
+    return m ? parseInt(m[0], 10) : 999;
+  }
+  function recipeMatchesFilter(r, filter) {
+    if (filter === 'all') return true;
+    if (filter === 'favorites') return isFavorite(r.id);
+    if (filter === 'airfryer') return (typeof AIRFRYER !== 'undefined' && !!AIRFRYER[r.id]);
+    if (filter === 'quick') return recipeMinutes(r) <= 20;
+    const tags = (r.tags || []).map(t => t.toLowerCase());
+    if (filter === 'veggie') return tags.includes('vegetarian') || tags.includes('vegan');
+    const text = (r.name + ' ' + (r.ingredients || []).map(i => i.item).join(' ')).toLowerCase();
+    if (filter === 'chicken') return /\b(chicken|turkey|poultry)\b/.test(text);
+    if (filter === 'seafood') return /\b(salmon|tuna|cod|tilapia|shrimp|prawn|fish|seafood|scampi|haddock|crab)\b/.test(text);
+    if (filter === 'redmeat') return /\b(beef|steak|pork|lamb|sausage|meatball|meatloaf|carnitas|bolognese|mince)\b/.test(text);
+    return true;
+  }
 
 
 
@@ -494,11 +558,15 @@
 
       else if (recipeCategory !== 'all' && r.category !== recipeCategory) return false;
 
+      if (!recipeMatchesFilter(r, recipeFilter)) return false;
+
       if (searchQuery) return (r.name + ' ' + r.category).toLowerCase().includes(searchQuery);
 
       return true;
 
     });
+
+    lastRecipeList = list;
 
     grid.innerHTML = '';
 
@@ -536,6 +604,8 @@
 
           ${isUser ? '<span class="my-recipe-badge">⭐ My Recipe</span>' : ''}
 
+          <button class="fav-heart${isFavorite(r.id) ? ' active' : ''}" data-fav="${r.id}" title="Save to favorites" aria-label="Save to favorites">${isFavorite(r.id) ? '❤️' : '🤍'}</button>
+
           ${r.emoji || '🍽️'}
 
           <span class="recipe-difficulty ${r.difficulty || 'easy'}">${r.difficulty || 'easy'}</span>
@@ -555,6 +625,17 @@
         </div>`;
 
       card.addEventListener('click', () => openRecipeModal(r));
+
+      const heart = card.querySelector('.fav-heart');
+
+      if (heart) heart.addEventListener('click', e => {
+        e.stopPropagation();
+        toggleFavorite(r.id);
+        const on = isFavorite(r.id);
+        heart.classList.toggle('active', on);
+        heart.textContent = on ? '❤️' : '🤍';
+        if (recipeFilter === 'favorites' && !on) renderRecipeGrid();
+      });
 
       grid.appendChild(card);
 
@@ -786,6 +867,8 @@
 
           ${badgeHtml}
 
+          <button class="rmodal-fav${isFavorite(recipe.id) ? ' active' : ''}" id="rmodal-fav">${isFavorite(recipe.id) ? '❤️ Favorited' : '🤍 Add to favorites'}</button>
+
           <span class="rmodal-emoji">${recipe.emoji || '🍽️'}</span>
 
           <div class="rmodal-title">${recipe.name}</div>
@@ -865,6 +948,16 @@
 
 
     document.getElementById('mc2').addEventListener('click', closeAll);
+
+    const rmodalFav = document.getElementById('rmodal-fav');
+
+    if (rmodalFav) rmodalFav.addEventListener('click', () => {
+      toggleFavorite(recipe.id);
+      const on = isFavorite(recipe.id);
+      rmodalFav.classList.toggle('active', on);
+      rmodalFav.textContent = on ? '❤️ Favorited' : '🤍 Add to favorites';
+      renderRecipeGrid();
+    });
 
     document.querySelectorAll('.ingredient-item').forEach(li => li.addEventListener('click', () => li.classList.toggle('checked')));
 
@@ -4303,6 +4396,191 @@
 
   // ══════════════════════════════════════════
 
+  // ══════════════════════════════════════════
+  //  SYMPTOM & FOOD DIARY
+  // ══════════════════════════════════════════
+  const DIARY_SYMPTOMS = ['Bloating','Gas','Abdominal pain','Cramps','Diarrhea','Constipation','Nausea','Reflux','Fatigue','Headache','Felt great 😊'];
+  const DIARY_CATS = [['breakfast','🌅 Breakfast'],['lunch','🥗 Lunch'],['dinner','🍴 Dinner'],['snack','🥕 Snack']];
+  const SEVERITIES = [['none','No symptoms'],['mild','Mild'],['moderate','Moderate'],['severe','Severe']];
+
+  function localToday() {
+    const d = new Date();
+    return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  }
+  function formatDiaryDate(d) {
+    try { return new Date(d + 'T00:00:00').toLocaleDateString(undefined, { weekday:'short', month:'short', day:'numeric', year:'numeric' }); }
+    catch(e) { return d; }
+  }
+  function getDiary() {
+    try { return JSON.parse(localStorage.getItem('fodmap-diary') || '[]'); } catch(e) { return []; }
+  }
+  function saveDiary(list) {
+    try { localStorage.setItem('fodmap-diary', JSON.stringify(list)); } catch(e) {}
+    if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
+  }
+
+  function renderDiaryView() {
+    const el = document.getElementById('diary-content');
+    if (!el) return;
+    const entries = getDiary().slice().sort((a, b) => (b.date + (b.created || '')).localeCompare(a.date + (a.created || '')));
+    const chips   = DIARY_SYMPTOMS.map(s => `<button type="button" class="diary-chip" data-sym="${escHtml(s)}">${escHtml(s)}</button>`).join('');
+    const catOpts = DIARY_CATS.map(c => `<option value="${c[0]}">${c[1]}</option>`).join('');
+    const sevOpts = SEVERITIES.map(s => `<option value="${s[0]}">${s[1]}</option>`).join('');
+
+    let listHtml = '';
+    if (!entries.length) {
+      listHtml = `<div class="diary-empty">No entries yet — log your first meal above ☝️</div>`;
+    } else {
+      let curDate = '';
+      entries.forEach(en => {
+        if (en.date !== curDate) { curDate = en.date; listHtml += `<div class="diary-date-head">${formatDiaryDate(en.date)}</div>`; }
+        const catEmoji = ((DIARY_CATS.find(c => c[0] === en.category) || ['', '🍽️'])[1]).split(' ')[0];
+        const syms = (en.symptoms || []).map(s => `<span class="diary-symtag">${escHtml(s)}</span>`).join('');
+        const sev  = SEVERITIES.find(s => s[0] === en.severity);
+        const sevHtml = (en.severity && sev) ? `<span class="sev-badge sev-${en.severity}">${sev[1]}</span>` : '';
+        listHtml += `<div class="diary-entry">
+          <div class="diary-entry-top">
+            <span class="diary-entry-meal">${catEmoji} ${escHtml(en.meal || '')}</span>
+            ${sevHtml}
+            <button class="diary-del" data-del="${en.id}" title="Delete entry">🗑</button>
+          </div>
+          ${syms ? `<div class="diary-symtags">${syms}</div>` : ''}
+          ${en.notes ? `<div class="diary-entry-notes">${escHtml(en.notes).replace(/\n/g, '<br>')}</div>` : ''}
+        </div>`;
+      });
+    }
+
+    el.innerHTML = `
+      <div class="diary-form-card">
+        <div class="diary-form-row">
+          <input type="date" id="diary-date" value="${localToday()}">
+          <select id="diary-cat">${catOpts}</select>
+        </div>
+        <input type="text" id="diary-meal" placeholder="What did you eat? e.g. Grilled chicken & rice" maxlength="120">
+        <div class="diary-chips-label">How did you feel afterwards?</div>
+        <div class="diary-chips" id="diary-chips">${chips}</div>
+        <div class="diary-form-row">
+          <select id="diary-sev">${sevOpts}</select>
+          <input type="text" id="diary-notes" placeholder="Notes (optional)" maxlength="200">
+        </div>
+        <button class="action-btn primary" id="diary-save" style="width:100%">＋ Add Diary Entry</button>
+      </div>
+      <div class="diary-list">${listHtml}</div>`;
+
+    el.querySelectorAll('.diary-chip').forEach(c => c.addEventListener('click', () => c.classList.toggle('active')));
+    el.querySelector('#diary-save').addEventListener('click', addDiaryEntry);
+    el.querySelectorAll('.diary-del').forEach(b => b.addEventListener('click', () => deleteDiaryEntry(b.dataset.del)));
+  }
+
+  function addDiaryEntry() {
+    const date     = document.getElementById('diary-date').value || localToday();
+    const meal     = document.getElementById('diary-meal').value.trim();
+    const category = document.getElementById('diary-cat').value;
+    const severity = document.getElementById('diary-sev').value;
+    const notes    = document.getElementById('diary-notes').value.trim();
+    const symptoms = [...document.querySelectorAll('#diary-chips .diary-chip.active')].map(c => c.dataset.sym);
+    if (!meal && !symptoms.length) { alert('Add what you ate or how you felt first.'); return; }
+    const list = getDiary();
+    list.push({ id: 'd' + Date.now() + Math.random().toString(36).slice(2, 6), date, meal, category, severity, symptoms, notes, created: new Date().toISOString() });
+    saveDiary(list);
+    renderDiaryView();
+  }
+  function deleteDiaryEntry(id) {
+    if (!confirm('Delete this diary entry?')) return;
+    saveDiary(getDiary().filter(e => e.id !== id));
+    renderDiaryView();
+  }
+
+  // ══════════════════════════════════════════
+  //  REINTRODUCTION TRACKER
+  // ══════════════════════════════════════════
+  const REINTRO_GROUPS = [
+    { id:'lactose', name:'Lactose', emoji:'🥛', foods:'Milk, yogurt, soft cheese', challenge:['Day 1 — small: ¼ cup (60 ml) milk','Day 2 — medium: ½ cup (125 ml) milk','Day 3 — large: 1 cup (250 ml) milk'], tip:'If you tolerate lactose, hard cheese and butter were never an issue anyway.' },
+    { id:'fructose', name:'Excess Fructose', emoji:'🍯', foods:'Honey, mango', challenge:['Day 1 — small: 1 tsp honey','Day 2 — medium: 1 tbsp honey','Day 3 — large: 2 tbsp honey OR ½ mango'], tip:'Test honey or mango on their own, away from other FODMAPs.' },
+    { id:'sorbitol', name:'Sorbitol (polyol)', emoji:'🍑', foods:'Apricot, blackberries', challenge:['Day 1 — small: ¼ apricot','Day 2 — medium: ½ apricot','Day 3 — large: 1 apricot OR 5 blackberries'], tip:'Polyols also hide in sugar-free gum & mints (sorbitol, isomalt).' },
+    { id:'mannitol', name:'Mannitol (polyol)', emoji:'🍄', foods:'Mushrooms, cauliflower', challenge:['Day 1 — small: ¼ cup mushrooms','Day 2 — medium: ½ cup mushrooms','Day 3 — large: ¾ cup mushrooms OR ½ cup cauliflower'], tip:'Mannitol and sorbitol are different polyols — test them separately.' },
+    { id:'gos', name:'GOS (galacto-oligos)', emoji:'🫘', foods:'Chickpeas, almonds', challenge:['Day 1 — small: ¼ cup canned chickpeas','Day 2 — medium: ½ cup chickpeas','Day 3 — large: ¾ cup chickpeas OR 20 almonds'], tip:'Canned, rinsed legumes are lower in GOS than dried-then-boiled ones.' },
+    { id:'fructans-grain', name:'Fructans — wheat / grain', emoji:'🍞', foods:'Wheat bread, pasta', challenge:['Day 1 — small: ½ slice wheat bread','Day 2 — medium: 1 slice wheat bread','Day 3 — large: 2 slices OR 1 cup cooked wheat pasta'], tip:'A different fructan source from onion/garlic — test grains separately.' },
+    { id:'fructans-veg', name:'Fructans — onion & garlic', emoji:'🧅', foods:'Onion, garlic', challenge:['Day 1 — small: 1 tsp chopped onion','Day 2 — medium: 1 tbsp chopped onion','Day 3 — large: ¼ small onion OR 1 clove garlic'], tip:'Often the toughest group, but worth knowing your threshold — these are everywhere.' },
+  ];
+  const REINTRO_STATUSES = [
+    { id:'not-started', label:'Not started', emoji:'⚪' },
+    { id:'testing',     label:'Testing',     emoji:'🧪' },
+    { id:'tolerated',   label:'Tolerated',   emoji:'✅' },
+    { id:'sensitive',   label:'Sensitive',   emoji:'⚠️' },
+  ];
+  function getReintro() {
+    try { return JSON.parse(localStorage.getItem('fodmap-reintro') || '{}'); } catch(e) { return {}; }
+  }
+  function saveReintro(obj) {
+    try { localStorage.setItem('fodmap-reintro', JSON.stringify(obj)); } catch(e) {}
+    if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
+  }
+  function setReintroStatus(gid, status) {
+    const o = getReintro(); o[gid] = Object.assign({}, o[gid], { status }); saveReintro(o); renderReintroView();
+  }
+  function setReintroNotes(gid, notes) {
+    const o = getReintro(); o[gid] = Object.assign({}, o[gid], { notes }); saveReintro(o);
+  }
+  function renderReintroView() {
+    const el = document.getElementById('reintro-content');
+    if (!el) return;
+    const state = getReintro();
+    const intro = `<div class="reintro-intro">⚠️ Start reintroduction <strong>after</strong> 2–6 weeks of a settled elimination phase — ideally with a dietitian. Keep eating low-FODMAP between tests, challenge <strong>one group at a time</strong> over 3 days, and leave a rest day before the next group.</div>`;
+    const cards = REINTRO_GROUPS.map(g => {
+      const st    = (state[g.id] && state[g.id].status) || 'not-started';
+      const notes = (state[g.id] && state[g.id].notes)  || '';
+      const statusBtns = REINTRO_STATUSES.map(s => `<button class="reintro-status-btn${st === s.id ? ' active ' + s.id : ''}" data-grp="${g.id}" data-status="${s.id}">${s.emoji} ${s.label}</button>`).join('');
+      const doses = g.challenge.map(d => `<li>${escHtml(d)}</li>`).join('');
+      return `<div class="reintro-card status-${st}">
+        <div class="reintro-card-head"><span class="reintro-emoji">${g.emoji}</span><span class="reintro-name">${escHtml(g.name)}</span></div>
+        <div class="reintro-foods"><strong>Test foods:</strong> ${escHtml(g.foods)}</div>
+        <ul class="reintro-doses">${doses}</ul>
+        <div class="reintro-tip">💡 ${escHtml(g.tip)}</div>
+        <div class="reintro-status-row">${statusBtns}</div>
+        <textarea class="reintro-notes" data-grp="${g.id}" placeholder="Your reaction / notes…">${escHtml(notes)}</textarea>
+      </div>`;
+    }).join('');
+    el.innerHTML = intro + `<div class="reintro-grid">${cards}</div>`;
+    el.querySelectorAll('.reintro-status-btn').forEach(b => b.addEventListener('click', () => setReintroStatus(b.dataset.grp, b.dataset.status)));
+    el.querySelectorAll('.reintro-notes').forEach(t => t.addEventListener('change', () => setReintroNotes(t.dataset.grp, t.value)));
+  }
+
+  // ══════════════════════════════════════════
+  //  EATING-OUT GUIDE
+  // ══════════════════════════════════════════
+  const DINING_GUIDE = [
+    { cuisine:'Grill & American', emoji:'🍔', safe:['Plain grilled steak, chicken or fish','Burger patty (skip the bun, or GF/lettuce wrap)','Baked potato or plain fries','Side salad with oil & vinegar','Plain steamed vegetables'], avoid:['Onion rings, garlic bread','“Secret” sauces, BBQ sauce, gravy','Battered or breaded items (wheat)','Heavy coleslaw'], tips:'Ask for no onion/garlic and sauce on the side. Oil, vinegar, salt, pepper and lemon are all safe.' },
+    { cuisine:'Italian', emoji:'🍝', safe:['Gluten-free pasta if offered','Simple tomato (napoletana) or olive-oil sauce','Grilled fish or chicken','Caprese — tomato, mozzarella, basil','Plain risotto (ask for no onion base)'], avoid:['Garlic bread, regular wheat pasta','Creamy 4-cheese or onion-garlic sauces','Pizza on a normal wheat base'], tips:'Most sauces start with onion & garlic — ask for a plain tomato or olive-oil & herb sauce.' },
+    { cuisine:'Mexican', emoji:'🌮', safe:['Corn tortillas (not flour)','Grilled meat or fish fillings','Plain rice','Cheese, lettuce, tomato, cilantro','Lime; a small scoop of plain guac'], avoid:['Refried & black beans (GOS)','Onion & garlic in salsas','Flour tortillas, big guac portions'], tips:'Build a rice bowl or corn tacos with grilled protein, cheese, tomato and lettuce. Skip the beans.' },
+    { cuisine:'Chinese', emoji:'🥡', safe:['Plain steamed rice','Steamed plain protein & bok choy','Stir-fries cooked without onion/garlic (ask)','Plain egg dishes / omelette'], avoid:['Garlic/onion sauces, hoisin, sweet & sour','Wonton & spring rolls (wheat)','Thickened “gravy” sauces'], tips:'Onion & garlic are hard to dodge — choose steamed dishes, sauce on the side, plus plain rice.' },
+    { cuisine:'Japanese / Sushi', emoji:'🍣', safe:['Sashimi & nigiri','Simple rolls — cucumber, salmon, tuna','Edamame (small)','Miso soup (small)','Steamed rice, seaweed salad'], avoid:['Tempura (wheat batter)','Teriyaki & onion-garlic sauces','Large avocado or inari portions'], tips:'One of the easiest cuisines: sashimi, simple rolls and plain rice. Use tamari if you’re also gluten-free.' },
+    { cuisine:'Indian', emoji:'🍛', safe:['Plain basmati rice','Tandoori or grilled meats','Plain papadums (check the oil)','Cucumber raita (lactose-free if possible)'], avoid:['Onion-garlic gravies & curries','Naan & samosas (wheat + onion)','Dal & chana (lentils/chickpeas)'], tips:'Most curries are onion-garlic based — tandoori grilled meats with plain rice are the safest bet.' },
+    { cuisine:'Thai / Vietnamese', emoji:'🍜', safe:['Plain jasmine rice or rice noodles','Grilled meat or fish skewers','Fresh rice-paper rolls (check filling)','Steamed dishes'], avoid:['Onion, garlic & garlic chives','Large cashew dishes','Curry pastes with onion/garlic'], tips:'Rice-noodle dishes can be made without onion/garlic — just ask. Plain rice + grilled protein is reliable.' },
+    { cuisine:'Café & Breakfast', emoji:'☕', safe:['Eggs any style','Bacon or plain sausages (check fillers)','GF toast or a small slice of sourdough','Lactose-free latte, black coffee or tea','Strawberries, blueberries, orange'], avoid:['Large regular-milk lattes','Wheat toast & pastries','Baked beans; hash browns with onion'], tips:'Ask for lactose-free or less milk (a flat white has less than a latte). Eggs + GF toast is a safe standby.' },
+    { cuisine:'Fast Food', emoji:'🍟', safe:['Plain burger patty, no bun or sauce','Grilled chicken (check the seasoning)','Plain fries (often safe)','Side salad with oil & vinegar'], avoid:['Buns, special sauces, onion, relish','Crispy / breaded chicken','Shakes & soft-serve (lactose)'], tips:'Order plain and customise: patty + cheese + lettuce + tomato, no bun, no sauce, no onion.' },
+  ];
+  function renderDiningView() {
+    const el = document.getElementById('dining-content');
+    if (!el) return;
+    el.innerHTML = DINING_GUIDE.map(d => `
+      <div class="dining-card">
+        <div class="dining-head"><span class="dining-emoji">${d.emoji}</span><span class="dining-cuisine">${escHtml(d.cuisine)}</span></div>
+        <div class="dining-cols">
+          <div class="dining-col safe">
+            <div class="dining-col-title">✅ Safe orders</div>
+            <ul>${d.safe.map(s => `<li>${escHtml(s)}</li>`).join('')}</ul>
+          </div>
+          <div class="dining-col avoid">
+            <div class="dining-col-title">⛔ Skip / ask to remove</div>
+            <ul>${d.avoid.map(s => `<li>${escHtml(s)}</li>`).join('')}</ul>
+          </div>
+        </div>
+        <div class="dining-tip">💡 ${escHtml(d.tips)}</div>
+      </div>`).join('');
+  }
+
+
   window.fodmapRefresh = function() {
 
     meals = loadMeals();
@@ -4320,6 +4598,10 @@
     renderRecipeGrid();
 
     if (currentView === 'reminders') renderRemindersView();
+
+    if (currentView === 'diary') renderDiaryView();
+
+    if (currentView === 'reintro') renderReintroView();
 
   };
 

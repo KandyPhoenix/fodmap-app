@@ -1631,3 +1631,156 @@ body.dark #scroll-top { background: var(--primary); }
   .add-recipe-btn { align-self: flex-end; }
 }
 
+
+/* ══════════════════════════════════════════
+   RECIPE FAVORITES + SMART FILTERS  (+ Surprise Me)
+   ══════════════════════════════════════════ */
+.recipe-filter-bar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 16px;
+  overflow-x: auto;
+}
+.recipe-filters { display: flex; gap: 8px; max-width: 1100px; margin: 0 auto; }
+.rfilter {
+  flex: 0 0 auto;
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 20px; padding: 6px 14px;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  white-space: nowrap; transition: all .15s;
+}
+.rfilter:hover { border-color: var(--primary); color: var(--primary); }
+.rfilter.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+.fav-heart {
+  position: absolute; top: 8px; left: 8px;
+  background: rgba(255,255,255,0.85);
+  border: none; border-radius: 50%;
+  width: 32px; height: 32px; font-size: 16px; line-height: 1;
+  cursor: pointer; padding: 0;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15); transition: transform .12s;
+}
+.fav-heart:hover { transform: scale(1.15); }
+.fav-heart.active { background: #fff; }
+body.dark .fav-heart { background: rgba(40,55,46,0.9); }
+
+.rmodal-fav {
+  position: absolute; top: 12px; left: 12px;
+  background: rgba(255,255,255,0.9); color: var(--text);
+  border: none; border-radius: 20px; padding: 6px 12px;
+  font-size: 12px; font-weight: 700; cursor: pointer;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.15); transition: all .15s;
+}
+.rmodal-fav:hover { transform: scale(1.05); }
+.rmodal-fav.active { background: #ffe3e8; color: #e23b5a; }
+body.dark .rmodal-fav { background: rgba(40,55,46,0.92); }
+
+/* ══════════════════════════════════════════
+   SYMPTOM & FOOD DIARY
+   ══════════════════════════════════════════ */
+#diary-content, #reintro-content, #dining-content { max-width: 760px; margin: 0 auto; }
+
+.diary-form-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 16px; margin-bottom: 20px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.diary-form-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.diary-form-row > * { flex: 1 1 140px; }
+.diary-form-card input[type="text"],
+.diary-form-card input[type="date"],
+.diary-form-card select {
+  width: 100%; padding: 10px 12px; font-size: 14px;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--text); font-family: inherit;
+}
+.diary-chips-label { font-size: 13px; font-weight: 700; color: var(--text-muted); margin: -2px 2px -4px; }
+.diary-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.diary-chip {
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--border); border-radius: 16px;
+  padding: 6px 12px; font-size: 12.5px; cursor: pointer; transition: all .12s;
+}
+.diary-chip:hover { border-color: var(--primary); }
+.diary-chip.active { background: var(--primary-light); color: var(--primary); border-color: var(--primary); font-weight: 700; }
+
+.diary-date-head { font-size: 13px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; margin: 18px 2px 8px; }
+.diary-entry {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; box-shadow: var(--shadow);
+}
+.diary-entry-top { display: flex; align-items: center; gap: 10px; }
+.diary-entry-meal { font-weight: 700; color: var(--text); flex: 1; font-size: 14.5px; }
+.diary-del { background: none; border: none; cursor: pointer; font-size: 15px; opacity: .6; padding: 2px 4px; }
+.diary-del:hover { opacity: 1; }
+.diary-symtags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.diary-symtag { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 3px 9px; font-size: 11.5px; color: var(--text-muted); }
+.diary-entry-notes { margin-top: 8px; font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+.diary-empty { text-align: center; color: var(--text-muted); padding: 30px 16px; font-size: 14px; }
+
+.sev-badge { font-size: 11px; font-weight: 800; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+.sev-none     { background: var(--green-bg);  color: var(--green); }
+.sev-mild     { background: var(--yellow-bg); color: #c77d00; }
+.sev-moderate { background: #fff0e6; color: #e8730c; }
+.sev-severe   { background: var(--red-bg);    color: var(--red); }
+
+/* ══════════════════════════════════════════
+   REINTRODUCTION TRACKER
+   ══════════════════════════════════════════ */
+.reintro-intro {
+  background: var(--yellow-bg); color: var(--text);
+  border: 1px solid var(--border); border-left: 4px solid var(--yellow);
+  border-radius: 10px; padding: 12px 14px; font-size: 13.5px; line-height: 1.55; margin-bottom: 18px;
+}
+.reintro-grid { display: flex; flex-direction: column; gap: 14px; }
+.reintro-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow);
+}
+.reintro-card.status-testing   { border-left-color: var(--primary); }
+.reintro-card.status-tolerated { border-left-color: var(--green); }
+.reintro-card.status-sensitive { border-left-color: var(--red); }
+.reintro-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.reintro-emoji { font-size: 26px; line-height: 1; }
+.reintro-name { font-size: 16px; font-weight: 800; color: var(--text); }
+.reintro-foods { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+.reintro-doses { margin: 0 0 10px; padding-left: 18px; font-size: 13px; color: var(--text); line-height: 1.7; }
+.reintro-tip { font-size: 12.5px; color: var(--text-muted); background: var(--bg); border-radius: 8px; padding: 8px 10px; margin-bottom: 12px; line-height: 1.5; }
+.reintro-status-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 10px; }
+.reintro-status-btn {
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--border); border-radius: 16px;
+  padding: 6px 12px; font-size: 12.5px; font-weight: 600; cursor: pointer; transition: all .12s;
+}
+.reintro-status-btn:hover { border-color: var(--primary); }
+.reintro-status-btn.active.not-started { background: var(--bg); border-color: var(--text-muted); font-weight: 800; }
+.reintro-status-btn.active.testing   { background: var(--primary); color: #fff; border-color: var(--primary); }
+.reintro-status-btn.active.tolerated { background: var(--green); color: #fff; border-color: var(--green); }
+.reintro-status-btn.active.sensitive { background: var(--red); color: #fff; border-color: var(--red); }
+.reintro-notes {
+  width: 100%; min-height: 52px; resize: vertical;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--text); font-family: inherit; font-size: 13px; padding: 9px 11px;
+}
+
+/* ══════════════════════════════════════════
+   EATING-OUT GUIDE
+   ══════════════════════════════════════════ */
+.dining-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow); margin-bottom: 14px;
+}
+.dining-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.dining-emoji { font-size: 26px; line-height: 1; }
+.dining-cuisine { font-size: 16px; font-weight: 800; color: var(--text); }
+.dining-cols { display: flex; gap: 14px; flex-wrap: wrap; }
+.dining-col { flex: 1 1 220px; }
+.dining-col-title { font-size: 13px; font-weight: 800; margin-bottom: 6px; }
+.dining-col.safe  .dining-col-title { color: var(--green); }
+.dining-col.avoid .dining-col-title { color: var(--red); }
+.dining-col ul { margin: 0; padding-left: 18px; font-size: 13px; color: var(--text); line-height: 1.65; }
+.dining-tip { font-size: 12.5px; color: var(--text-muted); background: var(--bg); border-radius: 8px; padding: 9px 11px; margin-top: 10px; line-height: 1.5; }

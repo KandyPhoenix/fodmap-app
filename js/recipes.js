@@ -1818,7 +1818,7 @@ const RECIPES = [
 
   {
     id: 'gf-granola',
-    name: 'Maple Pecan GF Granola',
+    name: 'Pecan & Cinnamon GF Granola',
     emoji: '🥣',
     category: 'breakfast',
     time: '30 min',
@@ -1830,7 +1830,7 @@ const RECIPES = [
       { qty: '½ cup (50g)', item: 'pecans, roughly chopped' },
       { qty: '¼ cup (35g)', item: 'pumpkin seeds' },
       { qty: '¼ cup (35g)', item: 'sunflower seeds' },
-      { qty: '3 tbsp', item: 'maple syrup' },
+      { qty: '3 tbsp', item: 'brown sugar (or rice malt syrup / maple syrup)' },
       { qty: '3 tbsp', item: 'coconut oil, melted' },
       { qty: '1 tsp', item: 'vanilla extract' },
       { qty: '1 tsp', item: 'cinnamon' },
@@ -1839,7 +1839,7 @@ const RECIPES = [
     steps: [
       'Preheat oven to 160°C / 325°F. Line a large baking sheet with parchment.',
       'Mix oats, pecans, pumpkin seeds, and sunflower seeds in a large bowl.',
-      'Whisk together maple syrup, coconut oil, vanilla, cinnamon, and salt.',
+      'Whisk together brown sugar, coconut oil, vanilla, cinnamon, and salt (warm gently if needed to dissolve the sugar).',
       'Pour wet ingredients over dry and toss until evenly coated.',
       'Spread in a single layer on the baking sheet.',
       'Bake 25–30 minutes, stirring once halfway, until golden. Watch closely near the end.',
