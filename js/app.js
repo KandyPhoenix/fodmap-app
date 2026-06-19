@@ -6456,7 +6456,7 @@
 
 
 
-            <span class="meal-chip-text">${isLF ? '<span class="lf-badge">LF</span> ' : ''}${displayEmoji} ${displayName}</span>${nutLine}
+            <span class="meal-chip-text">${nutLine}<span class="meal-chip-name">${isLF ? '<span class="lf-badge">LF</span> ' : ''}${displayEmoji} ${displayName}</span></span>
 
 
 
