@@ -212,7 +212,7 @@ const KANDY_RECIPES = [
     difficulty: 'easy',
     tags: ['vegetarian', 'gluten-free', 'high-protein'],
     ingredients: [
-      { qty: '250g',     item: 'firm tofu, cubed' },
+      { qty: '1 cup',    item: 'firm tofu, cubed' },
       { qty: '1 tbsp',   item: 'garlic-infused olive oil (for pan-frying the tofu)' },
       { qty: '1 medium', item: 'cucumber, diced' },
       { qty: '1 cup',    item: 'cherry tomatoes, halved' },
