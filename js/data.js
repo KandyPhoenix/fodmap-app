@@ -3307,11 +3307,11 @@ const RECIPE_NUTRITION = {
   'hf-oat-berry-bowl':             { cal: 380, protein: 14, fiber: 15 },
   'hf-lentil-veg-soup':            { cal: 320, protein: 15, fiber: 12 },
   'hf-quinoa-tofu-bowl':           { cal: 480, protein: 24, fiber: 12 },
-  'hf-chickpea-spinach-curry':     { cal: 460, protein: 16, fiber: 13 },
+  'hf-tofu-spinach-curry':         { cal: 420, protein: 20, fiber: 8  },
   'hf-chicken-buddha-bowl':        { cal: 520, protein: 40, fiber: 11 },
   'hf-raspberry-chia-pudding':     { cal: 240, protein: 8,  fiber: 14 },
   'hf-energy-balls':               { cal: 180, protein: 6,  fiber: 5  },
-  'hf-roasted-chickpeas':          { cal: 180, protein: 8,  fiber: 7  },
+  'hf-oat-seed-crackers':          { cal: 190, protein: 7,  fiber: 6  },
   'hf-edamame':                    { cal: 160, protein: 14, fiber: 8  },
   // ── Kandy's Weekly Recipes ──
   'kandy-mon-breakfast':           { cal: 350, protein: 21, fiber: 1  },
@@ -3321,7 +3321,7 @@ const RECIPE_NUTRITION = {
   'kandy-tue-lunch':               { cal: 310, protein: 35, fiber: 3  },
   'kandy-tue-dinner':              { cal: 580, protein: 35, fiber: 7  },
   'kandy-wed-breakfast':           { cal: 420, protein: 24, fiber: 4  },
-  'kandy-wed-lunch':               { cal: 380, protein: 12, fiber: 8  },
+  'kandy-wed-lunch':               { cal: 360, protein: 18, fiber: 4  },
   'kandy-wed-dinner':              { cal: 490, protein: 42, fiber: 7  },
   'kandy-thu-breakfast':           { cal: 280, protein: 13, fiber: 4  },
   'kandy-thu-dinner':              { cal: 560, protein: 42, fiber: 8  },
@@ -3334,8 +3334,6 @@ const RECIPE_NUTRITION = {
   'kandy-sun-breakfast':           { cal: 390, protein: 14, fiber: 4  },
   'kandy-sun-lunch':               { cal: 280, protein: 12, fiber: 9  },
   'kandy-sun-dinner':              { cal: 650, protein: 45, fiber: 9  },
-  // ── Kandy's Dietician Plan Recipes ──
-  // Original 7-day plan
   'diet-mon-breakfast':            { cal: 370, protein: 26, fiber: 1  },
   'diet-mon-lunch':                { cal: 520, protein: 32, fiber: 3  },
   'diet-mon-dinner':               { cal: 530, protein: 38, fiber: 6  },
@@ -3357,22 +3355,19 @@ const RECIPE_NUTRITION = {
   'diet-sun-breakfast':            { cal: 390, protein: 13, fiber: 3  },
   'diet-sun-lunch':                { cal: 265, protein: 32, fiber: 3  },
   'diet-sun-dinner':               { cal: 680, protein: 44, fiber: 6  },
-  // Extra chicken dinners
   'diet-chicken-1':                { cal: 520, protein: 33, fiber: 4  },
   'diet-chicken-2':                { cal: 480, protein: 33, fiber: 5  },
   'diet-chicken-3':                { cal: 520, protein: 30, fiber: 6  },
-  // Extra fish dinners
   'diet-fish-1':                   { cal: 440, protein: 24, fiber: 5  },
   'diet-fish-2':                   { cal: 480, protein: 32, fiber: 4  },
   'diet-fish-3':                   { cal: 490, protein: 38, fiber: 3  },
-  // Extra turkey dinners
   'diet-turkey-1':                 { cal: 490, protein: 34, fiber: 3  },
   'diet-turkey-2':                 { cal: 550, protein: 34, fiber: 5  },
   'diet-turkey-3':                 { cal: 420, protein: 28, fiber: 5  },
-  // Extra beef dinners
   'diet-beef-1':                   { cal: 560, protein: 37, fiber: 4  },
   'diet-beef-2':                   { cal: 520, protein: 32, fiber: 3  },
   'diet-beef-3':                   { cal: 560, protein: 37, fiber: 4  },
+
 };
 
 // ── FODMAP RECIPE ANALYZER ────────────────────────────────────────────────
