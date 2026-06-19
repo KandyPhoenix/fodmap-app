@@ -204,15 +204,16 @@ const KANDY_RECIPES = [
 
   {
     id: 'kandy-wed-lunch',
-    name: 'Chickpea & Veggie Salad',
+    name: 'Tofu & Veggie Salad',
     emoji: '🥗',
     category: 'lunch',
     time: '15 min',
     serves: 2,
     difficulty: 'easy',
-    tags: ['vegetarian', 'gluten-free'],
+    tags: ['vegetarian', 'gluten-free', 'high-protein'],
     ingredients: [
-      { qty: '2/3 cup',  item: 'canned chickpeas, rinsed and drained well (⅓ cup per person — do not exceed)' },
+      { qty: '250g',     item: 'firm tofu, cubed' },
+      { qty: '1 tbsp',   item: 'garlic-infused olive oil (for pan-frying the tofu)' },
       { qty: '1 medium', item: 'cucumber, diced' },
       { qty: '1 cup',    item: 'cherry tomatoes, halved' },
       { qty: '1',        item: 'bell pepper, diced' },
@@ -223,12 +224,12 @@ const KANDY_RECIPES = [
       { qty: 'to taste', item: 'salt and pepper' },
     ],
     steps: [
-      'Rinse chickpeas thoroughly under cold water. Drain completely.',
-      'Combine chickpeas, cucumber, cherry tomatoes, and bell pepper in a large bowl.',
+      'Press the tofu to remove moisture, then cube. Pan-fry in the garlic-infused oil over medium-high heat until golden, about 6 minutes. Let cool slightly. (Or use it raw if you prefer.)',
+      'Combine tofu, cucumber, cherry tomatoes, and bell pepper in a large bowl.',
       'Dress with olive oil, lemon juice, salt, and pepper. Toss well.',
-      'Divide lettuce between two plates, top with chickpea mixture and feta.',
+      'Divide lettuce between two plates, top with the tofu mixture and feta.',
     ],
-    fodmapNote: '⚠️ Chickpeas: maximum ⅓ cup (42g) per person — this is the safe FODMAP limit. Rinsing canned chickpeas well is essential. Feta: keep to about 2 tbsp per person.',
+    fodmapNote: 'Firm tofu replaces chickpeas here — it is naturally FODMAP-free and high in protein, with no legume/GOS portion limit to watch. Feta: keep to about 2 tbsp per person. Red or yellow bell peppers are lower in fructans than green.',
     isCustom: true,
   },
 

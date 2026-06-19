@@ -3167,7 +3167,7 @@ const RECIPES = [
 
   // ─── HIGH-FIBRE RECIPES (low-FODMAP) ───────────────────
   // Built to pack in as much fibre as possible while staying within safe
-  // low-FODMAP serving sizes (canned lentils/chickpeas ¼ cup pp, oats ¼–½ cup,
+  // low-FODMAP serving sizes (canned lentils ¼ cup pp, firm tofu, oats ¼–½ cup,
   // chia 2 tbsp, raspberries ~30 berries, edamame ½ cup pp, etc.).
   {
     id: 'hf-oat-berry-bowl',
@@ -3267,22 +3267,23 @@ const RECIPES = [
   },
 
   {
-    id: 'hf-chickpea-spinach-curry',
-    name: 'Chickpea & Spinach Curry',
+    id: 'hf-tofu-spinach-curry',
+    name: 'Tofu & Spinach Curry',
     emoji: '🍛',
     category: 'dinner',
     time: '30 min',
     serves: 4,
     difficulty: 'easy',
-    tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'high-fibre'],
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'high-fibre', 'high-protein'],
     ingredients: [
       { qty: '2 tbsp', item: 'garlic-infused olive oil' },
       { qty: '2 tbsp', item: 'spring onion green tops, sliced' },
       { qty: '1 tbsp', item: 'fresh ginger, grated' },
-      { qty: '1 cup (160g)', item: 'canned chickpeas, drained and rinsed' },
+      { qty: '300g', item: 'firm tofu, cubed' },
       { qty: '1 cup (200g)', item: 'canned chopped tomatoes' },
       { qty: '1 cup (240ml)', item: 'canned coconut milk' },
       { qty: '4 cups', item: 'baby spinach' },
+      { qty: '1', item: 'medium zucchini, skin on, diced' },
       { qty: '2 tsp', item: 'ground cumin' },
       { qty: '2 tsp', item: 'ground coriander' },
       { qty: '1 tsp', item: 'ground turmeric' },
@@ -3291,14 +3292,15 @@ const RECIPES = [
       { qty: 'to taste', item: 'salt and black pepper' },
     ],
     steps: [
-      'Heat the garlic-infused oil in a pan. Add spring onion tops and ginger; cook 1 minute.',
+      'Press the tofu to remove moisture, then cube. Pan-fry in 1 tbsp of the garlic-infused oil over medium-high heat until golden on all sides, about 6 minutes. Set aside.',
+      'In the same pan, heat the remaining oil. Add spring onion tops and ginger; cook 1 minute.',
       'Add the cumin, coriander, turmeric, and chilli; stir 30 seconds until fragrant.',
-      'Pour in the tomatoes and coconut milk and simmer 10 minutes.',
-      'Add the chickpeas and simmer a further 5 minutes.',
+      'Pour in the tomatoes and coconut milk, add the zucchini, and simmer 10 minutes.',
+      'Return the tofu to the pan and simmer a further 5 minutes.',
       'Stir through the spinach until wilted, then season to taste.',
       'Serve over brown rice.',
     ],
-    fodmapNote: 'Canned chickpeas are low FODMAP at ¼ cup per serve — this recipe keeps to 1 cup across 4 servings, so rinse them well and stick to one portion. Brown rice adds extra fibre over white rice. Use spring onion green tops only.'
+    fodmapNote: 'Firm tofu is naturally FODMAP-free and a great plant protein — it replaces chickpeas here, so there is no legume/GOS limit to watch. Keep coconut milk to 1 cup for the whole batch (about 1 tbsp per person). Brown rice, zucchini, and spinach add the fibre. Use spring onion green tops only.'
   },
 
   {
@@ -3392,31 +3394,34 @@ const RECIPES = [
   },
 
   {
-    id: 'hf-roasted-chickpeas',
-    name: 'Crispy Roasted Chickpeas',
-    emoji: '🫘',
+    id: 'hf-oat-seed-crackers',
+    name: 'High-Fibre Oat & Seed Crackers',
+    emoji: '🍘',
     category: 'snacks',
     time: '35 min',
-    serves: 4,
+    serves: 6,
     difficulty: 'easy',
     tags: ['vegetarian', 'vegan', 'gluten-free', 'dairy-free', 'high-fibre', 'make-ahead'],
     ingredients: [
-      { qty: '1 cup (160g)', item: 'canned chickpeas, drained and rinsed' },
-      { qty: '1 tbsp', item: 'garlic-infused olive oil' },
+      { qty: '1 cup (88g)', item: 'rolled oats (GF certified)' },
+      { qty: '1/4 cup', item: 'pumpkin seeds (pepitas)' },
+      { qty: '1/4 cup', item: 'sunflower seeds' },
+      { qty: '2 tbsp', item: 'chia seeds' },
+      { qty: '2 tbsp', item: 'ground flaxseed (linseed)' },
+      { qty: '2 tbsp', item: 'garlic-infused olive oil' },
+      { qty: '3/4 cup', item: 'water' },
       { qty: '1 tsp', item: 'smoked paprika' },
-      { qty: '1/2 tsp', item: 'ground cumin' },
       { qty: '1/2 tsp', item: 'salt' },
-      { qty: 'pinch', item: 'cayenne pepper (optional)' },
     ],
     steps: [
-      'Preheat oven to 200°C / 400°F.',
-      'Pat the chickpeas very dry with a towel — this is the key to crispiness.',
-      'Toss with the garlic-infused oil, paprika, cumin, salt, and cayenne.',
-      'Spread in a single layer on a lined tray.',
-      'Roast 25–30 minutes, shaking halfway, until golden and crunchy.',
-      'Cool slightly — they crisp up more as they cool. Best eaten the same day.',
+      'Preheat oven to 170°C / 340°F and line a large baking tray.',
+      'Mix the oats, pumpkin seeds, sunflower seeds, chia, flaxseed, paprika, and salt in a bowl.',
+      'Stir in the oil and water and leave 10 minutes — the chia and flax will thicken it into a spreadable paste.',
+      'Spread the mixture very thinly and evenly over the lined tray (about 3mm thick).',
+      'Bake 25–30 minutes until golden and dry, then score into squares while warm.',
+      'Cool completely on the tray — they crisp up as they cool. Snap apart and store airtight for up to 1 week.',
     ],
-    fodmapNote: 'Canned chickpeas are low FODMAP at ¼ cup (about 42g) per serve, which is exactly one portion of this recipe — enjoy one serve at a time. Garlic-infused oil gives the flavour without the fructans.'
+    fodmapNote: 'A crunchy, legume-free cracker that is high in fibre from oats, chia, flax, and seeds — no chickpeas, so no GOS limit to watch. Keep to about 1/6 of the batch per serve. Garlic-infused oil adds flavour without the fructans.'
   },
 
   {
