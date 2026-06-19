@@ -745,11 +745,15 @@
           const displayName = r ? r.name : (meal.text || 'Meal');
           const displayEmoji = r ? (r.emoji || '🍽️') : '📝';
           const isLF = !!meal.leftover;
+          const nut = r ? getRecipeNutrition(r.id) : null;
+          const nutLine = (nut && (nut.cal != null || nut.protein != null || nut.fiber != null))
+            ? `<span class="meal-chip-nut">${nut.cal != null ? `🔥${nut.cal}` : ''}${nut.protein != null ? ` · 💪${nut.protein}g` : ''}${nut.fiber != null ? ` · 🌾${nut.fiber}g` : ''}</span>`
+            : '';
           const chip = document.createElement('div');
           chip.className = 'meal-chip' + (isLF ? ' leftover' : '');
           chip.innerHTML = `
             <button class="meal-chip-lf${isLF ? ' active' : ''}" title="${isLF ? 'Remove leftover mark' : 'Mark as leftover'}">♻</button>
-            <span class="meal-chip-text">${isLF ? '<span class="lf-badge">LF</span> ' : ''}${displayEmoji} ${displayName}</span>
+            <span class="meal-chip-text"><span class="meal-chip-name">${isLF ? '<span class="lf-badge">LF</span> ' : ''}${displayEmoji} ${displayName}</span>${nutLine}</span>
             <button class="meal-chip-remove" title="Remove">×</button>`;
           if (r) chip.querySelector('.meal-chip-text').addEventListener('click', () => openRecipeModal(r));
           chip.querySelector('.meal-chip-lf').addEventListener('click', e => {

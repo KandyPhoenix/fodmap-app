@@ -591,6 +591,14 @@ main { max-width: 1280px; margin: 0 auto; padding: 20px; }
 .meal-chip.leftover:hover { background: #ffe0b2; }
 
 .meal-chip-text { flex: 1; line-height: 1.4; }
+.meal-chip-name { display: block; }
+.meal-chip-nut {
+  display: block; margin-top: 2px;
+  font-size: 10px; font-weight: 700;
+  color: var(--primary); opacity: 0.85;
+  white-space: nowrap;
+}
+body.dark .meal-chip-nut { color: #7fd1ab; }
 
 .meal-chip-lf {
   background: none; border: none; cursor: pointer;
