@@ -6,7 +6,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -14,7 +26,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -22,7 +42,15 @@
 
 
 
+
+
+
+
     try { return JSON.parse(localStorage.getItem('fodmap-user-recipes') || '[]'); }
+
+
+
+
 
 
 
@@ -30,7 +58,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -38,7 +74,15 @@
 
 
 
+
+
+
+
     try { localStorage.setItem('fodmap-user-recipes', JSON.stringify(list)); }
+
+
+
+
 
 
 
@@ -46,11 +90,23 @@
 
 
 
+
+
+
+
     if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -58,11 +114,23 @@
 
 
 
+
+
+
+
     return [...(typeof KANDY_RECIPES !== 'undefined' ? KANDY_RECIPES : []), ...RECIPES];
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -70,11 +138,23 @@
 
 
 
+
+
+
+
     return getBuiltinRecipes().some(b => b.id === id);
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -82,11 +162,23 @@
 
 
 
+
+
+
+
     return getUserRecipes().some(r => r.id === id);
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -94,7 +186,15 @@
 
 
 
+
+
+
+
     const builtins   = getBuiltinRecipes();
+
+
+
+
 
 
 
@@ -102,7 +202,15 @@
 
 
 
+
+
+
+
     const userList   = getUserRecipes();
+
+
+
+
 
 
 
@@ -110,7 +218,15 @@
 
 
 
+
+
+
+
     const merged = [];
+
+
+
+
 
 
 
@@ -118,7 +234,15 @@
 
 
 
+
+
+
+
     userList.forEach(r => { if (!builtinIds.has(r.id)) merged.push(r); });
+
+
+
+
 
 
 
@@ -126,11 +250,23 @@
 
 
 
+
+
+
+
     builtins.forEach(b => merged.push(overrides.get(b.id) || b));
 
 
 
+
+
+
+
     return merged;
+
+
+
+
 
 
 
@@ -142,7 +278,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -150,7 +298,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -158,7 +314,15 @@
 
 
 
+
+
+
+
   let foodCategory = 'all', foodRating = 'all', searchQuery = '';
+
+
+
+
 
 
 
@@ -166,7 +330,15 @@
 
 
 
+
+
+
+
   let recipeFilter = 'all';
+
+
+
+
 
 
 
@@ -174,7 +346,15 @@
 
 
 
+
+
+
+
   let pickerCategory = 'all', pickerSearch = '';
+
+
+
+
 
 
 
@@ -182,7 +362,15 @@
 
 
 
+
+
+
+
   let meals = loadMeals();
+
+
+
+
 
 
 
@@ -190,11 +378,23 @@
 
 
 
+
+
+
+
   let editingRecipeId = null;
 
 
 
+
+
+
+
   let progressMonthOffset = 0;        // 0 = latest visible month is the current month
+
+
+
+
 
 
 
@@ -206,7 +406,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -214,7 +426,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -222,7 +442,15 @@
 
 
 
+
+
+
+
   const searchWrap       = document.getElementById('search-wrap');
+
+
+
+
 
 
 
@@ -230,7 +458,15 @@
 
 
 
+
+
+
+
   const modalOverlay     = document.getElementById('modal-overlay');
+
+
+
+
 
 
 
@@ -238,11 +474,23 @@
 
 
 
+
+
+
+
   const shoppingOverlay  = document.getElementById('shopping-overlay');
 
 
 
+
+
+
+
   const recipeFormOverlay = document.getElementById('recipe-form-overlay');
+
+
+
+
 
 
 
@@ -254,7 +502,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -262,7 +522,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -270,7 +538,15 @@
 
 
 
+
+
+
+
     btn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -278,7 +554,15 @@
 
 
 
+
+
+
+
       document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+
+
+
+
 
 
 
@@ -286,7 +570,15 @@
 
 
 
+
+
+
+
       document.getElementById('view-foods').classList.toggle('hidden',   currentView !== 'foods');
+
+
+
+
 
 
 
@@ -294,7 +586,15 @@
 
 
 
+
+
+
+
       document.getElementById('view-planner').classList.toggle('hidden', currentView !== 'planner');
+
+
+
+
 
 
 
@@ -302,7 +602,15 @@
 
 
 
+
+
+
+
       document.getElementById('view-checker').classList.toggle('hidden', currentView !== 'checker');
+
+
+
+
 
 
 
@@ -310,7 +618,15 @@
 
 
 
+
+
+
+
       document.getElementById('view-reminders').classList.toggle('hidden', currentView !== 'reminders');
+
+
+
+
 
 
 
@@ -318,7 +634,15 @@
 
 
 
+
+
+
+
       document.getElementById('view-reintro').classList.toggle('hidden', currentView !== 'reintro');
+
+
+
+
 
 
 
@@ -326,7 +650,15 @@
 
 
 
+
+
+
+
       document.getElementById('view-finds').classList.toggle('hidden',   currentView !== 'finds');
+
+
+
+
 
 
 
@@ -334,7 +666,15 @@
 
 
 
+
+
+
+
       if (currentView === 'finds') renderFindsView();
+
+
+
+
 
 
 
@@ -342,7 +682,15 @@
 
 
 
+
+
+
+
       if (currentView === 'reminders') renderRemindersView();
+
+
+
+
 
 
 
@@ -350,7 +698,15 @@
 
 
 
+
+
+
+
       if (currentView === 'reintro') renderReintroView();
+
+
+
+
 
 
 
@@ -358,7 +714,15 @@
 
 
 
+
+
+
+
       searchInput.placeholder = currentView === 'recipes' ? 'Search recipes…' : currentView === 'subs' ? 'Search substitutions…' : currentView === 'checker' ? 'Search foods or recipes…' : currentView === 'finds' ? 'Search finds…' : currentView === 'snacks' ? 'Search snacks…' : currentView === 'planner' ? 'Search foods or recipes…' : 'Search foods…';
+
+
+
+
 
 
 
@@ -366,6 +730,10 @@
 
 
 
+
+
+
+
   });
 
 
@@ -374,7 +742,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -382,7 +762,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -390,7 +778,15 @@
 
 
 
+
+
+
+
     searchQuery = searchInput.value.trim().toLowerCase();
+
+
+
+
 
 
 
@@ -398,7 +794,15 @@
 
 
 
+
+
+
+
     if (currentView === 'foods') renderFoodGrid();
+
+
+
+
 
 
 
@@ -406,7 +810,15 @@
 
 
 
+
+
+
+
     else if (currentView === 'subs') renderSubsView();
+
+
+
+
 
 
 
@@ -414,11 +826,23 @@
 
 
 
+
+
+
+
     else if (currentView === 'snacks') renderSnacksView();
 
 
 
+
+
+
+
   });
+
+
+
+
 
 
 
@@ -426,7 +850,15 @@
 
 
 
+
+
+
+
     searchInput.value = ''; searchQuery = '';
+
+
+
+
 
 
 
@@ -434,7 +866,15 @@
 
 
 
+
+
+
+
     searchInput.focus();
+
+
+
+
 
 
 
@@ -442,7 +882,15 @@
 
 
 
+
+
+
+
     else if (currentView === 'recipes') renderRecipeGrid();
+
+
+
+
 
 
 
@@ -450,11 +898,23 @@
 
 
 
+
+
+
+
     else if (currentView === 'finds') renderFindsView();
 
 
 
+
+
+
+
     else if (currentView === 'snacks') renderSnacksView();
+
+
+
+
 
 
 
@@ -466,7 +926,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -474,11 +946,23 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
 
 
 
+
+
+
+
   window.addEventListener('scroll', () => scrollTop.classList.toggle('visible', window.scrollY > 300));
+
+
+
+
 
 
 
@@ -490,7 +974,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -498,7 +994,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -506,7 +1010,15 @@
 
 
 
+
+
+
+
     [modalOverlay, pickerOverlay, shoppingOverlay, recipeFormOverlay].forEach(el => el.classList.add('hidden'));
+
+
+
+
 
 
 
@@ -514,7 +1026,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -522,7 +1042,15 @@
 
 
 
+
+
+
+
     el.classList.remove('hidden');
+
+
+
+
 
 
 
@@ -530,26 +1058,53 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
   [modalOverlay, pickerOverlay, shoppingOverlay, recipeFormOverlay].forEach(ov => {
 
 
+
+
+
   // ── Sourdough starter reminder ─────────────────────────
+
   (function checkStarterReminder() {
+
     const lastFed = localStorage.getItem('starter-last-fed');
+
     if (!lastFed) return;
+
     const daysSince = (Date.now() - parseInt(lastFed)) / (1000 * 60 * 60 * 24);
+
     if (daysSince >= 7) {
+
       const banner = document.createElement('div');
+
       banner.id = 'starter-banner';
+
       banner.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#ff7043;color:white;padding:12px 20px;border-radius:12px;font-size:14px;font-weight:600;z-index:9999;display:flex;gap:12px;align-items:center;box-shadow:0 4px 16px rgba(0,0,0,0.2);max-width:90vw;';
+
       banner.innerHTML = '<span>🍞 Time to feed your sourdough starter!</span><button onclick="localStorage.setItem(\'starter-last-fed\', Date.now()); document.getElementById(\'starter-banner\').remove();" style="background:white;color:#ff7043;border:none;border-radius:8px;padding:4px 10px;font-weight:700;cursor:pointer;white-space:nowrap;">Fed it!</button><button onclick="document.getElementById(\'starter-banner\').remove();" style="background:none;border:none;color:white;font-size:18px;cursor:pointer;padding:0 4px;">×</button>';
+
       document.body.appendChild(banner);
+
     }
+
   })();
+
+
+
+
 
 
 
@@ -557,7 +1112,15 @@
 
 
 
+
+
+
+
   });
+
+
+
+
 
 
 
@@ -569,7 +1132,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -577,7 +1152,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -585,7 +1168,15 @@
 
 
 
+
+
+
+
     const catBar = document.getElementById('food-categories');
+
+
+
+
 
 
 
@@ -593,7 +1184,15 @@
 
 
 
+
+
+
+
       const btn = document.createElement('button');
+
+
+
+
 
 
 
@@ -601,7 +1200,15 @@
 
 
 
+
+
+
+
       btn.dataset.cat = cat.id;
+
+
+
+
 
 
 
@@ -609,7 +1216,15 @@
 
 
 
+
+
+
+
       btn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -617,7 +1232,15 @@
 
 
 
+
+
+
+
         btn.classList.add('active');
+
+
+
+
 
 
 
@@ -625,11 +1248,23 @@
 
 
 
+
+
+
+
         renderFoodGrid();
 
 
 
+
+
+
+
       });
+
+
+
+
 
 
 
@@ -637,7 +1272,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -645,7 +1288,15 @@
 
 
 
+
+
+
+
       btn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -653,7 +1304,15 @@
 
 
 
+
+
+
+
         btn.classList.add('active');
+
+
+
+
 
 
 
@@ -661,7 +1320,15 @@
 
 
 
+
+
+
+
         renderFoodGrid();
+
+
+
+
 
 
 
@@ -669,7 +1336,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -677,7 +1352,19 @@
 
 
 
+
+
+
+
   })();
+
+
+
+
+
+
+
+
 
 
 
@@ -689,7 +1376,15 @@
 
 
 
+
+
+
+
     const grid  = document.getElementById('food-grid');
+
+
+
+
 
 
 
@@ -697,7 +1392,15 @@
 
 
 
+
+
+
+
     const count = document.getElementById('food-count');
+
+
+
+
 
 
 
@@ -705,7 +1408,15 @@
 
 
 
+
+
+
+
       if (foodCategory !== 'all' && f.category !== foodCategory) return false;
+
+
+
+
 
 
 
@@ -713,7 +1424,15 @@
 
 
 
+
+
+
+
       if (searchQuery) return (f.name + ' ' + f.category).toLowerCase().includes(searchQuery);
+
+
+
+
 
 
 
@@ -721,7 +1440,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -729,7 +1456,15 @@
 
 
 
+
+
+
+
     if (!foods.length) { noRes.classList.remove('hidden'); count.textContent = ''; return; }
+
+
+
+
 
 
 
@@ -737,7 +1472,15 @@
 
 
 
+
+
+
+
     count.textContent = `${foods.length} food${foods.length !== 1 ? 's' : ''}`;
+
+
+
+
 
 
 
@@ -745,7 +1488,15 @@
 
 
 
+
+
+
+
       const card = document.createElement('div');
+
+
+
+
 
 
 
@@ -753,7 +1504,15 @@
 
 
 
+
+
+
+
       const dots = food.servings.map(s => `<span class="dot ${s.rating}" title="${s.label}: ${s.amount}"></span>`).join('');
+
+
+
+
 
 
 
@@ -761,7 +1520,15 @@
 
 
 
+
+
+
+
       const hint = safe
+
+
+
+
 
 
 
@@ -769,7 +1536,15 @@
 
 
 
+
+
+
+
         : food.rating === 'red' ? `<div class="card-serving" style="color:var(--red)">Avoid</div>` : '';
+
+
+
+
 
 
 
@@ -777,7 +1552,15 @@
 
 
 
+
+
+
+
       card.addEventListener('click', () => openFoodModal(food));
+
+
+
+
 
 
 
@@ -785,11 +1568,27 @@
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -801,7 +1600,15 @@
 
 
 
+
+
+
+
     const cat = CATEGORIES.find(c => c.id === food.category) || {};
+
+
+
+
 
 
 
@@ -809,7 +1616,15 @@
 
 
 
+
+
+
+
     const fodmapSection = (food.fodmaps && food.fodmaps.length)
+
+
+
+
 
 
 
@@ -817,7 +1632,15 @@
 
 
 
+
+
+
+
       : `<div class="no-fodmap">✅ No significant FODMAPs detected</div>`;
+
+
+
+
 
 
 
@@ -825,7 +1648,15 @@
 
 
 
+
+
+
+
       <div class="modal" role="dialog">
+
+
+
+
 
 
 
@@ -833,7 +1664,15 @@
 
 
 
+
+
+
+
         <div class="modal-header"><div class="modal-emoji">${food.emoji}</div><div><div class="modal-title">${food.name}</div><div class="cat-badge">${cat.emoji || ''} ${cat.label || ''}</div></div></div>
+
+
+
+
 
 
 
@@ -841,7 +1680,15 @@
 
 
 
+
+
+
+
         <div class="modal-section"><div class="section-title">FODMAPs Present</div>${fodmapSection}</div>
+
+
+
+
 
 
 
@@ -849,7 +1696,15 @@
 
 
 
+
+
+
+
         <div class="legend"><div class="legend-item"><span class="dot green"></span> Low FODMAP</div><div class="legend-item"><span class="dot yellow"></span> Moderate</div><div class="legend-item"><span class="dot red"></span> High FODMAP</div></div>
+
+
+
+
 
 
 
@@ -857,29 +1712,59 @@
 
 
 
+
+
+
+
     document.getElementById('mc1').addEventListener('click', closeAll);
 
+
+
     // Sourdough starter tracker button
+
     const existingStarterBtn = document.getElementById('starter-fed-btn');
+
     if (existingStarterBtn) existingStarterBtn.remove();
+
     if (recipe.starterReminder) {
+
       const btn = document.createElement('button');
+
       btn.id = 'starter-fed-btn';
+
       const lastFed = localStorage.getItem('starter-last-fed');
+
       const daysAgo = lastFed ? Math.floor((Date.now() - parseInt(lastFed)) / (1000*60*60*24)) : null;
+
       btn.textContent = daysAgo === null ? '🌱 Tap here each time you feed your starter' : daysAgo === 0 ? '🌱 Starter fed today!' : `🌱 Last fed ${daysAgo} day${daysAgo !== 1 ? 's' : ''} ago — tap to mark as fed`;
+
       btn.style.cssText = 'display:block;width:calc(100% - 48px);margin:0 24px 16px;padding:13px;background:#fff3e0;border:2px solid #ff7043;border-radius:10px;color:#e64a19;font-weight:700;font-size:14px;cursor:pointer;text-align:center;';
+
       btn.onclick = () => {
+
         localStorage.setItem('starter-last-fed', Date.now());
+
         btn.textContent = '🌱 Starter fed today!';
+
         const b = document.getElementById('starter-banner');
+
         if (b) b.remove();
+
       };
+
       const modalBody = document.querySelector('.rmodal-body') || modalOverlay.querySelector('.rmodal');
+
       if (modalBody) modalBody.appendChild(btn);
+
     }
 
+
+
     openOverlay(modalOverlay);
+
+
+
+
 
 
 
@@ -891,7 +1776,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -899,7 +1796,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -907,7 +1812,15 @@
 
 
 
+
+
+
+
     const catBar = document.getElementById('recipe-categories');
+
+
+
+
 
 
 
@@ -915,7 +1828,15 @@
 
 
 
+
+
+
+
       const btn = document.createElement('button');
+
+
+
+
 
 
 
@@ -923,7 +1844,15 @@
 
 
 
+
+
+
+
       btn.dataset.cat = cat.id;
+
+
+
+
 
 
 
@@ -931,7 +1860,15 @@
 
 
 
+
+
+
+
       btn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -939,7 +1876,15 @@
 
 
 
+
+
+
+
         btn.classList.add('active');
+
+
+
+
 
 
 
@@ -947,7 +1892,15 @@
 
 
 
+
+
+
+
         renderRecipeGrid();
+
+
+
+
 
 
 
@@ -955,11 +1908,27 @@
 
 
 
+
+
+
+
       catBar.appendChild(btn);
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -971,39 +1940,79 @@
 
 
 
+
+
+
+
     document.querySelectorAll('#recipe-filters .rfilter').forEach(btn => {
+
+
 
       btn.addEventListener('click', () => {
 
+
+
         document.querySelectorAll('#recipe-filters .rfilter').forEach(b => b.classList.remove('active'));
+
+
 
         btn.classList.add('active');
 
+
+
         recipeFilter = btn.dataset.filter;
+
+
 
         renderRecipeGrid();
 
+
+
       });
 
+
+
     });
+
+
+
+
 
 
 
     const surpriseBtn = document.getElementById('surprise-recipe-btn');
 
+
+
     if (surpriseBtn) surpriseBtn.addEventListener('click', () => {
+
+
 
       const pool = lastRecipeList.length ? lastRecipeList
 
+
+
         : getAllRecipes().filter(r => r.category === 'lunch' || r.category === 'dinner');
+
+
 
       if (!pool.length) return;
 
+
+
       const pick = pool[Math.floor(Math.random() * pool.length)];
+
+
 
       openRecipeModal(pick);
 
+
+
     });
+
+
+
+
 
 
 
@@ -1011,67 +2020,139 @@
 
 
 
+
+
+
+
   })();
+
+
+
+
 
 
 
   // ── Recipe favorites + smart filters ──────────────────────
 
+
+
   function getFavorites() {
+
+
 
     try { return JSON.parse(localStorage.getItem('fodmap-favorites') || '[]'); } catch(e) { return []; }
 
+
+
   }
+
+
 
   function isFavorite(id) { return getFavorites().includes(id); }
 
+
+
   function toggleFavorite(id) {
+
+
 
     let favs = getFavorites();
 
+
+
     favs = favs.includes(id) ? favs.filter(x => x !== id) : favs.concat(id);
+
+
 
     try { localStorage.setItem('fodmap-favorites', JSON.stringify(favs)); } catch(e) {}
 
+
+
     if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
 
+
+
   }
+
+
+
+
 
 
 
   function recipeMinutes(r) {
 
+
+
     const m = String(r.time || '').match(/\d+/);
+
+
 
     return m ? parseInt(m[0], 10) : 999;
 
+
+
   }
+
+
 
   function recipeMatchesFilter(r, filter) {
 
+
+
     if (filter === 'all') return true;
+
+
 
     if (filter === 'favorites') return isFavorite(r.id);
 
+
+
     if (filter === 'airfryer') return (typeof AIRFRYER !== 'undefined' && !!AIRFRYER[r.id]);
+
+
 
     if (filter === 'quick') return recipeMinutes(r) <= 20;
 
+
+
     const tags = (r.tags || []).map(t => t.toLowerCase());
+
+
 
     if (filter === 'veggie') return tags.includes('vegetarian') || tags.includes('vegan');
 
+
+
     const text = (r.name + ' ' + (r.ingredients || []).map(i => i.item).join(' ')).toLowerCase();
+
+
 
     if (filter === 'chicken') return /\b(chicken|turkey|poultry)\b/.test(text);
 
+
+
     if (filter === 'seafood') return /\b(salmon|tuna|cod|tilapia|shrimp|prawn|fish|seafood|scampi|haddock|crab)\b/.test(text);
+
+
 
     if (filter === 'redmeat') return /\b(beef|steak|pork|lamb|sausage|meatball|meatloaf|carnitas|bolognese|mince)\b/.test(text);
 
+
+
     return true;
 
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -1083,7 +2164,15 @@
 
 
 
+
+
+
+
     const n = (typeof RECIPE_NUTRITION !== 'undefined' && RECIPE_NUTRITION[id]) ? RECIPE_NUTRITION[id] : null;
+
+
+
+
 
 
 
@@ -1091,7 +2180,15 @@
 
 
 
+
+
+
+
     return {
+
+
+
+
 
 
 
@@ -1099,7 +2196,15 @@
 
 
 
+
+
+
+
       protein: n ? n.protein : null,
+
+
+
+
 
 
 
@@ -1107,11 +2212,27 @@
 
 
 
+
+
+
+
     };
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -1123,7 +2244,15 @@
 
 
 
+
+
+
+
     const grid  = document.getElementById('recipe-grid');
+
+
+
+
 
 
 
@@ -1131,7 +2260,15 @@
 
 
 
+
+
+
+
     const count = document.getElementById('recipe-count');
+
+
+
+
 
 
 
@@ -1139,7 +2276,15 @@
 
 
 
+
+
+
+
     const list = all.filter(r => {
+
+
+
+
 
 
 
@@ -1147,7 +2292,15 @@
 
 
 
+
+
+
+
       else if (recipeCategory !== 'all' && r.category !== recipeCategory) return false;
+
+
+
+
 
 
 
@@ -1155,7 +2308,15 @@
 
 
 
+
+
+
+
       if (searchQuery) return (r.name + ' ' + r.category).toLowerCase().includes(searchQuery);
+
+
+
+
 
 
 
@@ -1163,7 +2324,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -1171,7 +2340,15 @@
 
 
 
+
+
+
+
     grid.innerHTML = '';
+
+
+
+
 
 
 
@@ -1179,11 +2356,23 @@
 
 
 
+
+
+
+
     noRes.classList.add('hidden');
 
 
 
+
+
+
+
     const userCount = getUserRecipes().length;
+
+
+
+
 
 
 
@@ -1195,7 +2384,19 @@
 
 
 
+
+
+
+
+
+
+
+
     list.forEach(r => {
+
+
+
+
 
 
 
@@ -1203,7 +2404,15 @@
 
 
 
+
+
+
+
       const card = document.createElement('div');
+
+
+
+
 
 
 
@@ -1211,7 +2420,15 @@
 
 
 
+
+
+
+
       const tags = (r.tags || []).map(t => `<span class="recipe-tag">${t}</span>`).join('');
+
+
+
+
 
 
 
@@ -1219,7 +2436,15 @@
 
 
 
+
+
+
+
       const calHtml     = nut.cal     != null ? `<span class="recipe-cal">🔥 ${nut.cal} cal</span>` : '';
+
+
+
+
 
 
 
@@ -1227,7 +2452,15 @@
 
 
 
+
+
+
+
       const fiberHtml   = nut.fiber   != null ? `<span class="recipe-nut recipe-fiber">🌾 ${nut.fiber}g fibre</span>` : '';
+
+
+
+
 
 
 
@@ -1235,7 +2468,15 @@
 
 
 
+
+
+
+
         <div class="recipe-card-banner">
+
+
+
+
 
 
 
@@ -1243,7 +2484,15 @@
 
 
 
+
+
+
+
           <button class="fav-heart${isFavorite(r.id) ? ' active' : ''}" data-fav="${r.id}" title="Save to favorites" aria-label="Save to favorites">${isFavorite(r.id) ? '❤️' : '🤍'}</button>
+
+
+
+
 
 
 
@@ -1251,7 +2500,15 @@
 
 
 
+
+
+
+
           <span class="recipe-difficulty ${r.difficulty || 'easy'}">${r.difficulty || 'easy'}</span>
+
+
+
+
 
 
 
@@ -1259,7 +2516,15 @@
 
 
 
+
+
+
+
         <div class="recipe-card-body">
+
+
+
+
 
 
 
@@ -1267,7 +2532,15 @@
 
 
 
+
+
+
+
           <div class="recipe-meta"><span>⏱ ${r.time || '—'}</span><span>👥 Serves ${r.serves || '—'}</span></div>
+
+
+
+
 
 
 
@@ -1275,7 +2548,15 @@
 
 
 
+
+
+
+
           <div class="recipe-tags">${tags}</div>
+
+
+
+
 
 
 
@@ -1283,7 +2564,15 @@
 
 
 
+
+
+
+
       card.addEventListener('click', () => openRecipeModal(r));
+
+
+
+
 
 
 
@@ -1291,21 +2580,43 @@
 
 
 
+
+
+
+
       if (heart) heart.addEventListener('click', e => {
+
+
 
         e.stopPropagation();
 
+
+
         toggleFavorite(r.id);
+
+
 
         const on = isFavorite(r.id);
 
+
+
         heart.classList.toggle('active', on);
+
+
 
         heart.textContent = on ? '❤️' : '🤍';
 
+
+
         if (recipeFilter === 'favorites' && !on) renderRecipeGrid();
 
+
+
       });
+
+
+
+
 
 
 
@@ -1313,11 +2624,27 @@
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -1329,7 +2656,15 @@
 
 
 
+
+
+
+
     const allText = (recipe.ingredients || []).map(i => (i.qty + ' ' + i.item).toLowerCase()).join(' ');
+
+
+
+
 
 
 
@@ -1337,7 +2672,15 @@
 
 
 
+
+
+
+
     const found = [];
+
+
+
+
 
 
 
@@ -1345,7 +2688,15 @@
 
 
 
+
+
+
+
       if (seen.has(watch.label)) continue;
+
+
+
+
 
 
 
@@ -1353,7 +2704,15 @@
 
 
 
+
+
+
+
         seen.add(watch.label);
+
+
+
+
 
 
 
@@ -1361,7 +2720,15 @@
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -1369,11 +2736,27 @@
 
 
 
+
+
+
+
     return found;
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -1385,7 +2768,15 @@
 
 
 
+
+
+
+
     const allText = (recipe.ingredients || []).map(i => (i.qty + ' ' + i.item).toLowerCase()).join(' ');
+
+
+
+
 
 
 
@@ -1393,7 +2784,15 @@
 
 
 
+
+
+
+
     const found = [];
+
+
+
+
 
 
 
@@ -1401,7 +2800,15 @@
 
 
 
+
+
+
+
       if (found.length >= 3) break;
+
+
+
+
 
 
 
@@ -1409,7 +2816,15 @@
 
 
 
+
+
+
+
       if (seen.has(key)) continue;
+
+
+
+
 
 
 
@@ -1417,7 +2832,15 @@
 
 
 
+
+
+
+
         seen.add(key);
+
+
+
+
 
 
 
@@ -1425,7 +2848,15 @@
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -1433,11 +2864,27 @@
 
 
 
+
+
+
+
     return found;
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -1449,7 +2896,15 @@
 
 
 
+
+
+
+
     const isUser = recipe.isCustom === true;
+
+
+
+
 
 
 
@@ -1457,7 +2912,15 @@
 
 
 
+
+
+
+
     const isEditedBuiltin = !isUserCreated && hasUserOverride(recipe.id); // a built-in the user has edited
+
+
+
+
 
 
 
@@ -1465,7 +2928,15 @@
 
 
 
+
+
+
+
     const recipeNut = getRecipeNutrition(recipe.id);
+
+
+
+
 
 
 
@@ -1477,7 +2948,19 @@
 
 
 
+
+
+
+
+
+
+
+
     function buildIngList(multiplier) {
+
+
+
+
 
 
 
@@ -1485,7 +2968,15 @@
 
 
 
+
+
+
+
         if (ing.item === '—') return `<li style="padding:4px 12px;font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">${ing.qty}</li>`;
+
+
+
+
 
 
 
@@ -1493,7 +2984,15 @@
 
 
 
+
+
+
+
         if (multiplier !== 1) {
+
+
+
+
 
 
 
@@ -1501,7 +3000,15 @@
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -1509,11 +3016,27 @@
 
 
 
+
+
+
+
       }).join('');
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -1525,7 +3048,15 @@
 
 
 
+
+
+
+
     const stepsList = (recipe.steps || []).map((step, i) => `<li class="step-item" data-step="${i}"><div class="step-num">${i + 1}</div><div class="step-text">${step}</div></li>`).join('');
+
+
+
+
 
 
 
@@ -1533,7 +3064,15 @@
 
 
 
+
+
+
+
       <div style="padding:0 24px 8px;display:flex;gap:10px">
+
+
+
+
 
 
 
@@ -1541,7 +3080,15 @@
 
 
 
+
+
+
+
         ${isUserCreated
+
+
+
+
 
 
 
@@ -1549,7 +3096,15 @@
 
 
 
+
+
+
+
           : (isEditedBuiltin ? '<button class="action-btn" id="reset-recipe-btn" style="background:var(--bg);color:var(--text)">↩️ Reset</button>' : '')}
+
+
+
+
 
 
 
@@ -1557,7 +3112,15 @@
 
 
 
+
+
+
+
     const addPlannerBtn = `<div style="padding:0 24px 24px"><button class="action-btn primary" id="add-to-planner-btn" style="width:100%;padding:12px">📅 Add to Meal Planner</button></div>`;
+
+
+
+
 
 
 
@@ -1565,7 +3128,15 @@
 
 
 
+
+
+
+
     const badgeHtml   = isUser ? `<div style="display:inline-block;background:#ff7043;color:white;padding:4px 12px;border-radius:12px;font-size:11px;font-weight:800;letter-spacing:0.5px;margin-bottom:8px">⭐ MY RECIPE</div>` : '';
+
+
+
+
 
 
 
@@ -1573,11 +3144,23 @@
 
 
 
+
+
+
+
       ? `<div class="rmodal-section"><div class="rmodal-section-title">💡 FODMAP Notes</div><div class="fodmap-note-box"><div class="fodmap-note-text">${recipe.fodmapNote || recipe.fodmapnote}</div></div></div>`
 
 
 
+
+
+
+
       : '';
+
+
+
+
 
 
 
@@ -1585,7 +3168,15 @@
 
 
 
+
+
+
+
       ? `<div class="rmodal-section"><div class="rmodal-section-title">📝 My Notes</div><div class="my-notes-box">${escHtml(recipe.notes).replace(/\n/g, '<br>')}</div></div>`
+
+
+
+
 
 
 
@@ -1593,7 +3184,15 @@
 
 
 
+
+
+
+
     const afSteps = (typeof AIRFRYER !== 'undefined' && AIRFRYER[recipe.id]) ? AIRFRYER[recipe.id] : null;
+
+
+
+
 
 
 
@@ -1601,7 +3200,15 @@
 
 
 
+
+
+
+
       <div class="rmodal-section airfryer-section">
+
+
+
+
 
 
 
@@ -1609,7 +3216,15 @@
 
 
 
+
+
+
+
         <ul class="steps-list">${afSteps.map((s, i) => `<li class="step-item"><div class="step-num">${i + 1}</div><div class="step-text">${escHtml(s)}</div></li>`).join('')}</ul>
+
+
+
+
 
 
 
@@ -1617,7 +3232,19 @@
 
 
 
+
+
+
+
       </div>` : '';
+
+
+
+
+
+
+
+
 
 
 
@@ -1629,7 +3256,15 @@
 
 
 
+
+
+
+
     const alertsHtml = alerts.length ? `
+
+
+
+
 
 
 
@@ -1637,7 +3272,15 @@
 
 
 
+
+
+
+
         <div class="rmodal-section-title">⚠️ Portion Watch</div>
+
+
+
+
 
 
 
@@ -1645,7 +3288,15 @@
 
 
 
+
+
+
+
           <div class="portion-alert-intro">This recipe contains moderate-FODMAP ingredients. Stick to these limits per person:</div>
+
+
+
+
 
 
 
@@ -1653,7 +3304,15 @@
 
 
 
+
+
+
+
             <div class="portion-alert-row">
+
+
+
+
 
 
 
@@ -1661,7 +3320,15 @@
 
 
 
+
+
+
+
               <span class="portion-alert-safe">${escHtml(a.safe)}</span>
+
+
+
+
 
 
 
@@ -1669,11 +3336,27 @@
 
 
 
+
+
+
+
         </div>
 
 
 
+
+
+
+
       </div>` : '';
+
+
+
+
+
+
+
+
 
 
 
@@ -1685,7 +3368,15 @@
 
 
 
+
+
+
+
     const swapsHtml = swaps.length ? `
+
+
+
+
 
 
 
@@ -1693,7 +3384,15 @@
 
 
 
+
+
+
+
         <div class="rmodal-section-title">💚 Healthier Swaps</div>
+
+
+
+
 
 
 
@@ -1701,7 +3400,15 @@
 
 
 
+
+
+
+
           ${swaps.map(s => `
+
+
+
+
 
 
 
@@ -1709,7 +3416,15 @@
 
 
 
+
+
+
+
               <div class="swap-row">
+
+
+
+
 
 
 
@@ -1717,7 +3432,15 @@
 
 
 
+
+
+
+
                 <span class="swap-arrow">→</span>
+
+
+
+
 
 
 
@@ -1725,7 +3448,15 @@
 
 
 
+
+
+
+
               </div>
+
+
+
+
 
 
 
@@ -1733,11 +3464,23 @@
 
 
 
+
+
+
+
             </div>`).join('')}
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -1749,7 +3492,19 @@
 
 
 
+
+
+
+
+
+
+
+
     modalOverlay.innerHTML = `
+
+
+
+
 
 
 
@@ -1757,7 +3512,15 @@
 
 
 
+
+
+
+
         <button class="modal-close" id="mc2" style="background:rgba(255,255,255,0.85)">✕</button>
+
+
+
+
 
 
 
@@ -1765,7 +3528,15 @@
 
 
 
+
+
+
+
           ${badgeHtml}
+
+
+
+
 
 
 
@@ -1773,7 +3544,15 @@
 
 
 
+
+
+
+
           <span class="rmodal-emoji">${recipe.emoji || '🍽️'}</span>
+
+
+
+
 
 
 
@@ -1781,7 +3560,15 @@
 
 
 
+
+
+
+
           <div class="rmodal-meta">
+
+
+
+
 
 
 
@@ -1789,7 +3576,15 @@
 
 
 
+
+
+
+
             <div class="rmodal-meta-item">👥 Serves ${recipe.serves || '—'}</div>
+
+
+
+
 
 
 
@@ -1797,7 +3592,15 @@
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -1805,7 +3608,15 @@
 
 
 
+
+
+
+
           <div class="rmodal-nutrition">
+
+
+
+
 
 
 
@@ -1813,7 +3624,15 @@
 
 
 
+
+
+
+
             ${recipeNut.protein != null ? `<div class="rmodal-nut-item"><div class="rmodal-nut-val">${recipeNut.protein}g</div><div class="rmodal-nut-label">💪 protein</div></div>` : ''}
+
+
+
+
 
 
 
@@ -1821,7 +3640,15 @@
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -1829,11 +3656,23 @@
 
 
 
+
+
+
+
           <div class="rmodal-tags">${(recipe.tags || []).map(t => `<span class="rmodal-tag">${t}</span>`).join('')}</div>
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -1841,7 +3680,15 @@
 
 
 
+
+
+
+
         <div class="rmodal-section">
+
+
+
+
 
 
 
@@ -1849,7 +3696,15 @@
 
 
 
+
+
+
+
             <div class="rmodal-section-title">🛒 Ingredients</div>
+
+
+
+
 
 
 
@@ -1857,7 +3712,15 @@
 
 
 
+
+
+
+
               <span class="serves-label">Serves:</span>
+
+
+
+
 
 
 
@@ -1865,7 +3728,15 @@
 
 
 
+
+
+
+
               <span class="serves-count" id="serves-count">${baseServes}</span>
+
+
+
+
 
 
 
@@ -1873,7 +3744,15 @@
 
 
 
+
+
+
+
             </div>
+
+
+
+
 
 
 
@@ -1881,7 +3760,15 @@
 
 
 
+
+
+
+
           <div class="serves-note" id="serves-note"></div>
+
+
+
+
 
 
 
@@ -1889,7 +3776,15 @@
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -1897,7 +3792,15 @@
 
 
 
+
+
+
+
         ${airfryerHtml}
+
+
+
+
 
 
 
@@ -1905,7 +3808,15 @@
 
 
 
+
+
+
+
         ${notesHtml}
+
+
+
+
 
 
 
@@ -1913,11 +3824,23 @@
 
 
 
+
+
+
+
         ${swapsHtml}
 
 
 
+
+
+
+
         ${addPlannerBtn}
+
+
+
+
 
 
 
@@ -1929,7 +3852,19 @@
 
 
 
+
+
+
+
+
+
+
+
     document.getElementById('mc2').addEventListener('click', closeAll);
+
+
+
+
 
 
 
@@ -1937,23 +3872,47 @@
 
 
 
+
+
+
+
     if (rmodalFav) rmodalFav.addEventListener('click', () => {
+
+
 
       toggleFavorite(recipe.id);
 
+
+
       const on = isFavorite(recipe.id);
+
+
 
       rmodalFav.classList.toggle('active', on);
 
+
+
       rmodalFav.textContent = on ? '❤️ Favorited' : '🤍 Add to favorites';
 
+
+
       renderRecipeGrid();
+
+
 
     });
 
 
 
+
+
+
+
     document.querySelectorAll('.ingredient-item').forEach(li => li.addEventListener('click', () => li.classList.toggle('checked')));
+
+
+
+
 
 
 
@@ -1965,7 +3924,19 @@
 
 
 
+
+
+
+
+
+
+
+
     // Serves scaler
+
+
+
+
 
 
 
@@ -1973,7 +3944,15 @@
 
 
 
+
+
+
+
     function updateServes(newServes) {
+
+
+
+
 
 
 
@@ -1981,7 +3960,15 @@
 
 
 
+
+
+
+
       currentServes = newServes;
+
+
+
+
 
 
 
@@ -1989,7 +3976,15 @@
 
 
 
+
+
+
+
       document.getElementById('serves-count').textContent = currentServes;
+
+
+
+
 
 
 
@@ -1997,7 +3992,15 @@
 
 
 
+
+
+
+
       ingListEl.innerHTML = buildIngList(multiplier === 1 ? 1 : multiplier);
+
+
+
+
 
 
 
@@ -2005,7 +4008,15 @@
 
 
 
+
+
+
+
       const noteEl = document.getElementById('serves-note');
+
+
+
+
 
 
 
@@ -2013,7 +4024,15 @@
 
 
 
+
+
+
+
         noteEl.textContent = `Multiply each ingredient by ×${multiplier} from the original ${baseServes}-serving recipe.`;
+
+
+
+
 
 
 
@@ -2021,7 +4040,15 @@
 
 
 
+
+
+
+
       } else {
+
+
+
+
 
 
 
@@ -2029,7 +4056,15 @@
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -2037,7 +4072,15 @@
 
 
 
+
+
+
+
     document.getElementById('serves-down').addEventListener('click', () => updateServes(currentServes - 1));
+
+
+
+
 
 
 
@@ -2049,7 +4092,19 @@
 
 
 
+
+
+
+
+
+
+
+
     document.getElementById('add-to-planner-btn').addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -2057,7 +4112,15 @@
 
 
 
+
+
+
+
       document.querySelector('[data-view="planner"]').click();
+
+
+
+
 
 
 
@@ -2065,7 +4128,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -2073,7 +4144,15 @@
 
 
 
+
+
+
+
     if (isUserCreated) {
+
+
+
+
 
 
 
@@ -2081,7 +4160,15 @@
 
 
 
+
+
+
+
     } else if (isEditedBuiltin) {
+
+
+
+
 
 
 
@@ -2089,11 +4176,23 @@
 
 
 
+
+
+
+
     }
 
 
 
+
+
+
+
     openOverlay(modalOverlay);
+
+
+
+
 
 
 
@@ -2105,7 +4204,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -2113,11 +4224,23 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
 
 
 
+
+
+
+
   let ingredientRows = [];
+
+
+
+
 
 
 
@@ -2129,7 +4252,19 @@
 
 
 
+
+
+
+
+
+
+
+
   function openRecipeForm(existing) {
+
+
+
+
 
 
 
@@ -2137,7 +4272,15 @@
 
 
 
+
+
+
+
     const isEdit = !!existing;
+
+
+
+
 
 
 
@@ -2149,7 +4292,19 @@
 
 
 
+
+
+
+
+
+
+
+
     // Populate fields
+
+
+
+
 
 
 
@@ -2157,7 +4312,15 @@
 
 
 
+
+
+
+
     document.getElementById('rf-name').value       = existing ? existing.name : '';
+
+
+
+
 
 
 
@@ -2165,7 +4328,15 @@
 
 
 
+
+
+
+
     document.getElementById('rf-time').value       = existing ? (existing.time || '') : '';
+
+
+
+
 
 
 
@@ -2173,7 +4344,15 @@
 
 
 
+
+
+
+
     document.getElementById('rf-difficulty').value = existing ? (existing.difficulty || 'easy') : 'easy';
+
+
+
+
 
 
 
@@ -2181,11 +4360,23 @@
 
 
 
+
+
+
+
     document.getElementById('rf-fodmap-note').value = existing ? (existing.fodmapNote || '') : '';
 
 
 
+
+
+
+
     document.getElementById('rf-notes').value      = existing ? (existing.notes || '') : '';
+
+
+
+
 
 
 
@@ -2197,7 +4388,19 @@
 
 
 
+
+
+
+
+
+
+
+
     // Ingredients
+
+
+
+
 
 
 
@@ -2205,11 +4408,23 @@
 
 
 
+
+
+
+
       ? (existing.ingredients || []).filter(i => i.item !== '—').map(i => ({ qty: i.qty, item: i.item }))
 
 
 
+
+
+
+
       : [{ qty: '', item: '' }];
+
+
+
+
 
 
 
@@ -2221,7 +4436,19 @@
 
 
 
+
+
+
+
+
+
+
+
     // Steps
+
+
+
+
 
 
 
@@ -2229,11 +4456,23 @@
 
 
 
+
+
+
+
       ? (existing.steps || []).slice()
 
 
 
+
+
+
+
       : [''];
+
+
+
+
 
 
 
@@ -2245,7 +4484,19 @@
 
 
 
+
+
+
+
+
+
+
+
     // Buttons
+
+
+
+
 
 
 
@@ -2253,7 +4504,15 @@
 
 
 
+
+
+
+
     document.getElementById('rf-cancel-btn').onclick     = closeAll;
+
+
+
+
 
 
 
@@ -2265,7 +4524,19 @@
 
 
 
+
+
+
+
+
+
+
+
     // Delete (own recipes) vs. Reset to original (edited built-ins) vs. nothing yet
+
+
+
+
 
 
 
@@ -2273,11 +4544,23 @@
 
 
 
+
+
+
+
     if (isEdit && !isBuiltinId(existing.id)) {
 
 
 
+
+
+
+
       delBtn.classList.remove('hidden');
+
+
+
+
 
 
 
@@ -2285,7 +4568,15 @@
 
 
 
+
+
+
+
       delBtn.onclick = () => deleteUserRecipe(existing.id, existing.name);
+
+
+
+
 
 
 
@@ -2293,7 +4584,15 @@
 
 
 
+
+
+
+
       delBtn.classList.remove('hidden');
+
+
+
+
 
 
 
@@ -2301,7 +4600,15 @@
 
 
 
+
+
+
+
       delBtn.onclick = () => resetBuiltinRecipe(existing.id, existing.name);
+
+
+
+
 
 
 
@@ -2309,7 +4616,15 @@
 
 
 
+
+
+
+
       delBtn.classList.add('hidden');
+
+
+
+
 
 
 
@@ -2317,7 +4632,15 @@
 
 
 
+
+
+
+
     document.getElementById('add-ingredient-btn').onclick = () => {
+
+
+
+
 
 
 
@@ -2325,11 +4648,23 @@
 
 
 
+
+
+
+
       renderIngredientRows();
 
 
 
+
+
+
+
     };
+
+
+
+
 
 
 
@@ -2337,7 +4672,15 @@
 
 
 
+
+
+
+
       stepRows.push('');
+
+
+
+
 
 
 
@@ -2345,7 +4688,19 @@
 
 
 
+
+
+
+
     };
+
+
+
+
+
+
+
+
 
 
 
@@ -2357,11 +4712,27 @@
 
 
 
+
+
+
+
     document.getElementById('rf-name').focus();
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -2373,7 +4744,15 @@
 
 
 
+
+
+
+
     const el = document.getElementById('rf-ingredients-list');
+
+
+
+
 
 
 
@@ -2381,7 +4760,15 @@
 
 
 
+
+
+
+
     ingredientRows.forEach((row, i) => {
+
+
+
+
 
 
 
@@ -2389,7 +4776,15 @@
 
 
 
+
+
+
+
       div.className = 'ingredient-form-row';
+
+
+
+
 
 
 
@@ -2397,7 +4792,15 @@
 
 
 
+
+
+
+
         <input class="ing-qty" type="text" placeholder="Qty (e.g. 2 tbsp)" value="${escHtml(row.qty)}">
+
+
+
+
 
 
 
@@ -2405,7 +4808,15 @@
 
 
 
+
+
+
+
         <button class="remove-row-btn" title="Remove">−</button>`;
+
+
+
+
 
 
 
@@ -2413,7 +4824,15 @@
 
 
 
+
+
+
+
       div.querySelector('.ing-item').addEventListener('input', e => { ingredientRows[i].item = e.target.value; });
+
+
+
+
 
 
 
@@ -2421,7 +4840,15 @@
 
 
 
+
+
+
+
         ingredientRows.splice(i, 1);
+
+
+
+
 
 
 
@@ -2429,7 +4856,15 @@
 
 
 
+
+
+
+
       });
+
+
+
+
 
 
 
@@ -2437,11 +4872,27 @@
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -2453,7 +4904,15 @@
 
 
 
+
+
+
+
     const el = document.getElementById('rf-steps-list');
+
+
+
+
 
 
 
@@ -2461,7 +4920,15 @@
 
 
 
+
+
+
+
     stepRows.forEach((step, i) => {
+
+
+
+
 
 
 
@@ -2469,7 +4936,15 @@
 
 
 
+
+
+
+
       div.className = 'step-form-row';
+
+
+
+
 
 
 
@@ -2477,7 +4952,15 @@
 
 
 
+
+
+
+
         <div class="step-form-num">${i + 1}</div>
+
+
+
+
 
 
 
@@ -2485,7 +4968,15 @@
 
 
 
+
+
+
+
         <button class="remove-row-btn" title="Remove">−</button>`;
+
+
+
+
 
 
 
@@ -2493,7 +4984,15 @@
 
 
 
+
+
+
+
       div.querySelector('.remove-row-btn').addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -2501,7 +5000,15 @@
 
 
 
+
+
+
+
         renderStepRows();
+
+
+
+
 
 
 
@@ -2509,11 +5016,23 @@
 
 
 
+
+
+
+
       el.appendChild(div);
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -2525,7 +5044,19 @@
 
 
 
+
+
+
+
+
+
+
+
   function saveRecipeFromForm() {
+
+
+
+
 
 
 
@@ -2533,7 +5064,15 @@
 
 
 
+
+
+
+
     if (!name) {
+
+
+
+
 
 
 
@@ -2541,11 +5080,23 @@
 
 
 
+
+
+
+
       document.getElementById('rf-name').focus();
 
 
 
+
+
+
+
       return;
+
+
+
+
 
 
 
@@ -2557,7 +5108,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const ingredients = ingredientRows
+
+
+
+
 
 
 
@@ -2565,7 +5128,19 @@
 
 
 
+
+
+
+
       .map(r => ({ qty: r.qty.trim() || '—', item: r.item.trim() }));
+
+
+
+
+
+
+
+
 
 
 
@@ -2581,7 +5156,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const tagRaw = document.getElementById('rf-tags').value;
+
+
+
+
 
 
 
@@ -2593,7 +5180,19 @@
 
 
 
+
+
+
+
+
+
+
+
     // Start from the existing recipe so any fields the form doesn't cover survive an edit
+
+
+
+
 
 
 
@@ -2601,7 +5200,15 @@
 
 
 
+
+
+
+
     const recipe = Object.assign({}, existing || {}, {
+
+
+
+
 
 
 
@@ -2609,7 +5216,15 @@
 
 
 
+
+
+
+
       name,
+
+
+
+
 
 
 
@@ -2617,7 +5232,15 @@
 
 
 
+
+
+
+
       category:   document.getElementById('rf-category').value,
+
+
+
+
 
 
 
@@ -2625,7 +5248,15 @@
 
 
 
+
+
+
+
       serves:     parseInt(document.getElementById('rf-serves').value, 10) || 2,
+
+
+
+
 
 
 
@@ -2633,7 +5264,15 @@
 
 
 
+
+
+
+
       tags,
+
+
+
+
 
 
 
@@ -2641,7 +5280,15 @@
 
 
 
+
+
+
+
       steps,
+
+
+
+
 
 
 
@@ -2649,7 +5296,15 @@
 
 
 
+
+
+
+
       notes:      document.getElementById('rf-notes').value.trim(),
+
+
+
+
 
 
 
@@ -2657,11 +5312,27 @@
 
 
 
+
+
+
+
       isCustom:   existing ? (existing.isCustom === true) : true,
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -2673,7 +5344,15 @@
 
 
 
+
+
+
+
     if (editingRecipeId) {
+
+
+
+
 
 
 
@@ -2681,7 +5360,15 @@
 
 
 
+
+
+
+
       if (idx >= 0) list[idx] = recipe; else list.push(recipe);
+
+
+
+
 
 
 
@@ -2689,7 +5376,15 @@
 
 
 
+
+
+
+
       list.unshift(recipe);
+
+
+
+
 
 
 
@@ -2697,7 +5392,15 @@
 
 
 
+
+
+
+
     saveUserRecipes(list);
+
+
+
+
 
 
 
@@ -2705,7 +5408,15 @@
 
 
 
+
+
+
+
     renderPlanner();
+
+
+
+
 
 
 
@@ -2713,7 +5424,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -2725,7 +5448,15 @@
 
 
 
+
+
+
+
     if (!confirm(`Delete "${name}"? This cannot be undone.`)) return;
+
+
+
+
 
 
 
@@ -2733,7 +5464,15 @@
 
 
 
+
+
+
+
     saveUserRecipes(list);
+
+
+
+
 
 
 
@@ -2741,7 +5480,15 @@
 
 
 
+
+
+
+
     renderPlanner();
+
+
+
+
 
 
 
@@ -2749,7 +5496,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -2761,7 +5520,15 @@
 
 
 
+
+
+
+
   function resetBuiltinRecipe(id, name) {
+
+
+
+
 
 
 
@@ -2769,7 +5536,15 @@
 
 
 
+
+
+
+
     const list = getUserRecipes().filter(r => r.id !== id);
+
+
+
+
 
 
 
@@ -2777,7 +5552,15 @@
 
 
 
+
+
+
+
     renderRecipeGrid();
+
+
+
+
 
 
 
@@ -2785,11 +5568,27 @@
 
 
 
+
+
+
+
     closeAll();
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -2801,7 +5600,15 @@
 
 
 
+
+
+
+
     return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+
+
+
 
 
 
@@ -2813,7 +5620,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -2821,7 +5640,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -2829,7 +5656,15 @@
 
 
 
+
+
+
+
     const data = typeof SNACKS !== 'undefined' ? SNACKS : [];
+
+
+
+
 
 
 
@@ -2837,7 +5672,15 @@
 
 
 
+
+
+
+
     const el = document.getElementById('snacks-content');
+
+
+
+
 
 
 
@@ -2845,7 +5688,15 @@
 
 
 
+
+
+
+
     el.innerHTML = '';
+
+
+
+
 
 
 
@@ -2853,7 +5704,15 @@
 
 
 
+
+
+
+
       const items = group.items.filter(it =>
+
+
+
+
 
 
 
@@ -2861,7 +5720,15 @@
 
 
 
+
+
+
+
       if (!items.length) return;
+
+
+
+
 
 
 
@@ -2869,7 +5736,15 @@
 
 
 
+
+
+
+
       section.className = 'snack-group' + (group.id === 'avoid' ? ' snack-group-avoid' : '');
+
+
+
+
 
 
 
@@ -2877,7 +5752,15 @@
 
 
 
+
+
+
+
         items.map(it => `
+
+
+
+
 
 
 
@@ -2885,7 +5768,15 @@
 
 
 
+
+
+
+
             <div class="snack-name">${escHtml(it.name)}</div>
+
+
+
+
 
 
 
@@ -2893,7 +5784,15 @@
 
 
 
+
+
+
+
           </div>`).join('');
+
+
+
+
 
 
 
@@ -2901,7 +5800,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -2909,11 +5816,23 @@
 
 
 
+
+
+
+
       el.innerHTML = '<div class="no-results"><div class="no-results-icon">🥨</div><p>No snacks match your search.</p></div>';
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -2925,7 +5844,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -2933,7 +5864,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -2941,7 +5880,15 @@
 
 
 
+
+
+
+
   document.getElementById('next-week').addEventListener('click', () => { weekOffset++; renderPlanner(); });
+
+
+
+
 
 
 
@@ -2949,7 +5896,15 @@
 
 
 
+
+
+
+
     if (!confirm('Clear all meals for this week?')) return;
+
+
+
+
 
 
 
@@ -2957,7 +5912,15 @@
 
 
 
+
+
+
+
       ['breakfast','lunch','dinner','snack'].forEach(m => delete meals[`${d.key}-${m}`]);
+
+
+
+
 
 
 
@@ -2965,11 +5928,23 @@
 
 
 
+
+
+
+
     saveMeals(); renderPlanner();
 
 
 
+
+
+
+
   });
+
+
+
+
 
 
 
@@ -2981,7 +5956,19 @@
 
 
 
+
+
+
+
+
+
+
+
   function getWeekDays() {
+
+
+
+
 
 
 
@@ -2989,7 +5976,15 @@
 
 
 
+
+
+
+
     const monday = new Date(now);
+
+
+
+
 
 
 
@@ -2997,7 +5992,15 @@
 
 
 
+
+
+
+
     return Array.from({ length: 7 }, (_, i) => {
+
+
+
+
 
 
 
@@ -3005,7 +6008,15 @@
 
 
 
+
+
+
+
       d.setDate(monday.getDate() + i);
+
+
+
+
 
 
 
@@ -3013,7 +6024,15 @@
 
 
 
+
+
+
+
       return { key, label: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()], date: d.getDate(), month: d.getMonth() + 1, isToday: key === new Date().toISOString().slice(0, 10) };
+
+
+
+
 
 
 
@@ -3021,7 +6040,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -3033,7 +6064,15 @@
 
 
 
+
+
+
+
     { id: 'breakfast', label: '☀️ Breakfast' },
+
+
+
+
 
 
 
@@ -3041,7 +6080,15 @@
 
 
 
+
+
+
+
     { id: 'dinner',    label: '🍴 Dinner' },
+
+
+
+
 
 
 
@@ -3049,7 +6096,19 @@
 
 
 
+
+
+
+
   ];
+
+
+
+
+
+
+
+
 
 
 
@@ -3061,7 +6120,15 @@
 
 
 
+
+
+
+
     const days = getWeekDays();
+
+
+
+
 
 
 
@@ -3069,11 +6136,23 @@
 
 
 
+
+
+
+
     document.getElementById('week-label').textContent = `${days[0].date} ${months[days[0].month-1]} – ${days[6].date} ${months[days[6].month-1]}`;
 
 
 
+
+
+
+
     const grid = document.getElementById('planner-grid');
+
+
+
+
 
 
 
@@ -3085,7 +6164,19 @@
 
 
 
+
+
+
+
+
+
+
+
     // Header
+
+
+
+
 
 
 
@@ -3093,7 +6184,15 @@
 
 
 
+
+
+
+
     corner.className = 'planner-col-header row-label';
+
+
+
+
 
 
 
@@ -3101,7 +6200,15 @@
 
 
 
+
+
+
+
     days.forEach(d => {
+
+
+
+
 
 
 
@@ -3109,7 +6216,15 @@
 
 
 
+
+
+
+
       el.className = 'planner-col-header' + (d.isToday ? ' today' : '');
+
+
+
+
 
 
 
@@ -3117,11 +6232,27 @@
 
 
 
+
+
+
+
       grid.appendChild(el);
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -3133,7 +6264,15 @@
 
 
 
+
+
+
+
     MEAL_TYPES.forEach(mtype => {
+
+
+
+
 
 
 
@@ -3141,11 +6280,23 @@
 
 
 
+
+
+
+
       label.className = `planner-row-label meal-row-${mtype.id}`;
 
 
 
+
+
+
+
       label.textContent = mtype.label;
+
+
+
+
 
 
 
@@ -3157,7 +6308,19 @@
 
 
 
+
+
+
+
+
+
+
+
       days.forEach(d => {
+
+
+
+
 
 
 
@@ -3165,7 +6328,15 @@
 
 
 
+
+
+
+
         cell.className = `planner-cell meal-row-${mtype.id}${d.isToday ? ' today-col' : ''}`;
+
+
+
+
 
 
 
@@ -3173,11 +6344,23 @@
 
 
 
+
+
+
+
         cell.dataset.mealType = mtype.id;
 
 
 
+
+
+
+
         const mealKey = `${d.key}-${mtype.id}`;
+
+
+
+
 
 
 
@@ -3189,7 +6372,19 @@
 
 
 
+
+
+
+
+
+
+
+
         if (meal) {
+
+
+
+
 
 
 
@@ -3197,7 +6392,15 @@
 
 
 
+
+
+
+
           const displayName = r ? r.name : (meal.text || 'Meal');
+
+
+
+
 
 
 
@@ -3205,11 +6408,27 @@
 
 
 
+
+
+
+
           const isLF = !!meal.leftover;
 
 
 
+
+
+
+
+          const nut = r ? getRecipeNutrition(r.id) : null;
+          const nutLine = (nut && (nut.cal != null || nut.protein != null || nut.fiber != null))
+            ? `<span class="meal-chip-nut">${nut.cal != null ? `🔥${nut.cal}` : ''}${nut.protein != null ? ` · 💪${nut.protein}g` : ''}${nut.fiber != null ? ` · 🌾${nut.fiber}g` : ''}</span>`
+            : ''
           const chip = document.createElement('div');
+
+
+
+
 
 
 
@@ -3217,7 +6436,15 @@
 
 
 
+
+
+
+
           chip.innerHTML = `
+
+
+
+
 
 
 
@@ -3225,7 +6452,15 @@
 
 
 
-            <span class="meal-chip-text">${isLF ? '<span class="lf-badge">LF</span> ' : ''}${displayEmoji} ${displayName}</span>
+
+
+
+
+            <span class="meal-chip-text">${isLF ? '<span class="lf-badge">LF</span> ' : ''}${displayEmoji} ${displayName}</span>${nutLine}
+
+
+
+
 
 
 
@@ -3233,7 +6468,15 @@
 
 
 
+
+
+
+
           if (r) chip.querySelector('.meal-chip-text').addEventListener('click', () => openRecipeModal(r));
+
+
+
+
 
 
 
@@ -3241,7 +6484,15 @@
 
 
 
+
+
+
+
             e.stopPropagation();
+
+
+
+
 
 
 
@@ -3249,11 +6500,23 @@
 
 
 
+
+
+
+
             saveMeals(); renderPlanner();
 
 
 
+
+
+
+
           });
+
+
+
+
 
 
 
@@ -3261,7 +6524,15 @@
 
 
 
+
+
+
+
             e.stopPropagation();
+
+
+
+
 
 
 
@@ -3269,7 +6540,15 @@
 
 
 
+
+
+
+
             saveMeals(); renderPlanner();
+
+
+
+
 
 
 
@@ -3277,7 +6556,15 @@
 
 
 
+
+
+
+
           attachChipDrag(chip, mealKey);
+
+
+
+
 
 
 
@@ -3285,7 +6572,19 @@
 
 
 
+
+
+
+
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -3297,7 +6596,15 @@
 
 
 
+
+
+
+
         addBtn.className = 'add-meal-btn';
+
+
+
+
 
 
 
@@ -3305,7 +6612,15 @@
 
 
 
+
+
+
+
         addBtn.addEventListener('click', () => openPicker(d.key, mtype.id));
+
+
+
+
 
 
 
@@ -3313,7 +6628,15 @@
 
 
 
+
+
+
+
         grid.appendChild(cell);
+
+
+
+
 
 
 
@@ -3321,11 +6644,27 @@
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -3337,7 +6676,19 @@
 
 
 
+
+
+
+
   let mealDragState = null;
+
+
+
+
+
+
+
+
 
 
 
@@ -3349,7 +6700,15 @@
 
 
 
+
+
+
+
     const src = meals[sourceKey];
+
+
+
+
 
 
 
@@ -3357,7 +6716,15 @@
 
 
 
+
+
+
+
     const dst = meals[targetKey];          // swap if the target slot is taken
+
+
+
+
 
 
 
@@ -3365,7 +6732,15 @@
 
 
 
+
+
+
+
     if (dst) meals[sourceKey] = dst; else delete meals[sourceKey];
+
+
+
+
 
 
 
@@ -3373,7 +6748,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -3385,7 +6772,15 @@
 
 
 
+
+
+
+
     chip.addEventListener('pointerdown', e => {
+
+
+
+
 
 
 
@@ -3393,7 +6788,15 @@
 
 
 
+
+
+
+
       if (e.target.closest('.meal-chip-lf, .meal-chip-remove')) return; // let the buttons handle taps
+
+
+
+
 
 
 
@@ -3405,11 +6808,27 @@
 
 
 
+
+
+
+
+
+
+
+
       const startX = e.clientX, startY = e.clientY;
 
 
 
+
+
+
+
       let started = false;
+
+
+
+
 
 
 
@@ -3421,7 +6840,19 @@
 
 
 
+
+
+
+
+
+
+
+
       function beginDrag() {
+
+
+
+
 
 
 
@@ -3429,7 +6860,15 @@
 
 
 
+
+
+
+
         const rect = chip.getBoundingClientRect();
+
+
+
+
 
 
 
@@ -3437,7 +6876,15 @@
 
 
 
+
+
+
+
         clone.classList.add('meal-chip-dragging');
+
+
+
+
 
 
 
@@ -3445,7 +6892,15 @@
 
 
 
+
+
+
+
         document.body.appendChild(clone);
+
+
+
+
 
 
 
@@ -3453,7 +6908,15 @@
 
 
 
+
+
+
+
                           offsetX: startX - rect.left, offsetY: startY - rect.top };
+
+
+
+
 
 
 
@@ -3461,7 +6924,15 @@
 
 
 
+
+
+
+
         document.body.classList.add('dragging-meal');
+
+
+
+
 
 
 
@@ -3469,11 +6940,27 @@
 
 
 
+
+
+
+
         positionClone(startX, startY);
 
 
 
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -3485,7 +6972,15 @@
 
 
 
+
+
+
+
         const s = mealDragState;
+
+
+
+
 
 
 
@@ -3493,7 +6988,15 @@
 
 
 
+
+
+
+
         s.clone.style.left = (x - s.offsetX) + 'px';
+
+
+
+
 
 
 
@@ -3501,7 +7004,15 @@
 
 
 
+
+
+
+
         const under = document.elementFromPoint(x, y);
+
+
+
+
 
 
 
@@ -3509,7 +7020,15 @@
 
 
 
+
+
+
+
         if (s.targetCell && s.targetCell !== cell) s.targetCell.classList.remove('drop-target');
+
+
+
+
 
 
 
@@ -3517,11 +7036,27 @@
 
 
 
+
+
+
+
         s.targetCell = cell;
 
 
 
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -3533,7 +7068,15 @@
 
 
 
+
+
+
+
         if (!started) {
+
+
+
+
 
 
 
@@ -3541,7 +7084,15 @@
 
 
 
+
+
+
+
             clearTimeout(longPress); cleanup();   // moved first → it's a scroll, not a drag
+
+
+
+
 
 
 
@@ -3549,7 +7100,15 @@
 
 
 
+
+
+
+
           return;
+
+
+
+
 
 
 
@@ -3557,7 +7116,15 @@
 
 
 
+
+
+
+
         ev.preventDefault();
+
+
+
+
 
 
 
@@ -3565,7 +7132,19 @@
 
 
 
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -3577,7 +7156,15 @@
 
 
 
+
+
+
+
         clearTimeout(longPress);
+
+
+
+
 
 
 
@@ -3585,7 +7172,15 @@
 
 
 
+
+
+
+
           ev.preventDefault();
+
+
+
+
 
 
 
@@ -3593,7 +7188,15 @@
 
 
 
+
+
+
+
           if (cell) {
+
+
+
+
 
 
 
@@ -3601,7 +7204,15 @@
 
 
 
+
+
+
+
             if (targetKey !== sourceKey) moveMeal(sourceKey, targetKey);
+
+
+
+
 
 
 
@@ -3609,7 +7220,15 @@
 
 
 
+
+
+
+
           // swallow the click that fires right after a drag
+
+
+
+
 
 
 
@@ -3617,7 +7236,15 @@
 
 
 
+
+
+
+
           document.addEventListener('click', swallow, { capture: true, once: true });
+
+
+
+
 
 
 
@@ -3625,7 +7252,15 @@
 
 
 
+
+
+
+
           endDrag();
+
+
+
+
 
 
 
@@ -3633,11 +7268,27 @@
 
 
 
+
+
+
+
         cleanup();
 
 
 
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -3649,7 +7300,15 @@
 
 
 
+
+
+
+
         const s = mealDragState;
+
+
+
+
 
 
 
@@ -3657,7 +7316,15 @@
 
 
 
+
+
+
+
         s.clone.remove();
+
+
+
+
 
 
 
@@ -3665,7 +7332,15 @@
 
 
 
+
+
+
+
         document.body.classList.remove('dragging-meal');
+
+
+
+
 
 
 
@@ -3673,11 +7348,27 @@
 
 
 
+
+
+
+
         renderPlanner();
 
 
 
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -3689,7 +7380,15 @@
 
 
 
+
+
+
+
         document.removeEventListener('pointermove', onMove);
+
+
+
+
 
 
 
@@ -3697,11 +7396,27 @@
 
 
 
+
+
+
+
         document.removeEventListener('pointercancel', onUp);
 
 
 
+
+
+
+
       }
+
+
+
+
+
+
+
+
 
 
 
@@ -3713,7 +7428,15 @@
 
 
 
+
+
+
+
       document.addEventListener('pointerup', onUp);
+
+
+
+
 
 
 
@@ -3721,7 +7444,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -3733,7 +7464,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -3741,11 +7484,23 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
 
 
 
+
+
+
+
   const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+
+
+
 
 
 
@@ -3757,7 +7512,19 @@
 
 
 
+
+
+
+
+
+
+
+
   function loadProgress() {
+
+
+
+
 
 
 
@@ -3765,7 +7532,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -3773,7 +7548,15 @@
 
 
 
+
+
+
+
     try { localStorage.setItem('fodmap-planner-progress', JSON.stringify(progress)); } catch(e) {}
+
+
+
+
 
 
 
@@ -3781,7 +7564,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -3789,11 +7580,27 @@
 
 
 
+
+
+
+
     return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -3805,11 +7612,23 @@
 
 
 
+
+
+
+
   const progNextBtn = document.getElementById('progress-next');
 
 
 
+
+
+
+
   if (progPrevBtn) progPrevBtn.addEventListener('click', () => { progressMonthOffset--; renderProgress(); });
+
+
+
+
 
 
 
@@ -3821,7 +7640,19 @@
 
 
 
+
+
+
+
+
+
+
+
   function renderProgress() {
+
+
+
+
 
 
 
@@ -3829,7 +7660,15 @@
 
 
 
+
+
+
+
     if (!carousel) return;
+
+
+
+
 
 
 
@@ -3837,7 +7676,15 @@
 
 
 
+
+
+
+
     const todayKey = isoKey(today.getFullYear(), today.getMonth(), today.getDate());
+
+
+
+
 
 
 
@@ -3845,7 +7692,15 @@
 
 
 
+
+
+
+
     // Show three consecutive months, ending at (current month + offset).
+
+
+
+
 
 
 
@@ -3853,7 +7708,15 @@
 
 
 
+
+
+
+
       const first = new Date(today.getFullYear(), today.getMonth() + progressMonthOffset + i, 1);
+
+
+
+
 
 
 
@@ -3861,7 +7724,15 @@
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -3869,11 +7740,27 @@
 
 
 
+
+
+
+
     if (progNextBtn) progNextBtn.disabled = progressMonthOffset >= 0;
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -3885,7 +7772,15 @@
 
 
 
+
+
+
+
     const year = firstOfMonth.getFullYear();
+
+
+
+
 
 
 
@@ -3893,7 +7788,15 @@
 
 
 
+
+
+
+
     const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+
+
+
 
 
 
@@ -3905,7 +7808,19 @@
 
 
 
+
+
+
+
+
+
+
+
     let count = 0;
+
+
+
+
 
 
 
@@ -3917,7 +7832,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const box = document.createElement('div');
+
+
+
+
 
 
 
@@ -3929,7 +7856,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const title = document.createElement('div');
+
+
+
+
 
 
 
@@ -3937,11 +7876,23 @@
 
 
 
+
+
+
+
     title.innerHTML = `<span class="month-box-name">${MONTH_NAMES[month]} ${year}</span>` +
 
 
 
+
+
+
+
       `<span class="month-box-count">${count ? '⭐ ' + count : ''}</span>`;
+
+
+
+
 
 
 
@@ -3953,7 +7904,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const grid = document.createElement('div');
+
+
+
+
 
 
 
@@ -3965,7 +7928,19 @@
 
 
 
+
+
+
+
+
+
+
+
     WEEKDAY_LETTERS.forEach(w => {
+
+
+
+
 
 
 
@@ -3973,7 +7948,15 @@
 
 
 
+
+
+
+
       h.className = 'month-weekday';
+
+
+
+
 
 
 
@@ -3981,11 +7964,27 @@
 
 
 
+
+
+
+
       grid.appendChild(h);
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -3997,7 +7996,15 @@
 
 
 
+
+
+
+
       const blank = document.createElement('div');
+
+
+
+
 
 
 
@@ -4005,11 +8012,27 @@
 
 
 
+
+
+
+
       grid.appendChild(blank);
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -4021,7 +8044,15 @@
 
 
 
+
+
+
+
       const key = isoKey(year, month, day);
+
+
+
+
 
 
 
@@ -4029,7 +8060,15 @@
 
 
 
+
+
+
+
       cell.className = 'month-day';
+
+
+
+
 
 
 
@@ -4037,7 +8076,15 @@
 
 
 
+
+
+
+
       if (progress[key]) cell.classList.add('followed');
+
+
+
+
 
 
 
@@ -4045,7 +8092,15 @@
 
 
 
+
+
+
+
       if (isFuture) { cell.classList.add('future'); cell.disabled = true; }
+
+
+
+
 
 
 
@@ -4053,7 +8108,15 @@
 
 
 
+
+
+
+
       if (!isFuture) {
+
+
+
+
 
 
 
@@ -4061,7 +8124,15 @@
 
 
 
+
+
+
+
           if (progress[key]) delete progress[key]; else progress[key] = true;
+
+
+
+
 
 
 
@@ -4069,7 +8140,15 @@
 
 
 
+
+
+
+
         });
+
+
+
+
 
 
 
@@ -4077,11 +8156,27 @@
 
 
 
+
+
+
+
       grid.appendChild(cell);
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -4093,11 +8188,27 @@
 
 
 
+
+
+
+
     return box;
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -4109,7 +8220,15 @@
 
 
 
+
+
+
+
   function openPicker(dateKey, mealType) {
+
+
+
+
 
 
 
@@ -4117,7 +8236,15 @@
 
 
 
+
+
+
+
     pickerCategory = 'all'; pickerSearch = '';
+
+
+
+
 
 
 
@@ -4125,11 +8252,23 @@
 
 
 
+
+
+
+
     document.getElementById('picker-title').textContent = dateKey ? `Add ${mLabel}` : 'Choose a Recipe';
 
 
 
+
+
+
+
     document.getElementById('picker-search').value = '';
+
+
+
+
 
 
 
@@ -4141,7 +8280,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const catsEl = document.getElementById('picker-cats');
+
+
+
+
 
 
 
@@ -4149,7 +8300,15 @@
 
 
 
+
+
+
+
     RECIPE_CATEGORIES.forEach(cat => {
+
+
+
+
 
 
 
@@ -4157,7 +8316,15 @@
 
 
 
+
+
+
+
       btn.className = 'picker-cat-btn' + (cat.id === 'all' ? ' active' : '');
+
+
+
+
 
 
 
@@ -4165,7 +8332,15 @@
 
 
 
+
+
+
+
       btn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -4173,7 +8348,15 @@
 
 
 
+
+
+
+
         btn.classList.add('active');
+
+
+
+
 
 
 
@@ -4181,7 +8364,15 @@
 
 
 
+
+
+
+
         renderPickerList();
+
+
+
+
 
 
 
@@ -4189,11 +8380,27 @@
 
 
 
+
+
+
+
       catsEl.appendChild(btn);
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -4205,7 +8412,15 @@
 
 
 
+
+
+
+
     pickerSearchEl.oninput = () => { pickerSearch = pickerSearchEl.value.toLowerCase(); renderPickerList(); };
+
+
+
+
 
 
 
@@ -4213,7 +8428,15 @@
 
 
 
+
+
+
+
     document.getElementById('add-custom-btn').onclick = () => {
+
+
+
+
 
 
 
@@ -4221,7 +8444,15 @@
 
 
 
+
+
+
+
       if (!text || !pendingCell.dateKey) return;
+
+
+
+
 
 
 
@@ -4229,11 +8460,23 @@
 
 
 
+
+
+
+
       saveMeals(); renderPlanner(); closeAll();
 
 
 
+
+
+
+
     };
+
+
+
+
 
 
 
@@ -4241,11 +8484,27 @@
 
 
 
+
+
+
+
       if (e.key === 'Enter') document.getElementById('add-custom-btn').click();
 
 
 
+
+
+
+
     };
+
+
+
+
+
+
+
+
 
 
 
@@ -4257,11 +8516,27 @@
 
 
 
+
+
+
+
     openOverlay(pickerOverlay);
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -4273,7 +8548,15 @@
 
 
 
+
+
+
+
   function getSnackOptions() {
+
+
+
+
 
 
 
@@ -4281,7 +8564,15 @@
 
 
 
+
+
+
+
     (typeof SNACKS !== 'undefined' ? SNACKS : []).forEach(g => {
+
+
+
+
 
 
 
@@ -4289,7 +8580,15 @@
 
 
 
+
+
+
+
       const emoji = (g.label.match(/^\S+/) || ['🥨'])[0];
+
+
+
+
 
 
 
@@ -4297,7 +8596,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -4305,7 +8612,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -4317,7 +8636,15 @@
 
 
 
+
+
+
+
     const el = document.getElementById('picker-list');
+
+
+
+
 
 
 
@@ -4325,7 +8652,15 @@
 
 
 
+
+
+
+
     const isSnackSlot = pendingCell?.mealType === 'snack' && !!pendingCell?.dateKey;
+
+
+
+
 
 
 
@@ -4337,7 +8672,19 @@
 
 
 
+
+
+
+
+
+
+
+
     // Quick snack options when filling a Snack slot
+
+
+
+
 
 
 
@@ -4345,7 +8692,15 @@
 
 
 
+
+
+
+
       const snacks = getSnackOptions().filter(s =>
+
+
+
+
 
 
 
@@ -4353,7 +8708,15 @@
 
 
 
+
+
+
+
       if (snacks.length) {
+
+
+
+
 
 
 
@@ -4361,7 +8724,15 @@
 
 
 
+
+
+
+
         const header = document.createElement('div');
+
+
+
+
 
 
 
@@ -4369,7 +8740,15 @@
 
 
 
+
+
+
+
         header.textContent = '🥨 Quick Snacks';
+
+
+
+
 
 
 
@@ -4377,7 +8756,15 @@
 
 
 
+
+
+
+
         snacks.forEach(s => {
+
+
+
+
 
 
 
@@ -4385,7 +8772,15 @@
 
 
 
+
+
+
+
           item.className = 'picker-item';
+
+
+
+
 
 
 
@@ -4393,7 +8788,15 @@
 
 
 
+
+
+
+
             <div class="picker-item-emoji">${s.emoji}</div>
+
+
+
+
 
 
 
@@ -4401,7 +8804,15 @@
 
 
 
+
+
+
+
               <div class="picker-item-name">${escHtml(s.name)}</div>
+
+
+
+
 
 
 
@@ -4409,7 +8820,15 @@
 
 
 
+
+
+
+
             </div>`;
+
+
+
+
 
 
 
@@ -4417,7 +8836,15 @@
 
 
 
+
+
+
+
             meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'custom', text: s.name };
+
+
+
+
 
 
 
@@ -4425,7 +8852,15 @@
 
 
 
+
+
+
+
           });
+
+
+
+
 
 
 
@@ -4433,7 +8868,15 @@
 
 
 
+
+
+
+
         });
+
+
+
+
 
 
 
@@ -4441,7 +8884,19 @@
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -4453,13 +8908,27 @@
 
 
 
+
+
+
+
     const list = getAllRecipes().filter(r => {
+
+
+
+
 
 
 
       if (pickerCategory === 'dietician-plan') { if (!(r.tags || []).includes('dietician-plan')) return false; }
 
+
+
       else if (pickerCategory !== 'all' && r.category !== pickerCategory) return false;
+
+
+
+
 
 
 
@@ -4467,7 +8936,15 @@
 
 
 
+
+
+
+
       return true;
+
+
+
+
 
 
 
@@ -4475,7 +8952,15 @@
 
 
 
+
+
+
+
     if (list.length) {
+
+
+
+
 
 
 
@@ -4483,7 +8968,15 @@
 
 
 
+
+
+
+
         const header = document.createElement('div');
+
+
+
+
 
 
 
@@ -4491,7 +8984,15 @@
 
 
 
+
+
+
+
         header.textContent = '🍳 Recipes';
+
+
+
+
 
 
 
@@ -4499,7 +9000,15 @@
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -4507,7 +9016,15 @@
 
 
 
+
+
+
+
         any = true;
+
+
+
+
 
 
 
@@ -4515,7 +9032,15 @@
 
 
 
+
+
+
+
         const item = document.createElement('div');
+
+
+
+
 
 
 
@@ -4523,7 +9048,15 @@
 
 
 
+
+
+
+
         item.innerHTML = `
+
+
+
+
 
 
 
@@ -4531,7 +9064,15 @@
 
 
 
+
+
+
+
           <div class="picker-item-info">
+
+
+
+
 
 
 
@@ -4539,7 +9080,15 @@
 
 
 
+
+
+
+
             <div class="picker-item-meta">⏱ ${r.time || '—'} · Serves ${r.serves || '—'}</div>
+
+
+
+
 
 
 
@@ -4547,7 +9096,15 @@
 
 
 
+
+
+
+
         item.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -4555,7 +9112,15 @@
 
 
 
+
+
+
+
             meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'recipe', id: r.id };
+
+
+
+
 
 
 
@@ -4563,7 +9128,15 @@
 
 
 
+
+
+
+
           } else {
+
+
+
+
 
 
 
@@ -4571,7 +9144,15 @@
 
 
 
+
+
+
+
           }
+
+
+
+
 
 
 
@@ -4579,7 +9160,15 @@
 
 
 
+
+
+
+
         el.appendChild(item);
+
+
+
+
 
 
 
@@ -4587,7 +9176,19 @@
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -4599,7 +9200,15 @@
 
 
 
+
+
+
+
       el.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-muted)">No matches found</div>';
+
+
+
+
 
 
 
@@ -4607,7 +9216,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -4619,7 +9240,19 @@
 
 
 
+
+
+
+
   let subsCategory = 'all';
+
+
+
+
+
+
+
+
 
 
 
@@ -4631,7 +9264,15 @@
 
 
 
+
+
+
+
     const allSubs = typeof SUBSTITUTIONS !== 'undefined' ? SUBSTITUTIONS : [];
+
+
+
+
 
 
 
@@ -4643,7 +9284,19 @@
 
 
 
+
+
+
+
+
+
+
+
     // Build category filter buttons
+
+
+
+
 
 
 
@@ -4651,7 +9304,15 @@
 
 
 
+
+
+
+
     if (catsEl && !catsEl.dataset.built) {
+
+
+
+
 
 
 
@@ -4659,7 +9320,15 @@
 
 
 
+
+
+
+
       const allBtn = document.createElement('button');
+
+
+
+
 
 
 
@@ -4667,7 +9336,15 @@
 
 
 
+
+
+
+
       allBtn.textContent = 'All Swaps';
+
+
+
+
 
 
 
@@ -4675,7 +9352,15 @@
 
 
 
+
+
+
+
       allBtn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -4683,7 +9368,15 @@
 
 
 
+
+
+
+
         catsEl.querySelectorAll('.subs-cat-btn').forEach(b => b.classList.remove('active'));
+
+
+
+
 
 
 
@@ -4691,11 +9384,23 @@
 
 
 
+
+
+
+
         renderSubsView();
 
 
 
+
+
+
+
       });
+
+
+
+
 
 
 
@@ -4707,7 +9412,19 @@
 
 
 
+
+
+
+
+
+
+
+
       allSubs.forEach(cat => {
+
+
+
+
 
 
 
@@ -4715,7 +9432,15 @@
 
 
 
+
+
+
+
         btn.className = 'subs-cat-btn';
+
+
+
+
 
 
 
@@ -4723,7 +9448,15 @@
 
 
 
+
+
+
+
         btn.dataset.id = cat.id;
+
+
+
+
 
 
 
@@ -4731,7 +9464,15 @@
 
 
 
+
+
+
+
           subsCategory = cat.id;
+
+
+
+
 
 
 
@@ -4739,7 +9480,15 @@
 
 
 
+
+
+
+
           btn.classList.add('active');
+
+
+
+
 
 
 
@@ -4747,7 +9496,15 @@
 
 
 
+
+
+
+
         });
+
+
+
+
 
 
 
@@ -4755,11 +9512,23 @@
 
 
 
+
+
+
+
       });
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -4767,7 +9536,15 @@
 
 
 
+
+
+
+
     if (catsEl) {
+
+
+
+
 
 
 
@@ -4775,7 +9552,15 @@
 
 
 
+
+
+
+
         b.classList.toggle('active', b.dataset.id === subsCategory);
+
+
+
+
 
 
 
@@ -4783,7 +9568,19 @@
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -4795,7 +9592,19 @@
 
 
 
+
+
+
+
     if (!grid) return;
+
+
+
+
+
+
+
+
 
 
 
@@ -4807,7 +9616,19 @@
 
 
 
+
+
+
+
     let html = '';
+
+
+
+
+
+
+
+
 
 
 
@@ -4819,7 +9640,15 @@
 
 
 
+
+
+
+
       const items = q
+
+
+
+
 
 
 
@@ -4827,7 +9656,15 @@
 
 
 
+
+
+
+
             it.avoid.toLowerCase().includes(q) ||
+
+
+
+
 
 
 
@@ -4835,7 +9672,15 @@
 
 
 
+
+
+
+
             it.note.toLowerCase().includes(q)
+
+
+
+
 
 
 
@@ -4843,7 +9688,15 @@
 
 
 
+
+
+
+
         : cat.items;
+
+
+
+
 
 
 
@@ -4855,7 +9708,19 @@
 
 
 
+
+
+
+
+
+
+
+
       html += `<div class="subs-section">
+
+
+
+
 
 
 
@@ -4863,7 +9728,15 @@
 
 
 
+
+
+
+
         <div class="subs-cards">
+
+
+
+
 
 
 
@@ -4871,7 +9744,15 @@
 
 
 
+
+
+
+
             <div class="sub-card">
+
+
+
+
 
 
 
@@ -4879,7 +9760,15 @@
 
 
 
+
+
+
+
                 <span class="sub-badge avoid">❌ Avoid</span>
+
+
+
+
 
 
 
@@ -4887,7 +9776,15 @@
 
 
 
+
+
+
+
               </div>
+
+
+
+
 
 
 
@@ -4895,7 +9792,15 @@
 
 
 
+
+
+
+
               <div class="sub-use-row">
+
+
+
+
 
 
 
@@ -4903,7 +9808,15 @@
 
 
 
+
+
+
+
                 <span class="sub-use-text">${it.use}</span>
+
+
+
+
 
 
 
@@ -4911,7 +9824,15 @@
 
 
 
+
+
+
+
               <div class="sub-note">${it.note}</div>
+
+
+
+
 
 
 
@@ -4919,7 +9840,15 @@
 
 
 
+
+
+
+
           `).join('')}
+
+
+
+
 
 
 
@@ -4927,11 +9856,27 @@
 
 
 
+
+
+
+
       </div>`;
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -4943,7 +9888,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -4955,7 +9912,15 @@
 
 
 
+
+
+
+
   function parseQtyNum(str) {
+
+
+
+
 
 
 
@@ -4963,7 +9928,15 @@
 
 
 
+
+
+
+
     // Fold unicode fractions so "10½ oz" → "10.5 oz" and "½ cup" → "0.5 cup"
+
+
+
+
 
 
 
@@ -4971,7 +9944,15 @@
 
 
 
+
+
+
+
     s = s.replace(/(\d+)\s*([½¼¾⅓⅔⅛⅜⅝⅞])/g, (_, d, g) => (parseInt(d) + GLYPH[g]).toString());
+
+
+
+
 
 
 
@@ -4979,7 +9960,15 @@
 
 
 
+
+
+
+
     let num = 0, matched = false;
+
+
+
+
 
 
 
@@ -4987,7 +9976,15 @@
 
 
 
+
+
+
+
     const frac  = s.match(/^(\d+)\/(\d+)/);
+
+
+
+
 
 
 
@@ -4995,7 +9992,15 @@
 
 
 
+
+
+
+
     if (mixed)      { num = parseInt(mixed[1]) + parseInt(mixed[2]) / parseInt(mixed[3]); matched = true; }
+
+
+
+
 
 
 
@@ -5003,7 +10008,15 @@
 
 
 
+
+
+
+
     else if (dec)   { num = parseFloat(dec[1]); matched = true; }
+
+
+
+
 
 
 
@@ -5011,7 +10024,15 @@
 
 
 
+
+
+
+
     const UNITS = {
+
+
+
+
 
 
 
@@ -5019,7 +10040,15 @@
 
 
 
+
+
+
+
       'tbsp':'tbsp','tbsps':'tbsp','tablespoon':'tbsp','tablespoons':'tbsp',
+
+
+
+
 
 
 
@@ -5027,7 +10056,15 @@
 
 
 
+
+
+
+
       'g':'g','gram':'g','grams':'g',
+
+
+
+
 
 
 
@@ -5035,7 +10072,15 @@
 
 
 
+
+
+
+
       'lb':'lb','lbs':'lb','pound':'lb','pounds':'lb',
+
+
+
+
 
 
 
@@ -5043,7 +10088,15 @@
 
 
 
+
+
+
+
       'medium':'medium','large':'large','small':'small',
+
+
+
+
 
 
 
@@ -5051,7 +10104,15 @@
 
 
 
+
+
+
+
     const rest = s.replace(/^[\d\s\/\.]+/, '').trim();
+
+
+
+
 
 
 
@@ -5059,7 +10120,15 @@
 
 
 
+
+
+
+
     const unit = UNITS[firstWord] || (firstWord && /^[a-z]/.test(firstWord) && firstWord.length > 1 ? firstWord : 'each');
+
+
+
+
 
 
 
@@ -5067,7 +10136,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5079,7 +10160,15 @@
 
 
 
+
+
+
+
     if (n === Math.round(n)) return String(Math.round(n));
+
+
+
+
 
 
 
@@ -5087,7 +10176,15 @@
 
 
 
+
+
+
+
     const whole = Math.floor(n), frac = n - whole;
+
+
+
+
 
 
 
@@ -5095,7 +10192,15 @@
 
 
 
+
+
+
+
     if (Math.abs(closest[0]-frac) < 0.04) return whole ? `${whole}${closest[1]}` : closest[1];
+
+
+
+
 
 
 
@@ -5103,7 +10208,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5115,7 +10232,15 @@
 
 
 
+
+
+
+
     if (oz >= 16) {
+
+
+
+
 
 
 
@@ -5123,7 +10248,15 @@
 
 
 
+
+
+
+
       const remOz = Math.round((oz % 16) * 4) / 4;
+
+
+
+
 
 
 
@@ -5131,7 +10264,15 @@
 
 
 
+
+
+
+
       return `${lbs} lb ${formatQtyNum(remOz)} oz`;
+
+
+
+
 
 
 
@@ -5139,11 +10280,27 @@
 
 
 
+
+
+
+
     return formatQtyNum(oz) + ' oz';
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5155,7 +10312,15 @@
 
 
 
+
+
+
+
     const oz = Math.round((grams / 28.3495) * 4) / 4; // nearest ¼ oz
+
+
+
+
 
 
 
@@ -5163,7 +10328,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5175,7 +10352,15 @@
 
 
 
+
+
+
+
     // Strip parenthetical gram annotations like "(44g)" or "(about 40g)"
+
+
+
+
 
 
 
@@ -5183,7 +10368,15 @@
 
 
 
+
+
+
+
     // "2 × 95g tins/cans" → "2 × 3½ oz cans"
+
+
+
+
 
 
 
@@ -5191,7 +10384,15 @@
 
 
 
+
+
+
+
       `${n} × ${gToOz(+g)} ${+n === 1 ? 'can' : 'cans'}`);
+
+
+
+
 
 
 
@@ -5199,7 +10400,15 @@
 
 
 
+
+
+
+
     s = s.replace(/(\d+)\s*g\s*(tin|can)s?/gi, (_, g) =>
+
+
+
+
 
 
 
@@ -5207,7 +10416,15 @@
 
 
 
+
+
+
+
     // "about 20g" → "about ¾ oz"
+
+
+
+
 
 
 
@@ -5215,7 +10432,15 @@
 
 
 
+
+
+
+
     // Standalone "28g" → "1 oz"
+
+
+
+
 
 
 
@@ -5223,11 +10448,27 @@
 
 
 
+
+
+
+
     return s;
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5239,7 +10480,15 @@
 
 
 
+
+
+
+
     { match:['baby carrot'],        fn: () => '1 bag' },
+
+
+
+
 
 
 
@@ -5247,7 +10496,15 @@
 
 
 
+
+
+
+
     { match:['cherry tomato'],      fn: n => n >= 20 ? '2 pints' : '1 pint' },
+
+
+
+
 
 
 
@@ -5255,7 +10512,15 @@
 
 
 
+
+
+
+
     { match:['baby spinach','spinach'], fn: () => '1 bag (5 oz)' },
+
+
+
+
 
 
 
@@ -5263,7 +10528,15 @@
 
 
 
+
+
+
+
     { match:['cilantro','coriander'], fn: () => '1 bunch' },
+
+
+
+
 
 
 
@@ -5271,7 +10544,15 @@
 
 
 
+
+
+
+
     { match:['basil'],              fn: () => '1 bunch' },
+
+
+
+
 
 
 
@@ -5279,7 +10560,15 @@
 
 
 
+
+
+
+
     { match:['lime'],               fn: n => `${n} lime${n>1?'s':''}` },
+
+
+
+
 
 
 
@@ -5287,7 +10576,15 @@
 
 
 
+
+
+
+
     { match:['banana'],             fn: n => n >= 3 ? '1 bunch' : String(n) },
+
+
+
+
 
 
 
@@ -5295,7 +10592,15 @@
 
 
 
+
+
+
+
     { match:['zucchini','courgette'], fn: n => String(n) },
+
+
+
+
 
 
 
@@ -5307,7 +10612,19 @@
 
 
 
+
+
+
+
+
+
+
+
   function getShoppingDisplay(itemName, qtys) {
+
+
+
+
 
 
 
@@ -5315,7 +10632,15 @@
 
 
 
+
+
+
+
     const packaged = qtys.filter(q => /×/.test(q));
+
+
+
+
 
 
 
@@ -5323,7 +10648,15 @@
 
 
 
+
+
+
+
       let totalCount = 0;
+
+
+
+
 
 
 
@@ -5331,11 +10664,23 @@
 
 
 
+
+
+
+
       const unitPart = packaged[0].replace(/^\d+\s*×\s*/, '').trim();
 
 
 
+
+
+
+
       return totalCount === 1 ? unitPart : `${totalCount} × ${unitPart}`;
+
+
+
+
 
 
 
@@ -5347,7 +10692,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const sane = qtys.filter(q => !/^(to taste|as needed|pinch|dash|—)/i.test(q.trim()));
+
+
+
+
 
 
 
@@ -5355,7 +10712,15 @@
 
 
 
+
+
+
+
     const groups = {}, skipped = [];
+
+
+
+
 
 
 
@@ -5363,7 +10728,15 @@
 
 
 
+
+
+
+
       let { num, unit } = parseQtyNum(q);
+
+
+
+
 
 
 
@@ -5371,7 +10744,15 @@
 
 
 
+
+
+
+
       // a "medium"/"large"/"small" item is still one item to buy — count them together
+
+
+
+
 
 
 
@@ -5379,11 +10760,23 @@
 
 
 
+
+
+
+
       groups[unit] = (groups[unit] || 0) + num;
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -5395,7 +10788,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const nameLower = itemName.toLowerCase();
+
+
+
+
 
 
 
@@ -5403,7 +10808,15 @@
 
 
 
+
+
+
+
       if (unit === 'each') {
+
+
+
+
 
 
 
@@ -5411,7 +10824,15 @@
 
 
 
+
+
+
+
         for (const hint of SHOPPING_HINTS) {
+
+
+
+
 
 
 
@@ -5419,7 +10840,15 @@
 
 
 
+
+
+
+
             const h = hint.fn(Math.ceil(total));
+
+
+
+
 
 
 
@@ -5427,7 +10856,15 @@
 
 
 
+
+
+
+
           }
+
+
+
+
 
 
 
@@ -5435,7 +10872,15 @@
 
 
 
+
+
+
+
         return formatQtyNum(total);
+
+
+
+
 
 
 
@@ -5443,7 +10888,15 @@
 
 
 
+
+
+
+
       if (unit === 'oz') return ozToDisplay(total);
+
+
+
+
 
 
 
@@ -5451,7 +10904,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -5459,11 +10920,27 @@
 
 
 
+
+
+
+
     return parts.join(' + ');
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5475,7 +10952,15 @@
 
 
 
+
+
+
+
   function getShoppingChecksKey(weekKey) {
+
+
+
+
 
 
 
@@ -5483,7 +10968,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -5491,7 +10984,15 @@
 
 
 
+
+
+
+
     try { return JSON.parse(localStorage.getItem(getShoppingChecksKey(weekKey)) || '[]'); }
+
+
+
+
 
 
 
@@ -5499,7 +11000,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -5507,7 +11016,15 @@
 
 
 
+
+
+
+
     try { localStorage.setItem(getShoppingChecksKey(weekKey), JSON.stringify(checked)); }
+
+
+
+
 
 
 
@@ -5515,7 +11032,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5531,7 +11060,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // Leading words that describe size/freshness/cooking-state but not what you buy
+
+
+
+
 
 
 
@@ -5543,7 +11084,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // Reduce a head-noun to singular so "eggs" == "egg", "tomatoes" == "tomato"
+
+
+
+
 
 
 
@@ -5551,7 +11104,15 @@
 
 
 
+
+
+
+
     if (w.length <= 3) return w;
+
+
+
+
 
 
 
@@ -5559,7 +11120,15 @@
 
 
 
+
+
+
+
     if (/ies$/.test(w)) return w.replace(/ies$/, 'y'); // berries → berry
+
+
+
+
 
 
 
@@ -5567,7 +11136,15 @@
 
 
 
+
+
+
+
     if (/s$/.test(w))  return w.replace(/s$/, '');     // eggs → egg, carrots → carrot
+
+
+
+
 
 
 
@@ -5575,7 +11152,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5587,7 +11176,15 @@
 
 
 
+
+
+
+
   // (used for the display label so the header reads naturally, e.g. "Carrots").
+
+
+
+
 
 
 
@@ -5595,7 +11192,15 @@
 
 
 
+
+
+
+
     let s = name.toLowerCase();
+
+
+
+
 
 
 
@@ -5603,7 +11208,15 @@
 
 
 
+
+
+
+
     s = s.replace(/\(.*?\)/g, ' ');        // strip (garnish), (optional), (about 2 tbsp) etc.
+
+
+
+
 
 
 
@@ -5611,7 +11224,15 @@
 
 
 
+
+
+
+
     s = s.replace(/\bper\b.*$/, '');       // drop "per person", "per serve"
+
+
+
+
 
 
 
@@ -5619,7 +11240,15 @@
 
 
 
+
+
+
+
     s = s.replace(PREP_WORDS, '');         // strip ", sliced", " halved …", "divided", "cut into chunks", etc.
+
+
+
+
 
 
 
@@ -5627,7 +11256,15 @@
 
 
 
+
+
+
+
     let prev;
+
+
+
+
 
 
 
@@ -5635,11 +11272,27 @@
 
 
 
+
+
+
+
     return s.replace(/[,;.\s]+$/, '').replace(/\s+/g, ' ').trim();
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5651,7 +11304,15 @@
 
 
 
+
+
+
+
     if (!s) return s;
+
+
+
+
 
 
 
@@ -5659,7 +11320,15 @@
 
 
 
+
+
+
+
     w[w.length - 1] = singularize(w[w.length - 1]);
+
+
+
+
 
 
 
@@ -5667,7 +11336,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5679,7 +11360,15 @@
 
 
 
+
+
+
+
   // "sea salt & cracked pepper") to one canonical label. Returns null for
+
+
+
+
 
 
 
@@ -5687,7 +11376,15 @@
 
 
 
+
+
+
+
   // "black beans", "salt …and fresh lemon juice" are left alone.
+
+
+
+
 
 
 
@@ -5695,7 +11392,15 @@
 
 
 
+
+
+
+
     const t = base
+
+
+
+
 
 
 
@@ -5703,7 +11408,15 @@
 
 
 
+
+
+
+
       .replace(/\band\b/g, ' ')
+
+
+
+
 
 
 
@@ -5711,7 +11424,15 @@
 
 
 
+
+
+
+
       .replace(/\s+/g, ' ').trim();
+
+
+
+
 
 
 
@@ -5719,7 +11440,15 @@
 
 
 
+
+
+
+
     if (!tokens.length || !tokens.every(tok => tok === 'salt' || tok === 'pepper')) return null;
+
+
+
+
 
 
 
@@ -5727,7 +11456,15 @@
 
 
 
+
+
+
+
     if (hasSalt && hasPepper) return 'salt and pepper';
+
+
+
+
 
 
 
@@ -5735,7 +11472,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5747,7 +11496,15 @@
 
 
 
+
+
+
+
   // singularized so "egg" == "eggs", "carrot" == "carrots". Different ingredients stay distinct.
+
+
+
+
 
 
 
@@ -5755,7 +11512,15 @@
 
 
 
+
+
+
+
     const base = stripIngredientDescriptors(name);
+
+
+
+
 
 
 
@@ -5763,7 +11528,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5775,7 +11552,15 @@
 
 
 
+
+
+
+
   // ("fresh corn" vs "canned corn" vs "frozen corn" are different things to buy).
+
+
+
+
 
 
 
@@ -5783,7 +11568,15 @@
 
 
 
+
+
+
+
     if ((/\bcanned\b|\btinned\b/.test(itemMain) || /\btins?\b|\bcans?\b/.test(qtyLower)) && !/not\s+canned/.test(itemMain)) return 'canned';
+
+
+
+
 
 
 
@@ -5791,7 +11584,15 @@
 
 
 
+
+
+
+
     if (/\b(dried|dehydrated)\b/.test(itemMain)) return 'dried';
+
+
+
+
 
 
 
@@ -5799,7 +11600,15 @@
 
 
 
+
+
+
+
     if (/\bpickled\b/.test(itemMain))           return 'pickled';
+
+
+
+
 
 
 
@@ -5807,7 +11616,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5819,7 +11640,15 @@
 
 
 
+
+
+
+
   const INGREDIENT_SYNONYMS = [
+
+
+
+
 
 
 
@@ -5827,7 +11656,15 @@
 
 
 
+
+
+
+
   ];
+
+
+
+
 
 
 
@@ -5835,7 +11672,15 @@
 
 
 
+
+
+
+
     for (const s of INGREDIENT_SYNONYMS) if (s.re.test(base)) return s.canon;
+
+
+
+
 
 
 
@@ -5843,7 +11688,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5855,7 +11712,15 @@
 
 
 
+
+
+
+
   // with any product form (canned/frozen/dried/…) preserved as a prefix.
+
+
+
+
 
 
 
@@ -5863,7 +11728,15 @@
 
 
 
+
+
+
+
     // "canned or frozen" / "fresh or frozen" → keep the first form
+
+
+
+
 
 
 
@@ -5871,7 +11744,15 @@
 
 
 
+
+
+
+
     const main = raw.replace(/\([^)]*\)/g, ' ');     // form from the main text/qty, ignoring notes like "(or 1 tsp dried)"
+
+
+
+
 
 
 
@@ -5879,7 +11760,15 @@
 
 
 
+
+
+
+
     if (!form) {                                     // …but do honour a parenthetical that *is* a form, e.g. "(canned, full-fat)"
+
+
+
+
 
 
 
@@ -5887,7 +11776,15 @@
 
 
 
+
+
+
+
         const inner = p.slice(1, -1).trim();
+
+
+
+
 
 
 
@@ -5895,7 +11792,15 @@
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -5903,7 +11808,15 @@
 
 
 
+
+
+
+
     const base = applyIngredientSynonym(stripIngredientDescriptors(raw)
+
+
+
+
 
 
 
@@ -5911,11 +11824,23 @@
 
 
 
+
+
+
+
       .replace(/^\s*or\s+|\s+or\s*$/g, '')
 
 
 
+
+
+
+
       .replace(/[,;.\s]+$/, '')
+
+
+
+
 
 
 
@@ -5927,7 +11852,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const canon = canonicalSeasoning(base);
+
+
+
+
 
 
 
@@ -5939,7 +11876,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const simple = base && !/[,&]| and /.test(base);   // don't prefix forms onto compound lines
+
+
+
+
 
 
 
@@ -5947,7 +11896,15 @@
 
 
 
+
+
+
+
     const key    = (form && simple ? `${form} ` : '') + singularizeHead(base);
+
+
+
+
 
 
 
@@ -5955,7 +11912,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5967,7 +11936,15 @@
 
 
 
+
+
+
+
   function prettyIngredientName(label) {
+
+
+
+
 
 
 
@@ -5975,7 +11952,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -5987,7 +11976,15 @@
 
 
 
+
+
+
+
     return name
+
+
+
+
 
 
 
@@ -5995,11 +11992,23 @@
 
 
 
+
+
+
+
       .replace(/[,;]+$/, '')
 
 
 
+
+
+
+
       .trim();
+
+
+
+
 
 
 
@@ -6011,7 +12020,19 @@
 
 
 
+
+
+
+
+
+
+
+
   function openShoppingList() {
+
+
+
+
 
 
 
@@ -6019,7 +12040,15 @@
 
 
 
+
+
+
+
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+
+
+
 
 
 
@@ -6027,7 +12056,15 @@
 
 
 
+
+
+
+
     const weekKey = days[0].key;
+
+
+
+
 
 
 
@@ -6039,7 +12076,19 @@
 
 
 
+
+
+
+
+
+
+
+
     days.forEach(d => {
+
+
+
+
 
 
 
@@ -6047,7 +12096,15 @@
 
 
 
+
+
+
+
         const meal = meals[`${d.key}-${m.id}`];
+
+
+
+
 
 
 
@@ -6055,7 +12112,15 @@
 
 
 
+
+
+
+
         const recipe = getAllRecipes().find(r => r.id === meal.id);
+
+
+
+
 
 
 
@@ -6063,7 +12128,15 @@
 
 
 
+
+
+
+
         (recipe.ingredients || []).forEach(ing => {
+
+
+
+
 
 
 
@@ -6071,7 +12144,15 @@
 
 
 
+
+
+
+
           const { key, label } = shoppingIdentity(ing.item, ing.qty);
+
+
+
+
 
 
 
@@ -6079,7 +12160,15 @@
 
 
 
+
+
+
+
           const lab = label || prettyIngredientName(cleanIngredientName(ing.item));
+
+
+
+
 
 
 
@@ -6087,7 +12176,15 @@
 
 
 
+
+
+
+
             ingredientMap[k] = { name: lab, lines: [] };
+
+
+
+
 
 
 
@@ -6095,7 +12192,15 @@
 
 
 
+
+
+
+
             ingredientMap[k].name = lab;   // prefer a plural label ("Carrots")
+
+
+
+
 
 
 
@@ -6103,7 +12208,15 @@
 
 
 
+
+
+
+
           ingredientMap[k].lines.push({
+
+
+
+
 
 
 
@@ -6111,7 +12224,15 @@
 
 
 
+
+
+
+
             recipe: recipe.name,
+
+
+
+
 
 
 
@@ -6119,7 +12240,15 @@
 
 
 
+
+
+
+
         });
+
+
+
+
 
 
 
@@ -6127,7 +12256,19 @@
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -6139,7 +12280,15 @@
 
 
 
+
+
+
+
     const items = Object.values(ingredientMap).sort((a, b) => {
+
+
+
+
 
 
 
@@ -6147,7 +12296,15 @@
 
 
 
+
+
+
+
       const bHasQty = b.lines.some(l => !/^(to taste|as needed|pinch|dash|—)/i.test(l.qty.trim()));
+
+
+
+
 
 
 
@@ -6155,7 +12312,15 @@
 
 
 
+
+
+
+
       if (!aHasQty && bHasQty) return 1;
+
+
+
+
 
 
 
@@ -6163,7 +12328,19 @@
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -6179,7 +12356,19 @@
 
 
 
+
+
+
+
+
+
+
+
     function buildItemHtml(ing, i) {
+
+
+
+
 
 
 
@@ -6187,7 +12376,15 @@
 
 
 
+
+
+
+
       const qtys = ing.lines.map(l => l.qty);
+
+
+
+
 
 
 
@@ -6199,7 +12396,19 @@
 
 
 
+
+
+
+
+
+
+
+
       // Deduplicate recipe lines that are completely identical
+
+
+
+
 
 
 
@@ -6207,7 +12416,15 @@
 
 
 
+
+
+
+
       const uniqueLines = ing.lines.filter(l => {
+
+
+
+
 
 
 
@@ -6215,7 +12432,15 @@
 
 
 
+
+
+
+
         if (seen.has(k)) return false;
+
+
+
+
 
 
 
@@ -6223,7 +12448,19 @@
 
 
 
+
+
+
+
       });
+
+
+
+
+
+
+
+
 
 
 
@@ -6235,7 +12472,15 @@
 
 
 
+
+
+
+
       // quantity only when an item spans more than one recipe (otherwise it just
+
+
+
+
 
 
 
@@ -6243,7 +12488,15 @@
 
 
 
+
+
+
+
       const showLineQty = uniqueLines.length > 1;
+
+
+
+
 
 
 
@@ -6251,7 +12504,15 @@
 
 
 
+
+
+
+
         `<div class="si-line">${showLineQty ? `<span class="si-line-qty">${l.qty}</span>` : ''}<span class="si-line-recipe">— ${l.recipe}</span></div>`
+
+
+
+
 
 
 
@@ -6263,7 +12524,19 @@
 
 
 
+
+
+
+
+
+
+
+
       return `<div class="shopping-item${isChecked ? ' checked' : ''}" data-si="${i}">
+
+
+
+
 
 
 
@@ -6271,7 +12544,15 @@
 
 
 
+
+
+
+
         <div class="si-body">
+
+
+
+
 
 
 
@@ -6279,7 +12560,15 @@
 
 
 
+
+
+
+
             <span class="si-name">${ing.name}</span>
+
+
+
+
 
 
 
@@ -6287,7 +12576,15 @@
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -6295,7 +12592,15 @@
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -6303,7 +12608,19 @@
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -6315,7 +12632,15 @@
 
 
 
+
+
+
+
       ? `<div class="shopping-list-head">
+
+
+
+
 
 
 
@@ -6323,7 +12648,15 @@
 
 
 
+
+
+
+
            <button class="action-btn" id="uncheck-all-btn" style="background:var(--bg);color:var(--text)">↺ Uncheck All</button>
+
+
+
+
 
 
 
@@ -6331,7 +12664,15 @@
 
 
 
+
+
+
+
         items.map((ing, i) => buildItemHtml(ing, i)).join('')
+
+
+
+
 
 
 
@@ -6343,7 +12684,19 @@
 
 
 
+
+
+
+
+
+
+
+
     document.getElementById('shopping-content').innerHTML = content;
+
+
+
+
 
 
 
@@ -6351,7 +12704,15 @@
 
 
 
+
+
+
+
     document.querySelectorAll('.shopping-item').forEach(el => {
+
+
+
+
 
 
 
@@ -6359,7 +12720,15 @@
 
 
 
+
+
+
+
         el.classList.toggle('checked');
+
+
+
+
 
 
 
@@ -6367,7 +12736,15 @@
 
 
 
+
+
+
+
         if (el.classList.contains('checked')) checked.add(si);
+
+
+
+
 
 
 
@@ -6375,7 +12752,15 @@
 
 
 
+
+
+
+
         saveShoppingChecks(weekKey, [...checked]);
+
+
+
+
 
 
 
@@ -6383,7 +12768,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -6391,7 +12784,15 @@
 
 
 
+
+
+
+
     if (uncheckBtn) uncheckBtn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -6399,7 +12800,15 @@
 
 
 
+
+
+
+
       saveShoppingChecks(weekKey, []);
+
+
+
+
 
 
 
@@ -6407,7 +12816,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -6415,7 +12832,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -6427,7 +12856,15 @@
 
 
 
+
+
+
+
   function saveMeals() {
+
+
+
+
 
 
 
@@ -6435,11 +12872,23 @@
 
 
 
+
+
+
+
     if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -6447,7 +12896,15 @@
 
 
 
+
+
+
+
     try { return JSON.parse(localStorage.getItem('fodmap-meals') || '{}'); } catch(e) { return {}; }
+
+
+
+
 
 
 
@@ -6459,7 +12916,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -6467,7 +12936,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -6475,7 +12952,15 @@
 
 
 
+
+
+
+
     { id: 'all',         label: 'All',                emoji: '📍' },
+
+
+
+
 
 
 
@@ -6483,7 +12968,15 @@
 
 
 
+
+
+
+
     { id: 'dairy',       label: 'Dairy & Alternatives', emoji: '🥛' },
+
+
+
+
 
 
 
@@ -6491,7 +12984,15 @@
 
 
 
+
+
+
+
     { id: 'pasta',       label: 'Pasta & Rice',        emoji: '🍝' },
+
+
+
+
 
 
 
@@ -6499,7 +13000,15 @@
 
 
 
+
+
+
+
     { id: 'snacks',      label: 'Snacks',               emoji: '🥕' },
+
+
+
+
 
 
 
@@ -6507,7 +13016,15 @@
 
 
 
+
+
+
+
     { id: 'beverages',   label: 'Beverages',            emoji: '☕' },
+
+
+
+
 
 
 
@@ -6515,7 +13032,15 @@
 
 
 
+
+
+
+
     { id: 'other',       label: 'Other',                emoji: '📦' },
+
+
+
+
 
 
 
@@ -6527,7 +13052,19 @@
 
 
 
+
+
+
+
+
+
+
+
   let findsCategory = 'all';
+
+
+
+
 
 
 
@@ -6539,7 +13076,19 @@
 
 
 
+
+
+
+
+
+
+
+
   function getFinds() {
+
+
+
+
 
 
 
@@ -6547,11 +13096,23 @@
 
 
 
+
+
+
+
     catch(e) { return []; }
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -6559,7 +13120,15 @@
 
 
 
+
+
+
+
     try { localStorage.setItem('fodmap-finds', JSON.stringify(list)); }
+
+
+
+
 
 
 
@@ -6567,11 +13136,23 @@
 
 
 
+
+
+
+
     if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -6579,11 +13160,27 @@
 
 
 
+
+
+
+
     return 'f' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -6595,7 +13192,15 @@
 
 
 
+
+
+
+
     // Category filter bar
+
+
+
+
 
 
 
@@ -6603,7 +13208,15 @@
 
 
 
+
+
+
+
     if (catsEl) {
+
+
+
+
 
 
 
@@ -6611,7 +13224,15 @@
 
 
 
+
+
+
+
         const btn = document.createElement('button');
+
+
+
+
 
 
 
@@ -6619,7 +13240,15 @@
 
 
 
+
+
+
+
         btn.dataset.id = c.id;
+
+
+
+
 
 
 
@@ -6627,7 +13256,15 @@
 
 
 
+
+
+
+
         btn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -6635,7 +13272,15 @@
 
 
 
+
+
+
+
           catsEl.querySelectorAll('.finds-cat-btn').forEach(b => b.classList.remove('active'));
+
+
+
+
 
 
 
@@ -6643,7 +13288,15 @@
 
 
 
+
+
+
+
           renderFindsView();
+
+
+
+
 
 
 
@@ -6651,7 +13304,15 @@
 
 
 
+
+
+
+
         catsEl.appendChild(btn);
+
+
+
+
 
 
 
@@ -6659,7 +13320,19 @@
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -6675,7 +13348,19 @@
 
 
 
+
+
+
+
+
+
+
+
     // Form modal wiring
+
+
+
+
 
 
 
@@ -6683,7 +13368,15 @@
 
 
 
+
+
+
+
     overlay.addEventListener('click', e => { if (e.target === overlay) closeFindForm(); });
+
+
+
+
 
 
 
@@ -6691,7 +13384,15 @@
 
 
 
+
+
+
+
     document.getElementById('ff-cancel-btn').addEventListener('click', closeFindForm);
+
+
+
+
 
 
 
@@ -6699,7 +13400,15 @@
 
 
 
+
+
+
+
     document.getElementById('ff-delete-btn').addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -6707,7 +13416,15 @@
 
 
 
+
+
+
+
         const list = getFinds().filter(f => f.id !== editingFindId);
+
+
+
+
 
 
 
@@ -6715,7 +13432,15 @@
 
 
 
+
+
+
+
         closeFindForm();
+
+
+
+
 
 
 
@@ -6723,7 +13448,15 @@
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -6731,7 +13464,19 @@
 
 
 
+
+
+
+
   })();
+
+
+
+
+
+
+
+
 
 
 
@@ -6743,7 +13488,15 @@
 
 
 
+
+
+
+
     editingFindId = find ? find.id : null;
+
+
+
+
 
 
 
@@ -6751,7 +13504,15 @@
 
 
 
+
+
+
+
     document.getElementById('ff-food').value     = find ? find.food  : '';
+
+
+
+
 
 
 
@@ -6759,7 +13520,15 @@
 
 
 
+
+
+
+
     document.getElementById('ff-store').value    = find ? find.store : '';
+
+
+
+
 
 
 
@@ -6767,7 +13536,15 @@
 
 
 
+
+
+
+
     document.getElementById('ff-category').value = find ? (find.category || 'other') : 'other';
+
+
+
+
 
 
 
@@ -6775,7 +13552,15 @@
 
 
 
+
+
+
+
     openOverlay(document.getElementById('find-form-overlay'));
+
+
+
+
 
 
 
@@ -6783,7 +13568,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -6795,7 +13592,15 @@
 
 
 
+
+
+
+
     document.getElementById('find-form-overlay').classList.add('hidden');
+
+
+
+
 
 
 
@@ -6803,11 +13608,27 @@
 
 
 
+
+
+
+
     editingFindId = null;
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -6819,7 +13640,15 @@
 
 
 
+
+
+
+
     const food  = document.getElementById('ff-food').value.trim();
+
+
+
+
 
 
 
@@ -6827,7 +13656,15 @@
 
 
 
+
+
+
+
     if (!food) { document.getElementById('ff-food').focus(); return; }
+
+
+
+
 
 
 
@@ -6835,7 +13672,15 @@
 
 
 
+
+
+
+
     const entry = {
+
+
+
+
 
 
 
@@ -6843,7 +13688,15 @@
 
 
 
+
+
+
+
       food,
+
+
+
+
 
 
 
@@ -6851,7 +13704,15 @@
 
 
 
+
+
+
+
       store,
+
+
+
+
 
 
 
@@ -6859,7 +13720,15 @@
 
 
 
+
+
+
+
       notes:    document.getElementById('ff-notes').value.trim(),
+
+
+
+
 
 
 
@@ -6867,7 +13736,15 @@
 
 
 
+
+
+
+
     const list = getFinds();
+
+
+
+
 
 
 
@@ -6875,7 +13752,15 @@
 
 
 
+
+
+
+
     if (idx >= 0) list[idx] = entry;
+
+
+
+
 
 
 
@@ -6883,7 +13768,15 @@
 
 
 
+
+
+
+
     saveFinds(list);
+
+
+
+
 
 
 
@@ -6891,11 +13784,27 @@
 
 
 
+
+
+
+
     renderFindsView();
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -6907,7 +13816,15 @@
 
 
 
+
+
+
+
     // Sync category buttons
+
+
+
+
 
 
 
@@ -6915,7 +13832,15 @@
 
 
 
+
+
+
+
     if (catsEl) {
+
+
+
+
 
 
 
@@ -6923,11 +13848,27 @@
 
 
 
+
+
+
+
         b.classList.toggle('active', b.dataset.id === findsCategory));
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -6939,7 +13880,15 @@
 
 
 
+
+
+
+
     const noRes  = document.getElementById('finds-no-results');
+
+
+
+
 
 
 
@@ -6951,7 +13900,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const q = searchQuery.toLowerCase();
+
+
+
+
 
 
 
@@ -6959,7 +13920,15 @@
 
 
 
+
+
+
+
     if (findsCategory !== 'all') list = list.filter(f => f.category === findsCategory);
+
+
+
+
 
 
 
@@ -6967,7 +13936,15 @@
 
 
 
+
+
+
+
       f.food.toLowerCase().includes(q) ||
+
+
+
+
 
 
 
@@ -6975,11 +13952,23 @@
 
 
 
+
+
+
+
       f.store.toLowerCase().includes(q) ||
 
 
 
+
+
+
+
       f.notes.toLowerCase().includes(q)
+
+
+
+
 
 
 
@@ -6991,7 +13980,19 @@
 
 
 
+
+
+
+
+
+
+
+
     if (!list.length) {
+
+
+
+
 
 
 
@@ -6999,7 +14000,15 @@
 
 
 
+
+
+
+
       noRes.classList.remove('hidden');
+
+
+
+
 
 
 
@@ -7007,7 +14016,15 @@
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -7019,7 +14036,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const catMap = {};
+
+
+
+
 
 
 
@@ -7031,7 +14060,19 @@
 
 
 
+
+
+
+
+
+
+
+
     grid.innerHTML = list.map(f => {
+
+
+
+
 
 
 
@@ -7039,7 +14080,15 @@
 
 
 
+
+
+
+
       return `
+
+
+
+
 
 
 
@@ -7047,7 +14096,15 @@
 
 
 
+
+
+
+
           <div class="find-card-top">
+
+
+
+
 
 
 
@@ -7055,7 +14112,15 @@
 
 
 
+
+
+
+
             <button class="find-edit-btn" title="Edit" data-id="${f.id}">✏️</button>
+
+
+
+
 
 
 
@@ -7063,7 +14128,15 @@
 
 
 
+
+
+
+
           <div class="find-food">${f.food}</div>
+
+
+
+
 
 
 
@@ -7071,7 +14144,15 @@
 
 
 
+
+
+
+
           <div class="find-store">📍 ${f.store}</div>
+
+
+
+
 
 
 
@@ -7079,11 +14160,27 @@
 
 
 
+
+
+
+
         </div>`;
 
 
 
+
+
+
+
     }).join('');
+
+
+
+
+
+
+
+
 
 
 
@@ -7095,7 +14192,15 @@
 
 
 
+
+
+
+
       btn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -7103,7 +14208,15 @@
 
 
 
+
+
+
+
         if (find) openFindForm(find);
+
+
+
+
 
 
 
@@ -7111,7 +14224,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -7123,7 +14244,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -7131,7 +14264,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -7139,7 +14280,15 @@
 
 
 
+
+
+
+
     const analyzeBtn = document.getElementById('checker-analyze-btn');
+
+
+
+
 
 
 
@@ -7147,7 +14296,15 @@
 
 
 
+
+
+
+
     const textarea   = document.getElementById('checker-textarea');
+
+
+
+
 
 
 
@@ -7155,7 +14312,15 @@
 
 
 
+
+
+
+
     analyzeBtn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -7163,7 +14328,15 @@
 
 
 
+
+
+
+
       if (!text) {
+
+
+
+
 
 
 
@@ -7171,7 +14344,15 @@
 
 
 
+
+
+
+
           '<div class="checker-empty">Paste at least one ingredient above, then click Analyze.</div>';
+
+
+
+
 
 
 
@@ -7179,7 +14360,15 @@
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -7187,7 +14376,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -7195,7 +14392,15 @@
 
 
 
+
+
+
+
       textarea.value = '';
+
+
+
+
 
 
 
@@ -7203,11 +14408,27 @@
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
   })();
+
+
+
+
+
+
+
+
 
 
 
@@ -7219,11 +14440,23 @@
 
 
 
+
+
+
+
     if (typeof FODMAP_ANALYZER === 'undefined') return [];
 
 
 
+
+
+
+
     const lines = text.split('\n').map(l => l.trim().toLowerCase()).filter(Boolean);
+
+
+
+
 
 
 
@@ -7235,7 +14468,19 @@
 
 
 
+
+
+
+
+
+
+
+
     lines.forEach(line => {
+
+
+
+
 
 
 
@@ -7243,7 +14488,15 @@
 
 
 
+
+
+
+
         // Skip if already matched this entry
+
+
+
+
 
 
 
@@ -7251,7 +14504,15 @@
 
 
 
+
+
+
+
         // Check excludes first — if any exclude phrase is in the line, skip
+
+
+
+
 
 
 
@@ -7259,7 +14520,15 @@
 
 
 
+
+
+
+
         if (excluded) return;
+
+
+
+
 
 
 
@@ -7267,7 +14536,15 @@
 
 
 
+
+
+
+
         const triggered = entry.triggers.some(t => line.includes(t.toLowerCase()));
+
+
+
+
 
 
 
@@ -7275,7 +14552,15 @@
 
 
 
+
+
+
+
           found[entry.name] = { ...entry, matchedLine: line };
+
+
+
+
 
 
 
@@ -7283,11 +14568,27 @@
 
 
 
+
+
+
+
       });
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -7299,7 +14600,15 @@
 
 
 
+
+
+
+
     // Sort high verdict first, then moderate
+
+
+
+
 
 
 
@@ -7307,7 +14616,15 @@
 
 
 
+
+
+
+
       if (a.verdict === b.verdict) return 0;
+
+
+
+
 
 
 
@@ -7315,7 +14632,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -7323,7 +14648,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -7335,11 +14672,27 @@
 
 
 
+
+
+
+
     const el = document.getElementById('checker-results');
 
 
 
+
+
+
+
     if (!el) return;
+
+
+
+
+
+
+
+
 
 
 
@@ -7351,7 +14704,15 @@
 
 
 
+
+
+
+
       el.innerHTML = `
+
+
+
+
 
 
 
@@ -7359,7 +14720,15 @@
 
 
 
+
+
+
+
           <div class="checker-verdict-icon">✅</div>
+
+
+
+
 
 
 
@@ -7367,7 +14736,15 @@
 
 
 
+
+
+
+
             <div class="checker-verdict-title">Looks Good!</div>
+
+
+
+
 
 
 
@@ -7375,7 +14752,15 @@
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -7383,11 +14768,27 @@
 
 
 
+
+
+
+
       return;
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -7399,7 +14800,19 @@
 
 
 
+
+
+
+
     const moderate = results.filter(r => r.verdict === 'moderate');
+
+
+
+
+
+
+
+
 
 
 
@@ -7411,7 +14824,15 @@
 
 
 
+
+
+
+
     const verdictIcon  = high.length ? '🚫' : '⚠️';
+
+
+
+
 
 
 
@@ -7419,7 +14840,15 @@
 
 
 
+
+
+
+
       ? `${high.length} High-FODMAP Ingredient${high.length > 1 ? 's' : ''} Found`
+
+
+
+
 
 
 
@@ -7427,11 +14856,23 @@
 
 
 
+
+
+
+
     const verdictSub = high.length
 
 
 
+
+
+
+
       ? `This recipe needs substitutions before it's FODMAP-safe. See the fixes below.`
+
+
+
+
 
 
 
@@ -7443,7 +14884,19 @@
 
 
 
+
+
+
+
+
+
+
+
     const cardHtml = results.map(r => {
+
+
+
+
 
 
 
@@ -7451,7 +14904,15 @@
 
 
 
+
+
+
+
       return `
+
+
+
+
 
 
 
@@ -7459,7 +14920,15 @@
 
 
 
+
+
+
+
           <div class="checker-flag-top">
+
+
+
+
 
 
 
@@ -7467,7 +14936,15 @@
 
 
 
+
+
+
+
             <div class="checker-flag-name-wrap">
+
+
+
+
 
 
 
@@ -7475,7 +14952,15 @@
 
 
 
+
+
+
+
               <span class="checker-flag-type">${r.fodmapType}</span>
+
+
+
+
 
 
 
@@ -7483,11 +14968,23 @@
 
 
 
+
+
+
+
             <span class="checker-flag-badge ${isHigh ? 'badge-high' : 'badge-moderate'}">${isHigh ? '🚫 High' : '⚠️ Moderate'}</span>
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -7495,7 +14992,15 @@
 
 
 
+
+
+
+
           <div class="checker-flag-fix">
+
+
+
+
 
 
 
@@ -7503,11 +15008,23 @@
 
 
 
+
+
+
+
           </div>
 
 
 
+
+
+
+
         </div>`;
+
+
+
+
 
 
 
@@ -7519,7 +15036,19 @@
 
 
 
+
+
+
+
+
+
+
+
     el.innerHTML = `
+
+
+
+
 
 
 
@@ -7527,7 +15056,15 @@
 
 
 
+
+
+
+
         <div class="checker-verdict-icon">${verdictIcon}</div>
+
+
+
+
 
 
 
@@ -7535,7 +15072,15 @@
 
 
 
+
+
+
+
           <div class="checker-verdict-title">${verdictTitle}</div>
+
+
+
+
 
 
 
@@ -7543,7 +15088,15 @@
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -7551,7 +15104,15 @@
 
 
 
+
+
+
+
       <div class="checker-flags">
+
+
+
+
 
 
 
@@ -7559,11 +15120,23 @@
 
 
 
+
+
+
+
         ${cardHtml}
 
 
 
+
+
+
+
       </div>`;
+
+
+
+
 
 
 
@@ -7575,7 +15148,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -7583,11 +15168,23 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
 
 
 
+
+
+
+
   function exportData() {
+
+
+
+
 
 
 
@@ -7599,7 +15196,19 @@
 
 
 
+
+
+
+
+
+
+
+
     // Grab all fodmap-* keys from localStorage
+
+
+
+
 
 
 
@@ -7607,7 +15216,15 @@
 
 
 
+
+
+
+
       const key = localStorage.key(i);
+
+
+
+
 
 
 
@@ -7615,7 +15232,15 @@
 
 
 
+
+
+
+
         try { data[key] = JSON.parse(localStorage.getItem(key)); }
+
+
+
+
 
 
 
@@ -7623,11 +15248,27 @@
 
 
 
+
+
+
+
       }
 
 
 
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -7639,7 +15280,15 @@
 
 
 
+
+
+
+
     const url  = URL.createObjectURL(blob);
+
+
+
+
 
 
 
@@ -7647,7 +15296,15 @@
 
 
 
+
+
+
+
     a.href     = url;
+
+
+
+
 
 
 
@@ -7655,7 +15312,15 @@
 
 
 
+
+
+
+
     document.body.appendChild(a);
+
+
+
+
 
 
 
@@ -7663,7 +15328,15 @@
 
 
 
+
+
+
+
     document.body.removeChild(a);
+
+
+
+
 
 
 
@@ -7671,7 +15344,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -7683,7 +15368,15 @@
 
 
 
+
+
+
+
     if (!file) return;
+
+
+
+
 
 
 
@@ -7691,7 +15384,15 @@
 
 
 
+
+
+
+
     reader.onload = e => {
+
+
+
+
 
 
 
@@ -7699,7 +15400,15 @@
 
 
 
+
+
+
+
         const data = JSON.parse(e.target.result);
+
+
+
+
 
 
 
@@ -7707,7 +15416,15 @@
 
 
 
+
+
+
+
         let count = 0;
+
+
+
+
 
 
 
@@ -7715,7 +15432,15 @@
 
 
 
+
+
+
+
           if (key.startsWith('fodmap-')) {
+
+
+
+
 
 
 
@@ -7723,7 +15448,15 @@
 
 
 
+
+
+
+
             count++;
+
+
+
+
 
 
 
@@ -7731,7 +15464,15 @@
 
 
 
+
+
+
+
         });
+
+
+
+
 
 
 
@@ -7739,7 +15480,15 @@
 
 
 
+
+
+
+
         progress = loadProgress();
+
+
+
+
 
 
 
@@ -7747,7 +15496,15 @@
 
 
 
+
+
+
+
         renderProgress();
+
+
+
+
 
 
 
@@ -7755,7 +15512,15 @@
 
 
 
+
+
+
+
         alert(`✅ Imported successfully! ${count} data categories restored.`);
+
+
+
+
 
 
 
@@ -7763,7 +15528,15 @@
 
 
 
+
+
+
+
         alert('❌ Could not read that file. Make sure it\'s a FODMAP backup file.');
+
+
+
+
 
 
 
@@ -7771,11 +15544,23 @@
 
 
 
+
+
+
+
     };
 
 
 
+
+
+
+
     reader.readAsText(file);
+
+
+
+
 
 
 
@@ -7787,7 +15572,19 @@
 
 
 
+
+
+
+
+
+
+
+
   (() => {
+
+
+
+
 
 
 
@@ -7795,7 +15592,15 @@
 
 
 
+
+
+
+
     const importBtn  = document.getElementById('import-data-btn');
+
+
+
+
 
 
 
@@ -7803,7 +15608,15 @@
 
 
 
+
+
+
+
     if (exportBtn) exportBtn.addEventListener('click', exportData);
+
+
+
+
 
 
 
@@ -7811,7 +15624,15 @@
 
 
 
+
+
+
+
     if (importFile) importFile.addEventListener('change', () => {
+
+
+
+
 
 
 
@@ -7819,11 +15640,23 @@
 
 
 
+
+
+
+
       importFile.value = '';
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -7835,7 +15668,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -7843,7 +15688,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -7851,7 +15704,15 @@
 
 
 
+
+
+
+
     const btn = document.getElementById('dark-toggle');
+
+
+
+
 
 
 
@@ -7859,7 +15720,15 @@
 
 
 
+
+
+
+
     const apply = dark => {
+
+
+
+
 
 
 
@@ -7867,7 +15736,15 @@
 
 
 
+
+
+
+
       btn.textContent = dark ? '☀️' : '🌙';
+
+
+
+
 
 
 
@@ -7875,7 +15752,15 @@
 
 
 
+
+
+
+
     apply(localStorage.getItem('fodmap-dark') === '1');
+
+
+
+
 
 
 
@@ -7883,7 +15768,15 @@
 
 
 
+
+
+
+
       const dark = !document.body.classList.contains('dark');
+
+
+
+
 
 
 
@@ -7891,11 +15784,23 @@
 
 
 
+
+
+
+
       localStorage.setItem('fodmap-dark', dark ? '1' : '0');
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -7907,7 +15812,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -7915,11 +15832,23 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
 
 
 
+
+
+
+
   let reminders = loadReminders();
+
+
+
+
 
 
 
@@ -7931,7 +15860,19 @@
 
 
 
+
+
+
+
+
+
+
+
   function loadReminders() {
+
+
+
+
 
 
 
@@ -7939,7 +15880,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -7947,7 +15896,15 @@
 
 
 
+
+
+
+
     try { localStorage.setItem('fodmap-reminders', JSON.stringify(reminders)); } catch(e) {}
+
+
+
+
 
 
 
@@ -7955,7 +15912,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -7963,7 +15928,15 @@
 
 
 
+
+
+
+
   function loadTimers() {
+
+
+
+
 
 
 
@@ -7971,7 +15944,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -7979,11 +15960,27 @@
 
 
 
+
+
+
+
     try { localStorage.setItem('fodmapTimers', JSON.stringify(timers)); } catch(e) {}
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -7995,7 +15992,15 @@
 
 
 
+
+
+
+
     const [h, m] = hhmm.split(':').map(Number);
+
+
+
+
 
 
 
@@ -8003,7 +16008,15 @@
 
 
 
+
+
+
+
     const h12 = h % 12 === 0 ? 12 : h % 12;
+
+
+
+
 
 
 
@@ -8011,7 +16024,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -8023,7 +16048,15 @@
 
 
 
+
+
+
+
   let audioCtx = null;
+
+
+
+
 
 
 
@@ -8031,7 +16064,15 @@
 
 
 
+
+
+
+
     try {
+
+
+
+
 
 
 
@@ -8039,7 +16080,15 @@
 
 
 
+
+
+
+
       if (audioCtx.state === 'suspended') audioCtx.resume();
+
+
+
+
 
 
 
@@ -8047,7 +16096,15 @@
 
 
 
+
+
+
+
       for (let i = 0; i < (times || 3); i++) {
+
+
+
+
 
 
 
@@ -8055,7 +16112,15 @@
 
 
 
+
+
+
+
         o.type = 'sine'; o.frequency.value = 880;
+
+
+
+
 
 
 
@@ -8063,7 +16128,15 @@
 
 
 
+
+
+
+
         g.gain.setValueAtTime(0.0001, t);
+
+
+
+
 
 
 
@@ -8071,7 +16144,15 @@
 
 
 
+
+
+
+
         g.gain.exponentialRampToValueAtTime(0.0001, t + 0.28);
+
+
+
+
 
 
 
@@ -8079,7 +16160,15 @@
 
 
 
+
+
+
+
         t += 0.42;
+
+
+
+
 
 
 
@@ -8087,11 +16176,23 @@
 
 
 
+
+
+
+
     } catch(e) {}
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -8099,7 +16200,15 @@
 
 
 
+
+
+
+
     const b = document.getElementById('notif-banner');
+
+
+
+
 
 
 
@@ -8107,7 +16216,15 @@
 
 
 
+
+
+
+
     const supported = 'Notification' in window;
+
+
+
+
 
 
 
@@ -8115,7 +16232,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -8123,7 +16248,15 @@
 
 
 
+
+
+
+
     beep(3);
+
+
+
+
 
 
 
@@ -8131,7 +16264,15 @@
 
 
 
+
+
+
+
     try {
+
+
+
+
 
 
 
@@ -8139,7 +16280,15 @@
 
 
 
+
+
+
+
         const opts = { body: body || '', icon: './icons/icon.svg', badge: './icons/icon.svg', tag: 'fodmap-' + Date.now(), renotify: true };
+
+
+
+
 
 
 
@@ -8147,7 +16296,15 @@
 
 
 
+
+
+
+
           navigator.serviceWorker.ready.then(reg => reg.showNotification(title, opts)).catch(() => { try { new Notification(title, opts); } catch(e) {} });
+
+
+
+
 
 
 
@@ -8155,7 +16312,15 @@
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -8163,11 +16328,27 @@
 
 
 
+
+
+
+
     showToast('🔔 ' + title + (body ? ' — ' + body : ''));
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -8179,7 +16360,15 @@
 
 
 
+
+
+
+
   function showToast(msg) {
+
+
+
+
 
 
 
@@ -8187,7 +16376,15 @@
 
 
 
+
+
+
+
     if (!el) {
+
+
+
+
 
 
 
@@ -8195,7 +16392,15 @@
 
 
 
+
+
+
+
       el.id = 'app-toast';
+
+
+
+
 
 
 
@@ -8203,7 +16408,15 @@
 
 
 
+
+
+
+
       document.body.appendChild(el);
+
+
+
+
 
 
 
@@ -8211,7 +16424,15 @@
 
 
 
+
+
+
+
     el.textContent = msg;
+
+
+
+
 
 
 
@@ -8219,7 +16440,15 @@
 
 
 
+
+
+
+
     clearTimeout(toastTimer);
+
+
+
+
 
 
 
@@ -8227,7 +16456,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -8239,7 +16480,15 @@
 
 
 
+
+
+
+
   function addReminder(label, time) {
+
+
+
+
 
 
 
@@ -8247,7 +16496,15 @@
 
 
 
+
+
+
+
     reminders.sort((a, b) => a.time.localeCompare(b.time));
+
+
+
+
 
 
 
@@ -8255,7 +16512,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -8263,7 +16528,15 @@
 
 
 
+
+
+
+
     reminders = reminders.filter(r => r.id !== id);
+
+
+
+
 
 
 
@@ -8271,7 +16544,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -8279,7 +16560,15 @@
 
 
 
+
+
+
+
     const r = reminders.find(x => x.id === id);
+
+
+
+
 
 
 
@@ -8287,7 +16576,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -8299,7 +16600,15 @@
 
 
 
+
+
+
+
   function checkReminders() {
+
+
+
+
 
 
 
@@ -8307,7 +16616,15 @@
 
 
 
+
+
+
+
     const nowMin = now.getHours() * 60 + now.getMinutes();
+
+
+
+
 
 
 
@@ -8315,7 +16632,15 @@
 
 
 
+
+
+
+
     let changed = false;
+
+
+
+
 
 
 
@@ -8323,7 +16648,15 @@
 
 
 
+
+
+
+
       if (!r.enabled) return;
+
+
+
+
 
 
 
@@ -8331,7 +16664,15 @@
 
 
 
+
+
+
+
       const rMin = h * 60 + m;
+
+
+
+
 
 
 
@@ -8339,7 +16680,15 @@
 
 
 
+
+
+
+
         r.lastFired = today; changed = true;
+
+
+
+
 
 
 
@@ -8347,7 +16696,15 @@
 
 
 
+
+
+
+
       }
+
+
+
+
 
 
 
@@ -8355,11 +16712,27 @@
 
 
 
+
+
+
+
     if (changed) saveReminders();
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -8371,7 +16744,15 @@
 
 
 
+
+
+
+
   function startTimer(min, label) {
+
+
+
+
 
 
 
@@ -8379,7 +16760,15 @@
 
 
 
+
+
+
+
     if (!min || min < 1) return;
+
+
+
+
 
 
 
@@ -8387,11 +16776,23 @@
 
 
 
+
+
+
+
     saveTimers(); renderTimers();
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -8399,7 +16800,15 @@
 
 
 
+
+
+
+
     timers = timers.filter(t => t.id !== id);
+
+
+
+
 
 
 
@@ -8407,7 +16816,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -8415,7 +16832,15 @@
 
 
 
+
+
+
+
     const now = Date.now();
+
+
+
+
 
 
 
@@ -8423,7 +16848,15 @@
 
 
 
+
+
+
+
     if (done.length) {
+
+
+
+
 
 
 
@@ -8431,7 +16864,15 @@
 
 
 
+
+
+
+
       saveTimers();
+
+
+
+
 
 
 
@@ -8439,7 +16880,15 @@
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -8447,7 +16896,15 @@
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -8455,7 +16912,15 @@
 
 
 
+
+
+
+
     document.querySelectorAll('.timer-card[data-ends]').forEach(card => {
+
+
+
+
 
 
 
@@ -8463,7 +16928,15 @@
 
 
 
+
+
+
+
       const left = Math.max(0, ends - Date.now());
+
+
+
+
 
 
 
@@ -8471,7 +16944,15 @@
 
 
 
+
+
+
+
       const cd = card.querySelector('.timer-countdown');
+
+
+
+
 
 
 
@@ -8479,11 +16960,27 @@
 
 
 
+
+
+
+
     });
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -8495,7 +16992,15 @@
 
 
 
+
+
+
+
   function renderRemindersView() {
+
+
+
+
 
 
 
@@ -8503,7 +17008,15 @@
 
 
 
+
+
+
+
     const list = document.getElementById('reminders-list');
+
+
+
+
 
 
 
@@ -8511,7 +17024,15 @@
 
 
 
+
+
+
+
       list.innerHTML = '';
+
+
+
+
 
 
 
@@ -8519,7 +17040,15 @@
 
 
 
+
+
+
+
         list.innerHTML = '<div class="rem-empty">No reminders yet. Add one below — e.g. “Start cooking dinner” at 4:30 PM, and a backup at 5:00 PM.</div>';
+
+
+
+
 
 
 
@@ -8527,7 +17056,15 @@
 
 
 
+
+
+
+
       reminders.forEach(r => {
+
+
+
+
 
 
 
@@ -8535,7 +17072,15 @@
 
 
 
+
+
+
+
         row.className = 'reminder-row' + (r.enabled ? '' : ' off');
+
+
+
+
 
 
 
@@ -8543,7 +17088,15 @@
 
 
 
+
+
+
+
           <button class="rem-toggle ${r.enabled ? 'on' : ''}" title="${r.enabled ? 'On' : 'Off'}"></button>
+
+
+
+
 
 
 
@@ -8551,7 +17104,15 @@
 
 
 
+
+
+
+
           <button class="rem-del" title="Delete">✕</button>`;
+
+
+
+
 
 
 
@@ -8559,7 +17120,15 @@
 
 
 
+
+
+
+
         row.querySelector('.rem-del').addEventListener('click', () => removeReminder(r.id));
+
+
+
+
 
 
 
@@ -8567,7 +17136,15 @@
 
 
 
+
+
+
+
       });
+
+
+
+
 
 
 
@@ -8575,11 +17152,27 @@
 
 
 
+
+
+
+
     renderTimers();
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -8591,7 +17184,15 @@
 
 
 
+
+
+
+
     const el = document.getElementById('timers-list');
+
+
+
+
 
 
 
@@ -8599,7 +17200,15 @@
 
 
 
+
+
+
+
     el.innerHTML = '';
+
+
+
+
 
 
 
@@ -8607,7 +17216,15 @@
 
 
 
+
+
+
+
       const card = document.createElement('div');
+
+
+
+
 
 
 
@@ -8615,7 +17232,15 @@
 
 
 
+
+
+
+
       card.dataset.ends = t.endsAt;
+
+
+
+
 
 
 
@@ -8623,7 +17248,15 @@
 
 
 
+
+
+
+
         <div class="timer-info"><span class="timer-label">${escHtml(t.label)}</span><span class="timer-countdown">--:--</span></div>
+
+
+
+
 
 
 
@@ -8631,7 +17264,15 @@
 
 
 
+
+
+
+
       card.querySelector('.timer-cancel').addEventListener('click', () => cancelTimer(t.id));
+
+
+
+
 
 
 
@@ -8639,7 +17280,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -8647,7 +17296,19 @@
 
 
 
+
+
+
+
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -8659,7 +17320,15 @@
 
 
 
+
+
+
+
   (function initReminders() {
+
+
+
+
 
 
 
@@ -8667,7 +17336,15 @@
 
 
 
+
+
+
+
     if (enableBtn) enableBtn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -8675,7 +17352,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -8683,7 +17368,15 @@
 
 
 
+
+
+
+
     if (addBtn) addBtn.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -8691,7 +17384,15 @@
 
 
 
+
+
+
+
       const time = document.getElementById('rem-time').value;
+
+
+
+
 
 
 
@@ -8699,7 +17400,15 @@
 
 
 
+
+
+
+
       addReminder(label, time);
+
+
+
+
 
 
 
@@ -8707,7 +17416,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -8715,7 +17432,15 @@
 
 
 
+
+
+
+
     if (timerAdd) timerAdd.addEventListener('click', () => {
+
+
+
+
 
 
 
@@ -8723,7 +17448,15 @@
 
 
 
+
+
+
+
       const label = document.getElementById('timer-label').value;
+
+
+
+
 
 
 
@@ -8731,7 +17464,15 @@
 
 
 
+
+
+
+
       document.getElementById('timer-min').value = '';
+
+
+
+
 
 
 
@@ -8739,7 +17480,15 @@
 
 
 
+
+
+
+
     });
+
+
+
+
 
 
 
@@ -8747,11 +17496,27 @@
 
 
 
+
+
+
+
       b.addEventListener('click', () => startTimer(b.dataset.min, document.getElementById('timer-label').value));
 
 
 
+
+
+
+
     });
+
+
+
+
+
+
+
+
 
 
 
@@ -8763,7 +17528,15 @@
 
 
 
+
+
+
+
     document.addEventListener('click', function unlock() {
+
+
+
+
 
 
 
@@ -8771,7 +17544,15 @@
 
 
 
+
+
+
+
         audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+
+
+
+
 
 
 
@@ -8779,11 +17560,23 @@
 
 
 
+
+
+
+
       } catch(e) {}
 
 
 
+
+
+
+
       document.removeEventListener('click', unlock);
+
+
+
+
 
 
 
@@ -8795,7 +17588,19 @@
 
 
 
+
+
+
+
+
+
+
+
     setInterval(checkReminders, 20000);
+
+
+
+
 
 
 
@@ -8803,7 +17608,15 @@
 
 
 
+
+
+
+
     checkReminders();
+
+
+
+
 
 
 
@@ -8815,7 +17628,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -8823,375 +17648,753 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
 
   //  SYMPTOM & FOOD DIARY
 
+
+
   // ══════════════════════════════════════════
+
+
 
   const DIARY_SYMPTOMS = ['Bloating','Gas','Abdominal pain','Cramps','Diarrhea','Constipation','Nausea','Reflux','Fatigue','Headache','Felt great 😊'];
 
+
+
   const DIARY_CATS = [['breakfast','🌅 Breakfast'],['lunch','🥗 Lunch'],['dinner','🍴 Dinner'],['snack','🥕 Snack']];
+
+
 
   const SEVERITIES = [['none','No symptoms'],['mild','Mild'],['moderate','Moderate'],['severe','Severe']];
 
 
 
+
+
+
+
   function localToday() {
+
+
 
     const d = new Date();
 
+
+
     return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
 
+
+
   }
+
+
 
   function formatDiaryDate(d) {
 
+
+
     try { return new Date(d + 'T00:00:00').toLocaleDateString(undefined, { weekday:'short', month:'short', day:'numeric', year:'numeric' }); }
+
+
 
     catch(e) { return d; }
 
+
+
   }
+
+
 
   function getDiary() {
 
+
+
     try { return JSON.parse(localStorage.getItem('fodmap-diary') || '[]'); } catch(e) { return []; }
 
+
+
   }
+
+
 
   function saveDiary(list) {
 
+
+
     try { localStorage.setItem('fodmap-diary', JSON.stringify(list)); } catch(e) {}
+
+
 
     if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
 
+
+
   }
+
+
+
+
 
 
 
   function renderDiaryView() {
 
+
+
     const el = document.getElementById('diary-content');
+
+
 
     if (!el) return;
 
+
+
     const entries = getDiary().slice().sort((a, b) => (b.date + (b.created || '')).localeCompare(a.date + (a.created || '')));
+
+
 
     const chips   = DIARY_SYMPTOMS.map(s => `<button type="button" class="diary-chip" data-sym="${escHtml(s)}">${escHtml(s)}</button>`).join('');
 
+
+
     const catOpts = DIARY_CATS.map(c => `<option value="${c[0]}">${c[1]}</option>`).join('');
+
+
 
     const sevOpts = SEVERITIES.map(s => `<option value="${s[0]}">${s[1]}</option>`).join('');
 
 
 
+
+
+
+
     let listHtml = '';
+
+
 
     if (!entries.length) {
 
+
+
       listHtml = `<div class="diary-empty">No entries yet — log your first meal above ☝️</div>`;
+
+
 
     } else {
 
+
+
       let curDate = '';
+
+
 
       entries.forEach(en => {
 
+
+
         if (en.date !== curDate) { curDate = en.date; listHtml += `<div class="diary-date-head">${formatDiaryDate(en.date)}</div>`; }
+
+
 
         const catEmoji = ((DIARY_CATS.find(c => c[0] === en.category) || ['', '🍽️'])[1]).split(' ')[0];
 
+
+
         const syms = (en.symptoms || []).map(s => `<span class="diary-symtag">${escHtml(s)}</span>`).join('');
+
+
 
         const sev  = SEVERITIES.find(s => s[0] === en.severity);
 
+
+
         const sevHtml = (en.severity && sev) ? `<span class="sev-badge sev-${en.severity}">${sev[1]}</span>` : '';
+
+
 
         listHtml += `<div class="diary-entry">
 
+
+
           <div class="diary-entry-top">
+
+
 
             <span class="diary-entry-meal">${catEmoji} ${escHtml(en.meal || '')}</span>
 
+
+
             ${sevHtml}
+
+
 
             <button class="diary-del" data-del="${en.id}" title="Delete entry">🗑</button>
 
+
+
           </div>
+
+
 
           ${syms ? `<div class="diary-symtags">${syms}</div>` : ''}
 
+
+
           ${en.notes ? `<div class="diary-entry-notes">${escHtml(en.notes).replace(/\n/g, '<br>')}</div>` : ''}
+
+
 
         </div>`;
 
+
+
       });
+
+
 
     }
 
 
 
+
+
+
+
     el.innerHTML = `
+
+
 
       <div class="diary-form-card">
 
+
+
         <div class="diary-form-row">
+
+
 
           <input type="date" id="diary-date" value="${localToday()}">
 
+
+
           <select id="diary-cat">${catOpts}</select>
 
+
+
         </div>
+
+
 
         <input type="text" id="diary-meal" placeholder="What did you eat? e.g. Grilled chicken & rice" maxlength="120">
 
+
+
         <div class="diary-chips-label">How did you feel afterwards?</div>
+
+
 
         <div class="diary-chips" id="diary-chips">${chips}</div>
 
+
+
         <div class="diary-form-row">
+
+
 
           <select id="diary-sev">${sevOpts}</select>
 
+
+
           <input type="text" id="diary-notes" placeholder="Notes (optional)" maxlength="200">
+
+
 
         </div>
 
+
+
         <button class="action-btn primary" id="diary-save" style="width:100%">＋ Add Diary Entry</button>
 
+
+
       </div>
+
+
 
       <div class="diary-list">${listHtml}</div>`;
 
 
 
+
+
+
+
     el.querySelectorAll('.diary-chip').forEach(c => c.addEventListener('click', () => c.classList.toggle('active')));
+
+
 
     el.querySelector('#diary-save').addEventListener('click', addDiaryEntry);
 
+
+
     el.querySelectorAll('.diary-del').forEach(b => b.addEventListener('click', () => deleteDiaryEntry(b.dataset.del)));
 
+
+
   }
+
+
+
+
 
 
 
   function addDiaryEntry() {
 
+
+
     const date     = document.getElementById('diary-date').value || localToday();
+
+
 
     const meal     = document.getElementById('diary-meal').value.trim();
 
+
+
     const category = document.getElementById('diary-cat').value;
+
+
 
     const severity = document.getElementById('diary-sev').value;
 
+
+
     const notes    = document.getElementById('diary-notes').value.trim();
+
+
 
     const symptoms = [...document.querySelectorAll('#diary-chips .diary-chip.active')].map(c => c.dataset.sym);
 
+
+
     if (!meal && !symptoms.length) { alert('Add what you ate or how you felt first.'); return; }
+
+
 
     const list = getDiary();
 
+
+
     list.push({ id: 'd' + Date.now() + Math.random().toString(36).slice(2, 6), date, meal, category, severity, symptoms, notes, created: new Date().toISOString() });
+
+
 
     saveDiary(list);
 
+
+
     renderDiaryView();
 
+
+
   }
+
+
 
   function deleteDiaryEntry(id) {
 
+
+
     if (!confirm('Delete this diary entry?')) return;
+
+
 
     saveDiary(getDiary().filter(e => e.id !== id));
 
+
+
     renderDiaryView();
+
+
 
   }
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
 
   //  REINTRODUCTION TRACKER
 
+
+
   // ══════════════════════════════════════════
+
+
 
   const REINTRO_GROUPS = [
 
+
+
     { id:'lactose', name:'Lactose', emoji:'🥛', foods:'Milk, yogurt, soft cheese', challenge:['Day 1 — small: ¼ cup (60 ml) milk','Day 2 — medium: ½ cup (125 ml) milk','Day 3 — large: 1 cup (250 ml) milk'], tip:'If you tolerate lactose, hard cheese and butter were never an issue anyway.' },
+
+
 
     { id:'fructose', name:'Excess Fructose', emoji:'🍯', foods:'Honey, mango', challenge:['Day 1 — small: 1 tsp honey','Day 2 — medium: 1 tbsp honey','Day 3 — large: 2 tbsp honey OR ½ mango'], tip:'Test honey or mango on their own, away from other FODMAPs.' },
 
+
+
     { id:'sorbitol', name:'Sorbitol (polyol)', emoji:'🍑', foods:'Apricot, blackberries', challenge:['Day 1 — small: ¼ apricot','Day 2 — medium: ½ apricot','Day 3 — large: 1 apricot OR 5 blackberries'], tip:'Polyols also hide in sugar-free gum & mints (sorbitol, isomalt).' },
+
+
 
     { id:'mannitol', name:'Mannitol (polyol)', emoji:'🍄', foods:'Mushrooms, cauliflower', challenge:['Day 1 — small: ¼ cup mushrooms','Day 2 — medium: ½ cup mushrooms','Day 3 — large: ¾ cup mushrooms OR ½ cup cauliflower'], tip:'Mannitol and sorbitol are different polyols — test them separately.' },
 
+
+
     { id:'gos', name:'GOS (galacto-oligos)', emoji:'🫘', foods:'Chickpeas, almonds', challenge:['Day 1 — small: ¼ cup canned chickpeas','Day 2 — medium: ½ cup chickpeas','Day 3 — large: ¾ cup chickpeas OR 20 almonds'], tip:'Canned, rinsed legumes are lower in GOS than dried-then-boiled ones.' },
+
+
 
     { id:'fructans-grain', name:'Fructans — wheat / grain', emoji:'🍞', foods:'Wheat bread, pasta', challenge:['Day 1 — small: ½ slice wheat bread','Day 2 — medium: 1 slice wheat bread','Day 3 — large: 2 slices OR 1 cup cooked wheat pasta'], tip:'A different fructan source from onion/garlic — test grains separately.' },
 
+
+
     { id:'fructans-veg', name:'Fructans — onion & garlic', emoji:'🧅', foods:'Onion, garlic', challenge:['Day 1 — small: 1 tsp chopped onion','Day 2 — medium: 1 tbsp chopped onion','Day 3 — large: ¼ small onion OR 1 clove garlic'], tip:'Often the toughest group, but worth knowing your threshold — these are everywhere.' },
 
+
+
   ];
+
+
 
   const REINTRO_STATUSES = [
 
+
+
     { id:'not-started', label:'Not started', emoji:'⚪' },
+
+
 
     { id:'testing',     label:'Testing',     emoji:'🧪' },
 
+
+
     { id:'tolerated',   label:'Tolerated',   emoji:'✅' },
+
+
 
     { id:'sensitive',   label:'Sensitive',   emoji:'⚠️' },
 
+
+
   ];
+
+
 
   function getReintro() {
 
+
+
     try { return JSON.parse(localStorage.getItem('fodmap-reintro') || '{}'); } catch(e) { return {}; }
 
+
+
   }
+
+
 
   function saveReintro(obj) {
 
+
+
     try { localStorage.setItem('fodmap-reintro', JSON.stringify(obj)); } catch(e) {}
+
+
 
     if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
 
+
+
   }
+
+
 
   function setReintroStatus(gid, status) {
 
+
+
     const o = getReintro(); o[gid] = Object.assign({}, o[gid], { status }); saveReintro(o); renderReintroView();
 
+
+
   }
+
+
 
   function setReintroNotes(gid, notes) {
 
+
+
     const o = getReintro(); o[gid] = Object.assign({}, o[gid], { notes }); saveReintro(o);
 
+
+
   }
+
+
 
   function renderReintroView() {
 
+
+
     const el = document.getElementById('reintro-content');
 
+
+
     if (!el) return;
+
+
 
     const state = getReintro();
 
+
+
     const intro = `<div class="reintro-intro">⚠️ Start reintroduction <strong>after</strong> 2–6 weeks of a settled elimination phase — ideally with a dietitian. Keep eating low-FODMAP between tests, challenge <strong>one group at a time</strong> over 3 days, and leave a rest day before the next group.</div>`;
+
+
 
     const cards = REINTRO_GROUPS.map(g => {
 
+
+
       const st    = (state[g.id] && state[g.id].status) || 'not-started';
+
+
 
       const notes = (state[g.id] && state[g.id].notes)  || '';
 
+
+
       const statusBtns = REINTRO_STATUSES.map(s => `<button class="reintro-status-btn${st === s.id ? ' active ' + s.id : ''}" data-grp="${g.id}" data-status="${s.id}">${s.emoji} ${s.label}</button>`).join('');
+
+
 
       const doses = g.challenge.map(d => `<li>${escHtml(d)}</li>`).join('');
 
+
+
       return `<div class="reintro-card status-${st}">
+
+
 
         <div class="reintro-card-head"><span class="reintro-emoji">${g.emoji}</span><span class="reintro-name">${escHtml(g.name)}</span></div>
 
+
+
         <div class="reintro-foods"><strong>Test foods:</strong> ${escHtml(g.foods)}</div>
+
+
 
         <ul class="reintro-doses">${doses}</ul>
 
+
+
         <div class="reintro-tip">💡 ${escHtml(g.tip)}</div>
+
+
 
         <div class="reintro-status-row">${statusBtns}</div>
 
+
+
         <textarea class="reintro-notes" data-grp="${g.id}" placeholder="Your reaction / notes…">${escHtml(notes)}</textarea>
+
+
 
       </div>`;
 
+
+
     }).join('');
+
+
 
     el.innerHTML = intro + `<div class="reintro-grid">${cards}</div>`;
 
+
+
     el.querySelectorAll('.reintro-status-btn').forEach(b => b.addEventListener('click', () => setReintroStatus(b.dataset.grp, b.dataset.status)));
+
+
 
     el.querySelectorAll('.reintro-notes').forEach(t => t.addEventListener('change', () => setReintroNotes(t.dataset.grp, t.value)));
 
+
+
   }
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
 
   //  EATING-OUT GUIDE
 
+
+
   // ══════════════════════════════════════════
+
+
 
   const DINING_GUIDE = [
 
+
+
     { cuisine:'Grill & American', emoji:'🍔', safe:['Plain grilled steak, chicken or fish','Burger patty (skip the bun, or GF/lettuce wrap)','Baked potato or plain fries','Side salad with oil & vinegar','Plain steamed vegetables'], avoid:['Onion rings, garlic bread','“Secret” sauces, BBQ sauce, gravy','Battered or breaded items (wheat)','Heavy coleslaw'], tips:'Ask for no onion/garlic and sauce on the side. Oil, vinegar, salt, pepper and lemon are all safe.' },
+
+
 
     { cuisine:'Italian', emoji:'🍝', safe:['Gluten-free pasta if offered','Simple tomato (napoletana) or olive-oil sauce','Grilled fish or chicken','Caprese — tomato, mozzarella, basil','Plain risotto (ask for no onion base)'], avoid:['Garlic bread, regular wheat pasta','Creamy 4-cheese or onion-garlic sauces','Pizza on a normal wheat base'], tips:'Most sauces start with onion & garlic — ask for a plain tomato or olive-oil & herb sauce.' },
 
+
+
     { cuisine:'Mexican', emoji:'🌮', safe:['Corn tortillas (not flour)','Grilled meat or fish fillings','Plain rice','Cheese, lettuce, tomato, cilantro','Lime; a small scoop of plain guac'], avoid:['Refried & black beans (GOS)','Onion & garlic in salsas','Flour tortillas, big guac portions'], tips:'Build a rice bowl or corn tacos with grilled protein, cheese, tomato and lettuce. Skip the beans.' },
+
+
 
     { cuisine:'Chinese', emoji:'🥡', safe:['Plain steamed rice','Steamed plain protein & bok choy','Stir-fries cooked without onion/garlic (ask)','Plain egg dishes / omelette'], avoid:['Garlic/onion sauces, hoisin, sweet & sour','Wonton & spring rolls (wheat)','Thickened “gravy” sauces'], tips:'Onion & garlic are hard to dodge — choose steamed dishes, sauce on the side, plus plain rice.' },
 
+
+
     { cuisine:'Japanese / Sushi', emoji:'🍣', safe:['Sashimi & nigiri','Simple rolls — cucumber, salmon, tuna','Edamame (small)','Miso soup (small)','Steamed rice, seaweed salad'], avoid:['Tempura (wheat batter)','Teriyaki & onion-garlic sauces','Large avocado or inari portions'], tips:'One of the easiest cuisines: sashimi, simple rolls and plain rice. Use tamari if you’re also gluten-free.' },
+
+
 
     { cuisine:'Indian', emoji:'🍛', safe:['Plain basmati rice','Tandoori or grilled meats','Plain papadums (check the oil)','Cucumber raita (lactose-free if possible)'], avoid:['Onion-garlic gravies & curries','Naan & samosas (wheat + onion)','Dal & chana (lentils/chickpeas)'], tips:'Most curries are onion-garlic based — tandoori grilled meats with plain rice are the safest bet.' },
 
+
+
     { cuisine:'Thai / Vietnamese', emoji:'🍜', safe:['Plain jasmine rice or rice noodles','Grilled meat or fish skewers','Fresh rice-paper rolls (check filling)','Steamed dishes'], avoid:['Onion, garlic & garlic chives','Large cashew dishes','Curry pastes with onion/garlic'], tips:'Rice-noodle dishes can be made without onion/garlic — just ask. Plain rice + grilled protein is reliable.' },
+
+
 
     { cuisine:'Café & Breakfast', emoji:'☕', safe:['Eggs any style','Bacon or plain sausages (check fillers)','GF toast or a small slice of sourdough','Lactose-free latte, black coffee or tea','Strawberries, blueberries, orange'], avoid:['Large regular-milk lattes','Wheat toast & pastries','Baked beans; hash browns with onion'], tips:'Ask for lactose-free or less milk (a flat white has less than a latte). Eggs + GF toast is a safe standby.' },
 
+
+
     { cuisine:'Fast Food', emoji:'🍟', safe:['Plain burger patty, no bun or sauce','Grilled chicken (check the seasoning)','Plain fries (often safe)','Side salad with oil & vinegar'], avoid:['Buns, special sauces, onion, relish','Crispy / breaded chicken','Shakes & soft-serve (lactose)'], tips:'Order plain and customise: patty + cheese + lettuce + tomato, no bun, no sauce, no onion.' },
+
+
 
   ];
 
+
+
   function renderDiningView() {
+
+
 
     const el = document.getElementById('dining-content');
 
+
+
     if (!el) return;
+
+
 
     el.innerHTML = DINING_GUIDE.map(d => `
 
+
+
       <div class="dining-card">
+
+
 
         <div class="dining-head"><span class="dining-emoji">${d.emoji}</span><span class="dining-cuisine">${escHtml(d.cuisine)}</span></div>
 
+
+
         <div class="dining-cols">
+
+
 
           <div class="dining-col safe">
 
+
+
             <div class="dining-col-title">✅ Safe orders</div>
+
+
 
             <ul>${d.safe.map(s => `<li>${escHtml(s)}</li>`).join('')}</ul>
 
+
+
           </div>
+
+
 
           <div class="dining-col avoid">
 
+
+
             <div class="dining-col-title">⛔ Skip / ask to remove</div>
+
+
 
             <ul>${d.avoid.map(s => `<li>${escHtml(s)}</li>`).join('')}</ul>
 
+
+
           </div>
+
+
 
         </div>
 
+
+
         <div class="dining-tip">💡 ${escHtml(d.tips)}</div>
+
+
 
       </div>`).join('');
 
+
+
   }
+
+
+
+
+
+
 
 
 
@@ -9201,7 +18404,15 @@
 
 
 
+
+
+
+
     meals = loadMeals();
+
+
+
+
 
 
 
@@ -9209,7 +18420,15 @@
 
 
 
+
+
+
+
     reminders = loadReminders();
+
+
+
+
 
 
 
@@ -9217,7 +18436,15 @@
 
 
 
+
+
+
+
     renderProgress();
+
+
+
+
 
 
 
@@ -9225,7 +18452,15 @@
 
 
 
+
+
+
+
     renderRecipeGrid();
+
+
+
+
 
 
 
@@ -9233,11 +18468,23 @@
 
 
 
+
+
+
+
     if (currentView === 'diary') renderDiaryView();
 
 
 
+
+
+
+
     if (currentView === 'reintro') renderReintroView();
+
+
+
+
 
 
 
@@ -9249,7 +18496,19 @@
 
 
 
+
+
+
+
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -9257,7 +18516,15 @@
 
 
 
+
+
+
+
   // ══════════════════════════════════════════
+
+
+
+
 
 
 
@@ -9265,7 +18532,15 @@
 
 
 
+
+
+
+
   renderProgress();
+
+
+
+
 
 
 
@@ -9277,7 +18552,19 @@
 
 
 
+
+
+
+
+
+
+
+
 })();
+
+
+
+
 
 
 
