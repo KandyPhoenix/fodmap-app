@@ -336,6 +336,9 @@
 
   let recipeFilter = 'all';
 
+  // Ingredients/foods the user wants recipes to be WITHOUT (lowercase terms)
+  let excludeFoods = [];
+
 
 
 
@@ -1980,6 +1983,76 @@
 
 
 
+    // ── "Without" exclude-foods controls ───────────────────
+    const excludeInput = document.getElementById('exclude-input');
+    const excludeClear = document.getElementById('exclude-clear');
+
+    function renderExcludeChips() {
+      const wrap = document.getElementById('exclude-chips');
+      if (!wrap) return;
+      wrap.innerHTML = '';
+      excludeFoods.forEach(term => {
+        const chip = document.createElement('span');
+        chip.className = 'exclude-chip';
+        const label = document.createElement('span');
+        label.textContent = term;
+        const x = document.createElement('button');
+        x.type = 'button';
+        x.setAttribute('aria-label', 'Remove ' + term);
+        x.textContent = '✕';
+        x.addEventListener('click', () => removeExcludeFood(term));
+        chip.appendChild(label);
+        chip.appendChild(x);
+        wrap.appendChild(chip);
+      });
+      if (excludeClear) excludeClear.classList.toggle('hidden', excludeFoods.length === 0);
+    }
+
+    function addExcludeFoods(raw) {
+      // Accept comma-separated entries; ignore blanks and duplicates.
+      String(raw).split(',').forEach(part => {
+        const term = part.trim().toLowerCase();
+        if (term && !excludeFoods.includes(term)) excludeFoods.push(term);
+      });
+      renderExcludeChips();
+      renderRecipeGrid();
+    }
+
+    function removeExcludeFood(term) {
+      excludeFoods = excludeFoods.filter(t => t !== term);
+      renderExcludeChips();
+      renderRecipeGrid();
+    }
+
+    if (excludeInput) {
+      excludeInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ',') {
+          e.preventDefault();
+          addExcludeFoods(excludeInput.value);
+          excludeInput.value = '';
+        } else if (e.key === 'Backspace' && excludeInput.value === '' && excludeFoods.length) {
+          removeExcludeFood(excludeFoods[excludeFoods.length - 1]);
+        }
+      });
+      // Commit whatever is typed when focus leaves the field.
+      excludeInput.addEventListener('blur', () => {
+        if (excludeInput.value.trim()) {
+          addExcludeFoods(excludeInput.value);
+          excludeInput.value = '';
+        }
+      });
+    }
+
+    if (excludeClear) {
+      excludeClear.addEventListener('click', () => {
+        excludeFoods = [];
+        renderExcludeChips();
+        renderRecipeGrid();
+        if (excludeInput) excludeInput.focus();
+      });
+    }
+
+
     const surpriseBtn = document.getElementById('surprise-recipe-btn');
 
 
@@ -2148,6 +2221,20 @@
 
 
 
+  // Searchable text for a recipe: its name plus every ingredient.
+  function recipeIngredientText(r) {
+    return (r.name + ' ' + (r.ingredients || []).map(i => i.item).join(' ')).toLowerCase();
+  }
+
+  // True if the recipe contains ANY of the foods the user wants to avoid.
+  function recipeHasExcludedFood(r) {
+    if (!excludeFoods.length) return false;
+    const text = recipeIngredientText(r);
+    return excludeFoods.some(term => term && text.includes(term));
+  }
+
+
+
 
 
 
@@ -2306,6 +2393,9 @@
 
       if (!recipeMatchesFilter(r, recipeFilter)) return false;
 
+
+
+      if (recipeHasExcludedFood(r)) return false;
 
 
 
