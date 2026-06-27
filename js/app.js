@@ -118,7 +118,13 @@
 
 
 
-    return [...(typeof KANDY_RECIPES !== 'undefined' ? KANDY_RECIPES : []), ...RECIPES];
+    const raw = [...(typeof KANDY_RECIPES !== 'undefined' ? KANDY_RECIPES : []), ...RECIPES];
+
+    // Every built-in recipe is low-FODMAP, so tag it 'fodmap' (searchable and
+    // shown as a chip). User-added family recipes stay untagged unless chosen.
+    return raw.map(r =>
+      (r.tags || []).includes('fodmap') ? r : { ...r, tags: [...(r.tags || []), 'fodmap'] }
+    );
 
 
 
@@ -2393,7 +2399,7 @@
 
 
 
-      if (recipeCategory === 'dietician-plan') { if (!(r.tags || []).includes('dietician-plan')) return false; }
+      if (recipeCategory !== 'all' && r.category !== recipeCategory) return false;
 
 
 
@@ -2401,7 +2407,6 @@
 
 
 
-      else if (recipeCategory !== 'all' && r.category !== recipeCategory) return false;
 
 
 
@@ -2420,7 +2425,7 @@
 
 
 
-      if (searchQuery) return (r.name + ' ' + r.category).toLowerCase().includes(searchQuery);
+      if (searchQuery) return (r.name + ' ' + r.category + ' ' + (r.tags || []).join(' ')).toLowerCase().includes(searchQuery);
 
 
 
@@ -9028,11 +9033,7 @@
 
 
 
-      if (pickerCategory === 'dietician-plan') { if (!(r.tags || []).includes('dietician-plan')) return false; }
-
-
-
-      else if (pickerCategory !== 'all' && r.category !== pickerCategory) return false;
+      if (pickerCategory !== 'all' && r.category !== pickerCategory) return false;
 
 
 
@@ -9040,7 +9041,10 @@
 
 
 
-      if (pickerSearch) return (r.name + ' ' + r.category).toLowerCase().includes(pickerSearch);
+
+
+
+      if (pickerSearch) return (r.name + ' ' + r.category + ' ' + (r.tags || []).join(' ')).toLowerCase().includes(pickerSearch);
 
 
 
