@@ -2217,6 +2217,12 @@
 
 
 
+    // 'fodmap' = low-FODMAP recipes (carry the tag); 'family' = everyday
+    // recipes that don't, e.g. the user's own added dishes.
+    if (filter === 'fodmap') return tags.includes('fodmap');
+
+    if (filter === 'family') return !tags.includes('fodmap');
+
     if (filter === 'veggie') return tags.includes('vegetarian') || tags.includes('vegan');
 
 
