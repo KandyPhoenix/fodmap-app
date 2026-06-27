@@ -506,6 +506,82 @@ header {
 
 
 
+/* ── Grouped nav dropdowns (Tools / My Journey) ─────────── */
+.nav-dropdown { position: relative; flex: 1; display: flex; }
+
+.nav-trigger {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  letter-spacing: 0.2px;
+}
+
+.nav-trigger:hover { color: var(--primary); background: var(--primary-light); }
+
+/* Highlight the trigger while one of its menu items is the active view */
+.nav-trigger.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+.nav-caret { font-size: 10px; opacity: 0.7; }
+
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 210px;
+  background: white;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.nav-menu--right { left: auto; right: 0; }
+
+.nav-dropdown.open .nav-menu { display: flex; }
+
+/* Menu items: full-width rows, left-aligned, labels always visible */
+.nav-menu .nav-btn {
+  flex: none;
+  width: 100%;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 13px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  margin-bottom: 0;
+}
+
+.nav-menu .nav-btn:last-child { border-bottom: none; }
+
+.nav-menu .nav-btn:hover { background: var(--primary-light); color: var(--primary); }
+
+.nav-menu .nav-btn.active {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-bottom-color: var(--border);
+  border-left-color: var(--primary);
+}
+
+.nav-menu .nav-label { display: inline !important; }
+
+
+
 
 
 
@@ -5745,6 +5821,14 @@ body.dark .nav-btn:hover { background: var(--primary-light); color: var(--primar
 
 body.dark .nav-btn.active { color: var(--primary); background: var(--card); }
 
+body.dark .nav-trigger { color: var(--text-muted); }
+body.dark .nav-trigger:hover { background: var(--primary-light); color: var(--primary); }
+body.dark .nav-trigger.active { color: var(--primary); }
+body.dark .nav-menu { background: var(--card); border-color: var(--border); }
+body.dark .nav-menu .nav-btn { background: var(--card); color: var(--text-muted); }
+body.dark .nav-menu .nav-btn:hover,
+body.dark .nav-menu .nav-btn.active { background: var(--primary-light); color: var(--primary); }
+
 
 
 
@@ -6071,7 +6155,9 @@ body.dark #scroll-top { background: var(--primary); }
 
 
 
-  .main-nav { height: var(--nav-h); overflow-x: auto; scrollbar-width: none; }
+  /* Only 5 cells now, so they fit without scrolling; keep overflow visible
+     so the dropdown menus aren't clipped by the bar. */
+  .main-nav { height: var(--nav-h); overflow: visible; }
 
 
 
@@ -6083,7 +6169,33 @@ body.dark #scroll-top { background: var(--primary); }
 
 
 
+  .nav-trigger { font-size: 22px; }
+
+
+
+  .nav-caret { display: none; }
+
+
+
   .nav-label { display: none; }
+
+
+
+  /* Dropdown menus drop as a full-width sheet under the bar on phones */
+  .nav-menu,
+  .nav-menu--right {
+    position: fixed;
+    top: calc(var(--header-h) + var(--nav-h));
+    left: 8px;
+    right: 8px;
+    min-width: 0;
+    border-radius: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+
+
+  .nav-menu .nav-btn { font-size: 16px; }
 
 
 
