@@ -336,8 +336,20 @@
 
   let recipeFilter = 'all';
 
-  // Ingredients/foods the user wants recipes to be WITHOUT (lowercase terms)
-  let excludeFoods = [];
+  // Ingredients/foods the user wants recipes to be WITHOUT (lowercase terms).
+  // Persisted so the list survives page reloads.
+  function loadExcludeFoods() {
+    try {
+      const arr = JSON.parse(localStorage.getItem('fodmap-exclude-foods') || '[]');
+      return Array.isArray(arr) ? arr.filter(t => typeof t === 'string') : [];
+    } catch (e) { return []; }
+  }
+
+  function saveExcludeFoods() {
+    try { localStorage.setItem('fodmap-exclude-foods', JSON.stringify(excludeFoods)); } catch (e) {}
+  }
+
+  let excludeFoods = loadExcludeFoods();
 
 
 
@@ -2014,12 +2026,14 @@
         const term = part.trim().toLowerCase();
         if (term && !excludeFoods.includes(term)) excludeFoods.push(term);
       });
+      saveExcludeFoods();
       renderExcludeChips();
       renderRecipeGrid();
     }
 
     function removeExcludeFood(term) {
       excludeFoods = excludeFoods.filter(t => t !== term);
+      saveExcludeFoods();
       renderExcludeChips();
       renderRecipeGrid();
     }
@@ -2046,11 +2060,15 @@
     if (excludeClear) {
       excludeClear.addEventListener('click', () => {
         excludeFoods = [];
+        saveExcludeFoods();
         renderExcludeChips();
         renderRecipeGrid();
         if (excludeInput) excludeInput.focus();
       });
     }
+
+    // Restore any persisted exclusions on load.
+    renderExcludeChips();
 
 
     const surpriseBtn = document.getElementById('surprise-recipe-btn');
