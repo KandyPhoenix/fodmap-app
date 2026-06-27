@@ -758,6 +758,59 @@
   });
 
 
+  // ── Grouped-nav dropdown behaviour (Tools / My Journey) ──
+  (function initNavDropdowns() {
+    const mainNav = document.getElementById('main-nav');
+    if (!mainNav) return;
+
+    function closeDropdowns() {
+      mainNav.querySelectorAll('.nav-dropdown.open').forEach(dd => {
+        dd.classList.remove('open');
+        const t = dd.querySelector('.nav-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    // Highlight a dropdown's trigger when one of its items is the active view.
+    function syncTriggers() {
+      mainNav.querySelectorAll('.nav-dropdown').forEach(dd => {
+        const t = dd.querySelector('.nav-trigger');
+        if (t) t.classList.toggle('active', !!dd.querySelector('.nav-btn.active'));
+      });
+    }
+
+    mainNav.querySelectorAll('.nav-trigger').forEach(trigger => {
+      trigger.addEventListener('click', e => {
+        e.stopPropagation();
+        const dd = trigger.closest('.nav-dropdown');
+        const willOpen = !dd.classList.contains('open');
+        closeDropdowns();
+        if (willOpen) {
+          dd.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // After any view button is chosen (its own handler runs first), close the
+    // menus and refresh which trigger looks active.
+    mainNav.addEventListener('click', e => {
+      if (e.target.closest('.nav-btn[data-view]')) {
+        closeDropdowns();
+        syncTriggers();
+      }
+    });
+
+    // Click outside or Escape closes any open menu.
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.nav-dropdown')) closeDropdowns();
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDropdowns(); });
+
+    syncTriggers();
+  })();
+
+
 
 
 
