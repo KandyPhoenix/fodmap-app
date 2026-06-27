@@ -12,8 +12,6 @@ const RECIPE_CATEGORIES = [
 
   { id: 'desserts',  label: 'Desserts',     emoji: '🍓' },
 
-  { id: 'dietician-plan', label: 'Dietician Plan', emoji: '🩺' },
-
 ];
 
 

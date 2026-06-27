@@ -1,7 +1,7 @@
 {
-  "name": "FODMAP Diet Guide",
-  "short_name": "FODMAP",
-  "description": "Your personal FODMAP food guide, recipes, meal planner, and ingredient checker.",
+  "name": "Our Table",
+  "short_name": "Table",
+  "description": "Your family's recipes, meal planner, and FODMAP food guide all in one place.",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait-primary",
