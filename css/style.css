@@ -6583,6 +6583,96 @@ body.dark #scroll-top { background: var(--primary); }
 
 
 
+/* ── Recipe "Without" (exclude foods) bar ───────────────── */
+.recipe-exclude-bar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 16px;
+}
+
+.recipe-exclude-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.exclude-label {
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.exclude-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.exclude-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 20px;
+  padding: 4px 8px 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.exclude-chip button {
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  line-height: 1;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.exclude-input {
+  flex: 1 1 200px;
+  min-width: 160px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  outline: none;
+}
+
+.exclude-input:focus { border-color: var(--primary); }
+
+.exclude-clear {
+  flex: 0 0 auto;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.exclude-clear:hover { border-color: var(--primary); color: var(--primary); }
+
+
+
 .fav-heart {
 
   position: absolute; top: 8px; left: 8px;
