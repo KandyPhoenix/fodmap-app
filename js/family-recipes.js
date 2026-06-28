@@ -120,22 +120,29 @@ function familyLinkCard(o) {
   const section = o.section || '';
   const tags = [];
   if (section) tags.push(section);
+
+  // Full recipe content fetched from the source URL (when available) fills in
+  // the card; otherwise it stays a link card pointing at the original.
+  const data = (o.source && typeof FAMILY_RECIPE_DATA !== 'undefined')
+    ? FAMILY_RECIPE_DATA[o.source.replace(/\/+$/, '')] : null;
+  const hasFull = !!(data && data.ingredients && data.ingredients.length && data.steps && data.steps.length);
+
   return {
     id: o.id,
     name: o.name,
     emoji: o.emoji || '🍽️',
     category: o.category || 'dinner',
-    time: '',
-    serves: o.serves || 4,
+    time: (hasFull && data.time) || '',
+    serves: (hasFull && data.serves) || o.serves || 4,
     difficulty: o.difficulty || 'easy',
     tags,
     source: o.source,
-    ingredients: [{
+    ingredients: hasFull ? data.ingredients : [{
       qty: '',
       item: o.source ? 'See the original recipe for the full ingredient list →'
                      : 'The full recipe lives in your OneNote cookbook.',
     }],
-    steps: [
+    steps: hasFull ? data.steps : [
       o.source ? 'Saved web recipe — tap “View original recipe” below for the full ingredients and method.'
                : 'Saved in your OneNote cookbook — the full recipe lives there.',
     ],
