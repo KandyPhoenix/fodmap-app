@@ -2648,7 +2648,7 @@
 
 
 
-      if (searchQuery) return (r.name + ' ' + r.category + ' ' + (r.tags || []).join(' ')).toLowerCase().includes(searchQuery);
+      if (searchQuery) return (r.name + ' ' + r.category + ' ' + (r.tags || []).join(' ') + ' ' + (r.ingredients || []).map(i => i.item || '').join(' ')).toLowerCase().includes(searchQuery);
 
 
 
@@ -9279,7 +9279,7 @@
 
 
 
-      if (pickerSearch) return (r.name + ' ' + r.category + ' ' + (r.tags || []).join(' ')).toLowerCase().includes(pickerSearch);
+      if (pickerSearch) return (r.name + ' ' + r.category + ' ' + (r.tags || []).join(' ') + ' ' + (r.ingredients || []).map(i => i.item || '').join(' ')).toLowerCase().includes(pickerSearch);
 
 
 
