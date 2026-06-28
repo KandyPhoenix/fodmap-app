@@ -110,6 +110,14 @@
 
 
 
+  // Mediterranean recipes: anything from The Mediterranean Dish, or whose name
+  // signals it (Greek, gyro, falafel, hummus, shawarma, orzo, feta, etc.).
+  const MED_RE = /\b(mediterranean|greek|gyro|souvlaki|spanakopita|falafel|hummus|tzatziki|shawarma|shirazi|balela|gemista|za.?atar|harissa|tabbouleh|tabouli|shakshuka|kofta|baba ?ganoush|fattoush|moussaka|freekeh|dolma|halloumi|orzo|pita|feta)\b/i;
+  function isMediterranean(r) {
+    if ((r.source || '').toLowerCase().includes('themediterraneandish.com')) return true;
+    return MED_RE.test(r.name || '');
+  }
+
   function getBuiltinRecipes() {
 
 
@@ -130,7 +138,13 @@
     const fodmap = fodmapSrc.map(r =>
       (r.tags || []).includes('fodmap') ? r : { ...r, tags: [...(r.tags || []), 'fodmap'] }
     );
-    return [...fodmap, ...familySrc];
+
+    // Tag Mediterranean recipes (Greek/falafel/shawarma/etc. and anything from
+    // The Mediterranean Dish) so they're searchable and chip-labelled.
+    return [...fodmap, ...familySrc].map(r =>
+      (isMediterranean(r) && !(r.tags || []).includes('mediterranean'))
+        ? { ...r, tags: [...(r.tags || []), 'mediterranean'] } : r
+    );
 
 
 
