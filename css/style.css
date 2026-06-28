@@ -6300,13 +6300,20 @@ body.dark #scroll-top { background: var(--primary); }
 
   .planner-grid-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
+  /* Fit the whole week on screen so the weekend is always visible — no
+     horizontal scrolling needed (which fought with the drag-to-plan touch
+     handling and left Sat/Sun cut off). */
+  .planner-grid { min-width: 0; grid-template-columns: 42px repeat(7, 1fr); }
 
+  .planner-cell { min-height: 84px; padding: 4px 3px; }
 
-  .planner-grid { min-width: 560px; }
+  .planner-row-label { font-size: 10px; padding: 4px 2px; line-height: 1.15; }
 
+  .planner-day-name { font-size: 11px; }
 
+  .planner-day-date { font-size: 9px; margin-top: 1px; }
 
-  .planner-cell { min-height: 90px; padding: 6px; }
+  .meal-chip { font-size: 10px; padding: 3px 4px; }
 
 
 
