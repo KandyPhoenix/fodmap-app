@@ -126,6 +126,29 @@
     return CAJUN_RE.test(r.name || '');
   }
 
+  // Other cuisines, matched on the recipe name.
+  const ITALIAN_RE = /\b(italian|tuscan|pasta|spaghetti|lasagna|lasagne|gnocchi|risotto|marinara|alfredo|carbonara|pesto|bolognese|ziti|tortellini|ravioli|minestrone|piccata|scampi|caprese|bruschetta|focaccia|calzone|pizza|fettuccine|penne|linguine|parmigiana|cacio e pepe)\b/i;
+  const INDIAN_RE  = /\b(indian|curry|tikka|masala|tandoori|naan|biryani|korma|vindaloo|paneer|dal|daal|samosa|chana|saag|garam|chutney|raita|butter chicken)\b/i;
+  const MEXICAN_RE = /\b(mexican|tex.?mex|taco|burrito|enchilada|quesadilla|fajita|nachos|salsa|guacamole|tostada|carnitas|tamale|elote|queso|chimichanga|fideo)\b/i;
+  const ASIAN_RE   = /\b(asian|chinese|thai|korean|japanese|vietnamese|stir.?fry|fried rice|lo mein|chow mein|teriyaki|pad thai|ramen|pho|kung pao|general tso|dumpling|spring roll|satay|hoisin|sesame chicken|bibimbap|bulgogi|gochujang|katsu|tempura|sushi)\b/i;
+
+  // Cuisine tags for a recipe, with precedence so a more specific ethnic
+  // cuisine wins over the broad "pasta = Italian" rule (and desserts/fusion
+  // pasta dishes don't get mistagged).
+  function cuisineTagsFor(r) {
+    const name = r.name || '';
+    const tags = [];
+    if (isMediterranean(r)) tags.push('mediterranean');
+    if (isCajun(r)) tags.push('cajun');
+    const mex = MEXICAN_RE.test(name);
+    const asian = ASIAN_RE.test(name);
+    if (ITALIAN_RE.test(name) && !mex && !asian && !isCajun(r) && !/chocolate/i.test(name)) tags.push('italian');
+    if (INDIAN_RE.test(name) && !asian && !/\b(pasta|linguine|spaghetti|alfredo|fettuccine|penne)\b/i.test(name)) tags.push('indian');
+    if (mex) tags.push('mexican');
+    if (asian) tags.push('asian');
+    return tags;
+  }
+
   function getBuiltinRecipes() {
 
 
@@ -147,13 +170,12 @@
       (r.tags || []).includes('fodmap') ? r : { ...r, tags: [...(r.tags || []), 'fodmap'] }
     );
 
-    // Tag cuisine families (Mediterranean, Cajun/Creole) so they're searchable
-    // and chip-labelled.
+    // Tag cuisine families (Mediterranean, Cajun, Italian, Indian, Mexican,
+    // Asian) so they're searchable and chip-labelled.
     return [...fodmap, ...familySrc].map(r => {
-      const add = [];
-      if (isMediterranean(r) && !(r.tags || []).includes('mediterranean')) add.push('mediterranean');
-      if (isCajun(r) && !(r.tags || []).includes('cajun')) add.push('cajun');
-      return add.length ? { ...r, tags: [...(r.tags || []), ...add] } : r;
+      const existing = r.tags || [];
+      const add = cuisineTagsFor(r).filter(t => !existing.includes(t));
+      return add.length ? { ...r, tags: [...existing, ...add] } : r;
     });
 
 
