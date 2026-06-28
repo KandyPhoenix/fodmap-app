@@ -46,7 +46,15 @@
 
 
 
-    try { return JSON.parse(localStorage.getItem('fodmap-user-recipes') || '[]'); }
+    try {
+      const raw = JSON.parse(localStorage.getItem('fodmap-user-recipes') || '[]');
+      // Guard against duplicate saved copies (same id saved twice, e.g. from an
+      // older sync merge): keep the last copy of each id so the list, the
+      // "(N mine)" count, and any saved-recipes view never show it twice.
+      const byId = new Map();
+      (Array.isArray(raw) ? raw : []).forEach(r => { if (r && r.id != null) byId.set(r.id, r); });
+      return Array.from(byId.values());
+    }
 
 
 
