@@ -887,6 +887,9 @@
 
     searchQuery = searchInput.value.trim().toLowerCase();
 
+    // Keep the in-tab recipe search box in sync with the header search.
+    (function(){ const _rs = document.getElementById('recipe-search'); if (_rs) { _rs.value = searchInput.value; const _rsc = document.getElementById('recipe-search-clear'); if (_rsc) _rsc.classList.toggle('hidden', searchInput.value.length === 0); } })();
+
 
 
 
@@ -958,6 +961,8 @@
 
 
     searchInput.value = ''; searchQuery = '';
+
+    (function(){ const _rs = document.getElementById('recipe-search'); if (_rs) { _rs.value = ''; const _rsc = document.getElementById('recipe-search-clear'); if (_rsc) _rsc.classList.add('hidden'); } })();
 
 
 
@@ -2187,6 +2192,27 @@
       });
     }
 
+    // ── In-tab recipe search (mirrors the header search box) ──
+    const recipeSearchInput = document.getElementById('recipe-search');
+    const recipeSearchClear = document.getElementById('recipe-search-clear');
+    if (recipeSearchInput) {
+      recipeSearchInput.addEventListener('input', () => {
+        searchQuery = recipeSearchInput.value.trim().toLowerCase();
+        if (searchInput) searchInput.value = recipeSearchInput.value;       // keep header in sync
+        if (recipeSearchClear) recipeSearchClear.classList.toggle('hidden', recipeSearchInput.value.length === 0);
+        renderRecipeGrid();
+      });
+    }
+    if (recipeSearchClear) {
+      recipeSearchClear.addEventListener('click', () => {
+        recipeSearchInput.value = ''; searchQuery = '';
+        if (searchInput) searchInput.value = '';
+        recipeSearchClear.classList.add('hidden');
+        recipeSearchInput.focus();
+        renderRecipeGrid();
+      });
+    }
+
 
     const surpriseBtn = document.getElementById('surprise-recipe-btn');
 
@@ -2536,7 +2562,7 @@
 
 
 
-      if (!showClips && r.isClip === true) return false;
+      if (!showClips && r.isClip === true && !searchQuery) return false;
 
       if (recipeSection !== 'all' && !(r.tags || []).includes(recipeSection)) return false;
 
