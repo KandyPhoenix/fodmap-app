@@ -118,13 +118,20 @@
 
 
 
-    const raw = [...(typeof KANDY_RECIPES !== 'undefined' ? KANDY_RECIPES : []), ...RECIPES];
+    const raw = [
+      ...(typeof KANDY_RECIPES !== 'undefined' ? KANDY_RECIPES : []),
+      ...RECIPES,
+      ...(typeof FAMILY_RECIPES !== 'undefined' ? FAMILY_RECIPES : []),
+    ];
 
-    // Every built-in recipe is low-FODMAP, so tag it 'fodmap' (searchable and
-    // shown as a chip). User-added family recipes stay untagged unless chosen.
-    return raw.map(r =>
-      (r.tags || []).includes('fodmap') ? r : { ...r, tags: [...(r.tags || []), 'fodmap'] }
-    );
+    // The built-in FODMAP recipes are low-FODMAP, so tag them 'fodmap'
+    // (searchable and shown as a chip). Family recipes (tagged 'family') are
+    // everyday dishes, NOT low-FODMAP, so they must NOT get the 'fodmap' tag.
+    return raw.map(r => {
+      const tags = r.tags || [];
+      if (tags.includes('fodmap') || tags.includes('family')) return r;
+      return { ...r, tags: [...tags, 'fodmap'] };
+    });
 
 
 
@@ -3977,6 +3984,8 @@
 
 
         ${fodmapNoteHtml}
+
+        ${recipe.source ? `<div class="rmodal-section"><a class="rmodal-source-link" href="${recipe.source}" target="_blank" rel="noopener noreferrer">🔗 View original recipe</a></div>` : ''}
 
 
 
