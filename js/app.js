@@ -118,6 +118,14 @@
     return MED_RE.test(r.name || '');
   }
 
+  // Cajun/Creole recipes: by name signal, or from Emeril / Camellia (Louisiana).
+  const CAJUN_RE = /\b(cajun|creole|gumbo|jambalaya|etouffee|étouffée|remoulade|andouille|boudin|blackened|dirty rice|po.?boy|muffuletta|maque choux|sauce piquante|crawfish|bayou|new orleans|beignet|red beans)\b/i;
+  function isCajun(r) {
+    const src = (r.source || '').toLowerCase();
+    if (src.includes('emerils.com') || src.includes('camelliabrand.com')) return true;
+    return CAJUN_RE.test(r.name || '');
+  }
+
   function getBuiltinRecipes() {
 
 
@@ -139,12 +147,14 @@
       (r.tags || []).includes('fodmap') ? r : { ...r, tags: [...(r.tags || []), 'fodmap'] }
     );
 
-    // Tag Mediterranean recipes (Greek/falafel/shawarma/etc. and anything from
-    // The Mediterranean Dish) so they're searchable and chip-labelled.
-    return [...fodmap, ...familySrc].map(r =>
-      (isMediterranean(r) && !(r.tags || []).includes('mediterranean'))
-        ? { ...r, tags: [...(r.tags || []), 'mediterranean'] } : r
-    );
+    // Tag cuisine families (Mediterranean, Cajun/Creole) so they're searchable
+    // and chip-labelled.
+    return [...fodmap, ...familySrc].map(r => {
+      const add = [];
+      if (isMediterranean(r) && !(r.tags || []).includes('mediterranean')) add.push('mediterranean');
+      if (isCajun(r) && !(r.tags || []).includes('cajun')) add.push('cajun');
+      return add.length ? { ...r, tags: [...(r.tags || []), ...add] } : r;
+    });
 
 
 
