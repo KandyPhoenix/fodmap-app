@@ -1596,6 +1596,9 @@ main { max-width: 1600px; margin: 0 auto; padding: 16px; }
 
 .fodmap-note-box { background: var(--primary-light); border-radius: 12px; padding: 14px 16px; border-left: 4px solid var(--primary); margin-top: 4px; }
 
+.rmodal-source-link { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--primary); color: #fff; border-radius: 10px; font-weight: 700; font-size: 14px; text-decoration: none; }
+.rmodal-source-link:hover { opacity: 0.9; }
+
 
 
 .fodmap-note-text { font-size: 14px; color: var(--text); line-height: 1.6; }
