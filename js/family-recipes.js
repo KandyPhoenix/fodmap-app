@@ -210,6 +210,8 @@ if (typeof FAMILY_CLIPS !== 'undefined') {
     if (norm && seenSrc.has(norm)) return;
     if (seenIds.has(o.id)) return;
     seenSrc.add(norm); seenIds.add(o.id);
-    FAMILY_RECIPES.push(familyLinkCard(o));
+    // isClip marks the bulk-imported web clips so the UI can hide them behind
+    // a toggle, keeping the hand-curated recipes front and center.
+    FAMILY_RECIPES.push(Object.assign(familyLinkCard(o), { isClip: true }));
   });
 }

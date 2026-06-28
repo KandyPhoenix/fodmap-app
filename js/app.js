@@ -385,6 +385,15 @@
 
   let lastRecipeList = [];
 
+  // Observer that drives incremental rendering of the recipe grid (recreated
+  // per render so it closes over the current list/sentinel).
+  let recipeGridObserver = null;
+
+  // OneNote section the Family view is filtered to ('all' = no section filter),
+  // and whether to show the bulk-imported cookbook clips.
+  let recipeSection = 'all';
+  let showClips = (() => { try { return localStorage.getItem('fodmap-show-clips') === '1'; } catch (e) { return false; } })();
+
 
 
 
@@ -2149,6 +2158,35 @@
     // Restore any persisted exclusions on load.
     renderExcludeChips();
 
+    // ── Section filter + cookbook-clips toggle ─────────────
+    const sectionSelect = document.getElementById('recipe-section');
+    if (sectionSelect) {
+      // Build the dropdown from the OneNote sections present on the recipes.
+      const KNOWN_SECTIONS = ['make agains', 'full meal recipes', 'thanksgiving', 'sides', 'this week', 'to be filed', 'quick notes', 'drinks extras', 'seasoning msmt tips addons'];
+      const present = new Set();
+      getAllRecipes().forEach(r => (r.tags || []).forEach(t => { if (KNOWN_SECTIONS.includes(t)) present.add(t); }));
+      KNOWN_SECTIONS.filter(s => present.has(s)).forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s.replace(/\b\w/g, c => c.toUpperCase());
+        sectionSelect.appendChild(opt);
+      });
+      sectionSelect.addEventListener('change', () => {
+        recipeSection = sectionSelect.value;
+        renderRecipeGrid();
+      });
+    }
+
+    const clipsToggle = document.getElementById('clips-toggle');
+    if (clipsToggle) {
+      clipsToggle.checked = showClips;
+      clipsToggle.addEventListener('change', () => {
+        showClips = clipsToggle.checked;
+        try { localStorage.setItem('fodmap-show-clips', showClips ? '1' : '0'); } catch (e) {}
+        renderRecipeGrid();
+      });
+    }
+
 
     const surpriseBtn = document.getElementById('surprise-recipe-btn');
 
@@ -2498,6 +2536,12 @@
 
 
 
+      if (!showClips && r.isClip === true) return false;
+
+      if (recipeSection !== 'all' && !(r.tags || []).includes(recipeSection)) return false;
+
+
+
       if (recipeHasExcludedFood(r)) return false;
 
 
@@ -2585,13 +2629,18 @@
 
 
 
-    list.forEach(r => {
+    // Render cards in batches so a 500+ recipe list doesn't block the page
+    // (keeps scrolling and the search box responsive on phones).
+    const RENDER_BATCH = 48;
+    let rendered = 0;
 
+    if (recipeGridObserver) { recipeGridObserver.disconnect(); recipeGridObserver = null; }
 
+    const sentinel = document.createElement('div');
+    sentinel.className = 'recipe-grid-sentinel';
+    sentinel.style.cssText = 'grid-column:1/-1;height:1px;';
 
-
-
-
+    function renderCard(r) {
 
       const isUser = r.isCustom === true;
 
@@ -2820,7 +2869,27 @@
 
 
 
-    });
+    }
+
+    function renderMore() {
+      const end = Math.min(rendered + RENDER_BATCH, list.length);
+      for (let i = rendered; i < end; i++) renderCard(list[i]);
+      rendered = end;
+      if (rendered < list.length) {
+        grid.appendChild(sentinel); // keep the sentinel at the end
+      } else if (sentinel.parentNode) {
+        sentinel.remove();
+      }
+    }
+
+    renderMore();
+
+    if (rendered < list.length) {
+      recipeGridObserver = new IntersectionObserver(entries => {
+        if (entries.some(e => e.isIntersecting)) renderMore();
+      }, { rootMargin: '600px' });
+      recipeGridObserver.observe(sentinel);
+    }
 
 
 
