@@ -267,7 +267,17 @@
 
 
 
-    builtins.forEach(b => merged.push(overrides.get(b.id) || b));
+    builtins.forEach(b => {
+      const ov = overrides.get(b.id);
+      if (!ov) { merged.push(b); return; }
+      // Keep the user's edited copy, but re-apply the original recipe's
+      // fodmap/family classification tag. Saved/synced copies were captured
+      // before the tag existed, so without this they'd lose it and drop out
+      // of the FODMAP (or Family) filter.
+      const classTag = (b.tags || []).includes('family') ? 'family' : 'fodmap';
+      const ovTags = ov.tags || [];
+      merged.push(ovTags.includes(classTag) ? ov : { ...ov, tags: [...ovTags, classTag] });
+    });
 
 
 
