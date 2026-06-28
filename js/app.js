@@ -2277,11 +2277,13 @@
 
 
 
-    // 'fodmap' = low-FODMAP recipes (carry the tag); 'family' = everyday
-    // recipes that don't, e.g. the user's own added dishes.
+    // 'fodmap' = low-FODMAP recipes (carry the 'fodmap' tag); 'family' =
+    // recipes explicitly tagged 'family' (imported from the cookbook). Using
+    // the explicit tag — rather than "lacks fodmap" — keeps synced/saved
+    // recipes that never got the fodmap tag from leaking into Family.
     if (filter === 'fodmap') return tags.includes('fodmap');
 
-    if (filter === 'family') return !tags.includes('fodmap');
+    if (filter === 'family') return tags.includes('family');
 
     if (filter === 'veggie') return tags.includes('vegetarian') || tags.includes('vegan');
 
