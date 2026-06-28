@@ -118,20 +118,19 @@
 
 
 
-    const raw = [
+    // The low-FODMAP originals get the 'fodmap' tag (searchable, shown as a
+    // chip). Everything else (the imported cookbook) is a "family" recipe
+    // simply by NOT being FODMAP — no separate tag needed.
+    const fodmapSrc = [
       ...(typeof KANDY_RECIPES !== 'undefined' ? KANDY_RECIPES : []),
       ...RECIPES,
-      ...(typeof FAMILY_RECIPES !== 'undefined' ? FAMILY_RECIPES : []),
     ];
+    const familySrc = (typeof FAMILY_RECIPES !== 'undefined') ? FAMILY_RECIPES : [];
 
-    // The built-in FODMAP recipes are low-FODMAP, so tag them 'fodmap'
-    // (searchable and shown as a chip). Family recipes (tagged 'family') are
-    // everyday dishes, NOT low-FODMAP, so they must NOT get the 'fodmap' tag.
-    return raw.map(r => {
-      const tags = r.tags || [];
-      if (tags.includes('fodmap') || tags.includes('family')) return r;
-      return { ...r, tags: [...tags, 'fodmap'] };
-    });
+    const fodmap = fodmapSrc.map(r =>
+      (r.tags || []).includes('fodmap') ? r : { ...r, tags: [...(r.tags || []), 'fodmap'] }
+    );
+    return [...fodmap, ...familySrc];
 
 
 
@@ -274,9 +273,13 @@
       // fodmap/family classification tag. Saved/synced copies were captured
       // before the tag existed, so without this they'd lose it and drop out
       // of the FODMAP (or Family) filter.
-      const classTag = (b.tags || []).includes('family') ? 'family' : 'fodmap';
       const ovTags = ov.tags || [];
-      merged.push(ovTags.includes(classTag) ? ov : { ...ov, tags: [...ovTags, classTag] });
+      // Preserve the original's 'fodmap' classification on the edited copy.
+      if ((b.tags || []).includes('fodmap') && !ovTags.includes('fodmap')) {
+        merged.push({ ...ov, tags: [...ovTags, 'fodmap'] });
+      } else {
+        merged.push(ov);
+      }
     });
 
 
@@ -2287,13 +2290,12 @@
 
 
 
-    // 'fodmap' = low-FODMAP recipes (carry the 'fodmap' tag); 'family' =
-    // recipes explicitly tagged 'family' (imported from the cookbook). Using
-    // the explicit tag — rather than "lacks fodmap" — keeps synced/saved
-    // recipes that never got the fodmap tag from leaking into Family.
+    // 'fodmap' = the low-FODMAP originals (carry the 'fodmap' tag). 'family' =
+    // everything else (the imported cookbook). A recipe is a family recipe
+    // simply by not being FODMAP; there is no separate 'family' tag.
     if (filter === 'fodmap') return tags.includes('fodmap');
 
-    if (filter === 'family') return tags.includes('family');
+    if (filter === 'family') return !tags.includes('fodmap');
 
     if (filter === 'veggie') return tags.includes('vegetarian') || tags.includes('vegan');
 

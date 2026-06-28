@@ -1,10 +1,10 @@
 // ─────────────────────────────────────────────────────────────
 //  FAMILY RECIPES  (imported from Kandy's OneNote "My Cookbook 2026")
 //
-//  Everyday family recipes, NOT low-FODMAP. They carry the 'family' tag so
-//  they sit alongside (not mixed into) the FODMAP recipes and show under the
-//  🍽️ Family filter. Each recipe is also tagged with the OneNote SECTION
-//  (tab) it came from, so you can filter/search by section.
+//  Everyday family recipes, NOT low-FODMAP. There is no 'family' tag — a
+//  recipe is "family" simply by not carrying the 'fodmap' tag, so these show
+//  under the 🍽️ Family filter and stay out of FODMAP. Each recipe IS tagged
+//  with the OneNote SECTION (tab) it came from, so you can filter/search by it.
 //
 //  • Hand-typed recipes are imported in full.
 //  • Web-clipped recipes are saved as link cards (title + source link),
@@ -22,7 +22,7 @@ const FAMILY_RECIPES = [
     time: '40 min',
     serves: 9,
     difficulty: 'easy',
-    tags: ['family', 'thanksgiving', 'vegetarian'],
+    tags: ['thanksgiving', 'vegetarian'],
     ingredients: [
       { qty: '1 cup',  item: 'flour' },
       { qty: '1 cup',  item: 'cornmeal' },
@@ -48,7 +48,7 @@ const FAMILY_RECIPES = [
     time: '40 min',
     serves: 6,
     difficulty: 'easy',
-    tags: ['family', 'thanksgiving', 'vegetarian', 'gluten-free'],
+    tags: ['thanksgiving', 'vegetarian', 'gluten-free'],
     ingredients: [
       { qty: '2 cans', item: 'yams, drained' },
       { qty: 'to taste', item: 'brown sugar' },
@@ -72,7 +72,7 @@ const FAMILY_RECIPES = [
     time: '10 min + chill',
     serves: 8,
     difficulty: 'easy',
-    tags: ['family', 'thanksgiving', 'vegetarian', 'no-cook'],
+    tags: ['thanksgiving', 'vegetarian', 'no-cook'],
     ingredients: [
       { qty: '1 box', item: 'instant chocolate pudding mix' },
       { qty: 'per package', item: 'milk' },
@@ -96,7 +96,7 @@ const FAMILY_RECIPES = [
     time: '25 min',
     serves: 4,
     difficulty: 'easy',
-    tags: ['family', 'thanksgiving', 'vegetarian', 'gluten-free'],
+    tags: ['thanksgiving', 'vegetarian', 'gluten-free'],
     ingredients: [
       { qty: '1 bag', item: 'broccoli' },
       { qty: 'to taste', item: 'Velveeta' },
@@ -113,11 +113,12 @@ const FAMILY_RECIPES = [
 
 ];
 
-// Build a "link card" for a saved web recipe. Each card carries the 'family'
-// tag plus the OneNote section (tab) it lives in, and preserves Kandy's notes.
+// Build a "link card" for a saved web recipe. Each card is tagged with the
+// OneNote section (tab) it lives in, and preserves Kandy's notes. No 'family'
+// tag — a recipe is "family" simply by not being FODMAP.
 function familyLinkCard(o) {
   const section = o.section || '';
-  const tags = ['family'];
+  const tags = [];
   if (section) tags.push(section);
   return {
     id: o.id,
