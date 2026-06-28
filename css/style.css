@@ -6705,6 +6705,42 @@ body.dark #scroll-top { background: var(--primary); }
   padding: 8px 16px;
 }
 
+/* ── Section filter + cookbook-clips toggle ──────────────── */
+.recipe-section-bar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 16px;
+}
+.recipe-section-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-label, .clips-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+.recipe-section-select {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.recipe-section-select:focus { border-color: var(--primary); outline: none; }
+.clips-toggle { cursor: pointer; }
+.clips-toggle input { width: 16px; height: 16px; accent-color: var(--primary); cursor: pointer; }
+
 .recipe-exclude-inner {
   display: flex;
   align-items: center;
