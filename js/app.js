@@ -288,7 +288,21 @@
 
 
 
-    return merged;
+    // Drop recipes the user has deleted/hidden (built-ins can't be removed from
+    // the data files, so we filter them out here).
+    const hidden = getHiddenRecipes();
+    return hidden.length ? merged.filter(r => !hidden.includes(r.id)) : merged;
+  }
+
+  // IDs of recipes the user has deleted (built-in/family recipes are hidden
+  // rather than removed). User-created recipes are deleted outright instead.
+  function getHiddenRecipes() {
+    try { return JSON.parse(localStorage.getItem('fodmap-hidden-recipes') || '[]'); } catch (e) { return []; }
+  }
+  function hideRecipe(id) {
+    const h = getHiddenRecipes();
+    if (!h.includes(id)) h.push(id);
+    try { localStorage.setItem('fodmap-hidden-recipes', JSON.stringify(h)); } catch (e) {}
 
 
 
@@ -602,6 +616,9 @@
 
       currentView = btn.dataset.view;
 
+      // Remember the open tab so a page refresh returns here, not the home tab.
+      try { localStorage.setItem('fodmap-view', currentView); } catch (e) {}
+
 
 
 
@@ -786,6 +803,16 @@
 
   });
 
+
+  // Restore the last-open tab on load so a refresh stays put (not the home tab).
+  (function restoreLastView() {
+    let saved = null;
+    try { saved = localStorage.getItem('fodmap-view'); } catch (e) {}
+    if (saved && saved !== currentView) {
+      const btn = document.querySelector('.nav-btn[data-view="' + saved + '"]');
+      if (btn) btn.click();
+    }
+  })();
 
   // ── Grouped-nav dropdown behaviour (Tools / My Journey) ──
   (function initNavDropdowns() {
@@ -3371,7 +3398,8 @@
 
 
 
-        ${isUserCreated
+        <button class="action-btn danger" id="delete-recipe-btn">🗑 Delete</button>
+        ${isEditedBuiltin
 
 
 
@@ -3379,7 +3407,7 @@
 
 
 
-          ? '<button class="action-btn danger" id="delete-recipe-btn">🗑 Delete</button>'
+          ? '<button class="action-btn" id="reset-recipe-btn" style="background:var(--bg);color:var(--text)">↩️ Reset</button>'
 
 
 
@@ -3387,7 +3415,7 @@
 
 
 
-          : (isEditedBuiltin ? '<button class="action-btn" id="reset-recipe-btn" style="background:var(--bg);color:var(--text)">↩️ Reset</button>' : '')}
+          : ''}
 
 
 
@@ -4437,38 +4465,23 @@
 
 
 
-    if (isUserCreated) {
+    const _delBtn = document.getElementById('delete-recipe-btn');
+    if (_delBtn) {
+      _delBtn.addEventListener('click', () => {
+        if (isUserCreated) { deleteUserRecipe(recipe.id, recipe.name); return; }
+        // Built-in / cookbook recipes can't be removed from the data files, so
+        // hide them for this user instead.
+        if (confirm(`Remove "${recipe.name}" from your recipes?`)) {
+          hideRecipe(recipe.id);
+          renderRecipeGrid();
+          closeAll();
+        }
+      });
+    }
 
-
-
-
-
-
-
-      document.getElementById('delete-recipe-btn').addEventListener('click', () => deleteUserRecipe(recipe.id, recipe.name));
-
-
-
-
-
-
-
-    } else if (isEditedBuiltin) {
-
-
-
-
-
-
-
-      document.getElementById('reset-recipe-btn').addEventListener('click', () => resetBuiltinRecipe(recipe.id, recipe.name));
-
-
-
-
-
-
-
+    if (isEditedBuiltin) {
+      const _resetBtn = document.getElementById('reset-recipe-btn');
+      if (_resetBtn) _resetBtn.addEventListener('click', () => resetBuiltinRecipe(recipe.id, recipe.name));
     }
 
 
