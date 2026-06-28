@@ -177,4 +177,24 @@ FAMILY_RECIPES.push(
   familyLinkCard({ id: 'fam-baked-ziti-turkey', name: 'Best Baked Ziti with Ground Turkey', emoji: '🍝', section: 'make agains' }),
   familyLinkCard({ id: 'fam-goat-cheese-pasta', name: 'Goat Cheese Pasta (one pot)', emoji: '🧀', section: 'make agains' }),
 
+  // ── Full Meal Recipes + more clips (Sides / To Be Filed / Quick Notes) ──
+  familyLinkCard({ id: 'fam-tuscan-tortellini', name: 'Tuscan Tortellini Skillet', emoji: '🍝', section: 'full meal recipes', source: 'https://www.thekitchn.com/tuscan-tortellini-pasta-260311' }),
+  familyLinkCard({ id: 'fam-animal-style-smashburger', name: 'Animal Style Smash Burger', emoji: '🍔', section: 'full meal recipes', note: 'THESE WERE GOOD — sauce: ~3 tbsp mayo, ~1 tbsp ketchup, 2 tsp sweet pickle relish' }),
+  familyLinkCard({ id: 'fam-greek-breasts-mash', name: 'Greek Chicken Breasts with Mash', emoji: '🍗', section: 'full meal recipes', note: 'Typed recipe — tuned to go easy on the lemon' }),
+  familyLinkCard({ id: 'fam-salmon-garlic-orzo', name: 'Salmon Fillets & Garlic Orzo', emoji: '🐟', section: 'full meal recipes', note: 'Garlic & chilli confit orzo; ~75g orzo, prep 5 min' }),
+  familyLinkCard({ id: 'fam-churro-cheesecake-bars', name: 'Churro Cheesecake Bars', emoji: '🍰', category: 'desserts', section: 'to be filed', source: 'https://www.allrecipes.com/churro-cheesecake-bars-recipe-7554374' }),
+  familyLinkCard({ id: 'fam-skillet-garlic-knot-chicken', name: 'Skillet Garlic Knot Chicken', emoji: '🍗', section: 'to be filed', source: 'https://www.allrecipes.com/skillet-garlic-knot-chicken-recipe-8762106' }),
+  familyLinkCard({ id: 'fam-cod-provencal', name: 'Cod Provençal', emoji: '🐟', section: 'to be filed', source: 'https://www.themediterraneandish.com/cod-provencal/' }),
+  familyLinkCard({ id: 'fam-sous-vide-teriyaki-salmon', name: 'Sous Vide Teriyaki Salmon', emoji: '🐟', section: 'quick notes', source: 'https://www.simplyrecipes.com/recipes/sous_vide_teriyaki_salmon/' }),
+  familyLinkCard({ id: 'fam-grilled-salmon-avocado-salsa', name: 'Grilled Salmon with Avocado Salsa', emoji: '🐟', section: 'quick notes', source: 'https://www.thecookierookie.com/salmon-with-avocado/' }),
+  familyLinkCard({ id: 'fam-enchilada-stuffed-peppers', name: 'Cheesy Enchilada Stuffed Peppers', emoji: '🫑', section: 'quick notes', source: 'https://www.thecookierookie.com/cheesy-enchilada-stuffed-peppers/' }),
+  familyLinkCard({ id: 'fam-shirazi-salad', name: 'Simple Shirazi Salad', emoji: '🥗', category: 'lunch', section: 'to be filed', source: 'https://www.themediterraneandish.com/shirazi-salad-recipe/' }),
+  familyLinkCard({ id: 'fam-sheet-pan-gnocchi', name: 'Sheet Pan Gnocchi with Roasted Vegetables', emoji: '🥘', section: 'to be filed', source: 'https://www.themediterraneandish.com/sheet-pan-gnocchi-with-roasted-vegetables/' }),
+  familyLinkCard({ id: 'fam-southwest-chicken-bake', name: 'Southwest Chicken Bake', emoji: '🍗', section: 'quick notes', source: 'https://www.thecookierookie.com/southwest-chicken-enchilada-baked-chicken/' }),
+  familyLinkCard({ id: 'fam-one-pot-italian-pasta-chicken', name: 'One-Pot Cheesy Italian Pasta & Chicken', emoji: '🍝', section: 'quick notes', source: 'http://www.theslowroasteditalian.com/2016/10/one-pot-cheesy-Italian-Pasta-Chicken-recipe.html' }),
+  familyLinkCard({ id: 'fam-honey-roasted-chickpeas', name: 'Honey Roasted Chickpeas', emoji: '🌰', category: 'snacks', section: 'quick notes', source: 'https://skinnyms.com/honey-roasted-chickpeas-recipe/' }),
+  familyLinkCard({ id: 'fam-delish-white-chicken-chili', name: 'Best White Chicken Chili (Delish)', emoji: '🍲', section: 'quick notes', source: 'https://www.delish.com/cooking/recipe-ideas/a57946/easy-white-chicken-chili/', note: 'Super good, super easy — 5*' }),
+  familyLinkCard({ id: 'fam-oven-roasted-potatoes', name: 'Easy Oven Roasted Potatoes', emoji: '🥔', section: 'quick notes', source: 'https://www.spendwithpennies.com/simple-herb-oven-roasted-potatoes/' }),
+  familyLinkCard({ id: 'fam-bacon-mozzarella-sticks', name: 'Bacon-Crusted Mozzarella Sticks', emoji: '🧀', category: 'snacks', section: 'quick notes', source: 'https://pomanmeals.com/crispy-bacon-crusted-mozzarella-cheese-sticks/' }),
+
 );
