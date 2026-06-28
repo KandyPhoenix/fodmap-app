@@ -2659,7 +2659,6 @@
 
 
 
-          ${isUser ? '<span class="my-recipe-badge">⭐ My Recipe</span>' : ''}
 
 
 
