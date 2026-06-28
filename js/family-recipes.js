@@ -198,3 +198,17 @@ FAMILY_RECIPES.push(
   familyLinkCard({ id: 'fam-bacon-mozzarella-sticks', name: 'Bacon-Crusted Mozzarella Sticks', emoji: '🧀', category: 'snacks', section: 'quick notes', source: 'https://pomanmeals.com/crispy-bacon-crusted-mozzarella-cheese-sticks/' }),
 
 );
+
+// Bulk-imported web clips (js/family-clips.js). Turned into link cards here,
+// deduped by source URL and id against the curated recipes above.
+if (typeof FAMILY_CLIPS !== 'undefined') {
+  const seenSrc = new Set(FAMILY_RECIPES.map(r => (r.source || '').replace(/\/+$/, '').toLowerCase()).filter(Boolean));
+  const seenIds = new Set(FAMILY_RECIPES.map(r => r.id));
+  FAMILY_CLIPS.forEach(o => {
+    const norm = (o.source || '').replace(/\/+$/, '').toLowerCase();
+    if (norm && seenSrc.has(norm)) return;
+    if (seenIds.has(o.id)) return;
+    seenSrc.add(norm); seenIds.add(o.id);
+    FAMILY_RECIPES.push(familyLinkCard(o));
+  });
+}
