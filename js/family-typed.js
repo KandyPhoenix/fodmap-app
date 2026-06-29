@@ -16,6 +16,41 @@
 
 const FAMILY_TYPED = [
   {
+    "id": "fam-t-pumpkin-choc-chip-pancakes",
+    "name": "Pumpkin Chocolate Chip Pancakes",
+    "emoji": "🥞",
+    "category": "breakfast",
+    "time": "20 min",
+    "serves": 15,
+    "difficulty": "easy",
+    "tags": [
+      "breakfast"
+    ],
+    "source": "https://krollskorner.com/recipes/breakfast-brunch/pumpkin-chocolate-chip-pancakes/",
+    "ingredients": [
+      { "qty": "2 cups", "item": "pancake mix" },
+      { "qty": "1 tsp.", "item": "cinnamon" },
+      { "qty": "1/4 tsp.", "item": "nutmeg" },
+      { "qty": "1/4 tsp.", "item": "cloves" },
+      { "qty": "1/2 cup", "item": "100% canned pumpkin puree" },
+      { "qty": "2 large", "item": "eggs" },
+      { "qty": "3 Tbsp.", "item": "vegetable oil" },
+      { "qty": "1/4 cup", "item": "brown sugar" },
+      { "qty": "1 1/4 cup", "item": "whole milk" },
+      { "qty": "1/2 cup", "item": "mini chocolate chips" }
+    ],
+    "steps": [
+      "Combine the dry ingredients in a large bowl: pancake mix, cinnamon, nutmeg and cloves.",
+      "Whisk together the pumpkin puree, oil, eggs, brown sugar and milk in another bowl.",
+      "Stir the wet ingredients into the dry ingredients just until moistened.",
+      "Fold in the mini chocolate chips.",
+      "Grease a griddle with nonstick spray and pour the batter by 1/4-cupfuls. Cook over medium heat until the bubbles on top begin to pop and the bottoms are golden brown.",
+      "Flip and cook until the second side is golden brown. Repeat with the remaining batter.",
+      "Serve with your favorite toppings: extra chocolate chips, syrup, butter, Greek yogurt, whipped cream, peanut butter or honey."
+    ],
+    "fodmapNote": "From your “Breakfast” section. Your note: “Pumpkin Choc Chip Pancakes — 5★”. Original: Kroll's Korner."
+  },
+  {
     "id": "fam-t-greek-yogurt-chicken",
     "name": "Greek Yogurt Chicken",
     "emoji": "🍗",
