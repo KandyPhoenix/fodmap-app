@@ -1,4 +1,4 @@
-const CACHE = 'fodmap-v53';
+const CACHE = 'fodmap-v54';
 const ASSETS = [
   './',
   './index.html',
@@ -12,6 +12,7 @@ const ASSETS = [
   './js/family-recipe-data.js',
   './js/family-generated.js',
   './js/family-recipes.js',
+  './js/family-typed.js',
   './js/app.js',
   './js/firebase-sync.js',
   './manifest.json',
