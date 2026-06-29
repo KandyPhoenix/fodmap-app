@@ -122,10 +122,23 @@ function familyLinkCard(o) {
   if (section) tags.push(section);
 
   // Full recipe content fetched from the source URL (when available) fills in
-  // the card; otherwise it stays a link card pointing at the original.
-  const data = (o.source && typeof FAMILY_RECIPE_DATA !== 'undefined')
+  // the card. When nothing could be fetched, fall back to a quick version
+  // written from the title (FAMILY_GENERATED, keyed by id) so the card still
+  // has real ingredients and steps — the original link is always kept too.
+  const fetched = (o.source && typeof FAMILY_RECIPE_DATA !== 'undefined')
     ? FAMILY_RECIPE_DATA[o.source.replace(/\/+$/, '')] : null;
+  const fetchedFull = !!(fetched && fetched.ingredients && fetched.ingredients.length && fetched.steps && fetched.steps.length);
+  const gen = (!fetchedFull && typeof FAMILY_GENERATED !== 'undefined') ? FAMILY_GENERATED[o.id] : null;
+  const data = fetchedFull ? fetched : gen;
   const hasFull = !!(data && data.ingredients && data.ingredients.length && data.steps && data.steps.length);
+  const usedGen = hasFull && !fetchedFull;
+
+  const baseNote = o.note
+    ? `From your “${section}” section. Your note: “${o.note}”`
+    : (section ? `Saved from your “${section}” section.` : 'Saved from your cookbook.');
+  const genNote = usedGen
+    ? `✨ A quick version written from the title — ${o.source ? 'tap “View original recipe” below for the original.' : 'the original lives in your OneNote cookbook.'} `
+    : '';
 
   return {
     id: o.id,
@@ -146,9 +159,7 @@ function familyLinkCard(o) {
       o.source ? 'Saved web recipe — tap “View original recipe” below for the full ingredients and method.'
                : 'Saved in your OneNote cookbook — the full recipe lives there.',
     ],
-    fodmapNote: o.note
-      ? `From your “${section}” section. Your note: “${o.note}”`
-      : (section ? `Saved from your “${section}” section.` : 'Saved from your cookbook.'),
+    fodmapNote: genNote + baseNote,
   };
 }
 
