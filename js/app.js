@@ -452,7 +452,9 @@
   // OneNote section the Family view is filtered to ('all' = no section filter),
   // and whether to show the bulk-imported cookbook clips.
   let recipeSection = 'all';
-  let showClips = (() => { try { return localStorage.getItem('fodmap-show-clips') === '1'; } catch (e) { return false; } })();
+  // Default to showing the whole cookbook (clips included) so nothing looks
+  // "missing"; only hide them if the user has explicitly turned the toggle off.
+  let showClips = (() => { try { const v = localStorage.getItem('fodmap-show-clips'); return v === null ? true : v === '1'; } catch (e) { return true; } })();
 
 
 
