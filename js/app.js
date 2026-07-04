@@ -460,6 +460,45 @@
   const SECTION_TAGS = ['main dishes', 'full meal recipes', 'make agains', 'this week', 'sides', 'breakfast', 'desserts', 'snacks', 'drinks extras', 'thanksgiving', 'christmas', 'quick notes', 'to be filed', 'seasoning msmt tips addons'];
   const SECTION_ALIASES = { 'holidays/thanksgiving': 'thanksgiving', 'holidays/christmas': 'christmas', 'snacks / healthy bites': 'snacks', 'snacks healthy bites': 'snacks', 'drinks / extras': 'drinks extras' };
   const sectionTag = t => { t = (t || '').replace(/\s+/g, ' ').trim(); return SECTION_ALIASES[t] || t; };
+  // Pretty label for a section key, e.g. "main dishes" -> "Main Dishes".
+  const displaySection = k => (k || '').replace(/\b\w/g, c => c.toUpperCase());
+  // The section a recipe belongs to: an explicit .section field wins, otherwise
+  // the first of its tags that is a (normalized) section.
+  function recipeSectionKey(r) {
+    if (r && r.section) return sectionTag(String(r.section).toLowerCase());
+    const t = ((r && r.tags) || []).map(sectionTag).find(x => SECTION_TAGS.includes(x));
+    return t || '';
+  }
+  // Every section currently in use — known ones first (in display order), then
+  // any custom sections the user has added, alphabetically. Used to build both
+  // the filter dropdown and the recipe-form section picker.
+  function allSectionsPresent() {
+    const present = new Set();
+    getAllRecipes().forEach(r => {
+      (r.tags || []).forEach(t => { const s = sectionTag(t); if (SECTION_TAGS.includes(s)) present.add(s); });
+      const s = recipeSectionKey(r); if (s) present.add(s);
+    });
+    const known  = SECTION_TAGS.filter(s => present.has(s));
+    const custom = [...present].filter(s => !SECTION_TAGS.includes(s)).sort();
+    return known.concat(custom);
+  }
+  // (Re)build the section filter dropdown from the sections in use, keeping the
+  // current selection. Called on load and again whenever a recipe is saved so a
+  // newly-created section shows up immediately.
+  function populateSectionFilter() {
+    const sel = document.getElementById('recipe-section');
+    if (!sel) return;
+    const current = sel.value || 'all';
+    sel.innerHTML = '<option value="all">All sections</option>';
+    allSectionsPresent().forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s;
+      opt.textContent = displaySection(s);
+      sel.appendChild(opt);
+    });
+    sel.value = [...sel.options].some(o => o.value === current) ? current : 'all';
+    recipeSection = sel.value;
+  }
   // Default to showing the whole cookbook (clips included) so nothing looks
   // "missing"; only hide them if the user has explicitly turned the toggle off.
   let showClips = (() => { try { const v = localStorage.getItem('fodmap-show-clips'); return v === null ? true : v === '1'; } catch (e) { return true; } })();
@@ -2249,16 +2288,7 @@
     // ── Section filter + cookbook-clips toggle ─────────────
     const sectionSelect = document.getElementById('recipe-section');
     if (sectionSelect) {
-      // Build the dropdown from the OneNote sections present on the recipes,
-      // normalizing tag variants so every section shows up exactly once.
-      const present = new Set();
-      getAllRecipes().forEach(r => (r.tags || []).forEach(t => { const s = sectionTag(t); if (SECTION_TAGS.includes(s)) present.add(s); }));
-      SECTION_TAGS.filter(s => present.has(s)).forEach(s => {
-        const opt = document.createElement('option');
-        opt.value = s;
-        opt.textContent = s.replace(/\b\w/g, c => c.toUpperCase());
-        sectionSelect.appendChild(opt);
-      });
+      populateSectionFilter();
       sectionSelect.addEventListener('change', () => {
         recipeSection = sectionSelect.value;
         renderRecipeGrid();
@@ -2647,7 +2677,7 @@
 
       if (!showClips && r.isClip === true && !searchQuery) return false;
 
-      if (recipeSection !== 'all' && !(r.tags || []).map(sectionTag).includes(recipeSection)) return false;
+      if (recipeSection !== 'all' && recipeSectionKey(r) !== recipeSection && !(r.tags || []).map(sectionTag).includes(recipeSection)) return false;
 
 
 
@@ -4714,7 +4744,15 @@
 
 
 
-    document.getElementById('rf-tags').value       = existing ? (existing.tags || []).join(', ') : '';
+    // Section: shown in its own picker (with existing sections as suggestions),
+    // and kept out of the free-text Tags box so it isn't duplicated there.
+    const curSection = existing ? recipeSectionKey(existing) : '';
+    const sectionInput = document.getElementById('rf-section');
+    if (sectionInput) sectionInput.value = curSection ? displaySection(curSection) : '';
+    const dl = document.getElementById('rf-section-list');
+    if (dl) dl.innerHTML = allSectionsPresent().map(s => `<option value="${displaySection(s)}"></option>`).join('');
+    const otherTags = existing ? (existing.tags || []).filter(t => sectionTag(t) !== curSection && !SECTION_TAGS.includes(sectionTag(t))) : [];
+    document.getElementById('rf-tags').value       = otherTags.join(', ');
 
 
 
@@ -5524,13 +5562,13 @@
 
     const tagRaw = document.getElementById('rf-tags').value;
 
-
-
-
-
-
-
-    const tags   = tagRaw.split(',').map(t => t.trim()).filter(Boolean);
+    // Section comes from its own picker. Strip any section-like tags the user may
+    // have typed into Tags, then prepend the chosen section so it's the recipe's
+    // one canonical section (also stored as .section for the filter/dropdown).
+    const sectionKey = ((document.getElementById('rf-section') || {}).value || '').trim().toLowerCase();
+    const otherTags  = tagRaw.split(',').map(t => t.trim()).filter(Boolean)
+      .filter(t => sectionTag(t) !== sectionKey && !SECTION_TAGS.includes(sectionTag(t)));
+    const tags   = (sectionKey ? [sectionKey] : []).concat(otherTags);
 
 
 
@@ -5627,6 +5665,8 @@
 
 
       tags,
+
+      section:    sectionKey,
 
 
 
@@ -5740,27 +5780,17 @@
 
       list.unshift(recipe);
 
-
-
-
-
-
-
     }
-
-
-
-
-
-
 
     saveUserRecipes(list);
 
-
-
-
-
-
+    // A move/add can introduce a brand-new section — refresh the filter so it
+    // appears, and keep the view on the recipe's (possibly new) section.
+    populateSectionFilter();
+    if (sectionKey) {
+      const sel = document.getElementById('recipe-section');
+      if (sel && [...sel.options].some(o => o.value === sectionKey)) { sel.value = sectionKey; recipeSection = sectionKey; }
+    }
 
     renderRecipeGrid();
 
