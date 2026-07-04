@@ -11,6 +11,95 @@
 
 const FAMILY_COOKBOOK = [
   {
+    "id": "fam-x-thanksgiving-cranberry-sauce",
+    "name": "Cranberry Sauce",
+    "emoji": "🫐",
+    "category": "sides",
+    "time": "20 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": ["thanksgiving"],
+    "source": null,
+    "ingredients": [
+      { "qty": "12 oz", "item": "fresh or frozen cranberries" },
+      { "qty": "3/4 cup", "item": "granulated sugar" },
+      { "qty": "1/2 cup", "item": "orange juice" },
+      { "qty": "1/2 cup", "item": "water" },
+      { "qty": "1 tsp", "item": "orange zest" },
+      { "qty": "1 pinch", "item": "salt" }
+    ],
+    "steps": [
+      "Rinse the cranberries and discard any soft ones.",
+      "In a saucepan, combine the sugar, orange juice and water and bring to a simmer over medium heat, stirring until the sugar dissolves.",
+      "Add the cranberries, orange zest and salt. Simmer 10–12 minutes, stirring occasionally, until the berries pop and the sauce thickens.",
+      "Remove from heat and cool — it thickens more as it cools. Serve at room temperature or chilled."
+    ],
+    "fodmapNote": "✨ A quick version written from the title. Saved from your “Holidays/Thanksgiving” section."
+  },
+  {
+    "id": "fam-x-thanksgiving-sweet-potato-pie",
+    "name": "Sweet Potato Pie (Regular)",
+    "emoji": "🥧",
+    "category": "desserts",
+    "time": "1 hr 15 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": ["thanksgiving"],
+    "source": null,
+    "ingredients": [
+      { "qty": "2 cups", "item": "mashed cooked sweet potatoes (about 2 large)" },
+      { "qty": "1/2 cup", "item": "butter, softened" },
+      { "qty": "1 cup", "item": "granulated sugar" },
+      { "qty": "1/2 cup", "item": "evaporated milk" },
+      { "qty": "2", "item": "eggs" },
+      { "qty": "1 tsp", "item": "vanilla extract" },
+      { "qty": "1 tsp", "item": "ground cinnamon" },
+      { "qty": "1/2 tsp", "item": "ground nutmeg" },
+      { "qty": "1/4 tsp", "item": "salt" },
+      { "qty": "1", "item": "unbaked 9-inch pie crust" }
+    ],
+    "steps": [
+      "Preheat the oven to 350°F (175°C).",
+      "Beat the mashed sweet potatoes with the butter until smooth. Mix in the sugar, evaporated milk, eggs, vanilla, cinnamon, nutmeg and salt until well combined.",
+      "Pour the filling into the unbaked pie crust.",
+      "Bake 55–65 minutes, until the center is set and a knife inserted near the center comes out clean.",
+      "Cool completely before slicing. Serve plain or with whipped cream."
+    ],
+    "fodmapNote": "✨ A quick version written from the title. Saved from your “Holidays/Thanksgiving” section (the regular, non-molasses one)."
+  },
+  {
+    "id": "fam-x-thanksgiving-ham-and-turkey",
+    "name": "Holiday Ham & Turkey",
+    "emoji": "🍗",
+    "category": "dinner",
+    "time": "3 hr",
+    "serves": 12,
+    "difficulty": "medium",
+    "tags": ["thanksgiving"],
+    "source": null,
+    "ingredients": [
+      { "qty": "1 (12–14 lb)", "item": "whole turkey, thawed" },
+      { "qty": "1 (8–10 lb)", "item": "bone-in spiral-cut ham" },
+      { "qty": "1/2 cup", "item": "butter, softened" },
+      { "qty": "2 tbsp", "item": "salt" },
+      { "qty": "1 tbsp", "item": "black pepper" },
+      { "qty": "1 tbsp", "item": "poultry seasoning" },
+      { "qty": "1", "item": "onion, quartered" },
+      { "qty": "1", "item": "lemon, halved" },
+      { "qty": "1 cup", "item": "brown sugar (ham glaze)" },
+      { "qty": "1/4 cup", "item": "honey or maple syrup (ham glaze)" },
+      { "qty": "2 tbsp", "item": "Dijon mustard (ham glaze)" }
+    ],
+    "steps": [
+      "Turkey: Preheat oven to 325°F (165°C). Pat the turkey dry, rub all over with the softened butter, and season inside and out with salt, pepper and poultry seasoning. Stuff the cavity with the onion and lemon.",
+      "Roast the turkey breast-up about 13 minutes per pound (2.5–3 hours for 12–14 lb), until a thigh reaches 165°F. Tent with foil if it browns too fast. Rest 20–30 minutes before carving.",
+      "Ham: Place the spiral ham cut-side down in a roasting pan with a splash of water and cover with foil. Warm at 325°F about 10 minutes per pound.",
+      "Whisk the brown sugar, honey and Dijon into a glaze. In the last 20–30 minutes, brush the ham with glaze every 10 minutes, uncovered, until sticky and caramelized.",
+      "Let the ham rest 10 minutes, then serve alongside the carved turkey."
+    ],
+    "fodmapNote": "✨ A quick version written from the title. Saved from your “Holidays/Thanksgiving” section."
+  },
+  {
     "id": "fam-x-15-minute-chili-recipe",
     "name": "15-Minute Chili",
     "emoji": "🌶️",
