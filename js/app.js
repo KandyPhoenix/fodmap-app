@@ -499,6 +499,50 @@
     sel.value = [...sel.options].some(o => o.value === current) ? current : 'all';
     recipeSection = sel.value;
   }
+  // Re-file a recipe into another section straight from its card. Persists as a
+  // user recipe / override (same mechanism as an edit) so it syncs and sticks.
+  function moveRecipeToSection(r, sectionKey) {
+    sectionKey = (sectionKey || '').trim().toLowerCase();
+    const base = getAllRecipes().find(x => x.id === r.id) || r;
+    const cur = recipeSectionKey(base);
+    const nonSection = (base.tags || []).filter(t => { const s = sectionTag(t); return !SECTION_TAGS.includes(s) && s !== cur; });
+    const tags = (sectionKey ? [sectionKey] : []).concat(nonSection);
+    const updated = Object.assign({}, base, { tags, section: sectionKey });
+    const list = getUserRecipes();
+    const idx = list.findIndex(x => x.id === r.id);
+    if (idx >= 0) list[idx] = updated; else list.push(updated);
+    saveUserRecipes(list);
+    populateSectionFilter();
+    renderRecipeGrid();
+    if (typeof toast === 'function') toast(`Moved to ${sectionKey ? displaySection(sectionKey) : 'no section'}`);
+  }
+
+  // Quick section chooser shown from the card's 📁 button.
+  function openMoveMenu(r) {
+    const cur = recipeSectionKey(r);
+    const overlay = document.createElement('div');
+    overlay.className = 'move-menu-overlay';
+    overlay.innerHTML =
+      '<div class="move-menu">' +
+        '<div class="move-menu-title">Move “' + (r.name || 'recipe') + '” to…</div>' +
+        '<div class="move-menu-list">' +
+          allSectionsPresent().map(s => '<button class="move-menu-item' + (s === cur ? ' current' : '') + '" data-sec="' + s + '">' + displaySection(s) + (s === cur ? ' ✓' : '') + '</button>').join('') +
+          '<button class="move-menu-item new" data-new="1">➕ New section…</button>' +
+        '</div>' +
+        '<button class="move-menu-cancel">Cancel</button>' +
+      '</div>';
+    document.body.appendChild(overlay);
+    const close = () => overlay.remove();
+    overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+    overlay.querySelector('.move-menu-cancel').addEventListener('click', close);
+    overlay.querySelectorAll('[data-sec]').forEach(b => b.addEventListener('click', () => { moveRecipeToSection(r, b.getAttribute('data-sec')); close(); }));
+    overlay.querySelector('[data-new]').addEventListener('click', () => {
+      const name = prompt('New section name:');
+      close();
+      if (name && name.trim()) moveRecipeToSection(r, name.trim().toLowerCase());
+    });
+  }
+
   // Default to showing the whole cookbook (clips included) so nothing looks
   // "missing"; only hide them if the user has explicitly turned the toggle off.
   let showClips = (() => { try { const v = localStorage.getItem('fodmap-show-clips'); return v === null ? true : v === '1'; } catch (e) { return true; } })();
@@ -2868,6 +2912,8 @@
 
 
 
+          <button class="move-btn" data-move="${r.id}" title="Move to a section" aria-label="Move to a section">📁</button>
+
           <button class="fav-heart${isFavorite(r.id) ? ' active' : ''}" data-fav="${r.id}" title="Save to favorites" aria-label="Save to favorites">${isFavorite(r.id) ? '❤️' : '🤍'}</button>
 
 
@@ -2953,6 +2999,14 @@
 
 
 
+
+
+
+      const moveBtn = card.querySelector('.move-btn');
+
+
+
+      if (moveBtn) moveBtn.addEventListener('click', e => { e.stopPropagation(); openMoveMenu(r); });
 
 
 

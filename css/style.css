@@ -6892,6 +6892,53 @@ body.dark #scroll-top { background: var(--primary); }
 
 body.dark .fav-heart { background: rgba(40,55,46,0.9); }
 
+/* Quick "move to a section" button — sits just below the favorite heart */
+.move-btn {
+  position: absolute; top: 46px; left: 8px;
+  background: rgba(255,255,255,0.85);
+  border: none; border-radius: 50%;
+  width: 32px; height: 32px; font-size: 15px; line-height: 1;
+  cursor: pointer; padding: 0;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15); transition: transform .12s;
+}
+.move-btn:hover { transform: scale(1.15); }
+body.dark .move-btn { background: rgba(40,55,46,0.9); }
+
+/* Section chooser popup */
+.move-menu-overlay {
+  position: fixed; inset: 0; z-index: 4000;
+  background: rgba(0,0,0,0.45);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.move-menu {
+  background: var(--card-bg, #fff);
+  border-radius: 16px; width: 100%; max-width: 360px;
+  max-height: 80vh; display: flex; flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3); overflow: hidden;
+}
+.move-menu-title {
+  padding: 16px 18px 10px; font-weight: 700; font-size: 15px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.move-menu-list { overflow-y: auto; padding: 6px; }
+.move-menu-item {
+  display: block; width: 100%; text-align: left;
+  padding: 12px 14px; border: none; background: none;
+  font-size: 15px; border-radius: 10px; cursor: pointer;
+  color: inherit;
+}
+.move-menu-item:hover { background: rgba(0,0,0,0.06); }
+.move-menu-item.current { font-weight: 700; color: var(--green, #2e9e5b); }
+.move-menu-item.new { color: var(--green, #2e9e5b); font-weight: 600; }
+.move-menu-cancel {
+  margin: 6px; padding: 12px; border: none; border-radius: 10px;
+  background: rgba(0,0,0,0.06); font-size: 15px; font-weight: 600;
+  cursor: pointer; color: inherit;
+}
+body.dark .move-menu-item:hover, body.dark .move-menu-cancel { background: rgba(255,255,255,0.08); }
+
 
 
 .rmodal-fav {
