@@ -452,6 +452,14 @@
   // OneNote section the Family view is filtered to ('all' = no section filter),
   // and whether to show the bulk-imported cookbook clips.
   let recipeSection = 'all';
+  // OneNote sections in display order. Section tags on recipes get normalized to
+  // these via sectionTag() so the dropdown options and the filter always agree
+  // (e.g. "holidays/thanksgiving" and "thanksgiving" are one section, stray
+  // double-spaces collapse). Anything not listed here is treated as a non-section
+  // tag (cuisine, feature) and stays out of the section dropdown.
+  const SECTION_TAGS = ['main dishes', 'full meal recipes', 'make agains', 'this week', 'sides', 'breakfast', 'desserts', 'snacks', 'drinks extras', 'thanksgiving', 'christmas', 'quick notes', 'to be filed', 'seasoning msmt tips addons'];
+  const SECTION_ALIASES = { 'holidays/thanksgiving': 'thanksgiving', 'holidays/christmas': 'christmas', 'snacks / healthy bites': 'snacks', 'snacks healthy bites': 'snacks', 'drinks / extras': 'drinks extras' };
+  const sectionTag = t => { t = (t || '').replace(/\s+/g, ' ').trim(); return SECTION_ALIASES[t] || t; };
   // Default to showing the whole cookbook (clips included) so nothing looks
   // "missing"; only hide them if the user has explicitly turned the toggle off.
   let showClips = (() => { try { const v = localStorage.getItem('fodmap-show-clips'); return v === null ? true : v === '1'; } catch (e) { return true; } })();
@@ -2241,11 +2249,11 @@
     // ── Section filter + cookbook-clips toggle ─────────────
     const sectionSelect = document.getElementById('recipe-section');
     if (sectionSelect) {
-      // Build the dropdown from the OneNote sections present on the recipes.
-      const KNOWN_SECTIONS = ['make agains', 'full meal recipes', 'thanksgiving', 'sides', 'this week', 'to be filed', 'quick notes', 'drinks extras', 'seasoning msmt tips addons'];
+      // Build the dropdown from the OneNote sections present on the recipes,
+      // normalizing tag variants so every section shows up exactly once.
       const present = new Set();
-      getAllRecipes().forEach(r => (r.tags || []).forEach(t => { if (KNOWN_SECTIONS.includes(t)) present.add(t); }));
-      KNOWN_SECTIONS.filter(s => present.has(s)).forEach(s => {
+      getAllRecipes().forEach(r => (r.tags || []).forEach(t => { const s = sectionTag(t); if (SECTION_TAGS.includes(s)) present.add(s); }));
+      SECTION_TAGS.filter(s => present.has(s)).forEach(s => {
         const opt = document.createElement('option');
         opt.value = s;
         opt.textContent = s.replace(/\b\w/g, c => c.toUpperCase());
@@ -2639,7 +2647,7 @@
 
       if (!showClips && r.isClip === true && !searchQuery) return false;
 
-      if (recipeSection !== 'all' && !(r.tags || []).includes(recipeSection)) return false;
+      if (recipeSection !== 'all' && !(r.tags || []).map(sectionTag).includes(recipeSection)) return false;
 
 
 
