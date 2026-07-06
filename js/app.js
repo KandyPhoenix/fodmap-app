@@ -2841,7 +2841,11 @@
 
 
 
-      card.className = 'recipe-card' + (isUser ? ' user-recipe' : '');
+      // Recipes imported from your OneNote/OneDrive cookbook are the non-FODMAP
+      // ones you didn't hand-create in the app — give them their own colour.
+      const isFodmap   = (r.tags || []).some(t => (t || '').toLowerCase() === 'fodmap');
+      const isCookbook = !isUser && !isFodmap;
+      card.className = 'recipe-card' + (isUser ? ' user-recipe' : (isCookbook ? ' cookbook-recipe' : ''));
 
 
 

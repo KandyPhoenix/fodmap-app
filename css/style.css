@@ -3660,6 +3660,23 @@ body.dragging-meal { cursor: grabbing; user-select: none; -webkit-user-select: n
 
 }
 
+/* Recipes imported from your OneNote/OneDrive cookbook — blue, to set them
+   apart from FODMAP cards (default) and your own added recipes (orange). */
+.recipe-card.cookbook-recipe {
+  background: #eef4ff;
+  border-top: 3px solid #5b8def;
+}
+.recipe-card.cookbook-recipe .recipe-card-banner {
+  background: linear-gradient(135deg, #e3edff, #c9dbff);
+}
+body.dark .recipe-card.cookbook-recipe {
+  background: #16223a;
+  border-top-color: #5b8def;
+}
+body.dark .recipe-card.cookbook-recipe .recipe-card-banner {
+  background: linear-gradient(135deg, #1e2c48, #243a63);
+}
+
 
 
 
