@@ -6848,6 +6848,8 @@ const RECIPES = [
 
     category: 'lunch',
 
+    added: '2026-07-12',
+
     time: '15 min',
 
     serves: 1,
@@ -6903,6 +6905,8 @@ const RECIPES = [
     emoji: '🌯',
 
     category: 'lunch',
+
+    added: '2026-07-12',
 
     time: '20 min',
 
@@ -6964,6 +6968,8 @@ const RECIPES = [
 
     category: 'lunch',
 
+    added: '2026-07-12',
+
     time: '8 min',
 
     serves: 1,
@@ -7013,6 +7019,8 @@ const RECIPES = [
     emoji: '🍜',
 
     category: 'lunch',
+
+    added: '2026-07-12',
 
     time: '25 min',
 
@@ -7076,6 +7084,8 @@ const RECIPES = [
 
     category: 'lunch',
 
+    added: '2026-07-12',
+
     time: '10 min',
 
     serves: 1,
@@ -7127,6 +7137,8 @@ const RECIPES = [
     emoji: '🥙',
 
     category: 'lunch',
+
+    added: '2026-07-12',
 
     time: '15 min',
 
@@ -7183,6 +7195,8 @@ const RECIPES = [
     emoji: '🥞',
 
     category: 'lunch',
+
+    added: '2026-07-12',
 
     time: '25 min',
 
@@ -7242,6 +7256,8 @@ const RECIPES = [
 
     category: 'lunch',
 
+    added: '2026-07-12',
+
     time: '12 min',
 
     serves: 1,
@@ -7295,6 +7311,8 @@ const RECIPES = [
     emoji: '🎃',
 
     category: 'lunch',
+
+    added: '2026-07-12',
 
     time: '35 min',
 
@@ -7352,6 +7370,8 @@ const RECIPES = [
 
     category: 'lunch',
 
+    added: '2026-07-12',
+
     time: '10 min',
 
     serves: 1,
@@ -7401,6 +7421,8 @@ const RECIPES = [
     emoji: '🐟',
 
     category: 'dinner',
+
+    added: '2026-07-12',
 
     time: '25 min',
 
@@ -7455,6 +7477,8 @@ const RECIPES = [
     emoji: '🥢',
 
     category: 'dinner',
+
+    added: '2026-07-12',
 
     time: '20 min',
 
@@ -7516,6 +7540,8 @@ const RECIPES = [
 
     category: 'dinner',
 
+    added: '2026-07-12',
+
     time: '45 min',
 
     serves: 4,
@@ -7572,6 +7598,8 @@ const RECIPES = [
 
     category: 'dinner',
 
+    added: '2026-07-12',
+
     time: '20 min',
 
     serves: 2,
@@ -7627,6 +7655,8 @@ const RECIPES = [
     emoji: '🍛',
 
     category: 'dinner',
+
+    added: '2026-07-12',
 
     time: '35 min',
 
@@ -7690,6 +7720,8 @@ const RECIPES = [
 
     category: 'dinner',
 
+    added: '2026-07-12',
+
     time: '50 min',
 
     serves: 4,
@@ -7750,6 +7782,8 @@ const RECIPES = [
 
     category: 'dinner',
 
+    added: '2026-07-12',
+
     time: '20 min',
 
     serves: 2,
@@ -7806,6 +7840,8 @@ const RECIPES = [
 
     category: 'dinner',
 
+    added: '2026-07-12',
+
     time: '55 min',
 
     serves: 4,
@@ -7861,6 +7897,8 @@ const RECIPES = [
     emoji: '🍚',
 
     category: 'dinner',
+
+    added: '2026-07-12',
 
     time: '18 min',
 
@@ -7919,6 +7957,8 @@ const RECIPES = [
     emoji: '🍲',
 
     category: 'dinner',
+
+    added: '2026-07-12',
 
     time: '40 min',
 
