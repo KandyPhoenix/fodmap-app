@@ -6836,5 +6836,1144 @@ const RECIPES = [
 
 
 
+  // ─── LUNCH & DINNER (extra 20 · quick + nicer) ─────────────
+
+  {
+
+    id: 'tuna-quinoa-power-bowl',
+
+    name: 'Tuna & Quinoa Power Bowl',
+
+    emoji: '🥗',
+
+    category: 'lunch',
+
+    time: '15 min',
+
+    serves: 1,
+
+    difficulty: 'easy',
+
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'quick', 'higher-fibre'],
+
+    ingredients: [
+
+      { qty: '3/4 cup', item: 'cooked quinoa (cooled or warm)' },
+
+      { qty: '1 can (95g)', item: 'tuna in springwater, drained' },
+
+      { qty: '1/2 cup', item: 'cucumber, diced' },
+
+      { qty: '1/2 cup', item: 'cherry tomatoes, halved' },
+
+      { qty: '1 handful', item: 'baby spinach' },
+
+      { qty: '6', item: 'kalamata olives, sliced' },
+
+      { qty: '1 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '1 tsp', item: 'lemon juice' },
+
+      { qty: 'to taste', item: 'salt and black pepper' },
+
+    ],
+
+    steps: [
+
+      'Add the quinoa and spinach to a bowl as the base.',
+
+      'Top with flaked tuna, cucumber, tomatoes, and olives.',
+
+      'Whisk the garlic-infused oil with lemon juice, salt, and pepper.',
+
+      'Drizzle the dressing over the bowl and toss gently. Serve straight away.',
+
+    ],
+
+    fodmapNote: 'Quinoa is low FODMAP at 1 cup cooked and adds protein and fibre. Garlic-infused oil gives flavour without the fructans of raw garlic.'
+
+  },
+
+  {
+
+    id: 'rice-paper-veggie-rolls',
+
+    name: 'Fresh Rice Paper Rolls with Peanut Dip',
+
+    emoji: '🌯',
+
+    category: 'lunch',
+
+    time: '20 min',
+
+    serves: 2,
+
+    difficulty: 'easy',
+
+    tags: ['gluten-free', 'dairy-free', 'vegetarian', 'quick'],
+
+    ingredients: [
+
+      { qty: '8', item: 'rice paper wrappers' },
+
+      { qty: '100g', item: 'firm tofu, cut into strips' },
+
+      { qty: '1', item: 'carrot, julienned' },
+
+      { qty: '1/2', item: 'cucumber, julienned' },
+
+      { qty: '1 cup', item: 'shredded red cabbage' },
+
+      { qty: '1 handful', item: 'fresh mint and coriander leaves' },
+
+      { qty: '2 tbsp', item: 'smooth peanut butter' },
+
+      { qty: '1 tbsp', item: 'gluten-free soy sauce (tamari)' },
+
+      { qty: '1 tsp', item: 'lime juice' },
+
+      { qty: '1-2 tbsp', item: 'warm water, to loosen' },
+
+    ],
+
+    steps: [
+
+      'Whisk peanut butter, tamari, lime juice, and warm water into a smooth dip. Set aside.',
+
+      'Dip a rice paper wrapper in warm water for 10–15 seconds until pliable.',
+
+      'Lay on a board and add tofu, carrot, cucumber, cabbage, and herbs across the lower third.',
+
+      'Fold the sides in and roll up tightly. Repeat with the rest.',
+
+      'Serve the rolls with the peanut dipping sauce.',
+
+    ],
+
+    fodmapNote: 'Firm tofu is low FODMAP (the liquid whey removes excess FODMAPs). Keep peanut butter to 2 tbsp per serve and red cabbage to 1 cup to stay in the green zone.'
+
+  },
+
+  {
+
+    id: 'caprese-toastie',
+
+    name: '5-Minute Caprese Toastie',
+
+    emoji: '🥪',
+
+    category: 'lunch',
+
+    time: '8 min',
+
+    serves: 1,
+
+    difficulty: 'easy',
+
+    tags: ['vegetarian', 'gluten-free', 'quick'],
+
+    ingredients: [
+
+      { qty: '2 slices', item: 'gluten-free sourdough or bread' },
+
+      { qty: '60g', item: 'fresh mozzarella, sliced' },
+
+      { qty: '1', item: 'tomato, sliced' },
+
+      { qty: '4', item: 'fresh basil leaves' },
+
+      { qty: '1 tsp', item: 'garlic-infused olive oil' },
+
+      { qty: 'pinch', item: 'salt and cracked pepper' },
+
+    ],
+
+    steps: [
+
+      'Brush the outside of both bread slices lightly with garlic-infused oil.',
+
+      'Layer mozzarella, tomato, and basil between the slices. Season.',
+
+      'Toast in a sandwich press or pan over medium heat, pressing gently.',
+
+      'Cook 3–4 minutes until golden and the cheese melts. Slice and serve.',
+
+    ],
+
+    fodmapNote: 'Fresh mozzarella is low FODMAP at around 60g per serve. Gluten-free bread keeps the wheat fructans out of a classic melt.'
+
+  },
+
+  {
+
+    id: 'chicken-rice-noodle-salad',
+
+    name: 'Cold Chicken & Rice Noodle Salad',
+
+    emoji: '🍜',
+
+    category: 'lunch',
+
+    time: '25 min',
+
+    serves: 2,
+
+    difficulty: 'easy',
+
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'make-ahead'],
+
+    ingredients: [
+
+      { qty: '150g', item: 'rice vermicelli noodles' },
+
+      { qty: '1', item: 'cooked chicken breast, shredded' },
+
+      { qty: '1', item: 'carrot, grated' },
+
+      { qty: '1 cup', item: 'shredded lettuce' },
+
+      { qty: '1/2', item: 'cucumber, ribboned' },
+
+      { qty: '2 tbsp', item: 'chopped roasted peanuts' },
+
+      { qty: '2 tbsp', item: 'lime juice' },
+
+      { qty: '1 tbsp', item: 'gluten-free soy sauce (tamari)' },
+
+      { qty: '1 tsp', item: 'maple syrup' },
+
+      { qty: '1 tsp', item: 'sesame oil' },
+
+      { qty: '2 tbsp', item: 'spring onion green tops, sliced' },
+
+    ],
+
+    steps: [
+
+      'Soak the rice noodles in boiling water for 4–5 minutes, then drain and rinse under cold water.',
+
+      'Whisk lime juice, tamari, maple syrup, and sesame oil into a dressing.',
+
+      'Toss the noodles with chicken, carrot, lettuce, and cucumber.',
+
+      'Pour over the dressing and toss again.',
+
+      'Top with peanuts and spring onion greens. Serve cold.',
+
+    ],
+
+    fodmapNote: 'Rice noodles are naturally FODMAP-free. Use only the green tops of spring onions — the white bulbs are high in fructans. Great made ahead for lunchboxes.'
+
+  },
+
+  {
+
+    id: 'egg-avo-smash-toast',
+
+    name: 'Egg & Avo Smash on Toast',
+
+    emoji: '🥑',
+
+    category: 'lunch',
+
+    time: '10 min',
+
+    serves: 1,
+
+    difficulty: 'easy',
+
+    tags: ['vegetarian', 'gluten-free', 'quick', 'high-protein'],
+
+    ingredients: [
+
+      { qty: '2 slices', item: 'gluten-free bread' },
+
+      { qty: '1/8', item: 'avocado (about 30g)' },
+
+      { qty: '2', item: 'eggs' },
+
+      { qty: '1 tsp', item: 'lemon juice' },
+
+      { qty: '1 tbsp', item: 'chopped chives' },
+
+      { qty: 'pinch', item: 'chilli flakes (optional)' },
+
+      { qty: 'to taste', item: 'salt and pepper' },
+
+    ],
+
+    steps: [
+
+      'Poach or fry the eggs to your liking.',
+
+      'Toast the gluten-free bread.',
+
+      'Mash the avocado with lemon juice, salt, and pepper, then spread over the toast.',
+
+      'Top with the eggs, chives, and a pinch of chilli flakes. Serve.',
+
+    ],
+
+    fodmapNote: 'Avocado is low FODMAP at 1/8 of a fruit (around 30g) — a little goes a long way. Chives replace onion for a mild savoury bite.'
+
+  },
+
+  {
+
+    id: 'greek-chickpea-bowl',
+
+    name: 'Greek-Style Chickpea & Feta Bowl',
+
+    emoji: '🥙',
+
+    category: 'lunch',
+
+    time: '15 min',
+
+    serves: 2,
+
+    difficulty: 'easy',
+
+    tags: ['vegetarian', 'gluten-free', 'quick', 'higher-fibre'],
+
+    ingredients: [
+
+      { qty: '1/2 cup', item: 'canned chickpeas, rinsed and drained' },
+
+      { qty: '1', item: 'cucumber, diced' },
+
+      { qty: '1 cup', item: 'cherry tomatoes, halved' },
+
+      { qty: '40g', item: 'feta, crumbled' },
+
+      { qty: '8', item: 'kalamata olives' },
+
+      { qty: '2 cups', item: 'baby spinach' },
+
+      { qty: '2 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '1 tbsp', item: 'red wine vinegar' },
+
+      { qty: '1 tsp', item: 'dried oregano' },
+
+    ],
+
+    steps: [
+
+      'Divide the spinach between two bowls.',
+
+      'Top with chickpeas, cucumber, tomatoes, olives, and feta.',
+
+      'Whisk garlic-infused oil, vinegar, and oregano together.',
+
+      'Drizzle over and serve.',
+
+    ],
+
+    fodmapNote: 'Canned, rinsed chickpeas are low FODMAP at 1/4 cup per serve — the canning liquid leaches out the GOS. Feta is low FODMAP at 40g.'
+
+  },
+
+  {
+
+    id: 'zucchini-corn-fritters',
+
+    name: 'Zucchini & Corn Fritters',
+
+    emoji: '🥞',
+
+    category: 'lunch',
+
+    time: '25 min',
+
+    serves: 3,
+
+    difficulty: 'medium',
+
+    tags: ['vegetarian', 'gluten-free'],
+
+    ingredients: [
+
+      { qty: '2', item: 'zucchini, grated and squeezed dry' },
+
+      { qty: '1/3 cup', item: 'canned corn kernels, drained' },
+
+      { qty: '2', item: 'eggs' },
+
+      { qty: '1/2 cup', item: 'gluten-free plain flour' },
+
+      { qty: '30g', item: 'grated cheddar' },
+
+      { qty: '2 tbsp', item: 'chopped chives' },
+
+      { qty: '1 tsp', item: 'baking powder' },
+
+      { qty: '2 tbsp', item: 'olive oil, for frying' },
+
+      { qty: 'to taste', item: 'salt and pepper' },
+
+    ],
+
+    steps: [
+
+      'Squeeze the grated zucchini in a clean tea towel to remove as much water as possible.',
+
+      'Combine zucchini, corn, eggs, flour, cheddar, chives, baking powder, salt, and pepper into a thick batter.',
+
+      'Heat oil in a pan over medium heat.',
+
+      'Drop heaped spoonfuls in and flatten slightly. Fry 2–3 minutes each side until golden.',
+
+      'Drain on paper towel and serve with a squeeze of lemon.',
+
+    ],
+
+    fodmapNote: 'Canned corn is low FODMAP at 1/3 cup per serve. Squeezing the zucchini dry keeps the fritters crisp rather than soggy.'
+
+  },
+
+  {
+
+    id: 'smoked-salmon-rice-bowl',
+
+    name: 'Smoked Salmon & Rice Bowl',
+
+    emoji: '🍚',
+
+    category: 'lunch',
+
+    time: '12 min',
+
+    serves: 1,
+
+    difficulty: 'easy',
+
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'quick'],
+
+    ingredients: [
+
+      { qty: '3/4 cup', item: 'cooked sushi rice, cooled slightly' },
+
+      { qty: '80g', item: 'smoked salmon' },
+
+      { qty: '1/2', item: 'cucumber, sliced' },
+
+      { qty: '1/4', item: 'avocado (about 30g), sliced' },
+
+      { qty: '1 tbsp', item: 'gluten-free soy sauce (tamari)' },
+
+      { qty: '1 tsp', item: 'sesame oil' },
+
+      { qty: '1 tsp', item: 'sesame seeds' },
+
+      { qty: '1 tbsp', item: 'pickled ginger (optional)' },
+
+    ],
+
+    steps: [
+
+      'Spoon the rice into a bowl.',
+
+      'Arrange the smoked salmon, cucumber, and avocado on top.',
+
+      'Drizzle with tamari and sesame oil.',
+
+      'Scatter over sesame seeds and add pickled ginger if using. Serve.',
+
+    ],
+
+    fodmapNote: 'White rice is one of the safest low-FODMAP staples. Keep avocado to about 1/4 fruit and this bowl stays gentle while feeling like a treat.'
+
+  },
+
+  {
+
+    id: 'roast-pumpkin-feta-salad',
+
+    name: 'Roast Pumpkin, Feta & Spinach Salad',
+
+    emoji: '🎃',
+
+    category: 'lunch',
+
+    time: '35 min',
+
+    serves: 2,
+
+    difficulty: 'easy',
+
+    tags: ['vegetarian', 'gluten-free', 'higher-fibre'],
+
+    ingredients: [
+
+      { qty: '1.5 cups', item: 'kabocha (Japanese) pumpkin, cubed' },
+
+      { qty: '2 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '3 cups', item: 'baby spinach' },
+
+      { qty: '40g', item: 'feta, crumbled' },
+
+      { qty: '2 tbsp', item: 'pumpkin seeds' },
+
+      { qty: '1 tbsp', item: 'balsamic vinegar' },
+
+      { qty: '1 tsp', item: 'maple syrup' },
+
+      { qty: 'to taste', item: 'salt and pepper' },
+
+    ],
+
+    steps: [
+
+      'Preheat oven to 200°C / 400°F.',
+
+      'Toss the pumpkin with 1 tbsp of the garlic oil, salt, and pepper. Roast 25–30 minutes until caramelised.',
+
+      'Whisk the remaining oil with balsamic and maple syrup.',
+
+      'Arrange spinach on plates and top with warm pumpkin, feta, and pumpkin seeds.',
+
+      'Drizzle with the dressing and serve.',
+
+    ],
+
+    fodmapNote: 'Kabocha/Japanese pumpkin is low FODMAP at 1 cup — unlike butternut, which is only safe in small amounts. A cosy, satisfying salad.'
+
+  },
+
+  {
+
+    id: 'ham-cheese-quesadilla',
+
+    name: 'Quick Ham & Cheese Quesadilla',
+
+    emoji: '🫓',
+
+    category: 'lunch',
+
+    time: '10 min',
+
+    serves: 1,
+
+    difficulty: 'easy',
+
+    tags: ['gluten-free', 'quick', 'high-protein'],
+
+    ingredients: [
+
+      { qty: '1 large', item: 'corn tortilla (or GF wrap)' },
+
+      { qty: '2 slices', item: 'shaved ham' },
+
+      { qty: '40g', item: 'grated cheddar' },
+
+      { qty: '1 handful', item: 'baby spinach' },
+
+      { qty: '1 tsp', item: 'garlic-infused olive oil' },
+
+      { qty: 'to serve', item: 'diced tomato' },
+
+    ],
+
+    steps: [
+
+      'Heat a pan over medium heat with the garlic-infused oil.',
+
+      'Lay the tortilla in the pan and scatter cheese, ham, and spinach over one half.',
+
+      'Fold over and press gently. Cook 2 minutes each side until the cheese melts and the outside is crisp.',
+
+      'Slice into wedges and serve with diced tomato.',
+
+    ],
+
+    fodmapNote: 'Corn tortillas are low FODMAP; check the wrap is 100% corn or a certified GF blend. Cheddar is naturally lactose-light and low FODMAP.'
+
+  },
+
+  {
+
+    id: 'one-pan-lemon-salmon',
+
+    name: 'One-Pan Lemon Salmon & Greens',
+
+    emoji: '🐟',
+
+    category: 'dinner',
+
+    time: '25 min',
+
+    serves: 2,
+
+    difficulty: 'easy',
+
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'quick'],
+
+    ingredients: [
+
+      { qty: '2', item: 'salmon fillets' },
+
+      { qty: '200g', item: 'green beans, trimmed' },
+
+      { qty: '1', item: 'zucchini, sliced into rounds' },
+
+      { qty: '2 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '1', item: 'lemon, half sliced, half juiced' },
+
+      { qty: '1 tsp', item: 'dried dill' },
+
+      { qty: 'to taste', item: 'salt and pepper' },
+
+    ],
+
+    steps: [
+
+      'Preheat oven to 200°C / 400°F and line a tray.',
+
+      'Spread the green beans and zucchini on the tray, toss with 1 tbsp garlic oil, salt, and pepper.',
+
+      'Nestle the salmon fillets on top. Drizzle with remaining oil, lemon juice, and dill. Lay lemon slices over the fish.',
+
+      'Roast for 15–18 minutes until the salmon flakes and the veg is tender.',
+
+      'Serve straight from the tray.',
+
+    ],
+
+    fodmapNote: 'Green beans are low FODMAP at 15 beans (about 75g) per serve. One tray, minimal washing up, and packed with omega-3s.'
+
+  },
+
+  {
+
+    id: 'beef-rice-stirfry',
+
+    name: '20-Minute Beef & Veg Stir-Fry',
+
+    emoji: '🥢',
+
+    category: 'dinner',
+
+    time: '20 min',
+
+    serves: 2,
+
+    difficulty: 'easy',
+
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'quick'],
+
+    ingredients: [
+
+      { qty: '250g', item: 'beef strips' },
+
+      { qty: '1', item: 'red capsicum, sliced' },
+
+      { qty: '1', item: 'carrot, julienned' },
+
+      { qty: '1 cup', item: 'bok choy, chopped' },
+
+      { qty: '2 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '2 tbsp', item: 'gluten-free soy sauce (tamari)' },
+
+      { qty: '1 tsp', item: 'grated ginger' },
+
+      { qty: '1 tsp', item: 'maple syrup' },
+
+      { qty: '1.5 cups', item: 'cooked jasmine rice, to serve' },
+
+      { qty: '2 tbsp', item: 'spring onion green tops' },
+
+    ],
+
+    steps: [
+
+      'Heat 1 tbsp garlic oil in a wok over high heat. Sear the beef 2 minutes until browned, then set aside.',
+
+      'Add the remaining oil, capsicum, and carrot. Stir-fry 3 minutes.',
+
+      'Add bok choy and ginger, and cook 1 minute more.',
+
+      'Return the beef, add tamari and maple syrup, and toss to coat.',
+
+      'Serve over jasmine rice topped with spring onion greens.',
+
+    ],
+
+    fodmapNote: 'Red capsicum is low FODMAP at 1/2 a medium pepper per serve. Tamari replaces regular soy sauce to keep it gluten-free.'
+
+  },
+
+  {
+
+    id: 'baked-herb-chicken-thighs',
+
+    name: 'Crispy Herb Chicken with Roast Potatoes',
+
+    emoji: '🍗',
+
+    category: 'dinner',
+
+    time: '45 min',
+
+    serves: 4,
+
+    difficulty: 'easy',
+
+    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+
+    ingredients: [
+
+      { qty: '8', item: 'chicken thighs, skin on' },
+
+      { qty: '500g', item: 'baby potatoes, halved' },
+
+      { qty: '2', item: 'carrots, cut in batons' },
+
+      { qty: '3 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '1 tbsp', item: 'dried mixed herbs' },
+
+      { qty: '1 tsp', item: 'smoked paprika' },
+
+      { qty: '1', item: 'lemon, juiced' },
+
+      { qty: 'to taste', item: 'salt and pepper' },
+
+    ],
+
+    steps: [
+
+      'Preheat oven to 200°C / 400°F.',
+
+      'Toss potatoes and carrots with 2 tbsp garlic oil, salt, and pepper in a roasting tray.',
+
+      'Rub the chicken with the remaining oil, herbs, paprika, salt, and pepper, and sit it on top of the veg.',
+
+      'Roast for 35–40 minutes until the chicken skin is crisp and cooked through.',
+
+      'Squeeze over lemon juice and serve.',
+
+    ],
+
+    fodmapNote: 'Potatoes and carrots are both low-FODMAP staples with no limit worth worrying about. The garlic-infused oil delivers a roast-dinner flavour without the FODMAPs.'
+
+  },
+
+  {
+
+    id: 'creamy-tomato-gnocchi',
+
+    name: 'Creamy Tomato & Basil Gnocchi',
+
+    emoji: '🍅',
+
+    category: 'dinner',
+
+    time: '20 min',
+
+    serves: 2,
+
+    difficulty: 'easy',
+
+    tags: ['vegetarian', 'gluten-free', 'quick'],
+
+    ingredients: [
+
+      { qty: '400g', item: 'gluten-free potato gnocchi' },
+
+      { qty: '1 can (400g)', item: 'crushed tomatoes' },
+
+      { qty: '2 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '1/4 cup', item: 'lactose-free cream' },
+
+      { qty: '1 handful', item: 'fresh basil, torn' },
+
+      { qty: '2 tbsp', item: 'grated parmesan' },
+
+      { qty: '1/2 tsp', item: 'dried oregano' },
+
+      { qty: 'to taste', item: 'salt and pepper' },
+
+    ],
+
+    steps: [
+
+      'Cook the gnocchi in boiling salted water until they float (2–3 minutes). Drain.',
+
+      'Heat the garlic oil in a pan, add crushed tomatoes and oregano, and simmer 5 minutes.',
+
+      'Stir in the lactose-free cream and season.',
+
+      'Fold the gnocchi through the sauce to coat.',
+
+      'Top with parmesan and fresh basil, and serve.',
+
+    ],
+
+    fodmapNote: 'Canned tomatoes are low FODMAP at 1/2 cup per serve. Use lactose-free cream and a hard cheese like parmesan (naturally very low in lactose) to keep it creamy but gentle.'
+
+  },
+
+  {
+
+    id: 'thai-green-curry-chicken',
+
+    name: 'Thai-Style Green Chicken Curry',
+
+    emoji: '🍛',
+
+    category: 'dinner',
+
+    time: '35 min',
+
+    serves: 4,
+
+    difficulty: 'medium',
+
+    tags: ['gluten-free', 'dairy-free', 'high-protein'],
+
+    ingredients: [
+
+      { qty: '500g', item: 'chicken thigh, diced' },
+
+      { qty: '2 tbsp', item: 'low-FODMAP green curry paste (garlic/onion-free)' },
+
+      { qty: '1 can (400ml)', item: 'coconut milk' },
+
+      { qty: '1', item: 'zucchini, sliced' },
+
+      { qty: '1', item: 'red capsicum, sliced' },
+
+      { qty: '1 cup', item: 'green beans, trimmed' },
+
+      { qty: '1 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '1 tbsp', item: 'fish sauce' },
+
+      { qty: '1 tsp', item: 'brown sugar' },
+
+      { qty: '1 handful', item: 'Thai basil leaves' },
+
+      { qty: '2 cups', item: 'cooked jasmine rice, to serve' },
+
+    ],
+
+    steps: [
+
+      'Heat the garlic oil in a large pan and brown the chicken for 4–5 minutes.',
+
+      'Stir in the curry paste and cook 1 minute until fragrant.',
+
+      'Pour in the coconut milk, fish sauce, and sugar. Simmer 10 minutes.',
+
+      'Add the zucchini, capsicum, and green beans, and cook 6–8 minutes until tender.',
+
+      'Stir through Thai basil and serve over jasmine rice.',
+
+    ],
+
+    fodmapNote: 'Coconut milk is low FODMAP at 1/4 cup per serve, so keep portions moderate. Use a curry paste without onion or garlic — many Thai pastes hide both, so check the label or make your own.'
+
+  },
+
+  {
+
+    id: 'stuffed-capsicums-rice',
+
+    name: 'Beef & Rice Stuffed Capsicums',
+
+    emoji: '🫑',
+
+    category: 'dinner',
+
+    time: '50 min',
+
+    serves: 4,
+
+    difficulty: 'medium',
+
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
+
+    ingredients: [
+
+      { qty: '4', item: 'red capsicums, tops cut and deseeded' },
+
+      { qty: '400g', item: 'beef mince' },
+
+      { qty: '1 cup', item: 'cooked rice' },
+
+      { qty: '1 can (400g)', item: 'crushed tomatoes' },
+
+      { qty: '2 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '1 tsp', item: 'ground cumin' },
+
+      { qty: '1 tsp', item: 'smoked paprika' },
+
+      { qty: '2 tbsp', item: 'spring onion green tops' },
+
+      { qty: '40g', item: 'grated cheddar' },
+
+      { qty: 'to taste', item: 'salt and pepper' },
+
+    ],
+
+    steps: [
+
+      'Preheat oven to 190°C / 375°F.',
+
+      'Heat the garlic oil and brown the mince with cumin and paprika, 5–6 minutes.',
+
+      'Stir in the rice, half the crushed tomatoes, spring onion greens, salt, and pepper.',
+
+      'Spoon the remaining tomatoes into a baking dish and stand the capsicums in it. Fill each with the mince mixture.',
+
+      'Top with cheddar, cover with foil, and bake 30 minutes. Uncover for the last 10 minutes to brown.',
+
+    ],
+
+    fodmapNote: 'One whole red capsicum per serve sits at the top of the low-FODMAP range but is fine as a single-serve main. The green tops of spring onion give an onion flavour safely.'
+
+  },
+
+  {
+
+    id: 'lemon-garlic-prawn-pasta',
+
+    name: 'Lemon Garlic Prawn Pasta',
+
+    emoji: '🍤',
+
+    category: 'dinner',
+
+    time: '20 min',
+
+    serves: 2,
+
+    difficulty: 'easy',
+
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'quick'],
+
+    ingredients: [
+
+      { qty: '180g', item: 'gluten-free spaghetti' },
+
+      { qty: '250g', item: 'raw prawns, peeled' },
+
+      { qty: '3 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '1', item: 'zucchini, ribboned' },
+
+      { qty: '1', item: 'lemon, zested and juiced' },
+
+      { qty: 'pinch', item: 'chilli flakes' },
+
+      { qty: '2 tbsp', item: 'chopped flat-leaf parsley' },
+
+      { qty: 'to taste', item: 'salt and pepper' },
+
+    ],
+
+    steps: [
+
+      'Cook the pasta in salted boiling water until al dente. Reserve a splash of the cooking water, then drain.',
+
+      'Heat the garlic oil in a pan and cook the prawns 2 minutes each side until pink.',
+
+      'Add the zucchini ribbons and chilli flakes, and toss 1 minute.',
+
+      'Add the pasta, lemon zest and juice, and a splash of pasta water. Toss to coat.',
+
+      'Finish with parsley, salt, and pepper. Serve.',
+
+    ],
+
+    fodmapNote: 'Prawns are naturally FODMAP-free. Garlic-infused oil brings the classic garlic-prawn flavour without triggering symptoms — the flavour is oil-soluble, the FODMAPs are not.'
+
+  },
+
+  {
+
+    id: 'eggplant-parmigiana',
+
+    name: 'Baked Eggplant Parmigiana',
+
+    emoji: '🍆',
+
+    category: 'dinner',
+
+    time: '55 min',
+
+    serves: 4,
+
+    difficulty: 'medium',
+
+    tags: ['vegetarian', 'gluten-free', 'higher-fibre'],
+
+    ingredients: [
+
+      { qty: '2', item: 'eggplants, sliced into rounds' },
+
+      { qty: '1 can (400g)', item: 'crushed tomatoes' },
+
+      { qty: '3 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '1 tsp', item: 'dried oregano' },
+
+      { qty: '125g', item: 'fresh mozzarella, sliced' },
+
+      { qty: '1/3 cup', item: 'grated parmesan' },
+
+      { qty: '1 handful', item: 'fresh basil' },
+
+      { qty: 'to taste', item: 'salt and pepper' },
+
+    ],
+
+    steps: [
+
+      'Preheat oven to 200°C / 400°F. Brush the eggplant slices with garlic oil, season, and roast 20 minutes until soft.',
+
+      'Meanwhile, simmer the crushed tomatoes with oregano and a little garlic oil for 8 minutes to thicken.',
+
+      'Layer eggplant, tomato sauce, and mozzarella in a baking dish, repeating to build up layers.',
+
+      'Finish with parmesan and bake 20 minutes until bubbling and golden.',
+
+      'Scatter with basil and rest 5 minutes before serving.',
+
+    ],
+
+    fodmapNote: 'Eggplant is low FODMAP at 1 cup per serve. Fresh mozzarella and parmesan are both low in lactose, making this a comforting, gut-friendly bake.'
+
+  },
+
+  {
+
+    id: 'pork-fried-rice',
+
+    name: 'Quick Pork Fried Rice',
+
+    emoji: '🍚',
+
+    category: 'dinner',
+
+    time: '18 min',
+
+    serves: 2,
+
+    difficulty: 'easy',
+
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'quick'],
+
+    ingredients: [
+
+      { qty: '2 cups', item: 'cold cooked rice (day-old is best)' },
+
+      { qty: '200g', item: 'pork mince' },
+
+      { qty: '2', item: 'eggs, beaten' },
+
+      { qty: '1', item: 'carrot, finely diced' },
+
+      { qty: '1/2 cup', item: 'canned corn kernels, drained' },
+
+      { qty: '2 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '2 tbsp', item: 'gluten-free soy sauce (tamari)' },
+
+      { qty: '1 tsp', item: 'sesame oil' },
+
+      { qty: '3 tbsp', item: 'spring onion green tops' },
+
+    ],
+
+    steps: [
+
+      'Heat 1 tbsp garlic oil in a wok and scramble the eggs. Set aside.',
+
+      'Add the remaining oil and brown the pork mince for 4 minutes.',
+
+      'Add the carrot and corn, and stir-fry 2 minutes.',
+
+      'Tip in the rice and break it up, tossing over high heat for 3 minutes.',
+
+      'Return the eggs, add tamari and sesame oil, and finish with spring onion greens.',
+
+    ],
+
+    fodmapNote: 'Day-old rice fries best and stays low FODMAP. Keep canned corn to 1/3 cup per serve — a small amount adds sweetness without tipping over.'
+
+  },
+
+  {
+
+    id: 'moroccan-chicken-quinoa',
+
+    name: 'Moroccan-Spiced Chicken with Quinoa',
+
+    emoji: '🍲',
+
+    category: 'dinner',
+
+    time: '40 min',
+
+    serves: 4,
+
+    difficulty: 'medium',
+
+    tags: ['gluten-free', 'dairy-free', 'high-protein', 'higher-fibre'],
+
+    ingredients: [
+
+      { qty: '600g', item: 'chicken thigh, diced' },
+
+      { qty: '1 cup', item: 'quinoa, rinsed' },
+
+      { qty: '2 cups', item: 'low-FODMAP chicken stock' },
+
+      { qty: '1', item: 'carrot, diced' },
+
+      { qty: '1', item: 'zucchini, diced' },
+
+      { qty: '3 tbsp', item: 'garlic-infused olive oil' },
+
+      { qty: '1 tsp', item: 'ground cumin' },
+
+      { qty: '1 tsp', item: 'ground coriander' },
+
+      { qty: '1/2 tsp', item: 'ground cinnamon' },
+
+      { qty: '1/2 tsp', item: 'smoked paprika' },
+
+      { qty: '2 tbsp', item: 'chopped coriander leaves' },
+
+      { qty: '2 tbsp', item: 'flaked almonds, toasted' },
+
+    ],
+
+    steps: [
+
+      'Toss the chicken with cumin, coriander, cinnamon, paprika, salt, and pepper.',
+
+      'Heat 2 tbsp garlic oil in a large pan and brown the chicken 5–6 minutes. Set aside.',
+
+      'Add the remaining oil, carrot, and zucchini, and cook 3 minutes.',
+
+      'Stir in the quinoa and stock, return the chicken, cover, and simmer 15 minutes until the quinoa is fluffy and the liquid absorbed.',
+
+      'Scatter with coriander and toasted almonds, and serve.',
+
+    ],
+
+    fodmapNote: 'Quinoa is low FODMAP at 1 cup cooked and adds protein and fibre. Make sure your stock is onion- and garlic-free — most standard stocks are not.'
+
+  },
+
+
 ];
 
