@@ -2495,6 +2495,13 @@
 
 
 
+    // "Newest" = recipes with a known added-time: batches we ship with an
+    // `added` date, plus anything you create in the app (its id carries the
+    // timestamp). renderRecipeGrid() sorts these newest-first.
+    if (filter === 'newest') return recipeAddedTime(r) > 0;
+
+
+
     if (filter === 'favorites') return isFavorite(r.id);
 
 
@@ -2545,6 +2552,23 @@
   }
 
 
+
+  // When a recipe was added, as a timestamp (ms since epoch), or 0 if unknown.
+  // Built-in recipes we ship over time carry an `added: 'YYYY-MM-DD'` field;
+  // recipes you create in the app get a `user-<ms>` id we can read the time
+  // from. Everything older (the original catalogue) returns 0 — it simply
+  // doesn't show under the "Newest" filter.
+  function recipeAddedTime(r) {
+    if (r.added) {
+      const t = Date.parse(r.added);
+      if (!isNaN(t)) return t;
+    }
+    if (typeof r.id === 'string') {
+      const m = r.id.match(/^user-(\d+)$/);
+      if (m) return parseInt(m[1], 10);
+    }
+    return 0;
+  }
 
   // Searchable text for a recipe: its name plus every ingredient.
   function recipeIngredientText(r) {
@@ -2752,7 +2776,10 @@
 
 
 
-
+    // The "Newest" filter shows the most recently added recipes first.
+    if (recipeFilter === 'newest') {
+      list.sort((a, b) => recipeAddedTime(b) - recipeAddedTime(a));
+    }
 
 
 
