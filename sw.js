@@ -1,4 +1,4 @@
-const CACHE = 'fodmap-v65';
+const CACHE = 'fodmap-v66';
 const ASSETS = [
   './',
   './index.html',
@@ -18,7 +18,10 @@ const ASSETS = [
   './js/firebase-sync.js',
   './manifest.json',
   './icons/icon.svg',
-  './icons/icon-maskable.svg'
+  './icons/icon-192.png',
+  './icons/icon-512.png',
+  './icons/icon-maskable.svg',
+  './icons/icon-maskable-512.png'
 ];
 
 self.addEventListener('install', e => {
