@@ -2575,6 +2575,81 @@
     return (r.name + ' ' + (r.ingredients || []).map(i => i.item).join(' ')).toLowerCase();
   }
 
+  // ── Search synonyms ──────────────────────────────────────────────
+  // A generic/ambiguous word (e.g. "fish") should surface every recipe
+  // that uses a specific member of that group (cod, salmon, tuna…),
+  // even when the generic word never appears in the recipe itself.
+  // Each key maps to the extra terms that word should also match.
+  const SEARCH_SYNONYMS = {
+    fish: ['cod', 'salmon', 'tuna', 'sole', 'haddock', 'halibut', 'tilapia',
+           'trout', 'snapper', 'bass', 'mackerel', 'sardine', 'anchovy',
+           'anchovies', 'plaice', 'pollock', 'pollack', 'flounder', 'herring',
+           'whiting', 'barramundi', 'mahi', 'swordfish', 'catfish', 'fishstick',
+           'fish stick', 'fish finger', 'fishfinger', 'fish cake', 'fishcake',
+           'fillet', 'kingfish', 'perch', 'basa', 'hoki', 'ling', 'roe',
+           'smoked salmon', 'lox'],
+    seafood: ['fish', 'cod', 'salmon', 'tuna', 'sole', 'haddock', 'halibut',
+              'tilapia', 'trout', 'snapper', 'bass', 'mackerel', 'sardine',
+              'anchovy', 'anchovies', 'shrimp', 'prawn', 'prawns', 'crab',
+              'lobster', 'scallop', 'scallops', 'oyster', 'oysters', 'mussel',
+              'mussels', 'clam', 'clams', 'squid', 'calamari', 'octopus',
+              'crayfish', 'crawfish', 'fillet'],
+    shellfish: ['shrimp', 'prawn', 'prawns', 'crab', 'lobster', 'scallop',
+                'scallops', 'oyster', 'oysters', 'mussel', 'mussels', 'clam',
+                'clams', 'squid', 'calamari', 'crayfish', 'crawfish'],
+    shrimp: ['prawn', 'prawns'],
+    prawn: ['shrimp', 'prawns'],
+    poultry: ['chicken', 'turkey', 'duck', 'hen'],
+    chicken: ['poultry', 'drumstick', 'thigh', 'breast', 'wing'],
+    beef: ['steak', 'mince', 'ground beef', 'brisket', 'sirloin', 'rump',
+           'chuck', 'ribeye', 'meatball', 'burger', 'patty'],
+    pork: ['bacon', 'ham', 'sausage', 'chop', 'prosciutto', 'pancetta',
+           'gammon', 'loin'],
+    meat: ['beef', 'pork', 'lamb', 'chicken', 'turkey', 'steak', 'mince',
+           'bacon', 'ham', 'sausage', 'burger', 'meatball', 'veal', 'venison'],
+    cheese: ['cheddar', 'parmesan', 'mozzarella', 'feta', 'brie', 'gouda',
+             'halloumi', 'ricotta', 'camembert', 'gruyere', 'swiss', 'colby',
+             'pecorino', 'provolone', 'manchego', 'havarti'],
+    pasta: ['spaghetti', 'penne', 'macaroni', 'lasagne', 'lasagna', 'fettuccine',
+            'linguine', 'noodle', 'noodles', 'rigatoni', 'fusilli', 'ravioli',
+            'tagliatelle', 'gnocchi', 'vermicelli', 'ziti', 'orzo'],
+    rice: ['basmati', 'jasmine', 'risotto', 'pilaf', 'paella'],
+    greens: ['spinach', 'kale', 'lettuce', 'rocket', 'arugula', 'chard',
+             'bok choy', 'silverbeet', 'collard'],
+    berry: ['strawberry', 'blueberry', 'raspberry', 'blackberry', 'cranberry',
+            'strawberries', 'blueberries', 'raspberries', 'blackberries'],
+    berries: ['strawberry', 'blueberry', 'raspberry', 'blackberry', 'cranberry',
+              'strawberries', 'blueberries', 'raspberries', 'blackberries'],
+    nuts: ['almond', 'walnut', 'pecan', 'cashew', 'peanut', 'hazelnut',
+           'macadamia', 'pistachio', 'brazil nut', 'pine nut'],
+    herb: ['basil', 'parsley', 'coriander', 'cilantro', 'thyme', 'rosemary',
+           'oregano', 'sage', 'mint', 'dill', 'chive', 'tarragon'],
+    herbs: ['basil', 'parsley', 'coriander', 'cilantro', 'thyme', 'rosemary',
+            'oregano', 'sage', 'mint', 'dill', 'chive', 'tarragon']
+  };
+
+  // Expand a raw search string into all the terms it should match. The
+  // original query is always included; each recognised whole word adds
+  // its synonym list too.
+  function expandSearchTerms(query) {
+    const q = (query || '').trim().toLowerCase();
+    if (!q) return [];
+    const terms = [q];
+    q.split(/[\s,]+/).forEach(word => {
+      const syns = SEARCH_SYNONYMS[word];
+      if (syns) syns.forEach(s => { if (!terms.includes(s)) terms.push(s); });
+    });
+    return terms;
+  }
+
+  // True if a recipe matches a search query, allowing synonym matches
+  // (e.g. "fish" finds a salmon recipe). Falls back to the query itself.
+  function recipeMatchesSearch(r, query) {
+    const haystack = (r.name + ' ' + r.category + ' ' + (r.tags || []).join(' ') + ' ' +
+      (r.ingredients || []).map(i => i.item || '').join(' ')).toLowerCase();
+    return expandSearchTerms(query).some(term => haystack.includes(term));
+  }
+
   // True if the recipe contains ANY of the foods the user wants to avoid.
   function recipeHasExcludedFood(r) {
     if (!excludeFoods.length) return false;
@@ -2756,7 +2831,7 @@
 
 
 
-      if (searchQuery) return (r.name + ' ' + r.category + ' ' + (r.tags || []).join(' ') + ' ' + (r.ingredients || []).map(i => i.item || '').join(' ')).toLowerCase().includes(searchQuery);
+      if (searchQuery) return recipeMatchesSearch(r, searchQuery);
 
 
 
@@ -9404,7 +9479,7 @@
 
 
 
-      if (pickerSearch) return (r.name + ' ' + r.category + ' ' + (r.tags || []).join(' ') + ' ' + (r.ingredients || []).map(i => i.item || '').join(' ')).toLowerCase().includes(pickerSearch);
+      if (pickerSearch) return recipeMatchesSearch(r, pickerSearch);
 
 
 
