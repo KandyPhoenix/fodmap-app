@@ -2489,7 +2489,11 @@
 
   function recipeMatchesFilter(r, filter) {
 
-
+    // Side dishes (mashed potatoes, pasta salads, gravy, etc. — tagged by
+    // side-dishes.js) appear ONLY under the "Sides" filter, never in meal views.
+    const _isSide = (window.SIDE_DISH_IDS && window.SIDE_DISH_IDS.has(r.id)) || (r.tags || []).some(t => String(t).toLowerCase() === 'side');
+    if (filter === 'sides') return _isSide;
+    if (_isSide) return false;
 
     if (filter === 'all') return true;
 
@@ -9503,6 +9507,9 @@
 
 
     const list = getAllRecipes().filter(r => {
+
+      // Side dishes aren't meals — keep them out of the planner picker.
+      if ((window.SIDE_DISH_IDS && window.SIDE_DISH_IDS.has(r.id)) || (r.tags || []).some(t => String(t).toLowerCase() === 'side')) return false;
 
       // Super Age recipes already appear in their own quick-pick group above.
       if (superAgeList.length && (r.tags || []).map(t => t.toLowerCase()).includes('super-age')) return false;
