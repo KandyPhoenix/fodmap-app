@@ -2508,6 +2508,8 @@
 
     if (filter === 'airfryer') return (typeof AIRFRYER !== 'undefined' && !!AIRFRYER[r.id]);
 
+    if (filter === 'superage') return (r.tags || []).map(t => t.toLowerCase()).includes('super-age');
+
 
 
     if (filter === 'quick') return recipeMinutes(r) <= 20;
@@ -3701,6 +3703,10 @@
 
 
 
+    const superAgeNoteHtml = recipe.superAgeNote
+      ? `<div class="rmodal-section"><div class="rmodal-section-title">✨ Super Age Note</div><div class="fodmap-note-box"><div class="fodmap-note-text">${recipe.superAgeNote}</div></div></div>`
+      : '';
+
     const fodmapNoteHtml = (recipe.fodmapNote || recipe.fodmapnote)
 
 
@@ -4365,6 +4371,7 @@
 
 
 
+        ${superAgeNoteHtml}
         ${fodmapNoteHtml}
 
         ${recipe.source ? `<div class="rmodal-section"><a class="rmodal-source-link" href="${recipe.source}" target="_blank" rel="noopener noreferrer">🔗 View original recipe</a></div>` : ''}
