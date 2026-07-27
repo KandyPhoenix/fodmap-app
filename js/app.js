@@ -9221,6 +9221,41 @@
 
     let any = false;
 
+    // ✨ Super Age quick-pick — curated to this slot's meal type, shown first.
+    // Respects the picker category selector; falls back to the slot's meal type.
+    const saCat = (pickerCategory !== 'all') ? pickerCategory : pendingCell?.mealType;
+    const superAgeList = saCat ? getAllRecipes().filter(r =>
+      (r.tags || []).map(t => t.toLowerCase()).includes('super-age') &&
+      r.category === saCat &&
+      (!pickerSearch || recipeMatchesSearch(r, pickerSearch))
+    ) : [];
+    if (superAgeList.length) {
+      any = true;
+      const saHeader = document.createElement('div');
+      saHeader.className = 'picker-group-label';
+      saHeader.textContent = '✨ Super Age';
+      el.appendChild(saHeader);
+      superAgeList.forEach(r => {
+        const item = document.createElement('div');
+        item.className = 'picker-item';
+        item.innerHTML = `
+          <div class="picker-item-emoji">${r.emoji || '🍽️'}</div>
+          <div class="picker-item-info">
+            <div class="picker-item-name">${escHtml(r.name)}</div>
+            <div class="picker-item-meta">⏱ ${r.time || '—'} · Serves ${r.serves || '—'}</div>
+          </div>`;
+        item.addEventListener('click', () => {
+          if (pendingCell?.dateKey) {
+            meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'recipe', id: r.id };
+            saveMeals(); renderPlanner(); closeAll();
+          } else {
+            closeAll(); openRecipeModal(r);
+          }
+        });
+        el.appendChild(item);
+      });
+    }
+
 
 
 
@@ -9468,6 +9503,10 @@
 
 
     const list = getAllRecipes().filter(r => {
+
+      // Super Age recipes already appear in their own quick-pick group above.
+      if (superAgeList.length && (r.tags || []).map(t => t.toLowerCase()).includes('super-age')) return false;
+
 
 
 
