@@ -2199,7 +2199,14 @@ main { max-width: 1600px; margin: 0 auto; padding: 16px; }
 
 .planner-cell {
 
-
+  /* Grid items default to min-width:auto, which floors this column at its
+     content's intrinsic width -- long recipe names + nutrition badges could
+     blow the column past its 1fr share and push later days (Sat/Sun) out
+     past the grid's own overflow:hidden, cutting them off entirely on
+     narrower screens. min-width:0 lets the cell actually shrink to its
+     assigned track width; the chip text below handles truncation. */
+  min-width: 0;
+  overflow: hidden;
 
   border-top: 1px solid var(--border);
 
@@ -2453,12 +2460,12 @@ main { max-width: 1600px; margin: 0 auto; padding: 16px; }
 
 
 
-.meal-chip-name { display: block; }
+.meal-chip-name { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
 .meal-chip-nut {
   display: block; margin-top: 2px;
   font-size: 10px; font-weight: 700;
   color: var(--primary); opacity: 0.85;
-  white-space: nowrap;
+  white-space: normal;
 }
 body.dark .meal-chip-nut { color: #7fd1ab; }
 
@@ -6317,10 +6324,13 @@ body.dark #scroll-top { background: var(--primary); }
 
   .planner-grid-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
-  /* Fit the whole week on screen so the weekend is always visible — no
-     horizontal scrolling needed (which fought with the drag-to-plan touch
-     handling and left Sat/Sun cut off). */
-  .planner-grid { min-width: 0; grid-template-columns: 42px repeat(7, 1fr); }
+  /* The drag-to-plan long-press already ignores quick swipes (it cancels
+     itself if the finger moves before the long-press fires), so real
+     horizontal scroll is safe here. Give columns enough width to render
+     without triggering the grid-blowout clipping bug -- the previous
+     "cram to fit, no scroll" approach clipped Sat/Sun once nutrition
+     badges made cells wider than an even 1fr share. */
+  .planner-grid { min-width: 640px; grid-template-columns: 40px repeat(7, minmax(84px, 1fr)); }
 
   .planner-cell { min-height: 84px; padding: 4px 3px; }
 
