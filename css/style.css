@@ -2452,7 +2452,7 @@ main { max-width: 1600px; margin: 0 auto; padding: 16px; }
 
 
 
-.meal-chip-text { flex: 1; line-height: 1.4; }
+.meal-chip-text { flex: 1; min-width: 0; line-height: 1.4; }
 
 
 
