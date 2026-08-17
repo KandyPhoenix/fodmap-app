@@ -145,6 +145,94 @@ const LEAN_PROTEIN_RECIPES = [
     steps:['Blend cottage cheese, vanilla, and honey until smooth.','Spoon into a bowl and top with strawberries and cracker crumbs.'],
     nutrition:{cal:225,protein:21,fiber:3}, added:'2026-08-17', isCustom:true,
   },
+
+  // More easy-to-moderate lunches
+  {
+    id:'lp-airfryer-turkey-burger-salad', name:'Air-Fryer Turkey Burger Salad', emoji:'🥗', category:'lunch', time:'20 min', serves:2, difficulty:'easy',
+    tags:['lean-protein','high-protein','low-calorie','quick','air-fryer','gluten-free'],
+    ingredients:[{qty:'10 oz',item:'99% lean ground turkey'},{qty:'1 tsp',item:'Worcestershire sauce'},{qty:'6 cups',item:'chopped romaine'},{qty:'1 cup',item:'tomato, cucumber, and red onion'},{qty:'1/3 cup',item:'nonfat Greek yogurt'},{qty:'1 tbsp',item:'ketchup'},{qty:'1 tsp',item:'mustard'},{qty:'2 tbsp',item:'diced pickles'}],
+    steps:['Mix turkey with Worcestershire, salt, and pepper and shape two patties.','Air-fry patties until cooked through.','Whisk yogurt, ketchup, mustard, and pickles; serve patties over salad with dressing.'],
+    nutrition:{cal:285,protein:39,fiber:4}, airfryer:['Preheat to 375F (190C).','Cook patties 10–12 minutes, flipping halfway, to 165F (74C).'], added:'2026-08-17', isCustom:true,
+  },
+  {
+    id:'lp-airfryer-shrimp-tacos', name:'Air-Fryer Chili-Lime Shrimp Tacos', emoji:'🌮', category:'lunch', time:'15 min', serves:2, difficulty:'easy',
+    tags:['lean-protein','high-protein','low-calorie','quick','air-fryer','gluten-free'],
+    ingredients:[{qty:'12 oz',item:'peeled shrimp'},{qty:'6',item:'small corn tortillas'},{qty:'3 cups',item:'shredded cabbage'},{qty:'1/3 cup',item:'nonfat Greek yogurt'},{qty:'1',item:'lime'},{qty:'1 tsp',item:'chili powder'},{qty:'1/2 tsp',item:'cumin'},{qty:'1/2 cup',item:'pico de gallo'}],
+    steps:['Season shrimp with chili powder, cumin, lime zest, salt, and pepper.','Air-fry shrimp until pink and curled.','Fill warm tortillas with cabbage, shrimp, yogurt, pico, and lime juice.'],
+    nutrition:{cal:355,protein:39,fiber:6}, airfryer:['Preheat to 400F (200C).','Cook shrimp in one layer for 5–7 minutes, shaking once.'], added:'2026-08-17', isCustom:true,
+  },
+  {
+    id:'lp-chicken-cottage-cheese-pasta', name:'Creamy Chicken Protein Pasta', emoji:'🍝', category:'lunch', time:'20 min', serves:2, difficulty:'moderate',
+    tags:['lean-protein','high-protein','low-calorie','quick'],
+    ingredients:[{qty:'8 oz',item:'cooked chicken breast, chopped'},{qty:'4 oz',item:'chickpea pasta'},{qty:'1 cup',item:'low-fat cottage cheese'},{qty:'1 cup',item:'roasted red peppers'},{qty:'2 cups',item:'baby spinach'},{qty:'1/2 tsp',item:'garlic powder'},{qty:'2 tbsp',item:'parmesan'}],
+    steps:['Cook pasta and reserve 1/2 cup cooking water.','Blend cottage cheese, peppers, garlic powder, parmesan, and a splash of pasta water.','Return pasta to the pan with chicken, spinach, and sauce; warm gently until creamy.'],
+    nutrition:{cal:395,protein:52,fiber:7}, added:'2026-08-17', isCustom:true,
+  },
+  {
+    id:'lp-airfryer-chicken-pita', name:'Air-Fryer Greek Chicken Pita', emoji:'🥙', category:'lunch', time:'20 min', serves:2, difficulty:'easy',
+    tags:['lean-protein','high-protein','low-calorie','quick','air-fryer'],
+    ingredients:[{qty:'10 oz',item:'chicken breast tenders'},{qty:'2',item:'small whole-wheat pitas'},{qty:'1 cup',item:'chopped cucumber and tomato'},{qty:'1/2 cup',item:'nonfat Greek yogurt'},{qty:'1 tbsp',item:'lemon juice'},{qty:'1 tsp',item:'dried oregano'},{qty:'1/2 tsp',item:'garlic powder'}],
+    steps:['Season chicken with oregano, garlic, salt, pepper, and half the lemon.','Air-fry until cooked through, then slice.','Fill pitas with chicken and vegetables; mix yogurt with remaining lemon for sauce.'],
+    nutrition:{cal:375,protein:45,fiber:5}, airfryer:['Preheat to 390F (199C).','Cook chicken tenders 8–10 minutes, turning halfway, to 165F (74C).'], added:'2026-08-17', isCustom:true,
+  },
+  {
+    id:'lp-egg-roll-turkey-bowl', name:'Turkey Egg-Roll Lunch Bowl', emoji:'🥬', category:'lunch', time:'15 min', serves:2, difficulty:'easy',
+    tags:['lean-protein','high-protein','low-calorie','quick','gluten-free'],
+    ingredients:[{qty:'12 oz',item:'99% lean ground turkey'},{qty:'5 cups',item:'coleslaw mix'},{qty:'1 cup',item:'sliced mushrooms'},{qty:'2 tbsp',item:'low-sodium tamari'},{qty:'1 tbsp',item:'rice vinegar'},{qty:'1 tsp',item:'sesame oil'},{qty:'1 tsp',item:'grated ginger'},{qty:'2',item:'scallions'}],
+    steps:['Brown turkey in a large nonstick skillet.','Add mushrooms, slaw, tamari, vinegar, sesame oil, and ginger.','Cook until vegetables soften; divide into bowls and top with scallions.'],
+    nutrition:{cal:300,protein:38,fiber:5}, added:'2026-08-17', isCustom:true,
+  },
+  {
+    id:'lp-airfryer-tuna-melts', name:'Air-Fryer Open-Faced Tuna Melts', emoji:'🥪', category:'lunch', time:'12 min', serves:2, difficulty:'easy',
+    tags:['lean-protein','high-protein','low-calorie','quick','air-fryer'],
+    ingredients:[{qty:'2 cans',item:'tuna in water, drained'},{qty:'1/3 cup',item:'nonfat Greek yogurt'},{qty:'1 tsp',item:'Dijon mustard'},{qty:'2 slices',item:'high-fiber whole-grain bread'},{qty:'2 slices',item:'reduced-fat cheddar'},{qty:'1',item:'tomato, sliced'},{qty:'2 cups',item:'mixed greens'}],
+    steps:['Mix tuna, yogurt, Dijon, salt, and pepper.','Top bread with tuna, tomato, and cheddar.','Air-fry until hot and melted; serve each melt with greens.'],
+    nutrition:{cal:350,protein:48,fiber:6}, airfryer:['Cook at 360F (182C) for 5–7 minutes until cheese bubbles and bread is crisp.'], added:'2026-08-17', isCustom:true,
+  },
+
+  // More easy-to-moderate dinners
+  {
+    id:'lp-airfryer-chicken-parmesan', name:'Air-Fryer Light Chicken Parmesan', emoji:'🍗', category:'dinner', time:'25 min', serves:2, difficulty:'moderate',
+    tags:['lean-protein','high-protein','low-calorie','air-fryer'],
+    ingredients:[{qty:'2',item:'chicken breast cutlets (5 oz each)'},{qty:'1/3 cup',item:'whole-wheat panko'},{qty:'2 tbsp',item:'grated parmesan'},{qty:'1',item:'egg white'},{qty:'1/2 cup',item:'no-sugar-added marinara'},{qty:'1/2 cup',item:'reduced-fat mozzarella'},{qty:'4 cups',item:'zucchini noodles'}],
+    steps:['Dip chicken in egg white, then coat with panko and parmesan.','Air-fry until crisp and nearly done; top with marinara and mozzarella.','Cook until cheese melts and serve over warmed zucchini noodles.'],
+    nutrition:{cal:395,protein:54,fiber:5}, airfryer:['Preheat to 390F (199C).','Cook breaded cutlets 8 minutes, flip, cook 4 minutes, add toppings, then cook 2–3 minutes more to 165F (74C).'], added:'2026-08-17', isCustom:true,
+  },
+  {
+    id:'lp-airfryer-pork-tenderloin', name:'Air-Fryer Pork Tenderloin & Brussels Sprouts', emoji:'🍖', category:'dinner', time:'28 min', serves:3, difficulty:'moderate',
+    tags:['lean-protein','high-protein','low-calorie','air-fryer','gluten-free'],
+    ingredients:[{qty:'1 lb',item:'pork tenderloin'},{qty:'5 cups',item:'halved Brussels sprouts'},{qty:'1 tbsp',item:'olive oil'},{qty:'1 tbsp',item:'Dijon mustard'},{qty:'1 tsp',item:'smoked paprika'},{qty:'1/2 tsp',item:'garlic powder'},{qty:'1 tbsp',item:'balsamic vinegar'}],
+    steps:['Rub pork with Dijon, paprika, garlic, salt, and pepper.','Toss sprouts with oil, balsamic, salt, and pepper.','Air-fry together, rest pork 5 minutes, then slice and serve.'],
+    nutrition:{cal:315,protein:37,fiber:7}, airfryer:['Preheat to 380F (193C).','Cook pork 10 minutes; add sprouts and cook 10–14 minutes more, shaking sprouts once, until pork reaches 145F (63C).'], added:'2026-08-17', isCustom:true,
+  },
+  {
+    id:'lp-garlic-shrimp-zoodles', name:'Garlic Shrimp & Zucchini Noodles', emoji:'🍤', category:'dinner', time:'15 min', serves:2, difficulty:'easy',
+    tags:['lean-protein','high-protein','low-calorie','quick','gluten-free'],
+    ingredients:[{qty:'14 oz',item:'peeled shrimp'},{qty:'5 cups',item:'zucchini noodles'},{qty:'2 cups',item:'cherry tomatoes'},{qty:'2 tsp',item:'olive oil'},{qty:'3 cloves',item:'garlic, minced'},{qty:'1',item:'lemon'},{qty:'2 tbsp',item:'grated parmesan'},{qty:'2 tbsp',item:'chopped parsley'}],
+    steps:['Sear shrimp in oil with garlic, salt, and pepper until pink; remove.','Cook tomatoes and zucchini noodles for 2–3 minutes.','Return shrimp, add lemon and parsley, and finish with parmesan.'],
+    nutrition:{cal:285,protein:40,fiber:5}, added:'2026-08-17', isCustom:true,
+  },
+  {
+    id:'lp-airfryer-cod-tacos', name:'Air-Fryer Cod Tacos with Lime Slaw', emoji:'🌮', category:'dinner', time:'20 min', serves:2, difficulty:'easy',
+    tags:['lean-protein','high-protein','low-calorie','quick','air-fryer','gluten-free'],
+    ingredients:[{qty:'12 oz',item:'cod, cut into strips'},{qty:'6',item:'small corn tortillas'},{qty:'3 cups',item:'coleslaw mix'},{qty:'1/3 cup',item:'nonfat Greek yogurt'},{qty:'1',item:'lime'},{qty:'1 tsp',item:'chili powder'},{qty:'1/2 tsp',item:'cumin'},{qty:'1/2 cup',item:'pico de gallo'}],
+    steps:['Season cod with chili powder, cumin, salt, and pepper.','Air-fry until flaky.','Mix slaw with yogurt and lime; fill tortillas with slaw, cod, and pico.'],
+    nutrition:{cal:360,protein:41,fiber:6}, airfryer:['Preheat to 400F (200C).','Lightly spray cod and cook 7–9 minutes, turning once, to 145F (63C).'], added:'2026-08-17', isCustom:true,
+  },
+  {
+    id:'lp-chicken-fajita-skillet', name:'One-Pan Chicken Fajita Skillet', emoji:'🫑', category:'dinner', time:'20 min', serves:2, difficulty:'easy',
+    tags:['lean-protein','high-protein','low-calorie','quick','gluten-free'],
+    ingredients:[{qty:'12 oz',item:'chicken breast, sliced'},{qty:'3 cups',item:'sliced bell peppers and onion'},{qty:'1 cup',item:'black beans, rinsed'},{qty:'2 tsp',item:'olive oil'},{qty:'2 tsp',item:'fajita seasoning'},{qty:'1',item:'lime'},{qty:'1/4 cup',item:'nonfat Greek yogurt'}],
+    steps:['Sear chicken with oil and fajita seasoning until browned.','Add peppers and onion and cook until crisp-tender.','Stir in beans to warm; finish with lime and yogurt.'],
+    nutrition:{cal:390,protein:50,fiber:10}, added:'2026-08-17', isCustom:true,
+  },
+  {
+    id:'lp-airfryer-steak-bites', name:'Air-Fryer Steak Bites & Broccoli', emoji:'🥩', category:'dinner', time:'18 min', serves:2, difficulty:'easy',
+    tags:['lean-protein','high-protein','low-calorie','quick','air-fryer','gluten-free'],
+    ingredients:[{qty:'10 oz',item:'sirloin steak, cut into bites'},{qty:'4 cups',item:'broccoli florets'},{qty:'2 tsp',item:'olive oil'},{qty:'1 tsp',item:'garlic powder'},{qty:'1/2 tsp',item:'smoked paprika'},{qty:'1 tbsp',item:'low-sodium tamari'},{qty:'1 tsp',item:'lemon juice'}],
+    steps:['Toss steak and broccoli separately with oil and seasoning.','Air-fry broccoli first, then add steak and cook to desired doneness.','Toss everything with tamari and lemon juice.'],
+    nutrition:{cal:330,protein:39,fiber:6}, airfryer:['Preheat to 400F (200C).','Cook broccoli 4 minutes; add steak bites and cook 6–8 minutes, shaking halfway.'], added:'2026-08-17', isCustom:true,
+  },
 ];
 
 (function registerLeanProteinRecipes() {
