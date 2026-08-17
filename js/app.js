@@ -2514,6 +2514,8 @@
 
     if (filter === 'superage') return (r.tags || []).map(t => t.toLowerCase()).includes('super-age');
 
+    if (filter === 'leanprotein') return (r.tags || []).map(t => t.toLowerCase()).includes('lean-protein');
+
 
 
     if (filter === 'quick') return recipeMinutes(r) <= 20;
