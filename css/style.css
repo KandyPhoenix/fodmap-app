@@ -3533,6 +3533,18 @@ body.dragging-meal { cursor: grabbing; user-select: none; -webkit-user-select: n
 
 
 
+.shopping-count { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 10px 2px; }
+
+
+
+.shopping-note { margin-top: 14px; padding: 12px 14px; border: 1px dashed var(--border); border-radius: 12px; background: var(--bg); color: var(--text-muted); font-size: 13px; line-height: 1.5; }
+
+
+
+.shopping-note strong { color: var(--text); }
+
+
+
 .shopping-empty { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 15px; }
 
 
