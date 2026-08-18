@@ -10518,6 +10518,670 @@
 
 
 
+
+
+
+
+
+
+
+
+  const FRACTION_GLYPHS = { '½':0.5, '¼':0.25, '¾':0.75, '⅓':1/3, '⅔':2/3, '⅛':0.125, '⅜':0.375, '⅝':0.625, '⅞':0.875 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Fold unicode fractions so "10½ oz" → "10.5 oz" and "½ cup" → "0.5 cup"
+
+
+
+
+
+
+
+  function foldFractions(str) {
+
+
+
+
+
+
+
+    return String(str == null ? '' : str)
+
+
+
+
+
+
+
+      .replace(/(\d+)\s*([½¼¾⅓⅔⅛⅜⅝⅞])/g, (_, d, g) => (parseInt(d, 10) + FRACTION_GLYPHS[g]).toString())
+
+
+
+
+
+
+
+      .replace(/([½¼¾⅓⅔⅛⅜⅝⅞])/g,          (_, g)    => FRACTION_GLYPHS[g].toString());
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Every spelling of a measuring unit → one canonical token.
+
+
+
+
+
+
+
+  const UNIT_ALIASES = {
+
+
+
+
+
+
+
+    tsp:'tsp', tsps:'tsp', teaspoon:'tsp', teaspoons:'tsp',
+
+
+
+
+
+
+
+    tbsp:'tbsp', tbsps:'tbsp', tbs:'tbsp', tablespoon:'tbsp', tablespoons:'tbsp',
+
+
+
+
+
+
+
+    cup:'cup', cups:'cup',
+
+
+
+
+
+
+
+    pint:'pint', pints:'pint', pt:'pint',
+
+
+
+
+
+
+
+    quart:'quart', quarts:'quart', qt:'quart',
+
+
+
+
+
+
+
+    gallon:'gallon', gallons:'gallon',
+
+
+
+
+
+
+
+    floz:'floz',
+
+
+
+
+
+
+
+    ml:'ml', mls:'ml', milliliter:'ml', milliliters:'ml', millilitre:'ml', millilitres:'ml',
+
+
+
+
+
+
+
+    l:'l', liter:'l', liters:'l', litre:'l', litres:'l',
+
+
+
+
+
+
+
+    g:'g', gram:'g', grams:'g',
+
+
+
+
+
+
+
+    kg:'kg', kilogram:'kg', kilograms:'kg',
+
+
+
+
+
+
+
+    oz:'oz', ounce:'oz', ounces:'oz',
+
+
+
+
+
+
+
+    lb:'lb', lbs:'lb', pound:'lb', pounds:'lb',
+
+
+
+
+
+
+
+    each:'each', medium:'each', large:'each', small:'each',
+
+
+
+
+
+
+
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const VOLUME_IN_TSP = { tsp:1, tbsp:3, floz:6, cup:48, pint:96, quart:192, gallon:768, ml:0.2028841, l:202.8841 };
+
+
+
+
+
+
+
+  const WEIGHT_IN_OZ  = { oz:1, lb:16, g:0.03527396, kg:35.27396 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Words that count things rather than measure them ("4 cloves", "2 cans").
+
+
+
+
+
+
+
+  // They stay in their own tally so "4 cloves + 1 tsp" never gets silently merged.
+
+
+
+
+
+
+
+  const COUNT_WORDS = new Set([
+
+
+
+
+
+
+
+    'can','tin','jar','packet','package','pack','bag','box','bottle','container','carton','tub',
+
+
+
+
+
+
+
+    'block','loaf','bunch','head','clove','sprig','stalk','rib','slice','sheet','fillet','breast',
+
+
+
+
+
+
+
+    'thigh','strip','ear','stick','bar','scoop','piece','leaf','wedge','handful','pinch','dash',
+
+
+
+
+
+
+
+    'square','round','ball','link','patty','cube','knob','sachet','tray','punnet','portion','serving',
+
+
+
+
+
+
+
+  ]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const CONTAINER_RE = 'cans?|tins?|jars?|packets?|packages?|packs?|bags?|boxe?s?|bottles?|containers?|cartons?|tubs?';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Any word that means "this is a measurement", used when splitting a quantity
+
+
+
+
+
+
+
+  // off the front of an ingredient name ("1 cup flour" → "1 cup" + "flour").
+
+
+
+
+
+
+
+  function isMeasureWord(word) {
+
+
+
+
+
+
+
+    if (!word) return false;
+
+
+
+
+
+
+
+    const w = word.replace(/\.$/, '');
+
+
+
+
+
+
+
+    return !!UNIT_ALIASES[w] || COUNT_WORDS.has(singularize(w));
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const NUMBER_ATOM = '\\d+\\s*[½¼¾⅓⅔⅛⅜⅝⅞]|[½¼¾⅓⅔⅛⅜⅝⅞]|\\d+\\s+\\d+\\/\\d+|\\d+\\/\\d+|\\d+(?:\\.\\d+)?';
+
+
+
+
+
+
+
+  // A whole quantity, including a range: "2", "1 1/2", "¼", "2-3", "¼ to ½".
+
+
+
+
+
+
+
+  const NUM_RE = `(?:${NUMBER_ATOM})(?:\\s*(?:-|–|to)\\s*(?:${NUMBER_ATOM}))?`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // "1-1/2 cups" means one and a half, not a range.
+
+
+
+
+
+
+
+  function normalizeMixedNumbers(str) {
+
+
+
+
+
+
+
+    return String(str || '').replace(/(\d+)\s*-\s*(\d+\/\d+)/g, '$1 $2');
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Evaluate one written amount: "2", "1.5", "1/2", "1 1/2" (fractions already folded).
+
+
+
+
+
+
+
+  function evalAmountPart(t) {
+
+
+
+
+
+
+
+    const mixed = t.match(/^(\d+)\s+(\d+)\/(\d+)$/);
+
+
+
+
+
+
+
+    if (mixed) return parseInt(mixed[1], 10) + parseInt(mixed[2], 10) / parseInt(mixed[3], 10);
+
+
+
+
+
+
+
+    const frac = t.match(/^(\d+)\/(\d+)$/);
+
+
+
+
+
+
+
+    if (frac) return parseInt(frac[1], 10) / parseInt(frac[2], 10);
+
+
+
+
+
+
+
+    const dec = t.match(/^(\d*\.?\d+)$/);
+
+
+
+
+
+
+
+    return dec ? parseFloat(dec[1]) : null;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // A range ("2-3 tbsp", "¼ to ½ cup") buys the larger amount.
+
+
+
+
+
+
+
+  function evalAmount(text) {
+
+
+
+
+
+
+
+    const parts = String(text).split(/\s*(?:-|–|to)\s*/).map(evalAmountPart).filter(n => n !== null);
+
+
+
+
+
+
+
+    return parts.length ? Math.max.apply(null, parts) : null;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Split "2 tbsp olive oil" into the amount and everything after it.
+
+
+
+
+
+
+
+  function parseAmount(text) {
+
+
+
+
+
+
+
+    const s = foldFractions(normalizeMixedNumbers(text)).toLowerCase();
+
+
+
+
+
+
+
+    const m = s.match(new RegExp(`^\\s*(${NUM_RE})`));
+
+
+
+
+
+
+
+    if (!m) return { num: null, rest: s.trim() };
+
+
+
+
+
+
+
+    return { num: evalAmount(m[1]), rest: s.slice(m[0].length).trim() };
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   function parseQtyNum(str) {
 
 
@@ -10526,7 +11190,7 @@
 
 
 
-    let s = str.trim().toLowerCase().replace(/\([^)]*\)/g, '').trim();
+    const cleaned = String(str || '').replace(/\([^)]*\)/g, ' ').replace(/\bfl\.?\s*(?:oz|ounces?)\b/gi, 'floz');
 
 
 
@@ -10534,7 +11198,7 @@
 
 
 
-    // Fold unicode fractions so "10½ oz" → "10.5 oz" and "½ cup" → "0.5 cup"
+    const { num, rest } = parseAmount(cleaned);
 
 
 
@@ -10542,7 +11206,7 @@
 
 
 
-    const GLYPH = { '½':0.5, '¼':0.25, '¾':0.75, '⅓':1/3, '⅔':2/3, '⅛':0.125, '⅜':0.375, '⅝':0.625, '⅞':0.875 };
+    if (num === null) return { num: null, unit: null };
 
 
 
@@ -10550,7 +11214,6 @@
 
 
 
-    s = s.replace(/(\d+)\s*([½¼¾⅓⅔⅛⅜⅝⅞])/g, (_, d, g) => (parseInt(d) + GLYPH[g]).toString());
 
 
 
@@ -10558,183 +11221,48 @@
 
 
 
-    s = s.replace(/([½¼¾⅓⅔⅛⅜⅝⅞])/g, (_, g) => GLYPH[g].toString());
 
+    const firstWord = (rest.replace(/^[^a-z]+/, '').split(/[\s,.]/)[0] || '').replace(/\.$/, '');
 
 
 
 
 
 
-    let num = 0, matched = false;
 
+    if (!firstWord) return { num, unit: 'each' };
 
 
 
 
 
 
-    const mixed = s.match(/^(\d+)\s+(\d+)\/(\d+)/);
 
+    if (UNIT_ALIASES[firstWord]) return { num, unit: UNIT_ALIASES[firstWord] };
 
 
 
 
 
 
-    const frac  = s.match(/^(\d+)\/(\d+)/);
 
+    const singular = singularize(firstWord);
 
 
 
 
 
 
-    const dec   = s.match(/^(\d*\.?\d+)/);
 
+    if (COUNT_WORDS.has(singular)) return { num, unit: singular };
 
 
 
 
 
 
-    if (mixed)      { num = parseInt(mixed[1]) + parseInt(mixed[2]) / parseInt(mixed[3]); matched = true; }
 
-
-
-
-
-
-
-    else if (frac)  { num = parseInt(frac[1]) / parseInt(frac[2]); matched = true; }
-
-
-
-
-
-
-
-    else if (dec)   { num = parseFloat(dec[1]); matched = true; }
-
-
-
-
-
-
-
-    if (!matched) return { num: null, unit: null };
-
-
-
-
-
-
-
-    const UNITS = {
-
-
-
-
-
-
-
-      'tsp':'tsp','tsps':'tsp','teaspoon':'tsp','teaspoons':'tsp',
-
-
-
-
-
-
-
-      'tbsp':'tbsp','tbsps':'tbsp','tablespoon':'tbsp','tablespoons':'tbsp',
-
-
-
-
-
-
-
-      'cup':'cup','cups':'cup',
-
-
-
-
-
-
-
-      'g':'g','gram':'g','grams':'g',
-
-
-
-
-
-
-
-      'oz':'oz','ounce':'oz','ounces':'oz',
-
-
-
-
-
-
-
-      'lb':'lb','lbs':'lb','pound':'lb','pounds':'lb',
-
-
-
-
-
-
-
-      'ml':'ml','l':'l','liter':'l','liters':'l',
-
-
-
-
-
-
-
-      'medium':'medium','large':'large','small':'small',
-
-
-
-
-
-
-
-    };
-
-
-
-
-
-
-
-    const rest = s.replace(/^[\d\s\/\.]+/, '').trim();
-
-
-
-
-
-
-
-    const firstWord = rest.split(/[\s,]/)[0];
-
-
-
-
-
-
-
-    const unit = UNITS[firstWord] || (firstWord && /^[a-z]/.test(firstWord) && firstWord.length > 1 ? firstWord : 'each');
-
-
-
-
-
-
-
-    return { num, unit };
+    return { num, unit: 'each' };   // "2 eggs", "1 red onion" — the word is the item, not a unit
 
 
 
@@ -10886,7 +11414,111 @@
 
 
 
-    return formatQtyNum(oz) + ' oz';
+    return formatQtyNum(Math.round(oz * 4) / 4) + ' oz';
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Teaspoons back to the friendliest measuring cup/spoon.
+
+
+
+
+
+
+
+  function tspToDisplay(tsp) {
+
+
+
+
+
+
+
+    const cups = tsp / 48;
+
+
+
+
+
+
+
+    // A cup or more always reads as cups; below that only when it lands on a
+
+
+
+
+
+
+
+    // measuring-cup fraction (¼, ⅓, ½, ⅔, ¾) — "6 tbsp" beats "⅜ cup".
+
+
+
+
+
+
+
+    const roundFraction = Math.abs(cups * 12 - Math.round(cups * 12)) < 0.02;
+
+
+
+
+
+
+
+    if (tsp >= 48 || (tsp >= 12 && roundFraction)) {
+
+
+
+
+
+
+
+      return `${formatQtyNum(cups)} cup${cups > 1.005 ? 's' : ''}`;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    if (tsp >= 3) return `${formatQtyNum(tsp / 3)} tbsp`;
+
+
+
+
+
+
+
+    return `${formatQtyNum(Math.round(tsp * 8) / 8)} tsp`;
 
 
 
@@ -10966,7 +11598,7 @@
 
 
 
-    let s = str.replace(/\(\s*(?:about\s*)?\d+\s*g\s*\)/gi, '').trim();
+    let s = String(str || '').replace(/\(\s*(?:about\s*)?\d+\s*g\s*\)/gi, '').trim();
 
 
 
@@ -11006,15 +11638,7 @@
 
 
 
-    s = s.replace(/(\d+)\s*g\s*(tin|can)s?/gi, (_, g) =>
-
-
-
-
-
-
-
-      `${gToOz(+g)} can`);
+    s = s.replace(/(\d+)\s*g\s*(tin|can)s?/gi, (_, g) => `${gToOz(+g)} can`);
 
 
 
@@ -11063,6 +11687,822 @@
 
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Tidy the amount a recipe wrote for display: "1.5 cups" → "1½ cups",
+
+
+
+
+
+
+
+  // "1/2 cup" → "½ cup". Leaves anything it doesn't recognise alone.
+
+
+
+
+
+
+
+  function prettyQtyText(q) {
+
+
+
+
+
+
+
+    const simpleFrac = (a, b) => (b > 0 && b <= 16 && a < b);
+
+
+
+
+
+
+
+    return String(q || '')
+
+
+
+
+
+
+
+      .replace(/(\d+)\s+(\d+)\/(\d+)/g, (m, a, b, c) => simpleFrac(+b, +c) ? formatQtyNum(+a + +b / +c) : m)
+
+
+
+
+
+
+
+      .replace(/(\d+)\/(\d+)/g,           (m, a, b)    => simpleFrac(+a, +b) ? formatQtyNum(+a / +b)      : m)
+
+
+
+
+
+
+
+      .replace(/\d*\.\d+/g,               m            => formatQtyNum(parseFloat(m)));
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Pluralize a counting word for display ("2 cloves", "3 boxes").
+
+
+
+
+
+
+
+  function pluralUnit(unit, n) {
+
+
+
+
+
+
+
+    if (Math.abs(n - 1) < 0.01) return unit;
+
+
+
+
+
+
+
+    if (/(s|x|ch|sh)$/.test(unit)) return unit + 'es';
+
+
+
+
+
+
+
+    if (unit === 'leaf') return 'leaves';
+
+
+
+
+
+
+
+    if (unit === 'loaf') return 'loaves';
+
+
+
+
+
+
+
+    return unit + 's';
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // ── Splitting a quantity out of an ingredient name ───
+
+
+
+
+
+
+
+  //
+
+
+
+
+
+
+
+  // Imported recipes often carry the whole line in `item` with no `qty`
+
+
+
+
+
+
+
+  // ("1 cup shredded parmesan cheese", "2 (14.5 ounce cans) diced tomatoes").
+
+
+
+
+
+
+
+  // Without this the shopping list ends up with rows called "Cup" and
+
+
+
+
+
+
+
+  // "Tablespoons" instead of the food, and unrelated ingredients merge
+
+
+
+
+
+
+
+  // together under those unit names.
+
+
+
+
+
+
+
+  // "14.5 ounce" / "400 g" → a tidy pack size for the shopping line.
+
+
+
+
+
+
+
+  function packSize(text) {
+
+
+
+
+
+
+
+    const m = foldFractions(text).match(/(\d+(?:\.\d+)?)\s*(oz|ounces?|lb|pounds?|g|grams?|kg|ml|l|liters?|litres?)\b/i);
+
+
+
+
+
+
+
+    if (!m) return '';
+
+
+
+
+
+
+
+    const num  = parseFloat(m[1]);
+
+
+
+
+
+
+
+    const unit = UNIT_ALIASES[m[2].toLowerCase()] || m[2].toLowerCase();
+
+
+
+
+
+
+
+    if (WEIGHT_IN_OZ[unit]) return packWeight(num * WEIGHT_IN_OZ[unit]);
+
+
+
+
+
+
+
+    return `${formatQtyNum(num)} ${unit}`;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function containerWord(text, fallback) {
+
+
+
+
+
+
+
+    const m = String(text || '').match(new RegExp(`\\b(${CONTAINER_RE})\\b`, 'i'));
+
+
+
+
+
+
+
+    return m ? singularize(m[1].toLowerCase()) : fallback;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Pack sizes read better as printed on the tin ("20 oz can", not "1 lb 4 oz can").
+
+
+
+
+
+
+
+  function packWeight(oz) {
+
+
+
+
+
+
+
+    return oz >= 32 ? ozToDisplay(oz) : `${formatQtyNum(Math.round(oz * 4) / 4)} oz`;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // "30g / 2 tbsp ghee" — one amount written two ways; keep the first.
+
+
+
+
+
+
+
+  function collapseDualUnits(text) {
+
+
+
+
+
+
+
+    const m = text.match(new RegExp(
+
+
+
+
+
+
+
+      `^\\s*((?:${NUM_RE})\\s*[a-zA-Z]{1,12}\\.?)(?:\\s+\\/\\s*|\\s*\\/\\s+)(?:${NUM_RE})\\s*[a-zA-Z]{1,12}\\.?\\s+`));
+
+
+
+
+
+
+
+    return m ? `${m[1]} ${text.slice(m[0].length)}` : text;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function splitEmbeddedQty(qty, item) {
+
+
+
+
+
+
+
+    const text = collapseDualUnits(normalizeMixedNumbers(String(item || '').trim().replace(/^\((\d+)\)\s*/, '$1 ')));
+
+
+
+
+
+
+
+    if (String(qty || '').trim() && String(qty).trim() !== '—') return { qty: String(qty), item: text };
+
+
+
+
+
+
+
+    if (!/^\s*[\d½¼¾⅓⅔⅛⅜⅝⅞]/.test(text)) return { qty: String(qty || ''), item: text };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // "2 (14.5 ounce cans) diced tomatoes" / "1 (14.5 oz) can crushed tomatoes"
+
+
+
+
+
+
+
+    let m = text.match(new RegExp(`^\\s*(${NUM_RE})\\s*\\(([^)]*)\\)\\s*(${CONTAINER_RE})?\\s*`, 'i'));
+
+
+
+
+
+
+
+    if (m && packSize(m[2])) {
+
+
+
+
+
+
+
+      const container = containerWord(m[3] || m[2], 'package');
+
+
+
+
+
+
+
+      const n = parseQtyNum(m[1]).num || 1;
+
+
+
+
+
+
+
+      return { qty: `${formatQtyNum(n)} × ${packSize(m[2])} ${container}`, item: text.slice(m[0].length).trim() };
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // "1 can (4 ounces) chopped green chiles" / "1 can chopped green chiles (4.5 oz can)"
+
+
+
+
+
+
+
+    m = text.match(new RegExp(`^\\s*(${NUM_RE})\\s*(${CONTAINER_RE})\\s*`, 'i'));
+
+
+
+
+
+
+
+    if (m) {
+
+
+
+
+
+
+
+      const n = parseQtyNum(m[1]).num || 1;
+
+
+
+
+
+
+
+      const container = containerWord(m[2], 'package');
+
+
+
+
+
+
+
+      let rest = text.slice(m[0].length).trim();
+
+
+
+
+
+
+
+      let size = '';
+
+
+
+
+
+
+
+      const leading = rest.match(/^\(([^)]*)\)\s*/);        // "1 can (4 ounces) green chiles"
+
+
+
+
+
+
+
+      if (leading && packSize(leading[1])) { size = packSize(leading[1]); rest = rest.slice(leading[0].length).trim(); }
+
+
+
+
+
+
+
+      if (!size) {                                   // pack size may trail the food name
+
+
+
+
+
+
+
+        const trailing = rest.match(/\(([^)]*)\)\s*$/);
+
+
+
+
+
+
+
+        if (trailing && packSize(trailing[1])) { size = packSize(trailing[1]); rest = rest.slice(0, trailing.index).trim(); }
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+      return {
+
+
+
+
+
+
+
+        qty:  size ? `${formatQtyNum(n)} × ${size} ${container}` : `${formatQtyNum(n)} ${pluralUnit(container, n)}`,
+
+
+
+
+
+
+
+        item: rest,
+
+
+
+
+
+
+
+      };
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // "1 cup shredded parmesan cheese", "4 cloves garlic, minced", "2 eggs"
+
+
+
+
+
+
+
+    m = text.match(new RegExp(`^\\s*(${NUM_RE})\\s*([a-zA-Z]+\\.?)?\\s*`));
+
+
+
+
+
+
+
+    if (m) {
+
+
+
+
+
+
+
+      const numText = m[1].trim();
+
+
+
+
+
+
+
+      const word    = (m[2] || '').replace(/\.$/, '').toLowerCase();
+
+
+
+
+
+
+
+      if (word && isMeasureWord(word) && !/^(?:of)$/.test(word)) {
+
+
+
+
+
+
+
+        return { qty: `${numText} ${word}`, item: text.slice(m[0].length).trim() };
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+      // Not a unit — the number counts the food itself ("2 eggs", "1 red onion")
+
+
+
+
+
+
+
+      const rest = text.slice(m[1].length).trim().replace(/^of\s+/i, '');
+
+
+
+
+
+
+
+      return { qty: numText, item: rest };
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    return { qty: String(qty || ''), item: text };
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // ── Combining quantities across recipes ──────────────
 
 
 
@@ -11222,6 +12662,174 @@
 
 
 
+  // Units that describe "however much you like" rather than an amount.
+
+
+
+
+
+
+
+  const VAGUE_UNITS = new Set(['pinch','dash','splash','drizzle','handful','sprinkle','squeeze','knob']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const VAGUE_QTY_RE = /^(to taste|as needed|as required|as desired|to serve|to garnish|for serving|for garnish|optional|a pinch|pinch|a dash|dash|splash|a splash|handful|a handful|some|a few|few|per package|per packet|to top|drizzle|a drizzle|—|-)\b/i;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // "2 × 14 oz can" / "14 oz can" / "2 x 400g cans" — a packaged product where the
+
+
+
+
+
+
+
+  // pack size matters, so it's tallied by pack rather than converted to ounces.
+
+
+
+
+
+
+
+  function parsePackaged(q) {
+
+
+
+
+
+
+
+    const m = foldFractions(q).match(new RegExp(
+
+
+
+
+
+
+
+      `^(?:(\\d+(?:\\.\\d+)?)\\s*[×x]\\s*)?(\\d+(?:\\.\\d+)?)\\s*(oz|ounces?|lb|pounds?|g|grams?|kg|ml|l|liters?|litres?)\\s*(${CONTAINER_RE})\\b`, 'i'));
+
+
+
+
+
+
+
+    if (!m) return null;
+
+
+
+
+
+
+
+    const unit = UNIT_ALIASES[m[3].toLowerCase()] || m[3].toLowerCase();
+
+
+
+
+
+
+
+    const size = WEIGHT_IN_OZ[unit]
+
+
+
+
+
+
+
+      ? packWeight(parseFloat(m[2]) * WEIGHT_IN_OZ[unit])
+
+
+
+
+
+
+
+      : `${formatQtyNum(parseFloat(m[2]))} ${unit}`;
+
+
+
+
+
+
+
+    return { count: m[1] ? parseFloat(m[1]) : 1, desc: `${size} ${containerWord(m[4], 'can')}` };
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Add up every quantity recorded for one shopping item. Amounts that measure
+
+
+
+
+
+
+
+  // the same way are summed (all volumes together, all weights together); the
+
+
+
+
+
+
+
+  // rest are kept side by side so nothing is dropped.
+
+
+
+
+
+
+
   function getShoppingDisplay(itemName, qtys) {
 
 
@@ -11230,7 +12838,7 @@
 
 
 
-    // Packaged items like "1 × 14 oz can" — sum the counts, keep the unit description
+    const totals   = { volume: 0, weight: 0, count: 0 };
 
 
 
@@ -11238,7 +12846,7 @@
 
 
 
-    const packaged = qtys.filter(q => /×/.test(q));
+    const seenKind = {};
 
 
 
@@ -11246,7 +12854,7 @@
 
 
 
-    if (packaged.length) {
+    const unitTotals = {};   // "clove" → 4
 
 
 
@@ -11254,7 +12862,7 @@
 
 
 
-      let totalCount = 0;
+    const packTotals = {};   // "14 oz can" → 2
 
 
 
@@ -11262,7 +12870,7 @@
 
 
 
-      packaged.forEach(q => { const m = q.match(/^(\d+)\s*×/); totalCount += m ? parseInt(m[1]) : 1; });
+    const texts = [];
 
 
 
@@ -11270,7 +12878,6 @@
 
 
 
-      const unitPart = packaged[0].replace(/^\d+\s*×\s*/, '').trim();
 
 
 
@@ -11278,7 +12885,248 @@
 
 
 
-      return totalCount === 1 ? unitPart : `${totalCount} × ${unitPart}`;
+
+    (qtys || []).forEach(raw => {
+
+
+
+
+
+
+
+      const q = String(raw || '').trim();
+
+
+
+
+
+
+
+      if (!q || q === '—' || q === '-') return;
+
+
+
+
+
+
+
+      if (VAGUE_QTY_RE.test(q)) { texts.push(q.toLowerCase()); return; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      const pack = parsePackaged(q);
+
+
+
+
+
+
+
+      if (pack) { packTotals[pack.desc] = (packTotals[pack.desc] || 0) + pack.count; return; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      const { num, unit } = parseQtyNum(q);
+
+
+
+
+
+
+
+      if (num === null) { texts.push(q.toLowerCase()); return; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      if (VOLUME_IN_TSP[unit] != null)      { totals.volume += num * VOLUME_IN_TSP[unit]; seenKind.volume = true; }
+
+
+
+
+
+
+
+      else if (WEIGHT_IN_OZ[unit] != null)  { totals.weight += num * WEIGHT_IN_OZ[unit];  seenKind.weight = true; }
+
+
+
+
+
+
+
+      else if (unit === 'each' || !unit)    { totals.count  += num;                        seenKind.count  = true; }
+
+
+
+
+
+
+
+      else if (VAGUE_UNITS.has(unit))       { texts.push(pluralUnit(unit, num)); }
+
+
+
+
+
+
+
+      else                                  { unitTotals[unit] = (unitTotals[unit] || 0) + num; }
+
+
+
+
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const parts = [];
+
+
+
+
+
+
+
+    Object.entries(packTotals).forEach(([desc, n]) =>
+
+
+
+
+
+
+
+      parts.push(n === 1 ? desc : `${formatQtyNum(n)} × ${desc}`));
+
+
+
+
+
+
+
+    if (seenKind.count)  parts.push(countDisplay(itemName, totals.count));
+
+
+
+
+
+
+
+    if (seenKind.weight) parts.push(ozToDisplay(totals.weight));
+
+
+
+
+
+
+
+    if (seenKind.volume) parts.push(tspToDisplay(totals.volume));
+
+
+
+
+
+
+
+    Object.entries(unitTotals).forEach(([unit, n]) =>
+
+
+
+
+
+
+
+      parts.push(`${formatQtyNum(n)} ${pluralUnit(unit, n)}`));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if (!parts.length) {
+
+
+
+
+
+
+
+      const unique = [...new Set(texts)];
+
+
+
+
+
+
+
+      if (unique.some(t => /to taste/.test(t))) return 'to taste';
+
+
+
+
+
+
+
+      return unique.length ? unique.slice(0, 2).join(' + ') : '—';
 
 
 
@@ -11287,238 +13135,6 @@
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    const sane = qtys.filter(q => !/^(to taste|as needed|pinch|dash|—)/i.test(q.trim()));
-
-
-
-
-
-
-
-    if (!sane.length) return qtys[0] || '—';
-
-
-
-
-
-
-
-    const groups = {}, skipped = [];
-
-
-
-
-
-
-
-    sane.forEach(q => {
-
-
-
-
-
-
-
-      let { num, unit } = parseQtyNum(q);
-
-
-
-
-
-
-
-      if (num === null) { skipped.push(q); return; }
-
-
-
-
-
-
-
-      // a "medium"/"large"/"small" item is still one item to buy — count them together
-
-
-
-
-
-
-
-      if (unit === 'medium' || unit === 'large' || unit === 'small') unit = 'each';
-
-
-
-
-
-
-
-      groups[unit] = (groups[unit] || 0) + num;
-
-
-
-
-
-
-
-    });
-
-
-
-
-
-
-
-    if (!Object.keys(groups).length) return qtys.join(' + ');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    const nameLower = itemName.toLowerCase();
-
-
-
-
-
-
-
-    const parts = Object.entries(groups).map(([unit, total]) => {
-
-
-
-
-
-
-
-      if (unit === 'each') {
-
-
-
-
-
-
-
-        // apply a shopping hint to the combined count (e.g. "1 bag"), else just the number
-
-
-
-
-
-
-
-        for (const hint of SHOPPING_HINTS) {
-
-
-
-
-
-
-
-          if (hint.match.some(m => nameLower.includes(m))) {
-
-
-
-
-
-
-
-            const h = hint.fn(Math.ceil(total));
-
-
-
-
-
-
-
-            if (h) return h;
-
-
-
-
-
-
-
-          }
-
-
-
-
-
-
-
-        }
-
-
-
-
-
-
-
-        return formatQtyNum(total);
-
-
-
-
-
-
-
-      }
-
-
-
-
-
-
-
-      if (unit === 'oz') return ozToDisplay(total);
-
-
-
-
-
-
-
-      return `${formatQtyNum(total)} ${unit}`;
-
-
-
-
-
-
-
-    });
-
-
-
-
-
-
-
-    if (skipped.length) parts.push(skipped[0]);
 
 
 
@@ -11550,7 +13166,111 @@
 
 
 
+  // A plain count, nudged into how you'd actually buy it ("1 bunch", "1 dozen").
+
+
+
+
+
+
+
+  function countDisplay(itemName, total) {
+
+
+
+
+
+
+
+    const nameLower = (itemName || '').toLowerCase();
+
+
+
+
+
+
+
+    for (const hint of SHOPPING_HINTS) {
+
+
+
+
+
+
+
+      if (hint.match.some(m => nameLower.includes(m))) {
+
+
+
+
+
+
+
+        const h = hint.fn(Math.ceil(total));
+
+
+
+
+
+
+
+        if (h) return h;
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    return formatQtyNum(total);
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // ── Shopping List ─────────────────────────────────────
+
+
+
+
+
+
+
+
 
 
 
@@ -11575,6 +13295,14 @@
 
 
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -11607,6 +13335,14 @@
 
 
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -11654,7 +13390,119 @@
 
 
 
-  const PREP_WORDS = /[,\s]+(sliced|diced|chopped|minced|crushed|peeled|grated|shredded|julienned|halved|quartered|cubed|crumbled|mashed|trimmed|stemmed|seeded|deseeded|pitted|zested|juiced|squeezed|beaten|whisked|softened|melted|divided|separated|cut|broken|snapped|shaved|wedges|wedge|rounds|slices|warmed|chilled|torn|rinsed|drained|thawed|frozen|fresh|dried|cooked|raw|boiled|hard-boiled|soft-boiled|fried|poached|scrambled|thinly|roughly|finely|coarsely|lightly|well|about|optional|garnish|lengthways|lengthwise|to garnish|for garnish|for serving|to serve)\b.*/gi;
+  // How an ingredient is prepared — never part of what you put in the basket.
+
+
+
+
+
+
+
+  // Words that change the product itself (ground, smoked, toasted, roasted,
+
+
+
+
+
+
+
+  // salted, whole) are deliberately NOT here.
+
+
+
+
+
+
+
+  const PREP_WORDS_LIST = [
+
+
+
+
+
+
+
+    'sliced','diced','chopped','minced','crushed','peeled','grated','shredded','julienned','halved',
+
+
+
+
+
+
+
+    'quartered','cubed','crumbled','mashed','trimmed','stemmed','seeded','deseeded','pitted','zested',
+
+
+
+
+
+
+
+    'juiced','squeezed','beaten','whisked','softened','melted','divided','separated','cut','broken',
+
+
+
+
+
+
+
+    'snapped','shaved','torn','rinsed','drained','undrained','thawed','warmed','chilled','packed',
+
+
+
+
+
+
+
+    'cooked','uncooked','boiled','hard-boiled','soft-boiled','fried','poached','scrambled','steamed',
+
+
+
+
+
+
+
+    'thinly','thickly','roughly','finely','coarsely','lightly','freshly','well','about','optional',
+
+
+
+
+
+
+
+    'deveined','shelled','husked','scrubbed','removed','discarded','reserved','defrosted','sifted',
+
+
+
+
+
+
+
+    'spooned','leveled','levelled','more','extra',
+
+
+
+
+
+
+
+    'plus','preferably','wedges','wedge','rounds','slices','lengthways','lengthwise','garnish',
+
+
+
+
+
+
+
+  ];
+
+
+
+
+
+
+
+  const PREP_ALT = PREP_WORDS_LIST.join('|');
 
 
 
@@ -11670,7 +13518,7 @@
 
 
 
-  // Leading words that describe size/freshness/cooking-state but not what you buy
+  // A trailing clause that starts with a prep word describes the prep, e.g.
 
 
 
@@ -11678,7 +13526,79 @@
 
 
 
-  const LEADING_QUALIFIERS = /^\s*(baby|fresh|large|small|medium|ripe|lean|smooth|crunchy|boiled|hard-boiled|soft-boiled|fried|poached|scrambled)\s+/;
+  // "carrots, peeled and cut into sticks" → carrots.
+
+
+
+
+
+
+
+  const TRAILING_PREP = new RegExp(`[,;]\\s*(?:${PREP_ALT})\\b.*$`, 'i');
+
+
+
+
+
+
+
+  // …and one that only ends in a prep word: "peppers, seeds and ribs removed".
+
+
+
+
+
+
+
+  const TRAILING_PREP_END = new RegExp(`[,;]\\s*[^,;]*\\b(?:${PREP_ALT})\\s*$`, 'i');
+
+
+
+
+
+
+
+  // Usage clauses: "…, for the pan", "…, to serve", "… per person".
+
+
+
+
+
+
+
+  const USAGE_CLAUSE  = new RegExp(`[,;(]?\\s*\\b(?:for|to serve|to garnish|to taste|to top|to finish|per|plus)\\b.*$`, 'i');
+
+
+
+
+
+
+
+  // Leading words that describe size/freshness/prep but not what you buy.
+
+
+
+
+
+
+
+  const LEADING_QUALIFIERS = new RegExp(
+
+
+
+
+
+
+
+    `^\\s*(?:baby|fresh|ripe|lean|extra-lean|smooth|crunchy|boneless|skinless|jumbo|extra-large|` +
+
+
+
+
+
+
+
+    `large|small|medium|${PREP_ALT})\\s+`, 'i');
 
 
 
@@ -11702,6 +13622,22 @@
 
 
 
+  const IRREGULAR_PLURALS = { leaves:'leaf', loaves:'loaf', halves:'half', knives:'knife', shelves:'shelf' };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   function singularize(w) {
 
 
@@ -11710,7 +13646,7 @@
 
 
 
-    if (w.length <= 3) return w;
+    if (!w || w.length <= 3) return w;
 
 
 
@@ -11718,7 +13654,15 @@
 
 
 
-    if (/(ss|us|is|os)$/.test(w)) return w;          // asparagus, hummus, couscous, molasses
+    if (IRREGULAR_PLURALS[w]) return IRREGULAR_PLURALS[w];
+
+
+
+
+
+
+
+    if (/(ss|us|is|os)$/.test(w)) return w;            // asparagus, hummus, couscous, molasses
 
 
 
@@ -11727,6 +13671,14 @@
 
 
     if (/ies$/.test(w)) return w.replace(/ies$/, 'y'); // berries → berry
+
+
+
+
+
+
+
+    if (/(ch|sh|x)es$/.test(w)) return w.replace(/es$/, ''); // boxes → box, dishes → dish
 
 
 
@@ -11774,7 +13726,7 @@
 
 
 
-  // Strip qty/prep/usage descriptors down to the base ingredient, but keep plural form
+  // Strip qty/prep/usage descriptors down to the base ingredient, but keep plural
 
 
 
@@ -11782,7 +13734,7 @@
 
 
 
-  // (used for the display label so the header reads naturally, e.g. "Carrots").
+  // form (used for the display label so the header reads naturally, e.g. "Carrots").
 
 
 
@@ -11798,7 +13750,7 @@
 
 
 
-    let s = name.toLowerCase();
+    let s = decodeEntities(String(name || '')).toLowerCase();
 
 
 
@@ -11806,7 +13758,7 @@
 
 
 
-    s = s.replace(/^\s*\d+([.\/]\d+)?\s+/, ''); // drop a leading quantity a user may have typed ("2 eggs")
+    s = s.replace(/[*|]+/g, ' ');
 
 
 
@@ -11814,7 +13766,7 @@
 
 
 
-    s = s.replace(/\(.*?\)/g, ' ');        // strip (garnish), (optional), (about 2 tbsp) etc.
+    s = s.replace(/^\s*\d+([.\/]\d+)?\s+/, '');   // a leading count the split didn't take ("2 eggs")
 
 
 
@@ -11822,7 +13774,7 @@
 
 
 
-    s = s.replace(/\bfor\b.*$/, '');       // drop usage phrases: "for toast", "for the pan", "for squeezing"
+    const noParens = stripParens(s);           // strip (garnish), (optional), (about 2 tbsp) etc.
 
 
 
@@ -11830,7 +13782,7 @@
 
 
 
-    s = s.replace(/\bper\b.*$/, '');       // drop "per person", "per serve"
+    s = noParens.trim() ? noParens : s.replace(/[()]/g, ' ');   // …unless that's the whole name
 
 
 
@@ -11838,7 +13790,7 @@
 
 
 
-    s = s.replace(/\bplus\b.*$/, '');      // drop "plus more", "plus extra"
+    s = trimClause(s, TRAILING_PREP);          // ", finely chopped", "; peeled and diced"
 
 
 
@@ -11846,7 +13798,7 @@
 
 
 
-    s = s.replace(PREP_WORDS, '');         // strip ", sliced", " halved …", "divided", "cut into chunks", etc.
+    s = trimClause(s, TRAILING_PREP_END);      // ", seeds and ribs removed"
 
 
 
@@ -11854,7 +13806,95 @@
 
 
 
-    // drop leading size/freshness/state words so "baby bok choy" == "bok choy", "boiled eggs" == "eggs"
+    s = trimClause(s, USAGE_CLAUSE);           // "for toast", "per person", "plus extra"
+
+
+
+
+
+
+
+    s = stripAlternative(s);                   // "almond milk or oat milk" → almond milk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // A stray unit at the front means the quantity wasn't split off cleanly
+
+
+
+
+
+
+
+    // ("handful of baby spinach", "pinch of sea salt").
+
+
+
+
+
+
+
+    const words = s.trim().split(/\s+/);
+
+
+
+
+
+
+
+    while (words.length > 1 && (isMeasureWord(words[0]) || /^\d+([.\/]\d+)?$/.test(words[0])
+
+
+
+
+
+
+
+                                || words[0] === 'of' || words[0] === 'from')) words.shift();
+
+
+
+
+
+
+
+    s = words.join(' ');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Drop leading size/freshness/prep words: "baby bok choy" → "bok choy",
+
+
+
+
+
+
+
+    // "1 cup shredded parmesan cheese" (already split) → "parmesan cheese".
 
 
 
@@ -11870,7 +13910,7 @@
 
 
 
-    do { prev = s; s = s.replace(LEADING_QUALIFIERS, ''); } while (s !== prev);
+    do {
 
 
 
@@ -11878,7 +13918,319 @@
 
 
 
-    return s.replace(/[,;.\s]+$/, '').replace(/\s+/g, ' ').trim();
+      prev = s;
+
+
+
+
+
+
+
+      s = trimClause(s, LEADING_QUALIFIERS);
+
+
+
+
+
+
+
+      s = trimClause(s, /^\s*(?:and|&|,)\s+/);   // "peeled and deveined shrimp" → "shrimp"
+
+
+
+
+
+
+
+    } while (s !== prev);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return s.replace(/^[,;.\s]+|[,;.\s]+$/g, '').replace(/\s+/g, ' ').trim();
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Imported recipes carry HTML entities ("&nbsp;", "&#8217;") in their text.
+
+
+
+
+
+
+
+  function decodeEntities(str) {
+
+
+
+
+
+
+
+    return String(str || '')
+
+
+
+
+
+
+
+      .replace(/&nbsp;?/gi, ' ')
+
+
+
+
+
+
+
+      .replace(/&amp;/gi, '&')
+
+
+
+
+
+
+
+      .replace(/&(?:#8217|#39|rsquo|lsquo);/gi, "'")
+
+
+
+
+
+
+
+      .replace(/&(?:#8211|#8212|ndash|mdash);/gi, '-')
+
+
+
+
+
+
+
+      .replace(/&frac12;/gi, '½').replace(/&frac14;/gi, '¼').replace(/&frac34;/gi, '¾')
+
+
+
+
+
+
+
+      .replace(/&[a-z]+\d*;/gi, ' ')
+
+
+
+
+
+
+
+      .replace(/&#\d+;/g, ' ');
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Remove parentheticals, innermost first so nested notes leave nothing behind.
+
+
+
+
+
+
+
+  function stripParens(s) {
+
+
+
+
+
+
+
+    let prev, out = String(s || '');
+
+
+
+
+
+
+
+    do { prev = out; out = out.replace(/\([^()]*\)/g, ' '); } while (out !== prev);
+
+
+
+
+
+
+
+    return out.replace(/[()]/g, ' ').replace(/\s+/g, ' ');
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // "lactose-free milk or almond milk" → "lactose-free milk" (same thing, two ways),
+
+
+
+
+
+
+
+  // but "chicken or seafood broth" is left alone — dropping "broth" would lose the food.
+
+
+
+
+
+
+
+  function stripAlternative(s) {
+
+
+
+
+
+
+
+    const m = s.match(/^(.*?\S)\s*,?\s+or\s+(\S.*)$/i);
+
+
+
+
+
+
+
+    if (!m) return s;
+
+
+
+
+
+
+
+    const headOf = t => (t.trim().split(/\s+/).pop() || '');
+
+
+
+
+
+
+
+    return headOf(m[1]) && headOf(m[1]) === headOf(m[2]) ? m[1].trim() : s;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Apply a clause-stripping pattern, but never let it delete the whole name.
+
+
+
+
+
+
+
+  function trimClause(s, re) {
+
+
+
+
+
+
+
+    const out = s.replace(re, ' ').replace(/\s+/g, ' ').trim();
+
+
+
+
+
+
+
+    return out ? out : s;
 
 
 
@@ -12014,7 +14366,7 @@
 
 
 
-      .replace(/\band\b/g, ' ')
+      .replace(/\b(and|or)\b/g, ' ')
 
 
 
@@ -12182,7 +14534,7 @@
 
 
 
-    if (/\bfrozen\b/.test(itemMain))            return 'frozen';
+    if (/\bfrozen\b/.test(itemMain))             return 'frozen';
 
 
 
@@ -12198,7 +14550,7 @@
 
 
 
-    if (/\bjarred\b/.test(itemMain))            return 'jarred';
+    if (/\bjarred\b/.test(itemMain))             return 'jarred';
 
 
 
@@ -12206,7 +14558,7 @@
 
 
 
-    if (/\bpickled\b/.test(itemMain))           return 'pickled';
+    if (/\bpickled\b/.test(itemMain))            return 'pickled';
 
 
 
@@ -12262,7 +14614,103 @@
 
 
 
+    { canon: 'garlic',       re: /^(?:garlic cloves?|cloves? (?:of )?garlic|garlic bulbs?|garlic)$/ },
+
+
+
+
+
+
+
+    { canon: 'olive oil',    re: /^(?:extra[- ]virgin olive oil|evoo|olive oil)$/ },
+
+
+
+
+
+
+
+    { canon: 'chickpeas',    re: /^(?:chickpeas?|garbanzo beans?)$/ },
+
+
+
+
+
+
+
+    { canon: 'cilantro',     re: /^(?:cilantro|fresh coriander|coriander leaves|cilantro leaves)$/ },
+
+
+
+
+
+
+
+    { canon: 'bell peppers', re: /^(?:bell peppers?|capsicums?)$/ },
+
+
+
+
+
+
+
+    { canon: 'zucchini',     re: /^(?:zucchinis?|courgettes?)$/ },
+
+
+
+
+
+
+
+    { canon: 'eggplant',     re: /^(?:eggplants?|aubergines?)$/ },
+
+
+
+
+
+
+
+    { canon: 'shrimp',       re: /^(?:shrimps?|prawns?)$/ },
+
+
+
+
+
+
+
+    { canon: 'ground beef',  re: /^(?:ground beef|beef mince|minced beef)$/ },
+
+
+
+
+
+
+
+    { canon: 'ground turkey',re: /^(?:ground turkey|turkey mince|minced turkey)$/ },
+
+
+
+
+
+
+
+    { canon: 'heavy cream',  re: /^(?:heavy (?:whipping )?cream|double cream|thickened cream)$/ },
+
+
+
+
+
+
+
   ];
+
+
+
+
+
+
+
+
 
 
 
@@ -12342,7 +14790,7 @@
 
 
 
-    const raw  = item.toLowerCase().replace(/\b(fresh|canned|tinned|frozen|dried|jarred|pickled)\s+or\s+(fresh|canned|tinned|frozen|dried|jarred|pickled)\b/g, '$1');
+    const raw  = String(item || '').toLowerCase().replace(/\b(fresh|canned|tinned|frozen|dried|jarred|pickled)\s+or\s+(fresh|canned|tinned|frozen|dried|jarred|pickled)\b/g, '$1');
 
 
 
@@ -12358,7 +14806,7 @@
 
 
 
-    let form = ingredientForm(main, (qty || '').toLowerCase());
+    let form = ingredientForm(main, String(qty || '').toLowerCase());
 
 
 
@@ -12407,6 +14855,14 @@
 
 
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -12582,7 +15038,7 @@
 
 
 
-    return name
+    return String(name || '')
 
 
 
@@ -12607,6 +15063,646 @@
 
 
       .trim();
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Link-only recipes carry a placeholder line instead of real ingredients.
+
+
+
+
+
+
+
+  function isRecipePlaceholder(item, qty) {
+
+
+
+
+
+
+
+    if (String(qty || '').trim()) return false;
+
+
+
+
+
+
+
+    return /see the original recipe|full recipe lives|full ingredient list/i.test(String(item || ''));
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Section headings inside an ingredient list ("For the dough:", "Per burrito:")
+
+
+
+
+
+
+
+  // are not things to buy.
+
+
+
+
+
+
+
+  function isSectionHeading(item, qty) {
+
+
+
+
+
+
+
+    const t = String(item || '').trim();
+
+
+
+
+
+
+
+    if (!t) return true;
+
+
+
+
+
+
+
+    const q = String(qty || '').trim();
+
+
+
+
+
+
+
+    if (q && q !== '—' && q !== '-') return false;
+
+
+
+
+
+
+
+    return /:\s*$/.test(t) || /^(?:for the|for each|per)\b[^:]*:?$/i.test(t);
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Every ingredient of every recipe planned this week, merged into one row per
+
+
+
+
+
+
+
+  // thing to buy. Returns the rows plus anything that couldn't be expanded into
+
+
+
+
+
+
+
+  // ingredients, so the list can still mention it.
+
+
+
+
+
+
+
+  function collectShoppingItems(days) {
+
+
+
+
+
+
+
+    const ingredientMap = {};
+
+
+
+
+
+
+
+    const customMeals   = [];
+
+
+
+
+
+
+
+    const missing       = [];
+
+
+
+
+
+
+
+    const noIngredients = [];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    days.forEach(d => {
+
+
+
+
+
+
+
+      MEAL_TYPES.forEach(m => {
+
+
+
+
+
+
+
+        const meal = meals[`${d.key}-${m.id}`];
+
+
+
+
+
+
+
+        if (!meal) return;
+
+
+
+
+
+
+
+        if (meal.type !== 'recipe') {
+
+
+
+
+
+
+
+          if (meal.text && !customMeals.includes(meal.text)) customMeals.push(meal.text);
+
+
+
+
+
+
+
+          return;
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+        const recipe = getAllRecipes().find(r => r.id === meal.id);
+
+
+
+
+
+
+
+        if (!recipe) { if (!missing.includes(meal.id)) missing.push(meal.id); return; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        let added = 0;
+
+
+
+
+
+
+
+        (recipe.ingredients || []).forEach(ing => {
+
+
+
+
+
+
+
+          if (!ing || typeof ing.item !== 'string') return;
+
+
+
+
+
+
+
+          if (ing.item === '—' || isSectionHeading(ing.item, ing.qty)) return;
+
+
+
+
+
+
+
+          if (isRecipePlaceholder(ing.item, ing.qty)) return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          const split = splitEmbeddedQty(ing.qty, ing.item);
+
+
+
+
+
+
+
+          if (!split.item) return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          const { key, label } = shoppingIdentity(split.item, split.qty);
+
+
+
+
+
+
+
+          // Never drop a line: fall back to the ingredient text as written.
+
+
+
+
+
+
+
+          const fallback = cleanIngredientName(split.item) || split.item.replace(/\s+/g, ' ').trim()
+
+
+
+
+
+
+
+                        || cleanIngredientName(ing.item)   || String(ing.item).trim();
+
+
+
+
+
+
+
+          const k   = key   || fallback.toLowerCase();
+
+
+
+
+
+
+
+          const lab = label || prettyIngredientName(fallback);
+
+
+
+
+
+
+
+          if (!k) return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          if (!ingredientMap[k]) {
+
+
+
+
+
+
+
+            ingredientMap[k] = { name: lab, lines: [] };
+
+
+
+
+
+
+
+          } else if (/s$/.test(lab) && !/s$/.test(ingredientMap[k].name)) {
+
+
+
+
+
+
+
+            ingredientMap[k].name = lab;   // prefer a plural label ("Carrots")
+
+
+
+
+
+
+
+          }
+
+
+
+
+
+
+
+          ingredientMap[k].lines.push({
+
+
+
+
+
+
+
+            qty:    prettyQtyText(convertGrams(split.qty || '')),
+
+
+
+
+
+
+
+            recipe: recipe.name,
+
+
+
+
+
+
+
+          });
+
+
+
+
+
+
+
+          added++;
+
+
+
+
+
+
+
+        });
+
+
+
+
+
+
+
+        if (!added && !noIngredients.includes(recipe.name)) noIngredients.push(recipe.name);
+
+
+
+
+
+
+
+      });
+
+
+
+
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Sort: ingredients with quantities first, then "to taste" type items
+
+
+
+
+
+
+
+    const items = Object.values(ingredientMap).sort((a, b) => {
+
+
+
+
+
+
+
+      const aHasQty = a.lines.some(l => l.qty && !VAGUE_QTY_RE.test(l.qty.trim()));
+
+
+
+
+
+
+
+      const bHasQty = b.lines.some(l => l.qty && !VAGUE_QTY_RE.test(l.qty.trim()));
+
+
+
+
+
+
+
+      if (aHasQty && !bHasQty) return -1;
+
+
+
+
+
+
+
+      if (!aHasQty && bHasQty) return 1;
+
+
+
+
+
+
+
+      return a.name.localeCompare(b.name);
+
+
+
+
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return { items, customMeals, missing, noIngredients };
 
 
 
@@ -12670,7 +15766,6 @@
 
 
 
-    const ingredientMap = {};
 
 
 
@@ -12679,270 +15774,7 @@
 
 
 
-
-
-
-
-
-
-
-    days.forEach(d => {
-
-
-
-
-
-
-
-      MEAL_TYPES.forEach(m => {
-
-
-
-
-
-
-
-        const meal = meals[`${d.key}-${m.id}`];
-
-
-
-
-
-
-
-        if (!meal || meal.type !== 'recipe') return;
-
-
-
-
-
-
-
-        const recipe = getAllRecipes().find(r => r.id === meal.id);
-
-
-
-
-
-
-
-        if (!recipe) return;
-
-
-
-
-
-
-
-        (recipe.ingredients || []).forEach(ing => {
-
-
-
-
-
-
-
-          if (ing.item === '—') return;
-
-
-
-
-
-
-
-          const { key, label } = shoppingIdentity(ing.item, ing.qty);
-
-
-
-
-
-
-
-          const k   = key   || cleanIngredientName(ing.item).toLowerCase();
-
-
-
-
-
-
-
-          const lab = label || prettyIngredientName(cleanIngredientName(ing.item));
-
-
-
-
-
-
-
-          if (!ingredientMap[k]) {
-
-
-
-
-
-
-
-            ingredientMap[k] = { name: lab, lines: [] };
-
-
-
-
-
-
-
-          } else if (/s$/.test(lab) && !/s$/.test(ingredientMap[k].name)) {
-
-
-
-
-
-
-
-            ingredientMap[k].name = lab;   // prefer a plural label ("Carrots")
-
-
-
-
-
-
-
-          }
-
-
-
-
-
-
-
-          ingredientMap[k].lines.push({
-
-
-
-
-
-
-
-            qty:    convertGrams(ing.qty || ''),
-
-
-
-
-
-
-
-            recipe: recipe.name,
-
-
-
-
-
-
-
-          });
-
-
-
-
-
-
-
-        });
-
-
-
-
-
-
-
-      });
-
-
-
-
-
-
-
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Sort: ingredients with quantities first, then "to taste" type items
-
-
-
-
-
-
-
-    const items = Object.values(ingredientMap).sort((a, b) => {
-
-
-
-
-
-
-
-      const aHasQty = a.lines.some(l => !/^(to taste|as needed|pinch|dash|—)/i.test(l.qty.trim()));
-
-
-
-
-
-
-
-      const bHasQty = b.lines.some(l => !/^(to taste|as needed|pinch|dash|—)/i.test(l.qty.trim()));
-
-
-
-
-
-
-
-      if (aHasQty && !bHasQty) return -1;
-
-
-
-
-
-
-
-      if (!aHasQty && bHasQty) return 1;
-
-
-
-
-
-
-
-      return a.name.localeCompare(b.name);
-
-
-
-
-
-
-
-    });
-
-
-
-
-
-
-
-
+    const { items, customMeals, missing, noIngredients } = collectShoppingItems(days);
 
 
 
@@ -12982,15 +15814,7 @@
 
 
 
-      const qtys = ing.lines.map(l => l.qty);
-
-
-
-
-
-
-
-      const total = getShoppingDisplay(ing.name, qtys);
+      const total = getShoppingDisplay(ing.name, ing.lines.map(l => l.qty));
 
 
 
@@ -13006,7 +15830,7 @@
 
 
 
-      // Deduplicate recipe lines that are completely identical
+      // Collapse identical recipe lines, but keep a count so a recipe that calls
 
 
 
@@ -13014,7 +15838,7 @@
 
 
 
-      const seen = new Set();
+      // for the same thing twice still shows up as ×2.
 
 
 
@@ -13022,7 +15846,15 @@
 
 
 
-      const uniqueLines = ing.lines.filter(l => {
+      const order = [], byLine = new Map();
+
+
+
+
+
+
+
+      ing.lines.forEach(l => {
 
 
 
@@ -13038,7 +15870,7 @@
 
 
 
-        if (seen.has(k)) return false;
+        if (!byLine.has(k)) { byLine.set(k, { ...l, times: 0 }); order.push(k); }
 
 
 
@@ -13046,7 +15878,7 @@
 
 
 
-        seen.add(k); return true;
+        byLine.get(k).times++;
 
 
 
@@ -13062,6 +15894,7 @@
 
 
 
+      const uniqueLines = order.map(k => byLine.get(k));
 
 
 
@@ -13070,7 +15903,6 @@
 
 
 
-      // Always show which recipe(s) each ingredient is for. Repeat the per-line
 
 
 
@@ -13078,7 +15910,7 @@
 
 
 
-      // quantity only when an item spans more than one recipe (otherwise it just
+      // Always show which recipe(s) each ingredient is for. Repeat the amount
 
 
 
@@ -13086,7 +15918,7 @@
 
 
 
-      // echoes the total).
+      // whenever it adds something — several recipes, a repeat within one recipe,
 
 
 
@@ -13094,7 +15926,7 @@
 
 
 
-      const showLineQty = uniqueLines.length > 1;
+      // or a per-recipe amount that reads differently from the combined total.
 
 
 
@@ -13102,7 +15934,7 @@
 
 
 
-      const breakdownHtml = `<div class="si-breakdown">${uniqueLines.map(l =>
+      const showQty = uniqueLines.length > 1 || uniqueLines.some(l => l.times > 1 || (l.qty || '').trim() !== total);
 
 
 
@@ -13110,7 +15942,7 @@
 
 
 
-        `<div class="si-line">${showLineQty ? `<span class="si-line-qty">${l.qty}</span>` : ''}<span class="si-line-recipe">— ${l.recipe}</span></div>`
+      const breakdownHtml = `<div class="si-breakdown">${uniqueLines.map(l => {
 
 
 
@@ -13118,7 +15950,31 @@
 
 
 
-      ).join('')}</div>`;
+        const qty = showQty ? (l.qty || '').trim() : '';
+
+
+
+
+
+
+
+        const label = qty ? escHtml(qty) + (l.times > 1 ? ` ×${l.times}` : '') : '';
+
+
+
+
+
+
+
+        return `<div class="si-line">${label ? `<span class="si-line-qty">${label}</span>` : ''}<span class="si-line-recipe">— ${escHtml(l.recipe)}</span></div>`;
+
+
+
+
+
+
+
+      }).join('')}</div>`;
 
 
 
@@ -13166,7 +16022,7 @@
 
 
 
-            <span class="si-name">${ing.name}</span>
+            <span class="si-name">${escHtml(ing.name)}</span>
 
 
 
@@ -13174,7 +16030,7 @@
 
 
 
-            <span class="si-total">${total}</span>
+            <span class="si-total">${escHtml(total)}</span>
 
 
 
@@ -13230,7 +16086,95 @@
 
 
 
-    let content = items.length
+    const extras = [];
+
+
+
+
+
+
+
+    if (customMeals.length) {
+
+
+
+
+
+
+
+      extras.push(`<div class="shopping-note"><strong>Also planned (your own meals — no ingredient list):</strong><br>${customMeals.map(escHtml).join(' · ')}</div>`);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    if (noIngredients.length) {
+
+
+
+
+
+
+
+      extras.push(`<div class="shopping-note"><strong>No ingredient list saved for:</strong><br>${noIngredients.map(escHtml).join(' · ')}<br>Open the recipe to see what it needs.</div>`);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    if (missing.length) {
+
+
+
+
+
+
+
+      extras.push(`<div class="shopping-note">${missing.length} planned meal${missing.length > 1 ? 's are' : ' is'} no longer in your recipes, so nothing was added for ${missing.length > 1 ? 'them' : 'it'}.</div>`);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    let content = (items.length || extras.length)
 
 
 
@@ -13270,7 +16214,23 @@
 
 
 
-        items.map((ing, i) => buildItemHtml(ing, i)).join('')
+        `<div class="shopping-count">${items.length} item${items.length === 1 ? '' : 's'} to buy</div>` +
+
+
+
+
+
+
+
+        items.map((ing, i) => buildItemHtml(ing, i)).join('') +
+
+
+
+
+
+
+
+        extras.join('')
 
 
 
@@ -13303,6 +16263,14 @@
 
 
     document.getElementById('shopping-close').onclick = closeAll;
+
+
+
+
+
+
+
+
 
 
 
@@ -13382,6 +16350,14 @@
 
 
 
+
+
+
+
+
+
+
+
     const uncheckBtn = document.getElementById('uncheck-all-btn');
 
 
@@ -13423,6 +16399,14 @@
 
 
     });
+
+
+
+
+
+
+
+
 
 
 
