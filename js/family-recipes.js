@@ -111,6 +111,41 @@ const FAMILY_RECIPES = [
     fodmapNote: 'Family recipe from the Holidays › Thanksgiving section.',
   },
 
+  // ── Added after the OneNote import (saved from the web) ────
+  {
+    id: 'fam-chicken-and-dumplings',
+    name: 'Easy Chicken and Dumplings',
+    emoji: '🥣',
+    category: 'dinner',
+    time: '40 min',
+    serves: 8,
+    difficulty: 'easy',
+    tags: ['comfort food'],
+    source: 'https://thesouthernladycooks.com/chicken-dumplings/',
+    added: '2026-08-22',
+    ingredients: [
+      { qty: '4 cups',        item: 'cooked chicken or turkey, chopped' },
+      { qty: '1 cup',         item: 'celery, chopped' },
+      { qty: '1 (10.5 oz) can', item: 'cream of chicken soup' },
+      { qty: '2 (10.5 oz) cans', item: 'chicken broth' },
+      { qty: '3 cans',        item: 'water (use the empty 10.5 oz soup can to measure)' },
+      { qty: '2 cups',        item: 'self-rising flour' },
+      { qty: '1/4 cup',       item: 'shortening' },
+      { qty: '3/4 cup',       item: 'boiling water, for the dumplings' },
+      { qty: 'to taste',      item: 'salt and black pepper' },
+    ],
+    steps: [
+      'Put the chicken, celery, cream of chicken soup, chicken broth and the 3 cans of water in a soup pot. Bring to a boil and cover.',
+      'Make the dumplings: put the self-rising flour in a large bowl and cut in the shortening with a pastry blender or fork until it looks like coarse crumbs.',
+      'Add the boiling water a little at a time, mixing until you can shape the dough into a ball.',
+      'Roll the dough out about 1/8 inch thick on a floured board. Cut it into strips, then across into squares.',
+      'Uncover the pot and drop in several squares at a time, replacing the lid for about 30 seconds between batches so the broth stays at a boil.',
+      'Once all the dumplings are in, lower the heat and simmer about 20 minutes. Season with salt and pepper.',
+      'For drop dumplings instead: skip the rolling and just pinch off pieces of dough into the broth. Keep the pinches the same size so they all cook through at the same time.',
+    ],
+    fodmapNote: 'Not low-FODMAP as written — the self-rising flour is wheat, the cream of chicken soup carries onion and garlic powder, and 1 cup of celery is well over a low-FODMAP serve. To adapt: use a gluten-free self-rising flour blend, swap the canned soup for garlic-infused oil thickened with cornflour, and cut the celery to about 1/4 cup.',
+  },
+
 ];
 
 // Build a "link card" for a saved web recipe. Each card is tagged with the
