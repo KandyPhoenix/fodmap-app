@@ -1,4 +1,4 @@
-const CACHE = 'fodmap-v82';
+const CACHE = 'fodmap-v83';
 const ASSETS = [
   './',
   './index.html',
@@ -38,7 +38,13 @@ const ASSETS = [
 
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting())
+    caches.open(CACHE)
+      // cache: 'reload' matters. A plain addAll() goes through the browser's
+      // HTTP cache, and GitHub Pages serves everything with max-age=600 — so a
+      // freshly installed cache could be filled with the PREVIOUS version's
+      // files and then serve them as if they were new.
+      .then(c => c.addAll(ASSETS.map(u => new Request(u, { cache: 'reload' }))))
+      .then(() => self.skipWaiting())
   );
 });
 
@@ -51,18 +57,28 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  const url = e.request.url;
   if (e.request.method !== 'GET') return;
-  // Always pass Firebase and CDN requests straight to network
-  if (url.includes('firebase') || url.includes('gstatic.com') || url.includes('googleapis.com')) {
-    return;
-  }
 
-  // Network-first for our own app shell, so a new version shows up on a normal
-  // reload — no hard refresh (Ctrl+Shift+R) needed. Falls back to the cache
-  // when offline, so the app still works without a signal (e.g. in a store).
+  // Only our own files are handled here. Firebase, fonts and anything else
+  // cross-origin goes straight to the network untouched.
+  let sameOrigin = false;
+  try { sameOrigin = new URL(e.request.url).origin === self.location.origin; }
+  catch (err) { return; }
+  if (!sameOrigin) return;
+
+  // Network-first, but revalidating. Passing the request through as-is lets the
+  // browser's HTTP cache answer from its own copy for up to max-age (600s on
+  // GitHub Pages) without ever reaching the network — which is how the app
+  // could open stale from the taskbar and only come good after a manual
+  // refresh. 'no-cache' forces a conditional request instead; the server still
+  // answers 304 when nothing has changed, so this stays cheap.
+  const fresh = new Request(e.request.url, {
+    cache: 'no-cache',
+    credentials: 'same-origin',
+  });
+
   e.respondWith(
-    fetch(e.request)
+    fetch(fresh)
       .then(res => {
         if (res && res.status === 200 && res.type !== 'opaque') {
           const clone = res.clone();
@@ -70,7 +86,11 @@ self.addEventListener('fetch', e => {
         }
         return res;
       })
-      .catch(() => caches.match(e.request).then(cached => cached || caches.match('./index.html')))
+      // Offline, or the network died mid-flight: serve whatever we have. A
+      // navigation with nothing cached for it still gets the app shell.
+      .catch(() => caches.match(e.request).then(cached =>
+        cached || (e.request.mode === 'navigate' ? caches.match('./index.html') : undefined)
+      ))
   );
 });
 
