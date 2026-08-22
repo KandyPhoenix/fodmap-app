@@ -39,5 +39,32 @@
       "purpose": "maskable"
     }
   ],
-  "categories": ["food", "health", "lifestyle"]
+  "categories": [
+    "food",
+    "health",
+    "lifestyle"
+  ],
+  "share_target": {
+    "action": "./clip.html",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "shortcuts": [
+    {
+      "name": "Recipe inbox",
+      "short_name": "Inbox",
+      "description": "See recipes queued to add to the app",
+      "url": "./clip.html",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
 }

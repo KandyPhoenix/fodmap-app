@@ -1,6 +1,6 @@
 ---
 name: add-recipe
-description: Add a recipe to the Our Table FODMAP app from a URL, a screenshot, or pasted text. Use whenever Kandy sends a recipe link or recipe text and wants it in the app — including bare URLs with no instructions, and roundup pages listing several recipes ("13 Slow Cooker Dinners"). Handles scraping, FODMAP assessment, duplicate checks, verification and shipping.
+description: Add a recipe to the Our Table FODMAP app from a URL, a screenshot, pasted text, or the "Send to Our Table" clipper queue. Use whenever Kandy sends a recipe link or recipe text and wants it in the app — including bare URLs with no instructions, roundup pages listing several recipes ("13 Slow Cooker Dinners"), and any request to add her queued, clipped or saved recipes. Handles scraping, FODMAP assessment, duplicate checks, verification and shipping.
 ---
 
 # Add a recipe to the app
@@ -10,6 +10,27 @@ Treat a bare recipe URL as "add this", no confirmation needed.
 
 The finished job is a **merged PR**, not a local edit. She has said *"merge,
 never wait"* — take it all the way through unless she says otherwise.
+
+## 0. The clipper queue
+
+She also has a one-tap clipper (`clip.html`, the "Send to Our Table" bookmarklet
+and Android share target) that queues recipes for later. When she says *"add my
+queued recipes"*, *"add my clipped recipes"* or similar:
+
+```bash
+node .claude/skills/add-recipe/inbox.js          # list what's waiting
+node .claude/skills/add-recipe/inbox.js --urls   # just URLs, to loop over
+```
+
+Work through the queue exactly as if she'd pasted each link. **Only once every
+recipe is added, verified and pushed:**
+
+```bash
+node .claude/skills/add-recipe/inbox.js --clear
+```
+
+Never clear it first — if the run fails partway, the queue is the only record
+of what she wanted. Exit code 5 means nothing is queued; say so and stop.
 
 ## 1. Get the recipe
 
@@ -160,6 +181,10 @@ size). Mention the recipe count so she can see it took.
 ## Reference
 
 - `scrape-recipe.js --json` dumps raw scraped data without app formatting.
+- The clipper queue lives in Firestore at `fodmap/inbox` (project
+  `wellness-tracker-127`), separate from the app's own `fodmap/data` sync doc so
+  a clip can never race the meal planner. `clip.html` writes it, `inbox.js`
+  reads it.
 - Recipe shape: `{ id, name, emoji, category, time, serves, difficulty, tags,
   source, added, ingredients: [{qty, item}], steps: [string], fodmapNote }`
 - `category` is one of `breakfast` `lunch` `dinner` `snacks` `desserts` `sides`.
