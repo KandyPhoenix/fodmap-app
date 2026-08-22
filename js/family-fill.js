@@ -1270,3 +1270,39 @@ const FAMILY_DROP = new Set([
   'fam-c-firstleaf-the-best-wine-the-best-way-you',  // wine club signup
   'fam-c-how-to-paint-melamine-and-laminate-surfa',  // home improvement
 ]);
+
+// Duplicate clips: the same recipe saved twice. The OneNote clipper often
+// mangled the URL on one of the copies (a trailing "-Q"/"Home"/"Get", http
+// instead of https, or a slug alias), so the dedupe-by-source at import
+// couldn't tell they were the same page and both cards survived.
+//
+// Each entry below is dropped in favour of the copy named beside it — kept
+// because it has the recipe fetched from the real page rather than a version
+// written from the title. Recipes that merely SHARE a name but are genuinely
+// different (two unrelated Lemon Bars, two Shrimp Tacos) are not listed here;
+// those keep both cards and are renamed with their source instead.
+const FAMILY_DUPES = new Set([
+  // same page, clipper appended "-Q" to the URL
+  'fam-c-one-pot-creamy-cajun-sausage-pasta', // → fam-cajun-sausage-pasta
+  // identical content, one saved over http and one over https
+  'fam-c-white-chicken-enchilada-pasta-2',    // → fam-c-white-chicken-enchilada-pasta
+  // same page, clipper appended "Home" to the URL
+  'fam-c-mediterranean-style-garlic-shrimp-2',// → fam-c-mediterranean-style-garlic-shrimp
+  // same page, clipper appended "Get" to the URL
+  'fam-c-chicken-and-sweet-potato-bowl',      // → fam-c-chicken-and-sweet-potato-bowl-2
+  // three copies of Emeril's sauce piquante; -3 has the real fetched recipe
+  'fam-c-chicken-sauce-piquante',             // → fam-c-chicken-sauce-piquante-3
+  'fam-c-chicken-sauce-piquante-2',           // → fam-c-chicken-sauce-piquante-3
+  // same Food & Wine article (id 11682637) under two different slugs
+  'fam-c-country-captain-chicken-2',          // → fam-c-country-captain-chicken
+  // Kandy typed this one out in full; the clip is a stub of the same recipe
+  'fam-c-creamy-butter-chicken',              // → fam-t-creamy-butter-chicken
+  // copymethat.com mirror of the ohbiteit.com original
+  'fam-c-hot-fudge-brownie-bread',            // → fam-c-hot-fudge-brownie-bread-2
+  // a third Greek Salad Penne, written from the title with no source; Kandy
+  // already has the Food Network original and her own typed version
+  'fam-x-greek-salad-penne',                  // → fam-t-greek-salad-penne
+  // a fourth copy of Emeril's sauce piquante — The Daily Meal's reprint,
+  // saved with the clipper's raw page title ("… at www.foodnetwork.com")
+  'fam-c-chicken-sauce-piquante-by-emeril-lagasse', // → fam-c-chicken-sauce-piquante-3
+]);

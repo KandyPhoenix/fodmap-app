@@ -13258,6 +13258,10 @@ if (typeof FAMILY_RECIPES !== 'undefined') {
   const seen = new Set(FAMILY_RECIPES.map(r => r.id));
   const seenName = new Set(FAMILY_RECIPES.map(r => (r.name||'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()));
   FAMILY_COOKBOOK.forEach(r => {
+    // Same two drop lists the clip import uses: pages that aren't food, and
+    // recipes already in the collection under another id.
+    if (typeof FAMILY_DROP !== 'undefined' && FAMILY_DROP.has(r.id)) return;
+    if (typeof FAMILY_DUPES !== 'undefined' && FAMILY_DUPES.has(r.id)) return;
     const nn = (r.name||'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
     if (seen.has(r.id) || seenName.has(nn)) return;
     seen.add(r.id); seenName.add(nn);

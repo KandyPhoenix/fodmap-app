@@ -270,6 +270,8 @@ if (typeof FAMILY_CLIPS !== 'undefined') {
   FAMILY_CLIPS.forEach(o => {
     // Pages from the catch-all tabs that aren't food at all (see FAMILY_DROP).
     if (typeof FAMILY_DROP !== 'undefined' && FAMILY_DROP.has(o.id)) return;
+    // The same recipe saved twice under a mangled URL (see FAMILY_DUPES).
+    if (typeof FAMILY_DUPES !== 'undefined' && FAMILY_DUPES.has(o.id)) return;
     const norm = (o.source || '').replace(/\/+$/, '').toLowerCase();
     if (norm && seenSrc.has(norm)) return;
     if (seenIds.has(o.id)) return;
