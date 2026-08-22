@@ -121,30 +121,39 @@ function familyLinkCard(o) {
   const tags = [];
   if (section) tags.push(section);
 
-  // Full recipe content fetched from the source URL (when available) fills in
-  // the card. When nothing could be fetched, fall back to a quick version
-  // written from the title (FAMILY_GENERATED, keyed by id) so the card still
-  // has real ingredients and steps — the original link is always kept too.
+  // Content comes from the first source that actually has it:
+  //   1. FAMILY_FILL  — hand-written fill-ins for cards that never populated
+  //   2. FAMILY_RECIPE_DATA — recipe fetched from the source URL at import
+  //   3. FAMILY_GENERATED   — a quick version written from the title
+  // The original link is always kept on the card either way.
+  const fill = (typeof FAMILY_FILL !== 'undefined') ? FAMILY_FILL[o.id] : null;
+  const fillFull = !!(fill && fill.ingredients && fill.ingredients.length && fill.steps && fill.steps.length);
   const fetched = (o.source && typeof FAMILY_RECIPE_DATA !== 'undefined')
     ? FAMILY_RECIPE_DATA[o.source.replace(/\/+$/, '')] : null;
-  const fetchedFull = !!(fetched && fetched.ingredients && fetched.ingredients.length && fetched.steps && fetched.steps.length);
-  const gen = (!fetchedFull && typeof FAMILY_GENERATED !== 'undefined') ? FAMILY_GENERATED[o.id] : null;
-  const data = fetchedFull ? fetched : gen;
+  const fetchedFull = !fillFull && !!(fetched && fetched.ingredients && fetched.ingredients.length && fetched.steps && fetched.steps.length);
+  const gen = (!fillFull && !fetchedFull && typeof FAMILY_GENERATED !== 'undefined') ? FAMILY_GENERATED[o.id] : null;
+  const data = fillFull ? fill : (fetchedFull ? fetched : gen);
   const hasFull = !!(data && data.ingredients && data.ingredients.length && data.steps && data.steps.length);
-  const usedGen = hasFull && !fetchedFull;
+  // Only the title-derived fallback carries the "quick version" disclaimer —
+  // a fill-in is a real recipe, not a guess from the name.
+  const usedGen = hasFull && !fetchedFull && !fillFull;
 
   const baseNote = o.note
     ? `From your “${section}” section. Your note: “${o.note}”`
     : (section ? `Saved from your “${section}” section.` : 'Saved from your cookbook.');
+  // A fill-in can add its own line (cook's tip, or which roundup it came from).
+  const fillNote = (fillFull && fill.note) ? `${fill.note} ` : '';
   const genNote = usedGen
     ? `✨ A quick version written from the title — ${o.source ? 'tap “View original recipe” below for the original.' : 'the original lives in your OneNote cookbook.'} `
     : '';
 
   return {
     id: o.id,
-    name: o.name,
-    emoji: o.emoji || '🍽️',
-    category: o.category || 'dinner',
+    // A fill-in may rename the card when the saved page title was a roundup
+    // ("Top 10 Muffin Recipes") rather than the name of a dish.
+    name: (fillFull && fill.name) || o.name,
+    emoji: (fillFull && fill.emoji) || o.emoji || '🍽️',
+    category: (fillFull && fill.category) || o.category || 'dinner',
     time: (hasFull && data.time) || '',
     serves: (hasFull && data.serves) || o.serves || 4,
     difficulty: o.difficulty || 'easy',
@@ -159,7 +168,7 @@ function familyLinkCard(o) {
       o.source ? 'Saved web recipe — tap “View original recipe” below for the full ingredients and method.'
                : 'Saved in your OneNote cookbook — the full recipe lives there.',
     ],
-    fodmapNote: genNote + baseNote,
+    fodmapNote: genNote + baseNote + (fillNote ? ` ${fillNote}`.trimEnd() : ''),
   };
 }
 
@@ -224,6 +233,8 @@ if (typeof FAMILY_CLIPS !== 'undefined') {
   const seenSrc = new Set(FAMILY_RECIPES.map(r => (r.source || '').replace(/\/+$/, '').toLowerCase()).filter(Boolean));
   const seenIds = new Set(FAMILY_RECIPES.map(r => r.id));
   FAMILY_CLIPS.forEach(o => {
+    // Pages from the catch-all tabs that aren't food at all (see FAMILY_DROP).
+    if (typeof FAMILY_DROP !== 'undefined' && FAMILY_DROP.has(o.id)) return;
     const norm = (o.source || '').replace(/\/+$/, '').toLowerCase();
     if (norm && seenSrc.has(norm)) return;
     if (seenIds.has(o.id)) return;
