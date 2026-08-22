@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1a9e6e">
+<title>Send to Our Table</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<style>
+  :root{
+    --primary:#1a9e6e; --primary-dark:#157a55; --primary-light:#e8f8f3;
+    --text:#2c3e50; --muted:#7f8c8d; --bg:#f0f5f2; --card:#fff; --border:#e8eeeb;
+    --red:#e74c3c; --yellow:#f39c12;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --primary:#22c47a; --primary-dark:#1a9e6e; --primary-light:#0d2b1a;
+           --text:#e8eeeb; --muted:#9aa8a2; --bg:#111a16; --card:#18231e; --border:#25332c; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:20px 16px 48px;background:var(--bg);color:var(--text);
+       font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
+  .wrap{max-width:640px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 4px;display:flex;align-items:center;gap:9px}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);
+     margin:30px 0 10px;font-weight:700}
+  .sub{color:var(--muted);margin:0 0 22px;font-size:14px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;
+        padding:16px 18px;margin-bottom:12px}
+  .status{text-align:center;padding:34px 20px}
+  .status .icon{font-size:52px;line-height:1;margin-bottom:12px}
+  .status .msg{font-size:19px;font-weight:700;margin-bottom:6px}
+  .status .detail{color:var(--muted);font-size:14px;word-break:break-word}
+  .btn{display:inline-block;background:var(--primary);color:#fff;border:0;border-radius:10px;
+       padding:12px 20px;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;
+       font-family:inherit;margin:6px 6px 0 0}
+  .btn.ghost{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
+  .btn:active{transform:translateY(1px)}
+  .bmk{display:inline-block;background:var(--primary);color:#fff;border-radius:10px;
+       padding:11px 18px;font-weight:700;text-decoration:none;cursor:grab}
+  ol{padding-left:22px;margin:8px 0} li{margin:7px 0}
+  code{background:var(--primary-light);color:var(--primary-dark);padding:2px 6px;
+       border-radius:5px;font-size:13px;word-break:break-all}
+  .queue-item{display:flex;gap:11px;align-items:flex-start;padding:11px 0;
+              border-bottom:1px solid var(--border)}
+  .queue-item:last-child{border-bottom:0}
+  .queue-item .n{color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px;
+                 padding-top:2px;min-width:20px}
+  .queue-item .t{font-weight:600;font-size:14px;word-break:break-word}
+  .queue-item .u{color:var(--muted);font-size:12px;word-break:break-all}
+  .empty{color:var(--muted);text-align:center;padding:22px 0;font-size:14px}
+  textarea{width:100%;min-height:96px;border:1px solid var(--border);border-radius:10px;
+           padding:11px;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
+           background:var(--bg);color:var(--text);resize:vertical}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .note{font-size:13px;color:var(--muted);margin-top:9px}
+  a{color:var(--primary-dark)} @media (prefers-color-scheme:dark){a{color:var(--primary)}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<script>
+// ── Send to Our Table ─────────────────────────────────────────
+// Queues a recipe URL so it can be added to the app later.
+//
+// Two modes:
+//   clip.html?url=…   capture — save the link and confirm
+//   clip.html         hub — show what's queued and how to set the clipper up
+//
+// The capture always happens on THIS page rather than in a bookmarklet on the
+// recipe site, because plenty of sites set a Content-Security-Policy that
+// blocks an outbound fetch from their own page. Our own origin has no such
+// restriction, so the bookmarklet just opens this page and lets it do the work.
+
+var FS_KEY  = 'AIzaSyAxqkJiZL94gR3W5TBPTRNE5AdLyCDwb2g';
+var FS_PATH = 'projects/wellness-tracker-127/databases/(default)/documents';
+var FS_DOC  = FS_PATH + '/fodmap/inbox';
+var FS_COMMIT = 'https://firestore.googleapis.com/v1/' + FS_PATH + ':commit?key=' + FS_KEY;
+var FS_READ   = 'https://firestore.googleapis.com/v1/' + FS_DOC + '?key=' + FS_KEY;
+
+var app = document.getElementById('app');
+var TRACKING = /^(fbclid|gclid|igshid|mc_[a-z]+|utm_[a-z]+|_ga|ref|ref_src|si|share_id|epik|ttclid|msclkid)$/i;
+
+// Strip the tracking junk a share sheet bolts on, keep real query params.
+function cleanUrl(raw) {
+  try {
+    var u = new URL(raw);
+    var keep = new URLSearchParams();
+    u.searchParams.forEach(function (v, k) { if (!TRACKING.test(k)) keep.append(k, v); });
+    u.search = keep.toString() ? '?' + keep.toString() : '';
+    u.hash = '';
+    return u.toString();
+  } catch (e) { return String(raw || '').split('#')[0]; }
+}
+
+// An Android share often sends the URL inside free text rather than as ?url=.
+function urlFromText(t) {
+  var m = String(t || '').match(/https?:\/\/[^\s]+/);
+  return m ? m[0] : '';
+}
+
+function queueRecipe(url, title) {
+  var entry = { mapValue: { fields: {
+    url:     { stringValue: url },
+    title:   { stringValue: title || url },
+    addedAt: { stringValue: new Date().toISOString() }
+  } } };
+  return fetch(FS_COMMIT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ writes: [{
+      update: { name: FS_DOC, fields: {} },
+      updateMask: { fieldPaths: [] },                       // create-if-missing, touch nothing
+      updateTransforms: [{ fieldPath: 'queue', appendMissingElements: { values: [entry] } }]
+    }] })
+  }).then(function (r) {
+    if (!r.ok) throw new Error('Firestore returned ' + r.status);
+    return true;
+  });
+}
+
+function readQueue() {
+  return fetch(FS_READ, { cache: 'no-store' }).then(function (r) {
+    if (r.status === 404) return [];
+    if (!r.ok) throw new Error('Firestore returned ' + r.status);
+    return r.json();
+  }).then(function (d) {
+    if (!d || !d.fields || !d.fields.queue) return [];
+    var vals = (d.fields.queue.arrayValue && d.fields.queue.arrayValue.values) || [];
+    return vals.map(function (v) {
+      var f = v.mapValue.fields || {};
+      return {
+        url: f.url ? f.url.stringValue : '',
+        title: f.title ? f.title.stringValue : '',
+        addedAt: f.addedAt ? f.addedAt.stringValue : ''
+      };
+    });
+  });
+}
+
+function clearQueue() {
+  return fetch('https://firestore.googleapis.com/v1/' + FS_DOC + '?key=' + FS_KEY,
+               { method: 'DELETE' }).then(function (r) {
+    if (!r.ok) throw new Error('Firestore returned ' + r.status);
+    return true;
+  });
+}
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+
+// ── capture mode ──────────────────────────────────────────────
+function showCapture(url, title) {
+  app.innerHTML = '<div class="card status"><div class="icon">🍳</div>' +
+    '<div class="msg">Saving…</div><div class="detail">' + esc(title || url) + '</div></div>';
+
+  queueRecipe(url, title).then(function () {
+    app.innerHTML = '<div class="card status"><div class="icon">✅</div>' +
+      '<div class="msg">Saved to Our Table</div>' +
+      '<div class="detail">' + esc(title || url) + '</div>' +
+      '<div style="margin-top:18px">' +
+        '<a class="btn" href="clip.html">See what\'s queued</a>' +
+        '<button class="btn ghost" onclick="window.close()">Close</button>' +
+      '</div></div>';
+    // Opened as a popup by the bookmarklet: get out of the way on its own.
+    if (window.opener) setTimeout(function () { window.close(); }, 1400);
+  }).catch(function (e) {
+    app.innerHTML = '<div class="card status"><div class="icon">⚠️</div>' +
+      '<div class="msg">Could not save</div>' +
+      '<div class="detail">' + esc(e.message) + '<br><br>' + esc(url) + '</div>' +
+      '<div style="margin-top:18px">' +
+        '<button class="btn" onclick="location.reload()">Try again</button>' +
+        '<a class="btn ghost" href="clip.html">Open the inbox</a>' +
+      '</div></div>';
+  });
+}
+
+// ── hub mode ──────────────────────────────────────────────────
+function bookmarkletSource() {
+  var base = location.href.split('?')[0].split('#')[0];
+  return "javascript:(function(){window.open('" + base +
+    "?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)," +
+    "'ourtable','width=460,height=420');})()";
+}
+
+function showHub() {
+  app.innerHTML =
+    '<h1>🍳 Send to Our Table</h1>' +
+    '<p class="sub">Tap the button on any recipe page and it lands here. ' +
+    'Ask Claude to “add my queued recipes” and they go into the app.</p>' +
+    '<h2>Queued</h2><div class="card" id="q"><div class="empty">Loading…</div></div>' +
+    '<h2>Set it up</h2>' +
+    '<div class="card">' +
+      '<b>On a computer</b>' +
+      '<p class="note">Show your bookmarks bar, then drag this button onto it:</p>' +
+      '<p><a class="bmk" id="bmk" href="#">🍳 Send to Our Table</a></p>' +
+      '<p class="note">Dragging is blocked in some browsers — if so, make a new bookmark by hand ' +
+      'and paste this as the address:</p>' +
+      '<textarea id="src" readonly onclick="this.select()"></textarea>' +
+      '<button class="btn ghost" id="copysrc">Copy the address</button>' +
+    '</div>' +
+    '<div class="card">' +
+      '<b>On an iPhone or iPad</b>' +
+      '<ol>' +
+        '<li>Copy the address above (tap <b>Copy the address</b>).</li>' +
+        '<li>In Safari, bookmark any page — Share → <b>Add Bookmark</b> → Save.</li>' +
+        '<li>Open Bookmarks (open-book icon) → <b>Edit</b> → tap that bookmark.</li>' +
+        '<li>Rename it <b>Send to Our Table</b>, and replace the address by pasting.</li>' +
+      '</ol>' +
+      '<p class="note">Then on any recipe: Bookmarks → <b>Send to Our Table</b>.</p>' +
+    '</div>' +
+    '<div class="card">' +
+      '<b>On Android</b>' +
+      '<p class="note">Install Our Table to your home screen (Chrome menu → <b>Install app</b>). ' +
+      'After that <b>Our Table</b> shows up in the normal Share menu — share a recipe straight to it.</p>' +
+    '</div>' +
+    '<h2>Hand it to Claude</h2>' +
+    '<div class="card">' +
+      '<p class="note" style="margin-top:0">Claude can read the queue directly — just say ' +
+      '<b>“add my queued recipes”</b>. This copies the list if you would rather paste it:</p>' +
+      '<div class="row"><button class="btn" id="copyq">Copy the queue</button>' +
+      '<button class="btn ghost" id="clearq">Clear the queue</button></div>' +
+      '<p class="note" id="hint"></p>' +
+    '</div>';
+
+  document.getElementById('bmk').setAttribute('href', bookmarkletSource());
+  document.getElementById('src').value = bookmarkletSource();
+  document.getElementById('copysrc').onclick = function () {
+    copy(bookmarkletSource(), this, 'Copy the address');
+  };
+
+  var items = [];
+  function paint() {
+    var q = document.getElementById('q');
+    if (!items.length) { q.innerHTML = '<div class="empty">Nothing queued right now.</div>'; return; }
+    q.innerHTML = items.map(function (it, i) {
+      return '<div class="queue-item"><div class="n">' + (i + 1) + '</div><div>' +
+        '<div class="t">' + esc(it.title || it.url) + '</div>' +
+        '<div class="u">' + esc(it.url) + '</div></div></div>';
+    }).join('');
+  }
+
+  readQueue().then(function (list) { items = list; paint(); })
+             .catch(function (e) {
+               document.getElementById('q').innerHTML =
+                 '<div class="empty">Could not load the queue — ' + esc(e.message) + '</div>';
+             });
+
+  document.getElementById('copyq').onclick = function () {
+    if (!items.length) { document.getElementById('hint').textContent = 'Nothing queued to copy.'; return; }
+    var text = 'Please add these recipes to my FODMAP app:\n\n' +
+      items.map(function (it) { return '- ' + it.url + (it.title ? '  (' + it.title + ')' : ''); }).join('\n');
+    copy(text, this, 'Copy the queue');
+  };
+
+  document.getElementById('clearq').onclick = function () {
+    if (!items.length) { document.getElementById('hint').textContent = 'Nothing queued to clear.'; return; }
+    if (!confirm('Clear all ' + items.length + ' queued recipe(s)?')) return;
+    var btn = this; btn.textContent = 'Clearing…';
+    clearQueue().then(function () { items = []; paint(); btn.textContent = 'Clear the queue';
+                                    document.getElementById('hint').textContent = 'Queue cleared.'; })
+                .catch(function (e) { btn.textContent = 'Clear the queue';
+                                      document.getElementById('hint').textContent = 'Could not clear — ' + e.message; });
+  };
+}
+
+function copy(text, btn, label) {
+  var done = function () { btn.textContent = 'Copied ✓'; setTimeout(function () { btn.textContent = label; }, 1600); };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, function () { fallback(text, done); });
+  } else { fallback(text, done); }
+}
+function fallback(text, done) {
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); done(); } catch (e) { prompt('Copy this:', text); }
+  document.body.removeChild(ta);
+}
+
+// ── route ─────────────────────────────────────────────────────
+(function () {
+  var p = new URLSearchParams(location.search);
+  // ?url= from the bookmarklet; ?text=/?title= from an Android share, where the
+  // link can arrive inside either field.
+  var raw = p.get('url') || urlFromText(p.get('text')) || urlFromText(p.get('title'));
+  if (raw) showCapture(cleanUrl(raw), p.get('title') || p.get('text') || '');
+  else showHub();
+})();
+</script>
+</body>
+</html>
