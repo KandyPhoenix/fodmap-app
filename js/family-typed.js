@@ -438,7 +438,7 @@ const FAMILY_TYPED = [
   },
   {
     "id": "fam-t-chicken-scampi",
-    "name": "Chicken Scampi",
+    "name": "Chicken Scampi (Karrie's)",
     "emoji": "🍗",
     "category": "dinner",
     "time": "30 min",
@@ -620,7 +620,7 @@ const FAMILY_TYPED = [
   },
   {
     "id": "fam-t-greek-salad-penne",
-    "name": "Greek Salad Penne",
+    "name": "Greek Salad Penne (quick version)",
     "emoji": "🍝",
     "category": "lunch",
     "time": "25 min",
@@ -741,7 +741,7 @@ const FAMILY_TYPED = [
     "tags": [
       "this week"
     ],
-    "source": null,
+    "source": "https://moribyan.com/creamy-butter-chicken/",
     "ingredients": [
       {
         "qty": "2 lbs",
