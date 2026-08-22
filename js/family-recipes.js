@@ -111,6 +111,41 @@ const FAMILY_RECIPES = [
     fodmapNote: 'Family recipe from the Holidays › Thanksgiving section.',
   },
 
+  // ── Added after the OneNote import (saved from the web) ────
+  {
+    id: 'fam-chicken-and-dumplings',
+    name: 'Easy Chicken and Dumplings',
+    emoji: '🥣',
+    category: 'dinner',
+    time: '40 min',
+    serves: 8,
+    difficulty: 'easy',
+    tags: ['comfort food'],
+    source: 'https://thesouthernladycooks.com/chicken-dumplings/',
+    added: '2026-08-22',
+    ingredients: [
+      { qty: '4 cups',        item: 'cooked chicken or turkey, chopped' },
+      { qty: '1 cup',         item: 'celery, chopped' },
+      { qty: '1 (10.5 oz) can', item: 'cream of chicken soup' },
+      { qty: '2 (10.5 oz) cans', item: 'chicken broth' },
+      { qty: '3 cans',        item: 'water (use the empty 10.5 oz soup can to measure)' },
+      { qty: '2 cups',        item: 'self-rising flour' },
+      { qty: '1/4 cup',       item: 'shortening' },
+      { qty: '3/4 cup',       item: 'boiling water, for the dumplings' },
+      { qty: 'to taste',      item: 'salt and black pepper' },
+    ],
+    steps: [
+      'Put the chicken, celery, cream of chicken soup, chicken broth and the 3 cans of water in a soup pot. Bring to a boil and cover.',
+      'Make the dumplings: put the self-rising flour in a large bowl and cut in the shortening with a pastry blender or fork until it looks like coarse crumbs.',
+      'Add the boiling water a little at a time, mixing until you can shape the dough into a ball.',
+      'Roll the dough out about 1/8 inch thick on a floured board. Cut it into strips, then across into squares.',
+      'Uncover the pot and drop in several squares at a time, replacing the lid for about 30 seconds between batches so the broth stays at a boil.',
+      'Once all the dumplings are in, lower the heat and simmer about 20 minutes. Season with salt and pepper.',
+      'For drop dumplings instead: skip the rolling and just pinch off pieces of dough into the broth. Keep the pinches the same size so they all cook through at the same time.',
+    ],
+    fodmapNote: 'Not low-FODMAP as written — the self-rising flour is wheat, the cream of chicken soup carries onion and garlic powder, and 1 cup of celery is well over a low-FODMAP serve. To adapt: use a gluten-free self-rising flour blend, swap the canned soup for garlic-infused oil thickened with cornflour, and cut the celery to about 1/4 cup.',
+  },
+
 ];
 
 // Build a "link card" for a saved web recipe. Each card is tagged with the
@@ -121,30 +156,39 @@ function familyLinkCard(o) {
   const tags = [];
   if (section) tags.push(section);
 
-  // Full recipe content fetched from the source URL (when available) fills in
-  // the card. When nothing could be fetched, fall back to a quick version
-  // written from the title (FAMILY_GENERATED, keyed by id) so the card still
-  // has real ingredients and steps — the original link is always kept too.
+  // Content comes from the first source that actually has it:
+  //   1. FAMILY_FILL  — hand-written fill-ins for cards that never populated
+  //   2. FAMILY_RECIPE_DATA — recipe fetched from the source URL at import
+  //   3. FAMILY_GENERATED   — a quick version written from the title
+  // The original link is always kept on the card either way.
+  const fill = (typeof FAMILY_FILL !== 'undefined') ? FAMILY_FILL[o.id] : null;
+  const fillFull = !!(fill && fill.ingredients && fill.ingredients.length && fill.steps && fill.steps.length);
   const fetched = (o.source && typeof FAMILY_RECIPE_DATA !== 'undefined')
     ? FAMILY_RECIPE_DATA[o.source.replace(/\/+$/, '')] : null;
-  const fetchedFull = !!(fetched && fetched.ingredients && fetched.ingredients.length && fetched.steps && fetched.steps.length);
-  const gen = (!fetchedFull && typeof FAMILY_GENERATED !== 'undefined') ? FAMILY_GENERATED[o.id] : null;
-  const data = fetchedFull ? fetched : gen;
+  const fetchedFull = !fillFull && !!(fetched && fetched.ingredients && fetched.ingredients.length && fetched.steps && fetched.steps.length);
+  const gen = (!fillFull && !fetchedFull && typeof FAMILY_GENERATED !== 'undefined') ? FAMILY_GENERATED[o.id] : null;
+  const data = fillFull ? fill : (fetchedFull ? fetched : gen);
   const hasFull = !!(data && data.ingredients && data.ingredients.length && data.steps && data.steps.length);
-  const usedGen = hasFull && !fetchedFull;
+  // Only the title-derived fallback carries the "quick version" disclaimer —
+  // a fill-in is a real recipe, not a guess from the name.
+  const usedGen = hasFull && !fetchedFull && !fillFull;
 
   const baseNote = o.note
     ? `From your “${section}” section. Your note: “${o.note}”`
     : (section ? `Saved from your “${section}” section.` : 'Saved from your cookbook.');
+  // A fill-in can add its own line (cook's tip, or which roundup it came from).
+  const fillNote = (fillFull && fill.note) ? `${fill.note} ` : '';
   const genNote = usedGen
     ? `✨ A quick version written from the title — ${o.source ? 'tap “View original recipe” below for the original.' : 'the original lives in your OneNote cookbook.'} `
     : '';
 
   return {
     id: o.id,
-    name: o.name,
-    emoji: o.emoji || '🍽️',
-    category: o.category || 'dinner',
+    // A fill-in may rename the card when the saved page title was a roundup
+    // ("Top 10 Muffin Recipes") rather than the name of a dish.
+    name: (fillFull && fill.name) || o.name,
+    emoji: (fillFull && fill.emoji) || o.emoji || '🍽️',
+    category: (fillFull && fill.category) || o.category || 'dinner',
     time: (hasFull && data.time) || '',
     serves: (hasFull && data.serves) || o.serves || 4,
     difficulty: o.difficulty || 'easy',
@@ -159,7 +203,7 @@ function familyLinkCard(o) {
       o.source ? 'Saved web recipe — tap “View original recipe” below for the full ingredients and method.'
                : 'Saved in your OneNote cookbook — the full recipe lives there.',
     ],
-    fodmapNote: genNote + baseNote,
+    fodmapNote: genNote + baseNote + (fillNote ? ` ${fillNote}`.trimEnd() : ''),
   };
 }
 
@@ -224,6 +268,8 @@ if (typeof FAMILY_CLIPS !== 'undefined') {
   const seenSrc = new Set(FAMILY_RECIPES.map(r => (r.source || '').replace(/\/+$/, '').toLowerCase()).filter(Boolean));
   const seenIds = new Set(FAMILY_RECIPES.map(r => r.id));
   FAMILY_CLIPS.forEach(o => {
+    // Pages from the catch-all tabs that aren't food at all (see FAMILY_DROP).
+    if (typeof FAMILY_DROP !== 'undefined' && FAMILY_DROP.has(o.id)) return;
     const norm = (o.source || '').replace(/\/+$/, '').toLowerCase();
     if (norm && seenSrc.has(norm)) return;
     if (seenIds.has(o.id)) return;
