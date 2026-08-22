@@ -611,9 +611,14 @@
         if (hadController) window.location.reload();
       });
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').then(reg => {
+        // updateViaCache:'none' — GitHub Pages serves sw.js with max-age=600, so
+        // without this the browser can check for a new worker against its own
+        // cached copy and conclude nothing changed.
+        navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' }).then(reg => {
           reg.update();
-          // Check for a new version whenever the app comes back into focus
+          // Check for a new version whenever the app comes back into focus —
+          // this is what catches an update when the app is launched from the
+          // taskbar or dock rather than reloaded in a tab.
           document.addEventListener('visibilitychange', () => {
             if (document.visibilityState === 'visible') reg.update();
           });
