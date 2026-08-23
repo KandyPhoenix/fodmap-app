@@ -628,6 +628,15 @@ header {
 
 .data-bar-btn:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-light); }
 
+/* The clip link is an <a>, not a <button> — keep it looking like the rest,
+   and tint it since it's the one that leaves the page. */
+.data-bar-btn { text-decoration: none; display: inline-block; line-height: 1.4; }
+
+.clip-btn { color: var(--primary); border-color: var(--primary); }
+
+.clip-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+
 
 
 
