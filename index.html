@@ -39,6 +39,7 @@
     <button class="nav-btn active" data-view="planner">📅 <span class="nav-label">Planner</span></button>
     <button class="nav-btn" data-view="recipes">🍳 <span class="nav-label">Recipes</span></button>
     <button class="nav-btn" data-view="foods">🍎 <span class="nav-label">Food Guide</span></button>
+    <button class="nav-btn" data-view="guides">📚 <span class="nav-label">Guides</span></button>
 
     <div class="nav-dropdown">
       <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">🧰 <span class="nav-label">Tools</span><span class="nav-caret">▾</span></button>
@@ -363,6 +364,80 @@
   </div>
 
   <!-- ═══════════════════════════════════════
+       VIEW 5g — GUIDES (nutrition guides & my library)
+  ════════════════════════════════════════ -->
+  <div id="view-guides" class="hidden">
+    <div class="finds-hero guides-hero">
+      <div class="finds-hero-text">
+        <div class="finds-hero-title">📚 Nutrition Guides</div>
+        <div class="finds-hero-sub">Highest-protein foods, vitamins &amp; minerals with recommended amounts, tips &amp; food lists — plus a library for anything you find online.</div>
+      </div>
+      <button class="finds-add-btn" id="add-guide-btn">+ Add My Own</button>
+    </div>
+    <div class="guides-tab-bar">
+      <div class="guides-tabs" id="guides-tabs">
+        <button class="guide-tab active" data-tab="protein">💪 High Protein</button>
+        <button class="guide-tab" data-tab="nutrients">🧬 Vitamins &amp; Minerals</button>
+        <button class="guide-tab" data-tab="tips">💡 Tips &amp; Guides</button>
+        <button class="guide-tab" data-tab="library">📌 My Library</button>
+      </div>
+    </div>
+    <main>
+      <div id="guides-content"></div>
+    </main>
+  </div>
+
+  <!-- Guide entry form modal -->
+  <div class="modal-overlay hidden" id="guide-form-overlay">
+    <div class="find-form-modal" id="guide-form-modal">
+      <div class="form-header">
+        <div class="form-title" id="guide-form-title">📌 Add to My Library</div>
+        <button class="modal-close" id="guide-form-close">✕</button>
+      </div>
+      <div class="form-body">
+        <div class="form-row">
+          <div class="form-group flex-grow">
+            <label>Title <span class="required">*</span></label>
+            <input type="text" id="gf-title" placeholder="e.g. Magnesium article, My safe cereal list">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Type</label>
+            <select id="gf-type">
+              <option value="note">📝 Note</option>
+              <option value="article">📄 Article</option>
+              <option value="list">📋 List</option>
+              <option value="tip">💡 Tip</option>
+            </select>
+          </div>
+          <div class="form-group flex-grow">
+            <label>Tags (comma-separated)</label>
+            <input type="text" id="gf-tags" placeholder="e.g. protein, snacks, vitamins">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group flex-grow">
+            <label>Link (optional)</label>
+            <input type="url" id="gf-url" placeholder="https:// — paste the article's web address">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group flex-grow">
+            <label>Content</label>
+            <textarea id="gf-content" rows="8" placeholder="Paste or type anything — notes, highlights from an article, or a list (one item per line)…"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-footer">
+        <button id="gf-delete-btn" class="action-btn danger hidden">🗑 Delete</button>
+        <button id="gf-cancel-btn" class="action-btn" style="background:var(--bg);color:var(--text)">Cancel</button>
+        <button id="gf-save-btn" class="action-btn primary">💾 Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
        VIEW 6 — MY FINDS
   ════════════════════════════════════════ -->
   <div id="view-finds" class="hidden">
@@ -576,6 +651,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
   <script src="js/data.js"></script>
+  <script src="js/guides-data.js"></script>
   <script src="js/airfryer-extra.js"></script>
   <script src="js/recipes.js"></script>
   <script src="js/kandy-recipes.js"></script>

@@ -398,6 +398,20 @@
 
   let currentView = 'planner';
 
+  // Guides-tab state lives up here: restoreLastView() can call
+  // renderGuidesView() during boot, before the guides module below runs.
+  let guidesTab = 'protein';
+  let editingGuideId = null;
+
+  const GUIDE_TYPE_META = {
+    article: { emoji: '📄', label: 'Article' },
+    note:    { emoji: '📝', label: 'Note' },
+    list:    { emoji: '📋', label: 'List' },
+    tip:     { emoji: '💡', label: 'Tip' },
+  };
+
+  const GUIDE_FODMAP_DOT = { green: '🟢', yellow: '🟡', red: '🔴' };
+
 
 
 
@@ -862,6 +876,8 @@
 
       document.getElementById('view-finds').classList.toggle('hidden',   currentView !== 'finds');
 
+      document.getElementById('view-guides').classList.toggle('hidden',  currentView !== 'guides');
+
 
 
 
@@ -918,13 +934,15 @@
 
       if (currentView === 'dining') renderDiningView();
 
+      if (currentView === 'guides') renderGuidesView();
 
 
 
 
 
 
-      searchInput.placeholder = currentView === 'recipes' ? 'Search recipes…' : currentView === 'subs' ? 'Search substitutions…' : currentView === 'checker' ? 'Search foods or recipes…' : currentView === 'finds' ? 'Search finds…' : currentView === 'snacks' ? 'Search snacks…' : currentView === 'planner' ? 'Search foods or recipes…' : 'Search foods…';
+
+      searchInput.placeholder = currentView === 'recipes' ? 'Search recipes…' : currentView === 'subs' ? 'Search substitutions…' : currentView === 'checker' ? 'Search foods or recipes…' : currentView === 'finds' ? 'Search finds…' : currentView === 'snacks' ? 'Search snacks…' : currentView === 'guides' ? 'Search guides, nutrients, my library…' : currentView === 'planner' ? 'Search foods or recipes…' : 'Search foods…';
 
 
 
@@ -1104,6 +1122,8 @@
 
     else if (currentView === 'snacks') renderSnacksView();
 
+    else if (currentView === 'guides') renderGuidesView();
+
 
 
 
@@ -1185,6 +1205,8 @@
 
 
     else if (currentView === 'snacks') renderSnacksView();
+
+    else if (currentView === 'guides') renderGuidesView();
 
 
 
@@ -21986,6 +22008,251 @@
 
 
 
+  // ══════════════════════════════════════════
+  //  GUIDES — nutrition guides + my library
+  // ══════════════════════════════════════════
+
+  function getGuideEntries() {
+    try { return JSON.parse(localStorage.getItem('fodmap-guides') || '[]'); }
+    catch(e) { return []; }
+  }
+
+  function saveGuideEntries(list) {
+    try { localStorage.setItem('fodmap-guides', JSON.stringify(list)); } catch(e) {}
+    if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
+  }
+
+  function genGuideId() {
+    return 'g' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+  }
+
+  // Only ever link out to real web addresses — anything else is dropped.
+  function guideSafeUrl(u) {
+    try {
+      const p = new URL(String(u || ''));
+      return (p.protocol === 'http:' || p.protocol === 'https:') ? p.href : '';
+    } catch(e) { return ''; }
+  }
+
+  function renderGuidesView() {
+    const el = document.getElementById('guides-content');
+    if (!el) return;
+    document.querySelectorAll('#guides-tabs .guide-tab').forEach(b =>
+      b.classList.toggle('active', b.dataset.tab === guidesTab));
+    const q = searchQuery.toLowerCase();
+    if (guidesTab === 'protein') renderProteinGuide(el, q);
+    else if (guidesTab === 'nutrients') renderNutrientsGuide(el, q);
+    else if (guidesTab === 'tips') renderTipsGuide(el, q);
+    else renderGuideLibrary(el, q);
+  }
+
+  function guideNoResults(what) {
+    return `<div class="no-results"><div class="no-results-icon">🔍</div><p>No ${what} match your search.</p></div>`;
+  }
+
+  function renderProteinGuide(el, q) {
+    const data = typeof HIGH_PROTEIN_GUIDE !== 'undefined' ? HIGH_PROTEIN_GUIDE : [];
+    const groups = data.map(group => {
+      const items = group.items.filter(it =>
+        !q || (it.name + ' ' + it.serving + ' ' + (it.note || '')).toLowerCase().includes(q));
+      if (!items.length) return '';
+      return `<div class="guide-group">
+        <div class="guide-group-title">${group.label}</div>
+        ${group.blurb ? `<div class="guide-group-blurb">${escHtml(group.blurb)}</div>` : ''}
+        ${items.map(it => `
+          <div class="protein-row${it.fodmap === 'red' ? ' protein-row-avoid' : ''}">
+            <span class="protein-emoji">${it.emoji}</span>
+            <div class="protein-main">
+              <div class="protein-name">${GUIDE_FODMAP_DOT[it.fodmap] || ''} ${escHtml(it.name)}</div>
+              <div class="protein-serving">${escHtml(it.serving)}${it.note ? ' — ' + escHtml(it.note) : ''}</div>
+            </div>
+            <span class="protein-badge">${it.protein}g</span>
+          </div>`).join('')}
+      </div>`;
+    }).join('');
+    el.innerHTML = groups
+      ? '<div class="guide-intro">💪 Ranked by protein per typical serving. 🟢 low-FODMAP as listed · 🟡 fine in the portion shown · 🔴 avoid. Plain meat, fish and eggs are all FODMAP-free.</div>' + groups
+      : guideNoResults('foods');
+  }
+
+  function renderNutrientsGuide(el, q) {
+    const data = typeof NUTRIENTS_GUIDE !== 'undefined' ? NUTRIENTS_GUIDE : [];
+    const cards = data.filter(n =>
+      !q || (n.name + ' ' + n.kind + ' ' + n.why + ' ' + (n.low || '') + ' ' + n.sources.join(' ')).toLowerCase().includes(q)
+    ).map(n => `
+      <details class="nutrient-card"${q ? ' open' : ''}>
+        <summary class="nutrient-summary">
+          <span class="nutrient-emoji">${n.emoji}</span>
+          <span class="nutrient-name">${escHtml(n.name)}</span>
+          <span class="nutrient-kind">${escHtml(n.kind)}</span>
+          <span class="nutrient-caret">▾</span>
+        </summary>
+        <div class="nutrient-body">
+          <div class="nutrient-rda">🎯 <strong>How much:</strong> ${escHtml(n.rda)}</div>
+          ${n.over50 ? `<div class="nutrient-over50">👵 ${escHtml(n.over50)}</div>` : ''}
+          <div class="nutrient-why"><strong>Why you need it:</strong> ${escHtml(n.why)}</div>
+          ${n.low ? `<div class="nutrient-low"><strong>Running low looks like:</strong> ${escHtml(n.low)}</div>` : ''}
+          <div class="nutrient-sources-title">🥇 Best low-FODMAP sources</div>
+          <ul class="nutrient-sources">${n.sources.map(s => `<li>${escHtml(s)}</li>`).join('')}</ul>
+          ${n.tip ? `<div class="nutrient-tip">💡 ${escHtml(n.tip)}</div>` : ''}
+        </div>
+      </details>`).join('');
+    el.innerHTML = cards
+      ? '<div class="guide-intro">🧬 Recommended daily amounts (NIH values for adults), what each nutrient does, and where to get it without breaking FODMAP rules. Tap any card to open it — or search a nutrient or a food above.</div><div class="nutrient-list">' + cards + '</div>'
+      : guideNoResults('nutrients');
+  }
+
+  function renderTipsGuide(el, q) {
+    const data = typeof GUIDE_TIPS !== 'undefined' ? GUIDE_TIPS : [];
+    const cards = data.filter(t =>
+      !q || (t.title + ' ' + (t.sub || '') + ' ' + t.blocks.map(b => b.title + ' ' + b.list.join(' ')).join(' ')).toLowerCase().includes(q)
+    ).map(t => `
+      <details class="tipguide-card"${q ? ' open' : ''}>
+        <summary class="tipguide-summary">
+          <span class="tipguide-emoji">${t.emoji}</span>
+          <span class="tipguide-titles">
+            <span class="tipguide-title">${escHtml(t.title)}</span>
+            ${t.sub ? `<span class="tipguide-sub">${escHtml(t.sub)}</span>` : ''}
+          </span>
+          <span class="nutrient-caret">▾</span>
+        </summary>
+        <div class="tipguide-body">
+          ${t.blocks.map(b => `
+            <div class="tipguide-block">
+              <div class="tipguide-block-title">${escHtml(b.title)}</div>
+              <ul>${b.list.map(li => `<li>${escHtml(li)}</li>`).join('')}</ul>
+            </div>`).join('')}
+        </div>
+      </details>`).join('');
+    el.innerHTML = cards
+      ? '<div class="guide-intro">💡 Practical guides and food lists. Tap a card to open it. Want to save your own? Hit <strong>+ Add My Own</strong> up top — it lands in My Library.</div>' + cards
+      : guideNoResults('guides');
+  }
+
+  function renderGuideLibrary(el, q) {
+    let list = getGuideEntries().slice().sort((a, b) => (b.updated || 0) - (a.updated || 0));
+    if (q) list = list.filter(g =>
+      (g.title + ' ' + (g.tags || []).join(' ') + ' ' + (g.content || '') + ' ' + (g.url || '')).toLowerCase().includes(q));
+
+    if (!list.length) {
+      el.innerHTML = q ? guideNoResults('saved entries') : `
+        <div class="glib-empty">
+          <div class="glib-empty-icon">📌</div>
+          <p><strong>Your library is empty.</strong></p>
+          <p>Found a good article, a food list, or a tip online? Hit <strong>+ Add My Own</strong> and keep it here — searchable, synced to all your devices.</p>
+          <button class="action-btn primary" id="glib-empty-add">+ Add your first one</button>
+        </div>`;
+      const b = document.getElementById('glib-empty-add');
+      if (b) b.addEventListener('click', () => openGuideForm(null));
+      return;
+    }
+
+    el.innerHTML = '<div class="glib-grid">' + list.map(g => {
+      const meta = GUIDE_TYPE_META[g.type] || GUIDE_TYPE_META.note;
+      const url = guideSafeUrl(g.url);
+      return `<div class="glib-card" data-id="${g.id}">
+        <div class="glib-card-top">
+          <span class="glib-type">${meta.emoji} ${meta.label}</span>
+          <button class="glib-edit" data-id="${g.id}" title="Edit" aria-label="Edit">✏️</button>
+        </div>
+        <div class="glib-title">${escHtml(g.title)}</div>
+        ${(g.tags && g.tags.length) ? `<div class="glib-tags">${g.tags.map(t => `<span class="glib-tag">${escHtml(t)}</span>`).join('')}</div>` : ''}
+        ${url ? `<a class="glib-link" href="${escHtml(url)}" target="_blank" rel="noopener">🔗 Open link</a>` : ''}
+        ${renderGuideContent(g)}
+      </div>`;
+    }).join('') + '</div>';
+
+    el.querySelectorAll('.glib-edit').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const entry = getGuideEntries().find(g => g.id === btn.dataset.id);
+        if (entry) openGuideForm(entry);
+      });
+    });
+  }
+
+  function renderGuideContent(g) {
+    const lines = String(g.content || '').split('\n').map(l => l.trim()).filter(Boolean);
+    if (!lines.length) return '';
+    if (g.type === 'list') {
+      return `<ul class="glib-list">${lines.map(l => `<li>${escHtml(l.replace(/^[-•*]\s*/, ''))}</li>`).join('')}</ul>`;
+    }
+    const toP = ls => ls.map(l => `<p>${escHtml(l)}</p>`).join('');
+    if (lines.length <= 6) return `<div class="glib-text">${toP(lines)}</div>`;
+    return `<div class="glib-text">${toP(lines.slice(0, 4))}</div>` +
+      `<details class="glib-more"><summary>Show ${lines.length - 4} more lines…</summary><div class="glib-text">${toP(lines.slice(4))}</div></details>`;
+  }
+
+  function openGuideForm(entry) {
+    editingGuideId = entry ? entry.id : null;
+    document.getElementById('guide-form-title').textContent = entry ? '✏️ Edit Entry' : '📌 Add to My Library';
+    document.getElementById('gf-title').value   = entry ? entry.title : '';
+    document.getElementById('gf-type').value    = entry ? (entry.type || 'note') : 'note';
+    document.getElementById('gf-url').value     = entry ? (entry.url || '') : '';
+    document.getElementById('gf-tags').value    = entry ? (entry.tags || []).join(', ') : '';
+    document.getElementById('gf-content').value = entry ? (entry.content || '') : '';
+    document.getElementById('gf-delete-btn').classList.toggle('hidden', !entry);
+    openOverlay(document.getElementById('guide-form-overlay'));
+    setTimeout(() => document.getElementById('gf-title').focus(), 100);
+  }
+
+  function closeGuideForm() {
+    document.getElementById('guide-form-overlay').classList.add('hidden');
+    document.body.style.overflow = '';
+    editingGuideId = null;
+  }
+
+  function saveGuideEntry() {
+    const title = document.getElementById('gf-title').value.trim();
+    if (!title) { alert('Please give it a title.'); return; }
+    const tags = document.getElementById('gf-tags').value.split(',').map(t => t.trim()).filter(Boolean);
+    const list = getGuideEntries();
+    const now = Date.now();
+    const entry = {
+      id: editingGuideId || genGuideId(),
+      title,
+      type: document.getElementById('gf-type').value,
+      url: document.getElementById('gf-url').value.trim(),
+      tags,
+      content: document.getElementById('gf-content').value,
+      created: now,
+      updated: now,
+    };
+    const idx = list.findIndex(g => g.id === entry.id);
+    if (idx >= 0) { entry.created = list[idx].created || now; list[idx] = entry; }
+    else list.unshift(entry);
+    saveGuideEntries(list);
+    closeGuideForm();
+    guidesTab = 'library';
+    renderGuidesView();
+  }
+
+  (function initGuides() {
+    const tabsEl = document.getElementById('guides-tabs');
+    if (tabsEl) {
+      tabsEl.querySelectorAll('.guide-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          guidesTab = btn.dataset.tab;
+          renderGuidesView();
+        });
+      });
+    }
+    const addBtn = document.getElementById('add-guide-btn');
+    if (addBtn) addBtn.addEventListener('click', () => openGuideForm(null));
+    document.getElementById('gf-cancel-btn').addEventListener('click', closeGuideForm);
+    document.getElementById('guide-form-close').addEventListener('click', closeGuideForm);
+    document.getElementById('gf-save-btn').addEventListener('click', saveGuideEntry);
+    document.getElementById('gf-delete-btn').addEventListener('click', () => {
+      if (!editingGuideId) return;
+      if (!confirm('Delete this entry from your library?')) return;
+      saveGuideEntries(getGuideEntries().filter(g => g.id !== editingGuideId));
+      closeGuideForm();
+      renderGuidesView();
+    });
+    document.getElementById('guide-form-overlay').addEventListener('click', e => {
+      if (e.target === e.currentTarget) closeGuideForm();
+    });
+  })();
+
   window.fodmapRefresh = function() {
 
 
@@ -22068,11 +22335,7 @@
 
     if (currentView === 'reintro') renderReintroView();
 
-
-
-
-
-
+    if (currentView === 'guides') renderGuidesView();
 
   };
 
