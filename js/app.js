@@ -22041,6 +22041,7 @@
       b.classList.toggle('active', b.dataset.tab === guidesTab));
     const q = searchQuery.toLowerCase();
     if (guidesTab === 'protein') renderProteinGuide(el, q);
+    else if (guidesTab === 'superfoods') renderSuperfoodsGuide(el, q);
     else if (guidesTab === 'nutrients') renderNutrientsGuide(el, q);
     else if (guidesTab === 'tips') renderTipsGuide(el, q);
     else renderGuideLibrary(el, q);
@@ -22073,6 +22074,31 @@
     el.innerHTML = groups
       ? '<div class="guide-intro">💪 Ranked by protein per typical serving. 🟢 low-FODMAP as listed · 🟡 fine in the portion shown · 🔴 avoid. Plain meat, fish and eggs are all FODMAP-free.</div>' + groups
       : guideNoResults('foods');
+  }
+
+  function renderSuperfoodsGuide(el, q) {
+    const data = typeof SUPERFOODS_GUIDE !== 'undefined' ? SUPERFOODS_GUIDE : [];
+    const groups = data.map(group => {
+      const items = group.items.filter(it =>
+        !q || (it.name + ' ' + it.why + ' ' + it.use + ' ' + (it.portion || '')).toLowerCase().includes(q));
+      if (!items.length) return '';
+      return `<div class="guide-group">
+        <div class="guide-group-title">${group.label}</div>
+        ${group.blurb ? `<div class="guide-group-blurb">${escHtml(group.blurb)}</div>` : ''}
+        ${items.map(it => `
+          <div class="protein-row super-row">
+            <span class="protein-emoji">${it.emoji}</span>
+            <div class="protein-main">
+              <div class="protein-name">${GUIDE_FODMAP_DOT[it.fodmap] || ''} ${escHtml(it.name)}${it.portion ? ` <span class="super-portion">${escHtml(it.portion)}</span>` : ''}</div>
+              <div class="super-why">${escHtml(it.why)}</div>
+              <div class="protein-serving">👉 ${escHtml(it.use)}</div>
+            </div>
+          </div>`).join('')}
+      </div>`;
+    }).join('');
+    el.innerHTML = groups
+      ? '<div class="guide-intro">🌟 The most nutrient-dense foods that stay gut-friendly. 🟢 low-FODMAP · 🟡 stick to the portion shown. Each one says what it does for you and the easiest way to eat it.</div>' + groups
+      : guideNoResults('superfoods');
   }
 
   function renderNutrientsGuide(el, q) {
