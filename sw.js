@@ -1,10 +1,11 @@
-const CACHE = 'fodmap-v84';
+const CACHE = 'fodmap-v85';
 const ASSETS = [
   './',
   './index.html',
   './clip.html',
   './css/style.css',
   './js/data.js',
+  './js/guides-data.js',
   './js/airfryer-extra.js',
   './js/recipes.js',
   './js/kandy-recipes.js',

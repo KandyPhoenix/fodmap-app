@@ -7225,3 +7225,172 @@ body.dark .rmodal-fav { background: rgba(40,55,46,0.92); }
 
 .dining-tip { font-size: 12.5px; color: var(--text-muted); background: var(--bg); border-radius: 8px; padding: 9px 11px; margin-top: 10px; line-height: 1.5; }
 
+
+/* ══════════════════════════════════════════
+   GUIDES — nutrition guides + my library
+   ══════════════════════════════════════════ */
+
+#view-guides main { max-width: 860px; margin: 0 auto; padding: 20px 16px 80px; }
+
+.guides-tab-bar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0 0;
+}
+.guides-tabs {
+  display: flex; gap: 6px; padding: 0 16px 10px;
+  max-width: 860px; margin: 0 auto;
+  overflow-x: auto; scrollbar-width: none;
+}
+.guides-tabs::-webkit-scrollbar { display: none; }
+.guide-tab {
+  padding: 7px 15px; border-radius: 20px; border: 1.5px solid var(--border);
+  background: var(--card); font-size: 13px; font-weight: 700; color: var(--text-muted);
+  cursor: pointer; transition: all 0.15s; white-space: nowrap;
+}
+.guide-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+.guide-tab:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
+
+.guide-intro {
+  font-size: 13.5px; color: var(--text-muted); line-height: 1.6;
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 12px 15px; margin-bottom: 18px;
+}
+
+/* ── High-protein tab ── */
+.guide-group {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 16px 16px 8px; margin-bottom: 18px; box-shadow: var(--shadow);
+}
+.guide-group-title {
+  font-size: 16px; font-weight: 800; color: var(--text);
+  padding-bottom: 8px; border-bottom: 2px solid var(--primary); margin-bottom: 4px;
+}
+.guide-group-blurb { font-size: 12.5px; color: var(--text-muted); line-height: 1.5; padding: 6px 0 4px; }
+.protein-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 2px; border-bottom: 1px solid var(--border);
+}
+.guide-group .protein-row:last-child { border-bottom: none; }
+.protein-row-avoid { opacity: 0.75; }
+.protein-emoji { font-size: 22px; flex-shrink: 0; width: 28px; text-align: center; }
+.protein-main { flex: 1; min-width: 0; }
+.protein-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.protein-serving { font-size: 12px; color: var(--text-muted); line-height: 1.45; margin-top: 1px; }
+.protein-badge {
+  flex-shrink: 0; font-size: 14px; font-weight: 800; color: var(--primary);
+  background: var(--green-bg); border-radius: 10px; padding: 5px 10px; min-width: 46px; text-align: center;
+}
+.protein-row-avoid .protein-badge { color: var(--red); background: var(--red-bg); }
+body.dark .protein-badge { background: rgba(39, 174, 96, 0.15); }
+body.dark .protein-row-avoid .protein-badge { background: rgba(231, 76, 60, 0.15); }
+
+/* ── Nutrients tab ── */
+.nutrient-list { display: flex; flex-direction: column; gap: 10px; }
+.nutrient-card, .tipguide-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  box-shadow: var(--shadow); overflow: hidden; margin-bottom: 0;
+}
+.tipguide-card { margin-bottom: 12px; }
+.nutrient-summary, .tipguide-summary {
+  display: flex; align-items: center; gap: 10px; padding: 13px 16px;
+  cursor: pointer; list-style: none; user-select: none;
+}
+.nutrient-summary::-webkit-details-marker, .tipguide-summary::-webkit-details-marker { display: none; }
+.nutrient-emoji, .tipguide-emoji { font-size: 22px; flex-shrink: 0; }
+.nutrient-name { font-size: 15px; font-weight: 800; color: var(--text); flex: 1; }
+.nutrient-kind {
+  font-size: 11px; font-weight: 700; color: var(--text-muted);
+  background: var(--bg); border-radius: 12px; padding: 3px 9px; white-space: nowrap;
+}
+.nutrient-caret { color: var(--text-muted); font-size: 13px; transition: transform 0.15s; }
+details[open] > summary .nutrient-caret { transform: rotate(180deg); }
+.nutrient-body { padding: 0 16px 15px; font-size: 13.5px; color: var(--text); line-height: 1.6; }
+.nutrient-rda {
+  background: var(--green-bg); border-radius: 10px; padding: 9px 12px; margin-bottom: 8px;
+}
+body.dark .nutrient-rda { background: rgba(39, 174, 96, 0.12); }
+.nutrient-over50 {
+  background: var(--yellow-bg); border-radius: 10px; padding: 9px 12px; margin-bottom: 8px; font-size: 13px;
+}
+body.dark .nutrient-over50 { background: rgba(243, 156, 18, 0.12); }
+.nutrient-why { margin-bottom: 6px; }
+.nutrient-low { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; }
+.nutrient-sources-title { font-size: 13px; font-weight: 800; margin-bottom: 4px; }
+.nutrient-sources { margin: 0 0 10px; padding-left: 20px; }
+.nutrient-sources li { margin-bottom: 2px; }
+.nutrient-tip {
+  font-size: 12.5px; color: var(--text-muted); background: var(--bg);
+  border-radius: 8px; padding: 9px 11px; line-height: 1.5;
+}
+
+/* ── Tips tab ── */
+.tipguide-titles { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.tipguide-title { font-size: 15px; font-weight: 800; color: var(--text); }
+.tipguide-sub { font-size: 12px; color: var(--text-muted); line-height: 1.45; margin-top: 1px; }
+.tipguide-body { padding: 0 16px 15px; }
+.tipguide-block { margin-bottom: 12px; }
+.tipguide-block:last-child { margin-bottom: 0; }
+.tipguide-block-title { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 5px; }
+.tipguide-block ul { margin: 0; padding-left: 20px; font-size: 13.5px; color: var(--text); line-height: 1.65; }
+.tipguide-block li { margin-bottom: 3px; }
+
+/* ── My Library tab ── */
+.glib-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; align-items: start; }
+.glib-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 14px 16px; box-shadow: var(--shadow);
+}
+.glib-card:hover { box-shadow: var(--shadow-hover); }
+.glib-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.glib-type {
+  font-size: 11px; font-weight: 700; color: var(--text-muted);
+  background: var(--bg); border-radius: 12px; padding: 3px 9px;
+}
+.glib-edit {
+  background: none; border: none; font-size: 15px; cursor: pointer;
+  padding: 2px 6px; border-radius: 8px; line-height: 1;
+}
+.glib-edit:hover { background: var(--bg); }
+.glib-title { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 6px; line-height: 1.35; }
+.glib-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+.glib-tag {
+  font-size: 11px; font-weight: 600; color: var(--primary);
+  background: var(--green-bg); border-radius: 10px; padding: 2px 8px;
+}
+body.dark .glib-tag { background: rgba(39, 174, 96, 0.15); }
+.glib-link {
+  display: inline-block; font-size: 13px; font-weight: 700; color: var(--primary);
+  text-decoration: none; margin-bottom: 8px;
+}
+.glib-link:hover { text-decoration: underline; }
+.glib-text { font-size: 13.5px; color: var(--text); line-height: 1.55; }
+.glib-text p { margin: 0 0 6px; }
+.glib-text p:last-child { margin-bottom: 0; }
+.glib-list { margin: 0; padding-left: 20px; font-size: 13.5px; color: var(--text); line-height: 1.65; }
+.glib-list li { margin-bottom: 3px; }
+.glib-more summary {
+  font-size: 12.5px; font-weight: 700; color: var(--primary); cursor: pointer;
+  padding: 4px 0; list-style: none;
+}
+.glib-more summary::-webkit-details-marker { display: none; }
+.glib-empty {
+  text-align: center; padding: 48px 20px; color: var(--text-muted);
+  background: var(--card); border: 1.5px dashed var(--border); border-radius: 16px;
+  font-size: 14px; line-height: 1.6; max-width: 480px; margin: 20px auto;
+}
+.glib-empty-icon { font-size: 40px; margin-bottom: 8px; }
+.glib-empty .action-btn { margin-top: 12px; }
+
+#gf-content {
+  width: 100%; min-height: 140px; resize: vertical; font: inherit; font-size: 14px;
+  color: var(--text); background: var(--card); border: 1.5px solid var(--border);
+  border-radius: 10px; padding: 10px 12px; box-sizing: border-box;
+}
+#gf-content:focus { outline: none; border-color: var(--primary); }
+
+@media (max-width: 640px) {
+  .guides-hero { flex-direction: column; align-items: flex-start; gap: 10px; padding: 20px 16px; }
+  .glib-grid { grid-template-columns: 1fr; gap: 10px; }
+  .nutrient-kind { display: none; }
+}
