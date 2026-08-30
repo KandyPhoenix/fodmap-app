@@ -7394,3 +7394,14 @@ body.dark .glib-tag { background: rgba(39, 174, 96, 0.15); }
   .glib-grid { grid-template-columns: 1fr; gap: 10px; }
   .nutrient-kind { display: none; }
 }
+
+/* ── Superfoods tab ── */
+.super-row { align-items: flex-start; }
+.super-row .protein-emoji { margin-top: 2px; }
+.super-portion {
+  font-size: 11px; font-weight: 700; color: var(--primary);
+  background: var(--green-bg); border-radius: 10px; padding: 2px 8px;
+  margin-left: 4px; white-space: nowrap; vertical-align: 1px;
+}
+body.dark .super-portion { background: rgba(39, 174, 96, 0.15); }
+.super-why { font-size: 13px; color: var(--text); line-height: 1.5; margin: 2px 0; }
