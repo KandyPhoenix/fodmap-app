@@ -144,7 +144,8 @@ const ADDED_RECIPES = [
       "serves": 6,
       "difficulty": "medium",
       "tags": [
-          "added"
+          "added",
+          "cajun"
       ],
       "source": "https://www.daringgourmet.com/new-orleans-grillades-and-grits/",
       "added": "2026-09-02",
@@ -246,6 +247,242 @@ const ADDED_RECIPES = [
           "For the Grits: In a 5-quart pot over medium-high heat, bring the milk and salt to a simmer, stirring regularly to prevent the milk from burning. Slowly add the grits in a steady stream, whisking constantly to prevent lumps. Reduce the heat to low, cover, and cook for about 30 minutes, stirring occasionally until the grits are thick and tender."
       ],
       "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat flour (dredge and roux), celery, and 5 cups of milk in the grits (lactose). For a gentler version: use garlic-infused oil and the green tops of spring onions instead of the onion and garlic, a gluten-free flour blend for the dredge and roux, lactose-free milk for the grits, and keep celery small. Check the Creole seasoning too — most store blends are loaded with onion and garlic powder, so use a homemade or garlic-free blend."
+  },
+
+  {
+      "id": "fam-add-shrimp-and-grits",
+      "name": "Shrimp and Grits",
+      "emoji": "🍤",
+      "category": "dinner",
+      "time": "30 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "cajun"
+      ],
+      "source": "https://www.bowlofdelicious.com/easy-classic-shrimp-and-grits/",
+      "added": "2026-09-02",
+      "ingredients": [
+          {
+              "qty": "2 1/2 cups",
+              "item": "chicken broth, preferably low sodium, divided"
+          },
+          {
+              "qty": "2 cups",
+              "item": "whole milk"
+          },
+          {
+              "qty": "4 tablespoons",
+              "item": "butter, divided"
+          },
+          {
+              "qty": "3/4 cup",
+              "item": "stone-ground grits"
+          },
+          {
+              "qty": "1 cup",
+              "item": "sharp cheddar cheese, shredded"
+          },
+          {
+              "qty": "4",
+              "item": "strips bacon, or 2-3 thick-cut slices"
+          },
+          {
+              "qty": "1 lb",
+              "item": "jumbo shrimp, peeled and deveined"
+          },
+          {
+              "qty": "to taste",
+              "item": "kosher salt"
+          },
+          {
+              "qty": "to taste",
+              "item": "black pepper"
+          },
+          {
+              "qty": "for garnish",
+              "item": "thinly sliced green onions (optional)"
+          }
+      ],
+      "steps": [
+          "Bring 2 cups of the chicken broth, the milk (2 cups), 3 tablespoons of the butter, and a pinch of salt to a gentle boil in a medium sized pot. Add the grits and whisk together. Simmer for 10-15 minutes, or until grits are soft and creamy, whisking every few minutes. Cover and set aside off heat - they will finish softening up while they sit.",
+          "Cook the 4 bacon strips until crispy in a nonstick or cast iron skillet. Set aside on a paper towel lined plate. Once cool, chop into small pieces.",
+          "Drain all but 2 tablespoons of the bacon grease from the skillet.",
+          "Rinse the shrimp with cold water and pat dry. Season with salt and pepper (if your shrimp is treated already with sodium - check the ingredients! - then only use a little bit, if any, of added salt), and any other spices you want to add (optional). Cook in the bacon grease until only just cooked- about 2 minutes per side.",
+          "Add the remaining tablespoon of butter and 1/2 cup of chicken broth to the shrimp and stir until melted and broth is heated. Taste and add salt if necessary.",
+          "Stir in the cheese to the grits (1 cup) until melted. Taste and add salt if necessary.",
+          "Serve the shrimp mixture over the grits, making sure to spoon some of the liquid from the skillet over the grits, and sprinkle with the bacon pieces and sliced green onions, if using. Serve immediately."
+      ],
+      "fodmapNote": "Closer to low-FODMAP than most Cajun-style dishes. The flags are lactose (2 cups of milk in the grits — the sharp cheddar itself is naturally low-lactose) and store chicken broth, which usually contains onion and garlic. Use lactose-free milk and an onion/garlic-free broth, stick to the green tops of the green onions for garnish, and this one comes out FODMAP-friendly — grits are corn, which is fine."
+  },
+
+  {
+      "id": "fam-add-new-orleans-style-gumbo",
+      "name": "New Orleans Style Gumbo",
+      "emoji": "🍲",
+      "category": "dinner",
+      "time": "1 hr 20 min",
+      "serves": 10,
+      "difficulty": "medium",
+      "tags": [
+          "added",
+          "cajun"
+      ],
+      "source": "https://tastesbetterfromscratch.com/authentic-new-orleans-style-gumbo/",
+      "added": "2026-09-02",
+      "ingredients": [
+          {
+              "qty": "1 cup",
+              "item": "all-purpose flour, a little more may be needed"
+          },
+          {
+              "qty": "2/3 cup",
+              "item": "vegetable or canola oil"
+          },
+          {
+              "qty": "1 bunch",
+              "item": "celery, diced, leaves and all"
+          },
+          {
+              "qty": "1",
+              "item": "green bell pepper, diced"
+          },
+          {
+              "qty": "1 large",
+              "item": "yellow onion, diced"
+          },
+          {
+              "qty": "1 bunch",
+              "item": "green onions, finely chopped"
+          },
+          {
+              "qty": "1 bunch",
+              "item": "fresh parsley, finely chopped"
+          },
+          {
+              "qty": "2-3 cloves",
+              "item": "garlic"
+          },
+          {
+              "qty": "1-2 Tablespoons",
+              "item": "Cajun seasoning"
+          },
+          {
+              "qty": "8-10 cups",
+              "item": "chicken broth (a little chicken bouillon paste enhances the flavor)"
+          },
+          {
+              "qty": "12 ounce",
+              "item": "package andouille sausage, sliced into coins (substitute Polska Kielbasa if you can't find a good andouille)"
+          },
+          {
+              "qty": "1",
+              "item": "rotisserie chicken, meat pulled off"
+          },
+          {
+              "qty": "2 cups",
+              "item": "shrimp, uncooked or pre-cooked"
+          },
+          {
+              "qty": "for serving",
+              "item": "hot cooked rice"
+          }
+      ],
+      "steps": [
+          "Make the Roux: In a large, heavy bottom stock pot combine flour and oil. Cook on medium-low heat, stirring constantly for 30-45 minutes. This part takes patience--when it's finished it should be as dark as chocolate and have a soft, \"cookie dough\" like consistency. Be careful not to let it burn! Feel free to add a little more flour or oil as needed to reach this consistency.",
+          "Brown the sausage. In a separate skillet on medium-high heat place the sausage slices in one layer in the pan. Brown them well on one side (2-3 minutes) and then use a fork to flip each over onto the other side to brown. Remove to a plate.",
+          "Cook the vegetables in broth. Add 1/2 cup of the chicken broth to the hot skillet that had the sausage to deglaze the pan. Pour the broth and drippings into your large soup pot.",
+          "Add the remaining chicken broth. Add veggies, parsley, garlic and roux to the pot and stir well.",
+          "Bring to a boil over medium heat and boil for 5-7 minutes, or until the vegetables are slightly tender. (Skim off any foam that may rise to the top of the pot.) Stir in cajun seasoning, to taste. Add uncooked shrimp, if using and cook 2 minutes.",
+          "Add meat. Add chicken, sausage, and pre-cooked shrimp, if using.",
+          "Taste and serve. At this point taste it and add more seasonings to your liking--salt, pepper, chicken bouillon paste, garlic, more Cajun seasoning or more chicken broth--until you reach the perfect flavor. Serve warm over rice. (Tastes even better the next day!)"
+      ],
+      "fodmapNote": "Not low-FODMAP as written — onion, garlic, a full bunch of celery, and wheat flour in the dark roux; the Cajun seasoning and store broth usually carry onion and garlic powder, and andouille sausage often does too. For a gentler pot: lean on the green-onion tops (already in the recipe) instead of the yellow onion, use garlic-infused oil, a gluten-free flour for the roux, an onion/garlic-free broth and Cajun blend, and go light on the celery."
+  },
+
+  {
+      "id": "fam-add-crawfish-etouffee",
+      "name": "Crawfish Etouffee",
+      "emoji": "🦞",
+      "category": "dinner",
+      "time": "40 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "cajun"
+      ],
+      "source": "https://www.chilipeppermadness.com/recipes/crawfish-etouffee/",
+      "added": "2026-09-02",
+      "ingredients": [
+          {
+              "qty": "4 tablespoons",
+              "item": "butter, or use peanut oil"
+          },
+          {
+              "qty": "4 tablespoons",
+              "item": "all purpose flour"
+          },
+          {
+              "qty": "1 medium",
+              "item": "onion, chopped"
+          },
+          {
+              "qty": "1 medium",
+              "item": "bell pepper, chopped (use jalapeno for spicier)"
+          },
+          {
+              "qty": "1 stalk",
+              "item": "celery, chopped"
+          },
+          {
+              "qty": "4 cloves",
+              "item": "garlic, chopped"
+          },
+          {
+              "qty": "2 teaspoons",
+              "item": "Cajun seasoning, or to taste"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "cayenne pepper, optional, for spicier"
+          },
+          {
+              "qty": "to taste",
+              "item": "salt and pepper"
+          },
+          {
+              "qty": "2 cups",
+              "item": "chicken stock, or use seafood stock"
+          },
+          {
+              "qty": "1 pound",
+              "item": "crawfish tail meat, par-cooked"
+          },
+          {
+              "qty": "1 tablespoon",
+              "item": "chopped parsley"
+          },
+          {
+              "qty": "for garnish",
+              "item": "extra chopped parsley, spicy chili flakes, hot sauce"
+          },
+          {
+              "qty": "for serving",
+              "item": "cooked rice, if desired"
+          }
+      ],
+      "steps": [
+          "Heat a large pan or pot to medium heat and melt the butter.",
+          "Add the flour and stir to make a roux. Stir continuously for 5 minutes, or until the roux turns a copper color. Do not let the roux burn.",
+          "Add the onion, peppers, celery and garlic. Stir and cook for 5 minutes to soften.",
+          "Stir in the Cajun seasonings, cayenne, salt and pepper to taste, and stock or broth. Reduce heat and simmer for 20 minutes to let the flavors develop, stirring occasionally.",
+          "Add the crawfish tails and warm them through.",
+          "Remove from heat and stir in the parsley.",
+          "Serve over white rice (if desired) and garnish with extra parsley and spicy chili flakes. Don't forget the hot sauce!"
+      ],
+      "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat flour in the roux, and celery; Cajun seasoning blends usually contain onion and garlic powder, and store stock often does too. For a gentler version: garlic-infused oil and green-onion tops in place of the onion and garlic, a gluten-free flour for the roux, about 1/4 stalk of celery per serve, and an onion/garlic-free Cajun blend and stock. The crawfish and butter are fine as they are."
   },
 
 ];

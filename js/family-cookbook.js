@@ -6132,61 +6132,6 @@ const FAMILY_COOKBOOK = [
     "fodmapNote": "✨ A quick version written from the title. Saved from your “Desserts” section."
   },
   {
-    "id": "fam-x-crawfish-touff-e",
-    "name": "Crawfish Étouffée",
-    "emoji": "🦐",
-    "category": "dinner",
-    "time": "50 min",
-    "serves": 6,
-    "difficulty": "easy",
-    "tags": [
-      "quick notes"
-    ],
-    "source": null,
-    "ingredients": [
-      {
-        "qty": "1/2 cup",
-        "item": "butter"
-      },
-      {
-        "qty": "1/3 cup",
-        "item": "flour"
-      },
-      {
-        "qty": "1",
-        "item": "onion, diced"
-      },
-      {
-        "qty": "1",
-        "item": "green bell pepper, diced"
-      },
-      {
-        "qty": "2 stalks",
-        "item": "celery, diced"
-      },
-      {
-        "qty": "2 cups",
-        "item": "seafood stock"
-      },
-      {
-        "qty": "1 lb",
-        "item": "crawfish tails"
-      },
-      {
-        "qty": "2 tsp",
-        "item": "Cajun seasoning"
-      }
-    ],
-    "steps": [
-      "Melt butter and whisk in flour; cook to a blond roux.",
-      "Add onion, bell pepper and celery; cook until soft.",
-      "Slowly stir in seafood stock and Cajun seasoning.",
-      "Simmer 15 minutes until thickened.",
-      "Add crawfish tails and cook 5-7 minutes. Serve over rice."
-    ],
-    "fodmapNote": "✨ A quick version written from the title. Saved from your “Quick Notes” section."
-  },
-  {
     "id": "fam-x-greek-sheet-pan-chicken-the-mediterranean-dish",
     "name": "Greek Sheet Pan Chicken",
     "emoji": "🍗",
