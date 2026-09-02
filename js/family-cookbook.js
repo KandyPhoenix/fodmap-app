@@ -10576,69 +10576,6 @@ const FAMILY_COOKBOOK = [
     "fodmapNote": "✨ A quick version written from the title. Saved from your “Full Meal Recipes” section."
   },
   {
-    "id": "fam-x-southern-style-red-beans-and-rice",
-    "name": "Southern-Style Red Beans and Rice",
-    "emoji": "🍚",
-    "category": "dinner",
-    "time": "90 min",
-    "serves": 6,
-    "difficulty": "easy",
-    "tags": [
-      "main dishes"
-    ],
-    "source": null,
-    "ingredients": [
-      {
-        "qty": "1 lb",
-        "item": "dried red beans, soaked overnight"
-      },
-      {
-        "qty": "12 oz",
-        "item": "andouille sausage, sliced"
-      },
-      {
-        "qty": "1",
-        "item": "onion, diced"
-      },
-      {
-        "qty": "1",
-        "item": "green bell pepper, diced"
-      },
-      {
-        "qty": "2 stalks",
-        "item": "celery, diced"
-      },
-      {
-        "qty": "3 cloves",
-        "item": "garlic, minced"
-      },
-      {
-        "qty": "6 cups",
-        "item": "chicken broth"
-      },
-      {
-        "qty": "2",
-        "item": "bay leaves"
-      },
-      {
-        "qty": "1 tsp",
-        "item": "Cajun seasoning"
-      },
-      {
-        "qty": "3 cups",
-        "item": "cooked white rice"
-      }
-    ],
-    "steps": [
-      "Brown the sausage in a large pot, then add onion, bell pepper, and celery and cook until soft.",
-      "Stir in garlic, drained beans, broth, bay leaves, and Cajun seasoning.",
-      "Bring to a boil, then simmer 1 to 1.5 hours until the beans are tender.",
-      "Mash some of the beans against the pot to thicken the liquid.",
-      "Discard bay leaves and serve over warm white rice."
-    ],
-    "fodmapNote": "✨ A quick version written from the title. Saved from your “Main Dishes” section."
-  },
-  {
     "id": "fam-x-turkey-chorizo-burger-needs-salt",
     "name": "Turkey Chorizo Burgers",
     "emoji": "🍔",
