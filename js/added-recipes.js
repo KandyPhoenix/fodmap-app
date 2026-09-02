@@ -485,6 +485,235 @@ const ADDED_RECIPES = [
       "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat flour in the roux, and celery; Cajun seasoning blends usually contain onion and garlic powder, and store stock often does too. For a gentler version: garlic-infused oil and green-onion tops in place of the onion and garlic, a gluten-free flour for the roux, about 1/4 stalk of celery per serve, and an onion/garlic-free Cajun blend and stock. The crawfish and butter are fine as they are."
   },
 
+  {
+      "id": "fam-add-red-beans-and-rice",
+      "name": "Red Beans and Rice",
+      "emoji": "🍚",
+      "category": "dinner",
+      "time": "2 hr 30 min + overnight soak",
+      "serves": 10,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "cajun"
+      ],
+      "source": "https://diethood.com/red-beans-and-rice/",
+      "added": "2026-09-02",
+      "ingredients": [
+          {
+              "qty": "1 pound",
+              "item": "dry red beans"
+          },
+          {
+              "qty": "2 tablespoons",
+              "item": "olive oil"
+          },
+          {
+              "qty": "12 to 14 ounces",
+              "item": "andouille sausage, cut into 1/4-inch slices"
+          },
+          {
+              "qty": "1/2 tablespoon",
+              "item": "butter"
+          },
+          {
+              "qty": "1 large",
+              "item": "yellow onion, diced"
+          },
+          {
+              "qty": "2",
+              "item": "celery ribs, diced"
+          },
+          {
+              "qty": "1 small",
+              "item": "red bell pepper, diced"
+          },
+          {
+              "qty": "1 small",
+              "item": "green bell pepper, diced"
+          },
+          {
+              "qty": "6 cloves",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "salt, or to taste"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "dried oregano"
+          },
+          {
+              "qty": "1/2 teaspoon",
+              "item": "dried thyme"
+          },
+          {
+              "qty": "1/2 teaspoon",
+              "item": "paprika"
+          },
+          {
+              "qty": "1/8 teaspoon",
+              "item": "ground cayenne red pepper, or to taste"
+          },
+          {
+              "qty": "to taste",
+              "item": "freshly ground black pepper"
+          },
+          {
+              "qty": "6 to 7 cups",
+              "item": "low sodium vegetable broth, you can also use chicken broth"
+          },
+          {
+              "qty": "2",
+              "item": "bay leaves"
+          },
+          {
+              "qty": "1/2 cup",
+              "item": "chopped fresh parsley, plus more for garnish"
+          },
+          {
+              "qty": "1/4 cup",
+              "item": "chopped fresh green onions, plus more for garnish"
+          },
+          {
+              "qty": "1 1/2 cups",
+              "item": "long grain brown rice or white rice, cooked according to the directions on the package"
+          }
+      ],
+      "steps": [
+          "Soak the beans. Put the dry beans in a large soup pot or a large bowl; cover in water and soak for 8 hours or overnight. Water should come up about 2 inches over the beans.",
+          "Brown the andouille sausages. When ready to cook, heat 2 tablespoons olive oil in a large Dutch oven or a heavy pot over medium heat. Add the sausage slices to the heated oil and cook until browned on both sides. Stir frequently. Remove the browned sausages from the pot and set them aside.",
+          "Sauté the vegetables. Add butter to the pot and let it melt. Stir in the onions and cook over medium heat for 3 minutes or until starting to soften. Add celery and bell peppers; continue to cook for 4 minutes. Add a little more butter if needed. Stir in garlic and cook for 15 seconds.",
+          "Stir in the seasonings and broth. Add salt, oregano, thyme, paprika, cayenne, and black pepper; continue to cook for 1 more minute. Pour in the vegetable broth and stir, scraping up all the browned bits from the bottom of the pot.",
+          "Add the beans and sausage. Drain the soaked beans and rinse; add the beans to the pot and stir in the browned andouille sausage.",
+          "Simmer. Add the bay leaves, increase the heat to high, and bring the mixture to a boil. Reduce heat to low; cover and simmer for 1-1/2 to 2 hours or until beans are soft and tender. Start checking for doneness around the 1-1/2 hour mark by mashing or squeezing the beans between your fingers. The skin should be a bit resistant to pressure, but the interior should be the consistency and appearance of a baked potato.",
+          "Mash the beans. When the beans are cooked through, remove the bay leaves from the pot and discard them. Remove 1 cup of beans to a bowl; mash the beans with the back of a fork, and then return them to the pot and stir until blended.",
+          "Adjust. If the mixture is too thick, add up to 1 cup of water or broth. Taste the mixture for salt, pepper, and seasonings, and adjust accordingly.",
+          "Finish and serve. Stir in the parsley and green onions, and cook for an additional 5 minutes. Remove the beans from the heat and serve them over cooked rice."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — this dish is built on a pound of red beans (GOS), plus onion, six cloves of garlic, celery, and store broth. The workable FODMAP strategy: use canned beans, rinsed well and kept to about 1/4 cup per serve, swap the onion and garlic for garlic-infused oil and the green-onion tops (already in the recipe), pick an onion/garlic-free broth, and go easy on the celery. Check the andouille too — it often hides garlic."
+  },
+
+  {
+      "id": "fam-add-jambalaya",
+      "name": "Jambalaya",
+      "emoji": "🥘",
+      "category": "dinner",
+      "time": "1 hr 45 min",
+      "serves": 8,
+      "difficulty": "medium",
+      "tags": [
+          "added",
+          "cajun"
+      ],
+      "source": "https://theforkedspoon.com/jambalaya-recipe/",
+      "added": "2026-09-02",
+      "ingredients": [
+          {
+              "qty": "3 tablespoons",
+              "item": "olive oil, divided"
+          },
+          {
+              "qty": "1 pound",
+              "item": "andouille sausage, or any smoked sausage"
+          },
+          {
+              "qty": "1 1/2 pounds",
+              "item": "boneless skinless chicken breasts or thighs, chopped into 1-inch cubes"
+          },
+          {
+              "qty": "3 tablespoons",
+              "item": "Cajun seasoning, divided and adjusted to suit your own personal taste/heat preference"
+          },
+          {
+              "qty": "2 medium",
+              "item": "yellow onions, diced"
+          },
+          {
+              "qty": "1",
+              "item": "green bell pepper, seeded and diced"
+          },
+          {
+              "qty": "1",
+              "item": "red bell pepper, seeded and diced"
+          },
+          {
+              "qty": "3 stalks",
+              "item": "celery, diced"
+          },
+          {
+              "qty": "6 cloves",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "salt"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "pepper"
+          },
+          {
+              "qty": "1/2 teaspoon",
+              "item": "cayenne"
+          },
+          {
+              "qty": "1 tablespoon",
+              "item": "Italian seasoning"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "red pepper flakes"
+          },
+          {
+              "qty": "1 (14 ounce) can",
+              "item": "diced/crushed tomatoes"
+          },
+          {
+              "qty": "2 teaspoons",
+              "item": "Worcestershire sauce"
+          },
+          {
+              "qty": "1 1/2 cups",
+              "item": "uncooked long-grain white rice, rinsed and drained thoroughly"
+          },
+          {
+              "qty": "2 3/4 cups",
+              "item": "low sodium chicken broth"
+          },
+          {
+              "qty": "1 cup",
+              "item": "okra, thinly sliced (or 1 tsp file powder), optional"
+          },
+          {
+              "qty": "1 pound",
+              "item": "raw shrimp, thawed, peeled, and deveined"
+          },
+          {
+              "qty": "for garnish",
+              "item": "fresh chopped parsley"
+          },
+          {
+              "qty": "for garnish",
+              "item": "chopped green onion"
+          }
+      ],
+      "steps": [
+          "Preheat oven to 350 degrees F (180 degrees C).",
+          "Add 1 tablespoon of olive oil to a large stockpot or Dutch oven set over medium-high heat. Add the sliced sausage and cook for approximately 1 minute per side. Remove to a clean plate and set aside. Note: If you are using raw sausage (i.e., non-smoked sausage), cook the sausage whole first. Once it's cooked, remove it from the pan, let it rest, and then slice it before adding it to the pot.",
+          "Add the chicken to a large bowl and season with salt, pepper, and about 1 tablespoon of Cajun seasoning. Set the same pot used to sear the sausage over medium-high heat. Add 1 more tablespoon of olive oil and add the chicken. Cook, stirring occasionally, for 6-8 minutes or until it registers 165°F (75°C) with a digital meat thermometer. Transfer the chicken to a clean plate and set aside.",
+          "Add the last tablespoon of olive oil to the pot and set it over medium-low heat. Add the finely chopped onions, bell pepper, and celery, mixing well to combine. Cook for 8-10 minutes, stirring frequently, until softened.",
+          "Add the minced garlic, Cajun seasoning, salt, pepper, cayenne pepper (optional), Italian seasoning, and red pepper flakes (optional). Mix well to combine and continue to cook for an additional minute.",
+          "Mix in the crushed tomatoes, Worcestershire sauce, white rice, and low-sodium chicken broth with the softened veggies. Mix well to combine. Bring to a boil, then immediately reduce the heat to low and cover with a tight-fitting lid.",
+          "Cook for approximately 25-35 minutes or until the rice is nearly cooked, gently stirring every 7-8 minutes to prevent the rice from burning and sticking to the bottom of the pot. To cook the rice in the oven, transfer the covered pot to the preheated oven and bake for approximately 25-35 minutes or until the rice is nearly cooked.",
+          "As the rice cooks, melt 2 tablespoons of butter in a large skillet set over medium-high heat and cook the shrimp for 2 minutes on each side. Note: Cooking the shrimp in a separate skillet is optional. You can add the uncooked shrimp with the okra, chicken, and sausage (see next step). The hot rice will cook the raw shrimp.",
+          "When the rice is nearly finished cooking, stir in the shrimp and the sliced okra, and return the chicken and sausage back to the pot. Gently mix to combine with the rice. Continue to cook on low, stirring as needed, until the shrimp is cooked, approximately 5-8 minutes.",
+          "Remove from heat. Serve warm garnished with chopped parsley and green onion if desired. Refrigerate leftovers in a sealed container for up to 4 days. Enjoy!"
+      ],
+      "fodmapNote": "Not low-FODMAP as written — two onions, six cloves of garlic, three stalks of celery, and 3 tablespoons of Cajun seasoning (store blends run on onion and garlic powder). For a gentler pot: garlic-infused oil and green-onion tops in place of the onion and garlic, an onion/garlic-free Cajun blend, and keep the celery and okra portions small. The rice, chicken, shrimp, sausage (check for garlic) and canned tomatoes are fine at normal serves; Worcestershire is low-FODMAP at this amount."
+  },
+
 ];
 
 // Add to the family collection, skipping any id already present.
