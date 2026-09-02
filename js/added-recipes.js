@@ -135,6 +135,119 @@ const ADDED_RECIPES = [
       "fodmapNote": "Not low-FODMAP as written — onion, garlic, lactose. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
   },
 
+  {
+      "id": "fam-add-grillades-and-grits",
+      "name": "Grillades and Grits",
+      "emoji": "🥩",
+      "category": "dinner",
+      "time": "2 hr 15 min",
+      "serves": 6,
+      "difficulty": "medium",
+      "tags": [
+          "added"
+      ],
+      "source": "https://www.daringgourmet.com/new-orleans-grillades-and-grits/",
+      "added": "2026-09-02",
+      "ingredients": [
+          {
+              "qty": "For the Grillades",
+              "item": "—"
+          },
+          {
+              "qty": "2 lbs",
+              "item": "round steak, pounded to 1/4 inch thickness and cut into 2 inch squares"
+          },
+          {
+              "qty": "1/2 cup",
+              "item": "all-purpose flour"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "salt"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "Creole seasoning"
+          },
+          {
+              "qty": "2 tablespoons",
+              "item": "extra virgin olive oil"
+          },
+          {
+              "qty": "2 medium",
+              "item": "yellow onions, diced"
+          },
+          {
+              "qty": "2 cloves",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "1 large",
+              "item": "red bell pepper, about 1 cup, diced"
+          },
+          {
+              "qty": "1/2 cup",
+              "item": "celery, diced"
+          },
+          {
+              "qty": "2 cups",
+              "item": "tomatoes, diced, or 1 (14 oz) can diced tomatoes, drained"
+          },
+          {
+              "qty": "1/3 cup",
+              "item": "all-purpose flour"
+          },
+          {
+              "qty": "5 tablespoons",
+              "item": "unsalted butter, or 5 tablespoons extra virgin olive oil"
+          },
+          {
+              "qty": "3 cups",
+              "item": "beef broth"
+          },
+          {
+              "qty": "1 tablespoon",
+              "item": "red wine vinegar"
+          },
+          {
+              "qty": "3",
+              "item": "bay leaves"
+          },
+          {
+              "qty": "1 tablespoon",
+              "item": "Creole seasoning"
+          },
+          {
+              "qty": "2 tablespoons",
+              "item": "fresh parsley, chopped"
+          },
+          {
+              "qty": "For the Grits",
+              "item": "—"
+          },
+          {
+              "qty": "1 cup",
+              "item": "stone-ground old-fashioned grits"
+          },
+          {
+              "qty": "5 cups",
+              "item": "milk"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "salt"
+          }
+      ],
+      "steps": [
+          "Combine the 1/2 cup flour, salt and one teaspoon of Creole Seasoning in a shallow bowl. Dredge the pieces of beef in the flour, shaking off the excess and transfer to a large plate. Heat the oil in a stainless steel skillet over medium-high heat until hot but not smoking. Place the beef in the skillet, being careful not to overcrowd, and fry on both sides until browned. Transfer the beef to a plate.",
+          "Saute the onions in the skillet until soft and translucent, about 5 minutes. Add the garlic and saute for another minute. Add the bell pepper and celery and saute until soft, about 5-7 minutes. Add the tomatoes and saute for another 4-5 minutes, scraping up any browned bits in the skillet. Transfer the vegetables to a bowl.",
+          "Melt the 5 tablespoons of butter or olive oil in the same skillet over medium heat. Add the 1/3 cup flour and whisk constantly until the mixture is a rich brown, about 4 minutes. Add the beef broth and red wine vinegar, whisking continually until the mixture is smooth and thickened. Return the vegetables to the skillet and add the tablespoon of Creole Seasoning and bay leaves. Return the beef to the skillet and bring to a simmer. Reduce the heat to low, cover, and simmer for 1 1/2 hours or until the meat is very tender, stirring occasionally. Stir in the parsley and simmer for another 5 minutes. Add salt and pepper to taste. Remove the bay leaves.",
+          "Serve the grillades and gravy ladled over hot grits (see below).",
+          "For the Grits: In a 5-quart pot over medium-high heat, bring the milk and salt to a simmer, stirring regularly to prevent the milk from burning. Slowly add the grits in a steady stream, whisking constantly to prevent lumps. Reduce the heat to low, cover, and cook for about 30 minutes, stirring occasionally until the grits are thick and tender."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat flour (dredge and roux), celery, and 5 cups of milk in the grits (lactose). For a gentler version: use garlic-infused oil and the green tops of spring onions instead of the onion and garlic, a gluten-free flour blend for the dredge and roux, lactose-free milk for the grits, and keep celery small. Check the Creole seasoning too — most store blends are loaded with onion and garlic powder, so use a homemade or garlic-free blend."
+  },
+
 ];
 
 // Add to the family collection, skipping any id already present.
