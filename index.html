@@ -568,14 +568,14 @@
         <button class="modal-close" id="targets-close">✕</button>
       </div>
       <div class="form-body">
-        <p class="targets-note">Every planner day has a day type — 🪑 sedentary (the default), 🚴 cycling, or 🏋️ progressive load — switched right on the planner. Each type gets its own daily targets below, and the planner shows what's still missing against that day's numbers. These start as general guidelines (Dietary Guidelines for Americans, NIH DRIs, sports-nutrition position stands), not personal prescriptions — set your own from your provider or plan. Leave a box empty to stop tracking it.</p>
+        <p class="targets-note">Every planner day has a day type — 🪑 sedentary (the default), 🚴 cycling, or 🏋️ progressive load — switched right on the planner, each with its own daily targets below. Defaults are tuned to Kandy's stats (140 lb · 5'9" · 45, sessions under 45 min) using the Mifflin-St Jeor equation plus session estimates, at <strong>maintenance</strong> calories. Starting points, not prescriptions — adjust anything, and your provider's numbers always win. Leave a box empty to stop tracking it.</p>
 
         <div class="targets-day-section">
           <div class="targets-day-title">🪑 Sedentary day <span class="targets-day-hint">desk day, no workout — the planner's default</span></div>
           <div class="form-row">
             <div class="form-group flex-grow">
               <label>🔥 Calories</label>
-              <input type="number" id="tg-sedentary-cal" min="0" step="10" placeholder="e.g. 1800">
+              <input type="number" id="tg-sedentary-cal" min="0" step="10" placeholder="e.g. 1600">
             </div>
             <div class="form-group flex-grow">
               <label>💪 Protein (g)</label>
@@ -589,15 +589,15 @@
         </div>
 
         <div class="targets-day-section">
-          <div class="targets-day-title">🚴 Cycling day <span class="targets-day-hint">ride day — extra fuel for the work</span></div>
+          <div class="targets-day-title">🚴 Cycling day <span class="targets-day-hint">under-45-min ride — extra fuel for the work</span></div>
           <div class="form-row">
             <div class="form-group flex-grow">
               <label>🔥 Calories</label>
-              <input type="number" id="tg-cycling-cal" min="0" step="10" placeholder="e.g. 2200">
+              <input type="number" id="tg-cycling-cal" min="0" step="10" placeholder="e.g. 1900">
             </div>
             <div class="form-group flex-grow">
               <label>💪 Protein (g)</label>
-              <input type="number" id="tg-cycling-protein" min="0" step="1" placeholder="e.g. 110">
+              <input type="number" id="tg-cycling-protein" min="0" step="1" placeholder="e.g. 105">
             </div>
             <div class="form-group flex-grow">
               <label>🌾 Fiber (g)</label>
@@ -607,15 +607,15 @@
         </div>
 
         <div class="targets-day-section">
-          <div class="targets-day-title">🏋️ Progressive load day <span class="targets-day-hint">strength/rehab day — extra protein for recovery</span></div>
+          <div class="targets-day-title">🏋️ Progressive load day <span class="targets-day-hint">under-45-min strength/rehab — extra protein for recovery</span></div>
           <div class="form-row">
             <div class="form-group flex-grow">
               <label>🔥 Calories</label>
-              <input type="number" id="tg-load-cal" min="0" step="10" placeholder="e.g. 2000">
+              <input type="number" id="tg-load-cal" min="0" step="10" placeholder="e.g. 1800">
             </div>
             <div class="form-group flex-grow">
               <label>💪 Protein (g)</label>
-              <input type="number" id="tg-load-protein" min="0" step="1" placeholder="e.g. 120">
+              <input type="number" id="tg-load-protein" min="0" step="1" placeholder="e.g. 115">
             </div>
             <div class="form-group flex-grow">
               <label>🌾 Fiber (g)</label>

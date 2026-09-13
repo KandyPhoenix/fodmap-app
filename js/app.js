@@ -6723,11 +6723,29 @@
     { id: 'load',      label: 'Progressive Load', emoji: '🏋️', hint: 'Strength/rehab day — extra protein for recovery' },
   ];
 
+  // Personalized for Kandy (140 lb / 5'9" / 45, sessions < 45 min):
+  // Mifflin-St Jeor BMR ≈ 1,345 kcal; sedentary ×1.2 ≈ 1,615 → 1,600;
+  // ride ≈ +300 net → 1,900; strength ≈ +175 net → 1,800. Protein 1.6 /
+  // 1.65 / 1.8 g/kg at 63.5 kg; fiber = NASEM AI. Maintenance calories.
   const DEFAULT_NUTRITION_TARGETS = {
-    sedentary: { cal: 1800, protein: 100, fiber: 25 },
-    cycling:   { cal: 2200, protein: 110, fiber: 25 },
-    load:      { cal: 2000, protein: 120, fiber: 25 },
+    sedentary: { cal: 1600, protein: 100, fiber: 25 },
+    cycling:   { cal: 1900, protein: 105, fiber: 25 },
+    load:      { cal: 1800, protein: 115, fiber: 25 },
   };
+
+  // Generic defaults that shipped before Kandy's stats were baked in. A
+  // stored set still exactly matching one of these was never customized —
+  // the personalized defaults win over it.
+  const SUPERSEDED_TARGETS = [
+    { cal: 1800, protein: 100, fiber: 25 },
+  ];
+  const SUPERSEDED_PROFILE_SETS = [
+    { sedentary: { cal: 1800, protein: 100, fiber: 25 }, cycling: { cal: 2200, protein: 110, fiber: 25 }, load: { cal: 2000, protein: 120, fiber: 25 } },
+  ];
+
+  function sameTargets(a, b) {
+    return !!(a && b) && NUTRIENTS.every(n => (a[n.id] || 0) === (b[n.id] || 0));
+  }
 
   function loadNutritionTargets() {
     let t = null;
@@ -6736,12 +6754,15 @@
     DAY_TYPES.forEach(dt => { out[dt.id] = Object.assign({}, DEFAULT_NUTRITION_TARGETS[dt.id]); });
     if (t && typeof t === 'object' && !Array.isArray(t)) {
       if (typeof t.cal === 'number' || typeof t.protein === 'number' || typeof t.fiber === 'number') {
+        // Old defaults saved without edits → adopt the personalized ones.
+        if (SUPERSEDED_TARGETS.some(old => sameTargets(t, old))) return out;
         // Legacy single-profile shape: it becomes the sedentary baseline, and
-        // the training days keep their default bumps relative to it.
+        // the training days keep the default bumps relative to it.
         const sed = Object.assign(out.sedentary, t);
-        out.cycling = { cal: sed.cal > 0 ? sed.cal + 400 : sed.cal, protein: sed.protein > 0 ? sed.protein + 10 : sed.protein, fiber: sed.fiber };
-        out.load    = { cal: sed.cal > 0 ? sed.cal + 200 : sed.cal, protein: sed.protein > 0 ? sed.protein + 20 : sed.protein, fiber: sed.fiber };
+        out.cycling = { cal: sed.cal > 0 ? sed.cal + 300 : sed.cal, protein: sed.protein > 0 ? sed.protein + 5 : sed.protein, fiber: sed.fiber };
+        out.load    = { cal: sed.cal > 0 ? sed.cal + 200 : sed.cal, protein: sed.protein > 0 ? sed.protein + 15 : sed.protein, fiber: sed.fiber };
       } else {
+        if (SUPERSEDED_PROFILE_SETS.some(old => DAY_TYPES.every(dt => sameTargets(t[dt.id], old[dt.id])))) return out;
         DAY_TYPES.forEach(dt => {
           if (t[dt.id] && typeof t[dt.id] === 'object' && !Array.isArray(t[dt.id])) Object.assign(out[dt.id], t[dt.id]);
         });
