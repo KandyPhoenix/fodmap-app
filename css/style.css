@@ -7405,3 +7405,200 @@ body.dark .glib-tag { background: rgba(39, 174, 96, 0.15); }
 }
 body.dark .super-portion { background: rgba(39, 174, 96, 0.15); }
 .super-why { font-size: 13px; color: var(--text); line-height: 1.5; margin: 2px 0; }
+
+
+/* ═══════════════════════════════════════════
+   DAILY NUTRITION — "Still Need" planner row,
+   day detail card & targets modal
+════════════════════════════════════════════ */
+
+.nut-row-label {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  --row-accent: var(--primary-light);
+  --row-accent-text: var(--primary-dark);
+  border-top: 2px solid var(--primary);
+}
+body.dark .nut-row-label { --row-accent: #10241a; --row-accent-text: #7fd1ab; }
+
+.nut-row-edit {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2px 7px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.nut-row-edit:hover { color: var(--primary); border-color: var(--primary); }
+
+.nut-cell {
+  min-height: 0;
+  gap: 3px;
+  padding: 9px 8px;
+  border-top: 2px solid var(--primary);
+  cursor: pointer;
+}
+.nut-cell:hover { background: var(--primary-light); }
+body.dark .nut-cell:hover { background: #10241a; }
+.nut-cell.nut-selected { box-shadow: inset 0 0 0 2px var(--primary); }
+
+.nut-cell-line { font-size: 11px; font-weight: 700; color: var(--text); white-space: nowrap; }
+.nut-cell-line.nut-met { color: var(--green); }
+.nut-cell-line.nut-over { color: var(--yellow); }
+.nut-cell-line.nut-quiet { color: var(--text-muted); font-weight: 600; opacity: 0.75; }
+
+.nut-cell-flag {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--yellow);
+  background: var(--yellow-bg);
+  border-radius: 8px;
+  padding: 1px 6px;
+  margin-top: 2px;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+body.dark .nut-cell-flag { background: rgba(243,156,18,0.15); }
+
+/* ── Day detail card ── */
+.nutrition-section { margin-top: 20px; }
+
+.nutrition-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.nut-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.nut-title { font-size: 17px; font-weight: 800; color: var(--text); }
+.nut-sub { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+.nut-targets-btn { white-space: nowrap; }
+
+.nut-detail-row { margin-bottom: 14px; }
+.nut-detail-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+.nut-detail-label { font-size: 13px; font-weight: 800; color: var(--text); }
+.nut-detail-nums { font-size: 12.5px; font-weight: 700; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+
+.nut-bar {
+  height: 10px;
+  border-radius: 6px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.nut-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: var(--primary);
+  transition: width 0.35s ease;
+}
+.nut-bar-fill.met { background: var(--green); }
+.nut-bar-fill.over { background: var(--yellow); }
+
+.nut-detail-status { font-size: 12px; font-weight: 700; color: var(--primary-dark); margin-top: 4px; }
+.nut-detail-status.met { color: var(--green); }
+.nut-detail-status.over { color: var(--yellow); }
+body.dark .nut-detail-status { color: #7fd1ab; }
+body.dark .nut-detail-status.met { color: var(--green); }
+body.dark .nut-detail-status.over { color: var(--yellow); }
+
+.nut-empty { font-size: 13.5px; color: var(--text-muted); padding: 8px 0 4px; line-height: 1.5; }
+
+.nut-uncounted {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: var(--yellow-bg);
+  border: 1px dashed var(--yellow);
+  border-radius: 10px;
+}
+body.dark .nut-uncounted { background: rgba(243,156,18,0.08); }
+.nut-uncounted-title {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 6px;
+}
+.nut-uncounted-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 0;
+  flex-wrap: wrap;
+}
+.nut-uncounted-name { font-size: 13px; font-weight: 600; color: var(--text); }
+
+.nut-est-btn {
+  background: none;
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  border-radius: 8px;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nut-est-btn:hover { background: var(--yellow); color: #fff; }
+
+.nut-est-form {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 4px 0;
+}
+.nut-est-input {
+  width: 86px;
+  padding: 6px 8px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  background: var(--card);
+  color: var(--text);
+}
+.nut-est-input:focus { outline: none; border-color: var(--primary); }
+.nut-est-form .action-btn { padding: 6px 12px; font-size: 12px; }
+.nut-est-form .nut-est-cancel { background: var(--bg); color: var(--text); }
+
+.nut-foot { margin-top: 10px; font-size: 11px; color: var(--text-muted); }
+.nut-est-tag {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  padding: 0 4px;
+}
+
+.targets-note { font-size: 12.5px; color: var(--text-muted); line-height: 1.55; margin: 0 0 14px; }
+
+@media (max-width: 640px) {
+  .nutrition-card { padding: 16px 14px; }
+  .nut-head { flex-direction: column; }
+  .nut-targets-btn { align-self: stretch; }
+}
