@@ -1814,7 +1814,480 @@ const MOB_RECIPES = [
       "Plate up and top with the herby breadcrumbs."
     ],
     "fodmapNote": "Not low-FODMAP as written — garlic. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
-  }
+  },
+
+  {
+      "id": "fam-mob-butter-bean-bowl",
+      "name": "Quick & Creamy Butter Bean Bowl",
+      "emoji": "🫘",
+      "category": "lunch",
+      "time": "20 min",
+      "serves": 2,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "vegetarian",
+          "quick"
+      ],
+      "source": "https://www.mob.co.uk/recipes/10-min-creamy-butterbean-bowl",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "2",
+              "item": "x 400g Can Butter Beans"
+          },
+          {
+              "qty": "to taste",
+              "item": "Reserved Butter Bean Liquid"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Vegan Cream Cheese"
+          },
+          {
+              "qty": "300g",
+              "item": "Cherry Tomatoes"
+          },
+          {
+              "qty": "5Clove",
+              "item": "Garlic"
+          },
+          {
+              "qty": "70g",
+              "item": "Spinach"
+          },
+          {
+              "qty": "1",
+              "item": "Lemon"
+          },
+          {
+              "qty": "to taste",
+              "item": "Olive Oil"
+          },
+          {
+              "qty": "to taste",
+              "item": "Chilli Flakes, to serve"
+          }
+      ],
+      "steps": [
+          "Finely slice the garlic. Heat a pot or deep saucepan over medium-low heat with a drizzle of olive. Stir fry the garlic for a few minutes until just starting to become fragrant and translucent. Drain the butterbeans, reserving the liquid of 1 can.",
+          "Add the drained beans, liquid and tomatoes to the pan. Reduce the heat to low. Stir for a few minutes until the tomatoes are starting to soften. Squash the tomatoes with the back of a spoon so that they release their juices. Stir through the spinach",
+          "Add the vegan cream cheese and stir to create a creamy sauce with the tomato juice and butterbean liquid.",
+          "When the spinach has wilted, taste and be sure to season. with salt and pepper generously if needed. Add a squeeze of lemon juice and some chilli flakes if using. Serve with crusty bread or with rice."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — butter beans are GOS-heavy at bowl size (a low-FODMAP portion is about 1/4 cup) and there's a lot of garlic. Gentler: garlic-infused oil instead of the cloves, and a smaller bean portion.",
+      "nutrition": { "cal": 580, "protein": 33, "fiber": 24 }
+  },
+
+  {
+      "id": "fam-mob-one-pot-fish-biryani",
+      "name": "One-Pot Fish Biryani",
+      "emoji": "🐟",
+      "category": "dinner",
+      "time": "40 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "fish",
+          "one-pot"
+      ],
+      "source": "https://www.mob.co.uk/recipes/one-pot-fish-biryani",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "2",
+              "item": "Brown Onion"
+          },
+          {
+              "qty": "1Clove",
+              "item": "Garlic"
+          },
+          {
+              "qty": "1",
+              "item": "Lime"
+          },
+          {
+              "qty": "270g",
+              "item": "Basmati Rice"
+          },
+          {
+              "qty": "5",
+              "item": "Curry Leaf"
+          },
+          {
+              "qty": "4",
+              "item": "Fillet Cod"
+          },
+          {
+              "qty": "320ml",
+              "item": "Vegetable Stock"
+          },
+          {
+              "qty": "100g",
+              "item": "Frozen Peas"
+          },
+          {
+              "qty": "15g",
+              "item": "Fresh Coriander"
+          },
+          {
+              "qty": "to taste",
+              "item": "Olive Oil"
+          },
+          {
+              "qty": "1tbsp",
+              "item": "Garam Masala"
+          },
+          {
+              "qty": "1tsp",
+              "item": "Ground Turmeric"
+          },
+          {
+              "qty": "to taste",
+              "item": ".5tsp Chilli Powder"
+          },
+          {
+              "qty": "to taste",
+              "item": ".5 Cucumber"
+          },
+          {
+              "qty": "200g",
+              "item": "Greek Yoghurt"
+          },
+          {
+              "qty": "to taste",
+              "item": ".25tsp Garam Masala"
+          }
+      ],
+      "steps": [
+          "Stir all the spices together in a small bowl and set aside.",
+          "Peel and thinly slice the onions. Grate the garlic into a mixing bowl and add ½ the spice mix, the juice of the lime and a glug of olive oil. Season generously with salt and pepper and give it a good mix. Toss the fish through this mixture and set aside in the fridge to marinate.",
+          "Wash the rice until the water runs clear.",
+          "Set a frying pan with high sides over a medium heat with a generous drizzle of olive oil. Once hot, add the onions and cook, stirring occasionally, for 7-10 mins until golden brown. Transfer the onions to a plate.",
+          "Turn the heat down to medium and add another drizzle of olive oil. Add the curry leaves and cook until they splutter then stir in the remaining spice mix, rice and ½ the browned onion. Cook for a couple of seconds then pour in the stock. Bring to the boil then place a lid on, turn the heat down to low and let the rice cook undisturbed for 12 mins.",
+          "After 12 mins, scatter the peas over the rice and top with the fish. Place the lid back on and leave it on a low heat for 10 mins to finish cooking. Don’t remove the lid until finished. Heat the grill to high.",
+          "Meanwhile, make the yoghurt. Coarsely grate the cucumber and squeeze out as much water out as possible. Get the yoghurt in a bowl then stir through the grated cucumber and garam masala. Taste and season with salt.",
+          "When the fish cooking time is up, remove the lid and pop the pan under the grill for 3-4 mins until the fish has started to colour and is fully cooked through.",
+          "Fluff the rice using a fork and spoon into bowls. Top with the fish, a scattering of the remaining browned onions and a dollop of cucumber yoghurt. Finish with some coriander."
+      ],
+      "fodmapNote": "Onion and garlic in the base — swap garlic-infused oil and spring-onion green tops to keep it low-FODMAP; peas are moderate, keep to ~1/4 cup per serve. Rice, cod and spices are safe; use lactose-free yogurt for the raita.",
+      "nutrition": { "cal": 425, "protein": 33, "fiber": 4 }
+  },
+
+  {
+      "id": "fam-mob-green-herby-lentil-pasta",
+      "name": "Green Herby Lentils with Pasta",
+      "emoji": "🍝",
+      "category": "dinner",
+      "time": "45 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "vegetarian",
+          "high-fiber"
+      ],
+      "source": "https://www.mob.co.uk/recipes/green-herby-lentils-with-pasta",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "2",
+              "item": "Brown Onion"
+          },
+          {
+              "qty": "5",
+              "item": "Garlic Clove"
+          },
+          {
+              "qty": "25g",
+              "item": "Fresh Parsley"
+          },
+          {
+              "qty": "20g",
+              "item": "Fresh Dill"
+          },
+          {
+              "qty": "270g",
+              "item": "Spinach"
+          },
+          {
+              "qty": "800ml",
+              "item": "Vegetable Stock"
+          },
+          {
+              "qty": "0.5tsp",
+              "item": "Ground Turmeric"
+          },
+          {
+              "qty": "1tbsp",
+              "item": "Dried Mint"
+          },
+          {
+              "qty": "135g",
+              "item": "Small Pasta"
+          },
+          {
+              "qty": "300g",
+              "item": "Cooked Green Lentils"
+          },
+          {
+              "qty": "200g",
+              "item": "Cooked Black Beans"
+          },
+          {
+              "qty": "150g",
+              "item": "Feta"
+          },
+          {
+              "qty": "40g",
+              "item": "Dried Sour Cherry"
+          },
+          {
+              "qty": "150g",
+              "item": "Greek Yoghurt"
+          },
+          {
+              "qty": "to taste",
+              "item": "Olive Oil"
+          },
+          {
+              "qty": "to taste",
+              "item": "Salt"
+          },
+          {
+              "qty": "to taste",
+              "item": "Black Pepper"
+          }
+      ],
+      "steps": [
+          "Peel and thinly slice the onions and garlic. Finely mince the parsley and dill, stalks and all.",
+          "Put half of the spinach into a blender, add the vegetable stock and blend until smooth. Chop the remaining spinach and set aside.",
+          "Place a large frying pan over a medium heat with a generous drizzle of olive oil. Once hot, add the onions and cook for 12-15 mins until deep golden brown. Transfer half to a bowl and set it aside.",
+          "Add the garlic, turmeric, dried mint, dill, chopped spinach and parsley to the frying pan, along with the pasta. Cook until fragrant, about 5 mins.",
+          "Pour a ladleful of spinach stock over the pasta, then cook, stirring, until the pasta absorbs the liquid. Add another ladleful and continue stirring, adding more stock until the pasta is cooked through or al dente.",
+          "Once the pasta is cooked, stir through the lentils and black beans, adding more spinach stock to thin it out. Taste and season with salt and pepper.",
+          "Crumble the feta and toss with the reserved onions and dried fruit.",
+          "Share the pasta between bowls, drizzle over some yoghurt and finish with a sprinkle of the onion mixture."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — onions, five garlic cloves, lentils AND black beans stack GOS/fructans. FODMAP version: garlic-infused oil, canned rinsed lentils capped at 1/4 cup per serve, skip the beans and sour cherries.",
+      "nutrition": { "cal": 430, "protein": 27, "fiber": 13 }
+  },
+
+  {
+      "id": "fam-mob-tuna-green-bean-salad",
+      "name": "Tuna & Green Bean Chopped Salad",
+      "emoji": "🥗",
+      "category": "lunch",
+      "time": "10 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "quick",
+          "no-cook",
+          "gluten-free"
+      ],
+      "source": "https://www.mob.co.uk/recipes/tuna-green-bean-chopped-salad",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "1200g",
+              "item": "Green Bean"
+          },
+          {
+              "qty": "150g",
+              "item": "Pickled Guindilla Chilli"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Capers"
+          },
+          {
+              "qty": "450g",
+              "item": "Tinned Tuna in Olive Oil"
+          },
+          {
+              "qty": "2",
+              "item": "Lemon"
+          },
+          {
+              "qty": "to taste",
+              "item": "Olive Oil"
+          },
+          {
+              "qty": "to taste",
+              "item": "Salt"
+          },
+          {
+              "qty": "to taste",
+              "item": "Black Pepper"
+          }
+      ],
+      "steps": [
+          "Boil your green beans in water until soft, drain, and then allow to cool.",
+          "Chop and discard the heads off the pickled guindilla chillies. Add your beans to a chopping board along with your tuna and chillies and roughly chop them up.",
+          "Add in your capers and continue to chop.",
+          "Add all of your chopped ingredients to a bowl and squeeze in the juice from your lemons. Add in a good glug of olive oil and season generously with salt and pepper. Serve and enjoy!"
+      ],
+      "fodmapNote": "Close to low-FODMAP as written — tuna, capers and pickled chillies are fine; green beans stay low at about a 75 g serve (this recipe plates more, so halve the beans if you're strict).",
+      "nutrition": { "cal": 330, "protein": 34, "fiber": 9 }
+  },
+
+  {
+      "id": "fam-mob-airfryer-sesame-chicken",
+      "name": "Air Fryer Crispy Sesame Chicken",
+      "emoji": "🍗",
+      "category": "dinner",
+      "time": "20 min",
+      "serves": 2,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "air-fryer",
+          "quick"
+      ],
+      "source": "https://www.mob.co.uk/recipes/air-fryer-crispy-sesame-chicken",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "300g",
+              "item": "Chicken Breast"
+          },
+          {
+              "qty": "3tbsp",
+              "item": "Flour"
+          },
+          {
+              "qty": "1",
+              "item": "Egg"
+          },
+          {
+              "qty": "100g",
+              "item": "Panko Breadcrumbs"
+          },
+          {
+              "qty": "1tbsp",
+              "item": "Sesame Seeds"
+          },
+          {
+              "qty": "2",
+              "item": "Spring Onion"
+          },
+          {
+              "qty": "1",
+              "item": "Red Chilli"
+          },
+          {
+              "qty": "1tsp",
+              "item": "Sesame Oil"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Soy Sauce"
+          },
+          {
+              "qty": "3tbsp",
+              "item": "Honey"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Sweet Chilli Sauce"
+          },
+          {
+              "qty": "1tsp",
+              "item": "Rice Wine Vinegar"
+          },
+          {
+              "qty": "0.5tsp",
+              "item": "Chinese Five-Spice"
+          },
+          {
+              "qty": "3tbsp",
+              "item": "Sriracha"
+          },
+          {
+              "qty": "1tbsp",
+              "item": "Garlic Purée"
+          },
+          {
+              "qty": "1tbsp",
+              "item": "Ginger Paste"
+          }
+      ],
+      "steps": [
+          "Lay out three shallow bowls in a line. Tip the flour into one, beat the egg into another and put the breadcrumbs in the third.",
+          "Roughly chop the chicken into bite size pieces, then coat the chicken in the flour, then dip in the beaten egg and finally the breadcrumbs. Spray with oil and air fry for 14 mins at 200°C.",
+          "Meanwhile, mix the sauce ingredients together in a bowl. Slice the spring onions and red chilli, then set aside.",
+          "Once the chicken is done, pour the sauce straight into the air fryer basket, shake well so that it coats the chicken, then air fry for 2 mins.",
+          "Top with sesame seeds, the sliced spring onions and chillies. Enjoy!"
+      ],
+      "fodmapNote": "Not low-FODMAP as written — honey, garlic purée, sriracha and sweet chilli sauce all carry FODMAPs. Swap maple syrup for the honey, garlic-infused oil for the purée, and a garlic-free chilli sauce; use spring-onion green tops.",
+      "nutrition": { "cal": 620, "protein": 48, "fiber": 3 }
+  },
+
+  {
+      "id": "fam-mob-tuna-celery-miso-smash",
+      "name": "Tuna, Celery & Miso High Protein Smash",
+      "emoji": "🥪",
+      "category": "lunch",
+      "time": "5 min",
+      "serves": 2,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "quick",
+          "no-cook",
+          "high-protein"
+      ],
+      "source": "https://www.mob.co.uk/recipes/tuna-celery-miso-smoosh",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "3Stick",
+              "item": "Celery"
+          },
+          {
+              "qty": "3",
+              "item": "Spring Onion"
+          },
+          {
+              "qty": "300g",
+              "item": "Tinned Tuna in Spring Water"
+          },
+          {
+              "qty": "0.5",
+              "item": "Lemon"
+          },
+          {
+              "qty": "1tbsp",
+              "item": "White Miso"
+          },
+          {
+              "qty": "1tbsp",
+              "item": "Mayonnaise"
+          },
+          {
+              "qty": "0.75tbsp",
+              "item": "Sesame Oil"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Rice Vinegar"
+          },
+          {
+              "qty": "1tbsp",
+              "item": "Sesame Seeds"
+          }
+      ],
+      "steps": [
+          "Chop the celery and spring onions into small pieces. Drain your tuna, and juice your lemon.",
+          "Combine all of the ingredients in a bowl before ‘smooshing’ over toast – or pitta bread, a bagel, or whatever you fancy. Top with finely chopped spring onions.",
+          "Enjoy!"
+      ],
+      "fodmapNote": "Celery is the FODMAP here — the low portion is tiny (about 1/3 stick per serve), so trim it back or pad with cucumber; use spring-onion green tops only. Tuna, miso (to ~2 tbsp) and sesame are fine.",
+      "nutrition": { "cal": 330, "protein": 42, "fiber": 2 }
+  },
 ];
 
 // Add to the family collection, skipping any id already present.

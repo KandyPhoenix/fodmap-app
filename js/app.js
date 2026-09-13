@@ -4249,7 +4249,11 @@
 
 
 
-          <div class="rmodal-nut-note">Per serving · estimated</div>` : ''}
+          <div class="rmodal-nut-note">Per serving · estimated</div>` : `
+          <div class="rmodal-nut-missing">
+            <button type="button" class="action-btn primary" id="rmodal-estimate-btn">✨ Estimate nutrition from ingredients</button>
+            <div class="rmodal-nut-note">No nutrition data yet — the app can calculate it from the recipe</div>
+          </div>`}
 
 
 
@@ -4700,6 +4704,22 @@
 
 
 
+    const rmEst = document.getElementById('rmodal-estimate-btn');
+    if (rmEst) rmEst.addEventListener('click', () => {
+      const res = (typeof estimateRecipeNutrition === 'function') ? estimateRecipeNutrition(recipe) : null;
+      if (!res) { alert("Couldn't read enough of this ingredient list to estimate — open ✏️ Edit Recipe and type the numbers instead."); return; }
+      const nut = { cal: res.cal, protein: res.protein, fiber: res.fiber };
+      const list = getUserRecipes();
+      const idx = list.findIndex(r2 => r2.id === recipe.id);
+      if (idx >= 0) list[idx] = Object.assign({}, list[idx], { nutrition: nut });
+      else list.push(Object.assign({}, recipe, { nutrition: nut }));
+      saveUserRecipes(list);
+      renderRecipeGrid(); renderPlanner();
+      const fresh = getAllRecipes().find(r2 => r2.id === recipe.id);
+      if (fresh) openRecipeModal(fresh);
+      if (res.unmatched.length) setTimeout(() => alert(`Estimated from ${res.handled} of ${res.total} ingredients. Couldn't read: ${res.unmatched.join(', ')} — tap ✏️ Edit Recipe to fine-tune.`), 80);
+    });
+
     document.getElementById('add-to-planner-btn').addEventListener('click', () => {
 
 
@@ -4959,6 +4979,12 @@
 
     document.getElementById('rf-fodmap-note').value = existing ? (existing.fodmapNote || '') : '';
 
+    const exNut = existing ? getRecipeNutrition(existing.id, existing) : { cal: null, protein: null, fiber: null };
+    document.getElementById('rf-cal').value     = exNut.cal != null ? exNut.cal : '';
+    document.getElementById('rf-protein').value = exNut.protein != null ? exNut.protein : '';
+    document.getElementById('rf-fiber').value   = exNut.fiber != null ? exNut.fiber : '';
+    document.getElementById('rf-est-note').textContent = '';
+
 
 
 
@@ -5110,6 +5136,21 @@
 
 
     document.getElementById('rf-save-btn').onclick       = saveRecipeFromForm;
+
+    document.getElementById('rf-estimate-btn').onclick    = () => {
+      const temp = {
+        ingredients: ingredientRows.filter(r2 => r2.item && r2.item.trim()),
+        serves: parseInt(document.getElementById('rf-serves').value, 10) || 2,
+      };
+      const res = (typeof estimateRecipeNutrition === 'function') ? estimateRecipeNutrition(temp) : null;
+      const note = document.getElementById('rf-est-note');
+      if (!res) { note.textContent = "Couldn't read enough of the ingredient list to estimate — type the numbers in by hand."; return; }
+      document.getElementById('rf-cal').value = res.cal;
+      document.getElementById('rf-protein').value = res.protein;
+      document.getElementById('rf-fiber').value = res.fiber;
+      note.textContent = `Estimated from ${res.handled} of ${res.total} ingredients, per serving (serves ${temp.serves}).` +
+        (res.unmatched.length ? ` Couldn't read: ${res.unmatched.join(', ')} — nudge the numbers up if those matter.` : '');
+    };
 
 
 
@@ -5920,6 +5961,19 @@
 
 
     });
+
+    const nCal = parseFloat(document.getElementById('rf-cal').value);
+    const nPro = parseFloat(document.getElementById('rf-protein').value);
+    const nFib = parseFloat(document.getElementById('rf-fiber').value);
+    if (nCal > 0 || nPro > 0 || nFib > 0) {
+      recipe.nutrition = {
+        cal:     nCal > 0 ? Math.round(nCal) : null,
+        protein: nPro > 0 ? Math.round(nPro) : null,
+        fiber:   nFib > 0 ? Math.round(nFib) : null,
+      };
+    } else {
+      delete recipe.nutrition;
+    }
 
 
 
