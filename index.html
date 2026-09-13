@@ -755,6 +755,17 @@
         </div>
 
         <div class="form-section">
+          <div class="form-section-title">📊 Nutrition per serving <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--text-muted)">(optional — powers the planner's daily totals)</span></div>
+          <div class="form-row">
+            <div class="form-group"><label>🔥 Calories</label><input type="number" id="rf-cal" min="0" step="5" placeholder="e.g. 450"></div>
+            <div class="form-group"><label>💪 Protein (g)</label><input type="number" id="rf-protein" min="0" step="1" placeholder="e.g. 32"></div>
+            <div class="form-group"><label>🌾 Fiber (g)</label><input type="number" id="rf-fiber" min="0" step="1" placeholder="e.g. 4"></div>
+            <div class="form-group" style="align-self:flex-end"><button type="button" id="rf-estimate-btn" class="add-row-btn">✨ Estimate from ingredients</button></div>
+          </div>
+          <div class="rf-est-note" id="rf-est-note"></div>
+        </div>
+
+        <div class="form-section">
           <div class="form-section-title">FODMAP Notes <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--text-muted)">(optional)</span></div>
           <textarea id="rf-fodmap-note" placeholder="Any notes about FODMAP safety, serving sizes, or substitutions…"></textarea>
         </div>

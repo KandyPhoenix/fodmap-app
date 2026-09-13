@@ -137,6 +137,7 @@ const ADDED_RECIPES = [
 
   {
       "id": "fam-add-grillades-and-grits",
+      "nutrition": { "cal": 685, "protein": 47, "fiber": 5 },
       "name": "Grillades and Grits",
       "emoji": "🥩",
       "category": "dinner",

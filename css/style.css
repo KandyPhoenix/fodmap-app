@@ -7758,3 +7758,7 @@ body.dark .nut-cell-line.nut-water-line { color: #7cc4ea; }
   border-radius: 8px;
 }
 body.dark .me-guess { background: #10241a; }
+
+/* ── Recipe nutrition editing / estimating ── */
+.rf-est-note { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-top: 6px; min-height: 0; }
+.rmodal-nut-missing { padding: 6px 24px 2px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
