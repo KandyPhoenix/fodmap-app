@@ -560,6 +560,44 @@
     </div>
   </div>
 
+  <!-- Edit custom meal modal -->
+  <div class="modal-overlay hidden" id="meal-edit-overlay">
+    <div class="find-form-modal" id="meal-edit-modal">
+      <div class="form-header">
+        <div class="form-title">✏️ Edit Meal</div>
+        <button class="modal-close" id="meal-edit-close">✕</button>
+      </div>
+      <div class="form-body">
+        <div class="form-row">
+          <div class="form-group flex-grow">
+            <label>Meal <span class="required">*</span></label>
+            <input type="text" id="me-text" maxlength="120" placeholder="e.g. Leftover chicken and rice">
+          </div>
+        </div>
+        <div class="me-guess" id="me-guess"></div>
+        <div class="form-row">
+          <div class="form-group flex-grow">
+            <label>🔥 Calories</label>
+            <input type="number" id="me-cal" min="0" step="10">
+          </div>
+          <div class="form-group flex-grow">
+            <label>💪 Protein (g)</label>
+            <input type="number" id="me-protein" min="0" step="1">
+          </div>
+          <div class="form-group flex-grow">
+            <label>🌾 Fiber (g)</label>
+            <input type="number" id="me-fiber" min="0" step="1">
+          </div>
+        </div>
+        <p class="targets-note" style="margin:10px 0 0">Numbers follow the app's guess as you type — touch any number to take over. Clear all three to leave the meal "not counted".</p>
+      </div>
+      <div class="form-footer">
+        <button id="me-cancel-btn" class="action-btn" style="background:var(--bg);color:var(--text)">Cancel</button>
+        <button id="me-save-btn" class="action-btn primary">💾 Save</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Nutrition targets modal -->
   <div class="modal-overlay hidden" id="targets-overlay">
     <div class="find-form-modal" id="targets-modal">

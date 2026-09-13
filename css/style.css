@@ -7746,3 +7746,15 @@ body.dark .nut-water-btn.nut-water-minus { background: none; border-color: var(-
 
 .nut-cell-line.nut-water-line { color: #1b6fa0; }
 body.dark .nut-cell-line.nut-water-line { color: #7cc4ea; }
+
+/* ── Edit-meal modal ── */
+.me-guess {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  background: var(--primary-light);
+  border-radius: 8px;
+}
+body.dark .me-guess { background: #10241a; }
