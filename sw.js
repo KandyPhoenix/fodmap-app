@@ -1,4 +1,4 @@
-const CACHE = 'fodmap-v95';
+const CACHE = 'fodmap-v96';
 const ASSETS = [
   './',
   './index.html',
@@ -69,31 +69,37 @@ self.addEventListener('fetch', e => {
   catch (err) { return; }
   if (!sameOrigin) return;
 
-  // Network-first, but revalidating. Passing the request through as-is lets the
-  // browser's HTTP cache answer from its own copy for up to max-age (600s on
-  // GitHub Pages) without ever reaching the network — which is how the app
-  // could open stale from the taskbar and only come good after a manual
-  // refresh. 'no-cache' forces a conditional request instead; the server still
-  // answers 304 when nothing has changed, so this stays cheap.
+  // Stale-while-revalidate. The old handler was network-first: every open
+  // waited on ~30 conditional requests before anything painted, so on a slow
+  // or flaky connection the app came up blank or half-rendered until a lucky
+  // manual reload. Now the cached copy answers INSTANTLY (always a complete,
+  // matching set — install refetches every asset on a version bump and the
+  // page reloads once on controllerchange), while a background fetch quietly
+  // refreshes the cached file for next time. 'no-cache' keeps that background
+  // request honest against GitHub Pages' max-age=600 (the server still
+  // answers 304 when nothing changed, so it stays cheap).
   const fresh = new Request(e.request.url, {
     cache: 'no-cache',
     credentials: 'same-origin',
   });
 
   e.respondWith(
-    fetch(fresh)
-      .then(res => {
+    caches.match(e.request).then(cached => {
+      const refetch = fetch(fresh).then(res => {
         if (res && res.status === 200 && res.type !== 'opaque') {
           const clone = res.clone();
           caches.open(CACHE).then(c => c.put(e.request, clone));
         }
         return res;
-      })
-      // Offline, or the network died mid-flight: serve whatever we have. A
-      // navigation with nothing cached for it still gets the app shell.
-      .catch(() => caches.match(e.request).then(cached =>
-        cached || (e.request.mode === 'navigate' ? caches.match('./index.html') : undefined)
-      ))
+      });
+      if (cached) {
+        e.waitUntil(refetch.catch(() => {}));
+        return cached;
+      }
+      // Not precached (a new file, or first visit): network, with the app
+      // shell as the offline fallback for navigations.
+      return refetch.catch(() => (e.request.mode === 'navigate' ? caches.match('./index.html') : undefined));
+    })
   );
 });
 

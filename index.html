@@ -568,7 +568,7 @@
         <button class="modal-close" id="targets-close">✕</button>
       </div>
       <div class="form-body">
-        <p class="targets-note">Every planner day has a day type — 🪑 sedentary (the default), 🚴 cycling, or 🏋️ progressive load — switched right on the planner, each with its own daily targets below. Defaults are tuned to Kandy's stats (140 lb · 5'9" · 45, sessions under 45 min) for <strong>slow fat loss</strong> (~0.3 lb/week): every day sits a little under its own maintenance, and sedentary days (maintenance ≈ 1,600) stay above BMR at 1,450 — fed, without a realistic surplus. Protein runs higher in a deficit to protect muscle. Starting points, not prescriptions — adjust anything, and your provider's numbers always win. Leave a box empty to stop tracking it.</p>
+        <p class="targets-note">Every planner day has a day type — 🪑 sedentary (the default), 🚴 cycling, or 🏋️ progressive load — switched right on the planner, each with its own daily targets below. Defaults are tuned to Kandy's stats (140 lb · 5'9" · 45, sessions under 45 min) for <strong>slow fat loss</strong> (~0.3 lb/week): every day sits a little under its own maintenance, and sedentary days (maintenance ≈ 1,600) stay above BMR at 1,450 — fed, without a realistic surplus. Protein runs higher in a deficit to protect muscle, and 💧 water targets follow daily fluid guidance plus extra on training days. Starting points, not prescriptions — adjust anything, and your provider's numbers always win. Leave a box empty to stop tracking it.</p>
 
         <div class="targets-day-section">
           <div class="targets-day-title">🪑 Sedentary day <span class="targets-day-hint">desk day, no workout — fed, above BMR, no surplus</span></div>
@@ -584,6 +584,10 @@
             <div class="form-group flex-grow">
               <label>🌾 Fiber (g)</label>
               <input type="number" id="tg-sedentary-fiber" min="0" step="1" placeholder="e.g. 25">
+            </div>
+            <div class="form-group flex-grow">
+              <label>💧 Water (oz)</label>
+              <input type="number" id="tg-sedentary-water" min="0" step="4" placeholder="e.g. 70">
             </div>
           </div>
         </div>
@@ -603,6 +607,10 @@
               <label>🌾 Fiber (g)</label>
               <input type="number" id="tg-cycling-fiber" min="0" step="1" placeholder="e.g. 25">
             </div>
+            <div class="form-group flex-grow">
+              <label>💧 Water (oz)</label>
+              <input type="number" id="tg-cycling-water" min="0" step="4" placeholder="e.g. 85">
+            </div>
           </div>
         </div>
 
@@ -620,6 +628,10 @@
             <div class="form-group flex-grow">
               <label>🌾 Fiber (g)</label>
               <input type="number" id="tg-load-fiber" min="0" step="1" placeholder="e.g. 25">
+            </div>
+            <div class="form-group flex-grow">
+              <label>💧 Water (oz)</label>
+              <input type="number" id="tg-load-water" min="0" step="4" placeholder="e.g. 75">
             </div>
           </div>
         </div>

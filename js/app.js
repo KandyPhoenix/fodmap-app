@@ -6731,9 +6731,9 @@
   // fed, but no realistic surplus. Protein rises in a deficit to protect
   // muscle (1.65 / 1.73 / 1.9 g/kg); fiber = NASEM AI.
   const DEFAULT_NUTRITION_TARGETS = {
-    sedentary: { cal: 1450, protein: 105, fiber: 25 },
-    cycling:   { cal: 1750, protein: 110, fiber: 25 },
-    load:      { cal: 1650, protein: 120, fiber: 25 },
+    sedentary: { cal: 1450, protein: 105, fiber: 25, water: 70 },
+    cycling:   { cal: 1750, protein: 110, fiber: 25, water: 85 },
+    load:      { cal: 1650, protein: 120, fiber: 25, water: 75 },
   };
 
   // Generic defaults that shipped before Kandy's stats were baked in. A
@@ -6763,8 +6763,8 @@
         // Legacy single-profile shape: it becomes the sedentary baseline, and
         // the training days keep the default bumps relative to it.
         const sed = Object.assign(out.sedentary, t);
-        out.cycling = { cal: sed.cal > 0 ? sed.cal + 300 : sed.cal, protein: sed.protein > 0 ? sed.protein + 5 : sed.protein, fiber: sed.fiber };
-        out.load    = { cal: sed.cal > 0 ? sed.cal + 200 : sed.cal, protein: sed.protein > 0 ? sed.protein + 15 : sed.protein, fiber: sed.fiber };
+        out.cycling = { cal: sed.cal > 0 ? sed.cal + 300 : sed.cal, protein: sed.protein > 0 ? sed.protein + 5 : sed.protein, fiber: sed.fiber, water: DEFAULT_NUTRITION_TARGETS.cycling.water };
+        out.load    = { cal: sed.cal > 0 ? sed.cal + 200 : sed.cal, protein: sed.protein > 0 ? sed.protein + 15 : sed.protein, fiber: sed.fiber, water: DEFAULT_NUTRITION_TARGETS.load.water };
       } else {
         if (SUPERSEDED_PROFILE_SETS.some(old => DAY_TYPES.every(dt => sameTargets(t[dt.id], old[dt.id])))) return out;
         DAY_TYPES.forEach(dt => {
@@ -6808,6 +6808,33 @@
 
   function dayTypeInfo(typeId) {
     return DAY_TYPES.find(dt => dt.id === typeId) || DAY_TYPES[0];
+  }
+
+  // ── Water log ({ 'YYYY-MM-DD': ounces drunk }) ──
+  function loadWaterLog() {
+    try {
+      const m = JSON.parse(localStorage.getItem('fodmap-water') || 'null');
+      if (m && typeof m === 'object' && !Array.isArray(m)) return m;
+    } catch(e) {}
+    return {};
+  }
+
+  function saveWaterLog(m) {
+    try { localStorage.setItem('fodmap-water', JSON.stringify(m)); } catch(e) {}
+    if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
+  }
+
+  function getWaterOz(dateKey) {
+    const v = loadWaterLog()[dateKey];
+    return (typeof v === 'number' && v > 0) ? v : 0;
+  }
+
+  function addWaterOz(dateKey, delta) {
+    const m = loadWaterLog();
+    const cur = (typeof m[dateKey] === 'number' && m[dateKey] > 0) ? m[dateKey] : 0;
+    const next = Math.max(0, Math.min(300, cur + delta));
+    if (next === 0) delete m[dateKey]; else m[dateKey] = next;
+    saveWaterLog(m);
   }
 
   function mealNutrition(meal, r) {
@@ -6891,6 +6918,15 @@
         }).join('');
         if (info.uncounted.length) bodyHtml += `<div class="nut-cell-flag">${info.uncounted.length} not counted</div>`;
       }
+      if (targets.water > 0) {
+        const oz = getWaterOz(d.key);
+        const waterLine = oz <= 0
+          ? `<div class="nut-cell-line nut-quiet">💧 ${fmtNut(targets.water)} oz</div>`
+          : (oz >= targets.water
+            ? `<div class="nut-cell-line nut-met">💧 ✓ met</div>`
+            : `<div class="nut-cell-line nut-water-line">💧 ${fmtNut(targets.water - oz)} oz left</div>`);
+        bodyHtml = (bodyHtml === '<div class="nut-cell-line nut-quiet">—</div>' ? '' : bodyHtml) + waterLine;
+      }
       cell.innerHTML = `<div class="day-type-seg">${seg}</div>` + bodyHtml;
       cell.querySelectorAll('.day-type-btn').forEach(btn => {
         btn.addEventListener('click', e => {
@@ -6948,6 +6984,31 @@
       }).join('');
     }
 
+    const waterOz = getWaterOz(dayKey);
+    let waterHtml = '';
+    if (targets.water > 0) {
+      const remaining = targets.water - waterOz;
+      const met = remaining <= 0;
+      const pct = Math.max(0, Math.min(100, Math.round((waterOz / targets.water) * 100)));
+      const status = met ? '✓ target met' : `${fmtNut(remaining)} oz still needed`;
+      waterHtml = `
+      <div class="nut-water">
+        <div class="nut-detail-top">
+          <span class="nut-detail-label">💧 Water</span>
+          <span class="nut-detail-nums">${fmtNut(waterOz)} / ${fmtNut(targets.water)} oz</span>
+        </div>
+        <div class="nut-bar"><div class="nut-bar-fill water${met ? ' met' : ''}" style="width:${pct}%"></div></div>
+        <div class="nut-water-row">
+          <div class="nut-detail-status${met ? ' met' : ''}">${status}</div>
+          <div class="nut-water-btns">
+            <button type="button" class="nut-water-btn" data-oz="8">＋ 8 oz</button>
+            <button type="button" class="nut-water-btn" data-oz="16">＋ 16 oz</button>
+            <button type="button" class="nut-water-btn nut-water-minus" data-oz="-8" title="Took one back">− 8</button>
+          </div>
+        </div>
+      </div>`;
+    }
+
     const estMeals = info.counted.filter(c => c.est);
     const estHtml = estMeals.length ? `
       <div class="nut-est-list">
@@ -6984,12 +7045,19 @@
         </div>
         <div class="nut-day-type-row"><span class="nut-day-type-label">Day type</span>${daySeg}</div>
         ${body}
+        ${waterHtml}
         ${estHtml}
         ${uncHtml}
         <div class="nut-foot">Recipe nutrition is an estimate per serving · app guesses assume typical portions</div>
       </div>`;
 
     document.getElementById('nut-targets-btn').addEventListener('click', openTargetsModal);
+    wrap.querySelectorAll('.nut-water-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        addWaterOz(dayKey, parseInt(btn.dataset.oz, 10));
+        renderPlanner();
+      });
+    });
     wrap.querySelectorAll('.nut-day-type').forEach(btn => {
       btn.addEventListener('click', () => { setDayType(dayKey, btn.dataset.type); renderPlanner(); });
     });
@@ -7048,10 +7116,14 @@
 
   function openTargetsModal() {
     const t = loadNutritionTargets();
-    DAY_TYPES.forEach(dt => NUTRIENTS.forEach(n => {
-      const inp = document.getElementById(`tg-${dt.id}-${n.id}`);
-      if (inp) inp.value = t[dt.id][n.id] > 0 ? t[dt.id][n.id] : '';
-    }));
+    DAY_TYPES.forEach(dt => {
+      NUTRIENTS.forEach(n => {
+        const inp = document.getElementById(`tg-${dt.id}-${n.id}`);
+        if (inp) inp.value = t[dt.id][n.id] > 0 ? t[dt.id][n.id] : '';
+      });
+      const w = document.getElementById(`tg-${dt.id}-water`);
+      if (w) w.value = t[dt.id].water > 0 ? t[dt.id].water : '';
+    });
     targetsOverlay.classList.remove('hidden');
   }
 
@@ -7069,7 +7141,7 @@
       };
       const t = {};
       DAY_TYPES.forEach(dt => {
-        t[dt.id] = { cal: read(`tg-${dt.id}-cal`), protein: read(`tg-${dt.id}-protein`), fiber: read(`tg-${dt.id}-fiber`) };
+        t[dt.id] = { cal: read(`tg-${dt.id}-cal`), protein: read(`tg-${dt.id}-protein`), fiber: read(`tg-${dt.id}-fiber`), water: read(`tg-${dt.id}-water`) };
       });
       saveNutritionTargets(t);
       closeTargetsModal();
