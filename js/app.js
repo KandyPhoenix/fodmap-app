@@ -6883,6 +6883,34 @@
 
   const fmtNut = v => Math.round(v).toLocaleString('en-US');
 
+  // ── Self-refresh on wake ─────────────────────
+  // Opening the app from the taskbar/dock often FOCUSES a window that's been
+  // sitting open since yesterday — nothing re-rendered, so "today" was stale
+  // until a manual reload. Now any return to the app (focus, tab switch,
+  // unlock, bfcache restore) re-reads storage and re-renders; when the date
+  // has rolled over, the day card snaps back to the new today.
+  let lastSeenDay = new Date().toISOString().slice(0, 10);
+
+  function refreshOnWake() {
+    const today = new Date().toISOString().slice(0, 10);
+    if (today !== lastSeenDay) {
+      lastSeenDay = today;
+      selectedNutritionDay = null;
+    }
+    if (typeof window.fodmapRefresh === 'function') window.fodmapRefresh();
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') refreshOnWake();
+  });
+  window.addEventListener('focus', refreshOnWake);
+  window.addEventListener('pageshow', e => { if (e.persisted) refreshOnWake(); });
+  // Midnight rollover for a window that stays open and visible
+  setInterval(() => {
+    if (document.visibilityState !== 'visible') return;
+    if (new Date().toISOString().slice(0, 10) !== lastSeenDay) refreshOnWake();
+  }, 60000);
+
   // Extra "🎯 Still Need" row along the bottom of the planner grid — one glance
   // per day, with the day-type switch (🪑/🚴/🏋️) right in the cell; tap a day
   // for the full breakdown in the card below the grid.
@@ -7108,6 +7136,79 @@
       if (nut.cal == null && nut.protein == null && nut.fiber == null) delete meals[mealKey].nut;
       else meals[mealKey].nut = nut;
       saveMeals(); renderPlanner();
+    });
+  }
+
+  // ── Edit a manually-added meal: reopen it to fix the name, add to it,
+  //    or tweak its numbers. Numbers follow the app guess while untouched;
+  //    touching any number field takes them over. ──
+  const mealEditOverlay = document.getElementById('meal-edit-overlay');
+  let mealEditKey = null;
+  let mealEditNumbersDirty = false;
+
+  function mealEditGuess() {
+    const text = document.getElementById('me-text').value.trim();
+    return (text && typeof estimateMealNutrition === 'function') ? estimateMealNutrition(text) : null;
+  }
+
+  function refreshMealEditGuess(applyNumbers) {
+    const g = mealEditGuess();
+    document.getElementById('me-guess').innerHTML = g
+      ? `App guess: ${escHtml(g.parts.map(p => p.label).join(' + '))} ≈ ${fmtNut(g.cal)} cal · ${fmtNut(g.protein)}g protein · ${fmtNut(g.fiber)}g fiber`
+      : 'No app guess for this yet — the numbers below are optional.';
+    if (applyNumbers && !mealEditNumbersDirty) {
+      document.getElementById('me-cal').value = g && g.cal != null ? g.cal : '';
+      document.getElementById('me-protein').value = g && g.protein != null ? g.protein : '';
+      document.getElementById('me-fiber').value = g && g.fiber != null ? g.fiber : '';
+    }
+  }
+
+  function openMealEditModal(mealKey) {
+    const meal = meals[mealKey];
+    if (!meal || meal.type !== 'custom' || !mealEditOverlay) return;
+    mealEditKey = mealKey;
+    const cur = meal.nut || {};
+    // Numbers that still match the guess for the current text are the app's
+    // own — keep following the guess as the text changes. Hand-set numbers
+    // (anything that differs) are hers — leave them alone.
+    const og = (meal.text && typeof estimateMealNutrition === 'function') ? estimateMealNutrition(meal.text) : null;
+    const isAuto = !!og && cur.cal === og.cal && cur.protein === og.protein && cur.fiber === og.fiber;
+    mealEditNumbersDirty = !!meal.nut && !isAuto;
+    document.getElementById('me-text').value = meal.text || '';
+    document.getElementById('me-cal').value = cur.cal != null ? cur.cal : '';
+    document.getElementById('me-protein').value = cur.protein != null ? cur.protein : '';
+    document.getElementById('me-fiber').value = cur.fiber != null ? cur.fiber : '';
+    refreshMealEditGuess(false);
+    mealEditOverlay.classList.remove('hidden');
+    const txt = document.getElementById('me-text');
+    txt.focus();
+    txt.setSelectionRange(txt.value.length, txt.value.length);
+  }
+
+  function closeMealEditModal() {
+    if (mealEditOverlay) mealEditOverlay.classList.add('hidden');
+    mealEditKey = null;
+  }
+
+  if (mealEditOverlay) {
+    mealEditOverlay.addEventListener('click', e => { if (e.target === mealEditOverlay) closeMealEditModal(); });
+    document.getElementById('meal-edit-close').addEventListener('click', closeMealEditModal);
+    document.getElementById('me-cancel-btn').addEventListener('click', closeMealEditModal);
+    document.getElementById('me-text').addEventListener('input', () => refreshMealEditGuess(true));
+    ['me-cal', 'me-protein', 'me-fiber'].forEach(id => {
+      document.getElementById(id).addEventListener('input', () => { mealEditNumbersDirty = true; });
+    });
+    document.getElementById('me-save-btn').addEventListener('click', () => {
+      if (!mealEditKey || !meals[mealEditKey]) { closeMealEditModal(); return; }
+      const text = document.getElementById('me-text').value.trim();
+      if (!text) { alert('Give the meal a name.'); return; }
+      const readN = id => { const v = parseFloat(document.getElementById(id).value); return (isNaN(v) || v < 0) ? null : v; };
+      const nut = { cal: readN('me-cal'), protein: readN('me-protein'), fiber: readN('me-fiber') };
+      meals[mealEditKey].text = text;
+      if (nut.cal == null && nut.protein == null && nut.fiber == null) delete meals[mealEditKey].nut;
+      else meals[mealEditKey].nut = nut;
+      saveMeals(); renderPlanner();
+      closeMealEditModal();
     });
   }
 
@@ -7507,6 +7608,10 @@
 
 
           if (r) chip.querySelector('.meal-chip-text').addEventListener('click', () => openRecipeModal(r));
+          else {
+            chip.querySelector('.meal-chip-text').title = 'Tap to edit this meal';
+            chip.querySelector('.meal-chip-text').addEventListener('click', () => openMealEditModal(mealKey));
+          }
 
 
 
