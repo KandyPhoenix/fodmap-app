@@ -7712,3 +7712,37 @@ body.dark .nut-est-list { background: #10241a; }
   margin-bottom: 6px;
 }
 body.dark .nut-est-list-title { color: #7fd1ab; }
+
+/* ── Water tracker ── */
+.nut-water { margin: 2px 0 14px; }
+.nut-bar-fill.water { background: #3aa7e0; }
+.nut-bar-fill.water.met { background: var(--green); }
+.nut-water-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+  flex-wrap: wrap;
+}
+.nut-water-btns { display: flex; gap: 6px; }
+.nut-water-btn {
+  background: #e8f4fb;
+  border: 1.5px solid #3aa7e0;
+  color: #1b6fa0;
+  border-radius: 10px;
+  padding: 5px 12px;
+  font-size: 12.5px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nut-water-btn:hover { background: #3aa7e0; color: #fff; }
+.nut-water-btn.nut-water-minus { background: none; border-color: var(--border); color: var(--text-muted); }
+.nut-water-btn.nut-water-minus:hover { border-color: #3aa7e0; color: #1b6fa0; background: none; }
+body.dark .nut-water-btn { background: #0d2233; color: #7cc4ea; border-color: #2a5d80; }
+body.dark .nut-water-btn:hover { background: #2a5d80; color: #fff; }
+body.dark .nut-water-btn.nut-water-minus { background: none; border-color: var(--border); color: var(--text-muted); }
+
+.nut-cell-line.nut-water-line { color: #1b6fa0; }
+body.dark .nut-cell-line.nut-water-line { color: #7cc4ea; }
