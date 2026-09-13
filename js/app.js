@@ -6703,9 +6703,12 @@
 
   // ══════════════════════════════════════════
   //  ③b  DAILY NUTRITION — "what do I still need?"
-  //  Targets live in localStorage 'fodmap-nutrition-targets', so they ride the
-  //  same fodmap-* sync/export as everything else. Defaults are general
-  //  guidelines (DGA 2020–2025 / NIH DRIs) — the ⚙️ editor is the source of truth.
+  //  Every planner day has a day type — 🪑 sedentary (default), 🚴 cycling, or
+  //  🏋️ progressive load — and each type has its own daily targets. Day types
+  //  live in 'fodmap-day-types', targets in 'fodmap-nutrition-targets', so both
+  //  ride the existing fodmap-* Firebase sync and export/import. Defaults are
+  //  general guidelines (DGA 2020–2025 / NIH DRIs / sports-nutrition position
+  //  stands) — the ⚙️ editor is the source of truth.
   // ══════════════════════════════════════════
 
   const NUTRIENTS = [
@@ -6714,19 +6717,72 @@
     { id: 'fiber',   label: 'Fiber',    emoji: '🌾', unit: 'g' },
   ];
 
-  const DEFAULT_NUTRITION_TARGETS = { cal: 1800, protein: 100, fiber: 25 };
+  const DAY_TYPES = [
+    { id: 'sedentary', label: 'Sedentary',        emoji: '🪑', hint: 'Desk day — no workout (default)' },
+    { id: 'cycling',   label: 'Cycling',          emoji: '🚴', hint: 'Ride day — extra fuel for the work' },
+    { id: 'load',      label: 'Progressive Load', emoji: '🏋️', hint: 'Strength/rehab day — extra protein for recovery' },
+  ];
+
+  const DEFAULT_NUTRITION_TARGETS = {
+    sedentary: { cal: 1800, protein: 100, fiber: 25 },
+    cycling:   { cal: 2200, protein: 110, fiber: 25 },
+    load:      { cal: 2000, protein: 120, fiber: 25 },
+  };
 
   function loadNutritionTargets() {
-    try {
-      const t = JSON.parse(localStorage.getItem('fodmap-nutrition-targets') || 'null');
-      if (t && typeof t === 'object' && !Array.isArray(t)) return Object.assign({}, DEFAULT_NUTRITION_TARGETS, t);
-    } catch(e) {}
-    return Object.assign({}, DEFAULT_NUTRITION_TARGETS);
+    let t = null;
+    try { t = JSON.parse(localStorage.getItem('fodmap-nutrition-targets') || 'null'); } catch(e) {}
+    const out = {};
+    DAY_TYPES.forEach(dt => { out[dt.id] = Object.assign({}, DEFAULT_NUTRITION_TARGETS[dt.id]); });
+    if (t && typeof t === 'object' && !Array.isArray(t)) {
+      if (typeof t.cal === 'number' || typeof t.protein === 'number' || typeof t.fiber === 'number') {
+        // Legacy single-profile shape: it becomes the sedentary baseline, and
+        // the training days keep their default bumps relative to it.
+        const sed = Object.assign(out.sedentary, t);
+        out.cycling = { cal: sed.cal > 0 ? sed.cal + 400 : sed.cal, protein: sed.protein > 0 ? sed.protein + 10 : sed.protein, fiber: sed.fiber };
+        out.load    = { cal: sed.cal > 0 ? sed.cal + 200 : sed.cal, protein: sed.protein > 0 ? sed.protein + 20 : sed.protein, fiber: sed.fiber };
+      } else {
+        DAY_TYPES.forEach(dt => {
+          if (t[dt.id] && typeof t[dt.id] === 'object' && !Array.isArray(t[dt.id])) Object.assign(out[dt.id], t[dt.id]);
+        });
+      }
+    }
+    return out;
   }
 
   function saveNutritionTargets(t) {
     try { localStorage.setItem('fodmap-nutrition-targets', JSON.stringify(t)); } catch(e) {}
     if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
+  }
+
+  // ── Day types per planner day ({ 'YYYY-MM-DD': 'cycling' | 'load' };
+  //    absent = sedentary, so the map stays small) ──
+  function loadDayTypes() {
+    try {
+      const m = JSON.parse(localStorage.getItem('fodmap-day-types') || 'null');
+      if (m && typeof m === 'object' && !Array.isArray(m)) return m;
+    } catch(e) {}
+    return {};
+  }
+
+  function saveDayTypes(m) {
+    try { localStorage.setItem('fodmap-day-types', JSON.stringify(m)); } catch(e) {}
+    if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
+  }
+
+  function getDayType(dateKey) {
+    const id = loadDayTypes()[dateKey];
+    return DAY_TYPES.some(dt => dt.id === id) ? id : 'sedentary';
+  }
+
+  function setDayType(dateKey, typeId) {
+    const m = loadDayTypes();
+    if (typeId === 'sedentary') delete m[dateKey]; else m[dateKey] = typeId;
+    saveDayTypes(m);
+  }
+
+  function dayTypeInfo(typeId) {
+    return DAY_TYPES.find(dt => dt.id === typeId) || DAY_TYPES[0];
   }
 
   function mealNutrition(meal, r) {
@@ -6775,10 +6831,10 @@
   const fmtNut = v => Math.round(v).toLocaleString('en-US');
 
   // Extra "🎯 Still Need" row along the bottom of the planner grid — one glance
-  // per day; tap a day for the full breakdown in the card below the grid.
+  // per day, with the day-type switch (🪑/🚴/🏋️) right in the cell; tap a day
+  // for the full breakdown in the card below the grid.
   function renderNutritionRow(grid, days) {
-    const targets = loadNutritionTargets();
-    const active = NUTRIENTS.filter(n => targets[n.id] > 0);
+    const profiles = loadNutritionTargets();
     const label = document.createElement('div');
     label.className = 'planner-row-label nut-row-label';
     label.innerHTML = '<span>🎯 Still Need</span><button type="button" class="nut-row-edit" title="Edit my daily targets">⚙️ targets</button>';
@@ -6786,43 +6842,64 @@
     grid.appendChild(label);
     const selectedKey = resolveNutritionDay(days);
     days.forEach(d => {
+      const typeId = getDayType(d.key);
+      const targets = profiles[typeId];
+      const active = NUTRIENTS.filter(n => targets[n.id] > 0);
       const cell = document.createElement('div');
       cell.className = 'planner-cell nut-cell' + (d.isToday ? ' today-col' : '') + (d.key === selectedKey ? ' nut-selected' : '');
       cell.title = 'Tap for the full breakdown below';
+      const seg = DAY_TYPES.map(dt =>
+        `<button type="button" class="day-type-btn${dt.id === typeId ? ' active' : ''}" data-day="${d.key}" data-type="${dt.id}" title="${dt.label} day${dt.id === typeId ? '' : ' — tap to switch'}" aria-label="${dt.label} day">${dt.emoji}</button>`
+      ).join('');
+      let bodyHtml;
       if (!active.length) {
-        cell.innerHTML = '<div class="nut-cell-line nut-quiet">—</div>';
+        bodyHtml = '<div class="nut-cell-line nut-quiet">—</div>';
       } else {
         const info = computeDayNutrition(d.key);
-        const lines = active.map(n => {
+        bodyHtml = active.map(n => {
           const remaining = targets[n.id] - info.totals[n.id];
           if (!info.planned) return `<div class="nut-cell-line nut-quiet">${n.emoji} ${fmtNut(targets[n.id])}${n.unit}</div>`;
           if (remaining > 0) return `<div class="nut-cell-line">${n.emoji} ${fmtNut(remaining)}${n.unit} left</div>`;
           if (n.id === 'cal' && remaining < 0) return `<div class="nut-cell-line nut-over">${n.emoji} ${fmtNut(-remaining)} over</div>`;
           return `<div class="nut-cell-line nut-met">${n.emoji} ✓ met</div>`;
         }).join('');
-        const flag = info.uncounted.length ? `<div class="nut-cell-flag">${info.uncounted.length} not counted</div>` : '';
-        cell.innerHTML = lines + flag;
+        if (info.uncounted.length) bodyHtml += `<div class="nut-cell-flag">${info.uncounted.length} not counted</div>`;
       }
+      cell.innerHTML = `<div class="day-type-seg">${seg}</div>` + bodyHtml;
+      cell.querySelectorAll('.day-type-btn').forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.stopPropagation();
+          setDayType(btn.dataset.day, btn.dataset.type);
+          selectedNutritionDay = btn.dataset.day;
+          renderPlanner();
+        });
+      });
       cell.addEventListener('click', () => { selectedNutritionDay = d.key; renderPlanner(); });
       grid.appendChild(cell);
     });
   }
 
-  // The detail card under the planner: progress toward each target for the
-  // selected day, plus quick estimates for meals that have no nutrition data.
+  // The detail card under the planner: day-type switch plus progress toward
+  // that day type's targets, and quick estimates for meals without data.
   function renderDayNutrition(days) {
     const wrap = document.getElementById('nutrition-section');
     if (!wrap) return;
-    const targets = loadNutritionTargets();
-    const active = NUTRIENTS.filter(n => targets[n.id] > 0);
     const dayKey = resolveNutritionDay(days);
     const d = days.find(x => x.key === dayKey) || days[0];
+    const typeId = getDayType(dayKey);
+    const dtype = dayTypeInfo(typeId);
+    const targets = loadNutritionTargets()[typeId];
+    const active = NUTRIENTS.filter(n => targets[n.id] > 0);
     const info = computeDayNutrition(dayKey);
     const dayName = d.isToday ? 'Today' : `${d.label} ${d.month}/${d.date}`;
 
+    const daySeg = DAY_TYPES.map(dt =>
+      `<button type="button" class="nut-day-type${dt.id === typeId ? ' active' : ''}" data-type="${dt.id}" title="${dt.hint}">${dt.emoji} ${dt.label}</button>`
+    ).join('');
+
     let body;
     if (!active.length) {
-      body = '<div class="nut-empty">No daily targets set. Tap <strong>⚙️ My Targets</strong> to choose what to track.</div>';
+      body = '<div class="nut-empty">No targets set for this day type. Tap <strong>⚙️ My Targets</strong> to choose what to track.</div>';
     } else if (!info.planned) {
       body = `<div class="nut-empty">Nothing planned for ${d.isToday ? 'today' : dayName} yet — add meals above and this fills in what you still need.</div>`;
     } else {
@@ -6860,17 +6937,21 @@
       <div class="nutrition-card">
         <div class="nut-head">
           <div>
-            <div class="nut-title">🥗 ${dayName} — What I Still Need</div>
+            <div class="nut-title">🥗 ${dayName} · ${dtype.emoji} ${dtype.label} — What I Still Need</div>
             <div class="nut-sub">Updates the moment a meal is added or removed · counts 1 serving per planned meal</div>
           </div>
           <button type="button" class="action-btn primary nut-targets-btn" id="nut-targets-btn">⚙️ My Targets</button>
         </div>
+        <div class="nut-day-type-row"><span class="nut-day-type-label">Day type</span>${daySeg}</div>
         ${body}
         ${uncHtml}
         <div class="nut-foot">Recipe nutrition is an estimate per serving${estNote}</div>
       </div>`;
 
     document.getElementById('nut-targets-btn').addEventListener('click', openTargetsModal);
+    wrap.querySelectorAll('.nut-day-type').forEach(btn => {
+      btn.addEventListener('click', () => { setDayType(dayKey, btn.dataset.type); renderPlanner(); });
+    });
     wrap.querySelectorAll('.nut-est-btn').forEach(btn => {
       btn.addEventListener('click', () => openEstimateForm(btn.dataset.mealKey));
     });
@@ -6903,14 +6984,15 @@
     });
   }
 
-  // ── Targets editor modal ────────────────────
+  // ── Targets editor modal (one set of numbers per day type) ──
   const targetsOverlay = document.getElementById('targets-overlay');
 
   function openTargetsModal() {
     const t = loadNutritionTargets();
-    document.getElementById('tg-cal').value = t.cal > 0 ? t.cal : '';
-    document.getElementById('tg-protein').value = t.protein > 0 ? t.protein : '';
-    document.getElementById('tg-fiber').value = t.fiber > 0 ? t.fiber : '';
+    DAY_TYPES.forEach(dt => NUTRIENTS.forEach(n => {
+      const inp = document.getElementById(`tg-${dt.id}-${n.id}`);
+      if (inp) inp.value = t[dt.id][n.id] > 0 ? t[dt.id][n.id] : '';
+    }));
     targetsOverlay.classList.remove('hidden');
   }
 
@@ -6921,8 +7003,16 @@
     document.getElementById('targets-close').addEventListener('click', closeTargetsModal);
     document.getElementById('tg-cancel-btn').addEventListener('click', closeTargetsModal);
     document.getElementById('tg-save-btn').addEventListener('click', () => {
-      const read = id => { const v = parseFloat(document.getElementById(id).value); return (isNaN(v) || v <= 0) ? 0 : v; };
-      saveNutritionTargets({ cal: read('tg-cal'), protein: read('tg-protein'), fiber: read('tg-fiber') });
+      const read = id => {
+        const el = document.getElementById(id);
+        const v = el ? parseFloat(el.value) : NaN;
+        return (isNaN(v) || v <= 0) ? 0 : v;
+      };
+      const t = {};
+      DAY_TYPES.forEach(dt => {
+        t[dt.id] = { cal: read(`tg-${dt.id}-cal`), protein: read(`tg-${dt.id}-protein`), fiber: read(`tg-${dt.id}-fiber`) };
+      });
+      saveNutritionTargets(t);
       closeTargetsModal();
       renderPlanner();
     });

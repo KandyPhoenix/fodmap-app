@@ -7602,3 +7602,58 @@ body.dark .nut-uncounted { background: rgba(243,156,18,0.08); }
   .nut-head { flex-direction: column; }
   .nut-targets-btn { align-self: stretch; }
 }
+
+/* ── Day types (sedentary / cycling / progressive load) ── */
+.day-type-seg { display: flex; gap: 3px; margin-bottom: 4px; }
+.day-type-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  cursor: pointer;
+  opacity: 0.45;
+}
+.day-type-btn:hover { opacity: 1; border-color: var(--primary); }
+.day-type-btn.active { opacity: 1; background: var(--primary-light); border-color: var(--primary); }
+body.dark .day-type-btn.active { background: #10241a; }
+
+.nut-day-type-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 0 0 14px;
+}
+.nut-day-type-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+  margin-right: 2px;
+}
+.nut-day-type {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 5px 11px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nut-day-type:hover { border-color: var(--primary); color: var(--primary); }
+.nut-day-type.active { background: var(--primary-light); border-color: var(--primary); color: var(--primary-dark); }
+body.dark .nut-day-type.active { background: #10241a; color: #7fd1ab; }
+
+.targets-day-section {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px 2px;
+  margin-bottom: 12px;
+}
+.targets-day-title { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+.targets-day-hint { font-size: 11px; font-weight: 600; color: var(--text-muted); margin-left: 6px; }
