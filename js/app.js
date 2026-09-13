@@ -6814,7 +6814,8 @@
         totals.fiber   += found.nut.fiber   || 0;
         counted.push({ mealKey, name, est: found.est });
       } else {
-        uncounted.push({ mealKey, name });
+        const guessSrc = meal.type === 'recipe' ? name : (meal.text || name);
+        uncounted.push({ mealKey, name, guess: (typeof estimateMealNutrition === 'function') ? estimateMealNutrition(guessSrc) : null });
       }
     });
     return { totals, counted, uncounted, planned: counted.length + uncounted.length };
@@ -6922,14 +6923,28 @@
       }).join('');
     }
 
-    const estNote = info.counted.some(c => c.est) ? ' · <span class="nut-est-tag">est.</span> = your own numbers' : '';
+    const estMeals = info.counted.filter(c => c.est);
+    const estHtml = estMeals.length ? `
+      <div class="nut-est-list">
+        <div class="nut-est-list-title">Estimated meals — tap ✏️ to adjust:</div>
+        ${estMeals.map(c => {
+          const n = (meals[c.mealKey] && meals[c.mealKey].nut) || {};
+          return `
+          <div class="nut-uncounted-item nut-est-target" data-meal-key="${c.mealKey}">
+            <span class="nut-uncounted-name">${escHtml(c.name)} <span class="nut-guess-preview">≈ ${fmtNut(n.cal || 0)} cal · ${fmtNut(n.protein || 0)}g · ${fmtNut(n.fiber || 0)}g</span></span>
+            <button type="button" class="nut-est-btn" data-meal-key="${c.mealKey}">✏️ adjust</button>
+          </div>`; }).join('')}
+      </div>` : '';
     const uncHtml = info.uncounted.length ? `
       <div class="nut-uncounted">
         <div class="nut-uncounted-title">Not counted yet — no nutrition data:</div>
         ${info.uncounted.map(u => `
-          <div class="nut-uncounted-item" data-meal-key="${u.mealKey}">
-            <span class="nut-uncounted-name">${escHtml(u.name)}</span>
-            <button type="button" class="nut-est-btn" data-meal-key="${u.mealKey}">＋ add numbers</button>
+          <div class="nut-uncounted-item nut-est-target" data-meal-key="${u.mealKey}">
+            <span class="nut-uncounted-name">${escHtml(u.name)}${u.guess ? ` <span class="nut-guess-preview">app guess ≈ ${fmtNut(u.guess.cal)} cal · ${fmtNut(u.guess.protein)}g protein · ${fmtNut(u.guess.fiber)}g fiber</span>` : ''}</span>
+            <span class="nut-item-btns">
+              ${u.guess ? `<button type="button" class="nut-use-guess-btn" data-meal-key="${u.mealKey}">✓ Use guess</button>` : ''}
+              <button type="button" class="nut-est-btn" data-meal-key="${u.mealKey}">${u.guess ? '✏️ adjust' : '＋ add numbers'}</button>
+            </span>
           </div>`).join('')}
       </div>` : '';
 
@@ -6944,14 +6959,28 @@
         </div>
         <div class="nut-day-type-row"><span class="nut-day-type-label">Day type</span>${daySeg}</div>
         ${body}
+        ${estHtml}
         ${uncHtml}
-        <div class="nut-foot">Recipe nutrition is an estimate per serving${estNote}</div>
+        <div class="nut-foot">Recipe nutrition is an estimate per serving · app guesses assume typical portions</div>
       </div>`;
 
     document.getElementById('nut-targets-btn').addEventListener('click', openTargetsModal);
     wrap.querySelectorAll('.nut-day-type').forEach(btn => {
       btn.addEventListener('click', () => { setDayType(dayKey, btn.dataset.type); renderPlanner(); });
     });
+    wrap.querySelectorAll('.nut-use-guess-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mk = btn.dataset.mealKey;
+        const meal = meals[mk];
+        if (!meal) return;
+        const r2 = meal.type === 'recipe' ? getAllRecipes().find(x => x.id === meal.id) : null;
+        const g = (typeof estimateMealNutrition === 'function') ? estimateMealNutrition(meal.type === 'recipe' ? ((r2 && r2.name) || '') : (meal.text || '')) : null;
+        if (!g) return;
+        meals[mk].nut = { cal: g.cal, protein: g.protein, fiber: g.fiber };
+        saveMeals(); renderPlanner();
+      });
+    });
+
     wrap.querySelectorAll('.nut-est-btn').forEach(btn => {
       btn.addEventListener('click', () => openEstimateForm(btn.dataset.mealKey));
     });
@@ -6959,17 +6988,22 @@
 
   // Inline "add numbers" mini-form for a planned meal with no nutrition data.
   function openEstimateForm(mealKey) {
-    const item = document.querySelector(`.nut-uncounted-item[data-meal-key="${mealKey}"]`);
+    const item = document.querySelector(`.nut-est-target[data-meal-key="${mealKey}"]`);
     if (!item || !meals[mealKey]) return;
-    const cur = meals[mealKey].nut || {};
+    const meal = meals[mealKey];
+    const cur = meal.nut || {};
+    const rr = meal.type === 'recipe' ? getAllRecipes().find(x => x.id === meal.id) : null;
+    const guess = (typeof estimateMealNutrition === 'function') ? estimateMealNutrition(meal.type === 'recipe' ? ((rr && rr.name) || '') : (meal.text || '')) : null;
+    const val = k => cur[k] != null ? cur[k] : (guess && guess[k] != null ? guess[k] : '');
+    const guessLine = guess ? `<div class="nut-est-guess">App guess — ${escHtml(guess.parts.map(p => p.label).join(' + '))}. Typical portions; tweak anything before saving.</div>` : '';
     item.innerHTML = `
       <div class="nut-est-form">
-        <input type="number" min="0" step="10" class="nut-est-input" data-nut="cal" placeholder="cal" value="${cur.cal != null ? cur.cal : ''}">
-        <input type="number" min="0" step="1" class="nut-est-input" data-nut="protein" placeholder="protein g" value="${cur.protein != null ? cur.protein : ''}">
-        <input type="number" min="0" step="1" class="nut-est-input" data-nut="fiber" placeholder="fiber g" value="${cur.fiber != null ? cur.fiber : ''}">
+        <input type="number" min="0" step="10" class="nut-est-input" data-nut="cal" placeholder="cal" value="${val('cal')}">
+        <input type="number" min="0" step="1" class="nut-est-input" data-nut="protein" placeholder="protein g" value="${val('protein')}">
+        <input type="number" min="0" step="1" class="nut-est-input" data-nut="fiber" placeholder="fiber g" value="${val('fiber')}">
         <button type="button" class="action-btn primary nut-est-save">Save</button>
         <button type="button" class="action-btn nut-est-cancel">Cancel</button>
-      </div>`;
+      </div>${guessLine}`;
     item.querySelector('.nut-est-input').focus();
     item.querySelector('.nut-est-cancel').addEventListener('click', () => renderPlanner());
     item.querySelector('.nut-est-save').addEventListener('click', () => {
@@ -9364,7 +9398,14 @@
 
 
 
-      meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'custom', text };
+      const customMeal = { type: 'custom', text };
+
+      if (typeof estimateMealNutrition === 'function') {
+        const g = estimateMealNutrition(text);
+        if (g) customMeal.nut = { cal: g.cal, protein: g.protein, fiber: g.fiber };
+      }
+
+      meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = customMeal;
 
 
 
@@ -9783,7 +9824,14 @@
 
 
 
-            meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'custom', text: s.name };
+            const snackMeal = { type: 'custom', text: s.name };
+
+            if (typeof estimateMealNutrition === 'function') {
+              const g = estimateMealNutrition(s.name);
+              if (g) snackMeal.nut = { cal: g.cal, protein: g.protein, fiber: g.fiber };
+            }
+
+            meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = snackMeal;
 
 
 
