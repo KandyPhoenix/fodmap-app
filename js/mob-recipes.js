@@ -2288,6 +2288,1044 @@ const MOB_RECIPES = [
       "fodmapNote": "Celery is the FODMAP here — the low portion is tiny (about 1/3 stick per serve), so trim it back or pad with cucumber; use spring-onion green tops only. Tuna, miso (to ~2 tbsp) and sesame are fine.",
       "nutrition": { "cal": 330, "protein": 42, "fiber": 2 }
   },
+
+  {
+      "id": "fam-mob-sesame-eggs-butter-beans",
+      "name": "Sesame Eggs With Minty Butter Beans",
+      "emoji": "🍳",
+      "category": "lunch",
+      "time": "30 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "gut-friendly",
+          "vegetarian",
+          "high-fiber"
+      ],
+      "source": "https://www.mob.co.uk/recipes/sesame-eggs",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "4Clove",
+              "item": "Garlic"
+          },
+          {
+              "qty": "3",
+              "item": "x 400g Can Butter Beans"
+          },
+          {
+              "qty": "to taste",
+              "item": "Reserved Butter Bean Liquid"
+          },
+          {
+              "qty": "250g",
+              "item": "Kale"
+          },
+          {
+              "qty": "2",
+              "item": "Lemon"
+          },
+          {
+              "qty": "25g",
+              "item": "Mint"
+          },
+          {
+              "qty": "160g",
+              "item": "Sugar Snap Pea"
+          },
+          {
+              "qty": "40g",
+              "item": "Sesame Seeds"
+          },
+          {
+              "qty": "4",
+              "item": "Egg"
+          },
+          {
+              "qty": "to taste",
+              "item": "Olive Oil"
+          },
+          {
+              "qty": "to taste",
+              "item": "Salt"
+          },
+          {
+              "qty": "to taste",
+              "item": "Black Pepper"
+          }
+      ],
+      "steps": [
+          "Start by peeling and finely slicing the garlic cloves. Heat 1 tbsp of olive oil in a heavy bottomed pan over medium-low heat and add the garlic. Cook gently for 3 mins, until the garlic is really aromatic and starting to turn golden. Tip the beans into the pan, juice and all, along with the kale. You will likely need to add in batches, adding more when the previous lot has wilted.",
+          "Zest and juice one of the lemons, then pick the mint leaves.",
+          "Take out around 350g of the bean mix, and blend until smooth along with 150ml of water. Add back into the pan.",
+          "Mix the lemon zest and juice through the beans, then cut the remaining lemon into wedges for serving. Add the sugar snaps and simmer away for about 3 mins.",
+          "Heat 2 tbsp of olive oil in a frying pan over a medium high heat. Once shimmering, crack 2 of the eggs in and fry until the white is set and starting to crisp up around the edges. Add the sesame seeds to the pan for the last minute, spooning them, with a little of the oil in the pan, over the edges of the eggs. Remove with a slotted spoon onto a plate and repeat with the remaining eggs.",
+          "Serve the beans topped with the sesame-fried eggs, mint leaves, and a wedge of lemon."
+      ],
+      "fodmapNote": "From Mob's gut-friendly collection. Butter beans are GOS-heavy — keep to ~1/4 cup per serve for low-FODMAP and pad with extra greens; swap the garlic for garlic-infused oil. Eggs, sesame and herbs are safe.",
+      "nutrition": {
+          "cal": 670,
+          "protein": 33,
+          "fiber": 19
+      }
+  },
+
+  {
+      "id": "fam-mob-kale-walnut-pesto-pasta",
+      "name": "Kale & Walnut Pesto Pasta",
+      "emoji": "🍝",
+      "category": "dinner",
+      "time": "20 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "gut-friendly",
+          "vegetarian"
+      ],
+      "source": "https://www.mob.co.uk/recipes/kale-walnut-pesto-pasta",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "200g",
+              "item": "Kale"
+          },
+          {
+              "qty": "1",
+              "item": "Garlic Clove"
+          },
+          {
+              "qty": "125g",
+              "item": "Walnut"
+          },
+          {
+              "qty": "1",
+              "item": "Lemon"
+          },
+          {
+              "qty": "4tbsp",
+              "item": "Ricotta"
+          },
+          {
+              "qty": "to taste",
+              "item": "Chilli Flakes"
+          },
+          {
+              "qty": "400g",
+              "item": "Orecchiette"
+          },
+          {
+              "qty": "to taste",
+              "item": "Salt"
+          }
+      ],
+      "steps": [
+          "Bring a large pan of salted water to the boil. Strip the kale from the stems and add to the boiling water along with the peeled clove of garlic and cook for about 5 mins until tender.",
+          "Use a slotted spoon to remove the kale and garlic and add to a blender. Add the walnuts, juice of the lemon, 2 tbsp of olive oil and a large pinch of salt and whizz until not quite smooth.",
+          "Bring the water in the pan back to a boil, add the pasta and cook until al dente.",
+          "Drain the pasta, saving a mug of pasta water, then return to the pan along with the kale pesto.",
+          "Mix well, adding a little pasta water to get a nice creamy consistency. Plate up the pasta, top with a spoon of ricotta, a pinch of chilli flakes and a drizzle of olive oil."
+      ],
+      "fodmapNote": "From Mob's gut-friendly collection. Use GF pasta and make the pesto with garlic-infused oil instead of raw garlic and it's low-FODMAP; kale and walnuts are safe and great fiber.",
+      "nutrition": {
+          "cal": 235,
+          "protein": 7,
+          "fiber": 4
+      }
+  },
+
+  {
+      "id": "fam-mob-crispy-chilli-mint-pork",
+      "name": "Crispy Chilli & Mint Pork",
+      "emoji": "🥩",
+      "category": "dinner",
+      "time": "15 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "speedy",
+          "quick",
+          "high-protein"
+      ],
+      "source": "https://www.mob.co.uk/recipes/crispy-chilli-and-mint-pork",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "6Clove",
+              "item": "Garlic"
+          },
+          {
+              "qty": "3",
+              "item": "Thai Red Chilli"
+          },
+          {
+              "qty": "0.25",
+              "item": "Savoy Cabbage"
+          },
+          {
+              "qty": "15g",
+              "item": "Mint"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Fish Sauce"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Soy Sauce"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Oyster Sauce"
+          },
+          {
+              "qty": "2tsp",
+              "item": "Sugar"
+          },
+          {
+              "qty": "400g",
+              "item": "Sausage"
+          },
+          {
+              "qty": "4",
+              "item": "Egg"
+          },
+          {
+              "qty": "1",
+              "item": "Lime"
+          },
+          {
+              "qty": "500g",
+              "item": "Microwave Rice, to serve"
+          }
+      ],
+      "steps": [
+          "Finely chop the garlic and red chillies.",
+          "Thinly slice the cabbage and pick the leaves of the mint.",
+          "Combine the fish sauce, soy sauce, oyster sauce and sugar in a bowl.",
+          "Squeeze the sausages out of the casing into a bowl - once you start frying you will need to work fast so it's easier to get this prepped in advance.",
+          "Turn the wok on a medium high heat and once it starts to smoke, pour a large glug of cold oil around the edges.",
+          "Add in the chilli and garlic, cook for 30 seconds then immediately add in the sausage mince. Push down and break up the mince and fry for 5 mins until broken up and very crispy.",
+          "Add the cabbage and sauce and cook for 1 min, turn off the heat.",
+          "Toss in the mint.",
+          "Heat the rice.",
+          "Serve on a bed of fluffy rice and top with a crispy fried egg. Slice the lime and serve on the side."
+      ],
+      "fodmapNote": "From Mob's speedy list. Close to low-FODMAP — the garlic is the only real flag; swap garlic-infused oil. Serve over rice; check the fish/oyster sauce label for onion or garlic powder.",
+      "nutrition": {
+          "cal": 855,
+          "protein": 29,
+          "fiber": 2
+      }
+  },
+
+  {
+      "id": "fam-mob-chicken-harissa-orzo",
+      "name": "Chicken, Pepper & Harissa Orzo",
+      "emoji": "🍲",
+      "category": "dinner",
+      "time": "35 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "speedy",
+          "one-pot",
+          "high-protein"
+      ],
+      "source": "https://www.mob.co.uk/recipes/chicken-pepper-harissa-orzo",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "3",
+              "item": "Bell Pepper"
+          },
+          {
+              "qty": "3",
+              "item": "Garlic Clove"
+          },
+          {
+              "qty": "140g",
+              "item": "Sun-Dried Tomato"
+          },
+          {
+              "qty": "3",
+              "item": "Chicken Breast"
+          },
+          {
+              "qty": "10g",
+              "item": "Fresh Parsley"
+          },
+          {
+              "qty": "350g",
+              "item": "Orzo"
+          },
+          {
+              "qty": "850ml",
+              "item": "Chicken Stock"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Harissa Paste"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Mascarpone"
+          },
+          {
+              "qty": "1.5tbsp",
+              "item": "Sherry Vinegar"
+          },
+          {
+              "qty": "to taste",
+              "item": "Olive Oil"
+          },
+          {
+              "qty": "to taste",
+              "item": "Salt"
+          },
+          {
+              "qty": "to taste",
+              "item": "Black Pepper"
+          }
+      ],
+      "steps": [
+          "Chop the peppers into 2-3cm chunks, thinly slice the garlic. Drain and finely mince the sundried tomatoes. Dice the chicken into 3cm chunks. Pick the parsley leaves, finely mince the stems.",
+          "Place a saucepan over medium heat with a drizzle of olive oil. Once hot, add the peppers and cook until starting to soften, 5-8 mins. Then, stir the garlic, parsley stems and orzo through until fragrant.",
+          "Pour the chicken stock in and stir the harissa, sundried tomatoes and chicken through. Season with salt and cook, stirring occasionally, until the liquid has absorbed, and the orzo and chicken are cooked, 10-15 mins. If the orzo is drying out too quickly, add a splash of water.",
+          "Stir the mascarpone and sherry vinegar through, taste and season with more salt, if needed. Share between bowls, and finish with a scattering of parsley leaves."
+      ],
+      "fodmapNote": "From Mob's speedy list. Orzo is wheat — swap GF orzo or rice; harissa often hides garlic, so use a garlic-free chilli paste or garlic-infused oil. Chicken and peppers are safe.",
+      "nutrition": {
+          "cal": 535,
+          "protein": 43,
+          "fiber": 4
+      }
+  },
+
+  {
+      "id": "fam-mob-chickpea-pb-curry",
+      "name": "Chickpea Peanut Butter Curry",
+      "emoji": "🍛",
+      "category": "dinner",
+      "time": "20 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "30-min",
+          "vegetarian",
+          "high-fiber"
+      ],
+      "source": "https://www.mob.co.uk/recipes/15-minute-chickpea-peanut-butter-curry",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "4",
+              "item": "Garlic Clove"
+          },
+          {
+              "qty": "20g",
+              "item": "Fresh Ginger"
+          },
+          {
+              "qty": "1",
+              "item": "Onion"
+          },
+          {
+              "qty": "2",
+              "item": "x 400g Can Chickpeas"
+          },
+          {
+              "qty": "1",
+              "item": "Red Chilli"
+          },
+          {
+              "qty": "15g",
+              "item": "Fresh Coriander"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Chunky Peanut Butter"
+          },
+          {
+              "qty": "1.5tbsp",
+              "item": "Curry Powder"
+          },
+          {
+              "qty": "1.5tsp",
+              "item": "Ground Cumin"
+          },
+          {
+              "qty": "1.5tsp",
+              "item": "Ground Coriander"
+          },
+          {
+              "qty": "1tsp",
+              "item": "Paprika"
+          },
+          {
+              "qty": "1tsp",
+              "item": "Chilli Powder"
+          },
+          {
+              "qty": "1",
+              "item": "x 400g Can Plum Tomatoes"
+          },
+          {
+              "qty": "1",
+              "item": "x 400ml Can Coconut Milk"
+          },
+          {
+              "qty": "100g",
+              "item": "Spinach"
+          },
+          {
+              "qty": "0.5tbsp",
+              "item": "Soy Sauce"
+          },
+          {
+              "qty": "1",
+              "item": "Lime"
+          },
+          {
+              "qty": "3tbsp",
+              "item": "Vegan Yoghurt"
+          },
+          {
+              "qty": "to taste",
+              "item": "Roasted Peanuts"
+          }
+      ],
+      "steps": [
+          "The tip for actually getting this done in 20 mins is the prep. So start by mincing the garlic and ginger (no need to peel the ginger). Finely dice the onion and drain the chickpeas. Finely slice the chilli and finely chop the coriander, including the stems. Measure out the spices into a small bowl and keep your salt and pepper to hand.",
+          "Grab a large pot and gather all of your ingredients so they are close by. Heat a good drizzle of olive oil on medium heat and add the chopped onion. Cook for 3 mins, then add the ginger and garlic and cook for another 2 mins, stirring often.",
+          "Add the spices, stir and cook for 30 seconds.",
+          "Then add the tinned tomatoes and break them up in the pan with a spatula as best you can. Don’t worry if there are bigger pieces, this adds a nice texture. Add the coconut milk and drained chickpeas.",
+          "Add the spinach, peanut butter and soy sauce and turn up the heat slightly. Let it bubble away, stirring occasionally, for a few minutes until thickened. When ready, take it off the heat, stir through the coriander, taste and season well with salt and pepper.",
+          "Top with the lime juice, fresh chilli, and chopped peanuts and vegan yoghurt, if using."
+      ],
+      "fodmapNote": "From Mob's under-30-minutes picks. Not low-FODMAP as written — onion, garlic and a full can of chickpeas; FODMAP version: garlic-infused oil, spring-onion tops, chickpeas capped at 1/4 cup per serve. Peanut butter and coconut milk are fine.",
+      "nutrition": {
+          "cal": 590,
+          "protein": 20,
+          "fiber": 15
+      }
+  },
+
+  {
+      "nutrition": { "cal": 545, "protein": 31, "fiber": 4 },
+      "id": "fam-mob-adana-meatballs-ezme",
+      "name": "Adana Meatballs, Ezme Salad & Flatbreads",
+      "emoji": "🧆",
+      "category": "dinner",
+      "time": "30 min",
+      "serves": 3,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "30-min",
+          "high-protein"
+      ],
+      "source": "https://www.mob.co.uk/recipes/adana-meatballs-ezme-salad-flatbreads",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "500g",
+              "item": "Lamb Mince"
+          },
+          {
+              "qty": "2",
+              "item": "Roasted Red Peppers"
+          },
+          {
+              "qty": "2",
+              "item": "Garlic Clove"
+          },
+          {
+              "qty": "1tsp",
+              "item": "Ground Cumin"
+          },
+          {
+              "qty": "1tsp",
+              "item": "Smoked Paprika"
+          },
+          {
+              "qty": "0.5tsp",
+              "item": "Chilli Flakes"
+          },
+          {
+              "qty": "1tbsp",
+              "item": "Pomegranate Molasses"
+          },
+          {
+              "qty": "to taste",
+              "item": "Salt"
+          },
+          {
+              "qty": "to taste",
+              "item": "Black Pepper"
+          },
+          {
+              "qty": "2",
+              "item": "Roasted Red Peppers"
+          },
+          {
+              "qty": "2",
+              "item": "Tomato"
+          },
+          {
+              "qty": "0.5",
+              "item": "Red Onion"
+          },
+          {
+              "qty": "1tbsp",
+              "item": "Pomegranate Molasses"
+          },
+          {
+              "qty": "0.5",
+              "item": "Lemon"
+          },
+          {
+              "qty": "to taste",
+              "item": "Flatbread, to serve"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Greek Yoghurt"
+          },
+          {
+              "qty": "0.5tsp",
+              "item": "Sumac"
+          },
+          {
+              "qty": "15g",
+              "item": "Fresh Parsley"
+          },
+          {
+              "qty": "to taste",
+              "item": "Olive Oil"
+          }
+      ],
+      "steps": [
+          "Finely chop one of the roasted red peppers. Peel and grate the garlic. Add both to a bowl with the lamb mince, ground cumin, smoked paprika, chilli flakes, a good pinch of salt and plenty of black pepper. Mix everything together with your hands, then shape into small sausage-shaped meatballs.",
+          "Heat a drizzle of olive oil in a frying pan set over a medium-high heat. Fry the meatballs for 8–10 mins, turning now and then, until browned all over and cooked through. Drizzle in the pomegranate molasses and toss everything to coat.",
+          "Meanwhile, finely chop the second roasted red pepper, the tomatoes and the red onion. Chuck it all into a bowl with the pomegranate molasses, a drizzle of olive oil, the juice of half a lemon and a pinch of salt. Mix well and set aside.",
+          "Warm your flatbreads in a dry pan or directly over the flame if you’ve got gas.",
+          "To serve, spoon a smear of yoghurt onto each plate and sprinkle with sumac. Add the meatballs, pile on the Ezme salad and scatter over the parsley. Use the warm flatbreads to scoop everything up."
+      ],
+      "fodmapNote": "From Mob's under-30-minutes picks. Onion and garlic run through the meatballs and ezme, and flatbreads are wheat — use green-onion tops, garlic-infused oil and GF flatbread; lamb, tomatoes and yogurt (lactose-free) are fine."
+  },
+
+  {
+      "id": "fam-mob-blackened-fish-taco-bowl",
+      "name": "Blackened Fish Taco Bowl with Jalapeño Yoghurt",
+      "emoji": "🌮",
+      "category": "dinner",
+      "time": "15 min",
+      "serves": 2,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "low-calorie",
+          "high-protein",
+          "gluten-free"
+      ],
+      "source": "https://www.mob.co.uk/recipes/blackened-fish-taco-bowl-with-jalapeno-yoghurt",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "1",
+              "item": "Red Onion"
+          },
+          {
+              "qty": "2",
+              "item": "Lime"
+          },
+          {
+              "qty": "300g",
+              "item": "Cod Loin"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Cajun Seasoning"
+          },
+          {
+              "qty": "1tsp",
+              "item": "Olive Oil"
+          },
+          {
+              "qty": "to taste",
+              "item": ".5x 400g Can Black Beans"
+          },
+          {
+              "qty": "10",
+              "item": "Cherry Tomatoes"
+          },
+          {
+              "qty": "5g",
+              "item": "Fresh Coriander"
+          },
+          {
+              "qty": "1Clove",
+              "item": "Garlic Clove"
+          },
+          {
+              "qty": "60g",
+              "item": "Fat-Free Yoghurt"
+          },
+          {
+              "qty": "2tbsp",
+              "item": "Pickled Jalapeño"
+          },
+          {
+              "qty": "100g",
+              "item": "Red Cabbage"
+          },
+          {
+              "qty": "1",
+              "item": "x 250g Pouch Microwaveable Basmati Rice"
+          },
+          {
+              "qty": "20g",
+              "item": "Feta"
+          },
+          {
+              "qty": "to taste",
+              "item": "Salt"
+          },
+          {
+              "qty": "to taste",
+              "item": "Black Pepper"
+          }
+      ],
+      "steps": [
+          "Peel and halve the red onion. Thinly slice one half, and finely chop the other. Add the thinly sliced red onion to a small bowl with the juice of one lime and a generous sprinkle of salt. Scrunch the onions together aggressively with your hands and set aside to pickle.",
+          "Pat the fish dry and coat with the cajun seasoning and olive oil. Preheat a small frying pan over a medium heat for 1-2 mins, then add the cod. Cook undisturbed on each side for 1-2 mins, until deeply golden and slightly blackened, then turn off the heat and leave the fish to continue cooking in the residual heat while you carry on with your prep.",
+          "Drain the black beans and add to a small bowl with the finely chopped red onion. Halve your cherry tomatoes, finely chop your coriander and add both to the bowl, then season well and mix. Put the spare half tin through a salad or into a chilli later in the week.",
+          "In another small bowl, finely grate in the zest of the remaining lime, grate in the garlic clove, squeeze in the juice of half the lime and add the yoghurt. Finely chop the jalapeños and add to the bowl. Season to taste.",
+          "Finely shred the red cabbage and set aside. Cook the rice according to the packet instructions.",
+          "Assemble the bowls with the rice, cabbage and black bean salsa, then divide the cod and jalapeño yoghurt between the bowls. Sprinkle with the feta and garnish with the remaining lime and quick pickled red onions."
+      ],
+      "fodmapNote": "From Mob's low-calorie collection. Swap the onion for green tops and check the spice blend for garlic powder; beans stay low-FODMAP at ~1/4 cup per serve. Fish, rice and jalapeño are safe — use lactose-free yogurt.",
+      "nutrition": {
+          "cal": 890,
+          "protein": 50,
+          "fiber": 15
+      }
+  },
+
+  {
+      "id": "fam-mob-salmon-apple-lemongrass",
+      "name": "Flaky Salmon with Crisp Apple & Lemongrass Salad",
+      "emoji": "🐟",
+      "category": "dinner",
+      "time": "25 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "low-calorie",
+          "gluten-free"
+      ],
+      "source": "https://www.mob.co.uk/recipes/crispy-salmon-with-fresh-apple-lemongrass-salad",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "15g",
+              "item": "Fresh Mint"
+          },
+          {
+              "qty": "1",
+              "item": "Lemongrass Stalk"
+          },
+          {
+              "qty": "2",
+              "item": "Spring Onion"
+          },
+          {
+              "qty": "2",
+              "item": "Red Bird's Eye Chilli"
+          },
+          {
+              "qty": "2",
+              "item": "Green Apple"
+          },
+          {
+              "qty": "4",
+              "item": "x 120g Skin-On Salmon Fillet"
+          },
+          {
+              "qty": "500g",
+              "item": "Cooked Jasmine Rice"
+          },
+          {
+              "qty": "1",
+              "item": "Lime"
+          },
+          {
+              "qty": "1tsp",
+              "item": "Fish Sauce"
+          },
+          {
+              "qty": "to taste",
+              "item": "Olive Oil"
+          },
+          {
+              "qty": "to taste",
+              "item": "Salt"
+          },
+          {
+              "qty": "to taste",
+              "item": "Black Pepper"
+          }
+      ],
+      "steps": [
+          "Pick the mint leaves, discarding the stems. Thinly slice the lemongrass, spring onion and chilli. Core the apples and slice into 1cm thick matchsticks.",
+          "Pat the salmon dry and season with salt and pepper. Place a frying pan over a medium heat with a drizzle of olive oil. Once hot, add the salmon skin-side down and cook undisturbed for 5-6 mins, until it's about three-quarters done. Flip the salmon and remove from the heat. Leave in the pan until the salmon is cooked through. If you like yours more well done, place over a medium heat until your desired doneness.",
+          "Reheat the rice. Squeeze the lime into a bowl, then stir in the lemongrass, chilli and spring onion together and season to taste with fish sauce. Toss the apple and mint through just before serving.",
+          "Share the rice between plates or boxes. Top with the salmon, skin-side up, and serve the apple salad alongside. If making lunch for the next day, flake the salmon and toss through the salad."
+      ],
+      "fodmapNote": "From Mob's low-calorie collection. Apple is the FODMAP here — keep to ~1/4 apple per serve (or swap firm banana ribbons); shallot/onion in the dressing → green-onion tops. Salmon, lemongrass and herbs are safe.",
+      "nutrition": {
+          "cal": 465,
+          "protein": 28,
+          "fiber": 3
+      }
+  },
+
+  {
+      "nutrition": { "cal": 400, "protein": 11, "fiber": 7 },
+      "id": "fam-mob-tomato-gnocchi",
+      "name": "6-Ingredient Tomato Gnocchi",
+      "emoji": "🥟",
+      "category": "dinner",
+      "time": "15 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "easy",
+          "vegetarian",
+          "quick"
+      ],
+      "source": "https://www.mob.co.uk/recipes/6-ingredient-tomato-gnocchi",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "4",
+              "item": "Banana Shallot"
+          },
+          {
+              "qty": "3Clove",
+              "item": "Garlic Clove"
+          },
+          {
+              "qty": "800g",
+              "item": "Gnocchi"
+          },
+          {
+              "qty": "0.5tsp",
+              "item": "Chilli Flakes"
+          },
+          {
+              "qty": "150g",
+              "item": "Tomato Purée"
+          },
+          {
+              "qty": "150ml",
+              "item": "Water"
+          },
+          {
+              "qty": "1",
+              "item": "Handful Basil"
+          },
+          {
+              "qty": "to taste",
+              "item": "Salt"
+          },
+          {
+              "qty": "to taste",
+              "item": "Black Pepper"
+          },
+          {
+              "qty": "to taste",
+              "item": "Olive Oil"
+          }
+      ],
+      "steps": [
+          "Finely slice garlic and shallots.",
+          "Add a good glug of olive oil to a pan, add shallots and cook until soft and translucent.",
+          "Get your gnocchi into a pot of salted boiling water.",
+          "Add garlic and chilli flakes to your pan with the soft, sliced shallots. Before the garlic starts to brown, add your tomato purée and give it a good mix. Cook until the tomato purée starts to caramelise.",
+          "Add the very starchy gnocchi water to your tomatey pan and keep adding gnocchi water until you get a thick starchy sauce.",
+          "When the gnocchi is al dente (this should take about 2 mins), add it to the tomatoey pan. Get a fork and mix the gnocchi thoroughly to make sure the gnocchi doesn't stick together.",
+          "Tear the basil onto your gnocchi. Season with salt and pepper. Tuck in."
+      ],
+      "fodmapNote": "From Mob's easy-dinner picks. Gnocchi is wheat (GF gnocchi exists) and the sauce leans on onion and garlic — garlic-infused oil plus a plain tomato passata keeps it low-FODMAP."
+  },
+
+  {
+      "id": "fam-mob-aglio-olio-chickpeas",
+      "name": "Aglio E Olio Chickpeas",
+      "emoji": "🫘",
+      "category": "dinner",
+      "time": "20 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "easy",
+          "vegetarian",
+          "quick"
+      ],
+      "source": "https://www.mob.co.uk/recipes/aglio-e-olio-chickpeas",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "7Clove",
+              "item": "Garlic"
+          },
+          {
+              "qty": "2",
+              "item": "x 570g Jar Chickpeas"
+          },
+          {
+              "qty": "50ml",
+              "item": "Olive Oil"
+          },
+          {
+              "qty": "1tsp",
+              "item": "Chilli Flakes"
+          },
+          {
+              "qty": "100g",
+              "item": "Parsley"
+          },
+          {
+              "qty": "1",
+              "item": "Lemon"
+          }
+      ],
+      "steps": [
+          "Finely slice your garlic.",
+          "Drain your chickpeas (save the chickpea water).",
+          "Add the olive oil to a pan. Then add your garlic and your chilli flakes. Fry on low until the garlic is translucent (but not brown). Pour in some chickpea water to halt the frying.",
+          "Add your drained chickpeas to the pan. Stir them through, and then add the chickpea water. You want the liquid water to just cover the chickpeas, so if you need to add more water, do that.",
+          "Bubble the sauce down on a medium heat until the chickpea water and the oil have emulsified to form a thick sauce (about 10 mins). If the sauce isn't thickening, blend a few tbsp of the chickpeas with a splash of water and return into the dish until thickened.",
+          "Once everything has come together, add a large handful of finely chopped parsley, and the juice of a lemon. Season with salt and pepper to taste.",
+          "Serve onto plates. Top with more parsley and olive oil. Enjoy."
+      ],
+      "fodmapNote": "From Mob's easy-dinner picks. Garlic IS this dish — the honest low-FODMAP version uses garlic-infused oil (flavor, no fructans) and caps chickpeas at 1/4 cup per serve. Six ingredients, big fiber.",
+      "nutrition": {
+          "cal": 520,
+          "protein": 20,
+          "fiber": 18
+      }
+  },
+
+  {
+      "id": "fam-mob-aldi-crispy-chicken-bowl",
+      "name": "Crispy Chicken, Brown Rice, Chickpeas & Tzatziki",
+      "emoji": "🍗",
+      "category": "dinner",
+      "time": "50 min",
+      "serves": 2,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "aldi",
+          "high-protein"
+      ],
+      "source": "https://www.mob.co.uk/recipes/crispy-chicken-brown-rice-chickpeas-tzatziki",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "1",
+              "item": "Courgette"
+          },
+          {
+              "qty": "1",
+              "item": "Red Onion"
+          },
+          {
+              "qty": "4",
+              "item": "Bone-In Skin-On Chicken Thigh"
+          },
+          {
+              "qty": "15g",
+              "item": "Fresh Parsley"
+          },
+          {
+              "qty": "2",
+              "item": "Lemon Wedge, to serve"
+          },
+          {
+              "qty": "to taste",
+              "item": ".5 Cucumber"
+          },
+          {
+              "qty": "200g",
+              "item": "5% Fat Greek Yoghurt"
+          },
+          {
+              "qty": "1",
+              "item": "Garlic Clove"
+          },
+          {
+              "qty": "1",
+              "item": "Lemon"
+          },
+          {
+              "qty": "250g",
+              "item": "Cooked Wholegrain Rice"
+          },
+          {
+              "qty": "200g",
+              "item": "Chickpeas"
+          },
+          {
+              "qty": "2",
+              "item": "Garlic Clove"
+          },
+          {
+              "qty": "2tsp",
+              "item": "Smoked Paprika"
+          },
+          {
+              "qty": "2tsp",
+              "item": "Ground Cumin"
+          },
+          {
+              "qty": "2tsp",
+              "item": "Ground Coriander"
+          }
+      ],
+      "steps": [
+          "Place the chicken thighs skin-side down on a chopping board. Run a knife along each side of the bone to expose it. Using scissors, cut underneath the bone to remove it. Repeat with the remaining chicken thighs. Once they're all prepped, season with salt and pepper. We prep them like this to ensure you get that crispy skin, but if you'd rather by skinless boneless thighs you can!",
+          "Cut the courgette in half lengthways and then into half moons. Cut the red onion into large chunks.",
+          "Add the chicken, skin side down into a cold, large frying pan and set it over a medium heat. Cook for 15-20 mins until the chicken skin is golden brown.",
+          "While the chicken is cooking, make the tzatziki. Grate the cucumber into a bowl and season with salt. Set aside for 5 mins then squeeze out the excess water. Add the squeezed cucumber to the yoghurt with the zest of the lemon and the juice of ½ the lemon. Grate in the garlic. Mix well to combine then season to taste with salt. Set aside.",
+          "When the chicken skin is golden brown and crispy, flip the chicken thighs and cook for a further 2 mins. Remove them from the pan and set aside.",
+          "Add the red onion, courgette, the smoked paprika, ground cumin and coriander to the pan. Grate in the garlic then cook over a medium heat until soft. (If anything catches on the bottom of the pan, just add a little water and scrape it up). Add the drained chickpeas and cooked rice to the pan. Cook over a medium heat for 2-3 mins until everything has come together. Season with salt and pepper.",
+          "Meanwhile, pick the parsley leaves and cut the chicken into thick slices.",
+          "To serve, divide the rice between plates then top with the chicken and tzatziki. Sprinkle over the parsley and finish with the remaining lemon on the side."
+      ],
+      "fodmapNote": "From Aldi's high-protein weeknight dinners. Garlic in the tzatziki and marinade → garlic-infused oil; chickpeas low-FODMAP at ~1/4 cup per serve; use lactose-free yogurt. Chicken and brown rice are safe.",
+      "nutrition": {
+          "cal": 780,
+          "protein": 69,
+          "fiber": 11
+      }
+  },
+
+  {
+      "id": "fam-mob-aldi-chicken-quinoa-salad",
+      "name": "Crunchy Quinoa & Chicken Salad",
+      "emoji": "🥗",
+      "category": "lunch",
+      "time": "35 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "mob",
+          "aldi",
+          "high-protein"
+      ],
+      "source": "https://www.mob.co.uk/recipes/chicken-quinoa-salad",
+      "added": "2026-09-13",
+      "ingredients": [
+          {
+              "qty": "8",
+              "item": "Boneless Skinless Chicken Thigh"
+          },
+          {
+              "qty": "2",
+              "item": "Garlic Clove"
+          },
+          {
+              "qty": "0.5",
+              "item": "Lemon"
+          },
+          {
+              "qty": "1tsp",
+              "item": "Dried Oregano"
+          },
+          {
+              "qty": "to taste",
+              "item": "Olive Oil"
+          },
+          {
+              "qty": "to taste",
+              "item": "Salt"
+          },
+          {
+              "qty": "to taste",
+              "item": "Black Pepper"
+          },
+          {
+              "qty": "250g",
+              "item": "Cooked Quinoa"
+          },
+          {
+              "qty": "200g",
+              "item": "Cavolo Nero"
+          },
+          {
+              "qty": "4",
+              "item": "Spring Onion"
+          },
+          {
+              "qty": "480g",
+              "item": "Drained Cooked Cannellini Beans"
+          },
+          {
+              "qty": "4",
+              "item": "Spring Onion"
+          },
+          {
+              "qty": "1",
+              "item": "Garlic Clove"
+          },
+          {
+              "qty": "125g",
+              "item": "Pickled Jalapeño"
+          },
+          {
+              "qty": "40ml",
+              "item": "Jalapeño Pickle Brine"
+          },
+          {
+              "qty": "70g",
+              "item": "Greek Yoghurt"
+          },
+          {
+              "qty": "30g",
+              "item": "Fresh Parsley"
+          },
+          {
+              "qty": "60ml",
+              "item": "Olive Oil"
+          }
+      ],
+      "steps": [
+          "Heat the oven to 200°C. Put the chicken thighs into a bowl. Finely grate the garlic over the chicken and squeeze in the lemon juice. Add the oregano, drizzle with olive oil and generously season. Mix and set aside.",
+          "Tip the quinoa onto a baking tray, drizzle with olive oil and season. Toss together and bake for 15-20 mins. The quinoa will crisp-up as it cools.",
+          "Meanwhile, strip the stems off the cavolo nero, tear the leaves into bite-sized chunks and transfer to a bowl. Season with salt and scrunch together until the cavolo nero wilts. Thinly slice the spring onions, drain the cannellini beans and toss both through the cavolo nero.",
+          "Add all the dressing ingredients to a blender and blend until smooth. Taste and season.",
+          "Place a frying pan over a medium-high heat with a drizzle of olive oil. Once hot, fry the chicken on both sides (10-15 mins in total) until golden brown and cooked through.",
+          "Toss three-quarters of the crispy quinoa through the bean mixture with 2 tbsp of the dressing. Slice the chicken.",
+          "Share the salad between plates, top with the chicken and drizzle over some more dressing. Sprinkle with the remaining crispy quinoa."
+      ],
+      "fodmapNote": "From Aldi's high-protein weeknight dinners. Swap red onion for green tops and check the dressing for garlic; chickpeas to ~1/4 cup per serve. Chicken, quinoa and crunchy veg are otherwise FODMAP-friendly.",
+      "nutrition": {
+          "cal": 750,
+          "protein": 62,
+          "fiber": 11
+      }
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
