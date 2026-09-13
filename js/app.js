@@ -6723,14 +6723,17 @@
     { id: 'load',      label: 'Progressive Load', emoji: '🏋️', hint: 'Strength/rehab day — extra protein for recovery' },
   ];
 
-  // Personalized for Kandy (140 lb / 5'9" / 45, sessions < 45 min):
-  // Mifflin-St Jeor BMR ≈ 1,345 kcal; sedentary ×1.2 ≈ 1,615 → 1,600;
-  // ride ≈ +300 net → 1,900; strength ≈ +175 net → 1,800. Protein 1.6 /
-  // 1.65 / 1.8 g/kg at 63.5 kg; fiber = NASEM AI. Maintenance calories.
+  // Personalized for Kandy (140 lb / 5'9" / 45, sessions < 45 min), at a
+  // SLOW FAT-LOSS basis: Mifflin-St Jeor BMR ≈ 1,345 kcal; maintenance ≈
+  // 1,615 sedentary / 1,915 ride / 1,790 strength. Each day sits ~150–200
+  // under its own maintenance (≈0.3 lb/week on a typical week). Sedentary
+  // 1,450 is above BMR and at the bottom of the maintenance error band —
+  // fed, but no realistic surplus. Protein rises in a deficit to protect
+  // muscle (1.65 / 1.73 / 1.9 g/kg); fiber = NASEM AI.
   const DEFAULT_NUTRITION_TARGETS = {
-    sedentary: { cal: 1600, protein: 100, fiber: 25 },
-    cycling:   { cal: 1900, protein: 105, fiber: 25 },
-    load:      { cal: 1800, protein: 115, fiber: 25 },
+    sedentary: { cal: 1450, protein: 105, fiber: 25 },
+    cycling:   { cal: 1750, protein: 110, fiber: 25 },
+    load:      { cal: 1650, protein: 120, fiber: 25 },
   };
 
   // Generic defaults that shipped before Kandy's stats were baked in. A
@@ -6741,6 +6744,7 @@
   ];
   const SUPERSEDED_PROFILE_SETS = [
     { sedentary: { cal: 1800, protein: 100, fiber: 25 }, cycling: { cal: 2200, protein: 110, fiber: 25 }, load: { cal: 2000, protein: 120, fiber: 25 } },
+    { sedentary: { cal: 1600, protein: 100, fiber: 25 }, cycling: { cal: 1900, protein: 105, fiber: 25 }, load: { cal: 1800, protein: 115, fiber: 25 } },
   ];
 
   function sameTargets(a, b) {
