@@ -192,6 +192,11 @@
         </div>
       </div>
 
+      <!-- ── Daily nutrition: what I still need ── -->
+      <div class="nutrition-section" id="nutrition-section">
+        <!-- populated by JS -->
+      </div>
+
       <!-- ── Progress tracker ──────────────────── -->
       <div class="progress-section">
         <div class="progress-header">
@@ -551,6 +556,39 @@
       <div style="padding:24px">
         <div class="modal-title" style="margin-bottom:16px">🛒 Shopping List</div>
         <div id="shopping-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nutrition targets modal -->
+  <div class="modal-overlay hidden" id="targets-overlay">
+    <div class="find-form-modal" id="targets-modal">
+      <div class="form-header">
+        <div class="form-title">🎯 My Daily Nutrition Targets</div>
+        <button class="modal-close" id="targets-close">✕</button>
+      </div>
+      <div class="form-body">
+        <p class="targets-note">The planner adds up every meal you plan on a day and shows what's still missing to hit these numbers. They start as general guidelines (Dietary Guidelines for Americans / NIH) — set your own numbers from your provider or plan. Leave a box empty to stop tracking it.</p>
+        <div class="form-row">
+          <div class="form-group flex-grow">
+            <label>🔥 Calories per day</label>
+            <input type="number" id="tg-cal" min="0" step="10" placeholder="e.g. 1800">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group flex-grow">
+            <label>💪 Protein (g per day)</label>
+            <input type="number" id="tg-protein" min="0" step="1" placeholder="e.g. 100">
+          </div>
+          <div class="form-group flex-grow">
+            <label>🌾 Fiber (g per day)</label>
+            <input type="number" id="tg-fiber" min="0" step="1" placeholder="e.g. 25">
+          </div>
+        </div>
+      </div>
+      <div class="form-footer">
+        <button id="tg-cancel-btn" class="action-btn" style="background:var(--bg);color:var(--text)">Cancel</button>
+        <button id="tg-save-btn" class="action-btn primary">💾 Save Targets</button>
       </div>
     </div>
   </div>

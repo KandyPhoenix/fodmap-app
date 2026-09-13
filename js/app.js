@@ -2701,7 +2701,7 @@
 
 
 
-  function getRecipeNutrition(id) {
+  function getRecipeNutrition(id, recipe) {
 
 
 
@@ -2717,7 +2717,9 @@
 
 
 
-    const cal = n ? n.cal : ((typeof RECIPE_CALORIES !== 'undefined' && RECIPE_CALORIES[id]) ? RECIPE_CALORIES[id] : null);
+    const own = (recipe && recipe.nutrition && typeof recipe.nutrition === 'object') ? recipe.nutrition : null;
+
+    const cal = n ? n.cal : (own && own.cal != null ? own.cal : ((typeof RECIPE_CALORIES !== 'undefined' && RECIPE_CALORIES[id]) ? RECIPE_CALORIES[id] : null));
 
 
 
@@ -2741,7 +2743,7 @@
 
 
 
-      protein: n ? n.protein : null,
+      protein: n ? n.protein : (own && own.protein != null ? own.protein : null),
 
 
 
@@ -2749,7 +2751,7 @@
 
 
 
-      fiber:   n ? n.fiber   : null,
+      fiber:   n ? n.fiber   : (own && own.fiber   != null ? own.fiber   : null),
 
 
 
@@ -2993,7 +2995,7 @@
 
 
 
-      const nut = getRecipeNutrition(r.id);
+      const nut = getRecipeNutrition(r.id, r);
 
 
 
@@ -3522,7 +3524,7 @@
 
 
 
-    const recipeNut = getRecipeNutrition(recipe.id);
+    const recipeNut = getRecipeNutrition(recipe.id, recipe);
 
 
 
@@ -6699,6 +6701,234 @@
 
 
 
+  // ══════════════════════════════════════════
+  //  ③b  DAILY NUTRITION — "what do I still need?"
+  //  Targets live in localStorage 'fodmap-nutrition-targets', so they ride the
+  //  same fodmap-* sync/export as everything else. Defaults are general
+  //  guidelines (DGA 2020–2025 / NIH DRIs) — the ⚙️ editor is the source of truth.
+  // ══════════════════════════════════════════
+
+  const NUTRIENTS = [
+    { id: 'cal',     label: 'Calories', emoji: '🔥', unit: ' cal' },
+    { id: 'protein', label: 'Protein',  emoji: '💪', unit: 'g' },
+    { id: 'fiber',   label: 'Fiber',    emoji: '🌾', unit: 'g' },
+  ];
+
+  const DEFAULT_NUTRITION_TARGETS = { cal: 1800, protein: 100, fiber: 25 };
+
+  function loadNutritionTargets() {
+    try {
+      const t = JSON.parse(localStorage.getItem('fodmap-nutrition-targets') || 'null');
+      if (t && typeof t === 'object' && !Array.isArray(t)) return Object.assign({}, DEFAULT_NUTRITION_TARGETS, t);
+    } catch(e) {}
+    return Object.assign({}, DEFAULT_NUTRITION_TARGETS);
+  }
+
+  function saveNutritionTargets(t) {
+    try { localStorage.setItem('fodmap-nutrition-targets', JSON.stringify(t)); } catch(e) {}
+    if (typeof syncFodmapToFirebase === 'function') syncFodmapToFirebase();
+  }
+
+  function mealNutrition(meal, r) {
+    // A hand-entered estimate saved on the planner entry wins; otherwise the recipe's data.
+    if (meal.nut && (meal.nut.cal != null || meal.nut.protein != null || meal.nut.fiber != null)) return { nut: meal.nut, est: true };
+    if (r) {
+      const nut = getRecipeNutrition(r.id, r);
+      if (nut.cal != null || nut.protein != null || nut.fiber != null) return { nut, est: false };
+    }
+    return null;
+  }
+
+  // Totals for one planner day. Counts 1 serving per planned meal; entries with
+  // no data (custom text, clips without nutrition) land in `uncounted`.
+  function computeDayNutrition(dateKey) {
+    const totals = { cal: 0, protein: 0, fiber: 0 };
+    const counted = [], uncounted = [];
+    const all = getAllRecipes();
+    MEAL_TYPES.forEach(mtype => {
+      const mealKey = `${dateKey}-${mtype.id}`;
+      const meal = meals[mealKey];
+      if (!meal) return;
+      const r = meal.type === 'recipe' ? all.find(x => x.id === meal.id) : null;
+      const name = r ? r.name : (meal.text || 'Meal');
+      const found = mealNutrition(meal, r);
+      if (found) {
+        totals.cal     += found.nut.cal     || 0;
+        totals.protein += found.nut.protein || 0;
+        totals.fiber   += found.nut.fiber   || 0;
+        counted.push({ mealKey, name, est: found.est });
+      } else {
+        uncounted.push({ mealKey, name });
+      }
+    });
+    return { totals, counted, uncounted, planned: counted.length + uncounted.length };
+  }
+
+  let selectedNutritionDay = null;
+
+  function resolveNutritionDay(days) {
+    if (selectedNutritionDay && days.some(d => d.key === selectedNutritionDay)) return selectedNutritionDay;
+    const today = days.find(d => d.isToday);
+    return (today || days[0]).key;
+  }
+
+  const fmtNut = v => Math.round(v).toLocaleString('en-US');
+
+  // Extra "🎯 Still Need" row along the bottom of the planner grid — one glance
+  // per day; tap a day for the full breakdown in the card below the grid.
+  function renderNutritionRow(grid, days) {
+    const targets = loadNutritionTargets();
+    const active = NUTRIENTS.filter(n => targets[n.id] > 0);
+    const label = document.createElement('div');
+    label.className = 'planner-row-label nut-row-label';
+    label.innerHTML = '<span>🎯 Still Need</span><button type="button" class="nut-row-edit" title="Edit my daily targets">⚙️ targets</button>';
+    label.querySelector('.nut-row-edit').addEventListener('click', openTargetsModal);
+    grid.appendChild(label);
+    const selectedKey = resolveNutritionDay(days);
+    days.forEach(d => {
+      const cell = document.createElement('div');
+      cell.className = 'planner-cell nut-cell' + (d.isToday ? ' today-col' : '') + (d.key === selectedKey ? ' nut-selected' : '');
+      cell.title = 'Tap for the full breakdown below';
+      if (!active.length) {
+        cell.innerHTML = '<div class="nut-cell-line nut-quiet">—</div>';
+      } else {
+        const info = computeDayNutrition(d.key);
+        const lines = active.map(n => {
+          const remaining = targets[n.id] - info.totals[n.id];
+          if (!info.planned) return `<div class="nut-cell-line nut-quiet">${n.emoji} ${fmtNut(targets[n.id])}${n.unit}</div>`;
+          if (remaining > 0) return `<div class="nut-cell-line">${n.emoji} ${fmtNut(remaining)}${n.unit} left</div>`;
+          if (n.id === 'cal' && remaining < 0) return `<div class="nut-cell-line nut-over">${n.emoji} ${fmtNut(-remaining)} over</div>`;
+          return `<div class="nut-cell-line nut-met">${n.emoji} ✓ met</div>`;
+        }).join('');
+        const flag = info.uncounted.length ? `<div class="nut-cell-flag">${info.uncounted.length} not counted</div>` : '';
+        cell.innerHTML = lines + flag;
+      }
+      cell.addEventListener('click', () => { selectedNutritionDay = d.key; renderPlanner(); });
+      grid.appendChild(cell);
+    });
+  }
+
+  // The detail card under the planner: progress toward each target for the
+  // selected day, plus quick estimates for meals that have no nutrition data.
+  function renderDayNutrition(days) {
+    const wrap = document.getElementById('nutrition-section');
+    if (!wrap) return;
+    const targets = loadNutritionTargets();
+    const active = NUTRIENTS.filter(n => targets[n.id] > 0);
+    const dayKey = resolveNutritionDay(days);
+    const d = days.find(x => x.key === dayKey) || days[0];
+    const info = computeDayNutrition(dayKey);
+    const dayName = d.isToday ? 'Today' : `${d.label} ${d.month}/${d.date}`;
+
+    let body;
+    if (!active.length) {
+      body = '<div class="nut-empty">No daily targets set. Tap <strong>⚙️ My Targets</strong> to choose what to track.</div>';
+    } else if (!info.planned) {
+      body = `<div class="nut-empty">Nothing planned for ${d.isToday ? 'today' : dayName} yet — add meals above and this fills in what you still need.</div>`;
+    } else {
+      body = active.map(n => {
+        const have = info.totals[n.id];
+        const target = targets[n.id];
+        const remaining = target - have;
+        const pct = Math.max(0, Math.min(100, Math.round((have / target) * 100)));
+        const met = remaining <= 0;
+        const over = n.id === 'cal' && remaining < 0;
+        const status = met ? (over ? `⚠️ ${fmtNut(-remaining)}${n.unit} over target` : '✓ target met') : `${fmtNut(remaining)}${n.unit} still needed`;
+        return `<div class="nut-detail-row">
+          <div class="nut-detail-top">
+            <span class="nut-detail-label">${n.emoji} ${n.label}</span>
+            <span class="nut-detail-nums">${fmtNut(have)} / ${fmtNut(target)}${n.unit}</span>
+          </div>
+          <div class="nut-bar"><div class="nut-bar-fill${over ? ' over' : (met ? ' met' : '')}" style="width:${pct}%"></div></div>
+          <div class="nut-detail-status${over ? ' over' : (met ? ' met' : '')}">${status}</div>
+        </div>`;
+      }).join('');
+    }
+
+    const estNote = info.counted.some(c => c.est) ? ' · <span class="nut-est-tag">est.</span> = your own numbers' : '';
+    const uncHtml = info.uncounted.length ? `
+      <div class="nut-uncounted">
+        <div class="nut-uncounted-title">Not counted yet — no nutrition data:</div>
+        ${info.uncounted.map(u => `
+          <div class="nut-uncounted-item" data-meal-key="${u.mealKey}">
+            <span class="nut-uncounted-name">${escHtml(u.name)}</span>
+            <button type="button" class="nut-est-btn" data-meal-key="${u.mealKey}">＋ add numbers</button>
+          </div>`).join('')}
+      </div>` : '';
+
+    wrap.innerHTML = `
+      <div class="nutrition-card">
+        <div class="nut-head">
+          <div>
+            <div class="nut-title">🥗 ${dayName} — What I Still Need</div>
+            <div class="nut-sub">Updates the moment a meal is added or removed · counts 1 serving per planned meal</div>
+          </div>
+          <button type="button" class="action-btn primary nut-targets-btn" id="nut-targets-btn">⚙️ My Targets</button>
+        </div>
+        ${body}
+        ${uncHtml}
+        <div class="nut-foot">Recipe nutrition is an estimate per serving${estNote}</div>
+      </div>`;
+
+    document.getElementById('nut-targets-btn').addEventListener('click', openTargetsModal);
+    wrap.querySelectorAll('.nut-est-btn').forEach(btn => {
+      btn.addEventListener('click', () => openEstimateForm(btn.dataset.mealKey));
+    });
+  }
+
+  // Inline "add numbers" mini-form for a planned meal with no nutrition data.
+  function openEstimateForm(mealKey) {
+    const item = document.querySelector(`.nut-uncounted-item[data-meal-key="${mealKey}"]`);
+    if (!item || !meals[mealKey]) return;
+    const cur = meals[mealKey].nut || {};
+    item.innerHTML = `
+      <div class="nut-est-form">
+        <input type="number" min="0" step="10" class="nut-est-input" data-nut="cal" placeholder="cal" value="${cur.cal != null ? cur.cal : ''}">
+        <input type="number" min="0" step="1" class="nut-est-input" data-nut="protein" placeholder="protein g" value="${cur.protein != null ? cur.protein : ''}">
+        <input type="number" min="0" step="1" class="nut-est-input" data-nut="fiber" placeholder="fiber g" value="${cur.fiber != null ? cur.fiber : ''}">
+        <button type="button" class="action-btn primary nut-est-save">Save</button>
+        <button type="button" class="action-btn nut-est-cancel">Cancel</button>
+      </div>`;
+    item.querySelector('.nut-est-input').focus();
+    item.querySelector('.nut-est-cancel').addEventListener('click', () => renderPlanner());
+    item.querySelector('.nut-est-save').addEventListener('click', () => {
+      const nut = {};
+      item.querySelectorAll('.nut-est-input').forEach(inp => {
+        const v = parseFloat(inp.value);
+        nut[inp.dataset.nut] = (isNaN(v) || v < 0) ? null : v;
+      });
+      if (nut.cal == null && nut.protein == null && nut.fiber == null) delete meals[mealKey].nut;
+      else meals[mealKey].nut = nut;
+      saveMeals(); renderPlanner();
+    });
+  }
+
+  // ── Targets editor modal ────────────────────
+  const targetsOverlay = document.getElementById('targets-overlay');
+
+  function openTargetsModal() {
+    const t = loadNutritionTargets();
+    document.getElementById('tg-cal').value = t.cal > 0 ? t.cal : '';
+    document.getElementById('tg-protein').value = t.protein > 0 ? t.protein : '';
+    document.getElementById('tg-fiber').value = t.fiber > 0 ? t.fiber : '';
+    targetsOverlay.classList.remove('hidden');
+  }
+
+  function closeTargetsModal() { targetsOverlay.classList.add('hidden'); }
+
+  if (targetsOverlay) {
+    targetsOverlay.addEventListener('click', e => { if (e.target === targetsOverlay) closeTargetsModal(); });
+    document.getElementById('targets-close').addEventListener('click', closeTargetsModal);
+    document.getElementById('tg-cancel-btn').addEventListener('click', closeTargetsModal);
+    document.getElementById('tg-save-btn').addEventListener('click', () => {
+      const read = id => { const v = parseFloat(document.getElementById(id).value); return (isNaN(v) || v <= 0) ? 0 : v; };
+      saveNutritionTargets({ cal: read('tg-cal'), protein: read('tg-protein'), fiber: read('tg-fiber') });
+      closeTargetsModal();
+      renderPlanner();
+    });
+  }
+
+
   function renderPlanner() {
 
 
@@ -7003,7 +7233,7 @@
 
 
 
-          const nut = r ? getRecipeNutrition(r.id) : null;
+          const nut = (meal.nut && (meal.nut.cal != null || meal.nut.protein != null || meal.nut.fiber != null)) ? meal.nut : (r ? getRecipeNutrition(r.id, r) : null);
           const nutLine = (nut && (nut.cal != null || nut.protein != null || nut.fiber != null))
             ? `<span class="meal-chip-nut">${nut.cal != null ? `🔥${nut.cal}` : ''}${nut.protein != null ? ` · 💪${nut.protein}g` : ''}${nut.fiber != null ? ` · 🌾${nut.fiber}g` : ''}</span>`
             : ''
@@ -7238,6 +7468,11 @@
 
 
 
+
+
+    renderNutritionRow(grid, days);
+
+    renderDayNutrition(days);
 
   }
 
