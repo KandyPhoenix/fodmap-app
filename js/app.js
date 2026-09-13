@@ -6717,6 +6717,33 @@
     { id: 'fiber',   label: 'Fiber',    emoji: '🌾', unit: 'g' },
   ];
 
+  // One-tap "protein & fiber, tiny calories" picks for the planner picker.
+  // Typical portions, USDA-informed estimates; FODMAP portion notes follow
+  // Monash-style guidance (check the Monash app when precision matters).
+  const PF_BOOSTERS = [
+    { emoji: '🥚', name: 'Egg whites (1/2 cup)', cal: 65, protein: 13, fiber: 0, note: '65 cal · 13g protein — cheapest whole-food protein' },
+    { emoji: '🥤', name: 'Whey isolate shake (1 scoop)', cal: 110, protein: 24, fiber: 1, note: '110 cal · 24g protein — isolate is nearly lactose-free' },
+    { emoji: '🐟', name: 'Tuna in water (1 can)', cal: 100, protein: 22, fiber: 0, note: '100 cal · 22g protein' },
+    { emoji: '🍤', name: 'Shrimp (4 oz)', cal: 120, protein: 23, fiber: 0, note: '120 cal · 23g protein' },
+    { emoji: '🐠', name: 'White fish (4 oz)', cal: 110, protein: 23, fiber: 0, note: '110 cal · 23g protein — cod, tilapia, halibut' },
+    { emoji: '🥛', name: 'Nonfat Greek yogurt (1 cup)', cal: 130, protein: 22, fiber: 0, note: '130 cal · 22g protein — lactose-free if needed' },
+    { emoji: '🧀', name: 'Lactose-free cottage cheese (1 cup)', cal: 180, protein: 25, fiber: 0, note: '180 cal · 25g protein' },
+    { emoji: '🍗', name: 'Chicken breast (4 oz)', cal: 190, protein: 35, fiber: 0, note: '190 cal · 35g protein' },
+    { emoji: '🌾', name: 'Psyllium husk (1 tbsp in water/yogurt)', cal: 20, protein: 0, fiber: 6, note: '20 cal · 6g fiber — start with 1 tsp, plenty of water' },
+    { emoji: '🍜', name: 'Shirataki noodles (1 bag)', cal: 15, protein: 0, fiber: 3, note: '15 cal · 3g fiber — konjac rice/noodle swap' },
+    { emoji: '🍓', name: 'Raspberries (3/4 cup)', cal: 50, protein: 1, fiber: 6, note: '50 cal · 6g fiber — low-FODMAP portion' },
+    { emoji: '🥝', name: 'Kiwi (2)', cal: 90, protein: 2, fiber: 5, note: '90 cal · 5g fiber — FODMAP-friendly classic' },
+    { emoji: '🌱', name: 'Green beans (1 cup)', cal: 45, protein: 2, fiber: 4, note: '45 cal · 4g fiber' },
+    { emoji: '🥦', name: 'Broccoli heads (3/4 cup)', cal: 40, protein: 3, fiber: 4, note: '40 cal · 4g fiber — heads stay low-FODMAP at this size' },
+    { emoji: '🥣', name: 'Oat bran (2 tbsp, stirred in)', cal: 30, protein: 2, fiber: 2, note: '30 cal · 2g fiber — into oats or yogurt' },
+    { emoji: '🍿', name: 'Air-popped popcorn (3 cups)', cal: 95, protein: 3, fiber: 4, note: '95 cal · 4g fiber' },
+    { emoji: '🫘', name: 'Canned lentils, rinsed (1/4 cup)', cal: 60, protein: 4, fiber: 3, note: '60 cal · 4g protein · 3g fiber — low-FODMAP portion' },
+    { emoji: '🍨', name: 'Greek yogurt + chia + raspberries', cal: 270, protein: 25, fiber: 13, note: '270 cal · 25g protein · 13g fiber' },
+    { emoji: '🥤', name: 'Protein berry-spinach smoothie', cal: 200, protein: 27, fiber: 8, note: '200 cal · 27g protein · 8g fiber' },
+    { emoji: '🍲', name: 'Shrimp & veg over shirataki', cal: 250, protein: 28, fiber: 7, note: '250 cal · 28g protein · 7g fiber' },
+    { emoji: '🍳', name: 'Egg-white veggie scramble', cal: 150, protein: 18, fiber: 3, note: '150 cal · 18g protein · 3g fiber' },
+  ];
+
   const DAY_TYPES = [
     { id: 'sedentary', label: 'Sedentary',        emoji: '🪑', hint: 'Desk day — no workout (default)' },
     { id: 'cycling',   label: 'Cycling',          emoji: '🚴', hint: 'Ride day — extra fuel for the work' },
@@ -9817,7 +9844,35 @@
 
     let any = false;
 
-    // ✨ Super Age quick-pick — curated to this slot's meal type, shown first.
+    // 💪 Protein & Fiber Boosters — one tap, numbers attached, any slot
+    if (pendingCell?.dateKey) {
+      const boosters = PF_BOOSTERS.filter(b =>
+        !pickerSearch || (b.name + ' ' + b.note).toLowerCase().includes(pickerSearch));
+      if (boosters.length) {
+        any = true;
+        const bHeader = document.createElement('div');
+        bHeader.className = 'picker-group-label';
+        bHeader.textContent = '💪 Protein & Fiber Boosters';
+        el.appendChild(bHeader);
+        boosters.forEach(b => {
+          const item = document.createElement('div');
+          item.className = 'picker-item';
+          item.innerHTML = `
+            <div class="picker-item-emoji">${b.emoji}</div>
+            <div class="picker-item-info">
+              <div class="picker-item-name">${escHtml(b.name)}</div>
+              <div class="picker-item-meta">${escHtml(b.note)}</div>
+            </div>`;
+          item.addEventListener('click', () => {
+            meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'custom', text: b.name, nut: { cal: b.cal, protein: b.protein, fiber: b.fiber } };
+            saveMeals(); renderPlanner(); closeAll();
+          });
+          el.appendChild(item);
+        });
+      }
+    }
+
+    // ✨ Super Age quick-pick — curated to this slot's meal type.
     // Respects the picker category selector; falls back to the slot's meal type.
     const saCat = (pickerCategory !== 'all') ? pickerCategory : pendingCell?.mealType;
     const superAgeList = saCat ? getAllRecipes().filter(r =>
