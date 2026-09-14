@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-//  MOB RECIPES — curated batch from mob.co.uk (added 2026-09-11)
+//  MOB RECIPES — curated batches from mob.co.uk (2026-09-11 → 2026-09-14)
 //
 //  22 recipes picked across Mob's homepage sections: soups,
 //  high-protein dinners, packed lunches / make-ahead, quick veggie
@@ -88,7 +88,8 @@ const MOB_RECIPES = [
       "Use a stick blender to blitz into a smooth purée, taste, and season with the vinegar. Add the cream and gently reheat.",
       "Tip into meal-prep containers. Store in the fridge for up to 3 days until ready to reheat and eat. Top with some extra grated Cheddar cheese and a crack of black pepper if you like."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, packet mixes or sauces with onion and garlic powder, high-fructose fruit. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, packet mixes or sauces with onion and garlic powder, high-fructose fruit. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 270, "protein": 5, "fiber": 4 }
   },
   {
     "id": "fam-mob-leek-sweet-potato-soup",
@@ -170,7 +171,8 @@ const MOB_RECIPES = [
       "Time to blend. Take a hand blender and blend the sweet potato and leek mix until thick and smooth. Add some apple cider vinegar for a bit of acid.",
       "To finish, ladle the soup into your bowl and season. Tuck in with a side of delicious grilled cheddar toast!"
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, packet mixes or sauces with onion and garlic powder. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, packet mixes or sauces with onion and garlic powder. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 615, "protein": 19, "fiber": 9 }
   },
   {
     "id": "fam-mob-chicken-spinach-cheddar-soup-lunch",
@@ -254,7 +256,8 @@ const MOB_RECIPES = [
       "To serve, add the shredded chicken to a bowl and pour over the broth. Top with the pickled onions, a crack of black pepper and some extra grated Cheddar, if you like. Serve with toasted sourdough.",
       "If batch cooking for the week, transfer the leftover chicken and broth to a container and the pickled onions to another. It will keep in the fridge for 3 days. Reheat the chicken and broth together until piping hot before serving."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, high-FODMAP vegetables. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, high-FODMAP vegetables. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 540, "protein": 57, "fiber": 5 }
   },
   {
     "id": "fam-mob-kimchi-and-tofu-noodle-soup",
@@ -314,7 +317,8 @@ const MOB_RECIPES = [
       "Finely chop the spring onions.",
       "Serve the soup into bowls being careful not to break the tofu. Sprinkle with spring onions, your remaining kimchi and a drizzle of sesame oil."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 535, "protein": 24, "fiber": 6 }
   },
   {
     "id": "fam-mob-high-protein-ribollita-with-crumbled-sausage",
@@ -406,7 +410,8 @@ const MOB_RECIPES = [
       "Meanwhile, dice the bread into cubes and transfer to a baking tray. Drizzle with a little olive oil and season with salt then roast in the oven for 15 mins, until golden brown.",
       "To plate, add the croutons to the bottom of the bowl and ladle over the soup. Cover with some grated Parmesan and top with the crumbled sausage. Finish with salt, loads of black pepper and some parsley leaves."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, legumes, high-fructose fruit, high-FODMAP vegetables. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, legumes, high-fructose fruit, high-FODMAP vegetables. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 985, "protein": 50, "fiber": 16 }
   },
   {
     "id": "fam-mob-spicy-salmon-bowl-with-sesame-rice-soy-butter-spinach",
@@ -517,7 +522,8 @@ const MOB_RECIPES = [
       "While the salmon's cooking, heat the rice in the microwave until piping hot, if needed and thinly slice the spring onions.",
       "To serve, spoon the rice into a bowl, top with the salmon, spooning over the sauce. Finish with the buttery spinach, spring onions and some extra nori, if you like."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, honey or HFCS. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, honey or HFCS. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 590, "protein": 33, "fiber": 3 }
   },
   {
     "id": "fam-mob-chicken-quinoa-salad-lunch",
@@ -617,7 +623,8 @@ const MOB_RECIPES = [
       "Toss three-quarters of the crispy quinoa through the bean mixture with 2 tbsp of the dressing. Slice the chicken.",
       "Share the salad between meal-prep containers, top with the chicken and drizzle over some more dressing. Sprinkle with the remaining crispy quinoa and parsley leaves. It will keep in the fridge for 3 days."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, lactose, legumes. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, lactose, legumes. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 750, "protein": 62, "fiber": 11 }
   },
   {
     "id": "fam-mob-honey-garlic-chicken-broccoli-rice",
@@ -699,7 +706,8 @@ const MOB_RECIPES = [
       "Mince the garlic then add to a bowl along with the gochujang, soy sauce, honey and the juice of the limes. Mix to combine then pour over the chicken and pop it back in the oven for another 5 mins until sticky.",
       "Box or plate up the broccoli rice, top with the sticky chicken, and drizzle over any remaining sauce. Scatter over the spring onions and sesame seeds. It will keep well in the fridge for 3 days."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat, honey or HFCS. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat, honey or HFCS. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 785, "protein": 57, "fiber": 5 }
   },
   {
     "id": "fam-mob-dense-bean-salad-with-tomato-basil-vinaigrette",
@@ -772,7 +780,8 @@ const MOB_RECIPES = [
       "Tear the basil into pieces then add to the beans along with the rocket. Season with salt and pepper then toss to combine.",
       "Plate or box up the beans then tear over the mozzarella. If eating later, store the dressing separately in an airtight container. If eating now, drizzle the dressing over the top. It will keep in the fridge for 3-4 days."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, legumes. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, legumes. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 1010, "protein": 58, "fiber": 35 }
   },
   {
     "id": "fam-mob-spicy-tuna-rice-bowl",
@@ -846,7 +855,8 @@ const MOB_RECIPES = [
       "Divide the rice between containers. Top with a big scoop of spicy tuna, pickled cucumber, avocado and nori, if using. Sprinkle with togarashi and drizzle with more sriracha, if you like.",
       "Pop in the fridge for an easy, flavour-packed meal later. It will keep well in the fridge for 3 days."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 765, "protein": 46, "fiber": 7 }
   },
   {
     "id": "fam-mob-tomatoey-harissa-couscous-pots",
@@ -908,7 +918,8 @@ const MOB_RECIPES = [
       "Layer a quarter of the couscous over the harissa sauce and then a quarter of the rest of the ingredients.",
       "When you are ready to eat, add 240ml of boiling water per pot. Stir and tip out onto a plate, give it a stir and enjoy."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, wheat, legumes. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, wheat, legumes. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 720, "protein": 29, "fiber": 18 }
   },
   {
     "id": "fam-mob-romesco-chickpeas-lunch",
@@ -981,7 +992,8 @@ const MOB_RECIPES = [
       "Meanwhile, add most of the roasted almonds, the rest of the olive oil, and the other ingredients for the sauce into a blender. Season with plenty of salt and pepper and blitz into a smooth sauce.",
       "Stir the sauce into the chickpeas, taste and season. Spoon into bowls or meal-prep boxes, top with feta, the rest of the roasted almonds, parsley and chilli flakes. It will keep in the fridge for 3 days."
     ],
-    "fodmapNote": "Not low-FODMAP as written — garlic, legumes. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — garlic, legumes. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 460, "protein": 16, "fiber": 11 }
   },
   {
     "id": "fam-mob-leek-frittata-lunch",
@@ -1062,7 +1074,8 @@ const MOB_RECIPES = [
       "While the frittata cooks, zest the lemon and squeeze the juice of the zested lemon into a bowl add the kale, then drizzle 3 tbsp of olive oil, season with salt, pepper. Using your hands massage/squeeze for 3-4 mins, until the kale leaves wilt and are not as tough. Set aside.",
       "Toss your croutons into the salad and drizzle with yoghurt. Top with the reserved parsley leaves and some extra feta, if you like. Slice up the frittata and serve on plates or in meal-prep boxes with a side of salad."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, lactose. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, lactose. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 460, "protein": 31, "fiber": 6 }
   },
   {
     "id": "fam-mob-harissa-chicken",
@@ -1130,7 +1143,8 @@ const MOB_RECIPES = [
       "Chop your mint and coriander and finely slice your cucumber. Add the herbs and cucumber to the couscous with the juice of the lime. Season with salt and pepper and toss to combine.",
       "Divide the couscous between four plates then top with the chicken, a dollop of yoghurt, a drizzle of the remaining harissa and the chopped herbs."
     ],
-    "fodmapNote": "Not low-FODMAP as written — wheat, lactose. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — wheat, lactose. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 585, "protein": 37, "fiber": 5 }
   },
   {
     "id": "fam-mob-curried-coconut-chicken-rice",
@@ -1213,7 +1227,8 @@ const MOB_RECIPES = [
       "Meanwhile, place a frying pan with a drizzle of oil over a medium-high heat. Once hot, cook the marinated chicken on both sides, until slightly charred and cooked through. Taste and season the broth with lime juice, salt, sugar and pepper.",
       "Divide the rice between bowls, ladle the soup on top and finish with sliced chicken. Drizzle over the chilli oil and scatter with your crispy onions. Finish with the coriander leaves."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, lactose. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, lactose. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 790, "protein": 52, "fiber": 2 }
   },
   {
     "id": "fam-mob-sausage-gochujang-rigatoni",
@@ -1301,7 +1316,8 @@ const MOB_RECIPES = [
       "Add the remaining coriander to the pasta and give it another mix.",
       "To serve, divide the pasta between bowls. Scatter over the coriander breadcrumbs and grate over some lime zest. Tuck in."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, honey or HFCS. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, honey or HFCS. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 970, "protein": 34, "fiber": 5 }
   },
   {
     "id": "fam-mob-thai-green-chicken-curry",
@@ -1412,7 +1428,8 @@ const MOB_RECIPES = [
       "When the cooking time for the curry is up, turn the heat off and leave it to rest for 5 mins. Taste and season with salt, some lime juice and a little more fish sauce if needed.",
       "To serve, divide the rice between bowls and ladle over the curry. Serve with the coriander, lime wedges, fresh chilli and some crispy shallots, if you like."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, lactose. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, lactose. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 905, "protein": 41, "fiber": 9 }
   },
   {
     "id": "fam-mob-spicy-pork-sesame-noodles",
@@ -1515,7 +1532,8 @@ const MOB_RECIPES = [
       "Cook the noodles according to packet instructions. Once cooked, toss the majority of the remaining tahini miso sauce with the noodles, saving a bit for drizzling at the end.",
       "To serve, divide the noodles between plates then top with the pork and fresh herb salad. Finish with that extra drizzle of tahini miso sauce."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 1070, "protein": 75, "fiber": 8 }
   },
   {
     "id": "fam-mob-butter-halloumi-curry",
@@ -1608,7 +1626,8 @@ const MOB_RECIPES = [
       "Pour the sauce back into the pan, then tip in your fenugreek leaves (if using) and your halloumi. Add your butter, then season to taste with salt and pepper.",
       "Finish your curry with an extra drizzle of cream and some coriander leaves. Serve with roti."
     ],
-    "fodmapNote": "Not low-FODMAP as written — onion, garlic. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 830, "protein": 35, "fiber": 5 }
   },
   {
     "id": "fam-mob-10-minute-smoky-harissa-creamy-butter-beans",
@@ -1678,7 +1697,8 @@ const MOB_RECIPES = [
       "Meanwhile, toast the bread and finely chop the herbs.",
       "To serve, ladle the beans into bowls. Drizzle over the tahini and some remaining harissa. Finish with the chopped herbs, flaked almonds and the toast on the side."
     ],
-    "fodmapNote": "Not low-FODMAP as written — garlic, wheat, lactose, legumes. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — garlic, wheat, lactose, legumes. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 785, "protein": 39, "fiber": 27 }
   },
   {
     "id": "fam-mob-miso-mushroom-noodles",
@@ -1752,7 +1772,8 @@ const MOB_RECIPES = [
       "Drain the noodles and rinse with cold water to remove any starch. Then add to a large bowl, add the edamame, beansprouts, and most of the mint leaves. Add the dressing and toss well.",
       "Swirl the noodles into bowls and top with garlic-y mushrooms, toasted sesame seeds and fresh mint. Serve with the remaining lemon half, cut into wedges."
     ],
-    "fodmapNote": "Not low-FODMAP as written — garlic, wheat, high-FODMAP vegetables. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — garlic, wheat, high-FODMAP vegetables. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 425, "protein": 15, "fiber": 6 }
   },
   {
     "id": "fam-mob-cavolo-nero-rigatoni",
@@ -1813,7 +1834,8 @@ const MOB_RECIPES = [
       "Drain the pasta and add to the pan with the oil and chilli. Add the blended cavolo nero and a splash of the pasta water and mix well to emulsify.",
       "Plate up and top with the herby breadcrumbs."
     ],
-    "fodmapNote": "Not low-FODMAP as written — garlic. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve."
+    "fodmapNote": "Not low-FODMAP as written — garlic. Swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, replace packet mixes with your own herbs and spices, use lactose-free dairy or a hard cheese, and keep canned legumes to about 1/4 cup drained and rinsed per serve. Nutrition: estimated from ingredients.",
+    "nutrition": { "cal": 500, "protein": 19, "fiber": 6 }
   },
 
   {
@@ -3325,6 +3347,877 @@ const MOB_RECIPES = [
           "protein": 62,
           "fiber": 11
       }
+  },
+  {
+    "id": "fam-mob-20-minute-chicken-soup",
+    "name": "20-Minute Chicken Soup",
+    "emoji": "🍜",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick",
+      "soup",
+      "high protein"
+    ],
+    "source": "https://www.mob.co.uk/recipes/20-minute-chicken-soup",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 540,
+      "protein": 41,
+      "fiber": 9
+    },
+    "ingredients": [
+      {
+        "qty": "800ml",
+        "item": "Chicken Stock"
+      },
+      {
+        "qty": "2tbsp",
+        "item": "Soy Sauce"
+      },
+      {
+        "qty": "2",
+        "item": "Skinless Chicken Thigh"
+      },
+      {
+        "qty": "125g",
+        "item": "Egg Noodle"
+      },
+      {
+        "qty": "100g",
+        "item": "Pea"
+      },
+      {
+        "qty": "100g",
+        "item": "Broccoli"
+      },
+      {
+        "qty": "100g",
+        "item": "Spring Onion"
+      },
+      {
+        "qty": "2",
+        "item": "Red Chilli"
+      },
+      {
+        "qty": "2",
+        "item": "Lime"
+      },
+      {
+        "qty": "to taste",
+        "item": "Olive Oil"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Black Pepper"
+      }
+    ],
+    "steps": [
+      "Prepare the chicken stock according to the package instructions and tip into a saucepan. Bring to a boil and then reduce to a simmer. Add the soy and then drop the chicken thighs in for 9-10 mins, or until the chicken is completely cooked.",
+      "Remove the chicken from the broth and cut into bite size pieces. Bring the broth back to a boil and drop the noodles in for 2 mins before adding the peas and tenderstem broccoli. Once cooked, remove from the heat and add the chicken back to the pan.",
+      "Thinly slice the spring onions and chillies and set aside. Finish the broth with the juice of one lime and then divide between large bowls. Serve topped with the sliced spring onions, chillies and extra lime wedges."
+    ],
+    "fodmapNote": "Check the stock — most chicken stock contains onion and garlic (use a certified low-FODMAP stock). Egg noodles are wheat: keep to ~1/2 cup cooked per bowl or swap rice noodles. Peas at 50g per bowl are moderate (GOS) — halve or swap green beans. Spring onion: green tops only. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-chicken-satay-noodles",
+    "name": "Chicken Satay Noodles",
+    "emoji": "🥜",
+    "category": "dinner",
+    "time": "15 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick",
+      "high protein"
+    ],
+    "source": "https://www.mob.co.uk/recipes/chicken-satay-noodles",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 770,
+      "protein": 46,
+      "fiber": 3
+    },
+    "ingredients": [
+      {
+        "qty": "500g",
+        "item": "Chicken Breast"
+      },
+      {
+        "qty": "1Bunch",
+        "item": "Spring Onion"
+      },
+      {
+        "qty": "400ml",
+        "item": "Coconut Milk"
+      },
+      {
+        "qty": "1tbsp",
+        "item": "Fish Sauce"
+      },
+      {
+        "qty": "400g",
+        "item": "Egg Noodle"
+      },
+      {
+        "qty": "1tbsp",
+        "item": "Peanut Butter"
+      },
+      {
+        "qty": "3tbsp",
+        "item": "Soy Sauce"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salted Roasted Peanut"
+      }
+    ],
+    "steps": [
+      "Add chicken breasts to a pan of boiling water. Boil for 8 minutes until cooked through.",
+      "Remove chicken from the water and shred it up.",
+      "Add noodles to the chicken water and cook for 3 minutes. Drain.",
+      "Get a wok on. Add your coconut milk, peanut butter, fish sauce and soy sauce. Mix everything together and bubble on a high heat for 30 seconds.",
+      "Add your chicken. Mix it in. Add your noodles. Stir everything together.",
+      "Add a handful of chopped spring onions. Stir them in.",
+      "Serve up the noodles into 4 bowls. Add some bashed up peanuts on top. Tuck in."
+    ],
+    "fodmapNote": "Coconut milk lands at ~100ml per serve — over the 1/4-cup low line (sorbitol): thin the sauce or halve it. Egg noodles are wheat (swap rice noodles); spring onions: green tops only. Chicken and peanut butter are low. Nutrition: estimated from ingredients (assumes dried noodle nests)."
+  },
+  {
+    "id": "fam-mob-citrus-miso-salmon",
+    "name": "Citrus Miso Salmon",
+    "emoji": "🐟",
+    "category": "dinner",
+    "time": "15 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick"
+    ],
+    "source": "https://www.mob.co.uk/recipes/citrus-miso-salmon",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 690,
+      "protein": 34,
+      "fiber": 4
+    },
+    "ingredients": [
+      {
+        "qty": "400g",
+        "item": "Long Grain Rice"
+      },
+      {
+        "qty": "1",
+        "item": "Green Chilli"
+      },
+      {
+        "qty": "0.5",
+        "item": "Orange"
+      },
+      {
+        "qty": "1",
+        "item": "Lime"
+      },
+      {
+        "qty": "3tbsp",
+        "item": "Miso"
+      },
+      {
+        "qty": "1tbsp",
+        "item": "Honey"
+      },
+      {
+        "qty": "3Clove",
+        "item": "Garlic"
+      },
+      {
+        "qty": "15g",
+        "item": "Ginger"
+      },
+      {
+        "qty": "480g",
+        "item": "Salmon"
+      },
+      {
+        "qty": "4",
+        "item": "Pak Choi"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 180°C/354°F.",
+      "Rinse your rice well and cook it in boiling water.",
+      "Finely chop the chilli and add into a jug. Zest and juice the ½ the orange and lime. Add the miso paste and honey. Grate in the garlic and ginger. Give it all a good mix with a fork. Season with salt if needed.",
+      "Dip each salmon fillet into the marinade and place individually onto some foil. Start wrapping the foil around the salmon to create a boat. Pour in 3 tbsp of the marinade and continue with each fillet to make four salmon parcels.",
+      "Place on a baking sheet and cook for 10-12 minutes, depending on the size of the fillets.",
+      "Meanwhile, chop each of your pak choi in half, keeping the root on so it stays together. Pour a small glug of oil into a frying pan and whack up the heat. Fry the pak choi for 2 minutes until charred. Add in 3 tablespoons of water and pop a lid on to continue steaming. Season with a tablespoon of soy sauce.",
+      "Now your rice should be ready. Drain and fluff up with a fork.",
+      "Open up each parcel, placing the salmon on a bed of rice then pouring over the steaming liquid. Add your pak choi and serve."
+    ],
+    "fodmapNote": "Closest to low-FODMAP in this batch: swap the 3 garlic cloves for garlic-infused oil and it basically lands — honey works out under 1 tsp per serve (low), miso and ginger are low. Pak choi is low to ~1 cup; a whole head each pushes sorbitol, so split 3 heads between 4. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-everything-salmon-rice-bowl",
+    "name": "Everything Salmon Rice Bowl",
+    "emoji": "🍚",
+    "category": "dinner",
+    "time": "20 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick"
+    ],
+    "source": "https://www.mob.co.uk/recipes/everything-salmon-rice-bowl",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 530,
+      "protein": 37,
+      "fiber": 3
+    },
+    "ingredients": [
+      {
+        "qty": "4tsp",
+        "item": "Poppy Seeds"
+      },
+      {
+        "qty": "4tsp",
+        "item": "White Sesame Seed"
+      },
+      {
+        "qty": "4tsp",
+        "item": "Black Sesame Seed"
+      },
+      {
+        "qty": "2tsp",
+        "item": "Garlic Powder"
+      },
+      {
+        "qty": "2tsp",
+        "item": "Onion Powder"
+      },
+      {
+        "qty": "1tsp",
+        "item": "Salt"
+      },
+      {
+        "qty": "4",
+        "item": "Boneless Skin-On Salmon Fillet"
+      },
+      {
+        "qty": "4",
+        "item": "Baby Cucumber"
+      },
+      {
+        "qty": "6",
+        "item": "Gherkin"
+      },
+      {
+        "qty": "3",
+        "item": "Spring Onion"
+      },
+      {
+        "qty": "15g",
+        "item": "Dill"
+      },
+      {
+        "qty": "2",
+        "item": "Lemon"
+      },
+      {
+        "qty": "200g",
+        "item": "Cooked Quinoa and Rice"
+      },
+      {
+        "qty": "200g",
+        "item": "Feta"
+      },
+      {
+        "qty": "50g",
+        "item": "Greek Yoghurt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Olive Oil, to serve"
+      }
+    ],
+    "steps": [
+      "Heat your oven to 190°C. Place a small baking tray in there to preheat.",
+      "Mix your poppy seeds, sesame seeds, garlic powder, onion powder and salt in a bowl. Give it all a mix.",
+      "Prep your salad. Smack your baby cucumbers with the side of a knife, then cut them into small chunks. Get them in a sieve set over a bowl, and sprinkle over a little salt. Leave them to sit whilst you prep the rest.",
+      "Finely slice your pickles and your spring onions. Finely chop your dill too. Get these in a bowl with your cooked rice and quinoa, and your salted cucumber. Crumble in your feta and give it a good mix. Season with the juice of ½ your lemon and a little salt.",
+      "Pat your salmon fillets dry, and place them on a board skin side down. Press your everything seasoning mix all over the salmon flesh (avoiding the skin).",
+      "Remove your hot baking sheet from the oven, and place a piece of baking parchment on it. Pop your salmon fillets skin side down on top, then drizzle on a little olive oil, and bake them for 7 mins.",
+      "Turn your grill up to high. Blast your salmon under the grill for 2 mins until the top has turned a little golden.",
+      "Spoon your salad into bowls, then top with your salmon and a dollop of yoghurt. Serve with a little wedge of lemon."
+    ],
+    "fodmapNote": "The 'everything' mix here uses garlic and onion powder — concentrated FODMAPs: remake it with just sesame, poppy and salt (chive flakes work). Use lactose-free yoghurt; feta stays low at ~50g per bowl. Pick gherkins without garlic or onion in the brine. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-gochujang-fish-curry",
+    "name": "Gochujang Fish Curry",
+    "emoji": "🍛",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick"
+    ],
+    "source": "https://www.mob.co.uk/recipes/gochujang-fish-curry",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 170,
+      "protein": 24,
+      "fiber": 2
+    },
+    "ingredients": [
+      {
+        "qty": "1",
+        "item": "Onion"
+      },
+      {
+        "qty": "4",
+        "item": "Garlic Clove"
+      },
+      {
+        "qty": "30g",
+        "item": "Ginger"
+      },
+      {
+        "qty": "3",
+        "item": "Spring Onion"
+      },
+      {
+        "qty": "8",
+        "item": "Anchovy"
+      },
+      {
+        "qty": "3tbsp",
+        "item": "Gochujang"
+      },
+      {
+        "qty": "2tsp",
+        "item": "Curry Powder"
+      },
+      {
+        "qty": "200ml",
+        "item": "Water"
+      },
+      {
+        "qty": "4",
+        "item": "Fillet Cod"
+      },
+      {
+        "qty": "1",
+        "item": "Lime"
+      },
+      {
+        "qty": "to taste",
+        "item": "Rice"
+      },
+      {
+        "qty": "to taste",
+        "item": "Olive Oil"
+      }
+    ],
+    "steps": [
+      "Peel and finely dice the onion. Peel and mince the garlic and ginger. Finely slice the spring onions.",
+      "Place a frying pan over medium-high heat with a drizzle of oil. Once hot, add the onion and cook, stirring occasionally, for 4-5 mins until softened and golden, 4-5 mins. Add the anchovies and cook for 1-2 mins until they melt and break up. Stir through the garlic and ginger and cook until fragrant.",
+      "Add the gochujang and curry powder and cook until the mixture starts to caramelise and goes a darker red colour. Stir through the water, then add the fish fillets. Bring to the boil, reduce the heat to medium-low and simmer for 5-7 mins until the fish is cooked through. The thicker your fillet, the longer it will take. The fish is cooked when it flakes easily and is opaque throughout.",
+      "Finish with a sprinkling of spring onion and serve over rice with a wedge of lime."
+    ],
+    "fodmapNote": "Onion plus 4 garlic cloves as written — swap garlic-infused oil and spring onion greens. Gochujang usually lists garlic and wheat: check the tub or keep to ~1 tsp per serve. Cod, ginger and anchovy are low. Nutrition: estimated from ingredients; the serving rice ('to taste') is not counted — log your rice portion separately."
+  },
+  {
+    "id": "fam-mob-peanut-chicken-noodle-salad",
+    "name": "Peanut Chicken Noodle Salad",
+    "emoji": "🥗",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick",
+      "high protein"
+    ],
+    "source": "https://www.mob.co.uk/recipes/peanut-chicken-noodle-salad",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 745,
+      "protein": 63,
+      "fiber": 9
+    },
+    "ingredients": [
+      {
+        "qty": "4",
+        "item": "Chicken Breast"
+      },
+      {
+        "qty": "6Clove",
+        "item": "Garlic"
+      },
+      {
+        "qty": "3",
+        "item": "Red Chilli"
+      },
+      {
+        "qty": "15g",
+        "item": "Ginger"
+      },
+      {
+        "qty": "2",
+        "item": "Shallot"
+      },
+      {
+        "qty": "4",
+        "item": "Lime"
+      },
+      {
+        "qty": "150g",
+        "item": "Peanut"
+      },
+      {
+        "qty": "4tbsp",
+        "item": "Soy Sauce"
+      },
+      {
+        "qty": "250g",
+        "item": "Egg Noodle"
+      },
+      {
+        "qty": "25g",
+        "item": "Coriander"
+      },
+      {
+        "qty": "250g",
+        "item": "Beansprouts"
+      },
+      {
+        "qty": "to taste",
+        "item": "Olive Oil"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Black Pepper"
+      }
+    ],
+    "steps": [
+      "Heat oven to 200°C. Grab your chicken, put onto a baking tray, drizzle with olive oil and season with salt and pepper. Cover with foil and bake in the oven for 15-20 mins, until cooked through (timing will depend on the thickness of the chicken breasts).",
+      "Next up is the crispy topping — peel and finely slice 4 garlic cloves, then halve, deseed and finely slice 2 of the chillies. Finely slice ¾ of the ginger into thin matchsticks, then slice the shallot in half before finely slicing. Heat a big glug of oil in a frying pan over a medium heat and add the aromats. Sizzle away over a medium heat for 5-8 mins until golden and crisp. Scoop the aromats out of the oil and drain on a piece of paper towel, then season with salt.",
+      "To make your sauce, start by juicing the limes. Add 100g of the peanuts to a blender and blitz until smooth, before adding lime juice, soy sauce and 2 grated cloves of garlic. Grate in the remaining ginger (no need to peel!) and 50ml of water, then blitz to combine.",
+      "Prepare the noodles according to package instructions and drain before rinsing in cold water. Roughly chop the coriander and 50g of the peanuts.",
+      "Back to the chicken – once cooked, shred with a fork. Add the chicken to the noodles along with the beansprouts, dressing and most of the coriander, saving some for serving. Mix really well to combine. At this point, if the noodles look like they need a looser dressing, add splashes of water and give it a good mix between each addition.",
+      "Serve the noodles topped with chopped coriander, peanuts and a good scattering of the crispy bits!"
+    ],
+    "fodmapNote": "Six garlic cloves and two shallots make this the biggest swap job in the batch: garlic-infused oil plus spring onion greens. Egg noodles are wheat (rice noodles swap in cleanly); peanuts and beansprouts are low. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-sardine-tomato-pasta",
+    "name": "Tomato & Sardine Spaghetti",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "20 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick"
+    ],
+    "source": "https://www.mob.co.uk/recipes/sardine-tomato-pasta",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 510,
+      "protein": 22,
+      "fiber": 6
+    },
+    "ingredients": [
+      {
+        "qty": "4",
+        "item": "Garlic Clove"
+      },
+      {
+        "qty": "135g",
+        "item": "Pitted Green Olive"
+      },
+      {
+        "qty": "400g",
+        "item": "Spaghetti"
+      },
+      {
+        "qty": "to taste",
+        "item": "Olive Oil"
+      },
+      {
+        "qty": "1",
+        "item": "x 400g Can Plum Tomatoes"
+      },
+      {
+        "qty": "1",
+        "item": "x 120g Can Sardines In Tomato Sauce"
+      },
+      {
+        "qty": "50g",
+        "item": "Fresh Parsley"
+      },
+      {
+        "qty": "1tsp",
+        "item": "Chilli Flakes"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Black Pepper"
+      }
+    ],
+    "steps": [
+      "Bring a large pan of salted water to the boil.",
+      "Meanwhile, peel and slice your garlic cloves as finely as possible, set aside. Add a generous glug of olive oil to a frying pan over a low heat. Add the garlic along with the chilli flakes and sizzle for a minute, careful not to let the garlic burn.",
+      "Tip the tin of sardines into the pan and mush them up with a wooden spoon. Let it cook for a couple minutes more. Add some olive brine to the sardine tin, rinse off all the cling-ons and pop that into the sauce as well. Roughly chop the olives and add to the pan.",
+      "Whack the spaghetti into the now boiling pan of water and set a timer for 8 mins.",
+      "Grab your tin of plum tomatoes and add them to the sauce by squeezing them in your hands then cook for 5 mins further, if it’s a little too thick, you can add a little olive brine to loosen.",
+      "Roughly chop up your parsley and add most of it to the sauce, reserving a little for garnishing. Taste and season with salt and black pepper.",
+      "Once the timer goes off, use tongs to transfer the al dente spaghetti down into the pan of sauce, add a big splash of pasta water and continue to cook the pasta in the sauce until it’s cooked through and the sauce is coating the pasta, around 2 mins. If it looks a little dry, simply add more of the pasta water.",
+      "Plate up time. Twirl it onto serving plates and finish with the reserved parsley, a drizzle of olive oil and a crack of black pepper. BOOM."
+    ],
+    "fodmapNote": "Two swaps take this low-FODMAP: garlic → garlic-infused oil, wheat spaghetti → gluten-free. Canned tomatoes are low at ~1/2 cup per serve; olives and sardines are low. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-sizzling-fish",
+    "name": "Sizzling Fish",
+    "emoji": "🐟",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick"
+    ],
+    "source": "https://www.mob.co.uk/recipes/sizzling-fish",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 255,
+      "protein": 23,
+      "fiber": 2
+    },
+    "ingredients": [
+      {
+        "qty": "2",
+        "item": "Garlic Clove"
+      },
+      {
+        "qty": "20g",
+        "item": "Ginger"
+      },
+      {
+        "qty": "4",
+        "item": "Fillet Cod"
+      },
+      {
+        "qty": "300g",
+        "item": "Tenderstem Broccoli"
+      },
+      {
+        "qty": "3",
+        "item": "Spring Onion"
+      },
+      {
+        "qty": "1tbsp",
+        "item": "Red Pepper Flakes"
+      },
+      {
+        "qty": "1tsp",
+        "item": "Curry Powder"
+      },
+      {
+        "qty": "2tbsp",
+        "item": "Soy Sauce"
+      },
+      {
+        "qty": "1tbsp",
+        "item": "Rice Vinegar"
+      },
+      {
+        "qty": "4tbsp",
+        "item": "Olive Oil"
+      },
+      {
+        "qty": "to taste",
+        "item": "Cooked Rice, to serve"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Black Pepper"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 220°C. Finely grate the garlic and ginger. Place both into a bowl with the cod fillets. Season with salt and pepper, then toss together to evenly coat.",
+      "Place each fillet of fish onto a sheet of baking paper. Fold to enclose the fish inside. Set aside.",
+      "Place the Tenderstem on a baking sheet and drizzle with some oil, season with salt and pepper. Roast for 15 mins until, starting to char. When there are 10 mins left for the broccoli, push them to one side of the tray and place the fish parcels onto the same tray. Bake for 10 mins until the cod is opaque and cooked through.",
+      "Trim and quarter the spring onions widthways. Halve each portion of spring onion lengthways, then finely slice into long matchsticks. Add into a bowl and toss with the red pepper flakes and curry powder.",
+      "Share the cooked rice, Tenderstem and fish between bowls. Drizzle the fish with soy sauce and rice vinegar, and top with the spring onion mixture.",
+      "Pour the oil into a small saucepan set over a high heat. Once hot, immediately pour over the spring onions and serve."
+    ],
+    "fodmapNote": "Nearly low-FODMAP already: swap 2 garlic cloves for infused oil, use spring onion greens, and check the curry powder blend for onion/garlic. Cod is low; keep tenderstem to ~3/4 cup per serve. Nutrition: estimated from ingredients; serving rice ('to taste') not counted."
+  },
+  {
+    "id": "fam-mob-smoked-mackerel-chopped-salad",
+    "name": "Smoked Mackerel, Mint & Cucumber Chopped Salad",
+    "emoji": "🥗",
+    "category": "dinner",
+    "time": "10 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick"
+    ],
+    "source": "https://www.mob.co.uk/recipes/smoked-mackerel-mint-cucumber-chopped-salad",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 555,
+      "protein": 21,
+      "fiber": 6
+    },
+    "ingredients": [
+      {
+        "qty": "4",
+        "item": "Fillet Smoked Mackerel"
+      },
+      {
+        "qty": "200g",
+        "item": "Frozen Peas"
+      },
+      {
+        "qty": "30g",
+        "item": "Mint"
+      },
+      {
+        "qty": "1tsp",
+        "item": "Wholegrain Mustard"
+      },
+      {
+        "qty": "1.5",
+        "item": "Lemon"
+      },
+      {
+        "qty": "5tbsp",
+        "item": "Olive Oil"
+      },
+      {
+        "qty": "2tbsp",
+        "item": "Honey"
+      },
+      {
+        "qty": "250g",
+        "item": "Cooked Quinoa"
+      },
+      {
+        "qty": "4",
+        "item": "Baby Cucumber"
+      }
+    ],
+    "steps": [
+      "Cook your quinoa according to package instructions and allow it to cool.",
+      "Add your frozen peas to a microwave-safe bowl and microwave for 2 mins on high. Once cooked, allow them to cool.",
+      "Add your cucumber, mackerel, and mint (reserving some of the mint for garnish later) to a chopping board and chop them up into rough chunks.",
+      "Add your chopped ingredients all to a bowl and throw in your cooked quinoa and peas.",
+      "Make a quick dressing by combining the olive oil, mustard, honey and juice of the lemons. Mix until emulsified and season with salt to taste.",
+      "And the dressing to the bowl and toss it vigorously. Garnish with some torn mint and salt. Serve and enjoy."
+    ],
+    "fodmapNote": "Honey comes to ~1/2 tbsp per serve — just over the 7g low-FODMAP line (excess fructose): halve it or use maple syrup. Peas at 50g per serve are moderate (GOS). Mackerel, quinoa, cucumber, mint and lemon are all low. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-chicken-udon-noodle-soup",
+    "name": "Speedy Chicken Udon Noodle Soup",
+    "emoji": "🍜",
+    "category": "dinner",
+    "time": "15 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick",
+      "soup",
+      "high protein"
+    ],
+    "source": "https://www.mob.co.uk/recipes/speedy-chicken-udon-noodle-soup",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 775,
+      "protein": 56,
+      "fiber": 3
+    },
+    "ingredients": [
+      {
+        "qty": "2",
+        "item": "Egg"
+      },
+      {
+        "qty": "800ml",
+        "item": "Chicken Stock"
+      },
+      {
+        "qty": "400g",
+        "item": "Udon Noodles"
+      },
+      {
+        "qty": "120g",
+        "item": "Pak Choi"
+      },
+      {
+        "qty": "2tbsp",
+        "item": "Miso"
+      },
+      {
+        "qty": "5g",
+        "item": "Dashi Powder"
+      },
+      {
+        "qty": "0.25tsp",
+        "item": "Ground White Pepper"
+      },
+      {
+        "qty": "0.5tbsp",
+        "item": "Sesame Oil"
+      },
+      {
+        "qty": "0.5tbsp",
+        "item": "Light Soy Sauce"
+      },
+      {
+        "qty": "2",
+        "item": "Cooked Chicken Breast"
+      },
+      {
+        "qty": "10g",
+        "item": "Fresh Coriander"
+      },
+      {
+        "qty": "2tbsp",
+        "item": "Chilli Oil"
+      }
+    ],
+    "steps": [
+      "Put the eggs into a pot of boiling water set over a low-medium heat and cook for 6 ½ mins. Transfer the cooked eggs into a bowl of ice water, peel and slice in half.",
+      "Meanwhile, pour your broth into a separate pot and bring to the boil. Turn the heat down, add the udon and cook following pack instructions.",
+      "Wash the pak choi and chop the white stems off, then add to your pot of udon and cook for just a few mins.",
+      "Combine the miso, dashi, white pepper, sesame oil and light soy sauce in a bowl and whisk well for 1 min. Divide between the serving bowls (this will be the base of your dish).",
+      "Divide the noodles between the serving bowls, top with a few ladles of the broth, then finish with cooked chicken breast, the pak choi, eggs, coriander and a drizzle of chilli oil."
+    ],
+    "fodmapNote": "Udon is wheat — the one big swap (rice udon or 100% buckwheat soba keeps it low). Miso, dashi, egg and chicken are low; check the chilli oil for garlic (use a garlic-free crisp). Chicken stock: use a low-FODMAP one. Nutrition: estimated from ingredients (assumes ready-to-wok udon blocks)."
+  },
+  {
+    "id": "fam-mob-couscous-garlic-butter-prawns",
+    "name": "Spicy Couscous & Garlic Butter Prawns",
+    "emoji": "🍤",
+    "category": "dinner",
+    "time": "5 min",
+    "serves": 1,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick"
+    ],
+    "source": "https://www.mob.co.uk/recipes/spicy-couscous-garlic-butter-prawns",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 705,
+      "protein": 33,
+      "fiber": 10
+    },
+    "ingredients": [
+      {
+        "qty": "70g",
+        "item": "Couscous"
+      },
+      {
+        "qty": "2",
+        "item": "Spring Onion"
+      },
+      {
+        "qty": "1",
+        "item": "Red Chilli"
+      },
+      {
+        "qty": "15g",
+        "item": "Parsley"
+      },
+      {
+        "qty": "1",
+        "item": "Garlic Clove"
+      },
+      {
+        "qty": "0.5tbsp",
+        "item": "Fajita Seasoning"
+      },
+      {
+        "qty": "1",
+        "item": "Lime"
+      },
+      {
+        "qty": "99g",
+        "item": "Sweetcorn"
+      },
+      {
+        "qty": "100g",
+        "item": "Bell Pepper"
+      },
+      {
+        "qty": "30g",
+        "item": "Butter"
+      },
+      {
+        "qty": "6",
+        "item": "King Prawns"
+      },
+      {
+        "qty": "to taste",
+        "item": "Olive Oil"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Black Pepper"
+      }
+    ],
+    "steps": [
+      "Put the couscous into a bowl and cover it with boiling water. Pop a plate on top and leave to soak for 3 mins.",
+      "Finely slice spring onions and chop most of the parsley. Finely slice the red chilli.",
+      "Heat 2 tbsp oil in a pan and crush in the garlic. Add the spring onions and fajita seasoning. Fry for 1 min, until aromatic, then add the sweetcorn and red chilli and fry for a min further. Tip the spring onion mixture into the couscous along with the parsley and the zest and juice of ½ a lime. Fluff the couscous with a fork and season with salt and pepper.",
+      "Wipe the frying pan and add the butter, melting it over a medium heat before adding in the prawns. Cook for 2-3 min until bright pink, then take it off the heat.",
+      "While the prawns cook, slice the red peppers and add to the couscous and tip into bowls. Top with the prawns and a scattering of parsley. Serve with the remaining lime half."
+    ],
+    "fodmapNote": "Couscous is wheat (quinoa swaps in at the same weight) and the garlic goes into the butter — garlic-infused oil or butter instead. Sweetcorn at ~100g is over the 38g low serve (sorbitol): halve it. Prawns, peppers and lime are low; check the fajita seasoning for onion/garlic. Nutrition: estimated from ingredients."
   },
 ];
 
