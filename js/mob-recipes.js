@@ -3441,11 +3441,7 @@ const MOB_RECIPES = [
     ],
     "source": "https://www.mob.co.uk/recipes/chicken-satay-noodles",
     "added": "2026-09-14",
-    "nutrition": {
-      "cal": 770,
-      "protein": 46,
-      "fiber": 3
-    },
+    "nutrition": { "cal": 765, "protein": 47, "fiber": 4 },
     "ingredients": [
       {
         "qty": "500g",
@@ -4412,11 +4408,7 @@ const MOB_RECIPES = [
     ],
     "source": "https://www.mob.co.uk/recipes/crispy-chilli-chicken-n-peanuts-scoop-with-veg-slaw",
     "added": "2026-09-14",
-    "nutrition": {
-      "cal": 645,
-      "protein": 32,
-      "fiber": 3
-    },
+    "nutrition": { "cal": 600, "protein": 39, "fiber": 5 },
     "ingredients": [
       {
         "qty": "450g",
