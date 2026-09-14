@@ -318,6 +318,7 @@
     I('stock cubes?|stock pots?|bouillon', 0, 0, 0),
     I('(?:chicken|beef|vegetable|veggie|bone) (?:broth|stock)|broth|stock', 5, 0.5, 0, { cup: 240 }),
     I('lemon juice|lime juice|juice of', 25, 0.4, 0, { tbsp: 15, unit: 47 }),
+    I('kecap manis|sweet soy(?: sauce)?', 233, 2, 0, { tbsp: 19 }),
     I('soy sauce|tamari|coconut aminos', 53, 8, 0.8, { tbsp: 16 }),
     I('fish sauce', 35, 5, 0, { tbsp: 18 }),
     I('oyster sauce', 51, 1.4, 0, { tbsp: 18 }),
@@ -328,9 +329,9 @@
 
     // oils & fats
     I('olive oil|avocado oil|vegetable oil|canola oil|coconut oil|sesame oil|oil', 884, 0, 0, { tbsp: 13.5, cup: 216 }),
-    I('butter(?! ?beans?)|ghee', 717, 0.9, 0, { tbsp: 14, cup: 227, unit: 113, stick: 113 }),
     I('tahini|sesame paste', 595, 17, 9.3, { tbsp: 15 }),
     I('(?:crunchy |smooth )?(?:peanut|almond|cashew|nut) butter', 588, 25, 6, { tbsp: 16 }),
+    I('butter(?! ?beans?)|ghee', 717, 0.9, 0, { tbsp: 14, cup: 227, unit: 113, stick: 113 }),
     I('mayonnaise|mayo', 680, 1, 0, { tbsp: 14 }),
 
     // dairy & eggs
@@ -361,8 +362,8 @@
     I('bacon', 417, 13, 0, { slice: 28, unit: 28 }),
     I('(?:andouille|smoked|italian|breakfast)? ?sausage|andouille|kielbasa|chorizo', 300, 12, 0, { unit: 75, slice: 15 }),
     I('ground beef|hamburger', 215, 18.6, 0),
-    I('ground turkey', 150, 18.7, 0),
-    I('ground chicken|chicken mince|ground turkey|turkey mince', 143, 17.4, 0),
+    I('ground turkey|turkey mince', 150, 18.7, 0),
+    I('ground chicken|chicken mince', 143, 17.4, 0),
     I('ground pork', 263, 16.9, 0),
     I('round steak|grillades|cube steak|sirloin|flank|skirt steak|steak|beef roast|chuck|brisket|stew meat|beef', 137, 21.8, 0),
     I('lamb(?: mince| shoulder| leg| steaks?)?', 282, 16.6, 0),
@@ -393,7 +394,7 @@
     // grains, flours, starches — cooked/leftover variants BEFORE dry ones,
     // or "3 cups cooked brown rice" prices as dry (≈3× too high)
     I('rice cakes?', 387, 8.2, 2.4, { unit: 9 }),
-    I('(?:cooked|leftover|day.?old|cold|microwav\w*|ready|steamed|pouch(?:ed)?)[^,]{0,28}rice', 130, 2.7, 0.4, { cup: 158 }),
+    I('(?:cooked|leftover|day.?old|cold|microwav[a-z]*|ready|steamed|pouch(?:ed)?)[^,]{0,28}rice', 130, 2.7, 0.4, { cup: 158 }),
     I('(?:cooked|leftover)[^,]{0,28}(?:quinoa|barley|farro)', 120, 4.4, 2.8, { cup: 185 }),
     I('(?:cooked|leftover|straight.?to.?wok|ready)[^,]{0,28}(?:pasta|noodles)', 158, 5.8, 1.8, { cup: 140 }),
     I('corn tortillas?', 218, 5.7, 6.3, { unit: 26 }),
@@ -467,7 +468,6 @@
     I('edamame', 121, 12, 5.2, { cup: 155 }),
     I('mango(?:es)?(?! chutney)', 60, 0.8, 1.6, { cup: 165, unit: 200 }),
     I('radish(?:es)?', 16, 0.7, 1.6, { cup: 116, unit: 9 }),
-    I('kecap manis|sweet soy(?: sauce)?', 233, 2, 0, { tbsp: 19 }),
     I('hummus', 166, 8, 6, { tbsp: 15, cup: 246 }),
     I('bamboo shoots?', 27, 2.6, 2, { can: 140, cup: 120 }),
     I('almonds?', 579, 21, 12.5, { cup: 143, tbsp: 9, oz: 28.35 }),
