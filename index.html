@@ -181,6 +181,7 @@
           <button id="next-week" class="week-btn">›</button>
         </div>
         <div class="planner-actions">
+          <button id="week-menu-btn" class="action-btn">📅 Week Menu</button>
           <button id="clear-week-btn" class="action-btn danger">🗑 Clear Week</button>
           <button id="shopping-list-btn" class="action-btn primary">🛒 Shopping List</button>
         </div>
@@ -561,6 +562,22 @@
   </div>
 
   <!-- Edit custom meal modal -->
+  <!-- Week menu modal -->
+  <div class="modal-overlay hidden" id="week-menu-overlay">
+    <div class="find-form-modal" id="week-menu-modal">
+      <div class="form-header">
+        <div class="form-title">📅 A Week at Our Table</div>
+        <button class="modal-close" id="week-menu-close">✕</button>
+      </div>
+      <div class="form-body">
+        <div class="wm-intro">Seven days of breakfast, lunch and dinner from your own recipes — every day lands at or under its target with protein and fiber met, no recipe repeated. Add-ons are the 💪 booster picks.</div>
+        <div id="week-menu-days"></div>
+        <button class="add-row-btn" id="week-menu-apply">📥 Load into the week shown in the planner</button>
+        <div class="wm-note">Loading fills breakfast, lunch, dinner and the snack slot for the 7 shown days, replaces anything already planned there, and sets each day's 🪑/🚴/🏋️ type to match. Numbers are per-serving estimates — swap any meal for a similar one and the day still lands.</div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal-overlay hidden" id="meal-edit-overlay">
     <div class="find-form-modal" id="meal-edit-modal">
       <div class="form-header">
@@ -812,6 +829,7 @@
   <script src="js/slow-cooker-dump-meals.js"></script>
   <script src="js/added-recipes.js"></script>
   <script src="js/mob-recipes.js"></script>
+  <script src="js/week-menu.js"></script>
   <script src="js/side-dishes.js"></script>
   <script src="js/nutrition-estimator.js"></script>
   <script src="js/app.js"></script>

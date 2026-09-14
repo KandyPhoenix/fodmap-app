@@ -7762,3 +7762,23 @@ body.dark .me-guess { background: #10241a; }
 /* ── Recipe nutrition editing / estimating ── */
 .rf-est-note { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-top: 6px; min-height: 0; }
 .rmodal-nut-missing { padding: 6px 24px 2px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+
+/* ── 📅 Week menu modal ─────────────────────────── */
+.wm-intro { font-size: 13px; color: #666; margin-bottom: 12px; }
+.wm-day { border: 1px solid #e8e4de; border-radius: 12px; padding: 10px 12px; margin-bottom: 10px; }
+.wm-day-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+.wm-type { font-size: 12px; color: #7a9471; font-weight: 600; white-space: nowrap; }
+.wm-row { display: flex; gap: 8px; align-items: baseline; padding: 3px 0; font-size: 13px; }
+.wm-slot { flex: 0 0 84px; color: #a09a92; font-size: 11px; }
+.wm-name { flex: 1; min-width: 0; }
+.wm-add .wm-name { color: #8a857e; }
+.wm-nums { color: #a09a92; font-size: 11px; white-space: nowrap; }
+.wm-total { border-top: 1px solid #e8e4de; margin-top: 6px; padding-top: 6px; font-size: 12.5px; font-weight: 600; color: #7a9471; }
+.wm-note { font-size: 12px; color: #a09a92; margin-top: 10px; }
+#week-menu-apply { margin-top: 6px; }
+body.dark .wm-day, body.dark .wm-total { border-color: #3a3f3b; }
+body.dark .wm-intro { color: #aaa; }
+@media (max-width: 480px) {
+  .wm-nums { white-space: normal; }
+  .wm-slot { flex-basis: 70px; }
+}
