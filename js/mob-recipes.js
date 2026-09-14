@@ -4219,6 +4219,862 @@ const MOB_RECIPES = [
     ],
     "fodmapNote": "Couscous is wheat (quinoa swaps in at the same weight) and the garlic goes into the butter — garlic-infused oil or butter instead. Sweetcorn at ~100g is over the 38g low serve (sorbitol): halve it. Prawns, peppers and lime are low; check the fajita seasoning for onion/garlic. Nutrition: estimated from ingredients."
   },
+  {
+    "id": "fam-mob-pickles-tuna-scoop",
+    "name": "All The Pickles Tuna Scoop with Rice Cakes & Salad",
+    "emoji": "🐟",
+    "category": "lunch",
+    "time": "15 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick",
+      "make ahead"
+    ],
+    "source": "https://www.mob.co.uk/recipes/all-the-pickles-tuna-scoop",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 475,
+      "protein": 24,
+      "fiber": 3
+    },
+    "ingredients": [
+      {
+        "qty": "100g",
+        "item": "Pimento-stuffed Olive"
+      },
+      {
+        "qty": "100g",
+        "item": "Cornichon"
+      },
+      {
+        "qty": "50g",
+        "item": "Pickled Chilli"
+      },
+      {
+        "qty": "55g",
+        "item": "Capers"
+      },
+      {
+        "qty": "1",
+        "item": "Dill Pickle"
+      },
+      {
+        "qty": "60ml",
+        "item": "Olive Oil"
+      },
+      {
+        "qty": "2tbsp",
+        "item": "Mayonnaise"
+      },
+      {
+        "qty": "30ml",
+        "item": "Pickled Chilli Brine"
+      },
+      {
+        "qty": "3",
+        "item": "x 115g Can Tinned Tuna in Olive Oil"
+      },
+      {
+        "qty": "8",
+        "item": "Rice Cake"
+      },
+      {
+        "qty": "50g",
+        "item": "Watercress"
+      },
+      {
+        "qty": "1",
+        "item": "Lemon"
+      },
+      {
+        "qty": "to taste",
+        "item": "Olive Oil"
+      },
+      {
+        "qty": "to taste",
+        "item": "Flaky Sea Salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Black Pepper"
+      }
+    ],
+    "steps": [
+      "Finely chop the green olives, cornichons, pickled chillies, capers and dill pickle, then tip them into a large bowl. If you can't track down a dill pickle, a few gherkins will do the job.",
+      "Add the olive oil, mayonnaise and the brine. Taste all the brines first and use whichever one you like best. Stir to combine, then season with salt and black pepper.",
+      "Drain the tuna and fold it through, breaking it into big flakes as you go.",
+      "To serve, lay the rice cakes out on a platter and top each with a scoop of the tuna, an ice cream scoop gives you the neatest one. Scatter over the watercress, cut the lemon into wedges, then finish with a drizzle of olive oil, a big squeeze of lemon, flaky sea salt and black pepper."
+    ],
+    "fodmapNote": "One of the safest lunches here as written — tuna, olives, capers, cornichons, watercress and plain rice cakes are all low-FODMAP. Just check the pickled chillies and cornichon jars for garlic or honey in the brine. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-salmon-scoop-eggs-rye",
+    "name": "Cuke & Zuch Salmon Scoop with Eggs & Crunchy Rye",
+    "emoji": "🍳",
+    "category": "lunch",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick",
+      "make ahead"
+    ],
+    "source": "https://www.mob.co.uk/recipes/cuke-and-zuch-salmon-scoop",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 495,
+      "protein": 37,
+      "fiber": 3
+    },
+    "ingredients": [
+      {
+        "qty": "1tbsp",
+        "item": "Fennel Seed"
+      },
+      {
+        "qty": "25g",
+        "item": "Fresh Dill"
+      },
+      {
+        "qty": "3",
+        "item": "Baby Cucumber"
+      },
+      {
+        "qty": "1",
+        "item": "Courgette"
+      },
+      {
+        "qty": "170g",
+        "item": "Labneh"
+      },
+      {
+        "qty": "2",
+        "item": "Lemon"
+      },
+      {
+        "qty": "1",
+        "item": "Garlic Clove"
+      },
+      {
+        "qty": "450g",
+        "item": "Hot Smoked Salmon Fillet"
+      },
+      {
+        "qty": "4Slice",
+        "item": "Rye Bread"
+      },
+      {
+        "qty": "4",
+        "item": "Egg"
+      },
+      {
+        "qty": "1tsp",
+        "item": "Za’atar"
+      },
+      {
+        "qty": "to taste",
+        "item": "Olive Oil"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Black Pepper"
+      }
+    ],
+    "steps": [
+      "Bring a small saucepan of water to the boil. Lower in the eggs and cook for 7 mins for a just-set middle, then transfer to a bowl of iced water. Peel and halve once cool.",
+      "Finely grind the fennel seeds in a spice grinder or with a pestle and mortar. Roughly chop the dill.",
+      "Grate two of the cucumber and the courgette on the large holes of a box grater and tip into a large sieve. Season generously with salt, toss together and leave to sit for 5-10 mins, until the veg starts to leach its water. Thinly slice the remaining cucumber and set aside.",
+      "Meanwhile, combine the labneh, chopped dill, the zest and juice of one of the lemons, the grated garlic and the ground fennel in a large bowl. Squeeze all the excess moisture out of the grated cucumber and courgette, then add to the labneh and mix to combine.",
+      "Flake in the hot smoked salmon and fold gently to distribute. Season to taste with salt and black pepper, then keep chilled until you're ready to serve.",
+      "To serve, toast the rye and lay out the sliced cucumber over each one. Add a big scoop of the salmon, an ice cream scoop gives you the neatest one. Cut the remaining lemon into wedges and serve alongside the halved eggs, with a big sprinkle of za'atar and a drizzle of olive oil."
+    ],
+    "fodmapNote": "Swap the garlic clove for garlic-infused oil and use lactose-free Greek yogurt in place of labneh. Rye bread is moderate at one slice (fructans) — sourdough spelt or gluten-free bread keeps it low. Salmon, eggs, cucumber and courgette (to ~1/2 cup) are low. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-chilli-chicken-peanut-scoop",
+    "name": "Crispy Chilli Chicken n' Peanuts Scoop with Veg Slaw",
+    "emoji": "🥜",
+    "category": "lunch",
+    "time": "20 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick",
+      "make ahead"
+    ],
+    "source": "https://www.mob.co.uk/recipes/crispy-chilli-chicken-n-peanuts-scoop-with-veg-slaw",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 645,
+      "protein": 32,
+      "fiber": 3
+    },
+    "ingredients": [
+      {
+        "qty": "450g",
+        "item": "Cooked Chicken"
+      },
+      {
+        "qty": "2",
+        "item": "Baby Cucumber"
+      },
+      {
+        "qty": "10g",
+        "item": "Fresh Ginger"
+      },
+      {
+        "qty": "130g",
+        "item": "Crunchy Peanut Butter"
+      },
+      {
+        "qty": "2tbsp",
+        "item": "Rice Vinegar"
+      },
+      {
+        "qty": "3tbsp",
+        "item": "Crispy Chilli Oil"
+      },
+      {
+        "qty": "to taste",
+        "item": "Honey, optional"
+      },
+      {
+        "qty": "to taste",
+        "item": ".5 Red Cabbage"
+      },
+      {
+        "qty": "2",
+        "item": "Carrot"
+      },
+      {
+        "qty": "2",
+        "item": "Cucumber"
+      },
+      {
+        "qty": "15g",
+        "item": "Fresh Mint"
+      },
+      {
+        "qty": "3",
+        "item": "Lime"
+      },
+      {
+        "qty": "2tbsp",
+        "item": "Sesame Oil"
+      },
+      {
+        "qty": "2tbsp",
+        "item": "Sesame Seeds"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      }
+    ],
+    "steps": [
+      "Pull the cooked chicken into large but bite-sized pieces and set aside. Finely chop the baby cucumbers, then finely grate the ginger, no need to peel it.",
+      "In a large bowl, combine the peanut butter, rice vinegar, grated ginger and 1 tsp salt. Add the crispy chilli oil a tbsp at a time until it's as hot as you like it, then add a little honey to taste, if you fancy. Loosen with water, a tsp at a time, until the dressing is thick but just pourable.",
+      "Add the pulled chicken and chopped baby cucumber, then toss to coat. Taste and season with more salt.",
+      "Shred the red cabbage as finely as you can into a large mixing bowl. Peel the carrots, then use either a julienne peeler or a normal peeler to shred them into the bowl. Slice the cucumbers and pick the mint leaves, adding most of them to the bowl and keeping a few back to serve.",
+      "Squeeze in the limes, add the sesame oil and season generously with salt, then toss well.",
+      "To serve, top the slaw with the scoops, an ice cream scoop gives you the neatest one, then scatter over the sesame seeds and the reserved mint leaves."
+    ],
+    "fodmapNote": "Check the crispy chilli oil for garlic (garlic-free chilli crisp exists) and skip or cap the optional honey at 1 tsp. Red cabbage is low to ~3/4 cup per serve; chicken, peanut butter, cucumber and carrot are low. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-prawn-katsu-poke-bowl",
+    "name": "Prawn Katsu Poke Bowls",
+    "emoji": "🍤",
+    "category": "lunch",
+    "time": "20 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick",
+      "high protein"
+    ],
+    "source": "https://www.mob.co.uk/recipes/prawn-katsu-poke-bowls",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 600,
+      "protein": 50,
+      "fiber": 9
+    },
+    "ingredients": [
+      {
+        "qty": "1",
+        "item": "Egg"
+      },
+      {
+        "qty": "30g",
+        "item": "Panko Breadcrumbs"
+      },
+      {
+        "qty": "300g",
+        "item": "Raw King Prawn"
+      },
+      {
+        "qty": "100g",
+        "item": "Frozen Shelled Edamame"
+      },
+      {
+        "qty": "2",
+        "item": "Carrot"
+      },
+      {
+        "qty": "100g",
+        "item": "Cucumber"
+      },
+      {
+        "qty": "6",
+        "item": "Radish"
+      },
+      {
+        "qty": "100g",
+        "item": "Mango"
+      },
+      {
+        "qty": "1",
+        "item": "Spring Onion"
+      },
+      {
+        "qty": "10g",
+        "item": "Fresh Coriander"
+      },
+      {
+        "qty": "1",
+        "item": "x 250g Pouch Microwaveable Jasmine Rice"
+      },
+      {
+        "qty": "50g",
+        "item": "0% Fat Greek Yoghurt⁣"
+      },
+      {
+        "qty": "50g",
+        "item": "Katsu Curry Paste"
+      },
+      {
+        "qty": "1tsp",
+        "item": "Light Soy Sauce"
+      },
+      {
+        "qty": "2",
+        "item": "Lime"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Low-Calorie Cooking Spray"
+      }
+    ],
+    "steps": [
+      "Separate the egg, saving the yolk for something else, then add the white to a shallow bowl with a pinch of salt and whisk lightly with a fork until slightly frothy. Add the panko breadcrumbs to another shallow bowl. Pat the prawns dry and coat them one by one in the egg white, then the panko, placing them in a single layer in the basket of your air fryer. Chicken mini fillets or firm pressed tofu work just as well here.",
+      "Give them 5 or 6 spritzes of spray oil and air fry at 200°C for 10-12 mins, until the breadcrumbs are golden and the prawns are pink.",
+      "In the meantime, defrost the edamame beans in a small bowl of hot water from the tap and set aside.",
+      "Use a peeler to make ribbons of carrot, then thinly slice the cucumber and radishes. Dice the mango, thinly slice the spring onion and pick the leaves from the coriander.",
+      "Cook the rice according to the packet instructions, typically 2 mins in the microwave.",
+      "In a small bowl, mix together the yoghurt, katsu curry paste, soy sauce and the juice of one lime. Halve the remaining lime.",
+      "Drain the edamame beans and assemble the bowls with the rice and all the vegetables, topped with the prawns, katsu sauce, coriander leaves and lime halves."
+    ],
+    "fodmapNote": "Mango is the flag — 50g per bowl is over the low-FODMAP line (excess fructose): halve it or swap firm kiwi. Check the katsu curry paste for onion/garlic and use gluten-free panko if avoiding wheat. Prawns, rice, edamame (~1/4 cup per bowl) and radish are low. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-lemongrass-pork-rice-bowl",
+    "name": "Lemongrass Pork Patty Rice Bowls",
+    "emoji": "🍚",
+    "category": "lunch",
+    "time": "20 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick",
+      "high protein"
+    ],
+    "source": "https://www.mob.co.uk/recipes/lemongrass-pork-patty-rice-bowls",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 565,
+      "protein": 53,
+      "fiber": 11
+    },
+    "ingredients": [
+      {
+        "qty": "1",
+        "item": "Shallot"
+      },
+      {
+        "qty": "1Stalk",
+        "item": "Lemongrass Stalk"
+      },
+      {
+        "qty": "10g",
+        "item": "Fresh Coriander"
+      },
+      {
+        "qty": "10g",
+        "item": "Fresh Mint"
+      },
+      {
+        "qty": "1Clove",
+        "item": "Garlic Clove"
+      },
+      {
+        "qty": "10g",
+        "item": "Fresh Ginger"
+      },
+      {
+        "qty": "2",
+        "item": "Lime"
+      },
+      {
+        "qty": "1.5tbsp",
+        "item": "Fish Sauce"
+      },
+      {
+        "qty": "350g",
+        "item": "5% Fat Pork Mince"
+      },
+      {
+        "qty": "200g",
+        "item": "Tenderstem Broccoli"
+      },
+      {
+        "qty": "125g",
+        "item": "Frozen Shelled Edamame"
+      },
+      {
+        "qty": "1tbsp",
+        "item": "Water"
+      },
+      {
+        "qty": "1tbsp",
+        "item": "Kecap Manis"
+      },
+      {
+        "qty": "2",
+        "item": "Spring Onion"
+      },
+      {
+        "qty": "1",
+        "item": "Little Gem Lettuce"
+      },
+      {
+        "qty": "175g",
+        "item": "Cooked Jasmine Rice"
+      },
+      {
+        "qty": "2tbsp",
+        "item": "Sambal Oelek"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      }
+    ],
+    "steps": [
+      "Boil a kettle or a small pan of water and season with salt.",
+      "Finely chop the shallot, lemongrass and most of the coriander and mint, reserving a few leaves for garnish. Finely grate the garlic and ginger. Add everything except the reserved herb leaves to a mixing bowl.",
+      "Halve both the limes and add the juice of one lime to the bowl with 1 tbsp of the fish sauce and the pork mince. Season with salt and use your hands to mix everything together well. You can blitz all the patty ingredients together to save time and get a smoother texture.",
+      "Preheat a large non-stick frying pan over a medium-high heat. Pinch off golf ball sized portions of the mixture, flatten them slightly in your hands and add straight to the pan, you should get 12-14 patties. Fry for 1-2 mins on each side, until deeply golden, working in batches if you need to. They won't take long to cook through as they're thinner than meatballs.",
+      "At the same time, add the tenderstem broccoli and edamame to the boiling water and cook for 3-4 mins, until cooked through but still with some bite. Swap the broccoli for green beans or any other green veg you fancy.",
+      "In the meantime, mix the remaining fish sauce with the water and the kecap manis. When the patties have finished cooking, turn off the heat, splash the glaze into the pan and coat all the patties. Set aside.",
+      "Finely slice the spring onions, separate the little gem lettuce leaves and reheat your jasmine rice.",
+      "Divide the rice between the bowls with the broccoli and edamame. Top with the glazed pork patties, nestle in the little gem leaves to the side of the bowl and sprinkle everything with the spring onions and reserved herb leaves. Enjoy with a dollop of sambal oelek and an extra lime half."
+    ],
+    "fodmapNote": "Swap the shallot for spring onion greens and the garlic for infused oil. Kecap manis and sambal are small amounts but often list garlic — check labels or use garlic-free chilli paste with a little soy + brown sugar. Pork, lemongrass, edamame and rice are low. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-seared-tuna-tapenade-beans",
+    "name": "Seared Tuna & Olive Tapenade Beans",
+    "emoji": "🫘",
+    "category": "lunch",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick",
+      "high protein"
+    ],
+    "source": "https://www.mob.co.uk/recipes/seared-tuna-olive-tapenade-beans",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 595,
+      "protein": 52,
+      "fiber": 13
+    },
+    "ingredients": [
+      {
+        "qty": "2",
+        "item": "Vine Tomato"
+      },
+      {
+        "qty": "4tbsp",
+        "item": "Extra Virgin Olive Oil"
+      },
+      {
+        "qty": "1tsp",
+        "item": "Dried Oregano"
+      },
+      {
+        "qty": "200g",
+        "item": "Green Bean"
+      },
+      {
+        "qty": "2",
+        "item": "x 400g Can Cannellini Bean"
+      },
+      {
+        "qty": "80g",
+        "item": "Pitted Kalamata Olive"
+      },
+      {
+        "qty": "15g",
+        "item": "Fresh Parsley"
+      },
+      {
+        "qty": "1",
+        "item": "Garlic Clove"
+      },
+      {
+        "qty": "to taste",
+        "item": ".5 Lemon"
+      },
+      {
+        "qty": "4",
+        "item": "Fresh Tuna Steak"
+      },
+      {
+        "qty": "1tbsp",
+        "item": "Olive Oil"
+      },
+      {
+        "qty": "to taste",
+        "item": ".5 Lemon"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Black Pepper"
+      }
+    ],
+    "steps": [
+      "Cut the vine tomatoes into big chunks, then dress with a quarter of the extra virgin olive oil, the dried oregano and a pinch of salt. Set aside.",
+      "Bring a large saucepan of salted water to the boil. Trim the green beans, then cook for 2-3 mins, until they turn bright green and are just tender but still with plenty of bite. Drain and run briefly under cold water, then leave to dry.",
+      "Drain and rinse the cannellini beans. Add them to a large serving bowl with the cooled green beans.",
+      "Finely chop the olives and parsley and add to a small bowl. Finely grate in the garlic, then add the juice of the lemon and the remaining extra virgin olive oil. Season with black pepper and a small pinch of salt, remembering the olives are already salty, so taste it first, you might not need as much.",
+      "Spoon two-thirds of the olive dressing over the beans. Toss well and leave to sit while you cook the tuna, so the beans can soak up the dressing.",
+      "Heat a griddle pan or large frying pan over a high heat. Pat the tuna steaks dry, rub with the olive oil and season with salt and black pepper. Cook for 1-2 mins on each side, depending on their thickness and how pink you like them in the middle. Transfer to a plate and squeeze over the juice of the remaining lemon.",
+      "The tomatoes should have released their juices, which will add to the dressing. Toss them through the bean salad.",
+      "Spoon the dressed beans onto plates, then slice the tuna and arrange it over the top. Drizzle over the remaining olive dressing to serve."
+    ],
+    "fodmapNote": "Two cans of cannellini across four plates is ~1/2 can each — well over the 1/4-cup low-FODMAP serve for beans (GOS): keep beans to 1/4 cup and bulk with extra green beans. Garlic → infused oil. Tuna, olives and tomatoes are low. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-chicken-mince-salad",
+    "name": "Garlic & Herb Chicken Mince Salad",
+    "emoji": "🥗",
+    "category": "lunch",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick",
+      "high protein",
+      "make ahead"
+    ],
+    "source": "https://www.mob.co.uk/recipes/garlic-herb-chicken-mince-salad",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 510,
+      "protein": 42,
+      "fiber": 7
+    },
+    "ingredients": [
+      {
+        "qty": "1",
+        "item": "x 400g Can White Bean"
+      },
+      {
+        "qty": "200g",
+        "item": "Full-Fat Cottage Cheese"
+      },
+      {
+        "qty": "20g",
+        "item": "Fresh Chive"
+      },
+      {
+        "qty": "1",
+        "item": "Lemon"
+      },
+      {
+        "qty": "2",
+        "item": "Garlic Clove"
+      },
+      {
+        "qty": "2",
+        "item": "Green Chilli"
+      },
+      {
+        "qty": "400g",
+        "item": "Courgette"
+      },
+      {
+        "qty": "25g",
+        "item": "Fresh Parsley"
+      },
+      {
+        "qty": "20g",
+        "item": "Pumpkin Seed"
+      },
+      {
+        "qty": "600g",
+        "item": "Chicken Mince"
+      },
+      {
+        "qty": "2.5tbsp",
+        "item": "Olive Oil"
+      },
+      {
+        "qty": "1",
+        "item": "Lemon"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Black Pepper"
+      }
+    ],
+    "steps": [
+      "Tip the beans into a blender with the cottage cheese and chives, plus a splash of the liquid from the can. Blend until smooth, then season with salt and the lemon zest and juice.",
+      "Thinly slice the garlic and chilli. Using a peeler, shave the courgette into ribbons, then roughly chop the parsley.",
+      "Place a frying pan over a medium heat. Once hot, add the mince and stir-fry for 2-3 mins, until the fat starts to render, then add the garlic, pumpkin seeds and chilli and stir-fry for another 3-4 mins, until cooked through. Add a drizzle of the olive oil if it starts to catch. Season with salt and pepper.",
+      "Toss the mince through the courgette with the remaining olive oil. Leave to cool, then toss the parsley through and season with salt.",
+      "Share the dip between boxes or onto plates and top with the salad. Cut the remaining lemon into wedges and serve alongside."
+    ],
+    "fodmapNote": "Garlic → infused oil, and use lactose-free cottage cheese. White beans land ~1/4 cup per serve (right at the low line) and courgette at ~100g is over its 65g low serve — trim either if you're sensitive. Chicken mince, herbs and pumpkin seeds are low. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-kimchi-carbonara",
+    "name": "Kimchi Carbonara with Cucumber Salad",
+    "emoji": "🍝",
+    "category": "lunch",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick"
+    ],
+    "source": "https://www.mob.co.uk/recipes/kimchi-carbonara-with-cucumber-salad",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 610,
+      "protein": 30,
+      "fiber": 7
+    },
+    "ingredients": [
+      {
+        "qty": "1",
+        "item": "Cucumber"
+      },
+      {
+        "qty": "1",
+        "item": "Onion"
+      },
+      {
+        "qty": "200g",
+        "item": "Edamame"
+      },
+      {
+        "qty": "200g",
+        "item": "Kimchi"
+      },
+      {
+        "qty": "1",
+        "item": "Lime"
+      },
+      {
+        "qty": "1tsp",
+        "item": "Sugar"
+      },
+      {
+        "qty": "350g",
+        "item": "Spaghetti"
+      },
+      {
+        "qty": "60g",
+        "item": "Pecorino Romano"
+      },
+      {
+        "qty": "1",
+        "item": "Egg"
+      },
+      {
+        "qty": "3",
+        "item": "Egg Yolk"
+      },
+      {
+        "qty": "1tbsp",
+        "item": "Gochujang"
+      },
+      {
+        "qty": "1tbsp",
+        "item": "Sesame Oil"
+      },
+      {
+        "qty": "2tbsp",
+        "item": "Toasted Sesame Seeds"
+      },
+      {
+        "qty": "15g",
+        "item": "Fresh Chive"
+      },
+      {
+        "qty": "to taste",
+        "item": "Olive Oil"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Black Pepper"
+      }
+    ],
+    "steps": [
+      "Halve the cucumber lengthways, use a spoon to scoop out the seeds, then finely slice into half-moons using a mandolin or a knife. Tip into a colander, add a pinch of salt and set aside over a bowl.",
+      "Peel and finely slice the onion and tip into a bowl with the edamame, 2 tbsp of the kimchi brine, the juice of the lime, the sugar, salt and pepper.",
+      "Bring a large saucepan of salted water to the boil. Once boiling, add the spaghetti and cook for 1 min less than packet instructions.",
+      "Into a bowl, grate the pecorino, then crack in the egg and add the egg yolks and gochujang. Mix together with plenty of black pepper, probably more than you think, then set aside.",
+      "Chop the kimchi into small chunks and drain well. Place a large frying pan over a medium heat, add a good drizzle of oil and the chopped kimchi. Fry for 3-4 mins, stirring occasionally. Take off the heat once it starts to brown.",
+      "Once the pasta is cooked, use tongs to transfer it into the frying pan with the kimchi, along with 4 ladles of the pasta water. Don't tip the rest away yet. Keep the pan off the heat, add the egg mixture and toss until glossy and the liquid starts to thicken. Add a little more pasta water if it's not silky enough.",
+      "Squeeze the cucumber and get rid of any excess liquid, then toss it into the onion and edamame mixture.",
+      "Twirl the carbonara into bowls, pile the salad on top, drizzle over the sesame oil, scatter over the toasted sesame seeds, then use scissors to snip over the chives."
+    ],
+    "fodmapNote": "Most kimchi contains garlic — use a garlic-free kimchi or keep to ~47g per serve; swap the onion for spring onion greens and the spaghetti for gluten-free. Pecorino is a hard cheese (low); edamame and cucumber are low. Nutrition: estimated from ingredients."
+  },
+  {
+    "id": "fam-mob-green-chilli-chicken-meatballs",
+    "name": "Green Chilli Chicken Meatballs",
+    "emoji": "🍅",
+    "category": "lunch",
+    "time": "30 min",
+    "serves": 3,
+    "difficulty": "easy",
+    "tags": [
+      "mob",
+      "quick",
+      "high protein",
+      "make ahead"
+    ],
+    "source": "https://www.mob.co.uk/recipes/green-chilli-chicken-meatballs",
+    "added": "2026-09-14",
+    "nutrition": {
+      "cal": 575,
+      "protein": 52,
+      "fiber": 6
+    },
+    "ingredients": [
+      {
+        "qty": "2",
+        "item": "Banana Shallot"
+      },
+      {
+        "qty": "2",
+        "item": "Garlic Clove"
+      },
+      {
+        "qty": "1tsp",
+        "item": "Extra Virgin Olive Oil"
+      },
+      {
+        "qty": "10g",
+        "item": "Fresh Basil"
+      },
+      {
+        "qty": "10g",
+        "item": "Fresh Parsley"
+      },
+      {
+        "qty": "2",
+        "item": "Green Chilli"
+      },
+      {
+        "qty": "1",
+        "item": "Lemon"
+      },
+      {
+        "qty": "40g",
+        "item": "Parmesan"
+      },
+      {
+        "qty": "40g",
+        "item": "Sourdough"
+      },
+      {
+        "qty": "1",
+        "item": "Egg"
+      },
+      {
+        "qty": "100g",
+        "item": "Light Cottage Cheese"
+      },
+      {
+        "qty": "500g",
+        "item": "Low Fat Chicken Mince"
+      },
+      {
+        "qty": "2",
+        "item": "x 400g Can Chopped Tomatoes"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Black Pepper"
+      },
+      {
+        "qty": "150g",
+        "item": "Light Cottage Cheese"
+      }
+    ],
+    "steps": [
+      "Very finely chop the shallots and garlic. Add half of each to a large mixing bowl and set the other half aside, you'll fry this later.",
+      "Finely chop most of the basil, reserving a few leaves for garnish, then finely chop the parsley. Finely chop one of the green chillies and thinly slice the other. Add the herbs and the finely chopped chilli to the bowl.",
+      "Zest the lemon into the bowl, then halve it and add the juice of one half. Grate in half the Parmesan using the same microplane.",
+      "Crumble the sourdough into the bowl between your fingers until it resembles breadcrumbs. Crack in the egg, add the cottage cheese and chicken mince and season generously with salt and pepper. Mix well with your hands until everything is combined and smooth. You can blitz the meatball ingredients together in a food processor to save time.",
+      "Wet your hands and roll the mixture into meatballs, placing them straight into the basket of an air fryer or onto a baking tray lined with non-stick baking parchment. An ice cream scoop makes quick, even work of the portioning. Air fry at 200°C for 10-12 mins, until golden. You may need to work in batches depending on the size of your air fryer.",
+      "Once the meatballs are in, set a frying pan over a medium-low heat and add in the olive oil along with the chopped shallot and garlic you set aside earlier. Fry for around 4 mins, until soft. Add a splash of water if it starts to catch.",
+      "Add the chopped tomatoes, or passata if you prefer, along with the remaining lemon juice, and season generously with salt and pepper. Simmer over a low heat for 10 mins, until slightly reduced. Season to taste.",
+      "When the meatballs have browned, add them to the sauce to coat generously.",
+      "Divide the meatballs and sauce between bowls and top with the remaining cottage cheese, a grating of Parmesan and the reserved sliced chilli and basil leaves. They're perfect on their own, but just as good over pasta, rice or a salad."
+    ],
+    "fodmapNote": "Swap the banana shallots for spring onion greens and the garlic for infused oil; use lactose-free cottage cheese. Canned tomatoes run ~2/3 cup per serve (moderate) — a smaller sauce portion keeps it low. The sourdough crumb is small enough to pass for most. Nutrition: estimated from ingredients."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.

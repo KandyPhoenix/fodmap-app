@@ -7223,6 +7223,89 @@
   // ── Edit a manually-added meal: reopen it to fix the name, add to it,
   //    or tweak its numbers. Numbers follow the app guess while untouched;
   //    touching any number field takes them over. ──
+  // ── 📅 Week Menu: preset 7-day plan -> planner ─────────────
+  function weekMenuDayTotal(entry) {
+    let cal = 0, protein = 0, fiber = 0;
+    const missing = [];
+    ['breakfast', 'lunch', 'dinner'].forEach(slot => {
+      const id = entry.meals[slot];
+      const r = getAllRecipes().find(x => x.id === id);
+      if (!r) { missing.push(id); return; }
+      const n = getRecipeNutrition(id, r) || {};
+      cal += n.cal || 0; protein += n.protein || 0; fiber += n.fiber || 0;
+    });
+    (entry.adds || []).forEach(a => { cal += a.cal; protein += a.protein; fiber += a.fiber; });
+    return { cal, protein, fiber, missing };
+  }
+  function renderWeekMenuModal() {
+    const wrap = document.getElementById('week-menu-days');
+    if (!wrap || typeof WEEK_MENU === 'undefined') return;
+    const profiles = loadNutritionTargets();
+    const SLOT_LABEL = { breakfast: 'Breakfast', lunch: 'Lunch', dinner: 'Dinner' };
+    wrap.innerHTML = WEEK_MENU.map(entry => {
+      const dt = DAY_TYPES.find(t => t.id === entry.type);
+      const target = profiles[entry.type] || {};
+      const rows = ['breakfast', 'lunch', 'dinner'].map(slot => {
+        const id = entry.meals[slot];
+        const r = getAllRecipes().find(x => x.id === id);
+        const n = r ? (getRecipeNutrition(id, r) || {}) : {};
+        const nums = n.cal != null
+          ? n.cal + ' cal · ' + (n.protein != null ? n.protein : '–') + 'g P · ' + (n.fiber != null ? n.fiber : '–') + 'g F'
+          : 'no numbers yet';
+        return '<div class="wm-row"><span class="wm-slot">' + SLOT_LABEL[slot] + '</span><span class="wm-name">' + escHtml(r ? r.name : id + ' (missing)') + '</span><span class="wm-nums">' + nums + '</span></div>';
+      }).join('');
+      const adds = (entry.adds || []).map(a =>
+        '<div class="wm-row wm-add"><span class="wm-slot">💪 Add-on</span><span class="wm-name">' + escHtml(a.name) + '</span><span class="wm-nums">' + a.cal + ' cal · ' + a.protein + 'g P · ' + a.fiber + 'g F</span></div>'
+      ).join('');
+      const t = weekMenuDayTotal(entry);
+      const under = target.cal != null ? target.cal - t.cal : null;
+      const calNote = under == null ? '' : (under >= 0 ? ' (' + under + ' under the ' + target.cal + ' target)' : ' (' + Math.abs(under) + ' OVER the ' + target.cal + ' target)');
+      return '<div class="wm-day"><div class="wm-day-head"><strong>' + entry.day + '</strong><span class="wm-type">' + (dt ? dt.emoji + ' ' + dt.label : escHtml(entry.type)) + '</span></div>' + rows + adds + '<div class="wm-total">' + t.cal + ' cal' + calNote + ' · ' + t.protein + 'g protein · ' + t.fiber + 'g fiber</div></div>';
+    }).join('');
+  }
+  function applyWeekMenu() {
+    if (typeof WEEK_MENU === 'undefined') return;
+    const days = getWeekDays();
+    const labelEl = document.getElementById('week-label');
+    const label = labelEl && labelEl.textContent ? labelEl.textContent : 'this week';
+    if (!confirm('Load the week menu into ' + label + '? This fills breakfast, lunch, dinner and the snack slot for all 7 days and replaces anything already planned there.')) return;
+    WEEK_MENU.forEach((entry, i) => {
+      const d = days[i];
+      if (!d) return;
+      setDayType(d.key, entry.type);
+      ['breakfast', 'lunch', 'dinner'].forEach(slot => {
+        const id = entry.meals[slot];
+        if (getAllRecipes().some(x => x.id === id)) meals[d.key + '-' + slot] = { type: 'recipe', id: id };
+      });
+      if (entry.adds && entry.adds.length) {
+        meals[d.key + '-snack'] = {
+          type: 'custom',
+          text: entry.adds.map(a => a.name).join(' + '),
+          nut: {
+            cal: entry.adds.reduce((s, a) => s + a.cal, 0),
+            protein: entry.adds.reduce((s, a) => s + a.protein, 0),
+            fiber: entry.adds.reduce((s, a) => s + a.fiber, 0),
+          },
+        };
+      } else {
+        delete meals[d.key + '-snack'];
+      }
+    });
+    saveMeals();
+    renderPlanner();
+    const ov = document.getElementById('week-menu-overlay');
+    if (ov) ov.classList.add('hidden');
+    showToast('📅 Week menu loaded — day types set to match');
+  }
+  const weekMenuBtn = document.getElementById('week-menu-btn');
+  const weekMenuOverlay = document.getElementById('week-menu-overlay');
+  if (weekMenuBtn && weekMenuOverlay) {
+    weekMenuBtn.addEventListener('click', () => { renderWeekMenuModal(); weekMenuOverlay.classList.remove('hidden'); });
+    document.getElementById('week-menu-close').addEventListener('click', () => weekMenuOverlay.classList.add('hidden'));
+    weekMenuOverlay.addEventListener('click', e => { if (e.target === weekMenuOverlay) weekMenuOverlay.classList.add('hidden'); });
+    document.getElementById('week-menu-apply').addEventListener('click', applyWeekMenu);
+  }
+
   const mealEditOverlay = document.getElementById('meal-edit-overlay');
   let mealEditKey = null;
   let mealEditNumbersDirty = false;
