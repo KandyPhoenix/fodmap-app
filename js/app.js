@@ -9984,7 +9984,11 @@
 
     let any = false;
 
-    // 💪 Protein & Fiber Boosters — one tap, numbers attached, any slot
+    // 💪 Protein & Fiber Boosters — one tap, numbers attached, any slot.
+    // Built off to the side: with no filter they lead the list, but once a
+    // category filter (Dinner, Lunch…) is tapped, that category goes first
+    // and the boosters drop to the bottom.
+    const boostersFrag = document.createDocumentFragment();
     if (pendingCell?.dateKey) {
       const boosters = PF_BOOSTERS.filter(b =>
         !pickerSearch || (b.name + ' ' + b.note).toLowerCase().includes(pickerSearch));
@@ -9993,7 +9997,7 @@
         const bHeader = document.createElement('div');
         bHeader.className = 'picker-group-label';
         bHeader.textContent = '💪 Protein & Fiber Boosters';
-        el.appendChild(bHeader);
+        boostersFrag.appendChild(bHeader);
         boosters.forEach(b => {
           const item = document.createElement('div');
           item.className = 'picker-item';
@@ -10007,10 +10011,12 @@
             meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'custom', text: b.name, nut: { cal: b.cal, protein: b.protein, fiber: b.fiber } };
             saveMeals(); renderPlanner(); closeAll();
           });
-          el.appendChild(item);
+          boostersFrag.appendChild(item);
         });
       }
     }
+    const boostersLast = pickerCategory !== 'all';
+    if (!boostersLast) el.appendChild(boostersFrag);
 
     // ✨ Super Age quick-pick — curated to this slot's meal type.
     // Respects the picker category selector; falls back to the slot's meal type.
@@ -10589,6 +10595,10 @@
 
 
 
+
+    // A category filter is active — boosters follow that category's recipes.
+    if (boostersLast) el.appendChild(boostersFrag);
+    el.scrollTop = 0;
 
     if (!any) {
 
