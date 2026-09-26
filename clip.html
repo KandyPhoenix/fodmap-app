@@ -49,6 +49,7 @@
   .queue-item .t{font-weight:600;font-size:14px;word-break:break-word}
   .queue-item .u{color:var(--muted);font-size:12px;word-break:break-all}
   .empty{color:var(--muted);text-align:center;padding:22px 0;font-size:14px}
+  .btn.add{padding:7px 12px;font-size:13px;margin-top:8px}
   textarea{width:100%;min-height:96px;border:1px solid var(--border);border-radius:10px;
            padding:11px;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
            background:var(--bg);color:var(--text);resize:vertical}
@@ -100,12 +101,17 @@ function urlFromText(t) {
   return m ? m[0] : '';
 }
 
-function queueRecipe(url, title) {
-  var entry = { mapValue: { fields: {
+function queueRecipe(url, title, recipeJson) {
+  var fields = {
     url:     { stringValue: url },
     title:   { stringValue: title || url },
     addedAt: { stringValue: new Date().toISOString() }
-  } } };
+  };
+  // The bookmarklet reads the page's own recipe data in your browser (which
+  // recipe sites don't block) and passes it along, so the app can import it
+  // without having to fetch the page itself.
+  if (recipeJson) fields.recipe = { stringValue: recipeJson };
+  var entry = { mapValue: { fields: fields } };
   return fetch(FS_COMMIT, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -154,11 +160,11 @@ function esc(s) {
 }
 
 // ── capture mode ──────────────────────────────────────────────
-function showCapture(url, title) {
+function showCapture(url, title, recipeJson) {
   app.innerHTML = '<div class="card status"><div class="icon">🍳</div>' +
     '<div class="msg">Saving…</div><div class="detail">' + esc(title || url) + '</div></div>';
 
-  queueRecipe(url, title).then(function () {
+  queueRecipe(url, title, recipeJson).then(function () {
     app.innerHTML = '<div class="card status"><div class="icon">✅</div>' +
       '<div class="msg">Saved to Our Table</div>' +
       '<div class="detail">' + esc(title || url) + '</div>' +
@@ -182,16 +188,28 @@ function showCapture(url, title) {
 // ── hub mode ──────────────────────────────────────────────────
 function bookmarkletSource() {
   var base = location.href.split('?')[0].split('#')[0];
-  return "javascript:(function(){window.open('" + base +
-    "?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)," +
+  return "javascript:(function(){var o=null;function w(n){if(!n||typeof n!=='object')return;" +
+    "if(Array.isArray(n))return n.forEach(w);var t=[].concat(n['@type']||[]);" +
+    "if(!o&&t.indexOf('Recipe')>-1)o=n;['@graph','mainEntity','itemListElement'].forEach(function(k){if(n[k])w(n[k]);});}" +
+    "document.querySelectorAll('script[type=\"application/ld+json\"]').forEach(function(s){try{w(JSON.parse(s.textContent));}catch(e){}});" +
+    "var h='';if(o){var x={'@type':'Recipe'};['name','recipeYield','prepTime','cookTime','totalTime','recipeIngredient','recipeInstructions']" +
+    ".forEach(function(k){if(o[k]!==undefined)x[k]=o[k];});h='#r='+encodeURIComponent(JSON.stringify(x));}" +
+    "window.open('" + base + "?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+h," +
     "'ourtable','width=460,height=420');})()";
+}
+
+// The recipe data a new-style bookmarklet put in the #hash, as a JSON string.
+function recipeFromHash() {
+  var m = /[#&]r=([^&]+)/.exec(location.hash || '');
+  if (!m) return '';
+  try { var json = decodeURIComponent(m[1]); JSON.parse(json); return json; } catch (e) { return ''; }
 }
 
 function showHub() {
   app.innerHTML =
     '<h1>🍳 Send to Our Table</h1>' +
     '<p class="sub">Tap the button on any recipe page and it lands here. ' +
-    'Ask Claude to “add my queued recipes” and they go into the app.</p>' +
+    'Tap <b>Add to my recipes</b> to bring one into the app yourself, or ask Claude to “add my queued recipes”.</p>' +
     '<p style="margin:-12px 0 22px"><a href="index.html">← Back to Our Table</a></p>' +
     '<h2>Queued</h2><div class="card" id="q"><div class="empty">Loading…</div></div>' +
     '<h2>Set it up</h2>' +
@@ -239,9 +257,11 @@ function showHub() {
     var q = document.getElementById('q');
     if (!items.length) { q.innerHTML = '<div class="empty">Nothing queued right now.</div>'; return; }
     q.innerHTML = items.map(function (it, i) {
-      return '<div class="queue-item"><div class="n">' + (i + 1) + '</div><div>' +
+      return '<div class="queue-item"><div class="n">' + (i + 1) + '</div><div style="flex:1;min-width:0">' +
         '<div class="t">' + esc(it.title || it.url) + '</div>' +
-        '<div class="u">' + esc(it.url) + '</div></div></div>';
+        '<div class="u">' + esc(it.url) + '</div>' +
+        '<a class="btn add" href="index.html?import=' + encodeURIComponent(it.addedAt) + '">➕ Add to my recipes</a>' +
+        '</div></div>';
     }).join('');
   }
 
@@ -289,7 +309,7 @@ function fallback(text, done) {
   // ?url= from the bookmarklet; ?text=/?title= from an Android share, where the
   // link can arrive inside either field.
   var raw = p.get('url') || urlFromText(p.get('text')) || urlFromText(p.get('title'));
-  if (raw) showCapture(cleanUrl(raw), p.get('title') || p.get('text') || '');
+  if (raw) showCapture(cleanUrl(raw), p.get('title') || p.get('text') || '', recipeFromHash());
   else showHub();
 })();
 </script>
