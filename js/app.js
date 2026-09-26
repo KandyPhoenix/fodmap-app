@@ -3588,7 +3588,7 @@
 
 
 
-          qtyDisplay = `<span class="scaled-qty" title="Scaled from ${ing.qty}">${convertGrams(ing.qty)} ×${multiplier}</span>`;
+          qtyDisplay = `<span class="scaled-qty" title="Recipe says ${ing.qty}">${convertGrams(scaleQtyText(ing.qty, multiplier))}</span>`;
 
 
 
@@ -4576,7 +4576,7 @@
 
 
 
-      const multiplier = Math.round((currentServes / baseServes) * 10) / 10;
+      const multiplier = currentServes / baseServes;
 
 
 
@@ -4600,7 +4600,7 @@
 
 
 
-      ingListEl.innerHTML = buildIngList(multiplier === 1 ? 1 : multiplier);
+      ingListEl.innerHTML = buildIngList(multiplier);
 
 
 
@@ -4632,7 +4632,7 @@
 
 
 
-        noteEl.textContent = `Multiply each ingredient by ×${multiplier} from the original ${baseServes}-serving recipe.`;
+        noteEl.textContent = `Amounts adjusted for ${currentServes} servings (the original recipe serves ${baseServes}).`;
 
 
 
@@ -12574,6 +12574,35 @@
 
 
 
+  // Scale a written amount for a different number of servings.
+  // "1 tsp" ×1.5 → "1½ tsp", "2 tbsp" ×4 → "½ cup", "¼ to ½ cup" ×2 → "½ to 1 cup",
+  // "1 (15-ounce) can" ×2 → "2 (15-ounce) can". Anything without a leading
+  // number ("to taste", "a pinch", "Juice of 1 lemon") is returned unchanged.
+  function scaleQtyText(q, factor) {
+    const original = String(q == null ? '' : q);
+    if (!factor || Math.abs(factor - 1) < 1e-9) return original;
+    const s = foldFractions(normalizeMixedNumbers(original));
+    const m = s.match(new RegExp(`^(\\s*)(${NUMBER_ATOM})(?:(\\s*(?:-|–|to)\\s*)(${NUMBER_ATOM}))?`, 'i'));
+    if (!m) return original;
+    const lo = evalAmountPart(m[2].replace(/\s+/g, ' ').trim());
+    const hi = m[4] ? evalAmountPart(m[4].replace(/\s+/g, ' ').trim()) : null;
+    if (lo === null || (m[4] && hi === null)) return original;
+    const rest = s.slice(m[0].length);
+    // A bare spoon/cup measure converts to the friendliest measure: 4 tbsp → ¼ cup.
+    const TSP_PER = { tsp: 1, tbsp: 3, cup: 48 };
+    const um = rest.match(/^\s*([a-z]+)\.?/i);
+    const unit = um && UNIT_ALIASES[um[1].toLowerCase()];
+    if (hi === null && TSP_PER[unit]) return tspToDisplay(lo * factor * TSP_PER[unit]) + rest.slice(um[0].length);
+    // Otherwise round to a measurable amount: eighths below 10, whole numbers above.
+    const nice = n => n >= 10 ? String(Math.round(n)) : formatQtyNum(Math.max(Math.round(n * 8) / 8, 0.125));
+    // Keep the counting word in step with the new number: "1 can" → "2 cans", "4 cloves" → "1 clove".
+    const last = (hi === null ? lo : hi) * factor;
+    const fixedRest = rest.replace(/^(\s*(?:\([^)]*\)\s*)?)([a-z]+)\b/, (all, pre, w) => {
+      const one = singularize(w);
+      return COUNT_WORDS.has(one) ? pre + pluralUnit(one, last > 1 ? 2 : 1) : all;
+    });
+    return m[1] + nice(lo * factor) + (hi === null ? '' : m[3] + nice(hi * factor)) + fixedRest;
+  }
   // Pluralize a counting word for display ("2 cloves", "3 boxes").
 
 
