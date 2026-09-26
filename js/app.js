@@ -600,6 +600,10 @@
 
 
   let editingRecipeId = null;
+  // Set while the Add My Recipe form holds a recipe pulled in from a link or
+  // the clipper queue: { source, added, queueRaw } — saved with the recipe,
+  // and queueRaw lets the save take that one item back off the queue.
+  let importedMeta = null;
 
 
 
@@ -3588,7 +3592,7 @@
 
 
 
-          qtyDisplay = `<span class="scaled-qty" title="Scaled from ${ing.qty}">${convertGrams(ing.qty)} ×${multiplier}</span>`;
+          qtyDisplay = `<span class="scaled-qty" title="Recipe says ${ing.qty}">${convertGrams(scaleQtyText(ing.qty, multiplier))}</span>`;
 
 
 
@@ -4576,7 +4580,7 @@
 
 
 
-      const multiplier = Math.round((currentServes / baseServes) * 10) / 10;
+      const multiplier = currentServes / baseServes;
 
 
 
@@ -4600,7 +4604,7 @@
 
 
 
-      ingListEl.innerHTML = buildIngList(multiplier === 1 ? 1 : multiplier);
+      ingListEl.innerHTML = buildIngList(multiplier);
 
 
 
@@ -4632,7 +4636,7 @@
 
 
 
-        noteEl.textContent = `Multiply each ingredient by ×${multiplier} from the original ${baseServes}-serving recipe.`;
+        noteEl.textContent = `Amounts adjusted for ${currentServes} servings (the original recipe serves ${baseServes}).`;
 
 
 
@@ -4874,6 +4878,15 @@
 
 
     editingRecipeId = existing ? existing.id : null;
+    importedMeta = null;
+    const importSection = document.getElementById('rf-import-section');
+    if (importSection) importSection.classList.toggle('hidden', !!existing);
+    const importUrl = document.getElementById('rf-import-url');
+    if (importUrl) importUrl.value = '';
+    setImportStatus('');
+    const importBtn = document.getElementById('rf-import-btn');
+    if (importBtn) importBtn.onclick = () => importRecipeFromLink(importUrl ? importUrl.value : '');
+    if (importUrl) importUrl.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); importRecipeFromLink(importUrl.value); } };
 
 
 
@@ -5373,6 +5386,141 @@
 
 
 
+
+  // ── Import a recipe from a link / the clipper queue ─────────
+  //
+  // Recipe sites won't let a web page read them directly, so the link goes
+  // through the Planner Worker's /recipe route, which returns only the page's
+  // structured recipe data. js/recipe-import.js turns that into our shape —
+  // the same code the add-recipe skill uses, FODMAP flags included.
+  // Items clipped with the 🍳 bookmarklet already carry that data from the
+  // page, so they don't need the Worker at all (and work on sites that block it).
+  const RECIPE_READER = 'https://planner.phoenixmethod.workers.dev/recipe';
+  const CLIP_QUEUE_DOC = 'projects/wellness-tracker-127/databases/(default)/documents/fodmap/inbox';
+  const CLIP_QUEUE_KEY = 'AIzaSyAxqkJiZL94gR3W5TBPTRNE5AdLyCDwb2g';
+
+  function setImportStatus(msg, kind) {
+    const el = document.getElementById('rf-import-status');
+    if (!el) return;
+    el.textContent = msg || '';
+    el.className = 'rf-import-status' + (kind ? ' ' + kind : '');
+  }
+
+  function todayStr() {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  }
+
+  // Put an imported recipe into the open form for review. Nothing is saved
+  // until Save Recipe is pressed.
+  function fillFormFromImport(r, meta) {
+    document.getElementById('rf-emoji').value      = r.emoji || '';
+    document.getElementById('rf-name').value       = r.name || '';
+    document.getElementById('rf-category').value   = r.category || 'dinner';
+    document.getElementById('rf-time').value       = r.time || '';
+    document.getElementById('rf-serves').value     = r.serves || 4;
+    document.getElementById('rf-difficulty').value = r.difficulty || 'easy';
+    document.getElementById('rf-fodmap-note').value = r.fodmapNote || '';
+    document.getElementById('rf-name').classList.remove('error');
+    ingredientRows = (r.ingredients || []).map(i => ({ qty: i.qty || '', item: i.item || '' }));
+    if (!ingredientRows.length) ingredientRows = [{ qty: '', item: '' }];
+    renderIngredientRows();
+    stepRows = (r.steps || []).slice();
+    if (!stepRows.length) stepRows = [''];
+    renderStepRows();
+    importedMeta = Object.assign({ source: r.source, added: r.added || todayStr() }, meta || {});
+    const n = (r.ingredients || []).length, s = (r.steps || []).length;
+    setImportStatus(`✓ Imported "${r.name}" — ${n} ingredient${n === 1 ? '' : 's'}, ${s} step${s === 1 ? '' : 's'}. ` +
+      'Check it over (especially the FODMAP note), then Save Recipe.', 'ok');
+  }
+
+  const IMPORT_FAIL = {
+    'bad-url':      "That doesn't look like a web address — paste the full link starting with https://.",
+    'blocked':      "That site won't let the app read its recipes. Open the recipe page and use your 🍳 Send to Our Table bookmark instead — it reads the recipe from your own browser — or ask Claude to add it.",
+    'no-recipe':    "That page doesn't include recipe data the app can read (it may be an article or a list of recipes). Type it in below, or ask Claude to add it.",
+    'fetch-failed': "Couldn't load that page. Check the link, or try again in a minute.",
+  };
+
+  async function importRecipeFromLink(raw, meta) {
+    const url = String(raw || '').trim();
+    if (!/^https?:\/\/\S+\.\S+/i.test(url)) { setImportStatus(IMPORT_FAIL['bad-url'], 'err'); return false; }
+    if (typeof RecipeImport === 'undefined') { setImportStatus('The importer did not load — refresh the app and try again.', 'err'); return false; }
+    setImportStatus('Reading the recipe…');
+    const btn = document.getElementById('rf-import-btn');
+    if (btn) btn.disabled = true;
+    try {
+      const res = await fetch(`${RECIPE_READER}?url=${encodeURIComponent(url)}`);
+      const data = await res.json().catch(() => ({}));
+      if (!data.ok) { setImportStatus(IMPORT_FAIL[data.reason] || IMPORT_FAIL['fetch-failed'], 'err'); return false; }
+      fillFormFromImport(RecipeImport.toAppRecipe(data.recipe, url, todayStr()), meta);
+      return true;
+    } catch (e) {
+      setImportStatus("Couldn't reach the recipe reader — check your internet connection and try again.", 'err');
+      return false;
+    } finally {
+      if (btn) btn.disabled = false;
+    }
+  }
+
+  // Firestore REST value → plain JS (only the shapes the queue uses).
+  function fsPlain(v) {
+    if (!v) return null;
+    if ('stringValue' in v) return v.stringValue;
+    if ('mapValue' in v) {
+      const o = {}, f = v.mapValue.fields || {};
+      Object.keys(f).forEach(k => { o[k] = fsPlain(f[k]); });
+      return o;
+    }
+    return null;
+  }
+
+  async function readClipQueue() {
+    const r = await fetch(`https://firestore.googleapis.com/v1/${CLIP_QUEUE_DOC}?key=${CLIP_QUEUE_KEY}`, { cache: 'no-store' });
+    if (r.status === 404) return [];
+    if (!r.ok) throw new Error('Firestore returned ' + r.status);
+    const d = await r.json();
+    const vals = (d.fields && d.fields.queue && d.fields.queue.arrayValue && d.fields.queue.arrayValue.values) || [];
+    return vals.map(raw => ({ raw, item: fsPlain(raw) || {} }));
+  }
+
+  // Take exactly one item off the queue (never the whole thing — anything
+  // clipped meanwhile has to survive).
+  function removeFromClipQueue(raw) {
+    return fetch(`https://firestore.googleapis.com/v1/projects/wellness-tracker-127/databases/(default)/documents:commit?key=${CLIP_QUEUE_KEY}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ writes: [{ transform: { document: CLIP_QUEUE_DOC,
+        fieldTransforms: [{ fieldPath: 'queue', removeAllFromArray: { values: [raw] } }] } }] }),
+    }).catch(e => console.warn('Could not remove the item from the clip queue:', e));
+  }
+
+  // index.html?import=<addedAt> — opened from the clipper's "Add to my recipes".
+  async function openQueuedImport(addedAt) {
+    const recipesTab = document.querySelector('.nav-btn[data-view="recipes"]');
+    if (recipesTab) recipesTab.click();
+    openRecipeForm(null);
+    setImportStatus('Loading the clipped recipe…');
+    let entry;
+    try {
+      entry = (await readClipQueue()).find(e => e.item.addedAt === addedAt);
+    } catch (e) {
+      setImportStatus("Couldn't read the clip queue — check your connection and try again.", 'err');
+      return;
+    }
+    if (!entry) { setImportStatus('That clip is no longer in the queue — it may already have been added.', 'err'); return; }
+    const url = entry.item.url || '';
+    const urlBox = document.getElementById('rf-import-url');
+    if (urlBox) urlBox.value = url;
+    const meta = { queueRaw: entry.raw };
+    if (entry.item.recipe && typeof RecipeImport !== 'undefined') {
+      try {
+        const ld = JSON.parse(entry.item.recipe);
+        fillFormFromImport(RecipeImport.toAppRecipe(ld, url, todayStr()), meta);
+        return;
+      } catch (e) { /* fall through to reading the link */ }
+    }
+    await importRecipeFromLink(url, meta);
+  }
 
   function renderIngredientRows() {
 
@@ -5989,6 +6137,12 @@
 
 
 
+    // A recipe pulled in from a link keeps its link and lands under 🆕 Newest.
+    const fromImport = !editingRecipeId && importedMeta;
+    if (fromImport) {
+      if (importedMeta.source) recipe.source = importedMeta.source;
+      recipe.added = importedMeta.added;
+    }
     const list = getUserRecipes();
 
 
@@ -6034,6 +6188,8 @@
     }
 
     saveUserRecipes(list);
+    if (fromImport && importedMeta.queueRaw) removeFromClipQueue(importedMeta.queueRaw);
+    importedMeta = null;
 
     // A move/add can introduce a brand-new section — refresh the filter so it
     // appears, and keep the view on the recipe's (possibly new) section.
@@ -12584,6 +12740,35 @@
 
 
 
+  // Scale a written amount for a different number of servings.
+  // "1 tsp" ×1.5 → "1½ tsp", "2 tbsp" ×4 → "½ cup", "¼ to ½ cup" ×2 → "½ to 1 cup",
+  // "1 (15-ounce) can" ×2 → "2 (15-ounce) can". Anything without a leading
+  // number ("to taste", "a pinch", "Juice of 1 lemon") is returned unchanged.
+  function scaleQtyText(q, factor) {
+    const original = String(q == null ? '' : q);
+    if (!factor || Math.abs(factor - 1) < 1e-9) return original;
+    const s = foldFractions(normalizeMixedNumbers(original));
+    const m = s.match(new RegExp(`^(\\s*)(${NUMBER_ATOM})(?:(\\s*(?:-|–|to)\\s*)(${NUMBER_ATOM}))?`, 'i'));
+    if (!m) return original;
+    const lo = evalAmountPart(m[2].replace(/\s+/g, ' ').trim());
+    const hi = m[4] ? evalAmountPart(m[4].replace(/\s+/g, ' ').trim()) : null;
+    if (lo === null || (m[4] && hi === null)) return original;
+    const rest = s.slice(m[0].length);
+    // A bare spoon/cup measure converts to the friendliest measure: 4 tbsp → ¼ cup.
+    const TSP_PER = { tsp: 1, tbsp: 3, cup: 48 };
+    const um = rest.match(/^\s*([a-z]+)\.?/i);
+    const unit = um && UNIT_ALIASES[um[1].toLowerCase()];
+    if (hi === null && TSP_PER[unit]) return tspToDisplay(lo * factor * TSP_PER[unit]) + rest.slice(um[0].length);
+    // Otherwise round to a measurable amount: eighths below 10, whole numbers above.
+    const nice = n => n >= 10 ? String(Math.round(n)) : formatQtyNum(Math.max(Math.round(n * 8) / 8, 0.125));
+    // Keep the counting word in step with the new number: "1 can" → "2 cans", "4 cloves" → "1 clove".
+    const last = (hi === null ? lo : hi) * factor;
+    const fixedRest = rest.replace(/^(\s*(?:\([^)]*\)\s*)?)([a-z]+)\b/, (all, pre, w) => {
+      const one = singularize(w);
+      return COUNT_WORDS.has(one) ? pre + pluralUnit(one, last > 1 ? 2 : 1) : all;
+    });
+    return m[1] + nice(lo * factor) + (hi === null ? '' : m[3] + nice(hi * factor)) + fixedRest;
+  }
   // Pluralize a counting word for display ("2 cloves", "3 boxes").
 
 
@@ -23200,6 +23385,15 @@
 
 
   renderRemindersView();
+
+  // Opened from the clipper queue's "Add to my recipes" button.
+  (() => {
+    const params = new URLSearchParams(location.search);
+    const addedAt = params.get('import');
+    if (!addedAt) return;
+    history.replaceState(null, '', location.pathname);
+    setTimeout(() => openQueuedImport(addedAt), 0);
+  })();
 
 
 

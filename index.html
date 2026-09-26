@@ -707,6 +707,15 @@
       </div>
       <div class="form-body">
 
+        <div class="form-section rf-import" id="rf-import-section">
+          <div class="form-section-title">🔗 Import from a link</div>
+          <div class="rf-import-row">
+            <input type="url" id="rf-import-url" placeholder="Paste a recipe link — https://…" autocomplete="off" inputmode="url">
+            <button type="button" class="action-btn primary" id="rf-import-btn">Import</button>
+          </div>
+          <div class="rf-import-status" id="rf-import-status"></div>
+        </div>
+
         <div class="form-section">
           <div class="form-section-title">Basic Info</div>
           <div class="form-row">
@@ -832,6 +841,7 @@
   <script src="js/week-menu.js"></script>
   <script src="js/side-dishes.js"></script>
   <script src="js/nutrition-estimator.js"></script>
+  <script src="js/recipe-import.js"></script>
   <script src="js/app.js"></script>
   <script src="js/firebase-sync.js"></script>
   <script>

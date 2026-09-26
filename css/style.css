@@ -7782,3 +7782,15 @@ body.dark .wm-intro { color: #aaa; }
   .wm-nums { white-space: normal; }
   .wm-slot { flex-basis: 70px; }
 }
+
+/* ── Import from a link (Add My Recipe) ── */
+.rf-import-row { display: flex; gap: 8px; align-items: stretch; }
+.rf-import-row input { flex: 1; min-width: 0; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: 10px;
+  font: inherit; background: var(--card, #fff); color: var(--text); }
+.rf-import-row input:focus { outline: none; border-color: var(--primary); }
+.rf-import-row .action-btn { flex: 0 0 auto; }
+.rf-import-row .action-btn:disabled { opacity: .6; cursor: progress; }
+.rf-import-status { font-size: 13px; line-height: 1.45; margin-top: 8px; color: var(--text-muted); }
+.rf-import-status:empty { display: none; }
+.rf-import-status.ok  { color: var(--primary-dark, var(--primary)); font-weight: 600; }
+.rf-import-status.err { color: var(--red); background: var(--red-bg); padding: 8px 10px; border-radius: 8px; }

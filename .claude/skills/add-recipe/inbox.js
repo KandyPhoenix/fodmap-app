@@ -4,9 +4,15 @@
 //
 //   node inbox.js           list what's queued
 //   node inbox.js --urls    just the URLs, one per line (easy to loop over)
-//   node inbox.js --clear   empty the queue (only after the recipes are IN)
+//   node inbox.js --recipe <url>   print the recipe data the bookmarklet saved
+//                                  for that clip (JSON-LD), if any — feed it to
+//                                  scrape-recipe.js --ld when the site blocks us
+//   node inbox.js --done <url>     take that one recipe off the queue (use this
+//                                  after each recipe is IN, not --clear)
+//   node inbox.js --clear          empty the whole queue (avoid — anything she
+//                                  clipped while you worked is lost too)
 //
-// Exit codes: 0 ok · 1 request failed · 5 queue empty.
+// Exit codes: 0 ok · 1 request failed · 5 queue empty / not found.
 
 const { execFileSync } = require('child_process');
 
@@ -46,6 +52,40 @@ if (doc.error && doc.error.status !== 'NOT_FOUND') {
 
 const values = (doc.fields && doc.fields.queue && doc.fields.queue.arrayValue
                 && doc.fields.queue.arrayValue.values) || [];
+const fieldsOf = v => (v.mapValue && v.mapValue.fields) || {};
+const urlOf = v => (fieldsOf(v).url || {}).stringValue || '';
+
+// --recipe <url>: the page's own recipe data, captured in her browser.
+const recipeAt = flags.indexOf('--recipe');
+if (recipeAt >= 0) {
+  const want = flags[recipeAt + 1];
+  const hit = values.find(v => urlOf(v) === want && fieldsOf(v).recipe);
+  if (!hit) { console.error('No saved recipe data for that URL — scrape the page instead.'); process.exit(5); }
+  console.log(fieldsOf(hit).recipe.stringValue);
+  process.exit(0);
+}
+
+// --done <url>: remove every queue entry for that URL, and nothing else.
+const doneAt = flags.indexOf('--done');
+if (doneAt >= 0) {
+  const want = flags[doneAt + 1];
+  const hits = values.filter(v => urlOf(v) === want);
+  if (!hits.length) { console.error('That URL is not in the queue.'); process.exit(5); }
+  const body = JSON.stringify({ writes: [{ transform: { document: DOC,
+    fieldTransforms: [{ fieldPath: 'queue', removeAllFromArray: { values: hits } }] } }] });
+  try {
+    const out = JSON.parse(execFileSync('curl', ['-sS', '--max-time', '25', '-X', 'POST',
+      '-H', 'Content-Type: application/json', '--data-binary', '@-',
+      `https://firestore.googleapis.com/v1/projects/wellness-tracker-127/databases/(default)/documents:commit?key=${KEY}`],
+      { input: body }).toString());
+    if (out.error) throw new Error(out.error.message);
+  } catch (e) {
+    console.error('Could not update the queue: ' + e.message);
+    process.exit(1);
+  }
+  console.log(`Removed ${hits.length} queue entr${hits.length === 1 ? 'y' : 'ies'} for ${want}`);
+  process.exit(0);
+}
 
 // Same URL clipped twice (two devices, or a re-tap) — keep the first.
 const seen = new Set();
@@ -55,6 +95,7 @@ const items = values.map(v => {
     url: f.url ? f.url.stringValue : '',
     title: f.title ? f.title.stringValue : '',
     addedAt: f.addedAt ? f.addedAt.stringValue : '',
+    hasRecipe: !!f.recipe,
   };
 }).filter(i => i.url && !seen.has(i.url) && seen.add(i.url));
 
@@ -74,6 +115,7 @@ console.log(`${items.length} recipe${items.length === 1 ? '' : 's'} queued` +
 items.forEach((i, n) => {
   console.log(`${String(n + 1).padStart(2)}. ${i.title || '(untitled)'}`);
   console.log(`    ${i.url}`);
-  if (i.addedAt) console.log(`    clipped ${i.addedAt.replace('T', ' ').slice(0, 16)} UTC`);
+  if (i.addedAt) console.log(`    clipped ${i.addedAt.replace('T', ' ').slice(0, 16)} UTC` +
+                             (i.hasRecipe ? '  · recipe data saved (inbox.js --recipe <url>)' : ''));
 });
-console.log('\nAdd them, then run:  node .claude/skills/add-recipe/inbox.js --clear');
+console.log('\nAfter each one is in, run:  node .claude/skills/add-recipe/inbox.js --done <url>');

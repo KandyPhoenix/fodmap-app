@@ -22,15 +22,30 @@ node .claude/skills/add-recipe/inbox.js          # list what's waiting
 node .claude/skills/add-recipe/inbox.js --urls   # just URLs, to loop over
 ```
 
-Work through the queue exactly as if she'd pasted each link. **Only once every
-recipe is added, verified and pushed:**
+Work through the queue exactly as if she'd pasted each link. Clips made with
+the current bookmarklet also carry the page's own recipe data (the listing says
+*recipe data saved*) — use it, it works even on sites that block us:
 
 ```bash
-node .claude/skills/add-recipe/inbox.js --clear
+node .claude/skills/add-recipe/inbox.js --recipe "<url>" > /tmp/ld.json
+node .claude/skills/add-recipe/scrape-recipe.js "<url>" --ld /tmp/ld.json
 ```
 
-Never clear it first — if the run fails partway, the queue is the only record
-of what she wanted. Exit code 5 means nothing is queued; say so and stop.
+**Once a recipe is added, verified and pushed, take just that one off:**
+
+```bash
+node .claude/skills/add-recipe/inbox.js --done "<url>"
+```
+
+Never use `--clear` — it deletes the whole queue, including anything she
+clipped while you were working. And never remove an item before it's in: the
+queue is the only record of what she wanted. Exit code 5 means nothing is
+queued; say so and stop.
+
+She can also add queued recipes herself: each item in `clip.html` has an
+**Add to my recipes** button, and the Add My Recipe form has an
+**Import from a link** box. Those save into her own recipes (synced), not
+`js/added-recipes.js`. Check her user recipes for a duplicate before adding.
 
 ## 1. Get the recipe
 
@@ -67,10 +82,17 @@ set. Say how many you found before you start.
 ### When the page won't load
 
 Allrecipes, Simply Recipes, Real Simple and other People Inc. sites return
-**402** to datacenter IPs; some others return **403**. This is the site
-blocking us, not a bug, and no retry will fix it.
+**402** to datacenter IPs; others (Budget Bytes, The Mediterranean Dish) return
+**403** to curl even from her home PC — bot protection, not a bug, and no retry
+will fix it.
 
-Say so plainly and offer the two ways forward:
+First try a real browser: open the page in the Browser pane, read the JSON-LD
+Recipe out of `script[type="application/ld+json"]` with javascript_tool, save it
+to a file, and run `scrape-recipe.js "<url>" --ld <file>`. Keep
+`recipeInstructions` as HowToStep objects — a bare list of strings gets split
+into sentences.
+
+If the browser can't get it either, say so plainly and offer the two ways forward:
 1. She pastes the ingredients and method in (best — real quantities), or
 2. You write a solid version from the dish name, clearly labelled as such.
 
@@ -144,16 +166,21 @@ her phone.
 node --check js/added-recipes.js
 ```
 
-Then load the app for real — a syntax check does not prove a recipe renders:
+Then load the app for real — a syntax check does not prove a recipe renders.
+
+**Test from a copy with sync switched off.** A fresh browser has no local
+data, so `js/firebase-sync.js` merges its defaults into her real Firestore doc
+and pushes them. Copy the repo (without `.git`) to a scratch folder, replace
+that copy's `js/firebase-sync.js` with a one-line stub, and serve the copy:
 
 ```bash
-python3 -m http.server 8899 &
+py -3.14 -m http.server 8899 --bind 127.0.0.1     # Windows; python3 elsewhere
 ```
 
-Drive it with Playwright (Chromium at `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`):
-open `http://localhost:8899/index.html`, click the **second** nav item to reach
-the recipes tab, type part of the dish name into the search box, click the
-card, and confirm ingredients, steps and the source link all render.
+Open `http://127.0.0.1:8899/index.html` in the Browser pane (unregister its
+service worker first if an older build is cached), click **Recipes**, type part
+of the dish name into the search box, click the card, and confirm ingredients,
+steps and the source link all render.
 
 Check for regressions in the loaded set:
 
@@ -181,6 +208,9 @@ size). Mention the recipe count so she can see it took.
 ## Reference
 
 - `scrape-recipe.js --json` dumps raw scraped data without app formatting.
+- All parsing (ingredient split, FODMAP flags, emoji/category) lives in
+  `js/recipe-import.js`, shared with the app's Import button — fix it there
+  and both get the fix.
 - The clipper queue lives in Firestore at `fodmap/inbox` (project
   `wellness-tracker-127`), separate from the app's own `fodmap/data` sync doc so
   a clip can never race the meal planner. `clip.html` writes it, `inbox.js`
