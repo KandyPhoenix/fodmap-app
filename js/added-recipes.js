@@ -961,7 +961,7 @@ const ADDED_RECIPES = [
           "Add the beans: Stir in the beans and cook for 5 minutes over high heat. At this point, taste and adjust the seasoning to your liking, then transfer the mixture to the oven and bake until thickened and the top layer turns a light golden brown, 20 to 30 minutes.",
           "Finish and serve: Remove and discard the bay leaf. Finish the dish with a drizzle of olive oil, a pinch of parsley, and a good sprinkle of feta. Serve with rustic bread."
       ],
-      "fodmapNote": "Not low-FODMAP as written — onion, garlic, a can of butter beans shared by four, and bread on the side. Use garlic-infused oil and green-onion tops for the onion and garlic, keep the beans to about 1/4 cup per serve (bulk it out with extra carrot), and serve with sourdough spelt or gluten-free bread. The tomatoes, herbs, spices and feta are fine."
+      "fodmapNote": "Not low-FODMAP as written — onion, garlic, a can of butter beans shared by four, and bread on the side. Use garlic-infused oil and green-onion tops for the onion and garlic, keep the beans to about 1/4 cup per serve (bulk it out with extra carrot), and serve with gluten-free bread (sourdough spelt is only moderate-FODMAP, so keep it to one slice). The tomatoes, herbs, spices and feta are fine."
   },
 
   {
