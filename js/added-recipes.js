@@ -715,6 +715,511 @@ const ADDED_RECIPES = [
       "fodmapNote": "Not low-FODMAP as written — two onions, six cloves of garlic, three stalks of celery, and 3 tablespoons of Cajun seasoning (store blends run on onion and garlic powder). For a gentler pot: garlic-infused oil and green-onion tops in place of the onion and garlic, an onion/garlic-free Cajun blend, and keep the celery and okra portions small. The rice, chicken, shrimp, sausage (check for garlic) and canned tomatoes are fine at normal serves; Worcestershire is low-FODMAP at this amount."
   },
 
+  {
+      "id": "fam-add-creole-white-beans-with-chicken",
+      "name": "Creole White Beans with Chicken",
+      "emoji": "🫘",
+      "category": "dinner",
+      "time": "4 hr 25 min",
+      "serves": 12,
+      "difficulty": "easy",
+      "tags": [
+          "added"
+      ],
+      "source": "https://www.budgetbytes.com/creole-white-beans-with-chicken/",
+      "added": "2026-09-26",
+      "ingredients": [
+          {
+              "qty": "1 lb.",
+              "item": "navy beans, dry"
+          },
+          {
+              "qty": "1 Tbsp",
+              "item": "olive oil"
+          },
+          {
+              "qty": "4 cloves",
+              "item": "garlic"
+          },
+          {
+              "qty": "1",
+              "item": "yellow onion"
+          },
+          {
+              "qty": "4 stalks",
+              "item": "celery"
+          },
+          {
+              "qty": "2",
+              "item": "green bell peppers"
+          },
+          {
+              "qty": "1",
+              "item": "red bell pepper"
+          },
+          {
+              "qty": "1/2 bunch",
+              "item": "fresh parsley"
+          },
+          {
+              "qty": "4",
+              "item": "chicken thighs, bone-in or boneless, skin removed"
+          },
+          {
+              "qty": "2 Tbsp",
+              "item": "Creole Seasoning"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "dried oregano"
+          },
+          {
+              "qty": "1/2 Tbsp",
+              "item": "smoked paprika"
+          },
+          {
+              "qty": "to taste",
+              "item": "freshly cracked pepper"
+          },
+          {
+              "qty": "6 cups",
+              "item": "water"
+          }
+      ],
+      "steps": [
+          "Place the beans in a large pot and cover with water. Soak the beans overnight in the refrigerator OR, place the beans in a large pot, cover with water, and bring to a boil over high heat. Boil for one minute, turn the heat off and let the beans sit, covered, for one hour. Drain the beans in a colander.",
+          "Mince the garlic and dice the onion, celery, and bell peppers. Pull the parsley leaves from the stems and give them a rough chop.",
+          "Add the olive oil, garlic, and onion to a large pot and sauté over medium heat until the onions begin to turn transparent (3-5 minutes). Add the celery and bell peppers and sauté a few minutes more, or just until they begin to soften.",
+          "Remove the skin from the chicken thighs (if they came with skin) and trim the excess fat if desired. Nestle the chicken thighs down into the sautéed vegetables.",
+          "Add the soaked beans, a handful of the parsley (the rest will be used later), Creole seasoning, oregano, smoked paprika, some cracked pepper, and six cups of water. Stir gently to distribute the spices, but not to disturb the thighs.",
+          "Cover the pot and bring it to a boil over high heat. Once it reaches a full boil, turn the heat down to low and let it simmer for two hours. Make sure the pot is simmering the whole time, increasing the heat slightly if needed to help it maintain a simmer.",
+          "After two hours, test the beans to make sure they are soft. Remove the chicken thighs and use two forks to shred the meat and remove the bones (if using bone-in thighs).",
+          "Use a large wooden spoon to smash the beans against the side of the pot to help the liquid thicken. Taste the beans and adjust the salt or Creole seasoning if desired. Return the shredded chicken to the pot and top with fresh parsley. Serve alone or over a bed of rice."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — a whole pound of navy beans, an onion, four cloves of garlic, four stalks of celery, and 2 tablespoons of Creole seasoning (store blends usually contain onion and garlic powder). For a gentler pot: garlic-infused oil and green-onion tops in place of the onion and garlic, an onion/garlic-free Creole blend, and swap most of the dried beans for canned, rinsed beans kept to about 1/4 cup per serve. The chicken, bell peppers, parsley and spices are fine at normal serves."
+  },
+
+  {
+      "id": "fam-add-za-atar-chicken-and-rice",
+      "name": "Za'atar Chicken and Rice",
+      "emoji": "🍗",
+      "category": "dinner",
+      "time": "45 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "added"
+      ],
+      "source": "https://www.realsimple.com/zaatar-chicken-and-rice-8774474",
+      "added": "2026-09-26",
+      "ingredients": [
+          {
+              "qty": "2 Tbsp.",
+              "item": "olive oil"
+          },
+          {
+              "qty": "4",
+              "item": "bone-in, skin-on chicken thighs"
+          },
+          {
+              "qty": "1/2 tsp.",
+              "item": "freshly ground black pepper"
+          },
+          {
+              "qty": "1 3/4 tsp.",
+              "item": "kosher salt, divided"
+          },
+          {
+              "qty": "1 Tbsp.",
+              "item": "finely chopped garlic, from about 3 cloves"
+          },
+          {
+              "qty": "1 cup",
+              "item": "jasmine rice, rinsed"
+          },
+          {
+              "qty": "4 Tbsp.",
+              "item": "toasted slivered almonds, divided"
+          },
+          {
+              "qty": "1 1/2 Tbsp.",
+              "item": "za’atar, divided"
+          },
+          {
+              "qty": "2 Tbsp.",
+              "item": "pomegranate arils"
+          },
+          {
+              "qty": "to taste",
+              "item": "Chopped fresh flat-leaf parsley, for garnish, optional"
+          },
+          {
+              "qty": "to taste",
+              "item": "Lemon wedges, for serving"
+          }
+      ],
+      "steps": [
+          "Preheat oven to 350°F with rack in top third position. Heat oil in a large, high-sided, oven-safe skillet over medium. Sprinkle chicken with pepper and 1 teaspoon salt. Place chicken, skin side down, in hot oil. Cook, undisturbed, until skin is golden brown and easily releases from skillet, 8 to 10 minutes. Flip; cook until bottom is lightly browned, 1 to 2 minutes. Transfer chicken to a plate.",
+          "Add garlic to skillet; cook, stirring constantly, until fragrant, about 30 seconds. Stir in 1 3/4 cups water, rice, 2 tablespoons almonds, 1 tablespoon za’atar, and remaining 3/4 teaspoon salt. Nestle chicken, skin side up, into rice mixture. Bring to a boil over high. Cover skillet with aluminum foil or an oven-safe lid.",
+          "Bake until rice is just tender and a thermometer inserted in thickest part of chicken reads 165°F, about 20 minutes. Remove skillet from oven and uncover. Increase oven temperature to broil. Sprinkle chicken with remaining 1/2 tablespoon za’atar. Broil until chicken is crisp, about 4 minutes.",
+          "Fluff rice with a fork. Top with pomegranate arils and remaining 2 tablespoons almonds. Garnish with parsley (if using) and serve with lemon wedges."
+      ],
+      "fodmapNote": "Nearly low-FODMAP — the only real issue is the tablespoon of chopped garlic. Cook the rice in garlic-infused oil instead and it's a good fit. Rice, chicken, za'atar, lemon and parsley are all fine; the almonds work out to about 1 tablespoon per serve, which is within the low-FODMAP limit, and 2 tablespoons of pomegranate arils spread across four plates is a small amount."
+  },
+
+  {
+      "id": "fam-add-gigantes-plaki-greek-style-baked-giant-beans",
+      "name": "Gigantes Plaki (Greek-Style Baked Giant Beans)",
+      "emoji": "🫘",
+      "category": "dinner",
+      "time": "40 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "added"
+      ],
+      "source": "https://www.themediterraneandish.com/gigantes-plaki-greek-giant-beans/",
+      "added": "2026-09-26",
+      "ingredients": [
+          {
+              "qty": "1/8 cup, plus more to finish",
+              "item": "extra-virgin olive oil"
+          },
+          {
+              "qty": "1/2 large",
+              "item": "onion, roughly chopped"
+          },
+          {
+              "qty": "1 large",
+              "item": "carrot, peeled and roughly chopped"
+          },
+          {
+              "qty": "1",
+              "item": "celery stalk, roughly chopped"
+          },
+          {
+              "qty": "2 large",
+              "item": "garlic cloves, minced"
+          },
+          {
+              "qty": "to taste",
+              "item": "Kosher salt"
+          },
+          {
+              "qty": "1 (15-ounce) can",
+              "item": "diced tomatoes, with juices"
+          },
+          {
+              "qty": "6 Tablespoons (3 fluid ounces)",
+              "item": "water"
+          },
+          {
+              "qty": "1/4 cup",
+              "item": "chopped flat-leaf parsley, plus more for garnish"
+          },
+          {
+              "qty": "1/2 Tablespoon",
+              "item": "fresh thyme leaves"
+          },
+          {
+              "qty": "3/4 teaspoon",
+              "item": "dried oregano"
+          },
+          {
+              "qty": "1/4 to 1/2 teaspoon",
+              "item": "red pepper flakes"
+          },
+          {
+              "qty": "1/4 teaspoon",
+              "item": "ground black pepper"
+          },
+          {
+              "qty": "1/8 to 1/4 teaspoon",
+              "item": "ground cinnamon"
+          },
+          {
+              "qty": "1",
+              "item": "dried bay leaf"
+          },
+          {
+              "qty": "1 (15-ounce) can",
+              "item": "butter beans, drained and rinsed (or the largest beans you can find)"
+          },
+          {
+              "qty": "to taste",
+              "item": "Creamy feta cheese, crumbled"
+          },
+          {
+              "qty": "to taste",
+              "item": "Rustic bread, for serving"
+          }
+      ],
+      "steps": [
+          "Preheat oven: Position a rack in the center of the oven and preheat the oven to 375°F.",
+          "Saute the vegetables: In a large oven-safe skillet set over medium-high heat, add 1/8 cup olive oil. Once the oil shimmers, add the onion, carrot, celery, and garlic. Season with a pinch of salt (about 1/4 teaspoon). Cook, stirring frequently, until the vegetables soften, 5-7 minutes.",
+          "Add the tomatoes and spices: Add the tomatoes with their juices and the water. Season with another pinch of salt (about 1/4 teaspoon). Add the parsley, thyme, oregano, red pepper flakes, black pepper, cinnamon, and bay leaf.",
+          "Add the beans: Stir in the beans and cook for 5 minutes over high heat. At this point, taste and adjust the seasoning to your liking, then transfer the mixture to the oven and bake until thickened and the top layer turns a light golden brown, 20 to 30 minutes.",
+          "Finish and serve: Remove and discard the bay leaf. Finish the dish with a drizzle of olive oil, a pinch of parsley, and a good sprinkle of feta. Serve with rustic bread."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — onion, garlic, a can of butter beans shared by four, and bread on the side. Use garlic-infused oil and green-onion tops for the onion and garlic, keep the beans to about 1/4 cup per serve (bulk it out with extra carrot), and serve with sourdough spelt or gluten-free bread. The tomatoes, herbs, spices and feta are fine."
+  },
+
+  {
+      "id": "fam-add-butter-beans-with-garlic-lemon-and-herbs",
+      "name": "Butter Beans with Garlic, Lemon and Herbs",
+      "emoji": "🫘",
+      "category": "sides",
+      "time": "12 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "added"
+      ],
+      "source": "https://www.themediterraneandish.com/butter-beans-with-garlic-lemon-and-herbs/",
+      "added": "2026-09-26",
+      "ingredients": [
+          {
+              "qty": "2 tablespoons",
+              "item": "extra-virgin olive oil"
+          },
+          {
+              "qty": "1/2 teaspoon",
+              "item": "red pepper flakes"
+          },
+          {
+              "qty": "1/2 teaspoon",
+              "item": "Urfa pepper, optional"
+          },
+          {
+              "qty": "1/2 teaspoon",
+              "item": "cumin"
+          },
+          {
+              "qty": "1/4 teaspoon",
+              "item": "smoked paprika"
+          },
+          {
+              "qty": "4",
+              "item": "garlic cloves, minced"
+          },
+          {
+              "qty": "to taste",
+              "item": "Kosher salt"
+          },
+          {
+              "qty": "to taste",
+              "item": "Black pepper"
+          },
+          {
+              "qty": "2 (15-ounce) cans",
+              "item": "butter beans, drained and rinsed"
+          },
+          {
+              "qty": "1 1/2 cups",
+              "item": "vegetable broth"
+          },
+          {
+              "qty": "2",
+              "item": "lemons, juiced"
+          },
+          {
+              "qty": "2",
+              "item": "green onions, trimmed and chopped (both white and green parts)"
+          },
+          {
+              "qty": "1/3 cup",
+              "item": "roughly chopped parsley"
+          },
+          {
+              "qty": "1/3 cup",
+              "item": "roughly chopped dill"
+          }
+      ],
+      "steps": [
+          "Toast the seasonings. Set a large nonstick skillet over medium-high heat. Add the olive oil. Once it begins to shimmer, add the red pepper flakes, urfa pepper, cumin, smoked paprika, minced garlic, and a big pinch of salt and pepper. Stir just until the garlic is fragrant, about 30 seconds to 1 minute (do not let the garlic brown or the oil will taste bitter).",
+          "Simmer the beans. Add the drained butter beans and the broth. Bring to a boil, then turn the heat to low and simmer until the beans are warm and the broth is just slightly thickened, 5 to 10 minutes.",
+          "Finish and serve. Turn off the heat and stir in the lemon juice, green onions, and fresh herbs. Serve warm, with your favorite crusty bread, rice, or tossed with cooked plain pasta."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — four cloves of garlic, two cans of butter beans, the white parts of the green onions, and regular vegetable broth (which is usually made with onion and garlic). Toast the spices in garlic-infused oil, use only the green onion tops, pick an onion/garlic-free broth, and keep the beans to about 1/4 cup per serve. Lemon, dill, parsley and the spices are all fine."
+  },
+
+  {
+      "id": "fam-add-crispy-zucchini-fritters",
+      "name": "Crispy Zucchini Fritters",
+      "emoji": "🥒",
+      "category": "sides",
+      "time": "",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "added"
+      ],
+      "source": "https://superage.com/crispy-zuccini-fritters-recipe/",
+      "added": "2026-09-26",
+      "ingredients": [
+          {
+              "qty": "1 pound",
+              "item": "medium zucchini (3-4), shredded"
+          },
+          {
+              "qty": "2",
+              "item": "eggs, beaten"
+          },
+          {
+              "qty": "½ medium",
+              "item": "red onion, chopped"
+          },
+          {
+              "qty": "2 cloves",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "2 tablespoons",
+              "item": "fresh dill, chopped"
+          },
+          {
+              "qty": "½ cup",
+              "item": "all-purpose flour"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "baking powder"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "salt, divided"
+          },
+          {
+              "qty": "¼ teaspoon",
+              "item": "ground black pepper"
+          },
+          {
+              "qty": "½ – ¾ cup",
+              "item": "crumbled feta cheese"
+          },
+          {
+              "qty": "1 tablespoon",
+              "item": "lemon zest, keep lemon quarters for garnish"
+          },
+          {
+              "qty": "4 tablespoons",
+              "item": "olive or avocado oil"
+          }
+      ],
+      "steps": [
+          "Place shredded zucchini in a colander and toss with ½ teaspoon salt. Set the colander in the sink while you prepare the rest of the batter.",
+          "In a bowl, combine the eggs, onion, garlic, dill, flour, baking powder, the remaining ½ teaspoon salt, and black pepper.",
+          "Transfer the zucchini to a cheesecloth or clean tea towel and squeeze out as much liquid as possible. Take your time with this step — it's essential for crisp fritters. By the end, the zucchini should have about half the original volume.",
+          "Add the drained zucchini to the batter and mix to combine. The batter should be fairly firm, not runny. If not, add a bit more flour.",
+          "Heat the oil in a large, heavy flat-bottom frying pan over medium-high heat. When hot (a drop of water should sizzle), spoon about 2 tablespoons of batter into the oil and flatten gently with a spatula. Cook as many fritters as fit comfortably without touching; don't crowd the pan.",
+          "Cook for 3-4 minutes, until light golden brown. Flip and cook for another 3-4 minutes.",
+          "Transfer cooked fritters to a plate lined with a double layer of paper towels. If making a large batch, keep the cooked fritters warm in a 250°F oven while you finish. Add more oil to the pan as needed, letting it heat up fully.",
+          "Serve hot, topped with tzatziki and a squeeze of fresh lemon juice. Variation: swap the dill and feta for oregano or thyme and shredded Parmesan, and leave out the lemon zest and juice."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — red onion, garlic and wheat flour. Swap in green-onion tops and a pinch of garlic-infused oil, and use a gluten-free flour blend. Zucchini is low-FODMAP at about 65 g (1/3 cup) — a pound split four ways is about 110 g each, so treat this as six servings or keep to a smaller plate. Feta, eggs, dill and lemon are all low-FODMAP. Serve with lactose-free yogurt rather than regular tzatziki, which has garlic."
+  },
+
+  {
+      "id": "fam-add-loaded-cowgirl-cookies",
+      "name": "Loaded Cowgirl Cookies",
+      "emoji": "🍰",
+      "category": "desserts",
+      "time": "1 hr 15 min",
+      "serves": 20,
+      "difficulty": "easy",
+      "tags": [
+          "added"
+      ],
+      "source": "https://jobzg.online/loaded-cowgirl-cookies/",
+      "added": "2026-09-26",
+      "ingredients": [
+          {
+              "qty": "1 1/2 cups",
+              "item": "all-purpose flour"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "baking soda"
+          },
+          {
+              "qty": "1/2 teaspoon",
+              "item": "baking powder"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "ground cinnamon"
+          },
+          {
+              "qty": "1/2 teaspoon",
+              "item": "salt"
+          },
+          {
+              "qty": "1 1/2 cups",
+              "item": "old-fashioned rolled oats"
+          },
+          {
+              "qty": "1 cup",
+              "item": "sweetened shredded coconut"
+          },
+          {
+              "qty": "1 cup",
+              "item": "chopped pecans"
+          },
+          {
+              "qty": "1 cup",
+              "item": "unsalted butter, softened"
+          },
+          {
+              "qty": "1 cup",
+              "item": "packed light brown sugar"
+          },
+          {
+              "qty": "1/2 cup",
+              "item": "granulated sugar"
+          },
+          {
+              "qty": "2 large",
+              "item": "eggs"
+          },
+          {
+              "qty": "2 teaspoons",
+              "item": "vanilla extract"
+          },
+          {
+              "qty": "1 1/2 cups",
+              "item": "semi-sweet chocolate chips"
+          },
+          {
+              "qty": "1/2 cup",
+              "item": "white chocolate chips, optional"
+          },
+          {
+              "qty": "1/2 cup",
+              "item": "chopped pecans, optional for topping"
+          },
+          {
+              "qty": "1/4 cup",
+              "item": "extra shredded coconut, optional for topping"
+          },
+          {
+              "qty": "to taste",
+              "item": "Flaky sea salt, optional"
+          }
+      ],
+      "steps": [
+          "Preheat the oven to 350°F. Spread the chopped pecans and coconut on a baking sheet and toast 5–7 minutes, stirring once halfway through. Watch closely, as coconut browns quickly. Let cool completely. (Optional, but it gives a deeper, nuttier flavor.)",
+          "In a medium bowl, whisk together the flour, baking soda, baking powder, cinnamon and salt. Stir in the rolled oats and set aside.",
+          "In a large bowl, beat the softened butter 1–2 minutes until creamy. Add the brown sugar and granulated sugar and beat another 2–3 minutes until lighter and fluffy.",
+          "Add the eggs one at a time, beating well after each, then add the vanilla and mix until smooth, scraping down the bowl as needed.",
+          "Gradually add the dry mixture on low speed, mixing just until the flour disappears. Don't overmix.",
+          "With a spatula, fold in the toasted coconut, toasted pecans, chocolate chips and white chocolate chips (if using). The dough should be thick and packed with mix-ins.",
+          "Cover and refrigerate the dough 30–60 minutes (up to 2 hours for even thicker cookies).",
+          "Preheat the oven to 350°F and line baking sheets with parchment. Scoop 2–3 tablespoons of dough per cookie (or 1/4 cup for oversized cookies), placing them at least 2–3 inches apart. Press a few extra chocolate chips, pecans and coconut onto the tops.",
+          "Bake 10–12 minutes for medium-large cookies or 12–14 minutes for very large ones, until the edges are golden but the centers still look slightly soft.",
+          "Sprinkle with a little flaky sea salt if desired. Cool on the sheet 5–10 minutes, then move to a wire rack to cool completely."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — wheat flour, plus white chocolate (lactose). Use a gluten-free flour blend and swap the white chips for more dark or semi-sweet chocolate. Oats, coconut, pecans, butter and brown sugar are fine in the amounts one cookie holds — keep it to one cookie at a time, since the oats and coconut add up."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
