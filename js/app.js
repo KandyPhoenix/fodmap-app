@@ -2755,17 +2755,25 @@
       return opts.some(o => o && haystack.includes(o));
     });
   }
-  // How well a search matches a recipe's title, for ordering results: the exact
-  // title first, then titles holding the whole phrase, then titles holding every
-  // word, then recipes that only match on ingredients.
+  // How well a search matches a recipe's title, for ordering results:
+  //   0 the exact title
+  //   1 titles that START with what you typed ("Rosemary Lamb Chops")
+  //   2 titles with a word that starts with it ("Angel's-Style Rosemary Bread")
+  //   3 titles containing it anywhere
+  //   4 titles holding every word you typed, in any order
+  //   5 recipes that only match on ingredients or tags
+  // Ties keep their usual order.
   function recipeSearchRank(r, query) {
     const q = normalizeSearchText(query);
-    const title = ' ' + normalizeSearchText(r.name) + ' ';
-    if (title.trim() === q) return 0;
-    if (title.includes(q)) return 1;
+    if (!q) return 5;
+    const t = normalizeSearchText(r.name);
+    if (t === q) return 0;
+    if (t.startsWith(q)) return 1;
+    if ((' ' + t).includes(' ' + q)) return 2;
+    if (t.includes(q)) return 3;
     const words = q.split(' ').filter(w => w && !SEARCH_FILLER.has(w));
-    if (words.length && words.every(w => searchWordForms(w).some(o => title.includes(o)))) return 2;
-    return 3;
+    if (words.length && words.every(w => searchWordForms(w).some(o => t.includes(o)))) return 4;
+    return 5;
   }
 
   // True if the recipe contains ANY of the foods the user wants to avoid.
@@ -10283,13 +10291,13 @@
         });
       }
     }
-    const boostersLast = pickerCategory !== 'all';
+    const boostersLast = pickerCategory !== 'all' || !!pickerSearch;
     if (!boostersLast) el.appendChild(boostersFrag);
 
     // ✨ Super Age quick-pick — curated to this slot's meal type.
     // Respects the picker category selector; falls back to the slot's meal type.
     const saCat = (pickerCategory !== 'all') ? pickerCategory : pendingCell?.mealType;
-    const superAgeList = saCat ? getAllRecipes().filter(r =>
+    const superAgeList = (saCat && !pickerSearch) ? getAllRecipes().filter(r =>
       (r.tags || []).map(t => t.toLowerCase()).includes('super-age') &&
       r.category === saCat &&
       (!pickerSearch || recipeMatchesSearch(r, pickerSearch))
@@ -10603,10 +10611,7 @@
       if (pickerSearch) return recipeMatchesSearch(r, pickerSearch);
       return true;
     });
-    if (pickerSearch) {
-      const rank = new Map(list.map(r => [r, recipeSearchRank(r, pickerSearch)]));
-      list.sort((a, b) => rank.get(a) - rank.get(b));
-    }
+
     // 🥗 Sides — shown under the Sides chip or when a search matches one. If the
     // slot already has a meal, a side is added next to it instead of replacing it.
     const slotKey = pendingCell?.dateKey ? `${pendingCell.dateKey}-${pendingCell.mealType}` : null;
@@ -10615,10 +10620,7 @@
     const sideList = (slotKey && (pickerCategory === 'sides' || pickerSearch))
       ? getAllRecipes().filter(r => isSideRecipe(r) && (!pickerSearch || recipeMatchesSearch(r, pickerSearch)))
       : [];
-    if (pickerSearch && sideList.length) {
-      const srank = new Map(sideList.map(r => [r, recipeSearchRank(r, pickerSearch)]));
-      sideList.sort((a, b) => srank.get(a) - srank.get(b));
-    }
+
     const sidesFrag = document.createDocumentFragment();
     if (sideList.length) {
       any = true;
@@ -10642,9 +10644,16 @@
         sidesFrag.appendChild(item);
       });
     }
-    // With a meal already planned, sides lead; otherwise they follow the recipes.
-    if (slotHasMain) el.appendChild(sidesFrag);
-    if (list.length) {
+    // While searching, recipes and sides form ONE list ranked by title (see
+    // recipeSearchRank). Otherwise sides keep their own group: first when the slot
+    // already has a meal, after the recipes when it doesn't.
+    const sideIds = new Set(pickerSearch ? sideList.map(r => r.id) : []);
+    const shown = pickerSearch
+      ? [...list, ...sideList].map((r, i) => ({ r, i, rank: recipeSearchRank(r, pickerSearch) }))
+          .sort((a, b) => a.rank - b.rank || a.i - b.i).map(e => e.r)
+      : list;
+    if (slotHasMain && !pickerSearch) el.appendChild(sidesFrag);
+    if (shown.length) {
 
 
 
@@ -10700,118 +10709,22 @@
 
 
 
-      list.forEach(r => {
-
-
-
-
-
-
-
+      shown.forEach(r => {
         any = true;
-
-
-
-
-
-
-
         const isUser = r.isCustom === true;
-
-
-
-
-
-
-
+        const asSide = sideIds.has(r.id);
         const item = document.createElement('div');
-
-
-
-
-
-
-
         item.className = 'picker-item';
-
-
-
-
-
-
-
         item.innerHTML = `
-
-
-
-
-
-
-
           <div class="picker-item-emoji">${r.emoji || '🍽️'}</div>
-
-
-
-
-
-
-
           <div class="picker-item-info">
-
-
-
-
-
-
-
             <div class="picker-item-name">${isUser ? '<span style="color:#ff7043;font-size:10px;font-weight:800;margin-right:4px">⭐ MINE</span>' : ''}${r.name}</div>
-
-
-
-
-
-
-
-            <div class="picker-item-meta">⏱ ${r.time || '—'} · Serves ${r.serves || '—'}</div>
-
-
-
-
-
-
-
+            <div class="picker-item-meta">${asSide ? (slotHasMain ? '🥗 Side · adds alongside your meal · ' : '🥗 Side · ') : ''}⏱ ${r.time || '—'} · Serves ${r.serves || '—'}</div>
           </div>`;
-
-
-
-
-
-
-
         item.addEventListener('click', () => {
-
-
-
-
-
-
-
           if (pendingCell?.dateKey) {
-
-
-
-
-
-
-
-            setSlotMain(`${pendingCell.dateKey}-${pendingCell.mealType}`, { type: 'recipe', id: r.id });
-
-
-
-
-
-
-
+            if (asSide) addSlotSide(slotKey, r.id);
+            else setSlotMain(`${pendingCell.dateKey}-${pendingCell.mealType}`, { type: 'recipe', id: r.id });
             saveMeals(); renderPlanner(); closeAll();
 
 
@@ -10884,7 +10797,7 @@
 
 
 
-    if (!slotHasMain) el.appendChild(sidesFrag);
+    if (!slotHasMain && !pickerSearch) el.appendChild(sidesFrag);
     // A category filter is active — boosters follow that category's recipes.
     if (boostersLast) el.appendChild(boostersFrag);
     el.scrollTop = 0;
