@@ -51,7 +51,9 @@
     try { arr = (typeof window[nm] !== 'undefined') ? window[nm] : eval('typeof ' + nm + ' !== "undefined" ? ' + nm + ' : undefined'); } catch (e) { arr = undefined; }
     if (!Array.isArray(arr)) return;
     arr.forEach(function (r) {
-      if (isSide(r)) {
+      // Anything filed under the "sides" category is a side, whatever its name —
+      // including curated collections the name-based classifier skips.
+      if ((r && r.category === 'sides') || isSide(r)) {
         window.SIDE_DISH_IDS.add(r.id);
         if (!Array.isArray(r.tags)) r.tags = [];
         if (r.tags.map(function (t) { return String(t).toLowerCase(); }).indexOf('side') === -1) {

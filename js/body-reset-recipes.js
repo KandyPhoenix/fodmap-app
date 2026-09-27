@@ -546,7 +546,7 @@ const BODY_RESET_RECIPES = [
     id: 'br-d7-lunch',
     name: 'Sunday Roast',
     emoji: '🍖',
-    category: 'lunch',
+    category: 'dinner',
     time: '45 min',
     serves: 2,
     difficulty: 'easy',
