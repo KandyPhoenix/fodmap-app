@@ -391,7 +391,7 @@ const FAMILY_TYPED = [
     "id": "fam-t-tartar-sauce",
     "name": "Tartar Sauce",
     "emoji": "🥫",
-    "category": "dinner",
+    "category": "sides",
     "time": "15 min",
     "serves": 8,
     "difficulty": "easy",

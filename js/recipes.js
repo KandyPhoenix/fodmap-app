@@ -12,6 +12,8 @@ const RECIPE_CATEGORIES = [
 
   { id: 'desserts',  label: 'Desserts',     emoji: '🍓' },
 
+  { id: 'drinks',    label: 'Drinks',       emoji: '🍹' },
+
 ];
 
 

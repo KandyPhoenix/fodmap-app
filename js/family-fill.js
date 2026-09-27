@@ -824,7 +824,7 @@ const FAMILY_FILL = {
   'fam-c-3-new-ways-to-drink-your-hot-cocoa': {
     name: 'Hot Cocoa, Three Ways',
     emoji: '☕',
-    category: 'desserts',
+    category: 'drinks',
     time: '15 min',
     serves: 4,
     ingredients: [
