@@ -1459,6 +1459,143 @@ const ADDED_RECIPES = [
       ],
       "fodmapNote": "Copycat, not Angel's actual recipe: Angel's has never published its bread recipe. This version came from a web search summary Kandy saved; it's a softer, fluffier cousin of the Angel's-Style Rosemary Bread card, topped before the second rise and served with oil and balsamic instead of garlic oil. FODMAP: not low-FODMAP as written — wheat flour (fructans). Balsamic is low-FODMAP only in small amounts (about 1 tbsp). A gluten-free bread flour blend with xanthan gum works but bakes up denser."
   },
+  {
+      "id": "fam-add-angels-house-bruschetta-feta-copycat",
+      "name": "Angels House Bruschetta with Feta (Copycat)",
+      "emoji": "🍅",
+      "category": "snacks",
+      "time": "40 min",
+      "serves": 6,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "appetizer",
+          "copycat",
+          "italian",
+          "vegetarian"
+      ],
+      "source": "http://places.singleplatform.com/angels-in-the-park/menu",
+      "added": "2026-09-28",
+      "ingredients": [
+          {
+              "qty": "4 large",
+              "item": "Roma tomatoes, finely diced"
+          },
+          {
+              "qty": "2 cloves",
+              "item": "garlic, finely minced"
+          },
+          {
+              "qty": "1/4 cup",
+              "item": "fresh basil leaves, thinly sliced or torn"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "extra-virgin olive oil, plus more for brushing the bread"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "good-quality balsamic vinegar"
+          },
+          {
+              "qty": "1/2 tsp",
+              "item": "kosher salt"
+          },
+          {
+              "qty": "1/4 tsp",
+              "item": "freshly cracked black pepper"
+          },
+          {
+              "qty": "1/3 cup",
+              "item": "feta cheese, crumbled"
+          },
+          {
+              "qty": "1",
+              "item": "crusty Italian baguette or loaf (or homemade rosemary bread), sliced into 1/2-inch rounds"
+          }
+      ],
+      "steps": [
+          "Marinate the tomatoes: in a medium bowl, gently toss the tomatoes, garlic, basil, olive oil, balsamic, salt and pepper. Let sit at room temperature at least 20 minutes so the juices pool and the flavors blend.",
+          "Toast the bread: heat the oven to 400°F (205°C) or a grill pan over medium-high heat. Lightly brush both sides of the bread slices with olive oil and bake or grill 5–7 minutes, until golden and crisp at the edges.",
+          "Assemble: use a slotted spoon to pile the tomato mixture onto each toast.",
+          "Sprinkle the crumbled feta evenly over the tomatoes right before serving."
+      ],
+      "fodmapNote": "Copycat, not the restaurant's actual recipe. The dish is on the menu of Angels in the Park (211 Fountain St, Hot Springs) as listed on SinglePlatform; this version came from a web search summary Kandy saved, and Angels has not published its recipes. FODMAP: not low-FODMAP as written — raw garlic and wheat bread. Swap the garlic for 1–2 tbsp garlic-infused olive oil (fructans don't carry into oil) and use gluten-free or sourdough bread. Tomatoes, basil and feta are low-FODMAP in normal portions, and 1 tbsp balsamic spread across the batch stays within Monash's low-FODMAP serving."
+  },
+  {
+      "id": "fam-add-angels-fettuccine-alfredo-con-pollo-copycat",
+      "name": "Angels Fettuccine Alfredo con Pollo (Copycat)",
+      "emoji": "🍝",
+      "category": "dinner",
+      "time": "30 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "pasta",
+          "copycat",
+          "italian",
+          "chicken"
+      ],
+      "source": "http://places.singleplatform.com/angels-in-the-park/menu",
+      "added": "2026-09-28",
+      "ingredients": [
+          {
+              "qty": "2 large",
+              "item": "boneless, skinless chicken breasts"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "olive oil"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "Italian seasoning"
+          },
+          {
+              "qty": "to taste",
+              "item": "garlic powder, salt and black pepper, for the chicken"
+          },
+          {
+              "qty": "1 lb",
+              "item": "fettuccine"
+          },
+          {
+              "qty": "1/2 cup",
+              "item": "unsalted butter (1 stick)"
+          },
+          {
+              "qty": "2 cups",
+              "item": "heavy whipping cream"
+          },
+          {
+              "qty": "2 cloves",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "1 1/2 cups",
+              "item": "freshly grated Parmesan cheese, plus extra for serving"
+          },
+          {
+              "qty": "to taste",
+              "item": "salt and freshly cracked black pepper, for the sauce"
+          },
+          {
+              "qty": "for garnish",
+              "item": "fresh parsley, chopped"
+          }
+      ],
+      "steps": [
+          "Cook the fettuccine in a large pot of well-salted boiling water until al dente. Reserve about 1/2 cup pasta water, then drain.",
+          "Pat the chicken dry and season both sides with Italian seasoning, garlic powder, salt and pepper. Heat the olive oil in a large skillet over medium-high heat and cook 6–8 minutes per side, until 165°F inside. Rest 5 minutes, then slice crosswise into thin strips.",
+          "Lower the skillet to medium. Melt the butter, add the garlic and cook about 1 minute until fragrant — don't let it brown.",
+          "Pour in the cream and bring to a very gentle simmer. Cook 3–4 minutes, stirring often, until slightly reduced and thickened.",
+          "Turn the heat to low and whisk in the Parmesan a handful at a time until melted and smooth. Season with a pinch of salt and plenty of black pepper.",
+          "Add the fettuccine to the skillet and toss with tongs until coated. Thin with a splash of the reserved pasta water if the sauce is too thick.",
+          "Divide among shallow bowls, top with the sliced chicken, and garnish with parsley and extra Parmesan."
+      ],
+      "fodmapNote": "Copycat, not the restaurant's actual recipe. The dish is on the menu of Angels in the Park (211 Fountain St, Hot Springs) as listed on SinglePlatform; this version came from a web search summary Kandy saved, and Angels has not published its recipes. The menu lists it as \"Fettuccini Alfredo with chicken or shrimp\" — sliced shrimp works in place of the chicken. FODMAP: not low-FODMAP as written — wheat pasta, fresh garlic and garlic powder, and lactose in the cream. For a gentler version use gluten-free fettuccine, use 1 tbsp garlic-infused oil in place of the minced garlic, skip the garlic powder, and swap in lactose-free cream. Parmesan and butter are naturally very low in lactose."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
