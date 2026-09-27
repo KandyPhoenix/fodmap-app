@@ -583,6 +583,37 @@
 
 
 
+  // Duplicate recipes that were merged into one copy (Sept 2026). Saved meals and
+  // favorites may still hold an old id, so both loaders map it to the copy that stayed.
+  const RECIPE_ALIASES = {
+    'fam-c-greek-salad-dressing': 'fam-greek-salad-dressing',
+    'fam-c-one-skillet-cheesy-chili-mac': 'fam-chili-mac',
+    'fam-c-best-white-chicken-chili-recipe---how-to': 'fam-delish-white-chicken-chili',
+    'fam-c-air-fryer-greek-chicken-and-veggies': 'fam-air-fryer-greek-chicken',
+    'fam-x-goat-cheese-pasta': 'fam-goat-cheese-pasta',
+    'fam-c-tuscan-tortellini-recipe-easy-skillet-pr': 'fam-tuscan-tortellini',
+    'fam-x-idea-salmon-fillets-garlic-orzo-recipe': 'fam-salmon-garlic-orzo',
+    'fam-x-cod-provencal-recipe-the-mediterranean-dish': 'fam-cod-provencal',
+    'fam-c-sous-vide-teriyaki-salmon-easy-freezer-m': 'fam-sous-vide-teriyaki-salmon',
+    'fam-x-easy-balsamic-chicken-recipe-best-marinade-the-med': 'fam-c-easy-balsamic-chicken-recipe',
+    'fam-x-cranberry-orange-cream-scones-step-by-step-photos-': 'fam-c-cranberry-orange-cream-scones---step-by',
+    'fam-c-chocolate-chip-pumpkin-pound-cake-with-c': 'fam-c-carlsbad-cravings',
+    'fam-x-chocolate-chip-pumpkin-pound-cake-with-cinnamon-pu': 'fam-c-carlsbad-cravings',
+    'fam-x-the-ultimate-healthy-blueberry-scones-step-by-step': 'fam-c-the-ultimate-healthy-blueberry-scones',
+    'fam-c-crawfish-etouffee---louisianas-best-phot': 'fam-c-print-crawfish-etouffee---louisianas-bes',
+    'fam-x-italian-style-chicken-peppers-recipe-taste-of-home': 'fam-c-italian-style-chicken-peppers',
+    'fam-x-mediterranean-baked-fish-recipe-with-tomatoes-and-': 'fam-c-mediterranean-baked-fish-recipe-with-tom',
+    'fam-x-pumpkin-pie': 'fam-x-easy-pumpkin-pie',
+    'fam-mob-aldi-chicken-quinoa-salad': 'fam-mob-chicken-quinoa-salad-lunch',
+    'fam-x-chaufa': 'fam-x-chaufa-chicken-fried-rice',
+    'fam-x-shrimp-and-sausage-stew-2': 'fam-x-cajun-shrimp-sausage-stew',
+    'fam-x-animal-style-smashburger-there-were-good': 'fam-animal-style-smashburger',
+    'fam-x-five-stars-chef-john-s-chicken-lazone-recipe': 'fam-chicken-lazone',
+    'fam-x-cheeseburger-macaroni-30-minute-thursday-a-video-': 'fam-c-cheeseburger-macaroni-30-minute-thursday',
+    'fam-x-sheet-pan-gnocchi-the-mediterranean-dish': 'fam-sheet-pan-gnocchi',
+    'fam-x-hard-cooked-eggs-in-the-oven': 'fam-c-hard-cooked-eggs-in-the-oven',
+  };
+  function resolveRecipeId(id) { return RECIPE_ALIASES[id] || id; }
   let meals = loadMeals();
 
 
@@ -2454,13 +2485,10 @@
 
 
   function getFavorites() {
-
-
-
-    try { return JSON.parse(localStorage.getItem('fodmap-favorites') || '[]'); } catch(e) { return []; }
-
-
-
+    let list;
+    try { list = JSON.parse(localStorage.getItem('fodmap-favorites') || '[]'); } catch(e) { return []; }
+    if (!Array.isArray(list)) return [];
+    return [...new Set(list.map(resolveRecipeId))];
   }
 
 
@@ -2662,26 +2690,56 @@
             'oregano', 'sage', 'mint', 'dill', 'chive', 'tarragon']
   };
 
-  // Expand a raw search string into all the terms it should match. The
-  // original query is always included; each recognised whole word adds
-  // its synonym list too.
-  function expandSearchTerms(query) {
-    const q = (query || '').trim().toLowerCase();
-    if (!q) return [];
-    const terms = [q];
-    q.split(/[\s,]+/).forEach(word => {
-      const syns = SEARCH_SYNONYMS[word];
-      if (syns) syns.forEach(s => { if (!terms.includes(s)) terms.push(s); });
-    });
-    return terms;
+  // Lowercase, strip accents (crème → creme), "&" → "and", drop apostrophes
+  // (shepherd's → shepherds) and turn other punctuation into spaces.
+  function normalizeSearchText(s) {
+    return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/&/g, ' and ').replace(/['’‘`]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
   }
-
-  // True if a recipe matches a search query, allowing synonym matches
-  // (e.g. "fish" finds a salmon recipe). Falls back to the query itself.
+  // A search word plus its singular forms, so "potatoes" also finds "potato",
+  // "berries" finds "berry" and "dishes" finds "dish".
+  function searchWordForms(w) {
+    const forms = [w];
+    if (w.length > 4 && w.endsWith('ies')) forms.push(w.slice(0, -3) + 'y');
+    if (w.length > 3 && w.endsWith('es')) forms.push(w.slice(0, -2));
+    if (w.length > 3 && w.endsWith('s') && !w.endsWith('ss')) forms.push(w.slice(0, -1));
+    return forms;
+  }
+  const SEARCH_FILLER = new Set(['and', 'with', 'the', 'a', 'an', 'of', 'in', 'on', 'or', 'for', 'to']);
+  // Searchable text for a recipe: its title, category, tags and every ingredient
+  // (amount and name).
+  function recipeSearchHaystack(r) {
+    return ' ' + normalizeSearchText([r.name, r.category, (r.tags || []).join(' '),
+      (r.ingredients || []).map(i => (i.qty || '') + ' ' + (i.item || '')).join(' ')].join(' ')) + ' ';
+  }
+  // True if a recipe matches a search query. Matches the whole phrase, a synonym
+  // ("fish" finds salmon), or — for several words — every word somewhere in the
+  // title or ingredients, in any order ("chicken rice" finds "Chicken and Rice"
+  // and any recipe with both). Accents, "&" and apostrophes don't matter.
   function recipeMatchesSearch(r, query) {
-    const haystack = (r.name + ' ' + r.category + ' ' + (r.tags || []).join(' ') + ' ' +
-      (r.ingredients || []).map(i => i.item || '').join(' ')).toLowerCase();
-    return expandSearchTerms(query).some(term => haystack.includes(term));
+    const q = normalizeSearchText(query);
+    if (!q) return true;
+    const haystack = recipeSearchHaystack(r);
+    if (haystack.includes(q)) return true;
+    const words = q.split(' ').filter(w => w && !SEARCH_FILLER.has(w));
+    if (!words.length) return false;
+    return words.every(w => {
+      const opts = searchWordForms(w);
+      (SEARCH_SYNONYMS[w] || []).forEach(s => opts.push(normalizeSearchText(s)));
+      return opts.some(o => o && haystack.includes(o));
+    });
+  }
+  // How well a search matches a recipe's title, for ordering results: the exact
+  // title first, then titles holding the whole phrase, then titles holding every
+  // word, then recipes that only match on ingredients.
+  function recipeSearchRank(r, query) {
+    const q = normalizeSearchText(query);
+    const title = ' ' + normalizeSearchText(r.name) + ' ';
+    if (title.trim() === q) return 0;
+    if (title.includes(q)) return 1;
+    const words = q.split(' ').filter(w => w && !SEARCH_FILLER.has(w));
+    if (words.length && words.every(w => searchWordForms(w).some(o => title.includes(o)))) return 2;
+    return 3;
   }
 
   // True if the recipe contains ANY of the foods the user wants to avoid.
@@ -2850,7 +2908,10 @@
 
 
 
-      if (!recipeMatchesFilter(r, recipeFilter)) return false;
+      // Side dishes normally live only under the Sides filter, but a search from
+      // "All" should find every recipe — sides included.
+      const searchingAll = !!searchQuery && recipeFilter === 'all';
+      if (!recipeMatchesFilter(r, recipeFilter) && !(searchingAll && recipeMatchesFilter(r, 'sides'))) return false;
 
 
 
@@ -2890,6 +2951,11 @@
     // The "Newest" filter shows the most recently added recipes first.
     if (recipeFilter === 'newest') {
       list.sort((a, b) => recipeAddedTime(b) - recipeAddedTime(a));
+    }
+    // While searching, recipes whose title matches come before ingredient-only matches.
+    if (searchQuery) {
+      const rank = new Map(list.map(r => [r, recipeSearchRank(r, searchQuery)]));
+      list.sort((a, b) => rank.get(a) - rank.get(b));
     }
 
 
@@ -17472,21 +17538,12 @@
 
 
   function loadMeals() {
-
-
-
-
-
-
-
-    try { return JSON.parse(localStorage.getItem('fodmap-meals') || '{}'); } catch(e) { return {}; }
-
-
-
-
-
-
-
+    let m;
+    try { m = JSON.parse(localStorage.getItem('fodmap-meals') || '{}'); } catch(e) { return {}; }
+    if (m && typeof m === 'object') {
+      Object.values(m).forEach(meal => { if (meal && meal.type === 'recipe') meal.id = resolveRecipeId(meal.id); });
+    }
+    return m || {};
   }
 
 
