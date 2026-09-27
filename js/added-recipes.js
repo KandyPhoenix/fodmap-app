@@ -1220,6 +1220,80 @@ const ADDED_RECIPES = [
       ],
       "fodmapNote": "Not low-FODMAP as written — wheat flour, plus white chocolate (lactose). Use a gluten-free flour blend and swap the white chips for more dark or semi-sweet chocolate. Oats, coconut, pecans, butter and brown sugar are fine in the amounts one cookie holds — keep it to one cookie at a time, since the oats and coconut add up."
   },
+  {
+      "id": "fam-add-chicken-bacon-ranch-cheesy-tortellini-soup",
+      "name": "Chicken Bacon Ranch Cheesy Tortellini Soup",
+      "emoji": "🍲",
+      "category": "dinner",
+      "time": "45 min",
+      "serves": 6,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "soup"
+      ],
+      "source": "https://www.youtube.com/shorts/VyoLXM_Bh1w",
+      "added": "2026-09-27",
+      "ingredients": [
+          {
+              "qty": "12 oz",
+              "item": "Bacon, chopped"
+          },
+          {
+              "qty": "2",
+              "item": "Chicken breasts, cut into small cubes"
+          },
+          {
+              "qty": "to taste",
+              "item": "Ranch seasoning, Slap Ya Mama seasoning and smoked paprika (for the chicken and the soup)"
+          },
+          {
+              "qty": "3 tbsp",
+              "item": "Butter (plus 1 tbsp more if under 1–2 tbsp bacon grease is left)"
+          },
+          {
+              "qty": "1 small",
+              "item": "Yellow onion, diced"
+          },
+          {
+              "qty": "1/4 cup",
+              "item": "All-purpose flour"
+          },
+          {
+              "qty": "2 cups",
+              "item": "Milk"
+          },
+          {
+              "qty": "2 cups",
+              "item": "Chicken broth"
+          },
+          {
+              "qty": "1–2 cups",
+              "item": "Broccoli, finely chopped"
+          },
+          {
+              "qty": "2–3 cups",
+              "item": "Cheddar cheese, freshly shredded"
+          },
+          {
+              "qty": "about 2 cups",
+              "item": "Frozen tortellini"
+          }
+      ],
+      "steps": [
+          "Cook the chopped bacon in a pot over low to medium heat until crisp. Remove it and leave the bacon grease in the pot.",
+          "While the bacon cooks, cube the chicken and season it with ranch seasoning, Slap Ya Mama and smoked paprika (or however you like).",
+          "Cook the chicken in the bacon grease over medium-high heat, 2–3 minutes per side, then remove it from the pot.",
+          "You want 1–2 tablespoons of grease left; if not, add another tablespoon of butter. Add 3 tablespoons of butter. When it's nearly melted, add the diced onion and cook until translucent.",
+          "Add 1/4 cup flour and whisk about 2 minutes until lightly browned.",
+          "Slowly whisk in 2 cups milk, then 2 cups chicken broth. Season again with the same seasonings.",
+          "Add the finely chopped broccoli. Bring to a boil, then simmer about 15 minutes.",
+          "Stir in 2–3 cups shredded cheddar until smooth.",
+          "Add about 2 cups frozen tortellini and cook a few minutes until done.",
+          "Return the chicken to the pot and top with some of the bacon. Serve with more bacon on top."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — onion, regular milk (lactose), wheat tortellini, ranch seasoning (onion and garlic powder), store-bought chicken broth (usually onion/garlic), and Slap Ya Mama, which lists garlic — check your label. To adapt: skip the onion (use garlic-infused oil or green onion tops), lactose-free milk, a low-FODMAP broth, gluten-free flour, and your own herb blend in place of ranch. Cheddar and bacon are fine. Broccoli heads are low-FODMAP in small portions (about 3/4 cup); the stalks are higher, so use florets."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
