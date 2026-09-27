@@ -1294,6 +1294,97 @@ const ADDED_RECIPES = [
       ],
       "fodmapNote": "Not low-FODMAP as written — onion, regular milk (lactose), wheat tortellini, ranch seasoning (onion and garlic powder), store-bought chicken broth (usually onion/garlic), and Slap Ya Mama, which lists garlic — check your label. To adapt: skip the onion (use garlic-infused oil or green onion tops), lactose-free milk, a low-FODMAP broth, gluten-free flour, and your own herb blend in place of ranch. Cheddar and bacon are fine. Broccoli heads are low-FODMAP in small portions (about 3/4 cup); the stalks are higher, so use florets."
   },
+  {
+      "id": "fam-add-angels-style-rosemary-bread-copycat",
+      "name": "Angel's-Style Rosemary Bread with Garlic Dipping Oil (Copycat)",
+      "emoji": "🍞",
+      "category": "sides",
+      "time": "2 hr 15 min",
+      "serves": 8,
+      "difficulty": "medium",
+      "tags": [
+          "added",
+          "side",
+          "bread",
+          "copycat",
+          "italian"
+      ],
+      "added": "2026-09-28",
+      "ingredients": [
+          {
+              "qty": "1 cup",
+              "item": "warm water (105–110°F)"
+          },
+          {
+              "qty": "2 1/4 tsp",
+              "item": "active dry yeast (1 packet)"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "sugar"
+          },
+          {
+              "qty": "3 tbsp",
+              "item": "extra-virgin olive oil, for the dough"
+          },
+          {
+              "qty": "1 1/2 tsp",
+              "item": "salt"
+          },
+          {
+              "qty": "1 1/2 tbsp",
+              "item": "fresh rosemary, finely chopped, for the dough"
+          },
+          {
+              "qty": "2 3/4–3 cups",
+              "item": "bread flour or all-purpose flour"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "olive oil or melted butter, for brushing"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "fresh rosemary, chopped, for the tops"
+          },
+          {
+              "qty": "to taste",
+              "item": "flaky sea salt, for the tops"
+          },
+          {
+              "qty": "1/2 cup",
+              "item": "extra-virgin olive oil, for the dipping oil"
+          },
+          {
+              "qty": "2 cloves",
+              "item": "garlic, finely minced, for the dipping oil"
+          },
+          {
+              "qty": "1/2 tsp",
+              "item": "fresh rosemary, very finely chopped, for the dipping oil"
+          },
+          {
+              "qty": "1 pinch",
+              "item": "red pepper flakes, for the dipping oil"
+          },
+          {
+              "qty": "to taste",
+              "item": "salt, cracked black pepper and grated Parmesan, for the dipping oil"
+          }
+      ],
+      "steps": [
+          "Stir the warm water, yeast and sugar together in a large bowl. Let it sit 5–10 minutes until foamy.",
+          "Stir in 3 tbsp olive oil, the salt and 1 1/2 tbsp chopped rosemary. Add 2 1/2 cups flour and mix into a shaggy dough.",
+          "Knead 6–8 minutes (by hand or with a dough hook), adding the rest of the flour a little at a time, until smooth and just slightly tacky.",
+          "Place in an oiled bowl, cover, and let rise in a warm spot about 1 hour, until doubled.",
+          "Punch down and divide in half. Shape each half into a round loaf and set on a parchment-lined baking sheet. Cover and let rise 30–40 minutes until puffy.",
+          "Heat the oven to 400°F. Brush the loaves with olive oil or melted butter, sprinkle with the chopped rosemary and flaky salt, and cut a shallow X in the top of each.",
+          "Bake 20–25 minutes, until deep golden and hollow-sounding when tapped underneath (about 190–200°F inside).",
+          "While it bakes, make the dipping oil: stir the olive oil, garlic, rosemary, red pepper flakes, salt and pepper in a shallow dish. Let it sit at least 15 minutes. Top with Parmesan just before serving.",
+          "Brush the hot loaves once more with oil and serve warm, torn, with the dipping oil."
+      ],
+      "fodmapNote": "Copycat, not Angel's actual recipe: the restaurant's recipe isn't published, so this is a classic Italian-restaurant rosemary loaf with the garlic dipping oil that online descriptions of Angel's mention. Adjust after you taste it. FODMAP: not low-FODMAP as written — wheat flour (fructans) and raw garlic in the dipping oil. For a gentler version, swap the minced garlic for 2 tbsp garlic-infused olive oil (fructans don't dissolve into oil), and keep to a small piece of bread, or use a gluten-free bread flour blend with xanthan gum (it will be denser)."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
