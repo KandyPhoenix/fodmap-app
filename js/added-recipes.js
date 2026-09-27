@@ -1669,6 +1669,107 @@ const ADDED_RECIPES = [
       ],
       "fodmapNote": "For the home fries we had at The Avenue, the restaurant inside The Waters hotel on Central Ave in Hot Springs. Copycat from a web search summary Kandy saved — not The Avenue's actual recipe, which isn't published. FODMAP: not low-FODMAP as written — garlic powder and onion powder are high in fructans. For a low-FODMAP version, leave both out, fry in 1 tbsp garlic-infused oil plus the butter, and finish with the green tops of green onions or chives. Potatoes, paprika and butter are low-FODMAP."
   },
+  {
+      "id": "fam-add-avenue-mediterranean-eggs-benny-copycat",
+      "name": "The Avenue's Mediterranean Eggs Benny (Copycat)",
+      "emoji": "🍳",
+      "category": "breakfast",
+      "time": "30 min",
+      "serves": 2,
+      "difficulty": "medium",
+      "tags": [
+          "added",
+          "brunch",
+          "eggs benedict",
+          "vegetarian",
+          "copycat",
+          "the avenue",
+          "waters hotel",
+          "hot springs"
+      ],
+      "source": "https://thewatershs.com/brunch-menu/",
+      "added": "2026-09-28",
+      "ingredients": [
+          {
+              "qty": "Mediterranean layer",
+              "item": "—"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "olive oil"
+          },
+          {
+              "qty": "2 cups",
+              "item": "fresh baby spinach"
+          },
+          {
+              "qty": "1 cup",
+              "item": "canned artichoke hearts, drained and chopped"
+          },
+          {
+              "qty": "1/2 cup",
+              "item": "Roma or heirloom tomatoes, seeded and diced"
+          },
+          {
+              "qty": "2 cloves",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "to taste",
+              "item": "salt and black pepper"
+          },
+          {
+              "qty": "Base and topping",
+              "item": "—"
+          },
+          {
+              "qty": "2",
+              "item": "large buttermilk biscuits, split (how The Avenue serves it) — or 2 English muffins, split"
+          },
+          {
+              "qty": "4 large",
+              "item": "fresh eggs, for poaching"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "white vinegar, for the poaching water"
+          },
+          {
+              "qty": "1/4 cup",
+              "item": "Parmesan cheese, freshly shaved"
+          },
+          {
+              "qty": "Blender hollandaise",
+              "item": "—"
+          },
+          {
+              "qty": "3",
+              "item": "egg yolks"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "lemon juice"
+          },
+          {
+              "qty": "1 pinch",
+              "item": "cayenne pepper or salt"
+          },
+          {
+              "qty": "1/2 cup",
+              "item": "unsalted butter (1 stick), melted and very hot"
+          }
+      ],
+      "steps": [
+          "Hollandaise: blend the egg yolks, lemon juice and a pinch of salt or cayenne on high for 5 seconds.",
+          "Turn the blender to its lowest speed and drizzle in the very hot melted butter in a thin, steady stream until thick and creamy. Keep it warm by setting the blender jar in a shallow bowl of warm water.",
+          "Mediterranean layer: heat the olive oil in a skillet over medium heat. Add the garlic, artichokes and tomatoes and sauté about 3 minutes until warm and fragrant.",
+          "Add the spinach and cook 1–2 minutes until just wilted. Season lightly with salt and pepper and take off the heat.",
+          "Poach the eggs: bring about 3 inches of water and the vinegar to a very gentle simmer (not a boil). Crack one egg into a ramekin, swirl the water into a gentle whirlpool and slide the egg into the center. Poach 3–4 minutes until the whites are set and the yolk is soft; lift out with a slotted spoon. Repeat.",
+          "Warm the split biscuits (or toast the English muffins) until lightly golden.",
+          "Assemble: set the halves on plates, spoon on the spinach-artichoke-tomato mixture, top each with a poached egg, drape with hollandaise and finish with the shaved Parmesan. Serve right away — great with The Avenue's home fries."
+      ],
+      "fodmapNote": "For the Mediterranean Eggs Benny at The Avenue, the restaurant inside The Waters hotel on Central Ave in Hot Springs — its brunch menu lists it as an open-faced biscuit with sautéed spinach, heirloom tomatoes and artichokes, shaved Parmesan, soft poached eggs and house-made hollandaise. Copycat from a web search summary Kandy saved, not the restaurant's recipe. Note the blender hollandaise uses egg yolks that are only lightly cooked by the hot butter. FODMAP: not low-FODMAP as written — garlic, artichoke hearts (high in fructans) and the wheat biscuit or muffin. For a gentler version, use garlic-infused oil instead of garlic, leave out the artichokes, and use a gluten-free biscuit or English muffin. Spinach, tomatoes, eggs, Parmesan, butter and lemon are low-FODMAP in these amounts."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.

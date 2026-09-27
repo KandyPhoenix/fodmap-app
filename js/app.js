@@ -2547,7 +2547,9 @@
     // side-dishes.js) appear ONLY under the "Sides" filter, never in meal views.
     const _isSide = (window.SIDE_DISH_IDS && window.SIDE_DISH_IDS.has(r.id)) || (r.tags || []).some(t => String(t).toLowerCase() === 'side');
     if (filter === 'sides') return _isSide;
-    if (_isSide) return false;
+    // Sides stay out of the meal lists, but collections you pick from directly —
+    // your favorites, the newest additions and air-fryer recipes — include them.
+    if (_isSide && filter !== 'favorites' && filter !== 'newest' && filter !== 'airfryer') return false;
 
     if (filter === 'all') return true;
 
