@@ -12759,10 +12759,16 @@
     const um = rest.match(/^\s*([a-z]+)\.?/i);
     const unit = um && UNIT_ALIASES[um[1].toLowerCase()];
     if (hi === null && TSP_PER[unit]) return tspToDisplay(lo * factor * TSP_PER[unit]) + rest.slice(um[0].length);
-    // Otherwise round to a measurable amount: eighths below 10, whole numbers above.
-    const nice = n => n >= 10 ? String(Math.round(n)) : formatQtyNum(Math.max(Math.round(n * 8) / 8, 0.125));
+    // Weights and volumes round to a measurable amount: eighths below 10, whole numbers above.
+    // Things you count (2 chicken breasts, 4 slices, 1 small onion, 1 can) round to what you
+    // can actually use: nearest whole from 2 up, nearest half below — never "2⅝ breasts".
+    const measured = !!(unit && (VOLUME_IN_TSP[unit] || WEIGHT_IN_OZ[unit]));
+    const round = measured
+      ? n => n >= 10 ? Math.round(n) : Math.max(Math.round(n * 8) / 8, 0.125)
+      : n => n >= 2 ? Math.round(n) : Math.max(Math.round(n * 2) / 2, 0.5);
+    const nice = n => formatQtyNum(round(n));
     // Keep the counting word in step with the new number: "1 can" → "2 cans", "4 cloves" → "1 clove".
-    const last = (hi === null ? lo : hi) * factor;
+    const last = round((hi === null ? lo : hi) * factor);
     const fixedRest = rest.replace(/^(\s*(?:\([^)]*\)\s*)?)([a-z]+)\b/, (all, pre, w) => {
       const one = singularize(w);
       return COUNT_WORDS.has(one) ? pre + pluralUnit(one, last > 1 ? 2 : 1) : all;
