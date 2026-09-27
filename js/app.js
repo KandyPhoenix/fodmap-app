@@ -615,6 +615,20 @@
   };
   function resolveRecipeId(id) { return RECIPE_ALIASES[id] || id; }
   let meals = loadMeals();
+  // A planner slot holds one main meal and, optionally, side dishes planned with
+  // it: meal.sides = [recipe ids]. Swapping the main keeps the sides.
+  function slotSides(meal) { return (meal && Array.isArray(meal.sides)) ? meal.sides : []; }
+  function setSlotMain(key, main) {
+    const sides = slotSides(meals[key]).filter(id => !(main.type === 'recipe' && id === main.id));
+    meals[key] = sides.length ? Object.assign({}, main, { sides }) : main;
+  }
+  function addSlotSide(key, recipeId) {
+    const meal = meals[key];
+    if (!meal) { meals[key] = { type: 'recipe', id: recipeId }; return; }
+    if (meal.type === 'recipe' && meal.id === recipeId) return;
+    const sides = slotSides(meal);
+    if (!sides.includes(recipeId)) meal.sides = [...sides, recipeId];
+  }
 
 
 
@@ -977,7 +991,7 @@
 
 
 
-      searchInput.placeholder = currentView === 'recipes' ? 'Search recipes…' : currentView === 'subs' ? 'Search substitutions…' : currentView === 'checker' ? 'Search foods or recipes…' : currentView === 'finds' ? 'Search finds…' : currentView === 'snacks' ? 'Search snacks…' : currentView === 'guides' ? 'Search guides, nutrients, my library…' :currentView === 'planner' ? 'Search recipes…' : 'Search foods…';
+      searchInput.placeholder = currentView === 'recipes' ? 'Search recipes…' : currentView === 'subs' ? 'Search substitutions…' : currentView === 'checker' ? 'Search recipes…' : currentView === 'finds' ? 'Search finds…' : currentView === 'snacks' ? 'Search snacks…' : currentView === 'guides' ? 'Search guides, nutrients, my library…' :currentView === 'planner' ? 'Search recipes…' : 'Search foods…';
 
 
 
@@ -1116,9 +1130,10 @@
 
 
     searchWrap.classList.toggle('has-value', searchQuery.length > 0);
-    // The planner has no search list of its own, so typing there opens Recipes
-    // with the search applied (the header box keeps focus and keeps typing).
-    if (currentView === 'planner' && searchQuery) {
+    // The planner and the recipe checker have no search list of their own, so
+    // typing there opens Recipes with the search applied (the header box keeps
+    // focus and keeps typing).
+    if ((currentView === 'planner' || currentView === 'checker') && searchQuery) {
       const recipesBtn = document.querySelector('.nav-btn[data-view="recipes"]');
       if (recipesBtn) { recipesBtn.click(); searchInput.focus(); }
     }
@@ -7191,6 +7206,16 @@
         const guessSrc = meal.type === 'recipe' ? name : (meal.text || name);
         uncounted.push({ mealKey, name, guess: (typeof estimateMealNutrition === 'function') ? estimateMealNutrition(guessSrc) : null });
       }
+      // Sides planned with this meal: 1 serving each, from the recipe's nutrition.
+      slotSides(meal).forEach(sideId => {
+        const sr = all.find(x => x.id === sideId);
+        const sf = sr ? mealNutrition({ type: 'recipe', id: sideId }, sr) : null;
+        if (!sf) { if (sr) uncounted.push({ mealKey: null, name: sr.name, guess: null, side: true }); return; }
+        totals.cal     += sf.nut.cal     || 0;
+        totals.protein += sf.nut.protein || 0;
+        totals.fiber   += sf.nut.fiber   || 0;
+        counted.push({ mealKey: null, name: sr.name, est: false });
+      });
     });
     return { totals, counted, uncounted, planned: counted.length + uncounted.length };
   }
@@ -7374,7 +7399,10 @@
     const uncHtml = info.uncounted.length ? `
       <div class="nut-uncounted">
         <div class="nut-uncounted-title">Not counted yet — no nutrition data:</div>
-        ${info.uncounted.map(u => `
+        ${info.uncounted.map(u => u.side ? `
+          <div class="nut-uncounted-item">
+            <span class="nut-uncounted-name">${escHtml(u.name)} <span class="nut-guess-preview">side — open the recipe and tap ✨ Estimate nutrition to count it</span></span>
+          </div>` : `
           <div class="nut-uncounted-item nut-est-target" data-meal-key="${u.mealKey}">
             <span class="nut-uncounted-name">${escHtml(u.name)}${u.guess ? ` <span class="nut-guess-preview">app guess ≈ ${fmtNut(u.guess.cal)} cal · ${fmtNut(u.guess.protein)}g protein · ${fmtNut(u.guess.fiber)}g fiber</span>` : ''}</span>
             <span class="nut-item-btns">
@@ -8083,14 +8111,10 @@
 
 
 
-            delete meals[mealKey];
-
-
-
-
-
-
-
+            const keepSides = slotSides(meals[mealKey]);
+            if (keepSides.length) {
+              meals[mealKey] = keepSides.length > 1 ? { type: 'recipe', id: keepSides[0], sides: keepSides.slice(1) } : { type: 'recipe', id: keepSides[0] };
+            } else delete meals[mealKey];
             saveMeals(); renderPlanner();
 
 
@@ -8108,14 +8132,23 @@
 
 
           attachChipDrag(chip, mealKey);
-
-
-
-
-
-
-
           cell.appendChild(chip);
+          // Sides planned with this meal
+          slotSides(meal).forEach(sideId => {
+            const sr = getAllRecipes().find(x => x.id === sideId);
+            const sChip = document.createElement('div');
+            sChip.className = 'meal-chip meal-chip-side';
+            sChip.innerHTML = `<span class="meal-chip-text"><span class="meal-chip-name">＋ ${sr ? (sr.emoji || '🥗') : '🥗'} ${escHtml(sr ? sr.name : 'Side (no longer in recipes)')}</span></span>
+              <button class="meal-chip-remove" title="Remove side">×</button>`;
+            if (sr) sChip.querySelector('.meal-chip-text').addEventListener('click', () => openRecipeModal(sr));
+            sChip.querySelector('.meal-chip-remove').addEventListener('click', e => {
+              e.stopPropagation();
+              const m = meals[mealKey];
+              if (m) { m.sides = slotSides(m).filter(id => id !== sideId); if (!m.sides.length) delete m.sides; }
+              saveMeals(); renderPlanner();
+            });
+            cell.appendChild(sChip);
+          });
 
 
 
@@ -9849,14 +9882,8 @@
 
 
     catsEl.innerHTML = '';
-
-
-
-
-
-
-
-    RECIPE_CATEGORIES.forEach(cat => {
+    const pickerCats = pendingCell?.dateKey ? [...RECIPE_CATEGORIES, { id: 'sides', label: 'Sides', emoji: '🥗' }] : RECIPE_CATEGORIES;
+    pickerCats.forEach(cat => {
 
 
 
@@ -10015,7 +10042,7 @@
         if (g) customMeal.nut = { cal: g.cal, protein: g.protein, fiber: g.fiber };
       }
 
-      meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = customMeal;
+      setSlotMain(`${pendingCell.dateKey}-${pendingCell.mealType}`, customMeal);
 
 
 
@@ -10249,7 +10276,7 @@
               <div class="picker-item-meta">${escHtml(b.note)}</div>
             </div>`;
           item.addEventListener('click', () => {
-            meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'custom', text: b.name, nut: { cal: b.cal, protein: b.protein, fiber: b.fiber } };
+            setSlotMain(`${pendingCell.dateKey}-${pendingCell.mealType}`, { type: 'custom', text: b.name, nut: { cal: b.cal, protein: b.protein, fiber: b.fiber } });
             saveMeals(); renderPlanner(); closeAll();
           });
           boostersFrag.appendChild(item);
@@ -10284,7 +10311,7 @@
           </div>`;
         item.addEventListener('click', () => {
           if (pendingCell?.dateKey) {
-            meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'recipe', id: r.id };
+            setSlotMain(`${pendingCell.dateKey}-${pendingCell.mealType}`, { type: 'recipe', id: r.id });
             saveMeals(); renderPlanner(); closeAll();
           } else {
             closeAll(); openRecipeModal(r);
@@ -10475,7 +10502,7 @@
               if (g) snackMeal.nut = { cal: g.cal, protein: g.protein, fiber: g.fiber };
             }
 
-            meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = snackMeal;
+            setSlotMain(`${pendingCell.dateKey}-${pendingCell.mealType}`, snackMeal);
 
 
 
@@ -10574,29 +10601,49 @@
 
 
       if (pickerSearch) return recipeMatchesSearch(r, pickerSearch);
-
-
-
-
-
-
-
       return true;
-
-
-
-
-
-
-
     });
-
-
-
-
-
-
-
+    if (pickerSearch) {
+      const rank = new Map(list.map(r => [r, recipeSearchRank(r, pickerSearch)]));
+      list.sort((a, b) => rank.get(a) - rank.get(b));
+    }
+    // 🥗 Sides — shown under the Sides chip or when a search matches one. If the
+    // slot already has a meal, a side is added next to it instead of replacing it.
+    const slotKey = pendingCell?.dateKey ? `${pendingCell.dateKey}-${pendingCell.mealType}` : null;
+    const slotHasMain = !!(slotKey && meals[slotKey]);
+    const isSideRecipe = r => (window.SIDE_DISH_IDS && window.SIDE_DISH_IDS.has(r.id)) || (r.tags || []).some(t => String(t).toLowerCase() === 'side');
+    const sideList = (slotKey && (pickerCategory === 'sides' || pickerSearch))
+      ? getAllRecipes().filter(r => isSideRecipe(r) && (!pickerSearch || recipeMatchesSearch(r, pickerSearch)))
+      : [];
+    if (pickerSearch && sideList.length) {
+      const srank = new Map(sideList.map(r => [r, recipeSearchRank(r, pickerSearch)]));
+      sideList.sort((a, b) => srank.get(a) - srank.get(b));
+    }
+    const sidesFrag = document.createDocumentFragment();
+    if (sideList.length) {
+      any = true;
+      const sHeader = document.createElement('div');
+      sHeader.className = 'picker-group-label';
+      sHeader.textContent = slotHasMain ? '🥗 Add a side to this meal' : '🥗 Sides';
+      sidesFrag.appendChild(sHeader);
+      sideList.forEach(r => {
+        const item = document.createElement('div');
+        item.className = 'picker-item';
+        item.innerHTML = `
+          <div class="picker-item-emoji">${r.emoji || '🥗'}</div>
+          <div class="picker-item-info">
+            <div class="picker-item-name">${escHtml(r.name)}</div>
+            <div class="picker-item-meta">${slotHasMain ? 'Adds alongside your meal' : 'Side dish'} · ⏱ ${r.time || '—'}</div>
+          </div>`;
+        item.addEventListener('click', () => {
+          addSlotSide(slotKey, r.id);
+          saveMeals(); renderPlanner(); closeAll();
+        });
+        sidesFrag.appendChild(item);
+      });
+    }
+    // With a meal already planned, sides lead; otherwise they follow the recipes.
+    if (slotHasMain) el.appendChild(sidesFrag);
     if (list.length) {
 
 
@@ -10757,7 +10804,7 @@
 
 
 
-            meals[`${pendingCell.dateKey}-${pendingCell.mealType}`] = { type: 'recipe', id: r.id };
+            setSlotMain(`${pendingCell.dateKey}-${pendingCell.mealType}`, { type: 'recipe', id: r.id });
 
 
 
@@ -10837,6 +10884,7 @@
 
 
 
+    if (!slotHasMain) el.appendChild(sidesFrag);
     // A category filter is active — boosters follow that category's recipes.
     if (boostersLast) el.appendChild(boostersFrag);
     el.scrollTop = 0;
@@ -16380,7 +16428,7 @@
 
 
 
-        const meal = meals[`${d.key}-${m.id}`];
+        const slotMeal = meals[`${d.key}-${m.id}`];
 
 
 
@@ -16388,7 +16436,9 @@
 
 
 
-        if (!meal) return;
+        if (!slotMeal) return;
+        // The slot's main meal plus any sides planned with it.
+        [slotMeal, ...slotSides(slotMeal).map(id => ({ type: 'recipe', id }))].forEach(meal => {
 
 
 
@@ -16677,13 +16727,7 @@
 
 
         if (!added && !noIngredients.includes(recipe.name)) noIngredients.push(recipe.name);
-
-
-
-
-
-
-
+        });
       });
 
 
