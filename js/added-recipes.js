@@ -1385,6 +1385,80 @@ const ADDED_RECIPES = [
       ],
       "fodmapNote": "Copycat, not Angel's actual recipe: the restaurant's recipe isn't published, so this is a classic Italian-restaurant rosemary loaf with the garlic dipping oil that online descriptions of Angel's mention. Adjust after you taste it. FODMAP: not low-FODMAP as written — wheat flour (fructans) and raw garlic in the dipping oil. For a gentler version, swap the minced garlic for 2 tbsp garlic-infused olive oil (fructans don't dissolve into oil), and keep to a small piece of bread, or use a gluten-free bread flour blend with xanthan gum (it will be denser)."
   },
+  {
+      "id": "fam-add-soft-italian-restaurant-rosemary-bread",
+      "name": "Soft Italian Restaurant Rosemary Bread (Copycat)",
+      "emoji": "🌿",
+      "category": "sides",
+      "time": "2 hr 25 min",
+      "serves": 8,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "side",
+          "bread",
+          "copycat",
+          "italian"
+      ],
+      "added": "2026-09-28",
+      "ingredients": [
+          {
+              "qty": "1 tbsp",
+              "item": "active dry yeast"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "granulated sugar"
+          },
+          {
+              "qty": "1 cup",
+              "item": "warm water (105–110°F)"
+          },
+          {
+              "qty": "2 1/2 cups",
+              "item": "all-purpose flour, plus a little extra if the dough is too sticky"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "kosher salt"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "fresh rosemary, finely chopped, for the dough"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "extra-virgin olive oil or melted butter, for the dough"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "melted butter or extra-virgin olive oil, for the topping"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "fresh rosemary, roughly chopped, for the topping"
+          },
+          {
+              "qty": "to taste",
+              "item": "coarse sea salt or kosher salt, for the topping"
+          },
+          {
+              "qty": "for serving",
+              "item": "extra-virgin olive oil, cracked black pepper and balsamic vinegar"
+          }
+      ],
+      "steps": [
+          "Activate the yeast: combine the warm water, sugar and yeast in a small bowl or a stand-mixer bowl. Let sit 5–10 minutes until frothy and bubbly.",
+          "Whisk 2 cups of the flour with the salt and 1 tbsp finely chopped rosemary. Add the yeast mixture and 2 tbsp olive oil (or melted butter) and mix with a wooden spoon or dough hook until a soft dough forms.",
+          "Knead 5–8 minutes, adding the remaining 1/2 cup flour only as needed, until smooth and clearing the sides of the bowl. Keep it slightly sticky and soft for a fluffy inside.",
+          "First rise: place in a lightly greased bowl, cover with a damp cloth or plastic wrap, and let rise in a warm spot about 1 hour, until doubled.",
+          "Punch down and divide in two. Shape each into a smooth round or oval loaf and set on a parchment-lined baking sheet with space between them.",
+          "Brush the tops with the melted butter or olive oil and sprinkle with the roughly chopped rosemary and coarse salt. Cover lightly and let rise 35–45 minutes.",
+          "Meanwhile heat the oven to 400°F (205°C). Bake 20–25 minutes, until golden brown and hollow-sounding when tapped underneath.",
+          "Cool a few minutes on a wire rack, then slice and serve warm with a small plate of olive oil, cracked black pepper and balsamic vinegar."
+      ],
+      "fodmapNote": "Copycat, not Angel's actual recipe: Angel's has never published its bread recipe. This version came from a web search summary Kandy saved; it's a softer, fluffier cousin of the Angel's-Style Rosemary Bread card, topped before the second rise and served with oil and balsamic instead of garlic oil. FODMAP: not low-FODMAP as written — wheat flour (fructans). Balsamic is low-FODMAP only in small amounts (about 1 tbsp). A gluten-free bread flour blend with xanthan gum works but bakes up denser."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
