@@ -977,7 +977,7 @@
 
 
 
-      searchInput.placeholder = currentView === 'recipes' ? 'Search recipes…' : currentView === 'subs' ? 'Search substitutions…' : currentView === 'checker' ? 'Search foods or recipes…' : currentView === 'finds' ? 'Search finds…' : currentView === 'snacks' ? 'Search snacks…' : currentView === 'guides' ? 'Search guides, nutrients, my library…' : currentView === 'planner' ? 'Search foods or recipes…' : 'Search foods…';
+      searchInput.placeholder = currentView === 'recipes' ? 'Search recipes…' : currentView === 'subs' ? 'Search substitutions…' : currentView === 'checker' ? 'Search foods or recipes…' : currentView === 'finds' ? 'Search finds…' : currentView === 'snacks' ? 'Search snacks…' : currentView === 'guides' ? 'Search guides, nutrients, my library…' :currentView === 'planner' ? 'Search recipes…' : 'Search foods…';
 
 
 
@@ -1116,13 +1116,12 @@
 
 
     searchWrap.classList.toggle('has-value', searchQuery.length > 0);
-
-
-
-
-
-
-
+    // The planner has no search list of its own, so typing there opens Recipes
+    // with the search applied (the header box keeps focus and keeps typing).
+    if (currentView === 'planner' && searchQuery) {
+      const recipesBtn = document.querySelector('.nav-btn[data-view="recipes"]');
+      if (recipesBtn) { recipesBtn.click(); searchInput.focus(); }
+    }
     if (currentView === 'foods') renderFoodGrid();
 
 
@@ -2407,6 +2406,18 @@
     }
 
     // ── In-tab recipe search (mirrors the header search box) ──
+    // "Search all recipes" in the no-results box: clear the category and filter,
+    // keep the search.
+    const widerBtn = document.getElementById('recipe-no-results-wider');
+    if (widerBtn) {
+      widerBtn.addEventListener('click', () => {
+        const allCat = document.querySelector('#recipe-categories .cat-btn');
+        if (allCat && recipeCategory !== 'all') allCat.click();
+        const allFilter = document.querySelector('.rfilter[data-filter="all"]');
+        if (allFilter && recipeFilter !== 'all') allFilter.click();
+        renderRecipeGrid();
+      });
+    }
     const recipeSearchInput = document.getElementById('recipe-search');
     const recipeSearchClear = document.getElementById('recipe-search-clear');
     if (recipeSearchInput) {
@@ -2525,18 +2536,15 @@
 
 
 
+  // Total minutes from a time like "45 min", "2 hr 15 min" or "1 hour".
+  // Hours count — "2 hr 15 min" is 135, not 2. Unknown times sort last.
   function recipeMinutes(r) {
-
-
-
-    const m = String(r.time || '').match(/\d+/);
-
-
-
-    return m ? parseInt(m[0], 10) : 999;
-
-
-
+    const s = String(r.time || '').toLowerCase();
+    const h = s.match(/(\d+(?:\.\d+)?)\s*(?:h|hr|hrs|hour|hours)\b/);
+    const m = s.match(/(\d+)\s*(?:m|min|mins|minute|minutes)\b/);
+    if (h || m) return Math.round((h ? parseFloat(h[1]) * 60 : 0) + (m ? parseInt(m[1], 10) : 0));
+    const n = s.match(/\d+/);
+    return n ? parseInt(n[0], 10) : 999;
   }
 
 
@@ -2547,9 +2555,10 @@
     // side-dishes.js) appear ONLY under the "Sides" filter, never in meal views.
     const _isSide = (window.SIDE_DISH_IDS && window.SIDE_DISH_IDS.has(r.id)) || (r.tags || []).some(t => String(t).toLowerCase() === 'side');
     if (filter === 'sides') return _isSide;
-    // Sides stay out of the meal lists, but collections you pick from directly —
-    // your favorites, the newest additions and air-fryer recipes — include them.
-    if (_isSide && filter !== 'favorites' && filter !== 'newest' && filter !== 'airfryer') return false;
+    // Sides stay out of the meal lists, but a search finds them under any filter,
+    // and collections you pick from directly — your favorites, the newest
+    // additions and air-fryer recipes — include them.
+    if (_isSide && !searchQuery && filter !== 'favorites' && filter !== 'newest' && filter !== 'airfryer') return false;
 
     if (filter === 'all') return true;
 
@@ -2910,10 +2919,7 @@
 
 
 
-      // Side dishes normally live only under the Sides filter, but a search from
-      // "All" should find every recipe — sides included.
-      const searchingAll = !!searchQuery && recipeFilter === 'all';
-      if (!recipeMatchesFilter(r, recipeFilter) && !(searchingAll && recipeMatchesFilter(r, 'sides'))) return false;
+      if (!recipeMatchesFilter(r, recipeFilter)) return false;
 
 
 
@@ -2978,7 +2984,18 @@
 
 
 
-    if (!list.length) { noRes.classList.remove('hidden'); count.textContent = ''; return; }
+    if (!list.length) {
+      noRes.classList.remove('hidden'); count.textContent = '';
+      // Searching inside a category or filter that hides the match? Offer to widen it.
+      const hint = document.getElementById('recipe-no-results-wider');
+      if (hint) {
+        const narrowed = recipeCategory !== 'all' || recipeFilter !== 'all';
+        const elsewhere = (searchQuery && narrowed) ? getAllRecipes().filter(r => recipeMatchesSearch(r, searchQuery)).length : 0;
+        hint.classList.toggle('hidden', !elsewhere);
+        if (elsewhere) hint.textContent = `Search all recipes (${elsewhere} ${elsewhere === 1 ? 'match' : 'matches'})`;
+      }
+      return;
+    }
 
 
 
