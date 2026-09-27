@@ -1596,6 +1596,79 @@ const ADDED_RECIPES = [
       ],
       "fodmapNote": "Copycat, not the restaurant's actual recipe. The dish is on the menu of Angels in the Park (211 Fountain St, Hot Springs) as listed on SinglePlatform; this version came from a web search summary Kandy saved, and Angels has not published its recipes. The menu lists it as \"Fettuccini Alfredo with chicken or shrimp\" — sliced shrimp works in place of the chicken. FODMAP: not low-FODMAP as written — wheat pasta, fresh garlic and garlic powder, and lactose in the cream. For a gentler version use gluten-free fettuccine, use 1 tbsp garlic-infused oil in place of the minced garlic, skip the garlic powder, and swap in lactose-free cream. Parmesan and butter are naturally very low in lactose."
   },
+  {
+      "id": "fam-add-avenue-waters-hotel-home-fries-copycat",
+      "name": "The Avenue's Southern-Style Hotel Home Fries (Copycat)",
+      "emoji": "🥔",
+      "category": "sides",
+      "time": "35 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "side",
+          "breakfast",
+          "potatoes",
+          "copycat",
+          "the avenue",
+          "waters hotel",
+          "hot springs"
+      ],
+      "added": "2026-09-28",
+      "ingredients": [
+          {
+              "qty": "4 large",
+              "item": "russet potatoes (or Yukon Gold), washed and cut into 3/4-inch cubes"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "kosher salt, for the boiling water"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "vegetable or canola oil, for high-heat frying"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "unsalted butter, for flavor and browning"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "garlic powder"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "sweet paprika (or smoked paprika for a deeper flavor)"
+          },
+          {
+              "qty": "1/2 tsp",
+              "item": "onion powder"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "kosher salt, for the spice blend"
+          },
+          {
+              "qty": "1/4 tsp",
+              "item": "freshly cracked black pepper"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "fresh parsley or green onions, finely chopped (optional finish)"
+          }
+      ],
+      "steps": [
+          "Par-boil (the secret step): put the cubed potatoes in a large pot, cover with cold water by about an inch and add 1 tbsp salt. Bring to a boil over high heat, then cook exactly 4–5 minutes — tender on the outside, still firm in the center.",
+          "Drain well and let the potatoes steam-dry in the colander 2–3 minutes. Shake the colander gently a few times to rough up the edges; those starchy ridges turn extra crispy.",
+          "Mix the garlic powder, paprika, onion powder, 1 tsp kosher salt and black pepper in a small bowl.",
+          "Heat a large heavy skillet (cast iron is best) over medium-high heat. Add the oil and melt the butter into it.",
+          "Add the potatoes in a single even layer — cook in batches if needed, since crowding makes them steam instead of crisp. Cook undisturbed 4–5 minutes until the bottoms are deep golden brown.",
+          "Flip with a wide spatula, lower the heat to medium and sprinkle the spice blend evenly over the top. (Adding the spices now keeps the paprika and garlic powder from burning.)",
+          "Cook 5–7 minutes more, tossing occasionally, until tender all the way through and crispy on every side.",
+          "Drain briefly on a paper-towel-lined plate, toss with parsley or green onions if using, and serve hot."
+      ],
+      "fodmapNote": "For the home fries we had at The Avenue, the restaurant inside The Waters hotel on Central Ave in Hot Springs. Copycat from a web search summary Kandy saved — not The Avenue's actual recipe, which isn't published. FODMAP: not low-FODMAP as written — garlic powder and onion powder are high in fructans. For a low-FODMAP version, leave both out, fry in 1 tbsp garlic-infused oil plus the butter, and finish with the green tops of green onions or chives. Potatoes, paprika and butter are low-FODMAP."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
