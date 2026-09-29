@@ -179,6 +179,7 @@ const firebaseConfig = {
       setSyncStatus('synced');
     } catch(e) {
       console.warn('FODMAP sync pull failed:', e);
+      if (window.FBSignIn) FBSignIn.onError(e);   // rules locked → offer sign-in
       setSyncStatus('offline');
     }
   }
@@ -193,7 +194,7 @@ const firebaseConfig = {
         adoptRemote(remote);
         setSyncStatus('synced');
       }
-    }, err => console.warn('FODMAP live sync error:', err));
+    }, err => { console.warn('FODMAP live sync error:', err); if (window.FBSignIn) FBSignIn.onError(err); });
   }
 
   // ── Force push button ────────────────────────
@@ -212,6 +213,7 @@ const firebaseConfig = {
         btn.textContent = '✓ Pushed!';
         setTimeout(() => { btn.textContent = '☁️ Push to Cloud'; btn.disabled = false; }, 2000);
       } catch(e) {
+        if (window.FBSignIn) FBSignIn.onError(e);
         setSyncStatus('offline');
         btn.textContent = '☁️ Push to Cloud';
         btn.disabled = false;
@@ -225,7 +227,10 @@ const firebaseConfig = {
     firebase.initializeApp(firebaseConfig);
     db     = firebase.firestore();
     docRef = db.collection('fodmap').doc('data');
-    syncFromFirebase().then(listenForRemoteChanges);
+    if (window.FBSignIn) FBSignIn.init();
+    // Finish an email-link sign-in first (no-op otherwise), then the normal boot.
+    (window.FBSignIn ? FBSignIn.complete() : Promise.resolve())
+      .then(() => syncFromFirebase()).then(listenForRemoteChanges);
     wireForceSync();
   } catch(e) {
     console.warn('Firebase init failed (offline?):', e);
