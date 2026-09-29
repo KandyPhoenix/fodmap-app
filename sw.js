@@ -1,9 +1,10 @@
-const CACHE = 'fodmap-v120';
+const CACHE = 'fodmap-v121';
 const ASSETS = [
   './',
   './index.html',
   './clip.html',
   './css/style.css',
+  './js/firebase-signin.js',
   './js/data.js',
   './js/guides-data.js',
   './js/airfryer-extra.js',

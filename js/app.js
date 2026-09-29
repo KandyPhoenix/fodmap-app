@@ -5582,8 +5582,15 @@
     return null;
   }
 
+  // Once the Firestore rules are locked, the inbox is readable only by Kandy: send her ID token when signed in.
+  async function clipAuthHeaders(extra) {
+    const h = Object.assign({}, extra || {});
+    const tok = window.FBSignIn ? await FBSignIn.idToken() : null;
+    if (tok) h.Authorization = 'Bearer ' + tok;
+    return h;
+  }
   async function readClipQueue() {
-    const r = await fetch(`https://firestore.googleapis.com/v1/${CLIP_QUEUE_DOC}?key=${CLIP_QUEUE_KEY}`, { cache: 'no-store' });
+    const r = await fetch(`https://firestore.googleapis.com/v1/${CLIP_QUEUE_DOC}?key=${CLIP_QUEUE_KEY}`, { cache: 'no-store', headers: await clipAuthHeaders() });
     if (r.status === 404) return [];
     if (!r.ok) throw new Error('Firestore returned ' + r.status);
     const d = await r.json();
@@ -5593,10 +5600,10 @@
 
   // Take exactly one item off the queue (never the whole thing — anything
   // clipped meanwhile has to survive).
-  function removeFromClipQueue(raw) {
+  async function removeFromClipQueue(raw) {
     return fetch(`https://firestore.googleapis.com/v1/projects/wellness-tracker-127/databases/(default)/documents:commit?key=${CLIP_QUEUE_KEY}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: await clipAuthHeaders({ 'Content-Type': 'application/json' }),
       body: JSON.stringify({ writes: [{ transform: { document: CLIP_QUEUE_DOC,
         fieldTransforms: [{ fieldPath: 'queue', removeAllFromArray: { values: [raw] } }] } }] }),
     }).catch(e => console.warn('Could not remove the item from the clip queue:', e));
