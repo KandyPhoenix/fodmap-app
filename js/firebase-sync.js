@@ -135,9 +135,25 @@ const firebaseConfig = {
   };
 
   // ── Initial reconcile on boot ───────────────
+  // A device that had NO fodmap data before its first pull (fresh install, new phone,
+  // cleared storage) rendered every view from an empty localStorage at startup, and
+  // fodmapRefresh() only redraws the planner. So the first pull leaves recipes, guides,
+  // shopping etc. blank until the next open. Reload once after that first pull so the
+  // whole app renders from the data that just landed. Guarded so it can only fire once
+  // per tab session, never a loop.
+  function reloadAfterFirstPull(hadLocal) {
+    if (hadLocal) return;
+    try {
+      if (sessionStorage.getItem('fodmapFirstPullReloaded')) return;
+      sessionStorage.setItem('fodmapFirstPullReloaded', '1');
+    } catch(e) {}
+    window.location.reload();
+  }
+
   async function syncFromFirebase() {
     if (!docRef) return;
     setSyncStatus('syncing');
+    const hadLocal = countKeys(gatherLocalData()) > 0;
     try {
       const snap = await docRef.get();
 
@@ -162,6 +178,7 @@ const firebaseConfig = {
         await pushLocal();
         if (typeof window.fodmapRefresh === 'function') window.fodmapRefresh();
         setSyncStatus('synced');
+        reloadAfterFirstPull(hadLocal);
         return;
       }
 
@@ -172,6 +189,7 @@ const firebaseConfig = {
           await pushLocal();
         } else {
           adoptRemote(remote);
+          reloadAfterFirstPull(hadLocal);
         }
       } else if (localModified > remoteModified) {
         await pushLocal();                     // local is newer — push it up
