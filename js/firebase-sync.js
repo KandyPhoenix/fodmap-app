@@ -146,7 +146,9 @@ const firebaseConfig = {
     try {
       if (sessionStorage.getItem('fodmapFirstPullReloaded')) return;
       sessionStorage.setItem('fodmapFirstPullReloaded', '1');
-    } catch(e) {}
+    } catch(e) {
+      return;   // no session storage → the guard can't record itself, so never reload (a loop is worse than a partial first render)
+    }
     window.location.reload();
   }
 
