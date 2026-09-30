@@ -58,6 +58,13 @@ const FODMAP_PORTION_WATCH = [
 // All alternatives are FODMAP-safe. Up to 3 shown per recipe.
 const HEALTHY_SWAPS = [
   {
+    triggers: ['canned tuna', 'tinned tuna', 'tuna in water', 'tuna in oil', 'tuna in olive oil', 'can tuna', 'cans tuna', 'can of tuna', 'cans of tuna', 'chunk light tuna', 'solid white tuna', 'albacore tuna', 'tuna, drained'],
+    from: 'All canned tuna',
+    to: 'Half tuna, half sardines',
+    benefit: 'One 3.75 oz can of sardines with bones adds ~0.9 g EPA+DHA omega-3s, ~350 mg calcium (27% DV) and 88% DV selenium (USDA). Start with ¼ can mashed in and add acid (lemon, dill pickle, capers) to hide the taste. Sardines and light tuna are both FDA “Best Choice” low-mercury fish. More in Guides → Tips → Sardines for tuna lovers.',
+    emoji: '🐟'
+  },
+  {
     triggers: ['white rice', 'cooked white rice'],
     from: 'White rice',
     to: 'Brown rice',
@@ -2296,7 +2303,7 @@ const FOODS = [
       { amount: '1 tin / 3.75 oz', rating: 'green', label: 'Low FODMAP' }
     ],
     fodmaps: [],
-    tip: 'Canned sardines are low FODMAP. Choose varieties packed in olive oil, water, or tomato sauce (check the sauce contains no garlic/onion). Rich in omega-3s, calcium, and vitamin D.'
+    tip: 'Canned sardines are low FODMAP. Choose varieties packed in olive oil, water, or tomato sauce (check the sauce contains no garlic/onion). Rich in omega-3s, calcium, and vitamin D. Not a fan of the taste? See Guides → Tips & Guides → Sardines for tuna lovers.'
   },
   {
     id: 'anchovies-canned', name: 'Anchovies (canned / jarred)', emoji: '🐟', category: 'protein', rating: 'green',
