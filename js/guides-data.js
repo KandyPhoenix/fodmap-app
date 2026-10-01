@@ -619,8 +619,17 @@ const GUIDE_TIPS = [
         'Bela in olive oil: Portuguese, delicate, firmer texture',
         'Season in spring water: “very neutral, firm, tuna-adjacent”',
         'Smaller fish taste milder, and olive oil softens the flavor more than water or brine',
-        'Skinless & boneless taste most like tuna, but you lose most of the calcium',
+        'Skinless & boneless taste most like tuna, but you lose most of the calcium (see “No bones, no skin” below)',
         'These rankings are one reviewer’s taste opinions, not tested facts. Try a few.',
+      ]},
+      { title: '🦴 No bones, no skin (if the skeletons gross you out)', list: [
+        'Skinless boneless salmon, pouch or can (Wild Planet, Chicken of the Sea, StarKist): looks and tastes like pink tuna, with no bones, skin or gray bits. Make it exactly like tuna salad. Easiest win.',
+        'Skinless boneless sardines (King Oscar, Season, Crown Prince): plain fillets, the mildest sardine and the closest to tuna',
+        'Read the label: it must say “skinless & boneless.” Traditional canned salmon includes the backbone and skin.',
+        'You keep: omega-3s, protein, vitamin D and B12',
+        'You lose: most of the calcium, because it lives in the bones',
+        'Get calcium elsewhere (all low-FODMAP): cheddar or Parmesan, lactose-free milk or yogurt, firm calcium-set tofu, fortified almond milk',
+        'Other bone-free omega-3s: fresh or frozen salmon fillets twice a week, or smoked salmon on toast or eggs (check for no garlic or onion)',
       ]},
       { title: '🍋 Tame the fishy flavor', list: [
         'Add acid: lemon, vinegar, dill pickle, capers or tomato. Acid neutralizes trimethylamine (TMA), the compound behind the fishy smell and taste.',
@@ -642,7 +651,7 @@ const GUIDE_TIPS = [
         'Store tartar sauce (often has onion) → mayo + chopped dill pickle + capers + lemon',
         'Onion or garlic in the recipe → green scallion tops, chives, or garlic-infused oil',
         'Relish (may contain onion) → finely chopped dill pickle',
-        'Can’t do sardines at all? Canned salmon with bones gives similar calcium; anchovies and Atlantic mackerel are other low-mercury oily fish',
+        'Can’t do sardines at all? Skinless boneless salmon in a pouch tastes closest to tuna (see “No bones, no skin” above). Bone-in canned salmon matches sardines for calcium; anchovies and Atlantic mackerel are other low-mercury oily fish',
       ]},
       { title: '🍽️ Sardine recipes in this app (search “sardine” in Recipes)', list: [
         'Half & Half Tuna-Sardine Salad: easiest starting point',
