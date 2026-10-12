@@ -3596,7 +3596,7 @@
 
 
 
-  function openRecipeModal(recipe) {
+  function openRecipeModal(recipe, plannerMealKey) {
 
 
 
@@ -4656,6 +4656,9 @@
 
 
 
+    // Opened from a planner slot: start at the servings saved for that meal and save changes back,
+    // so the count sticks and the shopping list buys for it.
+    const plannedMeal = plannerMealKey ? meals[plannerMealKey] : null;
     let currentServes = baseServes;
 
 
@@ -4664,7 +4667,7 @@
 
 
 
-    function updateServes(newServes) {
+    function updateServes(newServes, persist = true) {
 
 
 
@@ -4681,6 +4684,10 @@
 
 
       currentServes = newServes;
+      if (persist && plannedMeal && meals[plannerMealKey] === plannedMeal) {
+        if (currentServes === baseServes) delete plannedMeal.serves; else plannedMeal.serves = currentServes;
+        saveMeals(); renderPlanner();
+      }
 
 
 
@@ -4801,6 +4808,7 @@
 
 
     document.getElementById('serves-up').addEventListener('click', () => updateServes(currentServes + 1));
+    if (plannedMeal && plannedMeal.serves && plannedMeal.serves !== baseServes) updateServes(plannedMeal.serves, false);
 
 
 
@@ -8042,7 +8050,7 @@
 
 
 
-            <span class="meal-chip-text">${nutLine}<span class="meal-chip-name">${isLF ? '<span class="lf-badge">LF</span> ' : ''}${displayEmoji} ${displayName}</span></span>
+            <span class="meal-chip-text">${nutLine}<span class="meal-chip-name">${isLF ? '<span class="lf-badge">LF</span> ' : ''}${displayEmoji} ${displayName}${r && meal.serves ? ` <span class="meal-chip-serves" title="Planned for ${meal.serves} servings">👥${meal.serves}</span>` : ''}</span></span>
 
 
 
@@ -8058,7 +8066,7 @@
 
 
 
-          if (r) chip.querySelector('.meal-chip-text').addEventListener('click', () => openRecipeModal(r));
+          if (r) chip.querySelector('.meal-chip-text').addEventListener('click', () => openRecipeModal(r, mealKey));
           else {
             chip.querySelector('.meal-chip-text').title = 'Tap to edit this meal';
             chip.querySelector('.meal-chip-text').addEventListener('click', () => openMealEditModal(mealKey));
@@ -16422,6 +16430,8 @@
 
 
 
+        // Buy for the servings planned on this meal (sides use the recipe as written).
+        const factor = (meal.serves && recipe.serves) ? meal.serves / recipe.serves : 1;
         let added = 0;
 
 
@@ -16606,7 +16616,7 @@
 
 
 
-            qty:    prettyQtyText(convertGrams(split.qty || '')),
+            qty:    prettyQtyText(convertGrams(scaleQtyText(split.qty || '', factor))),
 
 
 
@@ -16614,7 +16624,7 @@
 
 
 
-            recipe: recipe.name,
+            recipe: factor !== 1 ? `${recipe.name} (×${meal.serves} servings)` : recipe.name,
 
 
 
