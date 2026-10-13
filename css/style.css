@@ -7856,12 +7856,6 @@ body.dark .wm-intro { color: #aaa; }
   .mind-week-actions .action-btn { flex: 1 1 auto; }
 }
 
-/* Diet Plans: diet dropdown */
-.diet-picker { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-.diet-picker-label { font-weight: 800; color: var(--text-muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
-.diet-select { flex: 1 1 auto; max-width: 420px; font: inherit; font-size: 16px; font-weight: 700; color: var(--text); background: var(--card); border: 2px solid var(--primary); border-radius: 12px; padding: 10px 12px; cursor: pointer; box-shadow: var(--shadow); }
-.diet-select:focus { outline: none; border-color: var(--primary-dark); }
-@media (max-width: 600px) { .diet-select { max-width: none; } }
 
 /* Recipe modal: low-FODMAP option toggle */
 .fodmap-option { background: var(--green-bg); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; }
@@ -7869,11 +7863,12 @@ body.dark .wm-intro { color: #aaa; }
 .fodmap-option-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
 .fodmap-option-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 
-/* Pill rows shown as dropdowns (js/pill-dropdowns.js) */
+/* Dropdowns that replace pill rows (js/pill-dropdowns.js) and the Diets picker:
+   styled to match the Recipes "📂 Section" dropdown. */
 .pill-hidden { display: none !important; }
-.pill-picker { display: flex; align-items: center; gap: 10px; margin: 6px 0 10px; width: 100%; }
+.pill-picker, .diet-picker { display: flex; align-items: center; gap: 6px; margin: 6px 0 10px; font-size: 13px; font-weight: 600; color: var(--text); }
 .pill-picker.hidden { display: none; }
-.pill-picker-label { font-weight: 800; color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
-.pill-select { flex: 1 1 auto; max-width: 420px; min-width: 0; font: inherit; font-size: 16px; font-weight: 700; color: var(--text); background: var(--card); border: 2px solid var(--primary); border-radius: 12px; padding: 9px 12px; cursor: pointer; box-shadow: var(--shadow); }
-.pill-select:focus { outline: none; border-color: var(--primary-dark); }
-@media (max-width: 600px) { .pill-select { max-width: none; } }
+.pill-picker-label, .diet-picker-label { white-space: nowrap; }
+.pill-select, .diet-select { background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 20px; padding: 6px 12px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; max-width: 100%; min-width: 0; }
+.pill-select:focus, .diet-select:focus { border-color: var(--primary); outline: none; }
+.category-bar > .pill-picker, .finds-filter-bar > .pill-picker, .guides-tab-bar > .pill-picker { padding: 0 16px; margin: 8px 0; }

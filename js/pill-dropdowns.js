@@ -12,15 +12,15 @@
 
 (function () {
   const GROUPS = [
-    { box: '#food-categories',   btn: '.cat-btn',         label: 'Category' },
-    { box: '.rating-filters',    btn: '.rating-filter',   label: 'FODMAP' },
-    { box: '#recipe-categories', btn: '.cat-btn',         label: 'Category' },
-    { box: '#recipe-filters',    btn: '.rfilter',         label: 'Filter' },
-    { box: '#picker-cats',       btn: '.picker-cat-btn',  label: 'Category' },
-    { box: '#subs-cats',         btn: '.subs-cat-btn',    label: 'Category' },
-    { box: '#finds-cats',        btn: '.finds-cat-btn',   label: 'Category' },
-    { box: '#guides-tabs',       btn: '.guide-tab',       label: 'Guide' },
-    { box: '.mind-week-tabs',    btn: '.mind-week-tab',   label: 'Week', joiner: ' · ' },
+    { box: '#food-categories',   btn: '.cat-btn',         label: '🗂️ Category' },
+    { box: '.rating-filters',    btn: '.rating-filter',   label: '🍀 FODMAP' },
+    { box: '#recipe-categories', btn: '.cat-btn',         label: '🗂️ Category' },
+    { box: '#recipe-filters',    btn: '.rfilter',         label: '🔎 Filter' },
+    { box: '#picker-cats',       btn: '.picker-cat-btn',  label: '🗂️ Category' },
+    { box: '#subs-cats',         btn: '.subs-cat-btn',    label: '🗂️ Category' },
+    { box: '#finds-cats',        btn: '.finds-cat-btn',   label: '🗂️ Category' },
+    { box: '#guides-tabs',       btn: '.guide-tab',       label: '📚 Guide' },
+    { box: '.mind-week-tabs',    btn: '.mind-week-tab',   label: '📅 Week', joiner: ' · ' },
   ];
   const DOTS = { green: '🟢', yellow: '🟡', red: '🔴' };
 

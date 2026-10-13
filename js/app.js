@@ -23223,7 +23223,7 @@
     const byId = {};
     all.forEach(r => { byId[r.id] = r; });
 
-    const chips = `<label class="diet-picker"><span class="diet-picker-label">Diet</span>
+    const chips = `<label class="diet-picker"><span class="diet-picker-label">🍽️ Diet</span>
       <select id="diet-select" class="diet-select" aria-label="Choose a diet">${DIET_PLANS.map(d =>
         `<option value="${d.id}"${d.id === diet.id ? ' selected' : ''}>${d.emoji} ${escHtml(d.label)} (${counts[d.id]} recipes)</option>`
       ).join('')}</select></label>`;
