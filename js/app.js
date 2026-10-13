@@ -926,6 +926,7 @@
       document.getElementById('view-finds').classList.toggle('hidden',   currentView !== 'finds');
 
       document.getElementById('view-guides').classList.toggle('hidden',  currentView !== 'guides');
+      document.getElementById('view-mind').classList.toggle('hidden',    currentView !== 'mind');
 
 
 
@@ -984,6 +985,7 @@
       if (currentView === 'dining') renderDiningView();
 
       if (currentView === 'guides') renderGuidesView();
+      if (currentView === 'mind') renderMindView();
 
 
 
@@ -2593,6 +2595,7 @@
     if (filter === 'airfryer') return (typeof AIRFRYER !== 'undefined' && !!AIRFRYER[r.id]);
 
     if (filter === 'superage') return (r.tags || []).map(t => t.toLowerCase()).includes('super-age');
+    if (filter === 'mind') return (r.tags || []).map(t => String(t).toLowerCase()).includes('mind-diet');
 
     if (filter === 'leanprotein') return (r.tags || []).map(t => t.toLowerCase()).includes('lean-protein');
 
@@ -3845,6 +3848,9 @@
 
 
 
+    const mindNoteHtml = recipe.mindNote
+      ? `<div class="rmodal-section"><div class="rmodal-section-title">🧠 MIND Diet Note</div><div class="fodmap-note-box"><div class="fodmap-note-text">${escHtml(recipe.mindNote)}</div></div></div>`
+      : '';
     const superAgeNoteHtml = recipe.superAgeNote
       ? `<div class="rmodal-section"><div class="rmodal-section-title">✨ Super Age Note</div><div class="fodmap-note-box"><div class="fodmap-note-text">${recipe.superAgeNote}</div></div></div>`
       : '';
@@ -4518,6 +4524,7 @@
 
 
         ${superAgeNoteHtml}
+        ${mindNoteHtml}
         ${fodmapNoteHtml}
 
         ${recipe.source ? `<div class="rmodal-section"><a class="rmodal-source-link" href="${recipe.source}" target="_blank" rel="noopener noreferrer">🔗 View original recipe</a></div>` : ''}
@@ -22945,6 +22952,174 @@
 
 
 
+  // ── 🧠 MIND DIET PAGE ───────────────────────────────────
+  // Rules + 31-day plan from js/mind-plan.js; recipes from js/mind-*.js
+  // (tagged 'mind-diet', so they also live in All Recipes and the planner).
+  let mindWeekIdx = 0;
+  const MIND_SLOTS = [['breakfast', '🌅 Breakfast'], ['lunch', '🥗 Lunch'], ['dinner', '🍴 Dinner'], ['snack', '🥕 Snack']];
+  function mindRecipes() {
+    return getAllRecipes().filter(r => (r.tags || []).map(t => String(t).toLowerCase()).includes('mind-diet'));
+  }
+  function mindPlanWeeks() {
+    const plan = (typeof MIND_PLAN !== 'undefined') ? MIND_PLAN : [];
+    const weeks = [];
+    for (let i = 0; i < plan.length; i += 7) weeks.push(plan.slice(i, i + 7));
+    return weeks;
+  }
+  // Score a run of plan days against MIND's 14 food-group targets (wine skipped).
+  function mindScoreDays(days, byId) {
+    const totals = {};
+    days.forEach(day => MIND_SLOTS.forEach(([slot]) => {
+      const r = byId[day[slot]];
+      const m = (r && r.mind) || {};
+      Object.keys(m).forEach(k => { totals[k] = (totals[k] || 0) + (Number(m[k]) || 0); });
+    }));
+    const n = days.length || 1;
+    let score = 0;
+    const rows = MIND_DIET.groups.filter(g => g.per !== 'skip').map(g => {
+      if (g.per === 'fixed') { score += 1; return { g, amount: '✓', pts: 1 }; }
+      const total = totals[g.key] || 0;
+      const rate = g.per === 'day' ? total / n : total * 7 / n;
+      let pts;
+      if (g.limit) pts = rate <= g.full ? 1 : rate <= g.half ? 0.5 : 0;
+      else pts = rate >= g.full ? 1 : rate >= g.half ? 0.5 : 0;
+      score += pts;
+      const shown = Math.round(rate * 10) / 10;
+      return { g, amount: shown + (g.per === 'day' ? '/day' : '/wk'), pts };
+    });
+    return { score, rows };
+  }
+  function mindPlannerKeys(count) {
+    const now = new Date();
+    const monday = new Date(now);
+    monday.setDate(now.getDate() - ((now.getDay() + 6) % 7) + weekOffset * 7);
+    return Array.from({ length: count }, (_, i) => {
+      const d = new Date(monday);
+      d.setDate(monday.getDate() + i);
+      return d.toISOString().slice(0, 10);
+    });
+  }
+  function loadMindDays(days, what) {
+    const keys = mindPlannerKeys(days.length);
+    const all = getAllRecipes();
+    const labelEl = document.getElementById('week-label');
+    const from = labelEl && labelEl.textContent ? labelEl.textContent : 'the week shown in the planner';
+    if (!confirm('Load ' + what + ' of the MIND plan into the planner, starting the Monday of ' + from + '? Breakfast, lunch, dinner and snack are replaced for ' + days.length + ' day' + (days.length === 1 ? '' : 's') + '.')) return;
+    days.forEach((day, i) => {
+      MIND_SLOTS.forEach(([slot]) => {
+        const id = day[slot];
+        if (id && all.some(x => x.id === id)) setSlotMain(keys[i] + '-' + slot, { type: 'recipe', id: id });
+      });
+    });
+    saveMeals();
+    renderPlanner();
+    showToast('🧠 MIND plan loaded: ' + what);
+  }
+  function renderMindView() {
+    const el = document.getElementById('mind-content');
+    if (!el || typeof MIND_DIET === 'undefined') return;
+    const recipes = mindRecipes();
+    const byId = {};
+    recipes.forEach(r => { byId[r.id] = r; });
+    const weeks = mindPlanWeeks();
+    if (mindWeekIdx >= weeks.length) mindWeekIdx = 0;
+    const monthScore = mindScoreDays([].concat(...weeks), byId);
+    const fmtPts = p => (p === 1 ? '1' : p === 0.5 ? '½' : '0');
+
+    const groupsHtml = MIND_DIET.groups.map(g => {
+      const row = monthScore.rows.find(x => x.g.key === g.key);
+      const kind = g.per === 'skip' ? 'skip' : g.limit ? 'limit' : 'more';
+      return `<div class="mind-group mind-${kind}">
+        <span class="mind-group-emoji">${g.emoji}</span>
+        <span class="mind-group-label">${escHtml(g.label)}</span>
+        <span class="mind-group-target">${escHtml(g.target)}</span>
+        ${row ? `<span class="mind-group-plan" title="This plan, averaged over the month">${escHtml(row.amount)} · ${fmtPts(row.pts)} pt</span>` : ''}
+      </div>`;
+    }).join('');
+
+    const week = weeks[mindWeekIdx] || [];
+    const weekScore = mindScoreDays(week, byId);
+    const tabsHtml = weeks.map((w, i) =>
+      `<button class="mind-week-tab${i === mindWeekIdx ? ' active' : ''}" data-mind-week="${i}">Week ${i + 1}<span>Days ${w[0].day}–${w[w.length - 1].day}</span></button>`
+    ).join('');
+    const daysHtml = week.map(day => `
+      <div class="mind-day">
+        <div class="mind-day-head">Day ${day.day}</div>
+        ${MIND_SLOTS.map(([slot, label]) => {
+          const r = byId[day[slot]];
+          const extra = day[slot + 'Note'] ? `<span class="mind-meal-note">${escHtml(day[slot + 'Note'])}</span>` : '';
+          return `<div class="mind-meal${r ? '' : ' missing'}"${r ? ` data-mind-recipe="${escHtml(r.id)}"` : ''}>
+            <span class="mind-meal-slot">${label}</span>
+            <span class="mind-meal-name">${r ? (r.emoji || '🍽️') + ' ' + escHtml(r.name) : escHtml(day[slot] || '—')}${extra}</span>
+          </div>`;
+        }).join('')}
+      </div>`).join('');
+    const weekPts = weekScore.rows.map(x =>
+      `<span class="mind-pt ${x.pts === 1 ? 'full' : x.pts ? 'half' : 'none'}" title="${escHtml(x.g.label)}: ${escHtml(x.amount)}">${x.g.emoji} ${fmtPts(x.pts)}</span>`
+    ).join('');
+
+    const cats = [['breakfast', '🌅 Breakfasts'], ['lunch', '🥗 Lunches'], ['dinner', '🍴 Dinners'], ['snacks', '🥕 Snacks']];
+    const recipesHtml = cats.map(([cat, label]) => {
+      const list = recipes.filter(r => r.category === cat).sort((a, b) => a.name.localeCompare(b.name));
+      if (!list.length) return '';
+      return `<div class="mind-rcat"><div class="mind-rcat-title">${label} <span>${list.length}</span></div>
+        <div class="mind-rlist">${list.map(r => {
+          const n = r.nutrition || {};
+          const iron = (r.tags || []).includes('iron-boost') ? '<span class="mind-iron" title="Iron + vitamin C">🩸 iron</span>' : '';
+          return `<button class="mind-rcard" data-mind-recipe="${escHtml(r.id)}">
+            <span class="mind-rcard-emoji">${r.emoji || '🍽️'}</span>
+            <span class="mind-rcard-name">${escHtml(r.name)}</span>
+            <span class="mind-rcard-meta">⏱ ${escHtml(r.time || '—')}${n.cal ? ' · ' + n.cal + ' cal · ' + n.protein + 'g P · ' + n.fiber + 'g F' : ''} ${iron}</span>
+          </button>`;
+        }).join('')}</div></div>`;
+    }).join('');
+
+    el.innerHTML = `
+      <section class="mind-section">
+        <p class="mind-intro">${escHtml(MIND_DIET.intro)}</p>
+        <ul class="mind-findings">${MIND_DIET.findings.map(f => `<li>${escHtml(f)}</li>`).join('')}</ul>
+        <a class="mind-source" href="${escHtml(MIND_DIET.source)}" target="_blank" rel="noopener">Read the SuperAge article ↗</a>
+      </section>
+      <section class="mind-section">
+        <h3 class="mind-h">The 15 food groups <span class="mind-score-badge">This plan: ${monthScore.score} / 14</span></h3>
+        <div class="mind-groups">${groupsHtml}</div>
+      </section>
+      <section class="mind-section">
+        <h3 class="mind-h">For you</h3>
+        <ul class="mind-foryou">${MIND_DIET.forYou.map(f => `<li>${escHtml(f)}</li>`).join('')}</ul>
+      </section>
+      <section class="mind-section">
+        <h3 class="mind-h">Your ${weeks.reduce((s, w) => s + w.length, 0)}-day plan</h3>
+        <div class="mind-week-tabs">${tabsHtml}</div>
+        <div class="mind-week-bar">
+          <div class="mind-week-score"><strong>Week ${mindWeekIdx + 1} score: ${weekScore.score} / 14</strong><div class="mind-pts">${weekPts}</div></div>
+          <div class="mind-week-actions">
+            <button class="action-btn" id="mind-load-week">📥 Load week ${mindWeekIdx + 1} into the planner</button>
+            <button class="action-btn" id="mind-load-month">📅 Load the whole month</button>
+          </div>
+        </div>
+        <div class="mind-days">${daysHtml}</div>
+        <p class="mind-hint">Tap any meal to open the recipe. Loading starts on the Monday of the week the planner is showing, so flip the planner to the week you want first.</p>
+      </section>
+      <section class="mind-section">
+        <h3 class="mind-h">All MIND recipes <span class="mind-count">${recipes.length}</span></h3>
+        ${recipesHtml}
+      </section>`;
+
+    el.querySelectorAll('[data-mind-recipe]').forEach(node => node.addEventListener('click', () => {
+      const r = byId[node.dataset.mindRecipe];
+      if (r) openRecipeModal(r);
+    }));
+    el.querySelectorAll('[data-mind-week]').forEach(btn => btn.addEventListener('click', () => {
+      mindWeekIdx = Number(btn.dataset.mindWeek) || 0;
+      renderMindView();
+    }));
+    const wkBtn = document.getElementById('mind-load-week');
+    if (wkBtn) wkBtn.addEventListener('click', () => loadMindDays(week, 'week ' + (mindWeekIdx + 1)));
+    const moBtn = document.getElementById('mind-load-month');
+    if (moBtn) moBtn.addEventListener('click', () => loadMindDays([].concat(...weeks), 'the whole month'));
+  }
+
   function renderDiningView() {
 
 
@@ -23383,6 +23558,7 @@
     if (currentView === 'reintro') renderReintroView();
 
     if (currentView === 'guides') renderGuidesView();
+    if (currentView === 'mind') renderMindView();
 
   };
 

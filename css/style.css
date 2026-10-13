@@ -7798,3 +7798,60 @@ body.dark .wm-intro { color: #aaa; }
 
 /* Side dishes planned alongside a meal — a smaller, indented chip under the main one */
 .meal-chip.meal-chip-side { margin-left: 10px; font-size: 0.92em; opacity: 0.92; border-style: dashed; }
+
+/* ── 🧠 MIND DIET PAGE ─────────────────────────────────── */
+.mind-section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; box-shadow: var(--shadow); margin-bottom: 16px; }
+.mind-intro { margin: 0 0 10px; line-height: 1.5; }
+.mind-findings, .mind-foryou { margin: 0 0 10px; padding-left: 20px; line-height: 1.5; }
+.mind-findings li, .mind-foryou li { margin-bottom: 6px; }
+.mind-foryou { list-style: none; padding-left: 0; }
+.mind-source { color: var(--primary); font-weight: 600; text-decoration: none; }
+.mind-h { margin: 0 0 12px; font-size: 17px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.mind-score-badge, .mind-count { background: var(--primary-light); color: var(--primary-dark); border-radius: 999px; padding: 2px 10px; font-size: 13px; font-weight: 700; }
+.mind-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; }
+.mind-group { display: grid; grid-template-columns: 28px 1fr; column-gap: 8px; align-items: center; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--border); }
+.mind-group-emoji { grid-row: span 3; font-size: 20px; }
+.mind-group-label { font-weight: 700; }
+.mind-group-target { font-size: 13px; color: var(--text-muted); }
+.mind-group-plan { font-size: 12px; color: var(--primary-dark); font-weight: 600; }
+.mind-more { background: var(--green-bg); }
+.mind-limit { background: var(--red-bg); }
+.mind-skip { background: var(--bg); }
+.mind-week-tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 10px; }
+.mind-week-tab { flex: 0 0 auto; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 10px; padding: 6px 12px; cursor: pointer; font-weight: 700; display: flex; flex-direction: column; align-items: center; }
+.mind-week-tab span { font-size: 11px; font-weight: 500; color: var(--text-muted); }
+.mind-week-tab.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.mind-week-tab.active span { color: rgba(255,255,255,0.85); }
+.mind-week-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+.mind-pts { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.mind-pt { font-size: 12px; border-radius: 999px; padding: 1px 7px; border: 1px solid var(--border); }
+.mind-pt.full { background: var(--green-bg); }
+.mind-pt.half { background: var(--yellow-bg); }
+.mind-pt.none { background: var(--red-bg); }
+.mind-week-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.mind-days { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+.mind-day { border: 1px solid var(--border); border-radius: 10px; padding: 10px; background: var(--bg); }
+.mind-day-head { font-weight: 800; margin-bottom: 6px; color: var(--primary-dark); }
+.mind-meal { display: flex; flex-direction: column; padding: 6px 8px; border-radius: 8px; background: var(--card); margin-bottom: 6px; cursor: pointer; border: 1px solid transparent; }
+.mind-meal:hover { border-color: var(--primary); }
+.mind-meal.missing { cursor: default; opacity: 0.6; }
+.mind-meal-slot { font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
+.mind-meal-name { font-size: 14px; line-height: 1.3; }
+.mind-meal-note { display: block; font-size: 12px; color: var(--text-muted); }
+.mind-hint { font-size: 13px; color: var(--text-muted); margin: 10px 0 0; }
+.mind-rcat { margin-bottom: 14px; }
+.mind-rcat-title { font-weight: 800; margin-bottom: 8px; }
+.mind-rcat-title span { color: var(--text-muted); font-weight: 600; }
+.mind-rlist { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; }
+.mind-rcard { display: grid; grid-template-columns: 30px 1fr; column-gap: 8px; text-align: left; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 10px; padding: 8px 10px; cursor: pointer; font: inherit; }
+.mind-rcard:hover { border-color: var(--primary); }
+.mind-rcard-emoji { grid-row: span 2; font-size: 22px; align-self: center; }
+.mind-rcard-name { font-weight: 700; font-size: 14px; }
+.mind-rcard-meta { font-size: 12px; color: var(--text-muted); }
+.mind-iron { background: var(--red-bg); border-radius: 999px; padding: 0 6px; }
+@media (max-width: 600px) {
+  .mind-section { padding: 12px; }
+  .mind-groups, .mind-days, .mind-rlist { grid-template-columns: 1fr; }
+  .mind-week-actions { width: 100%; }
+  .mind-week-actions .action-btn { flex: 1 1 auto; }
+}

@@ -40,6 +40,7 @@
     <button class="nav-btn" data-view="recipes">🍳 <span class="nav-label">Recipes</span></button>
     <button class="nav-btn" data-view="foods">🍎 <span class="nav-label">Food Guide</span></button>
     <button class="nav-btn" data-view="guides">📚 <span class="nav-label">Guides</span></button>
+    <button class="nav-btn" data-view="mind">🧠 <span class="nav-label">MIND Diet</span></button>
 
     <div class="nav-dropdown">
       <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">🧰 <span class="nav-label">Tools</span><span class="nav-caret">▾</span></button>
@@ -122,6 +123,7 @@
         <button class="rfilter" data-filter="quick">⏱️ Quick ≤20m</button>
         <button class="rfilter" data-filter="airfryer">🌬️ Air Fryer</button>
         <button class="rfilter" data-filter="superage">✨ Super Age</button>
+        <button class="rfilter" data-filter="mind">🧠 MIND</button>
         <button class="rfilter" data-filter="leanprotein">💪 High Protein</button>
         <button class="rfilter" data-filter="sides">🥗 Sides</button>
       </div>
@@ -367,6 +369,21 @@
     </div>
     <main>
       <div id="dining-content"></div>
+    </main>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       VIEW 5h — MIND DIET (brain-health diet + 31-day plan)
+  ════════════════════════════════════════ -->
+  <div id="view-mind" class="hidden">
+    <div class="subs-hero">
+      <div class="subs-hero-text">
+        <div class="subs-hero-title">🧠 MIND Diet</div>
+        <div class="subs-hero-sub">The brain-health diet, made low-FODMAP and iron-friendly. A full month of breakfasts, lunches, dinners and snacks you can load straight into your planner.</div>
+      </div>
+    </div>
+    <main>
+      <div id="mind-content"></div>
     </main>
   </div>
 
@@ -829,6 +846,11 @@
   <script src="js/superage-snacks.js"></script>
   <script src="js/superage-quick-lunch.js"></script>
   <script src="js/superage-quick-dinner.js"></script>
+  <script src="js/mind-breakfast.js"></script>
+  <script src="js/mind-lunch.js"></script>
+  <script src="js/mind-dinner.js"></script>
+  <script src="js/mind-snacks.js"></script>
+  <script src="js/mind-plan.js"></script>
   <script src="js/lean-protein-recipes.js"></script>
   <script src="js/family-clips.js"></script>
   <script src="js/family-recipe-data.js"></script>
