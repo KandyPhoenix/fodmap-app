@@ -141,6 +141,15 @@ If a recipe genuinely is low-FODMAP, say so rather than leaving the generic
 line — and consider whether it belongs in the FODMAP collection instead (see
 below).
 
+**Never rewrite a recipe to make it low-FODMAP unless Kandy specifically asks**
+(Kandy, 2026-10-13). This applies to recipes you write yourself as well as
+scraped ones. Keep the regular recipe as written, with real garlic, onion,
+regular dairy and so on, and file it in `js/added-recipes.js`. You are welcome
+to put low-FODMAP swaps in the `fodmapNote`, for example "For low-FODMAP: use
+garlic-infused oil instead of garlic". Only a recipe she asked to be
+low-FODMAP, or one that already is low-FODMAP as written, goes in
+`KANDY_RECIPES`.
+
 ## 5. Add it
 
 Append the object to the `ADDED_RECIPES` array in `js/added-recipes.js`.
