@@ -926,7 +926,7 @@
       document.getElementById('view-finds').classList.toggle('hidden',   currentView !== 'finds');
 
       document.getElementById('view-guides').classList.toggle('hidden',  currentView !== 'guides');
-      document.getElementById('view-mind').classList.toggle('hidden',    currentView !== 'mind');
+      document.getElementById('view-diets').classList.toggle('hidden',   currentView !== 'diets');
 
 
 
@@ -985,7 +985,7 @@
       if (currentView === 'dining') renderDiningView();
 
       if (currentView === 'guides') renderGuidesView();
-      if (currentView === 'mind') renderMindView();
+      if (currentView === 'diets') renderDietsView();
 
 
 
@@ -1174,6 +1174,7 @@
     else if (currentView === 'snacks') renderSnacksView();
 
     else if (currentView === 'guides') renderGuidesView();
+    else if (currentView === 'diets') renderDietsView();
 
 
 
@@ -1258,6 +1259,7 @@
     else if (currentView === 'snacks') renderSnacksView();
 
     else if (currentView === 'guides') renderGuidesView();
+    else if (currentView === 'diets') renderDietsView();
 
 
 
@@ -22999,12 +23001,13 @@
       return d.toISOString().slice(0, 10);
     });
   }
-  function loadMindDays(days, what) {
+  function loadMindDays(days, what, planName, emoji) {
+    planName = planName || 'MIND'; emoji = emoji || '🧠';
     const keys = mindPlannerKeys(days.length);
     const all = getAllRecipes();
     const labelEl = document.getElementById('week-label');
     const from = labelEl && labelEl.textContent ? labelEl.textContent : 'the week shown in the planner';
-    if (!confirm('Load ' + what + ' of the MIND plan into the planner, starting the Monday of ' + from + '? Breakfast, lunch, dinner and snack are replaced for ' + days.length + ' day' + (days.length === 1 ? '' : 's') + '.')) return;
+    if (!confirm('Load ' + what + ' of the ' + planName + ' plan into the planner, starting the Monday of ' + from + '? The planned meals replace what is in those slots for ' + days.length + ' day' + (days.length === 1 ? '' : 's') + '.')) return;
     days.forEach((day, i) => {
       MIND_SLOTS.forEach(([slot]) => {
         const id = day[slot];
@@ -23013,10 +23016,12 @@
     });
     saveMeals();
     renderPlanner();
-    showToast('🧠 MIND plan loaded: ' + what);
+    showToast(emoji + ' ' + planName + ' plan loaded: ' + what);
   }
-  function renderMindView() {
-    const el = document.getElementById('mind-content');
+  let mindTargetEl = null;
+  function renderMindView(target) {
+    const el = target || mindTargetEl;
+    mindTargetEl = el;
     if (!el || typeof MIND_DIET === 'undefined') return;
     const recipes = mindRecipes();
     const byId = {};
@@ -23118,6 +23123,196 @@
     if (wkBtn) wkBtn.addEventListener('click', () => loadMindDays(week, 'week ' + (mindWeekIdx + 1)));
     const moBtn = document.getElementById('mind-load-month');
     if (moBtn) moBtn.addEventListener('click', () => loadMindDays([].concat(...weeks), 'the whole month'));
+  }
+
+  // ── 🍽️ DIET PLANS PAGE (Tools) ─────────────────────────
+  // One section per diet the app holds: what it is, its rules, its day plan
+  // (when it has one) and every recipe that belongs to it.
+  const DIET_TAGS = ['dietician-plan', 'super-age', 'mind-diet', 'body-reset', 'lean-protein'];
+  const DIET_DAY_NAMES = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const DIET_PLANS = [
+    {
+      id: 'dietician', emoji: '👩‍⚕️', label: "Dietitian's Plan",
+      intro: "The low-FODMAP plan from your dietitian, kept quick and simple: 30 minutes or less with only a few ingredients. It has a 7-day menu plus extra chicken, fish, turkey and beef dinners to swap in for a second week.",
+      rules: ['🍀 Low FODMAP throughout', '🚫 No tomatoes, spinach, broccoli or Brussels sprouts', '🚫 No legumes (beans, lentils, chickpeas)', '🥕 All vegetable skins removed: peel cucumbers, carrots, zucchini and potatoes', '⏱️ 30 minutes or less, minimal ingredients'],
+      match: r => hasTag(r, 'dietician-plan'),
+      plan: () => DIET_DAY_NAMES.map(d => { const k = d.slice(0, 3).toLowerCase(); return { label: d, breakfast: 'diet-' + k + '-breakfast', lunch: 'diet-' + k + '-lunch', dinner: 'diet-' + k + '-dinner' }; }),
+    },
+    {
+      id: 'fodmap', emoji: '🍀', label: 'Low FODMAP',
+      intro: "The app's core low-FODMAP recipes. Low FODMAP is done in three phases: eliminate high-FODMAP foods for 2 to 6 weeks until symptoms settle, reintroduce one FODMAP group at a time (the 🧪 Reintro tool walks you through it), then keep a personalized diet built around what you tolerate.",
+      rules: ['🧄 No onion or garlic. Use garlic-infused oil, chives and scallion greens', '🥛 Lactose-free dairy or plant milks', '🍞 Spelt sourdough, oats, rice, quinoa, potatoes and corn instead of wheat-heavy foods', '⚖️ Portions matter: many foods are safe in small amounts (check the 🍎 Food Guide)', '🫘 Legumes only canned and rinsed, in small portions'],
+      match: r => hasTag(r, 'fodmap') && !DIET_TAGS.some(t => hasTag(r, t)),
+    },
+    {
+      id: 'superage', emoji: '✨', label: 'Super Age',
+      intro: 'Recipes inspired by a 30-year JAMA Network Open study that linked high-quality, fiber-rich carbohydrates to healthier aging. Every dish stars at least one "longevity carb".',
+      rules: ['🌾 Whole grains', '🍎 Whole fruit, skin on when you tolerate it', '🥦 Vegetables', '🫘 Legumes', '🥜 Nuts and seeds', '📉 Keep a low carb-to-fiber ratio by choosing fiber-rich carbs over refined ones'],
+      match: r => hasTag(r, 'super-age'),
+    },
+    {
+      id: 'mind', emoji: '🧠', label: 'MIND Diet',
+      intro: "The brain-health diet, made low-FODMAP and iron-friendly. Higher MIND scores were linked to slower brain aging over 12 years of MRIs. The full guide in 📚 Guides has the 15 food groups, a 31-day plan and buttons to load it into your planner.",
+      rules: ['🌾 Whole grains 3+ a day', '🥬 Leafy greens 6+ a week, other veg 1+ a day', '🥜 Nuts 5+ a week, 🫘 beans 4+ a week, 🍓 berries 2+ a week', '🍗 Poultry 2+ a week, 🐟 fish 1+ a week', '🫒 Olive oil as your main fat', '⬇️ Limit red meat, sweets, cheese, butter and fried food'],
+      match: r => hasTag(r, 'mind-diet'),
+      guide: true,
+    },
+    {
+      id: 'bodyreset', emoji: '🔄', label: 'Body Reset',
+      intro: 'The 7-day meal plan from The Body Reset Playbook in the Synthesis app. Every meal follows the Permanent Plate.',
+      rules: ['🥗 Half the plate plants', '✋ A palm of protein', '✊ A fist of intact starch', '👍 A thumb of healthy fat', '🔢 Eat in order: veg, then protein, then starch'],
+      match: r => hasTag(r, 'body-reset'),
+      plan: () => DIET_DAY_NAMES.map((d, i) => ({ label: 'Day ' + (i + 1) + ' · ' + d, breakfast: 'br-d' + (i + 1) + '-breakfast', lunch: 'br-d' + (i + 1) + '-lunch', dinner: 'br-d' + (i + 1) + '-dinner' })),
+    },
+  ];
+  function hasTag(r, tag) { return (r.tags || []).some(t => String(t).toLowerCase() === tag); }
+  let dietPlanId = (function () { try { return localStorage.getItem('fodmap-diet-plan') || 'dietician'; } catch (e) { return 'dietician'; } })();
+  function renderDietsView() {
+    const el = document.getElementById('diets-content');
+    if (!el) return;
+    const all = getAllRecipes();
+    const diet = DIET_PLANS.find(d => d.id === dietPlanId) || DIET_PLANS[0];
+    const counts = {};
+    DIET_PLANS.forEach(d => { counts[d.id] = all.filter(d.match).length; });
+    const q = (searchQuery || '').toLowerCase();
+    const recipes = all.filter(diet.match).filter(r => !q || recipeMatchesSearch(r, q));
+    const byId = {};
+    all.forEach(r => { byId[r.id] = r; });
+
+    const chips = DIET_PLANS.map(d =>
+      `<button class="mind-week-tab${d.id === diet.id ? ' active' : ''}" data-diet="${d.id}">${d.emoji} ${escHtml(d.label)}<span>${counts[d.id]} recipes</span></button>`
+    ).join('');
+
+    let planHtml = '';
+    if (diet.plan) {
+      const days = diet.plan();
+      planHtml = `<section class="mind-section">
+        <h3 class="mind-h">7-day plan</h3>
+        <div class="mind-days">${days.map(day => `
+          <div class="mind-day">
+            <div class="mind-day-head">${escHtml(day.label)}</div>
+            ${MIND_SLOTS.filter(([slot]) => day[slot]).map(([slot, label]) => {
+              const r = byId[day[slot]];
+              return `<div class="mind-meal${r ? '' : ' missing'}"${r ? ` data-diet-recipe="${escHtml(r.id)}"` : ''}>
+                <span class="mind-meal-slot">${label}</span>
+                <span class="mind-meal-name">${r ? (r.emoji || '🍽️') + ' ' + escHtml(r.name) : '—'}</span>
+              </div>`;
+            }).join('')}
+          </div>`).join('')}</div>
+        <div class="mind-week-actions" style="margin-top:12px"><button class="action-btn" id="diet-load-week">📥 Load this week into the planner</button></div>
+        <p class="mind-hint">Loads into the week the planner is showing, starting Monday. Flip the planner to the week you want first.</p>
+      </section>`;
+    }
+
+    const cats = [['breakfast', '🌅 Breakfasts'], ['lunch', '🥗 Lunches'], ['dinner', '🍴 Dinners'], ['snacks', '🥕 Snacks'], ['desserts', '🍓 Desserts'], ['sides', '🥗 Sides'], ['drinks', '🍹 Drinks']];
+    const known = new Set(cats.map(c => c[0]));
+    const groups = cats.concat([['__other', '🍽️ More']]).map(([cat, label]) => {
+      const list = recipes.filter(r => cat === '__other' ? !known.has(r.category) : r.category === cat).sort((a, b) => a.name.localeCompare(b.name));
+      if (!list.length) return '';
+      return `<div class="mind-rcat"><div class="mind-rcat-title">${label} <span>${list.length}</span></div>
+        <div class="mind-rlist">${list.map(r => {
+          const n = (typeof getRecipeNutrition === 'function' ? getRecipeNutrition(r.id, r) : r.nutrition) || {};
+          return `<button class="mind-rcard" data-diet-recipe="${escHtml(r.id)}">
+            <span class="mind-rcard-emoji">${r.emoji || '🍽️'}</span>
+            <span class="mind-rcard-name">${escHtml(r.name)}</span>
+            <span class="mind-rcard-meta">⏱ ${escHtml(r.time || '—')}${n.cal ? ' · ' + n.cal + ' cal · ' + (n.protein != null ? n.protein : '–') + 'g P · ' + (n.fiber != null ? n.fiber : '–') + 'g F' : ''}</span>
+          </button>`;
+        }).join('')}</div></div>`;
+    }).join('');
+
+    el.innerHTML = `
+      <div class="mind-week-tabs diet-chips">${chips}</div>
+      <section class="mind-section">
+        <h3 class="mind-h">${diet.emoji} ${escHtml(diet.label)}</h3>
+        <p class="mind-intro">${escHtml(diet.intro)}</p>
+        <ul class="mind-foryou">${diet.rules.map(x => `<li>${escHtml(x)}</li>`).join('')}</ul>
+        ${diet.guide ? '<button class="action-btn" id="diet-open-guide">📚 Open the full MIND Diet guide and 31-day plan</button>' : ''}
+      </section>
+      ${planHtml}
+      <section class="mind-section">
+        <h3 class="mind-h">${escHtml(diet.label)} recipes <span class="mind-count">${recipes.length}</span></h3>
+        ${groups || '<p class="mind-hint">No recipes match your search.</p>'}
+      </section>`;
+
+    el.querySelectorAll('[data-diet]').forEach(b => b.addEventListener('click', () => {
+      dietPlanId = b.dataset.diet;
+      try { localStorage.setItem('fodmap-diet-plan', dietPlanId); } catch (e) {}
+      renderDietsView();
+    }));
+    el.querySelectorAll('[data-diet-recipe]').forEach(node => node.addEventListener('click', () => {
+      const r = byId[node.dataset.dietRecipe];
+      if (r) openRecipeModal(r);
+    }));
+    const loadBtn = document.getElementById('diet-load-week');
+    if (loadBtn) loadBtn.addEventListener('click', () => loadMindDays(diet.plan(), 'the 7-day menu', diet.label, diet.emoji));
+    const guideBtn = document.getElementById('diet-open-guide');
+    if (guideBtn) guideBtn.addEventListener('click', () => {
+      guidesTab = 'mind';
+      const gb = document.querySelector('.nav-btn[data-view="guides"]');
+      if (gb) gb.click();
+      renderGuidesView();
+      window.scrollTo(0, 0);
+    });
+  }
+
+  // 🩸 Iron guide tab — data in js/iron-guide.js.
+  function renderIronGuide(el, q) {
+    if (typeof IRON_GUIDE === 'undefined') { el.innerHTML = ''; return; }
+    const G = IRON_GUIDE;
+    const groups = G.groups.map(group => {
+      const items = group.items.filter(it =>
+        !q || (it.name + ' ' + it.serving + ' ' + (it.note || '')).toLowerCase().includes(q));
+      if (!items.length) return '';
+      return `<div class="guide-group">
+        <div class="guide-group-title">${escHtml(group.label)}</div>
+        ${group.blurb ? `<div class="guide-group-blurb">${escHtml(group.blurb)}</div>` : ''}
+        ${items.map(it => `
+          <div class="protein-row${it.fodmap === 'red' ? ' protein-row-avoid' : ''}">
+            <span class="protein-emoji">${it.emoji}</span>
+            <div class="protein-main">
+              <div class="protein-name">${GUIDE_FODMAP_DOT[it.fodmap] || ''} ${escHtml(it.name)}</div>
+              <div class="protein-serving">${escHtml(it.serving)}${it.note ? ' — ' + escHtml(it.note) : ''}</div>
+            </div>
+            <span class="protein-badge">${it.mg} mg</span>
+          </div>`).join('')}
+      </div>`;
+    }).join('');
+    if (q) { el.innerHTML = groups || guideNoResults('iron foods'); return; }
+    const ironRecipes = getAllRecipes().filter(r => (r.tags || []).some(t => String(t).toLowerCase() === 'iron-boost'))
+      .sort((a, b) => a.name.localeCompare(b.name));
+    const day = G.sampleDay;
+    const dayTotal = Math.round(day.meals.reduce((s, m) => s + m.mg, 0) * 10) / 10;
+    el.innerHTML = `
+      <div class="mind-section">
+        <h3 class="mind-h">🩸 Iron from food</h3>
+        <p class="mind-intro">${escHtml(G.need)}</p>
+        <p class="mind-hint">🟢 low FODMAP at the serving shown · 🟡 check the portion or label · 🔴 high FODMAP</p>
+      </div>
+      ${groups}
+      <div class="mind-section">
+        <h3 class="mind-h">⬆️ Absorb more</h3>
+        <ul class="mind-foryou">${G.boosters.map(x => `<li>${escHtml(x)}</li>`).join('')}</ul>
+        <h3 class="mind-h">⬇️ What blocks it</h3>
+        <ul class="mind-foryou">${G.blockers.map(x => `<li>${escHtml(x)}</li>`).join('')}</ul>
+      </div>
+      <div class="mind-section">
+        <h3 class="mind-h">${escHtml(day.title)} <span class="mind-score-badge">≈ ${dayTotal} mg</span></h3>
+        ${day.meals.map(m => `<div class="protein-row"><span class="protein-emoji">${m.slot.split(' ')[0]}</span><div class="protein-main"><div class="protein-name">${escHtml(m.slot.split(' ').slice(1).join(' '))}</div><div class="protein-serving">${escHtml(m.text)}</div></div><span class="protein-badge">${m.mg} mg</span></div>`).join('')}
+      </div>
+      ${ironRecipes.length ? `<div class="mind-section">
+        <h3 class="mind-h">Iron-boost recipes <span class="mind-count">${ironRecipes.length}</span></h3>
+        <p class="mind-hint" style="margin:0 0 10px">Each pairs iron foods with vitamin C. Tap to open.</p>
+        <div class="mind-rlist">${ironRecipes.map(r => `<button class="mind-rcard" data-iron-recipe="${escHtml(r.id)}">
+          <span class="mind-rcard-emoji">${r.emoji || '🍽️'}</span>
+          <span class="mind-rcard-name">${escHtml(r.name)}</span>
+          <span class="mind-rcard-meta">${escHtml((RECIPE_CATEGORIES.find(c => c.id === r.category) || {}).label || r.category || '')} · ⏱ ${escHtml(r.time || '—')}</span>
+        </button>`).join('')}</div>
+      </div>` : ''}
+      <div class="mind-section"><p class="mind-intro" style="margin:0">⚠️ ${escHtml(G.note)}</p></div>`;
+    el.querySelectorAll('[data-iron-recipe]').forEach(b => b.addEventListener('click', () => {
+      const r = ironRecipes.find(x => x.id === b.dataset.ironRecipe);
+      if (r) openRecipeModal(r);
+    }));
   }
 
   function renderDiningView() {
@@ -23239,6 +23434,8 @@
     if (guidesTab === 'protein') renderProteinGuide(el, q);
     else if (guidesTab === 'superfoods') renderSuperfoodsGuide(el, q);
     else if (guidesTab === 'nutrients') renderNutrientsGuide(el, q);
+    else if (guidesTab === 'mind') renderMindView(el);
+    else if (guidesTab === 'iron') renderIronGuide(el, q);
     else if (guidesTab === 'tips') renderTipsGuide(el, q);
     else renderGuideLibrary(el, q);
   }
@@ -23558,7 +23755,7 @@
     if (currentView === 'reintro') renderReintroView();
 
     if (currentView === 'guides') renderGuidesView();
-    if (currentView === 'mind') renderMindView();
+    if (currentView === 'diets') renderDietsView();
 
   };
 

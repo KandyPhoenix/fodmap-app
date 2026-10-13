@@ -40,7 +40,6 @@
     <button class="nav-btn" data-view="recipes">🍳 <span class="nav-label">Recipes</span></button>
     <button class="nav-btn" data-view="foods">🍎 <span class="nav-label">Food Guide</span></button>
     <button class="nav-btn" data-view="guides">📚 <span class="nav-label">Guides</span></button>
-    <button class="nav-btn" data-view="mind">🧠 <span class="nav-label">MIND Diet</span></button>
 
     <div class="nav-dropdown">
       <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">🧰 <span class="nav-label">Tools</span><span class="nav-caret">▾</span></button>
@@ -49,6 +48,7 @@
         <button class="nav-btn" data-view="checker">🔍 <span class="nav-label">Recipe Check</span></button>
         <button class="nav-btn" data-view="snacks">🥨 <span class="nav-label">Snacks</span></button>
         <button class="nav-btn" data-view="dining">🥡 <span class="nav-label">Eating Out</span></button>
+        <button class="nav-btn" data-view="diets">🍽️ <span class="nav-label">Diet Plans</span></button>
       </div>
     </div>
 
@@ -373,17 +373,17 @@
   </div>
 
   <!-- ═══════════════════════════════════════
-       VIEW 5h — MIND DIET (brain-health diet + 31-day plan)
+       VIEW 5h — DIET PLANS (each diet, its rules, plan and recipes)
   ════════════════════════════════════════ -->
-  <div id="view-mind" class="hidden">
+  <div id="view-diets" class="hidden">
     <div class="subs-hero">
       <div class="subs-hero-text">
-        <div class="subs-hero-title">🧠 MIND Diet</div>
-        <div class="subs-hero-sub">The brain-health diet, made low-FODMAP and iron-friendly. A full month of breakfasts, lunches, dinners and snacks you can load straight into your planner.</div>
+        <div class="subs-hero-title">🍽️ Diet Plans</div>
+        <div class="subs-hero-sub">Every diet you've followed in one place: the Dietitian's Plan, Low FODMAP, Super Age, MIND and Body Reset. See each one's rules, its day plan and just its recipes.</div>
       </div>
     </div>
     <main>
-      <div id="mind-content"></div>
+      <div id="diets-content"></div>
     </main>
   </div>
 
@@ -403,6 +403,8 @@
         <button class="guide-tab active" data-tab="protein">💪 High Protein</button>
         <button class="guide-tab" data-tab="superfoods">🌟 Superfoods</button>
         <button class="guide-tab" data-tab="nutrients">🧬 Vitamins &amp; Minerals</button>
+        <button class="guide-tab" data-tab="iron">🩸 Iron</button>
+        <button class="guide-tab" data-tab="mind">🧠 MIND Diet</button>
         <button class="guide-tab" data-tab="tips">💡 Tips &amp; Guides</button>
         <button class="guide-tab" data-tab="library">📌 My Library</button>
       </div>
@@ -851,6 +853,7 @@
   <script src="js/mind-dinner.js"></script>
   <script src="js/mind-snacks.js"></script>
   <script src="js/mind-plan.js"></script>
+  <script src="js/iron-guide.js"></script>
   <script src="js/lean-protein-recipes.js"></script>
   <script src="js/family-clips.js"></script>
   <script src="js/family-recipe-data.js"></script>
