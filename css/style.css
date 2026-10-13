@@ -7871,4 +7871,8 @@ body.dark .wm-intro { color: #aaa; }
 .pill-picker-label, .diet-picker-label { white-space: nowrap; }
 .pill-select, .diet-select { background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 20px; padding: 6px 12px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; max-width: 100%; min-width: 0; }
 .pill-select:focus, .diet-select:focus { border-color: var(--primary); outline: none; }
+/* One size for every dropdown so they read as a set (fits the longest diet name). */
+.pill-select, .diet-select { width: 280px; }
+.pill-picker-label, .diet-picker-label { min-width: 74px; }
+.diet-picker { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 8px 12px; margin-bottom: 14px; }
 .category-bar > .pill-picker, .finds-filter-bar > .pill-picker, .guides-tab-bar > .pill-picker { padding: 0 16px; margin: 8px 0; }
