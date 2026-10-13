@@ -2073,6 +2073,7 @@ const ADDED_RECIPES = [
       "tags": [
           "added",
           "iron-rich",
+          "iron-boost",
           "quick",
           "no-cook",
           "vegetarian"
@@ -2119,6 +2120,7 @@ const ADDED_RECIPES = [
       "tags": [
           "added",
           "iron-rich",
+          "iron-boost",
           "dairy-free",
           "vegan",
           "high-protein",
@@ -2184,6 +2186,7 @@ const ADDED_RECIPES = [
       "tags": [
           "added",
           "iron-rich",
+          "iron-boost",
           "high-protein"
       ],
       "source": null,
@@ -2253,6 +2256,7 @@ const ADDED_RECIPES = [
       "tags": [
           "added",
           "iron-rich",
+          "iron-boost",
           "high-protein"
       ],
       "source": null,
@@ -2323,6 +2327,7 @@ const ADDED_RECIPES = [
       "tags": [
           "added",
           "iron-rich",
+          "iron-boost",
           "high-protein"
       ],
       "source": null,
@@ -2393,6 +2398,7 @@ const ADDED_RECIPES = [
       "tags": [
           "added",
           "iron-rich",
+          "iron-boost",
           "high-protein"
       ],
       "source": null,
