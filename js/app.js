@@ -2594,6 +2594,7 @@
 
     if (filter === 'superage') return (r.tags || []).map(t => t.toLowerCase()).includes('super-age');
     if (filter === 'mind') return (r.tags || []).map(t => String(t).toLowerCase()).includes('mind-diet');
+    if (filter === 'iron') return isIronRich(r);
 
     if (filter === 'leanprotein') return (r.tags || []).map(t => t.toLowerCase()).includes('lean-protein');
 
@@ -2735,8 +2736,22 @@
   const SEARCH_FILLER = new Set(['and', 'with', 'the', 'a', 'an', 'of', 'in', 'on', 'or', 'for', 'to']);
   // Searchable text for a recipe: its title, category, tags and every ingredient
   // (amount and name).
+  // 🩸 Iron-rich: tagged iron-boost, or built around a strong iron food
+  // (red meat, liver, shellfish, sardines, legumes, soy, dark greens, quinoa,
+  // pumpkin/hemp seeds). Powers the Iron-rich filter and searching "iron".
+  const IRON_RICH_RE = /\b(beef(?! (broth|stock|bouillon))|steak|sirloin|flank|brisket|liver|lamb|venison|bison|mussels?|clams?|oysters?|sardines?|lentils?|tofu|tempeh|chickpeas?|garbanzo|edamame|(black|kidney|pinto|white|navy|cannellini|great northern|lima|refried) beans|spinach|swiss chard|chard|quinoa|pumpkin seeds?|pepitas|hemp seeds?|blackstrap molasses)\b/i;
+  const ironRichCache = new Map();
+  function isIronRich(r) {
+    if (!r) return false;
+    if ((r.tags || []).some(t => String(t).toLowerCase() === 'iron-boost')) return true;
+    const key = r.id + '|' + (r.ingredients || []).length;
+    if (!ironRichCache.has(key)) {
+      ironRichCache.set(key, (r.ingredients || []).some(i => IRON_RICH_RE.test(String(i.item || '')) && !/\bbroth\b|\bstock\b/i.test(String(i.item || ''))));
+    }
+    return ironRichCache.get(key);
+  }
   function recipeSearchHaystack(r) {
-    return ' ' + normalizeSearchText([r.name, r.category, (r.tags || []).join(' '),
+    return ' ' + normalizeSearchText([r.name, r.category, (r.tags || []).join(' '), isIronRich(r) ? 'iron iron-rich high-iron' : '',
       (r.ingredients || []).map(i => (i.qty || '') + ' ' + (i.item || '')).join(' ')].join(' ')) + ' ';
   }
   // True if a recipe matches a search query. Matches the whole phrase, a synonym
@@ -23177,6 +23192,12 @@
       rules: ['🌾 Whole grains 3+ a day', '🥬 Leafy greens 6+ a week, other veg 1+ a day', '🥜 Nuts 5+ a week, 🫘 beans 4+ a week, 🍓 berries 2+ a week', '🍗 Poultry 2+ a week, 🐟 fish 1+ a week', '🫒 Olive oil as your main fat', '⬇️ Limit red meat, sweets, cheese, butter and fried food'],
       match: r => hasTag(r, 'mind-diet'),
       guide: true,
+    },
+    {
+      id: 'mindbasic', emoji: '⚡', label: 'MIND Quick & Basic',
+      intro: 'MIND-diet meals made from everyday grocery-store staples, all done in under an hour. They follow the same MIND food groups, and each has a 🍀 low-FODMAP version in the recipe.',
+      rules: ['🛒 Basic American ingredients: chicken, ground turkey, canned tuna and beans, frozen veggies, bagged spinach, brown rice, whole-wheat bread, oats, eggs, berries', '⏱️ Under an hour, most in 15–35 minutes', '🌾 A whole grain plus greens or veggies in every meal', '🫒 Olive oil, no butter, no cheese, nothing fried', '🩸 Iron-boost meals pair iron foods with vitamin C'],
+      match: r => hasTag(r, 'mind-basic'),
     },
     {
       id: 'bodyreset', emoji: '🔄', label: 'Body Reset',
