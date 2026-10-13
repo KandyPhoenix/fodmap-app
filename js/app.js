@@ -3689,7 +3689,12 @@
 
 
 
-        let qtyDisplay = convertGrams(ing.qty);
+        // Some imported recipes keep the amount inside the ingredient text ("1 pound chicken") with an
+        // empty qty; split it out so the amount shows in its column and scales with servings.
+        const sp = String(ing.qty || '').trim() ? null : splitEmbeddedQty(ing.qty, ing.item);
+        const qtyText = sp && sp.qty ? sp.qty : ing.qty;
+        const itemText = sp && sp.qty ? sp.item : ing.item;
+        let qtyDisplay = convertGrams(qtyText);
 
 
 
@@ -3705,7 +3710,7 @@
 
 
 
-          qtyDisplay = `<span class="scaled-qty" title="Recipe says ${ing.qty}">${convertGrams(scaleQtyText(ing.qty, multiplier))}</span>`;
+          qtyDisplay = `<span class="scaled-qty" title="Recipe says ${qtyText}">${convertGrams(scaleQtyText(qtyText, multiplier))}</span>`;
 
 
 
@@ -3721,7 +3726,7 @@
 
 
 
-        return `<li class="ingredient-item" data-idx="${i}"><div class="ingredient-check"></div><div class="ingredient-qty">${qtyDisplay}</div><div class="ingredient-name">${ing.item}</div></li>`;
+        return `<li class="ingredient-item" data-idx="${i}"><div class="ingredient-check"></div><div class="ingredient-qty">${qtyDisplay}</div><div class="ingredient-name">${itemText}</div></li>`;
 
 
 
