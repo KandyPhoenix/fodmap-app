@@ -1,4 +1,4 @@
-const CACHE = 'fodmap-v138';
+const CACHE = 'fodmap-v139';
 const ASSETS = [
   './',
   './index.html',

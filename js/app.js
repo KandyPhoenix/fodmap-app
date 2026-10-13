@@ -2895,6 +2895,244 @@
 
 
 
+  // One recipe card, exactly as the Recipes grid shows it (also used on the Diets pages).
+  function buildRecipeCard(r) {
+
+    const isUser = r.isCustom === true;
+
+
+
+
+
+
+
+    const card = document.createElement('div');
+
+
+
+
+
+
+
+    // Recipes imported from your OneNote/OneDrive cookbook are the non-FODMAP
+    // ones you didn't hand-create in the app — give them their own colour.
+    const isFodmap   = (r.tags || []).some(t => (t || '').toLowerCase() === 'fodmap');
+    const isCookbook = !isUser && !isFodmap;
+    card.className = 'recipe-card' + (isUser ? ' user-recipe' : (isCookbook ? ' cookbook-recipe' : ''));
+
+
+
+
+
+
+
+    const tags = (r.tags || []).map(t => `<span class="recipe-tag">${t}</span>`).join('');
+
+
+
+
+
+
+
+    const nut = getRecipeNutrition(r.id, r);
+
+
+
+
+
+
+
+    const calHtml     = nut.cal     != null ? `<span class="recipe-cal">🔥 ${nut.cal} cal</span>` : '';
+
+
+
+
+
+
+
+    const proteinHtml = nut.protein != null ? `<span class="recipe-nut recipe-protein">💪 ${nut.protein}g protein</span>` : '';
+
+
+
+
+
+
+
+    const fiberHtml   = nut.fiber   != null ? `<span class="recipe-nut recipe-fiber">🌾 ${nut.fiber}g fibre</span>` : '';
+
+
+
+
+
+
+
+    card.innerHTML = `
+
+
+
+
+
+
+
+      <div class="recipe-card-banner">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <button class="move-btn" data-move="${r.id}" title="Move to a section" aria-label="Move to a section">📁</button>
+
+        <button class="fav-heart${isFavorite(r.id) ? ' active' : ''}" data-fav="${r.id}" title="Save to favorites" aria-label="Save to favorites">${isFavorite(r.id) ? '❤️' : '🤍'}</button>
+
+
+
+
+
+
+
+        ${r.emoji || '🍽️'}
+
+
+
+
+
+
+
+        <span class="recipe-difficulty ${r.difficulty || 'easy'}">${r.difficulty || 'easy'}</span>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <div class="recipe-card-body">
+
+
+
+
+
+
+
+        <div class="recipe-name">${r.name}</div>
+
+
+
+
+
+
+
+        <div class="recipe-meta"><span>⏱ ${r.time || '—'}</span><span>👥 Serves ${r.serves || '—'}</span></div>
+
+
+
+
+
+
+
+        <div class="recipe-nutrition">${calHtml}${proteinHtml}${fiberHtml}</div>
+
+
+
+
+
+
+
+        <div class="recipe-tags">${tags}</div>
+
+
+
+
+
+
+
+      </div>`;
+
+
+
+
+
+
+
+    card.addEventListener('click', () => openRecipeModal(r));
+
+
+
+
+
+
+
+    const moveBtn = card.querySelector('.move-btn');
+
+
+
+    if (moveBtn) moveBtn.addEventListener('click', e => { e.stopPropagation(); openMoveMenu(r); });
+
+
+
+    const heart = card.querySelector('.fav-heart');
+
+
+
+
+
+
+
+    if (heart) heart.addEventListener('click', e => {
+
+
+
+      e.stopPropagation();
+
+
+
+      toggleFavorite(r.id);
+
+
+
+      const on = isFavorite(r.id);
+
+
+
+      heart.classList.toggle('active', on);
+
+
+
+      heart.textContent = on ? '❤️' : '🤍';
+
+
+
+      if (recipeFilter === 'favorites' && !on) renderRecipeGrid();
+
+
+
+    });
+
+
+
+
+
+
+
+    return card;
+  }
   function renderRecipeGrid() {
 
 
@@ -3086,240 +3324,7 @@
     sentinel.style.cssText = 'grid-column:1/-1;height:1px;';
 
     function renderCard(r) {
-
-      const isUser = r.isCustom === true;
-
-
-
-
-
-
-
-      const card = document.createElement('div');
-
-
-
-
-
-
-
-      // Recipes imported from your OneNote/OneDrive cookbook are the non-FODMAP
-      // ones you didn't hand-create in the app — give them their own colour.
-      const isFodmap   = (r.tags || []).some(t => (t || '').toLowerCase() === 'fodmap');
-      const isCookbook = !isUser && !isFodmap;
-      card.className = 'recipe-card' + (isUser ? ' user-recipe' : (isCookbook ? ' cookbook-recipe' : ''));
-
-
-
-
-
-
-
-      const tags = (r.tags || []).map(t => `<span class="recipe-tag">${t}</span>`).join('');
-
-
-
-
-
-
-
-      const nut = getRecipeNutrition(r.id, r);
-
-
-
-
-
-
-
-      const calHtml     = nut.cal     != null ? `<span class="recipe-cal">🔥 ${nut.cal} cal</span>` : '';
-
-
-
-
-
-
-
-      const proteinHtml = nut.protein != null ? `<span class="recipe-nut recipe-protein">💪 ${nut.protein}g protein</span>` : '';
-
-
-
-
-
-
-
-      const fiberHtml   = nut.fiber   != null ? `<span class="recipe-nut recipe-fiber">🌾 ${nut.fiber}g fibre</span>` : '';
-
-
-
-
-
-
-
-      card.innerHTML = `
-
-
-
-
-
-
-
-        <div class="recipe-card-banner">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <button class="move-btn" data-move="${r.id}" title="Move to a section" aria-label="Move to a section">📁</button>
-
-          <button class="fav-heart${isFavorite(r.id) ? ' active' : ''}" data-fav="${r.id}" title="Save to favorites" aria-label="Save to favorites">${isFavorite(r.id) ? '❤️' : '🤍'}</button>
-
-
-
-
-
-
-
-          ${r.emoji || '🍽️'}
-
-
-
-
-
-
-
-          <span class="recipe-difficulty ${r.difficulty || 'easy'}">${r.difficulty || 'easy'}</span>
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-        <div class="recipe-card-body">
-
-
-
-
-
-
-
-          <div class="recipe-name">${r.name}</div>
-
-
-
-
-
-
-
-          <div class="recipe-meta"><span>⏱ ${r.time || '—'}</span><span>👥 Serves ${r.serves || '—'}</span></div>
-
-
-
-
-
-
-
-          <div class="recipe-nutrition">${calHtml}${proteinHtml}${fiberHtml}</div>
-
-
-
-
-
-
-
-          <div class="recipe-tags">${tags}</div>
-
-
-
-
-
-
-
-        </div>`;
-
-
-
-
-
-
-
-      card.addEventListener('click', () => openRecipeModal(r));
-
-
-
-
-
-
-
-      const moveBtn = card.querySelector('.move-btn');
-
-
-
-      if (moveBtn) moveBtn.addEventListener('click', e => { e.stopPropagation(); openMoveMenu(r); });
-
-
-
-      const heart = card.querySelector('.fav-heart');
-
-
-
-
-
-
-
-      if (heart) heart.addEventListener('click', e => {
-
-
-
-        e.stopPropagation();
-
-
-
-        toggleFavorite(r.id);
-
-
-
-        const on = isFavorite(r.id);
-
-
-
-        heart.classList.toggle('active', on);
-
-
-
-        heart.textContent = on ? '❤️' : '🤍';
-
-
-
-        if (recipeFilter === 'favorites' && !on) renderRecipeGrid();
-
-
-
-      });
-
-
-
-
-
-
-
+      const card = buildRecipeCard(r);
       grid.appendChild(card);
 
 
@@ -22990,6 +22995,12 @@
 
 
 
+  // Fill each [data-recipe-ids] placeholder with the same recipe cards the Recipes grid uses.
+  function fillRecipeGrids(root, byId) {
+    root.querySelectorAll('[data-recipe-ids]').forEach(g => {
+      (g.dataset.recipeIds || '').split(',').forEach(id => { const r = byId[id]; if (r) g.appendChild(buildRecipeCard(r)); });
+    });
+  }
   // ── 🧠 MIND DIET PAGE ───────────────────────────────────
   // Rules + 31-day plan from js/mind-plan.js; recipes from js/mind-*.js
   // (tagged 'mind-diet', so they also live in All Recipes and the planner).
@@ -23104,15 +23115,7 @@
       const list = recipes.filter(r => r.category === cat).sort((a, b) => a.name.localeCompare(b.name));
       if (!list.length) return '';
       return `<div class="mind-rcat"><div class="mind-rcat-title">${label} <span>${list.length}</span></div>
-        <div class="mind-rlist">${list.map(r => {
-          const n = r.nutrition || {};
-          const iron = (r.tags || []).includes('iron-boost') ? '<span class="mind-iron" title="Iron + vitamin C">🩸 iron</span>' : '';
-          return `<button class="mind-rcard" data-mind-recipe="${escHtml(r.id)}">
-            <span class="mind-rcard-emoji">${r.emoji || '🍽️'}</span>
-            <span class="mind-rcard-name">${escHtml(r.name)}</span>
-            <span class="mind-rcard-meta">⏱ ${escHtml(r.time || '—')}${n.cal ? ' · ' + n.cal + ' cal · ' + n.protein + 'g P · ' + n.fiber + 'g F' : ''} ${iron}</span>
-          </button>`;
-        }).join('')}</div></div>`;
+        <div class="recipe-grid diet-recipe-grid" data-recipe-ids="${list.map(r => escHtml(r.id)).join(',')}"></div></div>`;
     }).join('');
 
     el.innerHTML = `
@@ -23147,6 +23150,7 @@
         ${recipesHtml}
       </section>`;
 
+    fillRecipeGrids(el, byId);
     el.querySelectorAll('[data-mind-recipe]').forEach(node => node.addEventListener('click', () => {
       const r = byId[node.dataset.mindRecipe];
       if (r) openRecipeModal(r);
@@ -23255,14 +23259,7 @@
       const list = recipes.filter(r => cat === '__other' ? !known.has(r.category) : r.category === cat).sort((a, b) => a.name.localeCompare(b.name));
       if (!list.length) return '';
       return `<div class="mind-rcat"><div class="mind-rcat-title">${label} <span>${list.length}</span></div>
-        <div class="mind-rlist">${list.map(r => {
-          const n = (typeof getRecipeNutrition === 'function' ? getRecipeNutrition(r.id, r) : r.nutrition) || {};
-          return `<button class="mind-rcard" data-diet-recipe="${escHtml(r.id)}">
-            <span class="mind-rcard-emoji">${r.emoji || '🍽️'}</span>
-            <span class="mind-rcard-name">${escHtml(r.name)}</span>
-            <span class="mind-rcard-meta">⏱ ${escHtml(r.time || '—')}${n.cal ? ' · ' + n.cal + ' cal · ' + (n.protein != null ? n.protein : '–') + 'g P · ' + (n.fiber != null ? n.fiber : '–') + 'g F' : ''}</span>
-          </button>`;
-        }).join('')}</div></div>`;
+        <div class="recipe-grid diet-recipe-grid" data-recipe-ids="${list.map(r => escHtml(r.id)).join(',')}"></div></div>`;
     }).join('');
 
     // MIND has its own full guide (15 food groups, 31-day plan): show it inline.
@@ -23285,6 +23282,7 @@
       try { localStorage.setItem('fodmap-diet-plan', dietPlanId); } catch (e) {}
       renderDietsView();
     });
+    fillRecipeGrids(el, byId);
     el.querySelectorAll('[data-diet-recipe]').forEach(node => node.addEventListener('click', () => {
       const r = byId[node.dataset.dietRecipe];
       if (r) openRecipeModal(r);
@@ -23341,17 +23339,10 @@
       ${ironRecipes.length ? `<div class="mind-section">
         <h3 class="mind-h">Iron-boost recipes <span class="mind-count">${ironRecipes.length}</span></h3>
         <p class="mind-hint" style="margin:0 0 10px">Each pairs iron foods with vitamin C. Tap to open.</p>
-        <div class="mind-rlist">${ironRecipes.map(r => `<button class="mind-rcard" data-iron-recipe="${escHtml(r.id)}">
-          <span class="mind-rcard-emoji">${r.emoji || '🍽️'}</span>
-          <span class="mind-rcard-name">${escHtml(r.name)}</span>
-          <span class="mind-rcard-meta">${escHtml((RECIPE_CATEGORIES.find(c => c.id === r.category) || {}).label || r.category || '')} · ⏱ ${escHtml(r.time || '—')}</span>
-        </button>`).join('')}</div>
+        <div class="recipe-grid diet-recipe-grid" data-recipe-ids="${ironRecipes.map(r => escHtml(r.id)).join(',')}"></div>
       </div>` : ''}
       <div class="mind-section"><p class="mind-intro" style="margin:0">⚠️ ${escHtml(G.note)}</p></div>`;
-    el.querySelectorAll('[data-iron-recipe]').forEach(b => b.addEventListener('click', () => {
-      const r = ironRecipes.find(x => x.id === b.dataset.ironRecipe);
-      if (r) openRecipeModal(r);
-    }));
+    fillRecipeGrids(el, Object.fromEntries(ironRecipes.map(r => [r.id, r])));
   }
 
   function renderDiningView() {
