@@ -38,11 +38,11 @@ const MIND_DIET = {
     { key: 'wine',    emoji: '🍷', label: 'Wine',                  target: 'Optional, up to 1 glass a day. Not needed, and this plan leaves it out, so it is scored out of 14.', per: 'skip' },
   ],
   forYou: [
-    '🍀 Every recipe is a low-FODMAP version: garlic-infused oil and scallion greens instead of onion and garlic, canned rinsed lentils (½ cup) and chickpeas (¼ cup) at safe portions, lactose-free dairy, and Monash-sized berry and nut portions.',
+    '🍀 These are the standard MIND recipes. Each one has a Low-FODMAP version button in the recipe that swaps in garlic-infused oil, scallion greens, safe bean portions and lactose-free dairy when you need it.',
     '🩸 Iron: recipes tagged iron-boost pair iron foods (lentils, tofu, greens, pumpkin seeds, lean beef, mussels, sardines) with vitamin C (peppers, tomato, citrus, strawberries) to absorb more. MIND allows up to 3 red-meat meals a week, so a few lean-beef dinners are built in.',
     '☕ Keep coffee away from your meals, especially the iron-boost ones, by about an hour.',
     '🌾 Gluten stays in (spelt sourdough, oats) until your celiac test is done. Cutting it out first can make that test falsely negative.',
-    '🧀 No cheese and no butter anywhere, olive oil is the fat, and nothing is deep-fried.',
+    '🧀 No cheese and no butter, olive oil is the fat, and nothing is deep-fried.',
   ],
 };
 

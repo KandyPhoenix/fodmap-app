@@ -7855,3 +7855,16 @@ body.dark .wm-intro { color: #aaa; }
   .mind-week-actions { width: 100%; }
   .mind-week-actions .action-btn { flex: 1 1 auto; }
 }
+
+/* Diet Plans: diet dropdown */
+.diet-picker { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.diet-picker-label { font-weight: 800; color: var(--text-muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+.diet-select { flex: 1 1 auto; max-width: 420px; font: inherit; font-size: 16px; font-weight: 700; color: var(--text); background: var(--card); border: 2px solid var(--primary); border-radius: 12px; padding: 10px 12px; cursor: pointer; box-shadow: var(--shadow); }
+.diet-select:focus { outline: none; border-color: var(--primary-dark); }
+@media (max-width: 600px) { .diet-select { max-width: none; } }
+
+/* Recipe modal: low-FODMAP option toggle */
+.fodmap-option { background: var(--green-bg); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; }
+.fodmap-option.on { border-color: var(--primary); }
+.fodmap-option-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.fodmap-option-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }

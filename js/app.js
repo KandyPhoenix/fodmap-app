@@ -926,7 +926,6 @@
       document.getElementById('view-finds').classList.toggle('hidden',   currentView !== 'finds');
 
       document.getElementById('view-guides').classList.toggle('hidden',  currentView !== 'guides');
-      document.getElementById('view-diets').classList.toggle('hidden',   currentView !== 'diets');
 
 
 
@@ -985,7 +984,6 @@
       if (currentView === 'dining') renderDiningView();
 
       if (currentView === 'guides') renderGuidesView();
-      if (currentView === 'diets') renderDietsView();
 
 
 
@@ -1174,7 +1172,6 @@
     else if (currentView === 'snacks') renderSnacksView();
 
     else if (currentView === 'guides') renderGuidesView();
-    else if (currentView === 'diets') renderDietsView();
 
 
 
@@ -1259,7 +1256,6 @@
     else if (currentView === 'snacks') renderSnacksView();
 
     else if (currentView === 'guides') renderGuidesView();
-    else if (currentView === 'diets') renderDietsView();
 
 
 
@@ -3855,6 +3851,15 @@
 
 
 
+    // 🍀 Low-FODMAP option: recipes that carry fodmapOption can flip between the
+    // standard version and a swapped low-FODMAP one (re-opens the modal).
+    const fodmapBase = recipe._fodmapBase || null;
+    const fodmapOpt = (fodmapBase || recipe).fodmapOption;
+    const fodmapOptionHtml = (fodmapOpt && fodmapOpt.ingredients && fodmapOpt.ingredients.length)
+      ? (fodmapBase
+          ? `<div class="rmodal-section fodmap-option on"><div class="fodmap-option-row"><div><strong>🍀 Showing the low-FODMAP version</strong><div class="fodmap-option-sub">Ingredients and steps below are swapped.</div></div><button class="action-btn" id="rmodal-fodmap-toggle">↩ Standard recipe</button></div></div>`
+          : `<div class="rmodal-section fodmap-option"><div class="fodmap-option-row"><div><strong>🍀 Low-FODMAP option</strong><div class="fodmap-option-sub">${(fodmapOpt.swaps || []).map(s => escHtml(s)).join(' · ')}</div></div><button class="action-btn" id="rmodal-fodmap-toggle">🍀 Low-FODMAP version</button></div></div>`)
+      : '';
     const mindNoteHtml = recipe.mindNote
       ? `<div class="rmodal-section"><div class="rmodal-section-title">🧠 MIND Diet Note</div><div class="fodmap-note-box"><div class="fodmap-note-text">${escHtml(recipe.mindNote)}</div></div></div>`
       : '';
@@ -4403,6 +4408,7 @@
 
 
         ${userControls}
+        ${fodmapOptionHtml}
 
 
 
@@ -4591,6 +4597,16 @@
 
 
     document.getElementById('mc2').addEventListener('click', closeAll);
+    const fodmapToggle = document.getElementById('rmodal-fodmap-toggle');
+    if (fodmapToggle) fodmapToggle.addEventListener('click', () => {
+      if (fodmapBase) { openRecipeModal(fodmapBase, plannerMealKey); return; }
+      openRecipeModal(Object.assign({}, recipe, {
+        ingredients: fodmapOpt.ingredients,
+        steps: fodmapOpt.steps && fodmapOpt.steps.length ? fodmapOpt.steps : recipe.steps,
+        fodmapNote: 'Low-FODMAP version. Swaps: ' + (fodmapOpt.swaps || []).join('; ') + '.',
+        _fodmapBase: recipe,
+      }), plannerMealKey);
+    });
 
 
 
@@ -23157,7 +23173,7 @@
     },
     {
       id: 'mind', emoji: '🧠', label: 'MIND Diet',
-      intro: "The brain-health diet, made low-FODMAP and iron-friendly. Higher MIND scores were linked to slower brain aging over 12 years of MRIs. The full guide in 📚 Guides has the 15 food groups, a 31-day plan and buttons to load it into your planner.",
+      intro: "The brain-health diet. Higher MIND scores were linked to slower brain aging over 12 years of MRIs. Recipes are the standard MIND versions, each with a 🍀 low-FODMAP option.",
       rules: ['🌾 Whole grains 3+ a day', '🥬 Leafy greens 6+ a week, other veg 1+ a day', '🥜 Nuts 5+ a week, 🫘 beans 4+ a week, 🍓 berries 2+ a week', '🍗 Poultry 2+ a week, 🐟 fish 1+ a week', '🫒 Olive oil as your main fat', '⬇️ Limit red meat, sweets, cheese, butter and fried food'],
       match: r => hasTag(r, 'mind-diet'),
       guide: true,
@@ -23172,9 +23188,11 @@
   ];
   function hasTag(r, tag) { return (r.tags || []).some(t => String(t).toLowerCase() === tag); }
   let dietPlanId = (function () { try { return localStorage.getItem('fodmap-diet-plan') || 'dietician'; } catch (e) { return 'dietician'; } })();
-  function renderDietsView() {
-    const el = document.getElementById('diets-content');
+  let dietsTargetEl = null;
+  function renderDietsView(target) {
+    const el = target || dietsTargetEl;
     if (!el) return;
+    dietsTargetEl = el;
     const all = getAllRecipes();
     const diet = DIET_PLANS.find(d => d.id === dietPlanId) || DIET_PLANS[0];
     const counts = {};
@@ -23184,9 +23202,10 @@
     const byId = {};
     all.forEach(r => { byId[r.id] = r; });
 
-    const chips = DIET_PLANS.map(d =>
-      `<button class="mind-week-tab${d.id === diet.id ? ' active' : ''}" data-diet="${d.id}">${d.emoji} ${escHtml(d.label)}<span>${counts[d.id]} recipes</span></button>`
-    ).join('');
+    const chips = `<label class="diet-picker"><span class="diet-picker-label">Diet</span>
+      <select id="diet-select" class="diet-select" aria-label="Choose a diet">${DIET_PLANS.map(d =>
+        `<option value="${d.id}"${d.id === diet.id ? ' selected' : ''}>${d.emoji} ${escHtml(d.label)} (${counts[d.id]} recipes)</option>`
+      ).join('')}</select></label>`;
 
     let planHtml = '';
     if (diet.plan) {
@@ -23225,13 +23244,13 @@
         }).join('')}</div></div>`;
     }).join('');
 
-    el.innerHTML = `
-      <div class="mind-week-tabs diet-chips">${chips}</div>
+    // MIND has its own full guide (15 food groups, 31-day plan): show it inline.
+    el.innerHTML = diet.guide ? `${chips}<div id="diet-mind-wrap"></div>` : `
+      ${chips}
       <section class="mind-section">
         <h3 class="mind-h">${diet.emoji} ${escHtml(diet.label)}</h3>
         <p class="mind-intro">${escHtml(diet.intro)}</p>
         <ul class="mind-foryou">${diet.rules.map(x => `<li>${escHtml(x)}</li>`).join('')}</ul>
-        ${diet.guide ? '<button class="action-btn" id="diet-open-guide">📚 Open the full MIND Diet guide and 31-day plan</button>' : ''}
       </section>
       ${planHtml}
       <section class="mind-section">
@@ -23239,25 +23258,19 @@
         ${groups || '<p class="mind-hint">No recipes match your search.</p>'}
       </section>`;
 
-    el.querySelectorAll('[data-diet]').forEach(b => b.addEventListener('click', () => {
-      dietPlanId = b.dataset.diet;
+    const dietSelect = document.getElementById('diet-select');
+    if (dietSelect) dietSelect.addEventListener('change', () => {
+      dietPlanId = dietSelect.value;
       try { localStorage.setItem('fodmap-diet-plan', dietPlanId); } catch (e) {}
       renderDietsView();
-    }));
+    });
     el.querySelectorAll('[data-diet-recipe]').forEach(node => node.addEventListener('click', () => {
       const r = byId[node.dataset.dietRecipe];
       if (r) openRecipeModal(r);
     }));
     const loadBtn = document.getElementById('diet-load-week');
     if (loadBtn) loadBtn.addEventListener('click', () => loadMindDays(diet.plan(), 'the 7-day menu', diet.label, diet.emoji));
-    const guideBtn = document.getElementById('diet-open-guide');
-    if (guideBtn) guideBtn.addEventListener('click', () => {
-      guidesTab = 'mind';
-      const gb = document.querySelector('.nav-btn[data-view="guides"]');
-      if (gb) gb.click();
-      renderGuidesView();
-      window.scrollTo(0, 0);
-    });
+    if (diet.guide) renderMindView(document.getElementById('diet-mind-wrap'));
   }
 
   // 🩸 Iron guide tab — data in js/iron-guide.js.
@@ -23439,7 +23452,7 @@
     if (guidesTab === 'protein') renderProteinGuide(el, q);
     else if (guidesTab === 'superfoods') renderSuperfoodsGuide(el, q);
     else if (guidesTab === 'nutrients') renderNutrientsGuide(el, q);
-    else if (guidesTab === 'mind') renderMindView(el);
+    else if (guidesTab === 'diets') renderDietsView(el);
     else if (guidesTab === 'iron') renderIronGuide(el, q);
     else if (guidesTab === 'tips') renderTipsGuide(el, q);
     else renderGuideLibrary(el, q);
@@ -23760,7 +23773,6 @@
     if (currentView === 'reintro') renderReintroView();
 
     if (currentView === 'guides') renderGuidesView();
-    if (currentView === 'diets') renderDietsView();
 
   };
 
