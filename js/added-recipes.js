@@ -1670,6 +1670,790 @@ const ADDED_RECIPES = [
       ],
       "fodmapNote": "For the Mediterranean Eggs Benny at The Avenue, the restaurant inside The Waters hotel on Central Ave in Hot Springs — its brunch menu lists it as an open-faced biscuit with sautéed spinach, heirloom tomatoes and artichokes, shaved Parmesan, soft poached eggs and house-made hollandaise. Copycat from a web search summary Kandy saved, not the restaurant's recipe. Note the blender hollandaise uses egg yolks that are only lightly cooked by the hot butter. FODMAP: not low-FODMAP as written — garlic, artichoke hearts (high in fructans) and the wheat biscuit or muffin. For a gentler version, use garlic-infused oil instead of garlic, leave out the artichokes, and use a gluten-free biscuit or English muffin. Spinach, tomatoes, eggs, Parmesan, butter and lemon are low-FODMAP in these amounts."
   },
+  {
+      "id": "kandy-olive-oil-nutritional-yeast-popcorn",
+      "name": "Olive Oil & Nutritional Yeast Popcorn",
+      "emoji": "🍿",
+      "category": "snacks",
+      "time": "10 min",
+      "serves": 2,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "snack",
+          "whole grain",
+          "vegan"
+      ],
+      "source": null,
+      "added": "2026-10-11",
+      "ingredients": [
+          {
+              "qty": "¼ cup",
+              "item": "white popcorn kernels (makes about 6–8 cups popped)"
+          },
+          {
+              "qty": "2 tsp",
+              "item": "olive oil, for popping"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "extra virgin olive oil, to drizzle"
+          },
+          {
+              "qty": "2–3 tbsp",
+              "item": "nutritional yeast"
+          },
+          {
+              "qty": "¼–½ tsp",
+              "item": "fine salt"
+          },
+          {
+              "qty": "optional",
+              "item": "garlic powder, smoked paprika, black pepper or dried rosemary"
+          }
+      ],
+      "steps": [
+          "Put 2 tsp olive oil and 3 kernels in a medium pot with a lid. Heat on medium, not high.",
+          "When all 3 test kernels pop, the oil is ready.",
+          "Add the rest of the kernels in one layer, cover, and take the pot off the heat for 30 seconds so they all come up to the same temperature.",
+          "Return to medium heat. Shake gently every few seconds, with the lid slightly open so steam can escape.",
+          "When pops slow to 2–3 seconds apart, take it off the heat right away and pour into a large bowl.",
+          "While warm, drizzle with the remaining 1 tsp olive oil and toss. Sprinkle the nutritional yeast, salt and any seasonings over it while tossing (or shake it in a paper bag) so it coats evenly.",
+          "Tips: grind the yeast and salt finer so they stick better. If extra virgin olive oil smokes, pop with avocado or light olive oil and use EVOO only for the drizzle. Air-popper option: pop with no oil, then toss with 1–2 tsp olive oil, the yeast and salt."
+      ],
+      "fodmapNote": "Whole-grain snack with fiber. Many nutritional yeast brands are fortified with B12, but not all, so check the label. For low-FODMAP: skip the garlic powder (high in fructans) and keep to about 7 cups popped per person; everything else here is low-FODMAP. Nutrition is an estimate (about 350–400 cal a batch).",
+      "nutrition": {
+          "cal": 185,
+          "protein": 6,
+          "fiber": 5
+      }
+  },
+  {
+      "id": "kandy-quick-pouch-salmon-rice-bowl",
+      "name": "5-Minute Pouch Salmon Rice Bowl",
+      "emoji": "🍣",
+      "category": "lunch",
+      "time": "5 min",
+      "serves": 1,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "high-protein",
+          "omega-3",
+          "quick"
+      ],
+      "source": null,
+      "added": "2026-10-11",
+      "ingredients": [
+          {
+              "qty": "1 pouch (2.5–3 oz)",
+              "item": "salmon, flaked"
+          },
+          {
+              "qty": "1 cup",
+              "item": "cooked rice (microwave pouch is fine)"
+          },
+          {
+              "qty": "½",
+              "item": "cucumber, sliced"
+          },
+          {
+              "qty": "1",
+              "item": "green onion, sliced"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "soy sauce"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "toasted sesame oil"
+          },
+          {
+              "qty": "optional",
+              "item": "sesame seeds, sriracha, avocado"
+          }
+      ],
+      "steps": [
+          "Heat the rice according to the package.",
+          "Put the rice in a bowl and top with the flaked salmon, cucumber and green onion.",
+          "Drizzle with soy sauce and sesame oil. Add sesame seeds, sriracha or avocado if you like."
+      ],
+      "fodmapNote": "A sardine-free way to get omega-3s (aim for fatty fish about twice a week). For low-FODMAP: use only the green tops of the green onion, keep avocado to about 2 tbsp, and use tamari if you also want it gluten-free. Nutrition is an estimate; pouch sizes vary.",
+      "nutrition": {
+          "cal": 420,
+          "protein": 24,
+          "fiber": 2
+      }
+  },
+  {
+      "id": "kandy-quick-spinach-feta-egg-scramble",
+      "name": "Spinach & Feta Protein Scramble",
+      "emoji": "🍳",
+      "category": "breakfast",
+      "time": "10 min",
+      "serves": 1,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "vegetarian",
+          "high-protein",
+          "quick"
+      ],
+      "source": null,
+      "added": "2026-10-11",
+      "ingredients": [
+          {
+              "qty": "3",
+              "item": "large eggs"
+          },
+          {
+              "qty": "1 handful",
+              "item": "baby spinach"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "crumbled feta"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "olive oil or butter"
+          },
+          {
+              "qty": "1 slice",
+              "item": "whole-grain toast (optional)"
+          },
+          {
+              "qty": "to taste",
+              "item": "salt and pepper"
+          }
+      ],
+      "steps": [
+          "Whisk the eggs with a pinch of salt and pepper.",
+          "Heat the oil or butter in a nonstick pan over medium-low. Add the spinach and stir until wilted, about 1 minute.",
+          "Pour in the eggs and gently fold with a spatula until just set.",
+          "Take off the heat, sprinkle with feta and serve with toast if you like."
+      ],
+      "fodmapNote": "For low-FODMAP: the scramble itself is already low-FODMAP; swap the toast for gluten-free or sourdough spelt bread. Nutrition is an estimate (without toast).",
+      "nutrition": {
+          "cal": 300,
+          "protein": 22,
+          "fiber": 1
+      }
+  },
+  {
+      "id": "kandy-quick-rotisserie-chicken-plate",
+      "name": "Rotisserie Chicken Protein Plate",
+      "emoji": "🍗",
+      "category": "dinner",
+      "time": "10 min",
+      "serves": 1,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "high-protein",
+          "quick"
+      ],
+      "source": null,
+      "added": "2026-10-11",
+      "ingredients": [
+          {
+              "qty": "4 oz",
+              "item": "rotisserie chicken"
+          },
+          {
+              "qty": "2 cups",
+              "item": "salad greens with cucumber, carrot and tomato"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "your favorite dressing"
+          },
+          {
+              "qty": "1 small",
+              "item": "potato, microwaved, or ¾ cup cooked rice"
+          },
+          {
+              "qty": "to taste",
+              "item": "salt and pepper"
+          }
+      ],
+      "steps": [
+          "Pull 4 oz of chicken off the rotisserie chicken and remove the skin if you like.",
+          "Microwave the potato for 4–6 minutes until tender (or heat the rice).",
+          "Toss the greens with the dressing.",
+          "Plate everything together."
+      ],
+      "fodmapNote": "For low-FODMAP: many store rotisserie chickens and bottled dressings contain garlic and onion, so choose plain chicken and dress the salad with olive oil, lemon, salt and pepper instead. Nutrition is an estimate.",
+      "nutrition": {
+          "cal": 450,
+          "protein": 35,
+          "fiber": 4
+      }
+  },
+  {
+      "id": "kandy-quick-shrimp-veggie-stir-fry",
+      "name": "15-Minute Shrimp & Veggie Stir-Fry",
+      "emoji": "🍤",
+      "category": "dinner",
+      "time": "15 min",
+      "serves": 2,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "high-protein",
+          "quick"
+      ],
+      "source": null,
+      "added": "2026-10-11",
+      "ingredients": [
+          {
+              "qty": "8 oz",
+              "item": "frozen cooked shrimp, thawed"
+          },
+          {
+              "qty": "3 cups",
+              "item": "frozen stir-fry vegetable mix"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "vegetable or sesame oil"
+          },
+          {
+              "qty": "2 cloves",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "soy sauce"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "grated fresh ginger"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "honey or maple syrup"
+          },
+          {
+              "qty": "2 cups",
+              "item": "cooked rice"
+          }
+      ],
+      "steps": [
+          "Stir the soy sauce, ginger and honey together in a small bowl.",
+          "Heat the oil in a large pan over medium-high. Add the garlic for 30 seconds, then the vegetables, and stir-fry 4–5 minutes until crisp-tender.",
+          "Add the shrimp and the sauce. Toss 1–2 minutes until the shrimp is hot through.",
+          "Serve over rice."
+      ],
+      "fodmapNote": "For low-FODMAP: use garlic-infused oil instead of garlic, maple syrup instead of honey, and pick your own vegetables (red bell pepper, carrot, bok choy, green beans), since most frozen mixes contain onion, snow peas or mushrooms. Use tamari for gluten-free. Nutrition is an estimate.",
+      "nutrition": {
+          "cal": 420,
+          "protein": 30,
+          "fiber": 4
+      }
+  },
+  {
+      "id": "kandy-quick-tuna-salad-rice-cakes",
+      "name": "Tuna Salad on Rice Cakes",
+      "emoji": "🐟",
+      "category": "lunch",
+      "time": "5 min",
+      "serves": 1,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "high-protein",
+          "quick",
+          "no-cook"
+      ],
+      "source": null,
+      "added": "2026-10-11",
+      "ingredients": [
+          {
+              "qty": "1 can or pouch (about 3 oz)",
+              "item": "light tuna, drained"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "mayonnaise"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "diced dill pickle"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "diced celery or red onion"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "Dijon mustard (optional)"
+          },
+          {
+              "qty": "2–3",
+              "item": "rice cakes, or a wrap or bread"
+          },
+          {
+              "qty": "to taste",
+              "item": "black pepper and lemon juice"
+          }
+      ],
+      "steps": [
+          "Mix the tuna, mayo, pickle, celery or onion, mustard, pepper and a squeeze of lemon in a bowl.",
+          "Spread on rice cakes, or roll up in a wrap."
+      ],
+      "fodmapNote": "Canned light tuna is on the FDA/EPA \"Best Choices\" list (2–3 servings a week); albacore is a \"Good Choice\" (1 serving a week). For low-FODMAP: skip the red onion, keep celery to a small amount, choose pickles without garlic, and use rice cakes or a gluten-free wrap. Nutrition is an estimate.",
+      "nutrition": {
+          "cal": 300,
+          "protein": 20,
+          "fiber": 1
+      }
+  },
+  {
+      "id": "kandy-quick-greek-yogurt-protein-bowl",
+      "name": "Greek Yogurt Protein Bowl with Chia & Walnuts",
+      "emoji": "🥣",
+      "category": "breakfast",
+      "time": "5 min",
+      "serves": 1,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "vegetarian",
+          "high-protein",
+          "high-fiber",
+          "quick",
+          "no-cook"
+      ],
+      "source": null,
+      "added": "2026-10-11",
+      "ingredients": [
+          {
+              "qty": "1 cup",
+              "item": "plain Greek yogurt"
+          },
+          {
+              "qty": "½ cup",
+              "item": "berries"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "chia seeds or ground flaxseed"
+          },
+          {
+              "qty": "10 halves",
+              "item": "walnuts, chopped"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "honey (optional)"
+          }
+      ],
+      "steps": [
+          "Spoon the yogurt into a bowl.",
+          "Top with the berries, chia or ground flax, and walnuts.",
+          "Drizzle with honey if you like. Let it sit 5 minutes so the chia softens, or stir it in."
+      ],
+      "fodmapNote": "Chia and flax add plant omega-3 (ALA) and fiber, but they do not replace fish for EPA and DHA. For low-FODMAP: use lactose-free Greek yogurt, blueberries or strawberries, and maple syrup instead of honey. Nutrition is an estimate.",
+      "nutrition": {
+          "cal": 330,
+          "protein": 25,
+          "fiber": 6
+      }
+  },
+  {
+      "id": "kandy-iron-fortified-cereal-bowl",
+      "name": "Iron-Fortified Cereal Bowl with Strawberries",
+      "emoji": "🥣",
+      "category": "breakfast",
+      "time": "3 min",
+      "serves": 1,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "iron-rich",
+          "iron-boost",
+          "quick",
+          "no-cook",
+          "vegetarian"
+      ],
+      "source": null,
+      "added": "2026-10-13",
+      "ingredients": [
+          {
+              "qty": "1 serving",
+              "item": "iron-fortified cereal (check the label: 50–100% Daily Value for iron)"
+          },
+          {
+              "qty": "¾ cup",
+              "item": "milk"
+          },
+          {
+              "qty": "½ cup",
+              "item": "sliced strawberries"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "chia seeds or ground flaxseed (optional)"
+          }
+      ],
+      "steps": [
+          "Pour the cereal into a bowl and top with the strawberries and chia or flax.",
+          "Add the milk and eat right away."
+      ],
+      "fodmapNote": "Iron: about 9–18 mg, depending on the cereal (check the % Daily Value; 100% = 18 mg). This is non-heme iron, so the strawberries’ vitamin C matters. Milk’s calcium can reduce iron absorption a little; if that matters to you, eat the cereal with a small splash of milk or have the milk later. Iron tip: eat with a vitamin C food (bell pepper, strawberries, citrus, tomato) and keep coffee, tea and calcium-rich foods about 1–2 hours away from this meal. For low-FODMAP: use lactose-free milk and a cereal without wheat, inulin, chicory root or honey. If you are waiting on a celiac test, ask your provider before changing how much gluten you eat. Nutrition is an estimate.",
+      "nutrition": {
+          "cal": 250,
+          "protein": 8,
+          "fiber": 4
+      }
+  },
+  {
+      "id": "kandy-iron-tofu-spinach-scramble",
+      "name": "Tofu & Spinach Breakfast Scramble",
+      "emoji": "🍳",
+      "category": "breakfast",
+      "time": "10 min",
+      "serves": 1,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "iron-rich",
+          "iron-boost",
+          "dairy-free",
+          "vegan",
+          "high-protein",
+          "quick"
+      ],
+      "source": null,
+      "added": "2026-10-13",
+      "ingredients": [
+          {
+              "qty": "½ cup (about 4 oz)",
+              "item": "firm tofu, drained and crumbled"
+          },
+          {
+              "qty": "2 big handfuls",
+              "item": "baby spinach"
+          },
+          {
+              "qty": "½ cup",
+              "item": "cherry tomatoes, halved"
+          },
+          {
+              "qty": "2",
+              "item": "green onions, sliced"
+          },
+          {
+              "qty": "1 clove",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "olive oil"
+          },
+          {
+              "qty": "¼ tsp",
+              "item": "turmeric"
+          },
+          {
+              "qty": "to taste",
+              "item": "salt and pepper"
+          }
+      ],
+      "steps": [
+          "Heat the oil in a nonstick pan over medium heat. Add the garlic and green onions for 1 minute.",
+          "Add the crumbled tofu and turmeric and cook 4–5 minutes, stirring, until lightly golden.",
+          "Add the spinach and tomatoes and stir until the spinach wilts, about 1 minute.",
+          "Season with salt and pepper."
+      ],
+      "fodmapNote": "Iron: about 5–6 mg (firm tofu about 3 mg per ½ cup, cooked-down spinach about 2–3 mg). Non-heme iron, so the tomatoes help absorption. Iron tip: eat with a vitamin C food (bell pepper, strawberries, citrus, tomato) and keep coffee, tea and calcium-rich foods about 1–2 hours away from this meal. For low-FODMAP: use garlic-infused oil instead of the garlic, only the green tops of the green onions, and firm (not silken) tofu. Nutrition is an estimate.",
+      "nutrition": {
+          "cal": 230,
+          "protein": 18,
+          "fiber": 4
+      }
+  },
+  {
+      "id": "kandy-iron-beef-quinoa-bowl",
+      "name": "Beef & Quinoa Power Bowl",
+      "emoji": "🥙",
+      "category": "lunch",
+      "time": "20 min",
+      "serves": 2,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "iron-rich",
+          "iron-boost",
+          "high-protein"
+      ],
+      "source": null,
+      "added": "2026-10-13",
+      "ingredients": [
+          {
+              "qty": "6 oz",
+              "item": "lean ground beef (93% lean)"
+          },
+          {
+              "qty": "2 cups",
+              "item": "cooked quinoa"
+          },
+          {
+              "qty": "1",
+              "item": "red bell pepper, diced"
+          },
+          {
+              "qty": "1",
+              "item": "cucumber, diced"
+          },
+          {
+              "qty": "¼",
+              "item": "red onion, finely diced"
+          },
+          {
+              "qty": "2 cloves",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "olive oil"
+          },
+          {
+              "qty": "1 tsp each",
+              "item": "ground cumin and smoked paprika"
+          },
+          {
+              "qty": "1",
+              "item": "lemon, juiced"
+          },
+          {
+              "qty": "to taste",
+              "item": "salt and pepper"
+          }
+      ],
+      "steps": [
+          "Heat half the oil in a skillet over medium-high. Add the garlic for 30 seconds, then the beef with the cumin, paprika, salt and pepper. Cook 6–8 minutes, breaking it up, until browned and cooked through (160°F).",
+          "Divide the quinoa between two bowls and top with the beef, bell pepper, cucumber and red onion.",
+          "Drizzle with the rest of the oil and the lemon juice."
+      ],
+      "fodmapNote": "Iron: about 5 mg per serving (3 oz lean beef about 2.2 mg of well-absorbed heme iron, 1 cup quinoa about 2.8 mg). Bell pepper adds vitamin C. Iron tip: eat with a vitamin C food (bell pepper, strawberries, citrus, tomato) and keep coffee, tea and calcium-rich foods about 1–2 hours away from this meal. For low-FODMAP: use garlic-infused oil instead of garlic and leave out the red onion (or use green onion tops). Nutrition is an estimate.",
+      "nutrition": {
+          "cal": 460,
+          "protein": 30,
+          "fiber": 6
+      }
+  },
+  {
+      "id": "kandy-iron-steak-strawberry-spinach-salad",
+      "name": "Steak & Strawberry Spinach Salad",
+      "emoji": "🥗",
+      "category": "lunch",
+      "time": "20 min",
+      "serves": 2,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "iron-rich",
+          "iron-boost",
+          "high-protein"
+      ],
+      "source": null,
+      "added": "2026-10-13",
+      "ingredients": [
+          {
+              "qty": "6 oz",
+              "item": "sirloin steak"
+          },
+          {
+              "qty": "4 cups",
+              "item": "baby spinach"
+          },
+          {
+              "qty": "1 cup",
+              "item": "sliced strawberries"
+          },
+          {
+              "qty": "¼",
+              "item": "red onion, thinly sliced"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "chopped walnuts"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "crumbled feta or goat cheese"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "olive oil"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "balsamic vinegar"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "honey"
+          },
+          {
+              "qty": "to taste",
+              "item": "salt and pepper"
+          }
+      ],
+      "steps": [
+          "Season the steak with salt and pepper. Sear in a hot pan 3–4 minutes per side to your liking (145°F for medium-rare, then rest 3 minutes).",
+          "Whisk the olive oil, balsamic and honey with a pinch of salt.",
+          "Toss the spinach, strawberries, red onion and walnuts with the dressing and divide between two plates.",
+          "Slice the steak thinly and lay it on top. Finish with the cheese."
+      ],
+      "fodmapNote": "Iron: about 4 mg per serving (3 oz sirloin about 2.2 mg heme iron, 2 cups raw spinach about 1.6 mg). Strawberries add vitamin C. Iron tip: eat with a vitamin C food (bell pepper, strawberries, citrus, tomato) and keep coffee, tea and calcium-rich foods about 1–2 hours away from this meal. For low-FODMAP: leave out the red onion, use feta rather than goat cheese if needed, swap the honey for maple syrup, and keep balsamic to 1 tbsp. Nutrition is an estimate.",
+      "nutrition": {
+          "cal": 370,
+          "protein": 25,
+          "fiber": 4
+      }
+  },
+  {
+      "id": "kandy-iron-beef-bell-pepper-stir-fry",
+      "name": "Beef & Bell Pepper Stir-Fry",
+      "emoji": "🥩",
+      "category": "dinner",
+      "time": "20 min",
+      "serves": 2,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "iron-rich",
+          "iron-boost",
+          "high-protein"
+      ],
+      "source": null,
+      "added": "2026-10-13",
+      "ingredients": [
+          {
+              "qty": "8 oz",
+              "item": "sirloin steak, thinly sliced"
+          },
+          {
+              "qty": "2",
+              "item": "bell peppers (red and yellow), sliced"
+          },
+          {
+              "qty": "½",
+              "item": "yellow onion, sliced"
+          },
+          {
+              "qty": "2 heads",
+              "item": "baby bok choy, chopped"
+          },
+          {
+              "qty": "2 cloves",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "vegetable oil"
+          },
+          {
+              "qty": "2 tbsp",
+              "item": "soy sauce"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "grated fresh ginger"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "honey"
+          },
+          {
+              "qty": "1½ cups",
+              "item": "cooked rice"
+          }
+      ],
+      "steps": [
+          "Stir the soy sauce, ginger and honey together.",
+          "Heat the oil in a large pan or wok over high heat. Stir-fry the beef 2–3 minutes until browned, then move it to a plate.",
+          "Add the onion, garlic, peppers and bok choy and stir-fry 3–4 minutes until crisp-tender.",
+          "Return the beef, pour in the sauce and toss 1 minute. Serve over rice."
+      ],
+      "fodmapNote": "Iron: about 3.5–4 mg per serving (4 oz sirloin about 3 mg heme iron, plus bok choy). Bell peppers are one of the best vitamin C sources for absorbing it. Iron tip: eat with a vitamin C food (bell pepper, strawberries, citrus, tomato) and keep coffee, tea and calcium-rich foods about 1–2 hours away from this meal. For low-FODMAP: use garlic-infused oil instead of garlic, leave out the onion (or use green onion tops), swap honey for maple syrup, and use tamari for gluten-free. Nutrition is an estimate.",
+      "nutrition": {
+          "cal": 460,
+          "protein": 30,
+          "fiber": 3
+      }
+  },
+  {
+      "id": "kandy-iron-chicken-liver-spinach",
+      "name": "Chicken Livers with Onions & Spinach",
+      "emoji": "🍳",
+      "category": "dinner",
+      "time": "20 min",
+      "serves": 2,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "iron-rich",
+          "iron-boost",
+          "high-protein"
+      ],
+      "source": null,
+      "added": "2026-10-13",
+      "ingredients": [
+          {
+              "qty": "8 oz",
+              "item": "chicken livers, trimmed and patted dry"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "olive oil"
+          },
+          {
+              "qty": "1 tbsp",
+              "item": "butter"
+          },
+          {
+              "qty": "1",
+              "item": "yellow onion, thinly sliced"
+          },
+          {
+              "qty": "2 cloves",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "4 cups",
+              "item": "baby spinach"
+          },
+          {
+              "qty": "½ tsp",
+              "item": "dried thyme"
+          },
+          {
+              "qty": "½",
+              "item": "lemon, juiced"
+          },
+          {
+              "qty": "to taste",
+              "item": "salt and pepper"
+          }
+      ],
+      "steps": [
+          "Heat the oil and butter in a skillet over medium. Cook the onion 8–10 minutes until soft and golden, adding the garlic for the last minute. Move to a plate.",
+          "Season the livers with salt, pepper and thyme. Turn the heat to medium-high and cook the livers 3–4 minutes per side until browned outside and no longer pink in the middle (165°F).",
+          "Move the livers to the plate, add the spinach to the pan and stir until just wilted.",
+          "Serve the livers and onions on the spinach with a squeeze of lemon."
+      ],
+      "fodmapNote": "Iron: about 9–10 mg per serving (3–4 oz chicken liver), one of the richest food sources. Liver is also very high in vitamin A, so treat this as an occasional meal, about once a week, and ask your provider if you take vitamin A or a multivitamin. Cook livers all the way through to 165°F. Iron tip: eat with a vitamin C food (bell pepper, strawberries, citrus, tomato) and keep coffee, tea and calcium-rich foods about 1–2 hours away from this meal. For low-FODMAP: leave out the onion and garlic and use garlic-infused oil instead. Nutrition is an estimate.",
+      "nutrition": {
+          "cal": 260,
+          "protein": 24,
+          "fiber": 2
+      }
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
