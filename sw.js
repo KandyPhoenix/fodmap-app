@@ -1,4 +1,4 @@
-const CACHE = 'fodmap-v140';
+const CACHE = 'fodmap-v141';
 const ASSETS = [
   './',
   './index.html',
@@ -11,6 +11,7 @@ const ASSETS = [
   './js/recipes.js',
   './js/kandy-recipes.js',
   './js/kandy-diet-recipes.js',
+  './js/body-reset-recipes.js',
   './js/superage-breakfast.js',
   './js/superage-lunch.js',
   './js/superage-dinner.js',
