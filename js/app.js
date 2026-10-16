@@ -23214,6 +23214,12 @@
       match: r => hasTag(r, 'nordic-diet'),
     },
     {
+      id: 'nordicbasic', emoji: '⚡', label: 'Nordic Quick & Basic',
+      intro: 'Nordic-diet lunches and dinners made from everyday American grocery staples, all done in 30 minutes or less. They follow the same Nordic food groups, and each has a 🍀 low-FODMAP version in the recipe.',
+      rules: ['🛒 Basic ingredients: canned salmon and tuna, frozen fish and shrimp, chicken, lean ground turkey, eggs, canned beans, frozen veggies, microwave brown rice, whole-wheat bread and tortillas', '⏱️ 30 minutes or less, most in 10–20', '🐟 Fish or beans in most meals', '🌾 A whole grain plus a vegetable every time', '🥛 Low-fat Greek yogurt in place of mayo and sour cream'],
+      match: r => hasTag(r, 'nordic-basic'),
+    },
+    {
       id: 'bodyreset', emoji: '🔄', label: 'Body Reset',
       intro: 'The 7-day meal plan from The Body Reset Playbook in the Synthesis app. Every meal follows the Permanent Plate.',
       rules: ['🥗 Half the plate plants', '✋ A palm of protein', '✊ A fist of intact starch', '👍 A thumb of healthy fat', '🔢 Eat in order: veg, then protein, then starch'],
