@@ -3883,6 +3883,9 @@
     const mindNoteHtml = recipe.mindNote
       ? `<div class="rmodal-section"><div class="rmodal-section-title">🧠 MIND Diet Note</div><div class="fodmap-note-box"><div class="fodmap-note-text">${escHtml(recipe.mindNote)}</div></div></div>`
       : '';
+    const nordicNoteHtml = recipe.nordicNote
+      ? `<div class="rmodal-section"><div class="rmodal-section-title">🌲 Nordic Diet Note</div><div class="fodmap-note-box"><div class="fodmap-note-text">${escHtml(recipe.nordicNote)}</div></div></div>`
+      : '';
     const superAgeNoteHtml = recipe.superAgeNote
       ? `<div class="rmodal-section"><div class="rmodal-section-title">✨ Super Age Note</div><div class="fodmap-note-box"><div class="fodmap-note-text">${recipe.superAgeNote}</div></div></div>`
       : '';
@@ -4558,6 +4561,7 @@
 
         ${superAgeNoteHtml}
         ${mindNoteHtml}
+        ${nordicNoteHtml}
         ${fodmapNoteHtml}
 
         ${recipe.source ? `<div class="rmodal-section"><a class="rmodal-source-link" href="${recipe.source}" target="_blank" rel="noopener noreferrer">🔗 View original recipe</a></div>` : ''}
@@ -23168,7 +23172,7 @@
   // ── 🍽️ DIET PLANS PAGE (Tools) ─────────────────────────
   // One section per diet the app holds: what it is, its rules, its day plan
   // (when it has one) and every recipe that belongs to it.
-  const DIET_TAGS = ['dietician-plan', 'super-age', 'mind-diet', 'body-reset', 'lean-protein'];
+  const DIET_TAGS = ['dietician-plan', 'super-age', 'mind-diet', 'body-reset', 'lean-protein', 'nordic-diet'];
   const DIET_DAY_NAMES = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   const DIET_PLANS = [
     {
@@ -23202,6 +23206,12 @@
       intro: 'MIND-diet meals made from everyday grocery-store staples, all done in under an hour. They follow the same MIND food groups, and each has a 🍀 low-FODMAP version in the recipe.',
       rules: ['🛒 Basic American ingredients: chicken, ground turkey, canned tuna and beans, frozen veggies, bagged spinach, brown rice, whole-wheat bread, oats, eggs, berries', '⏱️ Under an hour, most in 15–35 minutes', '🌾 A whole grain plus greens or veggies in every meal', '🫒 Olive oil, no butter, no cheese, nothing fried', '🩸 Iron-boost meals pair iron foods with vitamin C'],
       match: r => hasTag(r, 'mind-basic'),
+    },
+    {
+      id: 'nordic', emoji: '🌲', label: 'Nordic Diet',
+      intro: 'Built on the 2023 Nordic Nutrition Recommendations. In a study of more than 76,000 Swedish adults followed for nearly 20 years, the people who followed them most closely had a 23% lower risk of early death, including from heart disease and cancer. Nobody followed them perfectly; the benefit came from the overall pattern and from sticking with it. Each recipe has a 🍀 low-FODMAP version.',
+      rules: ['🌾 Whole grains: rye, oats, barley and whole wheat', '🥬 Plenty of vegetables (root veg, cabbage, greens) and 🍎 fruit and berries', '🫘 Legumes: lentils, split peas, beans and chickpeas', '🐟 Fish, especially fatty fish like salmon, mackerel, herring and trout', '🥜 Nuts and seeds', '🥛 Low-fat dairy: skyr, yogurt, cottage cheese', '🫒 Canola (rapeseed) or olive oil as the everyday fat', '⬇️ Less red meat, no processed meat, little added sugar or refined grains'],
+      match: r => hasTag(r, 'nordic-diet'),
     },
     {
       id: 'bodyreset', emoji: '🔄', label: 'Body Reset',
