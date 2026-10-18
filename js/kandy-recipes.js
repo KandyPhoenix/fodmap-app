@@ -849,16 +849,38 @@ const KANDY_RECIPES = [
     isCustom: true,
   },
 
-
-
-
-
-
-
-
-
-
-
-
+  {
+    id: 'kandy-shrimp-stock',
+    name: 'Basic Shrimp Stock',
+    emoji: '🦐',
+    category: 'dinner',
+    time: '40 min',
+    serves: 6,
+    difficulty: 'easy',
+    tags: ['gluten-free', 'dairy-free', 'stock', 'make ahead', 'seafood'],
+    ingredients: [
+      { qty: '4 cups',   item: 'shrimp shells and heads (from about 2 lb shrimp)' },
+      { qty: '1 tbsp',   item: 'garlic-infused oil' },
+      { qty: '1 cup',    item: 'leek greens, chopped (green part only)' },
+      { qty: '½ cup',    item: 'scallion greens, chopped' },
+      { qty: '1 medium', item: 'carrot, chopped' },
+      { qty: '1 tbsp',   item: 'tomato paste (optional)' },
+      { qty: '8 cups',   item: 'cold water' },
+      { qty: '2',        item: 'bay leaves' },
+      { qty: '1 tsp',    item: 'black peppercorns' },
+      { qty: '¼ cup',    item: 'parsley stems' },
+      { qty: '3 sprigs', item: 'fresh thyme' },
+    ],
+    steps: [
+      'Heat the garlic-infused oil in a large pot over medium-high. Add the shells and stir about 4 minutes, until bright pink-orange and toasty-smelling.',
+      'Add the leek greens, scallion greens, carrot and tomato paste. Stir about 2 minutes, until the vegetables soften slightly.',
+      'Pour in the cold water. Add the bay leaves, peppercorns, parsley stems and thyme. Bring just to a boil, then lower to a gentle simmer and skim off any foam.',
+      'Simmer uncovered about 30 minutes. Don\'t go much longer, because shellfish stock can turn bitter.',
+      'Strain through a fine-mesh sieve, pressing the shells to get all the liquid out. Cool, then refrigerate up to 3 days or freeze up to 3 months. Leave it unsalted so you can season the final dish. Makes about 6 cups.',
+    ],
+    fodmapNote: 'Low-FODMAP as written: leek and scallion greens replace onion, and garlic-infused oil replaces garlic (fructans do not move into oil). Celery is left out because it is only low-FODMAP in small servings. Check serving sizes for carrot and tomato paste in the Monash app. Not on low-FODMAP? Use ½ onion and 2 smashed garlic cloves instead of the greens, and add a celery rib. Tip: save shells in a freezer bag until you have enough.',
+    added: '2026-10-18',
+    isCustom: true,
+  },
 
 ];
