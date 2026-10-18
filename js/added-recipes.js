@@ -2454,6 +2454,49 @@ const ADDED_RECIPES = [
           "fiber": 2
       }
   },
+  {
+      "id": "fam-add-pan-seared-okra-for-gumbo",
+      "name": "Pan-Seared Okra for Gumbo",
+      "emoji": "🥘",
+      "category": "sides",
+      "time": "20 min",
+      "serves": 6,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "side",
+          "okra",
+          "gumbo",
+          "cajun",
+          "creole",
+          "vegan",
+          "gluten-free"
+      ],
+      "added": "2026-10-18",
+      "ingredients": [
+          {
+              "qty": "1 lb",
+              "item": "fresh okra (or frozen, thawed), patted completely dry"
+          },
+          {
+              "qty": "1–2 tbsp",
+              "item": "vegetable or canola oil"
+          },
+          {
+              "qty": "to taste",
+              "item": "salt"
+          }
+      ],
+      "steps": [
+          "Rinse the okra and dry it completely. Leftover water makes it slimy and stops it from browning. If using frozen, thaw it and pat it very dry.",
+          "Trim off the stems and slice the okra into ½-inch rounds.",
+          "Heat the oil in a cast-iron or heavy skillet over medium-high until it shimmers.",
+          "Spread the okra in a single layer, working in batches so the pan isn't crowded. Leave it alone 3–4 minutes until browned on the bottom.",
+          "Stir and cook another 3–4 minutes until browned all over. Season lightly with salt.",
+          "Stir the seared okra into your gumbo for the last 15–20 minutes of simmering, before any seafood goes in, so it keeps its shape. If you want the okra to help thicken the gumbo, add it earlier and let it simmer longer."
+      ],
+      "fodmapNote": "Okra contains fructans and is low or high FODMAP depending on serving size. Check the Monash app for the low-FODMAP serving. The gumbo itself usually has onion and garlic; for low-FODMAP, use garlic-infused oil and the green parts of leeks and scallions instead."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
