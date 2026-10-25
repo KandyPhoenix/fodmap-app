@@ -16,6 +16,16 @@
   // authorized domain; the app may set window.FB_SIGNIN_WEB_URL before loading this file.
   var IS_FILE   = location.protocol === 'file:';
   var WEB_URL   = global.FB_SIGNIN_WEB_URL || 'https://kandyphoenix.github.io/';
+  // An installed (home-screen / standalone) copy has the same problem: tapping the emailed link
+  // opens the browser, which has its OWN storage, so the sign-in lands there and the installed
+  // app never sees it (this is how iOS/iPadOS and Android isolate home-screen web apps). The
+  // only way in is to paste the link, so offer the paste row there too.
+  var IS_STANDALONE = false;
+  try {
+    IS_STANDALONE = (global.matchMedia && global.matchMedia('(display-mode: standalone)').matches) ||
+                    global.navigator.standalone === true;
+  } catch (e) {}
+  var NEEDS_PASTE = IS_FILE || IS_STANDALONE;
 
   function auth() { try { return global.firebase && global.firebase.auth ? global.firebase.auth() : null; } catch (e) { return null; } }
   function el(id) { return document.getElementById(id); }
@@ -38,7 +48,7 @@
     g.innerHTML = '\uD83D\uDD12 <b>Cloud sync needs you to sign in</b> as ' + ALLOWED + '. ' +
       '<button id="fbGateBtn" type="button" style="' + btn + '">Email me a sign-in link</button>' +
       '<span id="fbGateMsg"></span>' +
-      (IS_FILE ? '<div id="fbGatePasteRow" style="display:none;margin-top:8px">Copy the link from that email (do not tap it) and paste it here: ' +
+      (NEEDS_PASTE ? '<div id="fbGatePasteRow" style="display:none;margin-top:8px">Copy the link from that email (press and hold it, then Copy — do not tap it) and paste it here: ' +
                  '<input id="fbGateLink" type="url" placeholder="https://kandyphoenix.github.io/..." style="width:min(60%,520px);padding:6px 8px;border-radius:6px;border:1px solid #555;background:#111;color:#fff">' +
                  '<button id="fbGatePasteBtn" type="button" style="' + btn + '">Sign in</button></div>' : '') +
       '<button id="fbGateClose" type="button" title="Hide" style="float:right;background:none;border:0;color:#aaa;font-size:16px;cursor:pointer">\u2715</button>';
@@ -62,6 +72,8 @@
         try { localStorage.setItem(EMAIL_KEY, ALLOWED); } catch (e) {}
         el('fbGateMsg').textContent = IS_FILE
           ? 'Sent to ' + ALLOWED + '. It expires shortly.'
+          : IS_STANDALONE
+          ? 'Sent to ' + ALLOWED + '. Tapping the link opens the browser, not this app — copy the link and paste it below. It expires shortly.'
           : 'Check ' + ALLOWED + ' and open the link on THIS device. It expires shortly.';
         b.textContent = 'Link sent';
         if (el('fbGatePasteRow')) el('fbGatePasteRow').style.display = 'block';
@@ -77,8 +89,8 @@
       });
   }
 
-  // Desktop build: sign in with a link pasted from the email (the link's one-time code is what
-  // matters, not the page it points at).
+  // Desktop or installed build: sign in with a link pasted from the email (the link's one-time
+  // code is what matters, not the page it points at).
   function signInWithPastedLink() {
     var a = auth(), link = (el('fbGateLink').value || '').trim();
     if (!a) { show('Firebase Auth SDK is not loaded on this page.'); return; }
