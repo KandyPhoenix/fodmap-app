@@ -135,17 +135,27 @@ const firebaseConfig = {
   };
 
   // ── Initial reconcile on boot ───────────────
-  // A device that had NO fodmap data before its first pull (fresh install, new phone,
-  // cleared storage) rendered every view from an empty localStorage at startup, and
-  // fodmapRefresh() only redraws the planner. So the first pull leaves recipes, guides,
-  // shopping etc. blank until the next open. Reload once after that first pull so the
-  // whole app renders from the data that just landed. Guarded so it can only fire once
-  // per tab session, never a loop.
-  function reloadAfterFirstPull(hadLocal) {
-    if (hadLocal) return;
+  // The views render from localStorage at startup, and fodmapRefresh() only redraws
+  // the planner. So when the first pull lands data this device did not have (fresh
+  // install, new phone, cleared storage, or a device that only held a preference key
+  // like fodmap-view from tapping a tab), recipes, guides, shopping etc. stay blank
+  // until the next open. Reload once so the whole app renders from the data that
+  // just landed. Guarded so it cannot loop: at most one reload per half-minute.
+  function localKeySet() {
+    const out = new Set();
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith('fodmap-')) out.add(k);
+    }
+    return out;
+  }
+  function reloadIfNewKeys(before, src) {
+    const landed = Object.keys(src).some(k => k.startsWith('fodmap-') && !before.has(k));
+    if (!landed) return;
     try {
-      if (sessionStorage.getItem('fodmapFirstPullReloaded')) return;
-      sessionStorage.setItem('fodmapFirstPullReloaded', '1');
+      const last = parseInt(sessionStorage.getItem('fodmapFirstPullReloaded') || '0', 10) || 0;
+      if (Date.now() - last < 30000) return;
+      sessionStorage.setItem('fodmapFirstPullReloaded', String(Date.now()));
     } catch(e) {
       return;   // no session storage → the guard can't record itself, so never reload (a loop is worse than a partial first render)
     }
@@ -155,7 +165,7 @@ const firebaseConfig = {
   async function syncFromFirebase() {
     if (!docRef) return;
     setSyncStatus('syncing');
-    const hadLocal = countKeys(gatherLocalData()) > 0;
+    const before = localKeySet();
     try {
       const snap = await docRef.get();
 
@@ -180,7 +190,7 @@ const firebaseConfig = {
         await pushLocal();
         if (typeof window.fodmapRefresh === 'function') window.fodmapRefresh();
         setSyncStatus('synced');
-        reloadAfterFirstPull(hadLocal);
+        reloadIfNewKeys(before, merged);
         return;
       }
 
@@ -191,7 +201,7 @@ const firebaseConfig = {
           await pushLocal();
         } else {
           adoptRemote(remote);
-          reloadAfterFirstPull(hadLocal);
+          reloadIfNewKeys(before, remote);
         }
       } else if (localModified > remoteModified) {
         await pushLocal();                     // local is newer — push it up
