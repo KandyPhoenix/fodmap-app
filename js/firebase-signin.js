@@ -48,7 +48,7 @@
     g.innerHTML = '\uD83D\uDD12 <b>Cloud sync needs you to sign in</b> as ' + ALLOWED + '. ' +
       '<button id="fbGateBtn" type="button" style="' + btn + '">Email me a sign-in link</button>' +
       '<span id="fbGateMsg"></span>' +
-      (NEEDS_PASTE ? '<div id="fbGatePasteRow" style="display:none;margin-top:8px">Copy the link from that email (press and hold it, then Copy — do not tap it) and paste it here: ' +
+      (NEEDS_PASTE ? '<div id="fbGatePasteRow" style="display:block;margin-top:8px">Then copy the link from that email (press and hold it, then Copy — do not tap it) and paste it here: ' +
                  '<input id="fbGateLink" type="url" placeholder="https://kandyphoenix.github.io/..." style="width:min(60%,520px);padding:6px 8px;border-radius:6px;border:1px solid #555;background:#111;color:#fff">' +
                  '<button id="fbGatePasteBtn" type="button" style="' + btn + '">Sign in</button></div>' : '') +
       '<button id="fbGateClose" type="button" title="Hide" style="float:right;background:none;border:0;color:#aaa;font-size:16px;cursor:pointer">\u2715</button>';
