@@ -3707,7 +3707,10 @@
 
         // Some imported recipes keep the amount inside the ingredient text ("1 pound chicken") with an
         // empty qty; split it out so the amount shows in its column and scales with servings.
-        const sp = String(ing.qty || '').trim() ? null : splitEmbeddedQty(ing.qty, ing.item);
+        // The recipe form stores a blank amount as '—', so treat that like empty too — otherwise a
+        // home-typed "1 lb crawfish tails" with no amount in its own box never scales.
+        const rawQty = String(ing.qty || '').trim();
+        const sp = (rawQty && rawQty !== '—' && rawQty !== '-') ? null : splitEmbeddedQty(ing.qty, ing.item);
         const qtyText = sp && sp.qty ? sp.qty : ing.qty;
         const itemText = sp && sp.qty ? sp.item : ing.item;
         let qtyDisplay = convertGrams(qtyText);
