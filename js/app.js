@@ -5065,6 +5065,14 @@
     const importBtn = document.getElementById('rf-import-btn');
     if (importBtn) importBtn.onclick = () => importRecipeFromLink(importUrl ? importUrl.value : '');
     if (importUrl) importUrl.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); importRecipeFromLink(importUrl.value); } };
+    showPasteBox(false);
+    const pasteText = document.getElementById('rf-paste-text');
+    if (pasteText) pasteText.value = '';
+    const pasteToggle = document.getElementById('rf-paste-toggle');
+    if (pasteToggle) pasteToggle.onclick = () => showPasteBox(true, true);
+    const pasteBtn = document.getElementById('rf-paste-btn');
+    if (pasteBtn) pasteBtn.onclick = () => importRecipeFromText(pasteText ? pasteText.value : '', importUrl ? importUrl.value : '',
+      importedMeta && importedMeta.queueRaw ? { queueRaw: importedMeta.queueRaw } : null);
 
 
 
@@ -5614,8 +5622,8 @@
 
   const IMPORT_FAIL = {
     'bad-url':      "That doesn't look like a web address — paste the full link starting with https://.",
-    'blocked':      "That site won't let the app read its recipes. Open the recipe page and use your 🍳 Send to Our Table bookmark instead — it reads the recipe from your own browser — or ask Claude to add it.",
-    'no-recipe':    "That page doesn't include recipe data the app can read (it may be an article or a list of recipes). Type it in below, or ask Claude to add it.",
+    'blocked':      "That site won't let the app read it. Copy the recipe from the post and paste it in the box below — the app will sort out the ingredients and steps.",
+    'no-recipe':    "That page doesn't include recipe data the app can read. Copy the recipe text from the page and paste it in the box below.",
     'fetch-failed': "Couldn't load that page. Check the link, or try again in a minute.",
   };
 
@@ -5629,7 +5637,12 @@
     try {
       const res = await fetch(`${RECIPE_READER}?url=${encodeURIComponent(url)}`);
       const data = await res.json().catch(() => ({}));
-      if (!data.ok) { setImportStatus(IMPORT_FAIL[data.reason] || IMPORT_FAIL['fetch-failed'], 'err'); return false; }
+      if (!data.ok) {
+        setImportStatus(IMPORT_FAIL[data.reason] || IMPORT_FAIL['fetch-failed'], 'err');
+        // Remember the link (and any queue entry) so the pasted text keeps its source.
+        if (data.reason === 'blocked' || data.reason === 'no-recipe') { importedMeta = Object.assign({}, meta || {}); showPasteBox(true, true); }
+        return false;
+      }
       fillFormFromImport(RecipeImport.toAppRecipe(data.recipe, url, todayStr()), meta);
       return true;
     } catch (e) {
@@ -5638,6 +5651,31 @@
     } finally {
       if (btn) btn.disabled = false;
     }
+  }
+
+  // "Paste the recipe text" — for posts the app can't read (Facebook, Instagram…).
+  function showPasteBox(open, focus) {
+    const box = document.getElementById('rf-paste');
+    const toggle = document.getElementById('rf-paste-toggle');
+    if (box) box.classList.toggle('hidden', !open);
+    if (toggle) toggle.classList.toggle('hidden', !!open);
+    if (open && focus) { const t = document.getElementById('rf-paste-text'); if (t) setTimeout(() => t.focus(), 0); }
+  }
+
+  function importRecipeFromText(text, url, meta) {
+    if (typeof RecipeImport === 'undefined' || !RecipeImport.fromText) { setImportStatus('The importer did not load — refresh the app and try again.', 'err'); return false; }
+    if (String(text || '').trim().length < 20) { setImportStatus('Paste the recipe text first — the title, ingredients and steps.', 'err'); return false; }
+    const ld = RecipeImport.fromText(text);
+    const link = /^https?:\/\//i.test(String(url || '').trim()) ? String(url).trim() : '';
+    const r = RecipeImport.toAppRecipe(ld, link, todayStr());
+    if (!link) r.source = '';
+    fillFormFromImport(r, meta);
+    if (!r.ingredients.length && !r.steps.length) {
+      setImportStatus("Couldn't find ingredients or steps in that text — fill them in below, or paste the full post.", 'err');
+      return false;
+    }
+    showPasteBox(false);
+    return true;
   }
 
   // Firestore REST value → plain JS (only the shapes the queue uses).
@@ -5704,6 +5742,8 @@
         return;
       } catch (e) { /* fall through to reading the link */ }
     }
+    // Text highlighted on the page and sent with the 🍳 bookmark.
+    if (entry.item.text && importRecipeFromText(entry.item.text, url, meta)) return;
     await importRecipeFromLink(url, meta);
   }
 

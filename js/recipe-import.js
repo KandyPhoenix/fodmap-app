@@ -191,6 +191,94 @@ function toAppRecipe(r, url, today) {
   };
 }
 
+// ── Plain text → recipe ───────────────────────────────────────
+// For sites that hide their pages from the app (Facebook, Instagram, TikTok…):
+// the recipe is usually written right in the post, so Kandy pastes or
+// highlights that text and this turns it into a JSON-LD-shaped Recipe for
+// toAppRecipe. Best effort — she checks the form before saving.
+const FRAC = '¼½¾⅓⅔⅛⅜⅝⅞';
+// Leading emoji, bullets, dashes and checkmarks, but not digits, fractions or "(".
+const LEAD_JUNK = new RegExp(`^[^\\p{L}\\p{N}${FRAC}(]+`, 'u');
+const ING_HEAD  = /^(?:ingredients?|what you(?:'|’)?ll need|you(?:'|’)?ll need|what you need|you need|shopping list)\b[^.!?]{0,40}$/i;
+const STEP_HEAD = /^(?:instructions?|directions?|method|steps?|how to make(?: it| them)?|preparation|to make)\b[^.!?]{0,40}$/i;
+const NOTE_HEAD = /^(?:notes?|tips?|storage|nutrition|variations?)\b[^.!?]{0,40}$/i;
+const STEP_NUM  = /^(?:step\s*)?\d{1,2}\s*[.):]\s*(?=\D)/i;
+const STARTS_QTY = new RegExp(`^(?:${NUM}|a\\s+(?:pinch|dash|handful)|pinch|dash)`, 'i');
+
+function cleanLine(s) {
+  return String(s || '').replace(/ /g, ' ')
+    .replace(/^\s*(\d)️?⃣/, '$1.')              // keycap emoji "1️⃣" → "1."
+    .replace(LEAD_JUNK, '').replace(/\s+/g, ' ').trim();
+}
+
+// "Prep 30 min | Bake 12-13 min" etc. → total minutes (a stated total wins).
+function timeFromText(text) {
+  const grab = (re) => {
+    const m = re.exec(text);
+    if (!m) return 0;
+    const n = parseFloat(m[1]);
+    return /h/i.test(m[2]) ? Math.round(n * 60) : n;
+  };
+  const amount = String.raw`[:\s-]*(\d+(?:\.\d+)?)(?:\s*[-–]\s*\d+)?\s*(hours?|hrs?|h\b|minutes?|mins?|m\b)`;
+  const total = grab(new RegExp(`total(?:\\s*time)?${amount}`, 'i'));
+  if (total) return total;
+  return ['prep', 'cook', 'bake', 'chill', 'freeze', 'rest']
+    .reduce((sum, k) => sum + grab(new RegExp(`${k}(?:\\s*time)?${amount}`, 'i')), 0);
+}
+
+function fromText(text) {
+  const raw = String(text || '');
+  const lines = raw.split(/\r?\n/)
+    .filter(l => !/^\s*(?:#\S+\s*)+$/.test(l))              // hashtag-only lines
+    .map(cleanLine)
+    .filter(l => l && !/^https?:\/\/\S+$/.test(l) && !/^(?:makes|serves|yields?)\b/i.test(l));
+  let name = '', mode = 'intro', sawHeads = false;
+  const ingredients = [], steps = [];
+  const isSubHead = l => /:$/.test(l) && l.length < 45 && !STARTS_QTY.test(l);
+
+  for (const line of lines) {
+    const bare = line.replace(/[:：]\s*$/, '');
+    if (ING_HEAD.test(bare))  { mode = 'ing';  sawHeads = true; continue; }
+    if (STEP_HEAD.test(bare)) { mode = 'step'; sawHeads = true; continue; }
+    if (NOTE_HEAD.test(bare) && mode !== 'intro') { mode = 'note'; continue; }
+    if (!name) {
+      // The title often carries the times: "Cookies Prep 30 min | Bake 12 min".
+      name = line.split(/\s*[|•]\s*|\s+(?=(?:prep|cook|bake|total|serves|makes|yield)\b)/i)[0]
+        .replace(/\s*#\S+/g, '').replace(/[^\p{L}\p{N})]+$/u, '').trim().slice(0, 90);
+      continue;
+    }
+    if (mode === 'note') continue;
+    if (mode === 'ing') {
+      if (isSubHead(line)) continue;                       // "For the filling:"
+      if (STEP_NUM.test(line) && !STARTS_QTY.test(line.replace(STEP_NUM, ''))) { mode = 'step'; }
+      else { ingredients.push(line); continue; }
+    }
+    if (mode === 'step') {
+      if (isSubHead(line)) continue;
+      steps.push(line.replace(STEP_NUM, '').trim());
+      continue;
+    }
+    // No headings yet: sort each line by its shape.
+    if (STEP_NUM.test(line)) steps.push(line.replace(STEP_NUM, '').trim());
+    else if (STARTS_QTY.test(line) && line.length < 90) ingredients.push(line);
+    else if (!sawHeads && line.length > 60 && /[.!]$/.test(line)) steps.push(line);
+  }
+
+  // One long paragraph of directions reads better split into sentences.
+  const outSteps = steps.length === 1 && steps[0].length > 160 ? collectSteps(steps[0]) : steps;
+  const serves = /(?:serves|servings?|makes|yields?)\s*:?\s*(?:about\s*)?(\d+)/i.exec(raw);
+  const mins = timeFromText(raw);
+  return {
+    '@type': 'Recipe',
+    name: name || 'Untitled recipe',
+    recipeYield: serves ? serves[1] : undefined,
+    totalTime: mins ? `PT${mins}M` : undefined,
+    recipeIngredient: ingredients,
+    // As HowToSteps so each numbered step stays one step.
+    recipeInstructions: outSteps.map(t => ({ '@type': 'HowToStep', text: t })),
+  };
+}
+
 // Drop tracking parameters (?fbclid=, utm_…, _kx=) but keep real ones.
 function cleanSourceUrl(url) {
   try {
@@ -204,7 +292,7 @@ function cleanSourceUrl(url) {
 }
 
 const api = { txt, findRecipes, findRecipesInLd, collectSteps, cleanStep, minutes, fmtTime,
-  splitIngredient, fodmapNote, pick, slugify, EMOJI, CATEGORY, toAppRecipe, cleanSourceUrl };
+  splitIngredient, fodmapNote, pick, slugify, EMOJI, CATEGORY, toAppRecipe, cleanSourceUrl, fromText };
 if (typeof module !== 'undefined' && module.exports) module.exports = api;
 else root.RecipeImport = api;
 })(typeof window !== 'undefined' ? window : globalThis);
