@@ -176,7 +176,8 @@ function readQueue() {
   }).then(function (d) {
     if (!d || !d.fields || !d.fields.queue) return [];
     var vals = (d.fields.queue.arrayValue && d.fields.queue.arrayValue.values) || [];
-    return vals.map(function (v) {
+    // Skip anything that isn't a clip (a stray test value once broke the whole list).
+    return vals.filter(function (v) { return v && v.mapValue; }).map(function (v) {
       var f = v.mapValue.fields || {};
       return {
         url: f.url ? f.url.stringValue : '',
