@@ -23874,7 +23874,10 @@
     const addedAt = params.get('import');
     if (!addedAt) return;
     history.replaceState(null, '', location.pathname);
-    setTimeout(() => openQueuedImport(addedAt), 0);
+    // Wait for the whole page: firebase-signin.js and firebase-sync.js load after this file,
+    // and without them the queue read goes out unsigned and is refused.
+    const go = () => setTimeout(() => openQueuedImport(addedAt), 0);
+    if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true });
   })();
 
 
