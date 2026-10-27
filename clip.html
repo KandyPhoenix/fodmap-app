@@ -143,7 +143,7 @@ function urlFromText(t) {
   return m ? m[0] : '';
 }
 
-function queueRecipe(url, title, recipeJson) {
+function queueRecipe(url, title, recipeJson, text) {
   var fields = {
     url:     { stringValue: url },
     title:   { stringValue: title || url },
@@ -153,6 +153,8 @@ function queueRecipe(url, title, recipeJson) {
   // recipe sites don't block) and passes it along, so the app can import it
   // without having to fetch the page itself.
   if (recipeJson) fields.recipe = { stringValue: recipeJson };
+  // Or the recipe text she highlighted, for sites with no recipe data.
+  if (text) fields.text = { stringValue: text };
   var entry = { mapValue: { fields: fields } };
   return authHeaders({ 'Content-Type': 'application/json' }).then(function (h) {
     return fetch(FS_COMMIT, {
@@ -182,7 +184,8 @@ function readQueue() {
       return {
         url: f.url ? f.url.stringValue : '',
         title: f.title ? f.title.stringValue : '',
-        addedAt: f.addedAt ? f.addedAt.stringValue : ''
+        addedAt: f.addedAt ? f.addedAt.stringValue : '',
+        hasText: !!f.text
       };
     });
   });
@@ -202,16 +205,22 @@ function esc(s) {
 }
 
 // ── capture mode ──────────────────────────────────────────────
-function showCapture(url, title, recipeJson) {
+function showCapture(url, title, recipeJson, text) {
   app.innerHTML = '<div class="card status"><div class="icon">🍳</div>' +
     '<div class="msg">Saving…</div><div class="detail">' + esc(title || url) + '</div></div>';
 
-  savePending({ url: url, title: title, recipe: recipeJson });
-  queueRecipe(url, title, recipeJson).then(function () {
+  savePending({ url: url, title: title, recipe: recipeJson, text: text });
+  queueRecipe(url, title, recipeJson, text).catch(function (e) {
+    // If the extra text is ever refused, still save the link itself.
+    if (!text || /signed in/i.test(e.message)) throw e;
+    text = '';
+    return queueRecipe(url, title, recipeJson, '');
+  }).then(function () {
     takePending();
     app.innerHTML = '<div class="card status"><div class="icon">✅</div>' +
       '<div class="msg">Saved to Our Table</div>' +
-      '<div class="detail">' + esc(title || url) + '</div>' +
+      '<div class="detail">' + esc(title || url) +
+        (text ? '<br>📋 with the recipe text you highlighted' : '') + '</div>' +
       '<div style="margin-top:18px">' +
         '<a class="btn" href="clip.html">See what\'s queued</a>' +
         '<button class="btn ghost" onclick="window.close()">Close</button>' +
@@ -238,6 +247,8 @@ function bookmarkletSource() {
     "document.querySelectorAll('script[type=\"application/ld+json\"]').forEach(function(s){try{w(JSON.parse(s.textContent));}catch(e){}});" +
     "var h='';if(o){var x={'@type':'Recipe'};['name','recipeYield','prepTime','cookTime','totalTime','recipeIngredient','recipeInstructions']" +
     ".forEach(function(k){if(o[k]!==undefined)x[k]=o[k];});h='#r='+encodeURIComponent(JSON.stringify(x));}" +
+    // No recipe data (Facebook, Instagram…): send whatever text is highlighted instead.
+    "else{var t=String(window.getSelection?getSelection():'').trim();if(t)h='#t='+encodeURIComponent(t.slice(0,8000));}" +
     "window.open('" + base + "?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+h," +
     "'ourtable','width=460,height=420');})()";
 }
@@ -247,6 +258,19 @@ function recipeFromHash() {
   var m = /[#&]r=([^&]+)/.exec(location.hash || '');
   if (!m) return '';
   try { var json = decodeURIComponent(m[1]); JSON.parse(json); return json; } catch (e) { return ''; }
+}
+
+// Recipe text highlighted on the page (the bookmark sends it as #t=).
+function textFromHash() {
+  var m = /[#&]t=([^&]+)/.exec(location.hash || '');
+  if (!m) return '';
+  try { return decodeURIComponent(m[1]).slice(0, 8000); } catch (e) { return ''; }
+}
+
+// An Android share can carry the whole post; keep it if it's more than just the link.
+function textFromShare(t) {
+  var rest = String(t || '').replace(/https?:\/\/\S+/g, '').trim();
+  return rest.length > 80 ? String(t).slice(0, 8000) : '';
 }
 
 function showHub() {
@@ -261,6 +285,9 @@ function showHub() {
       '<b>On a computer</b>' +
       '<p class="note">Show your bookmarks bar, then drag this button onto it:</p>' +
       '<p><a class="bmk" id="bmk" href="#">🍳 Send to Our Table</a></p>' +
+      '<p class="note"><b>Facebook, Instagram and other posts:</b> highlight the recipe text first, then tap the bookmark — ' +
+      'the text comes along so <b>Add to my recipes</b> can read it. (Already have the bookmark? ' +
+      'Replace it with this one to get that.)</p>' +
       '<p class="note">Dragging is blocked in some browsers — if so, make a new bookmark by hand ' +
       'and paste this as the address:</p>' +
       '<textarea id="src" readonly onclick="this.select()"></textarea>' +
@@ -304,6 +331,7 @@ function showHub() {
       return '<div class="queue-item"><div class="n">' + (i + 1) + '</div><div style="flex:1;min-width:0">' +
         '<div class="t">' + esc(it.title || it.url) + '</div>' +
         '<div class="u">' + esc(it.url) + '</div>' +
+        (it.hasText ? '<div class="u">📋 recipe text saved</div>' : '') +
         '<a class="btn add" href="index.html?import=' + encodeURIComponent(it.addedAt) + '">➕ Add to my recipes</a>' +
         '</div></div>';
     }).join('');
@@ -355,9 +383,10 @@ function fallback(text, done) {
   var raw = p.get('url') || urlFromText(p.get('text')) || urlFromText(p.get('title'));
   // Finish an emailed sign-in link first (no-op otherwise).
   (window.FBSignIn ? FBSignIn.complete() : Promise.resolve()).then(function () {
-    if (raw) return showCapture(cleanUrl(raw), p.get('title') || p.get('text') || '', recipeFromHash());
+    if (raw) return showCapture(cleanUrl(raw), p.get('title') || p.get('text') || '', recipeFromHash(),
+                                textFromHash() || textFromShare(p.get('text')));
     var pending = takePending();   // a clip that was waiting on sign-in
-    if (pending && pending.url) showCapture(pending.url, pending.title || '', pending.recipe || '');
+    if (pending && pending.url) showCapture(pending.url, pending.title || '', pending.recipe || '', pending.text || '');
     else showHub();
   });
 })();

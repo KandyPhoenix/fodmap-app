@@ -7793,6 +7793,13 @@ body.dark .wm-intro { color: #aaa; }
 .rf-import-row .action-btn:disabled { opacity: .6; cursor: progress; }
 .rf-import-status { font-size: 13px; line-height: 1.45; margin-top: 8px; color: var(--text-muted); }
 .rf-import-status:empty { display: none; }
+.rf-paste-toggle { margin-top: 10px; background: none; border: 0; padding: 4px 0; color: var(--primary); font-size: 14px; font-weight: 600; cursor: pointer; }
+.rf-paste { margin-top: 8px; display: flex; flex-direction: column; gap: 8px; }
+.rf-paste.hidden { display: none; }
+.rf-paste textarea { width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: 10px;
+  font: inherit; font-size: 14px; background: var(--card, #fff); color: var(--text); resize: vertical; }
+.rf-paste textarea:focus { outline: none; border-color: var(--primary); }
+.rf-paste .action-btn { align-self: flex-start; }
 .rf-import-status.ok  { color: var(--primary-dark, var(--primary)); font-weight: 600; }
 .rf-import-status.err { color: var(--red); background: var(--red-bg); padding: 8px 10px; border-radius: 8px; }
 
