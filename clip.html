@@ -61,6 +61,10 @@
 <body>
 <div class="wrap" id="app"></div>
 
+<!-- The queue is locked to Kandy's account, so this page signs in like the app does. -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="js/firebase-signin.js"></script>
 <script>
 // ── Send to Our Table ─────────────────────────────────────────
 // Queues a recipe URL so it can be added to the app later.
@@ -81,6 +85,44 @@ var FS_COMMIT = 'https://firestore.googleapis.com/v1/' + FS_PATH + ':commit?key=
 var FS_READ   = 'https://firestore.googleapis.com/v1/' + FS_DOC + '?key=' + FS_KEY;
 
 var app = document.getElementById('app');
+
+try {
+  firebase.initializeApp({
+    apiKey: FS_KEY,
+    authDomain: 'wellness-tracker-127.firebaseapp.com',
+    projectId: 'wellness-tracker-127',
+    storageBucket: 'wellness-tracker-127.firebasestorage.app',
+    messagingSenderId: '769681534889',
+    appId: '1:769681534889:web:a273b28653892af4039eb8'
+  });
+  FBSignIn.init();
+} catch (e) { console.warn('Firebase init failed:', e); }
+
+// Signed-in ID token on every queue request; without it Firestore answers 403.
+function authHeaders(extra) {
+  var h = Object.assign({}, extra || {});
+  if (!window.FBSignIn) return Promise.resolve(h);
+  return FBSignIn.idToken().then(function (t) { if (t) h.Authorization = 'Bearer ' + t; return h; });
+}
+
+// A 403 means "not signed in on this device": show the sign-in bar.
+function checkStatus(r) {
+  if (r.status === 401 || r.status === 403) {
+    if (window.FBSignIn) FBSignIn.show();
+    throw new Error('Not signed in on this device — sign in with the bar at the top.');
+  }
+  if (!r.ok) throw new Error('Firestore returned ' + r.status);
+  return r;
+}
+
+// Hold a clip while she signs in: an emailed sign-in link comes back to the bare page
+// without ?url=, so the clip would otherwise be lost.
+var PENDING_KEY = 'ourtable-pending-clip';
+function savePending(c) { try { localStorage.setItem(PENDING_KEY, JSON.stringify(c)); } catch (e) {} }
+function takePending() {
+  try { var c = JSON.parse(localStorage.getItem(PENDING_KEY) || 'null'); localStorage.removeItem(PENDING_KEY); return c; }
+  catch (e) { return null; }
+}
 var TRACKING = /^(fbclid|gclid|igshid|mc_[a-z]+|utm_[a-z]+|_ga|ref|ref_src|si|share_id|epik|ttclid|msclkid)$/i;
 
 // Strip the tracking junk a share sheet bolts on, keep real query params.
@@ -112,25 +154,25 @@ function queueRecipe(url, title, recipeJson) {
   // without having to fetch the page itself.
   if (recipeJson) fields.recipe = { stringValue: recipeJson };
   var entry = { mapValue: { fields: fields } };
-  return fetch(FS_COMMIT, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ writes: [{
-      update: { name: FS_DOC, fields: {} },
-      updateMask: { fieldPaths: [] },                       // create-if-missing, touch nothing
-      updateTransforms: [{ fieldPath: 'queue', appendMissingElements: { values: [entry] } }]
-    }] })
-  }).then(function (r) {
-    if (!r.ok) throw new Error('Firestore returned ' + r.status);
-    return true;
-  });
+  return authHeaders({ 'Content-Type': 'application/json' }).then(function (h) {
+    return fetch(FS_COMMIT, {
+      method: 'POST',
+      headers: h,
+      body: JSON.stringify({ writes: [{
+        update: { name: FS_DOC, fields: {} },
+        updateMask: { fieldPaths: [] },                     // create-if-missing, touch nothing
+        updateTransforms: [{ fieldPath: 'queue', appendMissingElements: { values: [entry] } }]
+      }] })
+    });
+  }).then(checkStatus).then(function () { return true; });
 }
 
 function readQueue() {
-  return fetch(FS_READ, { cache: 'no-store' }).then(function (r) {
+  return authHeaders().then(function (h) {
+    return fetch(FS_READ, { cache: 'no-store', headers: h });
+  }).then(function (r) {
     if (r.status === 404) return [];
-    if (!r.ok) throw new Error('Firestore returned ' + r.status);
-    return r.json();
+    return checkStatus(r).json();
   }).then(function (d) {
     if (!d || !d.fields || !d.fields.queue) return [];
     var vals = (d.fields.queue.arrayValue && d.fields.queue.arrayValue.values) || [];
@@ -146,11 +188,10 @@ function readQueue() {
 }
 
 function clearQueue() {
-  return fetch('https://firestore.googleapis.com/v1/' + FS_DOC + '?key=' + FS_KEY,
-               { method: 'DELETE' }).then(function (r) {
-    if (!r.ok) throw new Error('Firestore returned ' + r.status);
-    return true;
-  });
+  return authHeaders().then(function (h) {
+    return fetch('https://firestore.googleapis.com/v1/' + FS_DOC + '?key=' + FS_KEY,
+                 { method: 'DELETE', headers: h });
+  }).then(checkStatus).then(function () { return true; });
 }
 
 function esc(s) {
@@ -164,7 +205,9 @@ function showCapture(url, title, recipeJson) {
   app.innerHTML = '<div class="card status"><div class="icon">🍳</div>' +
     '<div class="msg">Saving…</div><div class="detail">' + esc(title || url) + '</div></div>';
 
+  savePending({ url: url, title: title, recipe: recipeJson });
   queueRecipe(url, title, recipeJson).then(function () {
+    takePending();
     app.innerHTML = '<div class="card status"><div class="icon">✅</div>' +
       '<div class="msg">Saved to Our Table</div>' +
       '<div class="detail">' + esc(title || url) + '</div>' +
@@ -309,8 +352,13 @@ function fallback(text, done) {
   // ?url= from the bookmarklet; ?text=/?title= from an Android share, where the
   // link can arrive inside either field.
   var raw = p.get('url') || urlFromText(p.get('text')) || urlFromText(p.get('title'));
-  if (raw) showCapture(cleanUrl(raw), p.get('title') || p.get('text') || '', recipeFromHash());
-  else showHub();
+  // Finish an emailed sign-in link first (no-op otherwise).
+  (window.FBSignIn ? FBSignIn.complete() : Promise.resolve()).then(function () {
+    if (raw) return showCapture(cleanUrl(raw), p.get('title') || p.get('text') || '', recipeFromHash());
+    var pending = takePending();   // a clip that was waiting on sign-in
+    if (pending && pending.url) showCapture(pending.url, pending.title || '', pending.recipe || '');
+    else showHub();
+  });
 })();
 </script>
 </body>

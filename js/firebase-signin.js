@@ -174,10 +174,22 @@
   function init() { var a = auth(); if (a) a.onAuthStateChanged(function (u) { if (u && u.email === ALLOWED) hide(); }); }
 
   // Bearer header for direct Firestore REST calls, so they work once the rules are locked.
-  function idToken() {
+  // Waits for Firebase to restore a saved sign-in first: right after page load currentUser is
+  // still null even when signed in, so a fetch made at load would otherwise go out with no token.
+  var authReady = null;
+  function ready() {
     var a = auth();
-    if (!a || !a.currentUser) return Promise.resolve(null);
-    return a.currentUser.getIdToken().catch(function () { return null; });
+    if (!a) return Promise.resolve(null);
+    if (!authReady) authReady = new Promise(function (res) {
+      var off = a.onAuthStateChanged(function (u) { try { off(); } catch (e) {} res(u); });
+      setTimeout(function () { res(a.currentUser); }, 4000);   // never hang a request on it
+    });
+    return authReady.then(function () { return a.currentUser; });
+  }
+  function idToken() {
+    return ready().then(function (u) {
+      return u ? u.getIdToken().catch(function () { return null; }) : null;
+    });
   }
 
   global.FBSignIn = {
