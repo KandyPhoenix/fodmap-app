@@ -8273,60 +8273,6 @@ const FAMILY_COOKBOOK = [
     "fodmapNote": "✨ A quick version written from the title. Saved from your “Main Dishes” section."
   },
   {
-    "id": "fam-x-the-glow-up-smoothie-recipe-for-firmer-skin-super-",
-    "name": "Glow-Up Smoothie",
-    "emoji": "🥤",
-    "category": "drinks",
-    "time": "5 min",
-    "serves": 2,
-    "difficulty": "easy",
-    "tags": [
-      "drinks /  extras"
-    ],
-    "source": null,
-    "ingredients": [
-      {
-        "qty": "1",
-        "item": "banana"
-      },
-      {
-        "qty": "1 cup",
-        "item": "frozen mango chunks"
-      },
-      {
-        "qty": "1 cup",
-        "item": "baby spinach"
-      },
-      {
-        "qty": "1/2",
-        "item": "avocado"
-      },
-      {
-        "qty": "1 cup",
-        "item": "coconut water"
-      },
-      {
-        "qty": "1/2 cup",
-        "item": "Greek yogurt"
-      },
-      {
-        "qty": "1 tbsp",
-        "item": "chia seeds"
-      },
-      {
-        "qty": "1 tsp",
-        "item": "honey"
-      }
-    ],
-    "steps": [
-      "Add the banana, mango, spinach, and avocado to a blender.",
-      "Pour in the coconut water and add the yogurt, chia seeds, and honey.",
-      "Blend until completely smooth, adding more coconut water if needed.",
-      "Pour into glasses and serve immediately."
-    ],
-    "fodmapNote": "✨ A quick version written from the title. Saved from your “Drinks /  Extras” section."
-  },
-  {
     "id": "fam-x-fully-loaded-bbq-mashed-potatoes-recipe-from-h-e-b",
     "name": "Fully Loaded BBQ Mashed Potatoes",
     "emoji": "🥔",
