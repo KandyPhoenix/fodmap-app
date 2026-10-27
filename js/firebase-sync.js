@@ -45,7 +45,10 @@ const firebaseConfig = {
   function writeKeys(src) {
     Object.keys(src).forEach(key => {
       if (key.startsWith('fodmap-')) {
-        try { localStorage.setItem(key, JSON.stringify(src[key])); }
+        // Plain text settings (the open tab, the diet plan) are stored as-is, not as JSON —
+        // stringifying them added quotes ("recipes") that crashed the app on load.
+        const v = src[key];
+        try { localStorage.setItem(key, typeof v === 'string' ? v : JSON.stringify(v)); }
         catch(e) {}
       }
     });
