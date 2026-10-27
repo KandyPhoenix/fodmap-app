@@ -2497,6 +2497,98 @@ const ADDED_RECIPES = [
       ],
       "fodmapNote": "Okra contains fructans and is low or high FODMAP depending on serving size. Check the Monash app for the low-FODMAP serving. The gumbo itself usually has onion and garlic; for low-FODMAP, use garlic-infused oil and the green parts of leeks and scallions instead."
   },
+  {
+      "id": "fam-add-chocolate-chip-cheesecake-cookies",
+      "name": "Chocolate Chip Cheesecake Cookies",
+      "emoji": "🍪",
+      "category": "desserts",
+      "time": "1 hr 30 min",
+      "serves": 18,
+      "difficulty": "medium",
+      "tags": [
+          "added",
+          "dessert",
+          "cookies",
+          "cheesecake",
+          "chocolate",
+          "stuffed cookies",
+          "baking"
+      ],
+      "source": "https://www.facebook.com/TinyKitchenBigFlavors1/posts/122209456988520465/",
+      "added": "2026-10-27",
+      "ingredients": [
+          {
+              "qty": "8 oz",
+              "item": "cream cheese, softened (filling)"
+          },
+          {
+              "qty": "¾ cup",
+              "item": "powdered sugar (filling)"
+          },
+          {
+              "qty": "½ tsp",
+              "item": "vanilla extract (filling)"
+          },
+          {
+              "qty": "1 cup",
+              "item": "butter, softened"
+          },
+          {
+              "qty": "1 cup",
+              "item": "brown sugar"
+          },
+          {
+              "qty": "½ cup",
+              "item": "granulated sugar"
+          },
+          {
+              "qty": "2",
+              "item": "eggs"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "vanilla extract"
+          },
+          {
+              "qty": "3 cups",
+              "item": "all-purpose flour"
+          },
+          {
+              "qty": "2 tsp",
+              "item": "cornstarch"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "baking soda"
+          },
+          {
+              "qty": "1 tsp",
+              "item": "baking powder"
+          },
+          {
+              "qty": "½ tsp",
+              "item": "salt"
+          },
+          {
+              "qty": "1 cup",
+              "item": "chocolate chips"
+          },
+          {
+              "qty": "⅓ cup",
+              "item": "mini chocolate chips"
+          }
+      ],
+      "steps": [
+          "Make the filling: beat the cream cheese, powdered sugar and ½ tsp vanilla until smooth.",
+          "Drop the filling by the tablespoon onto a lined tray and freeze for 30 minutes.",
+          "Make the dough: beat the butter, brown sugar and granulated sugar until fluffy. Beat in the eggs and 1 tsp vanilla.",
+          "Whisk the flour, cornstarch, baking soda, baking powder and salt together. Add to the wet mixture and mix just until combined. Fold in all the chocolate chips.",
+          "Scoop 3 tablespoons of dough, flatten it, set a frozen filling ball in the middle, wrap the dough around it to seal, and roll into a ball. Freeze the dough balls for 15 minutes.",
+          "Heat the oven to 375°F (190°C). Bake for 12–13 minutes, until the edges are set.",
+          "Let the cookies cool completely on the pan before moving them."
+      ],
+      "fodmapNote": "Not low-FODMAP as written: wheat flour (fructans) and regular cream cheese (lactose) are the main issues. For low-FODMAP: use a gluten-free 1:1 flour blend and lactose-free cream cheese, and keep it to 1 cookie per serving. Butter, sugar, eggs and dark or semi-sweet chocolate chips are fine in normal amounts."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
