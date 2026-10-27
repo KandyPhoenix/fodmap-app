@@ -1014,9 +1014,14 @@
   (function restoreLastView() {
     let saved = null;
     try { saved = localStorage.getItem('fodmap-view'); } catch (e) {}
+    // An older sync saved this with quotes ("recipes"); strip them, and never let a bad
+    // value stop the rest of the app from loading.
+    if (saved) saved = saved.replace(/^"+|"+$/g, '');
     if (saved && saved !== currentView) {
-      const btn = document.querySelector('.nav-btn[data-view="' + saved + '"]');
-      if (btn) btn.click();
+      try {
+        const btn = [...document.querySelectorAll('.nav-btn[data-view]')].find(b => b.dataset.view === saved);
+        if (btn) btn.click();
+      } catch (e) { console.warn('Could not restore the last tab:', e); }
     }
   })();
 
@@ -23231,7 +23236,7 @@
     },
   ];
   function hasTag(r, tag) { return (r.tags || []).some(t => String(t).toLowerCase() === tag); }
-  let dietPlanId = (function () { try { return localStorage.getItem('fodmap-diet-plan') || 'dietician'; } catch (e) { return 'dietician'; } })();
+  let dietPlanId = (function () { try { return (localStorage.getItem('fodmap-diet-plan') || '').replace(/^"+|"+$/g, '') || 'dietician'; } catch (e) { return 'dietician'; } })();
   let dietsTargetEl = null;
   function renderDietsView(target) {
     const el = target || dietsTargetEl;
