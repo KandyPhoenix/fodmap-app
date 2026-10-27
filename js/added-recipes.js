@@ -2589,6 +2589,63 @@ const ADDED_RECIPES = [
       ],
       "fodmapNote": "Not low-FODMAP as written: wheat flour (fructans) and regular cream cheese (lactose) are the main issues. For low-FODMAP: use a gluten-free 1:1 flour blend and lactose-free cream cheese, and keep it to 1 cookie per serving. Butter, sugar, eggs and dark or semi-sweet chocolate chips are fine in normal amounts."
   },
+  {
+      "id": "fam-add-glow-up-smoothie",
+      "name": "Glow-Up Smoothie",
+      "emoji": "🍓",
+      "category": "breakfast",
+      "time": "5 min",
+      "serves": 1,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "smoothie",
+          "breakfast",
+          "vitamin c",
+          "strawberry",
+          "kiwi",
+          "no-cook",
+          "vegetarian"
+      ],
+      "source": "https://superage.com/the-glow-up-smoothie-recipe-for-firmer-skin/",
+      "added": "2026-10-27",
+      "ingredients": [
+          {
+              "qty": "1 cup",
+              "item": "strawberries (a big handful)"
+          },
+          {
+              "qty": "1",
+              "item": "ripe kiwi, peeled"
+          },
+          {
+              "qty": "½ cup",
+              "item": "fresh orange juice"
+          },
+          {
+              "qty": "a few",
+              "item": "spinach leaves"
+          },
+          {
+              "qty": "a few slices",
+              "item": "avocado"
+          },
+          {
+              "qty": "½ cup",
+              "item": "Greek yogurt"
+          },
+          {
+              "qty": "optional",
+              "item": "1 spoonful chia seeds, powdered rose hips, or ice"
+          }
+      ],
+      "steps": [
+          "Add everything to a blender.",
+          "Blend until smooth. Add ice if you like it colder, or swap the yogurt for a splash of coconut water for a lighter, more hydrating version.",
+          "Drink right away."
+      ],
+      "fodmapNote": "Mostly low-FODMAP fruit (strawberries, kiwi, orange juice, spinach). Watch two things: regular Greek yogurt has lactose, so use lactose-free Greek yogurt, and keep the avocado to about 2 thin slices (⅛ of an avocado) to stay low-FODMAP."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
