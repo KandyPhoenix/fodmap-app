@@ -177,7 +177,23 @@
   // Waits for Firebase to restore a saved sign-in first: right after page load currentUser is
   // still null even when signed in, so a fetch made at load would otherwise go out with no token.
   var authReady = null;
+  // Firebase may not be initialised yet (the app's sync script runs after app.js), so wait up
+  // to 6s for it before giving up — otherwise an early request goes out without a token.
+  function appReady() {
+    return new Promise(function (res) {
+      var start = Date.now();
+      (function check() {
+        var ok = false;
+        try { ok = !!(global.firebase && global.firebase.apps && global.firebase.apps.length); } catch (e) {}
+        if (ok || Date.now() - start > 6000) return res();
+        setTimeout(check, 100);
+      })();
+    });
+  }
   function ready() {
+    return appReady().then(readyNow);
+  }
+  function readyNow() {
     var a = auth();
     if (!a) return Promise.resolve(null);
     if (!authReady) authReady = new Promise(function (res) {
