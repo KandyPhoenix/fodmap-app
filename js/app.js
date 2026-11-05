@@ -160,10 +160,11 @@
     // The low-FODMAP originals get the 'fodmap' tag (searchable, shown as a
     // chip). Everything else (the imported cookbook) is a "family" recipe
     // simply by NOT being FODMAP — no separate tag needed.
-    const fodmapSrc = [
-      ...(typeof KANDY_RECIPES !== 'undefined' ? KANDY_RECIPES : []),
-      ...RECIPES,
-    ];
+    // Only the original low-FODMAP recipe set is auto-tagged 'fodmap'. Kandy's
+    // own recipes (KANDY_RECIPES and everything pushed into it) are regular
+    // unless she marks them low-FODMAP (the 🍀 checkbox, or a 'fodmap' tag).
+    const fodmapSrc = [...RECIPES];
+    const ownSrc = (typeof KANDY_RECIPES !== 'undefined') ? KANDY_RECIPES : [];
     const familySrc = (typeof FAMILY_RECIPES !== 'undefined') ? FAMILY_RECIPES : [];
 
     const fodmap = fodmapSrc.map(r =>
@@ -172,7 +173,7 @@
 
     // Tag cuisine families (Mediterranean, Cajun, Italian, Indian, Mexican,
     // Asian) so they're searchable and chip-labelled.
-    return [...fodmap, ...familySrc].map(r => {
+    return [...ownSrc, ...fodmap, ...familySrc].map(r => {
       const existing = r.tags || [];
       const add = cuisineTagsFor(r).filter(t => !existing.includes(t));
       return add.length ? { ...r, tags: [...existing, ...add] } : r;
@@ -321,7 +322,7 @@
       // of the FODMAP (or Family) filter.
       const ovTags = ov.tags || [];
       // Preserve the original's 'fodmap' classification on the edited copy.
-      if ((b.tags || []).includes('fodmap') && !ovTags.includes('fodmap')) {
+      if ((b.tags || []).includes('fodmap') && !ovTags.includes('fodmap') && !ov.fodmapChosen) {
         merged.push({ ...ov, tags: [...ovTags, 'fodmap'] });
       } else {
         merged.push(ov);
@@ -2602,6 +2603,9 @@
     if (filter === 'iron') return isIronRich(r);
 
     if (filter === 'leanprotein') return (r.tags || []).map(t => t.toLowerCase()).includes('lean-protein');
+
+    // 😌 Easy Meals = dinners everyone in the house will eat (easy-meals.js).
+    if (filter === 'easymeals') return (r.tags || []).map(t => String(t).toLowerCase()).includes('easy-meals');
 
 
 
@@ -5168,7 +5172,9 @@
     const dl = document.getElementById('rf-section-list');
     if (dl) dl.innerHTML = allSectionsPresent().map(s => `<option value="${displaySection(s)}"></option>`).join('');
     const otherTags = existing ? (existing.tags || []).filter(t => sectionTag(t) !== curSection && !SECTION_TAGS.includes(sectionTag(t))) : [];
-    document.getElementById('rf-tags').value       = otherTags.join(', ');
+    const lowFodmapBox = document.getElementById('rf-lowfodmap');
+    if (lowFodmapBox) lowFodmapBox.checked = otherTags.some(t => String(t).toLowerCase() === 'fodmap');
+    document.getElementById('rf-tags').value       = otherTags.filter(t => String(t).toLowerCase() !== 'fodmap').join(', ');
 
 
 
@@ -6179,7 +6185,10 @@
     const sectionKey = ((document.getElementById('rf-section') || {}).value || '').trim().toLowerCase();
     const otherTags  = tagRaw.split(',').map(t => t.trim()).filter(Boolean)
       .filter(t => sectionTag(t) !== sectionKey && !SECTION_TAGS.includes(sectionTag(t)));
-    const tags   = (sectionKey ? [sectionKey] : []).concat(otherTags);
+    const lowFodmapEl = document.getElementById('rf-lowfodmap');
+    const markLowFodmap = lowFodmapEl ? lowFodmapEl.checked : otherTags.some(t => t.toLowerCase() === 'fodmap');
+    const tags   = (sectionKey ? [sectionKey] : []).concat(otherTags.filter(t => t.toLowerCase() !== 'fodmap'));
+    if (markLowFodmap) tags.push('fodmap');
 
 
 
@@ -6276,6 +6285,7 @@
 
 
       tags,
+      fodmapChosen: true,
 
       section:    sectionKey,
 
