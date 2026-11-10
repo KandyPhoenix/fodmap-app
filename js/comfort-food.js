@@ -723,7 +723,7 @@ const COMFORT_FOOD_RECIPES = [
         "item": "vegetable oil, divided"
       },
       {
-        "qty": "16 oz.",
+        "qty": "16 oz",
         "item": "egg noodles, or your favorite sturdy pasta"
       },
       {
@@ -2276,6 +2276,2344 @@ const COMFORT_FOOD_RECIPES = [
       "Bake for 35 minutes or until heated through."
     ],
     "fodmapNote": "Not low-FODMAP as written — two cans of condensed cream of chicken soup and wheat breadcrumbs. Broccoli is fine at about ¾ cup per serve. For a low-FODMAP plate: use garlic-infused oil and the green tops of spring onions in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free pasta or breadcrumbs, and replace condensed \"cream of\" soups (which carry onion and garlic) with a simple homemade white sauce."
+  },
+  {
+    "id": "fam-cf-pulled-pork-mac-and-cheese",
+    "name": "Pulled Pork Mac and Cheese",
+    "emoji": "🧀",
+    "category": "dinner",
+    "time": "55 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "one-pot"
+    ],
+    "source": "https://www.spendwithpennies.com/pulled-pork/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2024/03/Pulled-Pork-Mac-and-Cheese-SpendWithPennies-9.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "elbow macaroni, or short pasta, approx 3 cups dry pasta"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "butter"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "1 ¾ cups",
+        "item": "whole milk"
+      },
+      {
+        "qty": "1 ½ cups",
+        "item": "chicken broth"
+      },
+      {
+        "qty": "1 ½ teaspoons",
+        "item": "dry mustard powder"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "¾ teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "onion powder"
+      },
+      {
+        "qty": "3 cups",
+        "item": "shredded sharp cheddar cheese, 12oz, divided"
+      },
+      {
+        "qty": "1 ½ cups",
+        "item": "shredded pepper jack cheese, 6oz"
+      },
+      {
+        "qty": "½ cup",
+        "item": "shredded Parmesan cheese"
+      },
+      {
+        "qty": "3 cups",
+        "item": "prepared pulled pork"
+      },
+      {
+        "qty": "½ cup",
+        "item": "barbecue sauce"
+      },
+      {
+        "qty": "to taste",
+        "item": "green onions, and cilantro, for garnish, optional"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 425°F. Grease a 9x13-inch baking dish.",
+      "Bring a large pot of salted water to a boil. Add the elbows and cook al dente according to package instructions. Drain well and do not rinse.",
+      "Melt the butter in a saucepan over medium heat. Whisk in flour and cook for 1-2 minutes, while stirring.",
+      "Gradually add the milk and broth, a bit at a time, and whisk until smooth after each addition. Add dry mustard, salt, pepper, and onion powder. Bring the sauce to a boil and let boil for 1 minute until thickened.",
+      "Remove from the heat and whisk in 2 cups of cheddar cheese, pepper jack, and parmesan cheese.",
+      "Stir in the elbow macaroni, transfer to the prepared baking dish, and spread into an even layer.",
+      "Gently top the macaroni with pulled pork. Sprinkle the remaining cheese on top and drizzle with bbq sauce.",
+      "Bake 15 to 17 minutes or until hot and bubbly. Serve with additional barbecue sauce to taste."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — wheat macaroni and flour, 1¾ cups whole milk, onion powder, barbecue sauce (onion, garlic, often high-fructose corn syrup) and whatever seasoned the pulled pork. Cheddar, pepper jack and Parmesan are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. Uses leftover or store-bought pulled pork; 55 minutes. Serves 8."
+  },
+  {
+    "id": "fam-cf-salisbury-steak-burgers",
+    "name": "Salisbury Steak Burgers",
+    "emoji": "🍔",
+    "category": "dinner",
+    "time": "40 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "one-pan",
+      "40-min"
+    ],
+    "source": "https://www.spendwithpennies.com/salisbury-steak/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2016/04/Salisbury-Steak-Burgers-23.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 ½ pounds",
+        "item": "ground beef"
+      },
+      {
+        "qty": "½ cup",
+        "item": "Panko bread crumbs"
+      },
+      {
+        "qty": "1",
+        "item": "egg"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "1 ½ cups",
+        "item": "reduced sodium beef broth"
+      },
+      {
+        "qty": "1 (1 oz) package",
+        "item": "brown gravy mix, dry"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "ketchup"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "Dijon mustard"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "butter"
+      },
+      {
+        "qty": "1",
+        "item": "onion, thinly sliced"
+      },
+      {
+        "qty": "1 cup",
+        "item": "mushrooms, thinly sliced"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "cornstarch"
+      },
+      {
+        "qty": "4 tablespoons",
+        "item": "water"
+      },
+      {
+        "qty": "6 large",
+        "item": "rolls, or Kaiser buns"
+      },
+      {
+        "qty": "6 slices",
+        "item": "Swiss cheese, or cheddar cheese"
+      }
+    ],
+    "steps": [
+      "Combine beef, bread crumbs, egg, pepper and flour in a large bowl. Shape into 6 patties.",
+      "In a small bowl, combine, broth, gravy mix, ketchup and dijon, set aside.",
+      "Cook onions in butter over medium low heat for about 5 minutes or until slightly softened. Add mushrooms and cook an additional 3 minutes. Remove from pan and set aside.",
+      "Brown beef patties on both sides. Pour gravy mixture, mushrooms & onions over top and simmer covered for about 15-20 minutes or until patties are cooked through. Stack the patties in one side of the pan.",
+      "Combine cornstarch and water in a small bowl. Bring the gravy up to a low boil and whisk in the cornstarch mixture a little at a time until gravy thickens (you may not need all of it).",
+      "To assemble burgers, place 1 slice of cheese, 1 patty and a spoonful of mushroom gravy on each roll. Top with your favorite toppings."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, a cup of mushrooms, brown gravy mix and ketchup (onion and garlic), panko (wheat) and wheat buns. Beef, Dijon and Swiss are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. 40 minutes. Serves 6."
+  },
+  {
+    "id": "fam-cf-swedish-meatballs",
+    "name": "Swedish Meatballs (Spend With Pennies)",
+    "emoji": "🥩",
+    "category": "dinner",
+    "time": "35 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "one-pan",
+      "classic"
+    ],
+    "source": "https://www.spendwithpennies.com/swedish-meatballs/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2024/10/Swedish-Meatballs-SpendWithPennies-100.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "lean ground beef"
+      },
+      {
+        "qty": "½ pound",
+        "item": "ground pork, or additional ground beef"
+      },
+      {
+        "qty": "½ cup",
+        "item": "bread crumbs, or Panko bread crumbs"
+      },
+      {
+        "qty": "1 large",
+        "item": "egg, beaten"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "milk"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "ground allspice"
+      },
+      {
+        "qty": "1/16 teaspoon",
+        "item": "ground nutmeg"
+      },
+      {
+        "qty": "to taste",
+        "item": "pinch ground cloves"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "butter"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "white pepper, or finely ground black pepper"
+      },
+      {
+        "qty": "2 cups",
+        "item": "beef stock"
+      },
+      {
+        "qty": "½ cup",
+        "item": "heavy whipping cream"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "soy sauce"
+      },
+      {
+        "qty": "to taste",
+        "item": "chopped fresh parsley, for garnish, optional"
+      }
+    ],
+    "steps": [
+      "To make the meatballs, in a large bowl, combine beef, pork, bread crumbs, egg, milk, salt, pepper, allspice, nutmeg, and clove. Mix well and roll into 1-inch meatballs (About 45-48 meatballs).",
+      "Heat a 12-inch nonstick skillet over medium-high heat. Working in batches, add the meatballs and brown on all sides. Transfer the meatballs to a plate.",
+      "To make the sauce, add the butter to the drippings in the skillet. Stir in the flour and pepper. Cook for 1 minute.",
+      "Gradually whisk in the broth and cream, stirring until smooth after each addition. Add the soy sauce.",
+      "Add the meatballs to the sauce and bring to a simmer over medium low heat. Cover and simmer for 10 minutes, stirring occasionally. Uncover and simmer for 5-10 minutes more or until thickened and the meatballs are cooked through. Taste and season with additional salt and pepper if desired.",
+      "Serve over egg noodles or mashed potatoes. Garnish with parsley if desired."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — breadcrumbs (wheat), onion in the meatballs, milk and heavy cream in the gravy. Beef, pork, allspice, nutmeg, beef stock (check it) and soy sauce are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. A \"Swedish Meatballs\" is already in the cookbook, so this one carries the source name. 35 minutes. Serves 6."
+  },
+  {
+    "id": "fam-cf-biscuits-and-gravy",
+    "name": "Biscuits and Gravy",
+    "emoji": "🥐",
+    "category": "breakfast",
+    "time": "41 min",
+    "serves": 7,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "classic",
+      "breakfast-for-dinner"
+    ],
+    "source": "https://www.spendwithpennies.com/biscuits-and-gravy/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2018/06/homemade-biscuits-and-gravy-recipe-1-of-1-2.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 cups",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "baking powder"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "granulated sugar"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "6 tablespoons",
+        "item": "unsalted butter, very cold"
+      },
+      {
+        "qty": "¾ cup",
+        "item": "whole milk, cold"
+      },
+      {
+        "qty": "1 pound",
+        "item": "ground pork sausage, we like sage flavor"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "2 ½ cups",
+        "item": "whole milk"
+      },
+      {
+        "qty": "⅛ teaspoon",
+        "item": "red pepper flakes, optional"
+      }
+    ],
+    "steps": [
+      "For best results, chill your butter in the freezer for 10-20 minutes before beginning this recipe. It's ideal that the butter is very cold for light, flaky, buttery biscuits.",
+      "Preheat oven to 425°F and line a cookie sheet with nonstick parchment paper. Set aside.",
+      "Combine flour, baking powder, sugar, and salt in a large bowl and mix well.",
+      "Remove butter from the freezer and cut it into your flour mixture using a pastry cutter until the mixture resembles coarse crumbs.",
+      "Add the cold milk to the flour mixture and use a spoon to stir until just combined (don't over-mix, you don't want to overwork this dough)",
+      "Transfer the biscuit dough to a clean, well-floured surface and use your hands to gently work the dough together. If the dough is too sticky, add flour until it is manageable.",
+      "Once the dough is cohesive, fold in half over itself and use your hands to gently flatten. Rotate the dough 90 degrees and fold in half again, repeating this step 5-6 times but taking care to not overwork the dough (this will help give your biscuits flaky layers).",
+      "Use your hands to gently flatten the dough to 1\" thick.",
+      "Press a 2 ¾\" wide biscuit cutter straight down into the dough (making close cuts) and drop the biscuit onto your prepared baking sheet.",
+      "Repeat until you have gotten as many biscuits as possible and place less than ½\" apart on baking sheet.",
+      "Cut as many biscuits as possible out of the dough, then gently re-work the dough to cut out another biscuit or two until you have at least 7 biscuits.",
+      "Transfer to the oven and bake at 425°F for 10-12 minutes or until tops are beginning to just turn lightly golden brown.",
+      "Prepare your gravy while the biscuits are baking.",
+      "Place sausage in a saucepan and turn heat to medium-high. Cook, crumbling the sausage as it cooks, until no pink remains. Do not drain the skillet.",
+      "Sprinkle the ¼ cup of flour evenly over the sausage crumbles and cook a minute longer until the flour is absorbed.",
+      "Slowly pour the milk into your skillet, stirring as you pour. Add crushed red pepper, if using.",
+      "Cook, stirring, until mixture is thickened.",
+      "Once biscuits are finished baking, slice in half, pour gravy over biscuits, and serve!"
+    ],
+    "fodmapNote": "Not low-FODMAP as written — wheat flour biscuits, 3¼ cups of whole milk, and pork sausage (usually seasoned with garlic and onion). For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. Homemade biscuits and a sausage cream gravy; about 40 minutes. Serves 7."
+  },
+  {
+    "id": "fam-cf-apple-crisp",
+    "name": "Apple Crisp",
+    "emoji": "🍎",
+    "category": "desserts",
+    "time": "1 hr 20 min",
+    "serves": 12,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "dessert",
+      "classic"
+    ],
+    "source": "https://natashaskitchen.com/apple-crisp-recipe/",
+    "image": "https://natashaskitchen.com/wp-content/uploads/2021/10/Apple-Crisp-Recipe-SQ.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "4 lb (11-12 medium)",
+        "item": "firm, crisp apples"
+      },
+      {
+        "qty": "2 Tbsp",
+        "item": "lemon juice"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "granulated sugar, or to taste"
+      },
+      {
+        "qty": "3 Tbsp",
+        "item": "all-purpose flour, or 1 1/2 Tbsp cornstarch for GF"
+      },
+      {
+        "qty": "1 1/2 tsp",
+        "item": "cinnamon"
+      },
+      {
+        "qty": "1 3/4 cups",
+        "item": "all-purpose flour, or 1:1 Gluten Free Flour"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "packed light brown sugar"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "granulated sugar"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "cinnamon"
+      },
+      {
+        "qty": "1/4 tsp",
+        "item": "fine sea salt"
+      },
+      {
+        "qty": "1 cup",
+        "item": "unsalted butter"
+      },
+      {
+        "qty": "1 cup",
+        "item": "old-fashioned rolled oats"
+      }
+    ],
+    "steps": [
+      "Prep: Generously butter a 9x13 casserole dish with 1/2 Tbsp butter. Preheat the oven to 375F.",
+      "Cut Apples: Peel, core, and thinly slice apples to 1/4’ thickness. You should have 12 cups of sliced apples. Squeeze 2 Tbsp lemon juice over the apples and toss to coat.",
+      "Make Apple Filling: In a separate bowl, stir together 3/4 cup sugar, 3 Tbsp flour, and 1 1/2 tsp cinnamon, then sprinkle mixture over apples and toss to combine. Transfer apples to the buttered casserole dish.",
+      "Make the topping: in a large bowl, use your hands to stir together flour, oats, brown and granulated sugars, cinnamon, and salt. Add the diced butter and work it into the mixture with your hands until pea-sized crumbs form throughout. Spread topping over apples.",
+      "Bake at 375˚F for 45-50 minutes or until the topping is golden and crisp and the apples are bubbling with thick juices at the edges and the apples are tender when pierced with a knife."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — 4 pounds of apples (fructose) and butter. Oats, brown sugar, cinnamon and lemon are fine. Not adaptable, since apple is the whole dish; enjoy it as a family dessert. 1 hr 20 min, mostly baking. Serves 12."
+  },
+  {
+    "id": "fam-cf-peach-crisp",
+    "name": "Peach Crisp",
+    "emoji": "🍑",
+    "category": "desserts",
+    "time": "55 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "dessert"
+    ],
+    "source": "https://natashaskitchen.com/peach-crisp-recipe/",
+    "image": "https://natashaskitchen.com/wp-content/uploads/2009/12/Peach-Crisp-Recipe-4.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2½ lb (8 medium)",
+        "item": "peaches, fresh or frozen"
+      },
+      {
+        "qty": "2 Tbsp",
+        "item": "fresh lemon juice, omit if using frozen fruit"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "granulated sugar"
+      },
+      {
+        "qty": "1 cup",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "granulated sugar"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "brown sugar, packed"
+      },
+      {
+        "qty": "1/8 tsp",
+        "item": "sea salt"
+      },
+      {
+        "qty": "8 Tbsp (1 stick)",
+        "item": "cold unsalted butter, diced"
+      },
+      {
+        "qty": "½ cup",
+        "item": "old fashioned rolled oats or quick-cooking oats"
+      },
+      {
+        "qty": "1 cup",
+        "item": "sliced almonds, divided"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 350 degrees F. Butter a 9x12 casserole baking dish.",
+      "To Blanch Peaches: Place peaches in boiling hot water for one minute or just until skins come off easily then transfer immediately to cold water. Peel, pit and slice into 1/2\" thick pieces. Transfer to a large bowl and toss peaches with 2 Tbsp lemon juice.",
+      "Preheat oven to 350 degrees F. Butter a 9x12 casserole baking dish. In a small bowl, whisk together 1/4 cup sugar, 1/4 cup flour and toss with the sliced fruit just until evenly coated. Pour into buttered baking dish.",
+      "In a food processor** fitted with a steel blade, combine 1 cup flour, 1/4 cup granulated sugar, 1/3 cup brown sugar, and 1/8 tsp (pinch) of salt. Pulse several times to combine. Add the diced cold butter and pulse until the butter is the size of peas.",
+      "Transfer mixture to a bowl, add 1/2 cup oatmeal and use your hands to make large crumbles. Add ½ cup of the sliced almonds and mix to combine.",
+      "Spread the topping evenly over the fruit and sprinkle the top with ½ cup of almonds. Bake 45 minutes at 350˚F or until top is golden and the fruit is bubbling at the edges."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — peaches are high-FODMAP (sorbitol) and are the whole dish. Oats, almonds, brown sugar and butter are otherwise fine. Family dessert. 55 minutes. Serves 8."
+  },
+  {
+    "id": "fam-cf-fudgy-brownies",
+    "name": "Fudgy Brownies",
+    "emoji": "🍫",
+    "category": "desserts",
+    "time": "1 hr 5 min",
+    "serves": 12,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "dessert"
+    ],
+    "source": "https://natashaskitchen.com/fudgy-brownie-recipe/",
+    "image": "https://natashaskitchen.com/wp-content/uploads/2020/08/Chocolate-Brownie-Recipe-5.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1/2 lb",
+        "item": "unsalted butter, or 16 Tbsp, (softened or cut into pieces if cold for faster melting)"
+      },
+      {
+        "qty": "16 oz (2½ cups)",
+        "item": "semisweet chocolate chips, divided"
+      },
+      {
+        "qty": "4 large",
+        "item": "eggs"
+      },
+      {
+        "qty": "1 1/4 cups",
+        "item": "granulated sugar"
+      },
+      {
+        "qty": "1 Tbsp",
+        "item": "instant coffee granules"
+      },
+      {
+        "qty": "3 Tbsp",
+        "item": "light olive oil, or vegetable oil"
+      },
+      {
+        "qty": "1 Tbsp",
+        "item": "vanilla extract"
+      },
+      {
+        "qty": "2/3 cup",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "unsweetened cocoa powder"
+      },
+      {
+        "qty": "1 1/2 tsp",
+        "item": "baking powder"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "salt"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 350˚F. Butter a 9x9 pan and line with parchment paper.",
+      "In a medium saucepan over low heat, Melt together 2 cups chocolate chips and butter while whisking then set aside to cool 15 minutes.",
+      "In a second large bowl, whisk together 4 eggs, 1 1/4 cups granulated sugar and 1 Tbsp coffee granules, 3 Tbsp oil and 1 Tbsp vanilla extract.",
+      "Stir cooled chocolate mixture into the egg mixture.",
+      "In a medium bowl, whisk together 2/3 cup flour, 1/2 cup cocoa, 1 1/2 tsp baking powder and 1/2 tsp salt, then use a spatula to fold mixture into the batter and fold just until combined. Do not over mix.",
+      "Transfer batter to prepared pan and sprinkle all over with remaining 1/2 cup chocolate chips. Bake at 350 for 35-40 min depending on the desired doneness.* Cool until nearly at room temperature then cut into bars before serving."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — wheat flour and a pound of semisweet chocolate (fine in a small square, but this is a lot). Cocoa, eggs, sugar and oil are fine. Use gluten-free flour and keep to one small brownie. 1 hr 5 min including cooling. Makes 12."
+  },
+  {
+    "id": "fam-cf-easy-banana-pudding",
+    "name": "Easy Banana Pudding",
+    "emoji": "🍌",
+    "category": "desserts",
+    "time": "2 hr 30 min",
+    "serves": 10,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "no-bake",
+      "dessert"
+    ],
+    "source": "https://natashaskitchen.com/banana-pudding/",
+    "image": "https://natashaskitchen.com/wp-content/uploads/2022/08/Banana-Pudding-SQ.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 cups",
+        "item": "cold milk"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "vanilla extract"
+      },
+      {
+        "qty": "2 (3.4 oz) packages",
+        "item": "instant vanilla pudding"
+      },
+      {
+        "qty": "1 (14 oz) can",
+        "item": "sweetened condensed milk, or to taste"
+      },
+      {
+        "qty": "2 cups",
+        "item": "heavy whipping cream"
+      },
+      {
+        "qty": "11 oz",
+        "item": "vanilla wafers"
+      },
+      {
+        "qty": "5",
+        "item": "fresh bananas"
+      },
+      {
+        "qty": "1 Tbsp",
+        "item": "powdered sugar, optional"
+      }
+    ],
+    "steps": [
+      "Make the Pudding: In a large bowl, beat the cold milk with vanilla extract and vanilla pudding packets until it thickens. Pour in the condensed milk and beat to combine.",
+      "Whip the Cream: In a separate bowl, beat the heavy whipping cream until stiff peaks form. Add about two-thirds of the whipped cream into the pudding and gently fold in with a spatula.",
+      "Sweeten the Topping: Add the powdered sugar into the remaining one-third whipped cream and fold with a spatula to combine. Refrigerate until needed.",
+      "Layer Wafers and Bananas: Add about 1/4th of the vanilla wafers into the bottom of your trifle bowl and about 1/4th of the bananas.",
+      "Add the Pudding: Spread 1/4 of the pudding over the bananas/wafers. Repeat with the remaining layers until you have four layers.",
+      "Top and Chill: Add the reserved whipped cream over the top of the pudding and decorate as desired. Cover and refrigerate 2 hours before serving."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — milk, sweetened condensed milk and heavy cream (lactose), vanilla wafers (wheat) and five ripe bananas (ripe bananas are higher in fructans). Lactose-free milk and gluten-free vanilla wafers get most of the way there. No-bake; 2½ hours is mostly chilling. Serves 10."
+  },
+  {
+    "id": "fam-cf-easy-apple-cobbler",
+    "name": "Easy Apple Cobbler",
+    "emoji": "🍎",
+    "category": "desserts",
+    "time": "1 hr 25 min",
+    "serves": 12,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "dessert"
+    ],
+    "source": "https://www.averiecooks.com/apple-cobbler/",
+    "image": "https://www.averiecooks.com/wp-content/uploads/2023/07/applecobbler-20.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "8 to 10",
+        "item": "apples, peeled, cored, and sliced thinly (a variety of tart and sweet)"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "lemon juice"
+      },
+      {
+        "qty": "2 1/4 cups",
+        "item": "granulated sugar, divided"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "light brown sugar, packed"
+      },
+      {
+        "qty": "5 tablespoons + 2½ cups",
+        "item": "all-purpose flour, divided"
+      },
+      {
+        "qty": "1 1/2 teaspoons",
+        "item": "apple pie spice"
+      },
+      {
+        "qty": "1 1/4 teaspoons",
+        "item": "salt, divided"
+      },
+      {
+        "qty": "1 large",
+        "item": "egg"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "buttermilk"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "baking powder"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "unsalted butter, sliced into about 8 pats of butter"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 375F and spray a 9x13-inch baking pan very well with cooking spray; set aside.",
+      "To a large bowl, add the apples and lemon juice. Tip - The lemon juice helps prevent the apples from oxidizing (turning brown) while you're peeling, coring, and slicing them. Feel free to add it to about half the apples (4 or 5) or so, while you're working on getting the remaining 4 or 5 prepped.",
+      "Evenly sprinkle the apples with 3/4 cup granulated sugar (reserve the rest), all the light brown sugar, 5 tablespoons flour (reserve the rest), apple pie spice, 1/4 teaspoon salt (reserve the rest), and toss very well with a rubber spatula to combine and coat evenly.",
+      "Using that same rubber spatula, turn the apples and all the remaining sugary juices out into the prepared baking pan.",
+      "Cover with foil and bake for 20 minutes. While baking, move onto the next steps in the process.",
+      "To a large bowl (Tip - the same bowl you used for the apples is fine provided you scraped out the sugar juices well with your spatula, you can simply wipe it out well with a paper towel and don't need to wash it) add the egg, buttermilk**, and whisk well to combine; set aside.",
+      "In a separate large bowl, add the remaining 2 1/2 cups flour, the remaining 1 1/2 cups granulated sugar, baking powder, and remaining 1 teaspoon salt.",
+      "Pour the wet egg-buttermilk mixture into the dry mixture.",
+      "Using a pastry blender, cut the dough until you have pea-sized pieces.",
+      "After the apples have been baking for 20 minutes, remove the pan from the oven, and evenly spoon the dough over the top.",
+      "Evenly place the pats of butter over the top of the dough.",
+      "Return the pan to the oven, and bake uncovered this time for about 40 minutes, or until the dough is set, lightly golden browned, and you can see the apple mixture below bubbling.",
+      "Allow the cobbler to cool for about 10 minutes, or as desired. Serve with vanilla ice cream, homemade whipped cream, whipped topping (Cool Whip), salted caramel sauce, or your favorite topping, as desired.",
+      "Storage - Extra cobbler will keep airtight at room temp for up to 3-4 days, noting the top will become soggier as time passes. Alternatively, you can store airtight in the fridge for up to 5 days, although if planning on consuming it all in the first few days, then I don't like storing pastry-based desserts like this in the fridge. I personally don't like freezing desserts of this nature either due to the texture changes, although the taste will be fine, stored airtight in the freezer for up to 3 months."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — 8 to 10 apples (fructose), wheat flour in the drop-biscuit topping, buttermilk and butter. Not adaptable, since apple is the whole dish; family dessert. 1 hr 25 min, mostly baking. Serves 12."
+  },
+  {
+    "id": "fam-cf-banana-dump-cake",
+    "name": "Banana Dump Cake",
+    "emoji": "🍌",
+    "category": "desserts",
+    "time": "55 min",
+    "serves": 12,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "dessert",
+      "dump-and-go"
+    ],
+    "source": "https://www.averiecooks.com/banana-dump-cake/",
+    "image": "https://www.averiecooks.com/wp-content/uploads/2026/06/bananadumpcake-14.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "5 large",
+        "item": "very ripe bananas, divided"
+      },
+      {
+        "qty": "1 cup",
+        "item": "whole milk"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "chopped walnuts or pecans, omit if you don't eat nuts"
+      },
+      {
+        "qty": "1 (15.25 oz) box",
+        "item": "yellow cake mix"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "dark brown sugar, packed"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "ground cinnamon, or to taste"
+      },
+      {
+        "qty": "3/4 cup (1½ sticks)",
+        "item": "cold unsalted butter, sliced into about 24 pats"
+      },
+      {
+        "qty": "to taste",
+        "item": "caramel sauce or salted caramel sauce"
+      },
+      {
+        "qty": "to taste",
+        "item": "vanilla ice cream"
+      },
+      {
+        "qty": "to taste",
+        "item": "whipped cream or whipped topping, such as Cool Whip or ReddiWhip"
+      }
+    ],
+    "steps": [
+      "Cake: Preheat oven to 350F and spray a 9x13-inch pan with cooking spray or grease the pan.",
+      "Add about 2 1/2 bananas into the pan and using a fork or potato masher, mash them and then distribute or spread them evenly.",
+      "Slice the remaining 2 1/2 bananas into thin bite-sized pieces and scatter them evenly over the mashed bananas.",
+      "Evenly pour milk over the banana layers (trust me here).",
+      "If you're using nuts, evenly sprinkle them over the pan.",
+      "Evenly sprinkle the dry cake mix over everything. Sprinkling Tip - Make sure it's as evenly sprinkled as possible over the surface of the pan because bigger blobs of cake mix in one area may create a dry or crumbly (undissolved) texture in the baked and finished cake.",
+      "Evenly place and distribute the sliced pats of butter over the surface.",
+      "To a small bowl, add the brown sugar, cinnamon, stir to combine. Spice Swap, optional - Feel free to swap the cinnamon for an equal amount of pumpkin pie spice; or use a mix of cinnamon, nutmeg, and allspice).",
+      "Evenly sprinkle the mixture over the pan. Tip - Do not sir or mix the ingredients together. The layers will meld and combine perfectly in the oven as the cake bakes.",
+      "Bake the cake for 45-55 minutes, or until done. The cake is ready when the top is a deep golden brown and the liquid is bubbling thickly at the edges. Rotate pan once midway through baking for best results. Baking Tips - Because all ovens run differently, the exact number of ounces of cake mix in a box may vary from brand to brand, all pans and climates are different, baking times will vary. Keep an eye on it, check early, and know that the cake will also firm up as it cools.",
+      "Allow the cake to cool in a pan on a wire rack for at least 30 minutes. Cooling Tips - Because this cake is very moist, letting it rest for at least 30 minutes after baking will allow the sauce to thicken and the cake to set so that it is not soupy.",
+      "Serving: Scoop the warm dump cake into bowls and optionally and as desired, drizzle generously with (salted) caramel sauce, a scoop of vanilla ice cream, or whipped cream or whipped topping as desired."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — very ripe bananas (fructans), boxed cake mix (wheat), whole milk and butter; walnuts or pecans are fine in a small serve. Family dessert, made in the pan with no mixer. 55 minutes. Serves 12."
+  },
+  {
+    "id": "fam-cf-white-chicken-enchilada-casserole",
+    "name": "White Chicken Enchilada Casserole",
+    "emoji": "🌮",
+    "category": "dinner",
+    "time": "45 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "casserole"
+    ],
+    "source": "https://www.sixsistersstuff.com/recipe/white-chicken-enchilada-casserole/",
+    "image": "https://www.sixsistersstuff.com/wp-content/uploads/2013/05/White-Chicken-Enchilada-Casserole-1.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "4",
+        "item": "boneless, skinless chicken breasts, cooked and diced"
+      },
+      {
+        "qty": "1 (10.75 oz) can",
+        "item": "cream of chicken soup"
+      },
+      {
+        "qty": "2 (4 oz) cans",
+        "item": "diced green chilies, drained"
+      },
+      {
+        "qty": "16 ounces",
+        "item": "sour cream"
+      },
+      {
+        "qty": "½",
+        "item": "onion, finely diced"
+      },
+      {
+        "qty": "½ cup",
+        "item": "milk"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "garlic salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "salt and pepper to taste"
+      },
+      {
+        "qty": "10 ounces",
+        "item": "tortilla chips"
+      },
+      {
+        "qty": "1 cup",
+        "item": "shredded Monterey Jack cheese"
+      },
+      {
+        "qty": "1 cup",
+        "item": "shredded cheddar cheese"
+      },
+      {
+        "qty": "1 cup",
+        "item": "shredded lettuce, optional topping"
+      },
+      {
+        "qty": "2",
+        "item": "tomatoes, diced, optional topping"
+      },
+      {
+        "qty": "2",
+        "item": "avocado, diced, optional topping"
+      },
+      {
+        "qty": "½ cup",
+        "item": "Hot Sauce, optional topping"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 350 degrees.",
+      "In a large mixing bowl combine the cooked diced chicken, cream of chicken soup, chilis, sour cream, diced onion, milk, garlic salt, salt, and pepper. Set aside.",
+      "Spray a 9 x 13 inch baking pan with non-stick cooking spray.",
+      "Place chips in the bottom of the baking pan and spoon chicken mixture over chips.",
+      "Top with grated cheese and bake for 30 minutes or until hot and bubbly.",
+      "Serve with your favorite toppings (lettuce, tomato, salsa, avocado, hot sauce)."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — condensed cream of chicken soup, 16 oz sour cream, onion and garlic salt. Chicken, green chilies, corn tortilla chips, Monterey Jack and cheddar are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. 45 minutes. Serves 8."
+  },
+  {
+    "id": "fam-cf-slow-cooker-cheesy-chicken-enchiladas",
+    "name": "Slow Cooker Cheesy Chicken Enchiladas",
+    "emoji": "🌯",
+    "category": "dinner",
+    "time": "6 hr 45 min",
+    "serves": 12,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "slow cooker",
+      "oven"
+    ],
+    "source": "https://www.sixsistersstuff.com/recipe/slow-cooker-chicken-enchiladas/",
+    "image": "https://www.sixsistersstuff.com/wp-content/uploads/2018/08/Slow-Cooker-Chicken-Enchiladas-3.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "6",
+        "item": "boneless, skinless chicken breasts"
+      },
+      {
+        "qty": "1 (1 oz) packet",
+        "item": "taco seasoning"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "garlic powder"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "onion powder"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "chili powder"
+      },
+      {
+        "qty": "1 small",
+        "item": "onion, chopped"
+      },
+      {
+        "qty": "1 (4 oz) can",
+        "item": "diced green chilies"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "lime juice"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "water"
+      },
+      {
+        "qty": "1 (10.5 oz) can",
+        "item": "cream of chicken soup"
+      },
+      {
+        "qty": "1 cup",
+        "item": "sour cream"
+      },
+      {
+        "qty": "2 cups",
+        "item": "shredded cheddar cheese, any cheese would work, use your favorite"
+      },
+      {
+        "qty": "1 (10 oz) can",
+        "item": "enchilada sauce, red or green"
+      },
+      {
+        "qty": "2 Tablespoons",
+        "item": "green onions, chopped"
+      },
+      {
+        "qty": "to taste",
+        "item": "olives, sliced"
+      },
+      {
+        "qty": "12",
+        "item": "tortillas"
+      }
+    ],
+    "steps": [
+      "Spray slow cooker with non-stick cooking spray. Place chicken breasts inside slow cooker. Add taco seasoning, garlic powder, onion powder, chili powder, onion, green chilis, lime juice, and water on top of chicken. Cook on low for 6-8 hours or high for 3-4 hours.",
+      "Once it is finished baking, shred chicken with 2 forks (it should come apart really easy).",
+      "Mix together cream of chicken soup and sour cream.",
+      "Stir half of the soup mixture in with the shredded chicken. Spread the other half of the soup mixture on the bottom of a 9x13 pan (or two 9x9\" pans).",
+      "Place a scoop of the chicken mixture on a tortilla. Sprinkle on a little bit of cheese and roll up. Place seam-side down in the pan.",
+      "Repeat with the rest of the tortillas.",
+      "Pour enchilada sauce over the top and cover with remaining cheese. Top with green onions and olives.",
+      "Bake at 350 degrees for 25-30 minutes."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — taco seasoning, garlic and onion powder, onion, condensed cream of chicken soup, sour cream, canned enchilada sauce (onion and garlic) and flour tortillas. Chicken, green chilies and cheddar are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. Slow cooker 6-8 hours on low, then roll and bake. Serves 12."
+  },
+  {
+    "id": "fam-cf-easy-chicken-parmesan",
+    "name": "Easy Chicken Parmesan (Six Sisters)",
+    "emoji": "🍗",
+    "category": "dinner",
+    "time": "35 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "classic",
+      "high-protein"
+    ],
+    "source": "https://www.sixsistersstuff.com/recipe/easy-chicken-parmesan/",
+    "image": "https://www.sixsistersstuff.com/wp-content/uploads/2025/01/Chicken-Parmesan-1.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2",
+        "item": "chicken breast filets"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and pepper, to taste"
+      },
+      {
+        "qty": "2 Tablespoon",
+        "item": "flour"
+      },
+      {
+        "qty": "1 large",
+        "item": "egg"
+      },
+      {
+        "qty": "½ cup",
+        "item": "panko breadcrumbs"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "Parmesan cheese, divided"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "dried Italian herbs"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "marinara sauce"
+      },
+      {
+        "qty": "½ cup",
+        "item": "grated mozzarella"
+      },
+      {
+        "qty": "to taste",
+        "item": "Fresh basil, for garnish"
+      }
+    ],
+    "steps": [
+      "Pound the chicken:",
+      "Place chicken breasts between two pieces of plastic wrap on a chopping board. Pound the chicken with a meat mallet to ½ inch thick. Preheat your oven to 400℉.",
+      "Pat dry chicken filets with paper towels and season to taste with salt and pepper.",
+      "Gather your breading ingredients: add the flour to a shallow wide dish. Whisk egg with salt and pepper in a separate bowl to taste. Combine Panko breadcrumbs, half the parmesan, and dried Italian herbs in a third bowl.",
+      "Coat your chicken: coat the chicken with flour, just dust it lightly. Shake any excess flour. Then, dip the chicken into eggs, letting the excess eggs drip off. Finally, dredge the chicken through the mixture of breadcrumbs and parmesan cheese.",
+      "Fry the chicken: heat 2 inches of oil in a large skillet over medium-high heat. Add the chicken breast filets to the heated oil. Fry the chicken until golden on both sides, for 2 minutes.",
+      "Bake the chicken: transfer the chicken to a baking dish. Spread marinara sauce over the chicken. Add the mozzarella on top and the remaining parmesan. Bake the chicken 18-20 minutes or until the temperature of the chicken reaches 165℉.",
+      "Serve: serve parmesan chicken warm, garnished with fresh basil if desired."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — wheat flour and panko, and jarred marinara (onion and garlic). Chicken, Parmesan, mozzarella and basil are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. A \"Chicken Parmesan\" is already in the cookbook, so this one carries the source name. 35 minutes. Serves 2; double it for the family."
+  },
+  {
+    "id": "fam-cf-chicken-tetrazzini",
+    "name": "Chicken Tetrazzini",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "55 min",
+    "serves": 12,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "casserole"
+    ],
+    "source": "https://lilluna.com/chicken-tetrazzini/",
+    "image": "https://lilluna.com/wp-content/uploads/2025/10/chicken-tetrazzini-resize-9.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 (16 oz) package",
+        "item": "linguine, or fettucine or spaghetti"
+      },
+      {
+        "qty": "4",
+        "item": "chicken breasts, cooked and diced"
+      },
+      {
+        "qty": "2 (10.5 oz) cans",
+        "item": "cream of chicken soup"
+      },
+      {
+        "qty": "2 cups",
+        "item": "sour cream"
+      },
+      {
+        "qty": "½ cup",
+        "item": "unsalted butter, softened"
+      },
+      {
+        "qty": "1 cup",
+        "item": "chicken broth"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "garlic salt with parsley flakes"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "2 cups",
+        "item": "shredded mozzarella cheese"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "grated Parmesan cheese"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 350°F. Grease a 9x13-inch casserole dish and set aside.",
+      "Cook linguine according to the box instructions. Drain and set aside.",
+      "Meanwhile, in a large bowl, combine chicken, soup, sour cream, butter, chicken broth, garlic salt, and pepper. Mix well, then stir in cooked noodles.",
+      "Pour the mixture into a prepared baking dish.",
+      "Sprinkle both cheeses on top and bake, uncovered, for 36-42 minutes, until cheeses are melted and bubbling."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — wheat linguine, two cans of condensed cream of chicken soup, 2 cups sour cream and garlic salt. Chicken, mozzarella and Parmesan are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. Serves 12; halves well. 55 minutes."
+  },
+  {
+    "id": "fam-cf-easy-baked-ziti",
+    "name": "Easy Baked Ziti",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "55 min",
+    "serves": 10,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "casserole"
+    ],
+    "source": "https://lilluna.com/baked-ziti/",
+    "image": "https://lilluna.com/wp-content/uploads/2022/07/baked-ziti4-resize-8.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 (16 oz) package",
+        "item": "ziti"
+      },
+      {
+        "qty": "½ pound",
+        "item": "ground beef, 80% lean / 20% fat"
+      },
+      {
+        "qty": "½ pound",
+        "item": "mild Italian sausage"
+      },
+      {
+        "qty": "1½-2 cups",
+        "item": "marinara sauce, we love Rao’s"
+      },
+      {
+        "qty": "1 (14.5 oz) can",
+        "item": "diced tomatoes"
+      },
+      {
+        "qty": "4 ounces",
+        "item": "cream cheese, softened"
+      },
+      {
+        "qty": "½ cup",
+        "item": "sour cream"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "garlic salt with parsley flakes"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "Italian seasoning"
+      },
+      {
+        "qty": "8 ounces",
+        "item": "fresh mozzarella, sliced"
+      },
+      {
+        "qty": "1 cup",
+        "item": "shredded mozzarella cheese"
+      },
+      {
+        "qty": "to taste",
+        "item": "fresh basil, for garnish"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 375°F. Grease a 9x13 inch baking dish and set aside.",
+      "Cook pasta to al dente according to package directions. Drain and set aside.",
+      "Meanwhile, cook ground beef and Italian sausage in a large saucepan over medium heat, stirring and breaking up into small pieces, until no longer pink, 7-10 minutes. Drain fat and set saucepan aside.",
+      "In a large pot over medium heat, combine marinara sauce, tomatoes, cream cheese, and sour cream and cook, stirring often, until well blended and cream cheese is melted.",
+      "Add cooked pasta and sauce to the saucepan with ground beef and mix well. Add garlic salt and Italian seasoning.",
+      "Pour into the perpared pan. Top with fresh mozzarella and shredded mozzarella.",
+      "Bake for 20 minutes, uncovered.",
+      "Let rest for at least 5 minutes before serving. Garnish with fresh basil."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — wheat ziti, Italian sausage (garlic), jarred marinara (onion and garlic), garlic salt, cream cheese and sour cream. Beef, diced tomatoes and mozzarella are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. 55 minutes. Serves 10."
+  },
+  {
+    "id": "fam-cf-cheeseburger-casserole",
+    "name": "Cheeseburger Casserole",
+    "emoji": "🍔",
+    "category": "dinner",
+    "time": "33 min",
+    "serves": 12,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "casserole",
+      "30-min"
+    ],
+    "source": "https://lilluna.com/cheeseburger-casserole/",
+    "image": "https://lilluna.com/wp-content/uploads/2020/08/cheeseburger-casserole-resize-3.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "ground beef"
+      },
+      {
+        "qty": "1 (29 oz) can",
+        "item": "diced tomatoes with juice"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "Worcestershire sauce"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "dried oregano"
+      },
+      {
+        "qty": "1½ teaspoons",
+        "item": "Lowry's Seasoning Salt"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "8 ounces",
+        "item": "wide egg noodles"
+      },
+      {
+        "qty": "2 cups",
+        "item": "sharp cheddar cheese, grated"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 350°F. Cook the ground beef in a large skillet over medium heat until no longer pink. Stir and break up lumps while the meat is browning.",
+      "Once the meat has browned, add the tomatoes, with the juice, the Worcestershire sauce, oregano, Lawry’s salt, and pepper. Bring it to a boil, then reduce the heat. Simmer the mixture for about 15 minutes.",
+      "While the meat mixture is simmering fill a medium pot half full of water. Add 1 teaspoon salt and bring the water to a boil. Stir in the noodles and boil for about 8 minutes, until tender. Drain the noodles, then return the noodles to the pot and pour the tomato mixture over the noodles. Stir until blended.",
+      "Spray a 9x13-inch baking dish with cooking spray and add the noodle mixture. Top with cheese. Bake for about 15 minutes, until the cheese is melted.",
+      "Enjoy this meal with your family. Refrigerate any leftovers."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — wheat egg noodles and Lawry's seasoned salt (onion and garlic). Beef, canned diced tomatoes, Worcestershire and cheddar are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. Eight ingredients, 33 minutes. Serves 12."
+  },
+  {
+    "id": "fam-cf-meat-stuffed-shells",
+    "name": "Meat Stuffed Shells",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "1 hr 5 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "make-ahead",
+      "freezer-friendly"
+    ],
+    "source": "https://carlsbadcravings.com/stuffed-shells-with-meat/",
+    "image": "https://carlsbadcravings.com/wp-content/uploads/2022/03/stuffed-shells-7.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 (12 oz) box",
+        "item": "jumbo pasta shells"
+      },
+      {
+        "qty": "2 (24 oz) jars",
+        "item": "quality marinara (Rao's recommended)"
+      },
+      {
+        "qty": "1 pound",
+        "item": "hot Italian sausage, casings removed"
+      },
+      {
+        "qty": "1/2 medium",
+        "item": "yellow onion, chopped"
+      },
+      {
+        "qty": "3",
+        "item": "garlic cloves, minced"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "freshly shredded mozzarella for topping"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "freshly grated Parmesan cheese for topping"
+      },
+      {
+        "qty": "1",
+        "item": "egg"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "whole milk ricotta cheese, strained"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "sour cream, full fat please"
+      },
+      {
+        "qty": "2 ½ cups",
+        "item": "freshly shredded mozzarella"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "freshly grated Parmesan cheese"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "chopped fresh basil or 1 1/2 tsp dried"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "chopped fresh parsley or 1 1/2 tsp dried"
+      },
+      {
+        "qty": "½ tsp",
+        "item": "each dried oregano, garlic powder, pepper"
+      },
+      {
+        "qty": "1/4 tsp",
+        "item": "each nutmeg, salt"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 350 degrees F.",
+      "Boil shells in salted water for 1 minute less than al dente, don’t overcook! Strain, and gently rinse with cool water until shells are completely cool. Meanwhile:",
+      "Brown sausage and onion over medium heat in a large skillet. Add garlic and cook 30 more seconds. Pat off excess grease if you’d like.",
+      "Remove 1 1/2 cups sausage/onions and add it to a 9x13 baking dish along with half of the marinara sauce. Stir to combine then spread into an even layer.",
+      "Whisk the egg in a large bowl. Add all remaining Filling ingredients and stir until creamy. Add remaining sausage and stir until evenly combined.",
+      "Fill each shell with the filling and line on top of the sauce in the baking dish. The easiest way to do this is add the filling to a freezer size bag, snip the corner (about 3/4-inch cut) and pipe the filling into each shell. Arrange the shells as tightly as possible. I was able to fit about 28 shells, 7 rows of 4.",
+      "Pour remaining marinara sauce over shells, making sure they are covered so they don’t dry out. Top the marinara with 1 ½ cups mozzarella and 1/3 cup Parmesan cheese.",
+      "Cover and bake at 350 degrees F for 20 minutes. Remove the foil and bake an additional 10 minutes or until the cheese is completely melted. Broil if desired for a minute or two. Garnish with parsley if desired."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — jumbo wheat shells, hot Italian sausage (garlic), onion, garlic, garlic powder, jarred marinara, ricotta and sour cream. Mozzarella and Parmesan are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. Makes about 28 shells, roughly 8 servings; freezes well. 1 hr 5 min."
+  },
+  {
+    "id": "fam-cf-cheesy-hash-brown-shepherds-pie",
+    "name": "Cheesy Hash Brown Shepherd's Pie",
+    "emoji": "🥧",
+    "category": "dinner",
+    "time": "50 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "casserole"
+    ],
+    "source": "https://carlsbadcravings.com/cheesy-hash-brown-shepherds-pie-recipe/",
+    "image": "https://carlsbadcravings.com/wp-content/uploads/2015/03/Cheesy-Hashbrown-Shepherds-Pie7.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "lean ground beef"
+      },
+      {
+        "qty": "1/2",
+        "item": "red onion, chopped"
+      },
+      {
+        "qty": "3-4",
+        "item": "garlic cloves, minced"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "1 1/4 cups",
+        "item": "low sodium beef broth"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "sweet corn, fresh (or canned and drained)"
+      },
+      {
+        "qty": "1",
+        "item": "green bell pepper, chopped"
+      },
+      {
+        "qty": "1 medium",
+        "item": "carrot, thinly sliced"
+      },
+      {
+        "qty": "1 (15 oz) can",
+        "item": "diced tomatoes, well drained"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "tomato paste"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "ketchup"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "Dijon mustard"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "Worcestershire sauce"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "low sodium soy sauce"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "each paprika, chili pwdr, dried parsley, dried oregano"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "hot sauce, more or less to taste"
+      },
+      {
+        "qty": "6 cups",
+        "item": "frozen hash browns"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "sharp cheddar, divided"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "freshly grated Parmesan cheese"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "sour cream"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/8 teaspoon",
+        "item": "pepper"
+      }
+    ],
+    "steps": [
+      "Hash Brown Topping: Heat 2 tablespoons olive oil over medium heat in a large nonstick skillet. Add hash browns in a single layer and cook undisturbed for 5 minutes. Flip hash browns and cook another 5 minutes. (They will not be all the way cooked – just golden in some places.) Set aside to cool.",
+      "Meat and Vegetables: Brown beef and onions in a 12” oven proof skillet* over medium high heat until beef is cooked through. Drain off excess grease.",
+      "Add garlic and sauté 30 seconds. Sprinkle flour over meat and cook while stirring for 2 minutes. Add remaining Meat/Vegetable ingredients and simmer, stirring occasionally, over medium heat for 7-10 minutes or until thickened. Taste and add additional hot sauce if desired. Spread evenly in skillet.",
+      "Meanwhile, in a large bowl, mix 1/2 cup sharp cheddar cheese, Parmesan cheese, hash browns, sour cream, salt and pepper.",
+      "Spread hash brown topping evenly over meat mixture and sprinkle with remaining 1 cup sharp cheddar cheese. Bake at 400F degrees for 30 minutes or until hash brown are completely cooked then broil to desired hash brown crispiness."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — red onion, 3-4 cloves garlic, ketchup, Worcestershire and sour cream; corn and green pepper are fine in these amounts. Beef, carrot, hash browns, cheddar and Parmesan are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. 50 minutes. Serves 6."
+  },
+  {
+    "id": "fam-cf-homemade-chicken-and-dumplings",
+    "name": "Homemade Chicken and Dumplings",
+    "emoji": "🍲",
+    "category": "dinner",
+    "time": "1 hr 5 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "one-pot"
+    ],
+    "source": "https://carlsbadcravings.com/chicken-and-dumplings/",
+    "image": "https://carlsbadcravings.com/wp-content/uploads/2020/04/Chicken-and-Dumplings-V5.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "4 tablespoons",
+        "item": "olive oil, divided"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "unsalted butter"
+      },
+      {
+        "qty": "1 pound",
+        "item": "boneless skinless chicken thighs, or rotisserie chicken"
+      },
+      {
+        "qty": "to taste",
+        "item": "salt and pepper"
+      },
+      {
+        "qty": "1 large",
+        "item": "onion, diced"
+      },
+      {
+        "qty": "4 stalks",
+        "item": "celery, chopped ½-inch thick"
+      },
+      {
+        "qty": "4 medium",
+        "item": "carrots, chopped ½-inch thick"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "8 cups",
+        "item": "low sodium chicken broth"
+      },
+      {
+        "qty": "4-6 cloves",
+        "item": "garlic, minced"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "chicken bouillon, or better than bouillons"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "dried parsley"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "each dried oregano, dried basil, dried thyme"
+      },
+      {
+        "qty": "1",
+        "item": "bay leaf"
+      },
+      {
+        "qty": "2 cups",
+        "item": "half and half, or evaporated milk"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "cornstarch"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "flour"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "yellow cornmeal"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "baking powder"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "baking soda"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "each dried parsley, dried chives, salt, sugar"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "buttermilk"
+      },
+      {
+        "qty": "1",
+        "item": "egg"
+      },
+      {
+        "qty": "5 tablespoons",
+        "item": "unsalted butter, melted and cooled slightly (about 5 minutes)"
+      }
+    ],
+    "steps": [
+      "For the dumplings, whisk buttermilk and egg together in a measuring glass/small bowl and refrigerate until needed.",
+      "Heat 2 tablespoons oil over medium-high heat in a large Dutch oven/soup pot. Season chicken with 1/2 teaspoon salt and 1/2 teaspoon pepper then sear until golden, about 2 minutes per side. Remove to a plate but leave drippings.",
+      "Melt 3 tablespoons butter with 2 tablespoon olive oil over medium heat. Add onions, carrots and celery; sauté for 4 minutes scaping up the golden bits on the bottom of the pan. Add garlic and sauté for 30 seconds; sprinkle in flour then cook, stirring constantly for 2 minutes (it will be thick); don’t let flour stick to the bottom of the pot or it will burn later. You can add additional oil if needed.",
+      "Stir in chicken broth, chicken bouillon, all seasonings, 1/4 teaspoon salt, bay leaf and chicken broth. Add chicken back to the pot. Cover the soup to bring to a simmer, then displace the lid so it’s partially covering the pot, with about a one-inch opening. Simmer the soup for 12-15 minutes or until chicken is tender enough to shred, stirring occasionally and replacing the lid. Meanwhile, make dumpling dough.",
+      "Dumplings: In a large bowl, whisk together the dry ingredients. Stir melted butter into buttermilk/egg mixture until small clumps form.",
+      "Stir curdled buttermilk mixture into the flour mixture with a rubber spatula just until combined and the batter mixture slightly begins to pull away from the edges of the bowl - DON'T overmix; set aside.",
+      "Once chicken is tender, remove to a cutting board, shred and add back to the pot. Whisk cornstarch with half and half until smooth then stir back into the pot. Bring the soup to a gentle simmer.",
+      "Using a greased tablespoon or #50 cookie scoop, drop dollops of dough into the simmering soup, spacing them out a little. Cover, then reduce heat to low. Cook for 15-20 minutes or until dumplings are cooked through. You can check a dumpling by cutting it in half. Allow the soup to rest for 10 minutes before serving to allow the dumpling to soak up some of the soup. Season individual bowls with additional salt and pepper to taste."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — a large onion, four stalks celery, 4-6 cloves garlic, chicken bouillon, half-and-half, and wheat flour and buttermilk in the cornmeal drop dumplings. Chicken, carrots and herbs are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. No rolling or cutting; 1 hr 5 min. Serves 6."
+  },
+  {
+    "id": "fam-cf-crockpot-beef-stew",
+    "name": "Crockpot Beef Stew",
+    "emoji": "🍲",
+    "category": "dinner",
+    "time": "6 hr 15 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "slow cooker"
+    ],
+    "source": "https://www.wellplated.com/crockpot-beef-stew/",
+    "image": "https://www.wellplated.com/wp-content/uploads/2018/03/Crock-Pot-Beef-Stew-Recipe.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 1/2 pounds",
+        "item": "boneless chuck roast"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "kosher salt, divided"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "ground black pepper, divided"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "white whole wheat flour, or all-purpose flour"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "extra-virgin olive oil, divided"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "dry red wine"
+      },
+      {
+        "qty": "1 large",
+        "item": "yellow onion"
+      },
+      {
+        "qty": "3",
+        "item": "celery stalks"
+      },
+      {
+        "qty": "2 cloves",
+        "item": "garlic"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "tomato paste"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "Worcestershire sauce"
+      },
+      {
+        "qty": "4 large",
+        "item": "carrots"
+      },
+      {
+        "qty": "2",
+        "item": "parsnips"
+      },
+      {
+        "qty": "3/4 pound",
+        "item": "red potatoes, about 2 medium"
+      },
+      {
+        "qty": "1",
+        "item": "bay leaf"
+      },
+      {
+        "qty": "3 sprigs",
+        "item": "fresh thyme"
+      },
+      {
+        "qty": "3 to 4 cups",
+        "item": "low-sodium beef broth"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "fresh or frozen peas, no need to thaw"
+      },
+      {
+        "qty": "to taste",
+        "item": "Fresh parsley, optional for serving"
+      }
+    ],
+    "steps": [
+      "Cut the beef chuck roast into 1-inch cubes, removing any large, tough pieces of fat or gristle. I found it easiest to cut it into 1-inch-thick large, round slices, then strips, then cubes. Place the cubes in a large bowl and sprinkle with 1/2 teaspoon kosher salt and 1/4 teaspoon black pepper. Sprinkle on the flour, then toss lightly to coat.",
+      "Place a large, deep Dutch oven over medium-high heat. Add 1 tablespoon of the oil. Once the oil is hot and shimmering (a drop of water should sizzle if added to the surface), add one-third to one-half of the beef. The cubes should be in a single layer and not too crowded so that they brown nicely. Let the cubes of beef cook undisturbed for 4 to 5 minutes (resist the urge to peek!), until the bottom of the cubes develop a dark-brown crust and come away from the pan easily. Turn and continue searing until dark and golden all over, about 4 to 5 additional minutes. Transfer the seared meat to a clean bowl or plate.",
+      "Add another 1 tablespoon olive oil to the pot, and once hot, sear the remaining beef, working in batches and ensuring that you do not overcrowd the pieces. It may take two or three batches total depending on the size of your pan. If the pan gets too dry, add a bit more oil as needed.",
+      "While the meat browns, dice the yellow onion and celery. Mince the garlic.",
+      "When the last batch of beef has been seared, transfer it to a plate and reduce the heat to medium.",
+      "Add the final tablespoon of olive oil to the pan. Add the onions and celery and cook until the onions are soft and translucent; about 7 minutes. Add the garlic and cook 30 seconds, until fragrant.",
+      "While the onions sauté, peel and dice the carrots and parsnips. Scrub the potatoes and cut into a rough dice. Set aside.",
+      "Stir in the tomato paste, Worcestershire, and remaining 1/2 teaspoon kosher salt and 1/4 teaspoon black pepper.",
+      "Increase the pan heat to medium-high heat and add the wine or beer (stand back, as it will sputter). Cook, letting the wine reduce and scraping up all of the brown bits from the pan. Continue to scrape and stir until the liquid is slightly reduced and thickened, 2 to 3 minutes.",
+      "Transfer the sautéed vegetables and any sauce from the pan to a 6-quart or larger slow cooker. Add the beef, carrots, parsnips, potatoes, bay leaf, and thyme.",
+      "Slowly pour in 3 cups of beef broth.",
+      "Stir to roughly combine.",
+      "Cover and cook on low for 6 1/2 to 8 hours or high for 3 1/2 to 4 1/2 hours, until the beef is cooked through and fall-apart tender.",
+      "Remove the bay leaf and thyme stems and stir in the peas. If you’d like the stew thinner, add additional broth until it reaches your desired consistency. Taste and add additional salt or pepper as desired. Serve hot, garnish with fresh parsley."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — a large onion, three celery stalks, garlic and 1½ cups peas; parsnips are fine in a normal serve. Chuck roast, red wine, carrots, red potatoes, tomato paste and thyme are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. Mostly unattended slow-cooker time (6-8 hours on low). Serves 6."
+  },
+  {
+    "id": "fam-cf-old-fashioned-chicken-and-dumplings",
+    "name": "Old-Fashioned Chicken and Dumplings",
+    "emoji": "🍲",
+    "category": "dinner",
+    "time": "1 hr 35 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "one-pot",
+      "classic"
+    ],
+    "source": "https://www.spendwithpennies.com/old-fashioned-chicken-and-dumplings/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2026/01/cropped-Chicken-and-Dumplings-2-SpendWithPennies.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 whole (4 to 5 lb)",
+        "item": "chicken, cut into pieces"
+      },
+      {
+        "qty": "1",
+        "item": "yellow onion, cut into quarters"
+      },
+      {
+        "qty": "3 large",
+        "item": "carrots, cut into thirds"
+      },
+      {
+        "qty": "3",
+        "item": "ribs celery, cut into thirds"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "salt, or to taste"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "black pepper, or to taste"
+      },
+      {
+        "qty": "1",
+        "item": "bay leaf, or a ¼ teaspoon poultry seasoning, optional"
+      },
+      {
+        "qty": "8 cups",
+        "item": "reduced sodium chicken broth"
+      },
+      {
+        "qty": "4 tablespoons",
+        "item": "cornstarch, plus 4 tablespoons water"
+      },
+      {
+        "qty": "1¾ cups",
+        "item": "all-purpose flour, plus extra for dusting"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "shortening"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "baking powder"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "¾ cup",
+        "item": "milk"
+      }
+    ],
+    "steps": [
+      "In a large soup pot, combine the chicken, onion, carrots, celery, salt, pepper, and the bay leaf.",
+      "Add chicken broth. Bring to a boil, reduce heat, and simmer covered for 45-60 minutes or until the chicken is tender and cooked through. While the broth is simmering, prepare dumplings below.",
+      "Strain broth through cheesecloth. Shred or chop the chicken and discard the skin and bones. Chop the vegetables if desired (or discard). Set aside.",
+      "Add the strained broth back to the pot. Bring to a boil and gently add dumplings to broth. Reduce heat and simmer for 15-20 minutes or until tender.",
+      "Stir chicken (and vegetables if desired) into the broth and cook about 2-3 minutes or until heated through.",
+      "Combine flour, shortening, baking powder, and salt with a fork or pastry cutter until shortening is the size of small crumbs.",
+      "Add milk a little at a time and mix until combined (you may not need all of it, you want a soft but not sticky dough).",
+      "Knead 5-6 times on a floured surface until dough is smooth.",
+      "Generously flour your surface and roll the dough out to ⅛-inch thick. Using a sharp knife or a pizza cutter, cut the dough into 1-inch x 2-inch strips. Flour generously to avoid sticking.",
+      "Cook in broth as directed above.",
+      "In a small bowl, combine 4 tablespoons cornstarch with 4 tablespoons water.",
+      "Add to boiling broth a little bit at a time stirring to reach desired consistency."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, three ribs of celery, wheat flour dumplings and milk. Chicken, carrots and broth (check it for onion and garlic) are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. About 1½ hours, mostly simmering. Serves 8."
+  },
+  {
+    "id": "fam-cf-crock-pot-chicken-and-dumplings",
+    "name": "Crock Pot Chicken and Dumplings",
+    "emoji": "🍲",
+    "category": "dinner",
+    "time": "5 hr 20 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "slow cooker"
+    ],
+    "source": "https://www.spendwithpennies.com/crock-pot-chicken-and-dumplings/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2016/10/CrockPot-Chicken-and-Dumplings-23.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 large",
+        "item": "onion, diced"
+      },
+      {
+        "qty": "1 (10.5 ounce) can",
+        "item": "condensed cream of celery soup"
+      },
+      {
+        "qty": "1 (10.5 ounce) can",
+        "item": "condensed cream of chicken soup"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "chopped fresh parsley"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "poultry seasoning"
+      },
+      {
+        "qty": "to taste",
+        "item": "black pepper, to taste"
+      },
+      {
+        "qty": "4",
+        "item": "boneless skinless chicken breasts"
+      },
+      {
+        "qty": "2 cups",
+        "item": "reduced sodium chicken broth"
+      },
+      {
+        "qty": "2 cups",
+        "item": "frozen vegetables, or peas and carrots, thawed"
+      },
+      {
+        "qty": "1 (16.3 ounce) can",
+        "item": "refrigerated biscuits, Buttermilk, Country, or Homestyle"
+      }
+    ],
+    "steps": [
+      "Add onion to a 6-qt slow cooker and top with chicken breasts.",
+      "In a small bowl, combine cream of celery soup, cream of chicken soup, parsley, poultry seasoning and pepper. Spread over chicken breasts. Top with chicken broth and cook on high 5 hours.",
+      "Approximately 1 hour (I allow 60 - 90 minutes) before serving (after 4 hours of cooking time), roll each biscuit thin and flat. Cut into 4 strips. Add vegetables to the slow cooker and stir. Add biscuit strips on top. Replace lid as quickly as possible.",
+      "Remove chicken breasts and slightly shred. Add back into slow cooker and stir (this will break up the dumplings somewhat which is ok). Let cook an additional 10 minutes and serve."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — a large onion, condensed cream of celery and cream of chicken soups, frozen peas, and refrigerated biscuit dough (wheat). For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. Ten ingredients; five hours on high, then the biscuits. Serves 4."
+  },
+  {
+    "id": "fam-cf-perfect-pot-roast",
+    "name": "Perfect Pot Roast",
+    "emoji": "🥩",
+    "category": "dinner",
+    "time": "4 hr 35 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "braise",
+      "classic"
+    ],
+    "source": "https://www.spendwithpennies.com/perfect-pot-roast/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2025/11/H-1200-NW-Perfect-Pot-Roast-SpendwithPennies-40.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 tablespoon",
+        "item": "olive oil"
+      },
+      {
+        "qty": "3 to 4 pounds",
+        "item": "beef chuck roast, or rump roast"
+      },
+      {
+        "qty": "1 large",
+        "item": "yellow onion, chopped, or two small onions"
+      },
+      {
+        "qty": "2 cups",
+        "item": "beef broth, or as needed"
+      },
+      {
+        "qty": "1 cup",
+        "item": "red wine, or more beef broth"
+      },
+      {
+        "qty": "4 cloves",
+        "item": "garlic, coarsely chopped"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "dried rosemary"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "dried thyme leaves"
+      },
+      {
+        "qty": "1",
+        "item": "bay leaf"
+      },
+      {
+        "qty": "1 pound",
+        "item": "baby potatoes, or chopped red potatoes"
+      },
+      {
+        "qty": "4",
+        "item": "carrots, cut into 2-inch pieces"
+      },
+      {
+        "qty": "2",
+        "item": "ribs celery, cut into 1 ½-inch pieces"
+      },
+      {
+        "qty": "to taste",
+        "item": "all-purpose flour, or cornstarch"
+      },
+      {
+        "qty": "to taste",
+        "item": "butter, for optional roux-based gravy"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 300°F.",
+      "Season roast with salt and pepper.",
+      "In a large Dutch oven, heat 1 tablespoon olive oil over medium-high heat. Sear the roast on each side until browned, about 4 minutes per side adding more oil if needed.",
+      "Arrange onions around the roast. Combine broth, wine, garlic, rosemary, and thyme. Pour over the roast. Add bay leaf.",
+      "Bring just to a simmer on the stovetop over medium-high heat. Once the broth is simmering, cover and place in the oven and cook 2 hours.",
+      "Add potatoes, carrots, and celery, cover and cook an additional 2 hours (for a 4 lb. roast) or until the roast and potatoes are fork-tender.",
+      "Discard bay leaf. Gently pull beef into large pieces with a fork or slice into thick pieces. Serve with juices or make gravy (below) if desired."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — a large onion, four cloves garlic and two ribs of celery. Chuck roast, potatoes, carrots, rosemary, thyme and red wine are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. The 4½ hours is unattended oven braising. Serves 8."
+  },
+  {
+    "id": "fam-cf-shepherds-pie",
+    "name": "Shepherd's Pie",
+    "emoji": "🥧",
+    "category": "dinner",
+    "time": "1 hr",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "oven",
+      "classic"
+    ],
+    "source": "https://www.spendwithpennies.com/shepherds-pie-recipe/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2026/02/cropped-Shepherds-Pie-Recipe-SpendWithPennies.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "ground lamb, or lean ground beef"
+      },
+      {
+        "qty": "1 medium",
+        "item": "yellow onion, diced"
+      },
+      {
+        "qty": "2 cloves",
+        "item": "garlic, minced"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "dried thyme leaves"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "1 ⅔ cups",
+        "item": "beef broth, more as needed"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "Worcestershire sauce"
+      },
+      {
+        "qty": "1 ½ tablespoons",
+        "item": "tomato paste"
+      },
+      {
+        "qty": "2 cups",
+        "item": "frozen mixed vegetables, thawed"
+      },
+      {
+        "qty": "4 cups",
+        "item": "prepared mashed potatoes"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 400°F.",
+      "In a large skillet or Dutch oven, cook lamb (or beef), onion, and garlic over medium heat until no pink remains. Drain any fat.",
+      "Stir in flour, thyme, salt, and pepper and cook for 1 minute.",
+      "Stir in broth, Worcestershire sauce, and tomato paste and bring to a boil. Simmer uncovered 2 to 3 minutes or until thickened. Stir in mixed vegetables and add more broth if needed to reach a gravy consistency.",
+      "Transfer the ground beef mixture to a 2-quart casserole dish and spread it into an even layer. Spoon mashed potatoes over top.",
+      "Bake for 25-30 minutes or until bubbly. Broil for 2 minutes if desired.",
+      "Remove from the oven and cool for 5 to 10 minutes before serving."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, the peas and onion in mixed vegetables, Worcestershire, and mashed potatoes made with regular milk and butter. Ground lamb or beef, carrots and tomato paste are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. One hour. Serves 6."
+  },
+  {
+    "id": "fam-cf-homemade-beef-stew",
+    "name": "Homemade Beef Stew",
+    "emoji": "🍲",
+    "category": "dinner",
+    "time": "1 hr 30 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "one-pot",
+      "classic"
+    ],
+    "source": "https://www.spendwithpennies.com/beef-stew-recipe/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2018/09/SpendWithPennies-Homemade-Beef-Stew-24.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 pounds",
+        "item": "stewing beef, trimmed and cubed"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "garlic powder"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "olive oil, more as needed"
+      },
+      {
+        "qty": "1",
+        "item": "onion, chopped"
+      },
+      {
+        "qty": "6 cups",
+        "item": "beef broth"
+      },
+      {
+        "qty": "½ cup",
+        "item": "red wine, optional"
+      },
+      {
+        "qty": "1 pound",
+        "item": "potatoes, peeled and cubed"
+      },
+      {
+        "qty": "4",
+        "item": "carrots, cut into 1 inch pieces"
+      },
+      {
+        "qty": "4",
+        "item": "ribs celery, cut into 1 inch pieces"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "tomato paste"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "dried rosemary, or 1 sprig fresh"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "cornstarch, or as needed"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "water, or as needed"
+      },
+      {
+        "qty": "¾ cup",
+        "item": "peas"
+      }
+    ],
+    "steps": [
+      "Combine flour, garlic powder, salt, and pepper. Toss beef in flour mixture.",
+      "Heat olive oil in a large Dutch oven or pot over medium-high heat. Shake off any excess flour from the beef and brown in small batches. Remove and set aside in a bowl.",
+      "Add the onions to the pot, adding more oil as needed, and cook until they begin to soften, about 3 minutes.",
+      "Add beef broth and red wine while scraping up any brown bits in the pan.",
+      "Stir in browned beef, potatoes, carrots, celery, tomato paste, and rosemary. Reduce heat to medium-low, cover, and simmer 1 hour or until beef is tender (up to 90 minutes).",
+      "Mix equal parts cornstarch and water to create a slurry. Slowly add the slurry to the boiling stew to reach desired consistency (you may not need all of the slurry, if you'd like a thicker stew, you can add extra).",
+      "Stir in peas and simmer 5-10 minutes before serving . Season with salt & pepper to taste."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic powder, four ribs of celery and ¾ cup peas. Stewing beef, potatoes, carrots, tomato paste, rosemary and red wine are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. 1½ hours, mostly simmering. Serves 8."
+  },
+  {
+    "id": "fam-cf-beef-tips-and-gravy",
+    "name": "Beef Tips and Gravy",
+    "emoji": "🥩",
+    "category": "dinner",
+    "time": "2 hr 5 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "one-pot",
+      "classic"
+    ],
+    "source": "https://www.spendwithpennies.com/beef-tips-gravy/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2026/06/cropped-Beef-Tips-2-SpendWithPennies.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 pounds",
+        "item": "beef chuck roast, cubed or stew meat"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "olive oil"
+      },
+      {
+        "qty": "1",
+        "item": "yellow onion, chopped"
+      },
+      {
+        "qty": "1 (10.5 ounce) can",
+        "item": "beef broth"
+      },
+      {
+        "qty": "1 (10.5 ounce) can",
+        "item": "condensed French onion soup, or condensed onion soup"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "Worcestershire sauce"
+      },
+      {
+        "qty": "1",
+        "item": "bay leaf"
+      },
+      {
+        "qty": "to taste",
+        "item": "chopped fresh parsley, for garnish, optional"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "cornstarch"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "water"
+      }
+    ],
+    "steps": [
+      "Trim any fat from the beef and toss with salt and pepper.",
+      "Heat 1 tablespoon of oil over medium-high heat in large pot or Dutch oven. Add the seasoned beef and cook in small batches until browned. Transfer the beef to a bowl and set aside.",
+      "Reduce the heat to medium and add the remaining oil. Add the onion and cook until softened, about 5 to 7 minutes.",
+      "Add the beef, beef broth, condensed onion soup, Worcestershire sauce, and bay leaf to the pot. Bring to a boil, cover, and reduce heat to a simmer. Simmer for 1½ to 2 hours or until beef is fork-tender.",
+      "To thicken the gravy, combine cornstarch with ⅓ cup cold water. Pour into the beef mixture a little at a time while stirring until it reaches the desired consistency.",
+      "Taste and season with additional salt and pepper if desired. Discard bay leaf and serve over mashed potatoes."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion and a can of condensed French onion soup, which is the base of the gravy. Chuck roast, beef broth, Worcestershire and cornstarch are otherwise fine. This one does not adapt well; keep it as a family recipe. Two hours, mostly simmering. Serve over mashed potatoes, rice or noodles."
+  },
+  {
+    "id": "fam-cf-crock-pot-chicken-and-noodles",
+    "name": "Crock Pot Chicken and Noodles",
+    "emoji": "🍜",
+    "category": "dinner",
+    "time": "4 hr 15 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "slow cooker"
+    ],
+    "source": "https://www.spendwithpennies.com/chicken-and-noodles/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2022/04/SWP-Update-Crock-Pot-Chicken-and-Noodles-30.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 ½ lbs",
+        "item": "boneless skinless chicken breasts, or 4 cups cooked chicken"
+      },
+      {
+        "qty": "1 small",
+        "item": "onion, diced"
+      },
+      {
+        "qty": "2 (10.5 oz) cans",
+        "item": "condensed cream of chicken soup"
+      },
+      {
+        "qty": "6 cups",
+        "item": "reduced sodium chicken broth"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "dried thyme leaves"
+      },
+      {
+        "qty": "2 cups",
+        "item": "frozen mixed vegetables"
+      },
+      {
+        "qty": "24 oz",
+        "item": "frozen egg noodles, such as Reames"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "chopped fresh parsley"
+      }
+    ],
+    "steps": [
+      "Season chicken with salt and pepper to taste. Place onion and chicken in a slow cooker. Top with broth, cream of chicken soup, and seasonings.",
+      "Cook 3 hours on high or until onions are tender and the chicken is cooked through (165°F).",
+      "Remove the chicken breasts from the slow cooker and shred with two forks. Add them back to the liquid along with the mixed vegetables and frozen egg noodles.",
+      "Cook an additional 60-90 min or until noodles are cooked through, stirring after 30 minutes. Do not overcook.",
+      "Stir in parsley and serve."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, two cans of condensed cream of chicken soup, frozen mixed vegetables (peas, onion) and wheat egg noodles. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. Nine ingredients; four hours on low. Serves 8."
+  },
+  {
+    "id": "fam-cf-crock-pot-mississippi-chicken",
+    "name": "Crock Pot Mississippi Chicken",
+    "emoji": "🍗",
+    "category": "dinner",
+    "time": "3 hr 20 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "slow cooker",
+      "5-ingredient"
+    ],
+    "source": "https://www.spendwithpennies.com/mississippi-chicken/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2026/07/cropped-Mississippi-Chicken-2-SpendWithPennies.jpg",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 pounds",
+        "item": "boneless skinless chicken breasts, 3 to 4 large breasts"
+      },
+      {
+        "qty": "12",
+        "item": "pepperoncini peppers, plus ½ cup juice"
+      },
+      {
+        "qty": "1 (1 ounce) packet",
+        "item": "ranch seasoning mix"
+      },
+      {
+        "qty": "1 (1 ounce) packet",
+        "item": "au jus gravy mix, or brown gravy mix, low sodium"
+      },
+      {
+        "qty": "1 stick",
+        "item": "butter, sliced (½ cup)"
+      }
+    ],
+    "steps": [
+      "Place the chicken breasts in the bottom of a 6-quart slow cooker.",
+      "Pour the ½ cup of pepperoncini juice over the chicken. Sprinkle the ranch dressing mix and the au jus gravy mix evenly over the chicken.",
+      "Add the pepperoncini peppers and slices of butter on top.",
+      "Place the lid on the slow cooker and set to cook on high for 3 to 4 hours or low for 6 to 7 hours or until the chicken is tender and reaches 165°F.",
+      "Remove the chicken and shred it with two forks. Return it to the juices in the slow cooker and stir to combine",
+      "Serve over mashed potatoes, egg noodles, or rice."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — ranch seasoning and au jus gravy mix (both carry onion and garlic powder). Chicken, butter and pepperoncini are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. Five ingredients, dump-and-go, 3 hours on high. Serves 4."
   }
 ];
 
