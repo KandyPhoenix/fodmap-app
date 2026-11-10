@@ -34,6 +34,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.recipetineats.com/honey-mustard-chicken/",
+    "image": "https://www.recipetineats.com/tachyon/2016/08/Honey-Mustard-Chicken_3.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -123,6 +124,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.recipetineats.com/sticky-baked-chicken-thighs/",
+    "image": "https://www.recipetineats.com/tachyon/2019/02/Sticky-Baked-Chicken-Thighs_5.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -186,6 +188,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.skinnytaste.com/sheet-pan-gnocchi-and-sausage-with-tomatoes-and-broccolini/",
+    "image": "https://www.skinnytaste.com/wp-content/uploads/2026/05/Sheet-Pan-Sausage-Gnocchi-10.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -258,6 +261,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.skinnytaste.com/turkey-taco-skillet/",
+    "image": "https://www.skinnytaste.com/wp-content/uploads/2022/03/Turkey-Taco-Skillet-7.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -363,6 +367,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.skinnytaste.com/spring-stir-fried-chicken-with-sugar/",
+    "image": "https://www.skinnytaste.com/wp-content/uploads/2013/04/Spring-Stir-Fried-Chicken-with-Sugar-10-scaled.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -440,6 +445,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "sheet-pan"
     ],
     "source": "https://www.spendwithpennies.com/chicken-and-sweet-potatoes/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2026/08/Sheet-Pan-Chicken-and-Sweet-Potatoes-SpendWithPennies-9.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -506,6 +512,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.spendwithpennies.com/one-pot-chicken-pasta/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2026/04/cropped-One-Pot-Chicken-Pasta-2-SpendWithPennies.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -584,6 +591,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "sheet-pan"
     ],
     "source": "https://www.spendwithpennies.com/garlic-butter-sheet-pan-shrimp/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2020/04/One-Pan-Garlic-Butter-Shrimp-SpendWithPennies-4-1.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -660,6 +668,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "sheet-pan"
     ],
     "source": "https://www.spendwithpennies.com/roasted-sausage-and-potatoes/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2020/12/Roasted-Sausage-and-Potatoes-SpendWithPennies-16.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -740,6 +749,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.wellplated.com/sheet-pan-chicken-fajitas/",
+    "image": "https://www.wellplated.com/wp-content/uploads/2025/10/Sheet-Pan-Chicken-Fajitas.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -836,6 +846,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.wellplated.com/garlic-salmon/",
+    "image": "https://www.wellplated.com/wp-content/uploads/2017/08/Healthy-Salmon-recipe-with-Garlic-Butter.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -907,6 +918,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://natashaskitchen.com/sloppy-joe-recipe/",
+    "image": "https://natashaskitchen.com/wp-content/uploads/2021/09/Sloppy-Joe-Recipe-Final.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -985,6 +997,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://natashaskitchen.com/chicken-pesto-pasta/",
+    "image": "https://natashaskitchen.com/wp-content/uploads/2019/02/Chicken-Pesto-Pasta-2.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1046,6 +1059,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "vegan"
     ],
     "source": "https://minimalistbaker.com/30-minute-coconut-curry/",
+    "image": "https://minimalistbaker.com/wp-content/uploads/2014/04/Simple-Coconut-Curry-with-Veggies-and-Coconut-Quinoa-minimalist-baker-vegan-glutenfree-square.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1151,6 +1165,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://www.skinnytaste.com/chicken-scampi/",
+    "image": "https://www.skinnytaste.com/wp-content/uploads/2025/05/Chicken-Scampi-8.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1231,6 +1246,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.recipetineats.com/chicken-pasta-recipe/",
+    "image": "https://www.recipetineats.com/tachyon/2019/05/Chicken-Alfredo_4.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1322,6 +1338,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.spendwithpennies.com/beef-and-broccoli/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2026/04/Beef-and-Broccoli-Recipe-SpendWithPennies-9.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1405,6 +1422,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.wellplated.com/chicken-and-orzo/",
+    "image": "https://www.wellplated.com/wp-content/uploads/2025/08/Best-Chicken-and-Orzo-Recipe.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1493,6 +1511,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://natashaskitchen.com/ground-beef-tacos/",
+    "image": "https://natashaskitchen.com/wp-content/uploads/2026/04/Beef-Tacos-5.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1571,6 +1590,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "soup"
     ],
     "source": "https://www.spendwithpennies.com/white-bean-soup/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2020/04/White-Bean-Soup-SpendWithPennies-7.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1647,6 +1667,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "soup"
     ],
     "source": "https://www.spendwithpennies.com/chicken-tortilla-soup/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2026/08/cropped-Chicken-Tortilla-Soup-3-SpendWithPennies.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1750,6 +1771,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "soup"
     ],
     "source": "https://www.spendwithpennies.com/creamy-cauliflower-soup/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2015/02/Creamy-Cauliflower-Soup-SpendWithPennies-4.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1822,6 +1844,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "soup"
     ],
     "source": "https://www.spendwithpennies.com/baked-potato-soup/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2018/02/Baked-Potato-Soup-25.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1899,6 +1922,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "make-ahead"
     ],
     "source": "https://www.wellplated.com/baked-oatmeal/",
+    "image": "https://www.wellplated.com/wp-content/uploads/2023/07/Best-Baked-Oatmeal.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1987,6 +2011,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "20-min"
     ],
     "source": "https://www.wellplated.com/breakfast-quesadilla/",
+    "image": "https://www.wellplated.com/wp-content/uploads/2021/08/Best-Breakfast-Quesadilla.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2054,6 +2079,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "meal-prep"
     ],
     "source": "https://www.wellplated.com/greek-bowls/",
+    "image": "https://www.wellplated.com/wp-content/uploads/2025/01/Best-Greek-Chicken-Bowls.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2172,6 +2198,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://www.wellplated.com/healthy-egg-salad/",
+    "image": "https://www.wellplated.com/wp-content/uploads/2026/05/Best-Healthy-Egg-Salad-Recipe.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2232,6 +2259,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://natashaskitchen.com/chicken-cutlets/",
+    "image": "https://natashaskitchen.com/wp-content/uploads/2025/09/Chicken-Cutlets-SQ.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2303,6 +2331,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://natashaskitchen.com/spinach-stuffed-chicken/",
+    "image": "https://natashaskitchen.com/wp-content/uploads/2021/04/Spinach-Stuffed-Chicken-SQ.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2384,6 +2413,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "vegan"
     ],
     "source": "https://minimalistbaker.com/cheesy-vegan-enchilada-skillet/",
+    "image": "https://minimalistbaker.com/wp-content/uploads/2026/02/Cheesy-Vegan-Black-Bean-Enchilada-Skillet-SQUARE.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2483,6 +2513,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "15-min"
     ],
     "source": "https://www.recipetineats.com/creamy-salmon-risoni-orzo-15-minute-meal/",
+    "image": "https://www.recipetineats.com/tachyon/2016/03/Creamy-Salmon-Risoni-Orzo_2.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2558,6 +2589,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "15-min"
     ],
     "source": "https://www.recipetineats.com/15-minute-sausage-meatballs/",
+    "image": "https://www.recipetineats.com/tachyon/2025/10/Sausage-meatballs-15-minutes_0.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2631,6 +2663,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "15-min"
     ],
     "source": "https://www.recipetineats.com/asian-beef-bowls/",
+    "image": "https://www.recipetineats.com/tachyon/2017/05/Asian-Beef-Bowls_beef-mince-recipe.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2710,6 +2743,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "15-min"
     ],
     "source": "https://www.recipetineats.com/fish-piccata-crispy-smashed-potatoes-15-minute-meal/",
+    "image": "https://www.recipetineats.com/tachyon/2014/10/Fish-Piccata-Smashed-Potatoes-Green-Beans-15-minutes.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2802,6 +2836,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.recipetineats.com/thai-red-curry-with-chicken/",
+    "image": "https://www.recipetineats.com/tachyon/2018/02/Thai-Red-Curry-Chicken-1.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2906,6 +2941,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.skinnytaste.com/air-fryer-greek-chicken/",
+    "image": "https://www.skinnytaste.com/wp-content/uploads/2025/06/Air-Fryer-Greek-Chicken-5.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2985,6 +3021,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.skinnytaste.com/air-fryer-cajun-shrimp-dinner/",
+    "image": "https://www.skinnytaste.com/wp-content/uploads/2019/05/Air-Fryer-Cajun-Shrimp-Dinner-2.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3045,6 +3082,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "one-pan"
     ],
     "source": "https://www.skinnytaste.com/marry-me-chicken/",
+    "image": "https://www.skinnytaste.com/wp-content/uploads/2024/01/Marry-Me-Chicken-5.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3141,6 +3179,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.skinnytaste.com/instant-pot-one-pot-spaghetti-with-meat-sauce/",
+    "image": "https://www.skinnytaste.com/wp-content/uploads/2017/09/Instant-Pot-Spaghetti-7.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3203,6 +3242,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "gluten-free"
     ],
     "source": "https://downshiftology.com/recipes/chicken-stir-fry/",
+    "image": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2021/05/Chicken-Stir-Fry-main.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3305,6 +3345,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://downshiftology.com/recipes/korean-beef-bowl/",
+    "image": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2026/08/Korean-Beef-Bowl-main.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3385,6 +3426,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "gluten-free"
     ],
     "source": "https://downshiftology.com/recipes/baked-cod/",
+    "image": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2023/10/Baked-Cod-main.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3447,6 +3489,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://downshiftology.com/recipes/healthy-hamburger-helper/",
+    "image": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2025/10/Healthy-Hamburger-Helper-main.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3518,6 +3561,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://themodernproper.com/taco-skillet",
+    "image": "https://images.themodernproper.com/production/posts/TacoSkillet_8.jpg?w=960&h=540&q=82&fm=jpg&fit=crop&dm=1776105113&s=01482274051005267ba190a279d6e831",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3602,6 +3646,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://themodernproper.com/white-bean-sausage-skillet",
+    "image": "https://images.themodernproper.com/production/posts/2018/White-Bean-Sausage-Skillet-10.jpg?w=960&h=540&q=82&fm=jpg&fit=crop&dm=1611933297&s=327898090cb6bb38f166f303bc6656ff",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3683,6 +3728,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "vegetarian"
     ],
     "source": "https://themodernproper.com/linguine-with-lemon-garlic-sauce",
+    "image": "https://images.themodernproper.com/production/posts/2022/LinguinewithLemonGarlicSauce_9.jpg?w=960&h=540&q=82&fm=jpg&fit=crop&dm=1750251067&s=08eeceacc347dfc0d89fc1c914a324f7",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3752,6 +3798,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://themodernproper.com/chicken-tinga",
+    "image": "https://images.themodernproper.com/production/posts/ChickenTinga_9.jpg?w=960&h=540&q=82&fm=jpg&fit=crop&crop=focalpoint&fp-x=0.5508&fp-y=0.312&dm=1759793096&s=ab869bada1c048e90dbd8e4ae36e001a",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3848,6 +3895,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://www.onceuponachef.com/recipes/chicken-curry.html",
+    "image": "https://www.onceuponachef.com/images/2012/02/Chicken-Curry-13.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3928,6 +3976,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://www.onceuponachef.com/recipes/thai-red-curry-chicken.html",
+    "image": "https://www.onceuponachef.com/images/2020/01/thai-red-curry-chicken-1.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4000,6 +4049,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://www.onceuponachef.com/recipes/kung-pao-chicken.html",
+    "image": "https://www.onceuponachef.com/images/2018/05/Kung-Pao-Chicken-16-scaled.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4111,6 +4161,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://www.onceuponachef.com/recipes/blackened-tilapia.html",
+    "image": "https://www.onceuponachef.com/images/2022/07/blackened-tilapia.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4176,6 +4227,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "30-min"
     ],
     "source": "https://cafedelites.com/one-pot-chicken-alfredo/",
+    "image": "https://cafedelites.com/wp-content/uploads/2026/07/Alfredo-Fettuccine-10.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4261,6 +4313,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://cafedelites.com/honey-soy-chicken-stir-fry/",
+    "image": "https://cafedelites.com/wp-content/uploads/2018/04/honey-soy-chicken-1.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4343,6 +4396,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://cafedelites.com/garlic-tomato-basil-chicken/",
+    "image": "https://cafedelites.com/wp-content/uploads/2017/08/Garlic-Tomato-Basil-Chicken-IMAGES-4.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4414,6 +4468,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       "high-protein"
     ],
     "source": "https://cafedelites.com/balsamic-baked-chicken-breast/",
+    "image": "https://cafedelites.com/wp-content/uploads/2019/08/Balsamic-Baked-Chicken-With-Mozzarella-IMAGE-34.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {

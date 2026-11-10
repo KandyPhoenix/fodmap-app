@@ -901,6 +901,7 @@ const KANDY_RECIPES = [
       "vegetarian"
     ],
     "source": "https://www.wellplated.com/healthy-breakfast-egg-muffins/",
+    "image": "https://www.wellplated.com/wp-content/uploads/2018/02/Breakfast-Egg-Muffin-Cups.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -983,6 +984,7 @@ const KANDY_RECIPES = [
       "30-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-skillet-chicken-cacciatore-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2022/10/DSC_0429-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1105,6 +1107,7 @@ const KANDY_RECIPES = [
       "30-min"
     ],
     "source": "https://rachelpaulsfood.com/homemade-low-fodmap-30-minute-chicken-marsala-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2022/11/DSC_0515-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1199,6 +1202,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-gluten-free-30-minute-chicken-quesadillas/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2024/06/DSC_0180-scaled-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1262,7 +1266,7 @@ const KANDY_RECIPES = [
   },
   {
     "id": "kandy-rp-salisbury-steak",
-    "name": "Salisbury Steak (Rachel Pauls)",
+    "name": "Salisbury Steak (Pauls)",
     "emoji": "🥩",
     "category": "dinner",
     "time": "30 min",
@@ -1277,6 +1281,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/family-favorite-30-minute-low-fodmap-salisbury-steak-recipe-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2022/12/DSC_0552.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1392,6 +1397,7 @@ const KANDY_RECIPES = [
       "20-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-sesame-glazed-tofu-gluten-free-vegan/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2022/03/DSC_0362.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1475,6 +1481,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/easy-low-fodmap-sheet-pan-caprese-chicken-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2021/07/low-fodmap-sheet-pan-caprese-chicken.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1552,6 +1559,7 @@ const KANDY_RECIPES = [
       "20-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-gluten-free-penne-alla-vodka/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2024/03/DSC_0052-scaled-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1631,6 +1639,7 @@ const KANDY_RECIPES = [
       "30-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-honey-walnut-shrimp-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2021/06/low-Fodmap-honey-walnut-shrimp.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1718,6 +1727,7 @@ const KANDY_RECIPES = [
       "30-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-lemon-artichoke-fettuccine-pasta-gluten-free-vegetarian/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2021/01/low-fodmap-lemon-artichoke-pasta.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1805,6 +1815,7 @@ const KANDY_RECIPES = [
       "30-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-pasta-alla-vongole-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2023/03/DSC_0821.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1879,6 +1890,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-korean-beef-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2023/04/DSC_0936-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -1957,6 +1969,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-creamy-tuscan-chicken-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2022/07/DSC_0183-2-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2052,6 +2065,7 @@ const KANDY_RECIPES = [
       "30-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-spaghetti-alla-carbonara-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2021/11/low-fodmap-spaghetti-alla-carbonara.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2229,6 +2243,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/one-skillet-low-fodmap-bacon-maple-and-mustard-chicken-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2020/04/DSC_0178.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2309,6 +2324,7 @@ const KANDY_RECIPES = [
       "30-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-lemon-butter-chicken-with-pasta-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2020/04/DSC_0213.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2385,6 +2401,7 @@ const KANDY_RECIPES = [
       "30-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-pad-thai-perfection-recipe/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/DSC_0986-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2460,7 +2477,7 @@ const KANDY_RECIPES = [
   },
   {
     "id": "kandy-rp-bourbon-chicken",
-    "name": "Bourbon Chicken (Rachel Pauls)",
+    "name": "Bourbon Chicken (Pauls)",
     "emoji": "🍗",
     "category": "dinner",
     "time": "30 min",
@@ -2477,6 +2494,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/one-skillet-low-fodmap-bourbon-chicken-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2023/08/DSC_0193-scaled.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2571,6 +2589,7 @@ const KANDY_RECIPES = [
       "30-min"
     ],
     "source": "https://rachelpaulsfood.com/easy-low-fodmap-vegetarian-or-vegan-fried-rice-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2019/12/DSC_0564-2.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2658,6 +2677,7 @@ const KANDY_RECIPES = [
       "meal-prep"
     ],
     "source": "https://rachelpaulsfood.com/easy-20-minute-low-fodmap-air-fryer-egg-bites-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2025/01/DSC_0648-scaled-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2734,6 +2754,7 @@ const KANDY_RECIPES = [
       "5-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-chai-overnight-oats-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/DSC_0971.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2807,6 +2828,7 @@ const KANDY_RECIPES = [
       "5-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-almond-joy-overnight-oats-gluten-free-vegan/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2022/08/DSC_0221-2.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2872,6 +2894,7 @@ const KANDY_RECIPES = [
       "microwave"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-oatmeal-blueberry-mug-muffin-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2022/01/DSC_0263.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -2943,6 +2966,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-egg-cups-with-turkey-bacon-and-cheese-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/DSC_2395-3.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3030,6 +3054,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/sensational-low-fodmap-bacon-spinach-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/IMG_7885-1-224x300.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3116,6 +3141,7 @@ const KANDY_RECIPES = [
       "20-min"
     ],
     "source": "https://rachelpaulsfood.com/simply-delicious-low-fodmap-blueberry-pancakes-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/DSC_0363-2-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3175,6 +3201,7 @@ const KANDY_RECIPES = [
       "30-min"
     ],
     "source": "https://rachelpaulsfood.com/classic-low-fodmap-french-toast-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/IMG_7469-2.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3246,6 +3273,7 @@ const KANDY_RECIPES = [
       "5-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-pb-gluten-free-vegan/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2021/04/low-fodmap-pbj-smoothie.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3308,6 +3336,7 @@ const KANDY_RECIPES = [
       "freezer-friendly"
     ],
     "source": "https://rachelpaulsfood.com/healthy-low-fodmap-protein-waffles-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/protein-waffle-.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3392,6 +3421,7 @@ const KANDY_RECIPES = [
       "microwave"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-5-minute-banana-muffin-mug-gluten-free-vegan/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2018/01/DSC_1376-scaled-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3477,6 +3507,7 @@ const KANDY_RECIPES = [
       "30-min"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-peanut-butter-and-banana-baked-oatmeal-bars-gluten-free-vegan/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2019/08/DSC_0768.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3560,6 +3591,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-cajun-tuna-salad-tuna-melt-recipe-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/DSC_1942.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3613,7 +3645,7 @@ const KANDY_RECIPES = [
   },
   {
     "id": "kandy-rp4-chicken-noodle-soup",
-    "name": "Chicken Noodle Soup (Rachel Pauls)",
+    "name": "Chicken Noodle Soup (Pauls)",
     "emoji": "🍜",
     "category": "lunch",
     "time": "20 min",
@@ -3630,6 +3662,7 @@ const KANDY_RECIPES = [
       "soup"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-chicken-noodle-soup-recipe-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/DSC_0477-1-300x262.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3702,6 +3735,7 @@ const KANDY_RECIPES = [
       "soup"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-carrot-and-curry-soup-gluten-free-vegan/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2019/12/IMG_9661-300x203.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3792,6 +3826,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/light-satisfying-low-fodmap-chicken-salad-recipe/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/chicken_salad_2.png",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3888,6 +3923,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/the-best-low-fodmap-egg-salad-recipe-gluten-free-vegetarian-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2020/03/DSC_0028-300x191.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -3968,6 +4004,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-curry-chicken-salad-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2022/06/DSC_0142.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4053,6 +4090,7 @@ const KANDY_RECIPES = [
       "meal-prep"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-crunchy-thai-peanut-salad-gluten-free-vegan/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2023/04/DSC_0892.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4119,6 +4157,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/gut-friendly-mediterranean-tuna-salad-with-olives-low-fodmap-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2024/07/DSC_0486-scaled-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4200,6 +4239,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/juicy-low-fodmap-turkey-burgers-with-low-fodmap-asian-slaw-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/DSC_0518.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4330,6 +4370,7 @@ const KANDY_RECIPES = [
       "soup"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-gluten-free-broccoli-cheddar-soup-for-two/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2024/07/DSC_0585-scaled-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4402,6 +4443,7 @@ const KANDY_RECIPES = [
       "soup"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-gluten-free-chicken-corn-chowder/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2024/09/DSC_0433-2-scaled-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4524,6 +4566,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-southwest-salad-low-fodmap-southwest-dressing/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/bowl-of-salad-with-chicken-1.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4626,6 +4669,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/best-low-fodmap-taco-recipe-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/DSC_0022.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4696,7 +4740,7 @@ const KANDY_RECIPES = [
   },
   {
     "id": "kandy-rp4-sheet-pan-chicken-fajitas",
-    "name": "Sheet Pan Chicken Fajitas (Rachel Pauls)",
+    "name": "Sheet Pan Chicken Fajitas (Pauls)",
     "emoji": "🌯",
     "category": "dinner",
     "time": "45 min",
@@ -4711,6 +4755,7 @@ const KANDY_RECIPES = [
       "sheet-pan"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-sheet-pan-chicken-fajitas-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2020/11/low-fodmap-sheet-pan-chicken-fajitas.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4813,7 +4858,7 @@ const KANDY_RECIPES = [
   },
   {
     "id": "kandy-rp4-chicken-tortilla-soup",
-    "name": "Chicken Tortilla Soup (Rachel Pauls)",
+    "name": "Chicken Tortilla Soup (Pauls)",
     "emoji": "🍲",
     "category": "dinner",
     "time": "45 min",
@@ -4828,6 +4873,7 @@ const KANDY_RECIPES = [
       "soup"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-gluten-free-chicken-tortilla-soup/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2024/03/DSC_0580-scaled-1-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -4938,6 +4984,7 @@ const KANDY_RECIPES = [
       "one-pot"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-one-pot-chicken-with-cilantro-lime-rice-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2020/12/low-fodmap-one-pot-chicken-with-cilantro-lime-rice.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -5012,6 +5059,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-chipotle-chicken-burrito-bowl-with-cilantro-lime-rice-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2021/09/low-fodmap-chipotle-chicken-burrito-bowl.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -5160,6 +5208,7 @@ const KANDY_RECIPES = [
       "sheet-pan"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-one-pan-chili-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/DSC_0882.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -5252,6 +5301,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-one-pan-beef-and-cheese-macaroni-gluten-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2025/02/beef-and-cheese-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -5344,6 +5394,7 @@ const KANDY_RECIPES = [
       "sheet-pan"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-sheet-pan-chicken-thighs-with-harvest-vegetables-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2021/09/low-fodmap-sheet-pan-chicken-thighs-with-harvest-vegetables.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -5444,6 +5495,7 @@ const KANDY_RECIPES = [
       "sheet-pan"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-one-pan-italian-chicken-and-vegetables-gluten-free-dairy-free/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/DSC_2045-2.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -5539,6 +5591,7 @@ const KANDY_RECIPES = [
       "condiment"
     ],
     "source": "https://rachelpaulsfood.com/sassy-low-fodmap-salsa-recipe-gluten-free-vegan/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2019/12/DSC_0505-300x273.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -5608,6 +5661,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://rachelpaulsfood.com/low-fodmap-slow-cooker-sloppy-joes-gluten-free-dairy-free-no-onion-or-garlic/",
+    "image": "https://rachelpaulsfood.com/wp-content/uploads/2020/08/DSC_0593-300x177.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -5690,6 +5744,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://www.fodmapformula.com/low-fodmap-sesame-beef-stir-fry/",
+    "image": "https://www.fodmapformula.com/wp-content/uploads/Low-FODMAP-Sesame-Beef-Stir-Fry-Feature-Image-225x225.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -5766,6 +5821,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://www.fodmapformula.com/low-fodmap-sweet-sour-chicken/",
+    "image": "https://www.fodmapformula.com/wp-content/uploads/Low-FODMAP-Sweet-Sour-Chicken-Feature.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -5863,6 +5919,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://www.fodmapformula.com/low-fodmap-soy-glazed-salmon/",
+    "image": "https://www.fodmapformula.com/wp-content/uploads/Low-FODMAP-Soy-Glazed-Salmon-Feature-Image.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
@@ -5952,6 +6009,7 @@ const KANDY_RECIPES = [
       "high-protein"
     ],
     "source": "https://www.fodmapformula.com/fodmap-friendly-breaded-pork-chops/",
+    "image": "https://www.fodmapformula.com/wp-content/uploads/Low-FODMAP-Breaded-Pork-Chops-Feature-Image-1.jpg",
     "added": "2026-11-10",
     "ingredients": [
       {
