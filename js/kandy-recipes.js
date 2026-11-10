@@ -883,4 +883,84 @@ const KANDY_RECIPES = [
     isCustom: true,
   },
 
+
+  // ─── ADDED FROM THE WEB (low-FODMAP as written) ─────────
+  {
+    "id": "kandy-egg-muffins-wellplated",
+    "name": "Veggie Egg Muffins",
+    "emoji": "🧁",
+    "category": "breakfast",
+    "time": "40 min",
+    "serves": 12,
+    "difficulty": "easy",
+    "tags": [
+      "gluten-free",
+      "high-protein",
+      "meal-prep",
+      "freezer-friendly",
+      "vegetarian"
+    ],
+    "source": "https://www.wellplated.com/healthy-breakfast-egg-muffins/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 cup",
+        "item": "lightly packed baby spinach, chopped"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "finely diced red bell pepper, about 1 small pepper"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "finely diced green bell pepper, about 1 small pepper"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "quartered cherry tomatoes, or grape tomatoes, about 1 cup whole tomatoes"
+      },
+      {
+        "qty": "6 large",
+        "item": "eggs"
+      },
+      {
+        "qty": "4 large",
+        "item": "egg whites"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "dried basil"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "dried oregano"
+      },
+      {
+        "qty": "to taste",
+        "item": "Pinch ground black pepper, or cayenne pepper if you like a little kick!"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "crumbled feta cheese, plus additional to sprinkle on top"
+      },
+      {
+        "qty": "to taste",
+        "item": "Optional toppings: avocado, salsa, hot sauce, freshly chopped parsley"
+      }
+    ],
+    "steps": [
+      "Place a rack in the center of your oven and preheat to 350 degrees F. Lightly coat a standard 12-cup muffin tin with nonstick spray.",
+      "Divide the spinach, red bell pepper, green bell pepper, and tomatoes among the cups (they will be about two-thirds of the way full).",
+      "In a large bowl or large measuring cup with a spout (my favorite because it makes the mixture easy to pour), briskly whisk together the eggs, egg whites, salt, basil, oregano, and pepper until well combined.",
+      "Carefully fill each muffin cup three-quarters of the way to the top with the egg mixture. Sprinkle the feta evenly over the tops of the cups.",
+      "Bake for 24 to 28 minutes, until the egg muffins are set. Let cool for a few minutes, and then run a butter knife around the edges of each muffin to loosen it. Remove them from the pan and enjoy immediately, or let cool on a wire rack and refrigerate or freeze for later (see notes for more details)."
+    ],
+    "fodmapNote": "Low-FODMAP as written: eggs, spinach, red and green bell pepper, cherry tomatoes, feta (a low-lactose cheese) and dried herbs. Keep to 2–3 muffins per serve so the bell pepper and tomato stay within a low-FODMAP portion. Skip the optional salsa topping unless it is a low-FODMAP one; avocado is fine in a small serve (about 1/8). Makes 12; they freeze well.",
+    "isCustom": true
+  },
+
 ];

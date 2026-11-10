@@ -1,15 +1,17 @@
 // ─────────────────────────────────────────────────────────────
-//  EASY WEEKNIGHT RECIPES — quick, low-effort dinners pulled from
-//  reliable recipe sites (RecipeTin Eats, Skinnytaste, Spend With Pennies,
-//  Well Plated, Natasha's Kitchen, Minimalist Baker).
+//  EASY WEEKNIGHT RECIPES — quick, low-effort meals pulled from reliable
+//  recipe sites (RecipeTin Eats, Skinnytaste, Spend With Pennies, Well
+//  Plated, Natasha's Kitchen, Minimalist Baker). Mostly dinners, plus a few
+//  30-minute soups and make-ahead breakfasts and lunches.
 //
 //  Each recipe keeps its source link, with ingredients and method taken
 //  from the recipe page's own structured data. Most are 30 minutes or
-//  less; the two sheet-pan roasts run longer but are hands-off.
+//  less; the sheet-pan roasts and baked oatmeal run longer but are hands-off.
 //
 //  Regular family recipes (no 'fodmap' tag) — they show under the
 //  🍽️ Family filter. Each fodmapNote names what makes it high-FODMAP as
-//  written and how to adapt it for a low-FODMAP plate.
+//  written and how to adapt it for a low-FODMAP plate. Anything that is
+//  low-FODMAP as written goes in KANDY_RECIPES (kandy-recipes.js) instead.
 //
 //  Budget Bytes was the first choice but blocks automated fetches; clip
 //  those with the "Send to Our Table" bookmarklet instead.
@@ -1551,6 +1553,1638 @@ const EASY_WEEKNIGHT_RECIPES = [
       "Warm the shells: Warm your taco shells or tortillas*, or make your own Hard Taco Shells. Fill each shell with taco meat and add your favorite toppings."
     ],
     "fodmapNote": "Not low-FODMAP as written — onion, garlic, and taco seasoning (store-bought blends contain onion and garlic powder; her homemade blend is in the recipe). Corn shells are fine; flour tortillas are wheat. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free cream or a hard cheese, and choose gluten-free pasta, tortillas or buns. A different recipe from the \"Ground Beef Tacos\" already in the cookbook, so this one carries the source name."
+  },
+  {
+    "id": "fam-ez-white-bean-soup",
+    "name": "White Bean Soup",
+    "emoji": "🍲",
+    "category": "lunch",
+    "time": "28 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pot",
+      "30-min",
+      "soup"
+    ],
+    "source": "https://www.spendwithpennies.com/white-bean-soup/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 tablespoon",
+        "item": "olive oil"
+      },
+      {
+        "qty": "1 small",
+        "item": "onion, chopped"
+      },
+      {
+        "qty": "1",
+        "item": "carrot, sliced"
+      },
+      {
+        "qty": "2",
+        "item": "ribs celery, sliced"
+      },
+      {
+        "qty": "15 ounces",
+        "item": "canned cannellini beans, 1 can, or navy beans, drained and rinsed"
+      },
+      {
+        "qty": "4 cups",
+        "item": "chicken broth, low sodium"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "Italian seasoning"
+      },
+      {
+        "qty": "1 cup",
+        "item": "water, or as needed"
+      },
+      {
+        "qty": "1 cup",
+        "item": "rotini, fusilli or penne, uncooked"
+      },
+      {
+        "qty": "⅔ cup",
+        "item": "chopped kale"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "pesto, optional"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "shredded Parmesan cheese"
+      }
+    ],
+    "steps": [
+      "Cook onion in olive oil until tender. Add carrot, celery, beans, seasoning, broth, and water.",
+      "Bring to a boil, reduce heat and simmer 10 minutes.",
+      "Add kale and pasta and simmer an additional 8-10 minutes or just until pasta is tender.",
+      "If using, stir in 1 tablespoon pesto. Ladle into serving bowls and top with parmesan cheese."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, a full can of cannellini beans, two ribs of celery and wheat pasta. Carrot and kale are fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas. Keep beans to about 1/4 cup drained per serve and celery to a small amount."
+  },
+  {
+    "id": "fam-ez-chicken-tortilla-soup",
+    "name": "Chicken Tortilla Soup (Spend With Pennies)",
+    "emoji": "🍲",
+    "category": "lunch",
+    "time": "30 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pot",
+      "30-min",
+      "soup"
+    ],
+    "source": "https://www.spendwithpennies.com/chicken-tortilla-soup/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 tablespoon",
+        "item": "olive oil"
+      },
+      {
+        "qty": "1",
+        "item": "yellow onion, chopped"
+      },
+      {
+        "qty": "3 cloves",
+        "item": "garlic, minced"
+      },
+      {
+        "qty": "1",
+        "item": "jalapeño, seeded and diced"
+      },
+      {
+        "qty": "3 cups",
+        "item": "chicken broth"
+      },
+      {
+        "qty": "1 (15 ounce) can",
+        "item": "canned black beans, drained and rinsed"
+      },
+      {
+        "qty": "14.5 ounces",
+        "item": "crushed tomatoes"
+      },
+      {
+        "qty": "1 (10 ounce) can",
+        "item": "canned diced tomatoes with chilies, with juices, such as Rotel"
+      },
+      {
+        "qty": "1 cup",
+        "item": "corn kernels, drained if canned"
+      },
+      {
+        "qty": "1",
+        "item": "lime, juiced"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "chopped fresh cilantro"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "cumin"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "chili powder"
+      },
+      {
+        "qty": "2",
+        "item": "boneless skinless chicken breasts, about 6 ounces each"
+      },
+      {
+        "qty": "1",
+        "item": "avocado, sliced, for garnish"
+      },
+      {
+        "qty": "6 small",
+        "item": "corn tortillas, cut into ¼-inch strips"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "vegetable oil"
+      },
+      {
+        "qty": "to taste",
+        "item": "salt"
+      }
+    ],
+    "steps": [
+      "Cut the tortillas into ¼-inch strips. In a small pan, heat ¼ cup of vegetable oil over medium-high heat.",
+      "Add the tortillas, in small batches to the oil and fry them until they are crisp, about 1 minute per side. Remove from the oil and drain on a paper towel. While warm, sprinkle with salt to taste.",
+      "In a large pot, heat olive oil over medium heat. Add the onion, garlic, and jalapeño to the pot, and cook until the onion is softened about 3 to 4 minutes.",
+      "Add in the chicken broth, black beans, crushed tomatoes, diced tomatoes with juices, corn, lime juice, cilantro, cumin, and chili powder. Stir to combine.",
+      "Add the chicken breasts and bring the soup to a boil over high heat. Reduce the heat to a simmer and cook uncovered for 20 minutes, or until the chicken is cooked through.",
+      "Remove the chicken from the pot and shred it with two forks. Add the shredded chicken back to the pot and simmer for an additional 3 minutes. Taste and season with salt and pepper.",
+      "Spoon soup into bowls and top with tortilla strips, lime wedges, and sliced avocado."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, a can of black beans, and canned tomatoes with chilies often contain onion. Corn tortillas, chicken, lime and avocado (small serve) are fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas. Keep beans to about 1/4 cup drained per serve. A typed \"Chicken Tortilla Soup\" with no source is already in the cookbook, so this one carries the source name."
+  },
+  {
+    "id": "fam-ez-cream-of-cauliflower-soup",
+    "name": "Cream of Cauliflower Soup",
+    "emoji": "🥣",
+    "category": "lunch",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pot",
+      "30-min",
+      "soup"
+    ],
+    "source": "https://www.spendwithpennies.com/creamy-cauliflower-soup/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 small",
+        "item": "onion, diced"
+      },
+      {
+        "qty": "2",
+        "item": "ribs celery"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "butter"
+      },
+      {
+        "qty": "8 cups",
+        "item": "cauliflower florets"
+      },
+      {
+        "qty": "3 cups",
+        "item": "chicken broth"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "celery seed"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "dry mustard powder"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "garlic powder"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "seasoned salt"
+      },
+      {
+        "qty": "¾ cup",
+        "item": "heavy whipping cream"
+      },
+      {
+        "qty": "½ cup",
+        "item": "shredded Parmesan cheese, optional"
+      }
+    ],
+    "steps": [
+      "Heat butter in a medium saucepan over medium heat. Cook onion and celery until tender, do not brown.",
+      "Add cauliflower, broth and seasonings. Simmer uncovered 10 to 15 minutes stirring occasionally until cauliflower is tender.",
+      "Blend using a hand blender until smooth. Add heavy cream and simmer an additional 8 to 10 minutes or until thickened.",
+      "Season with salt & pepper to taste. Stir in parmesan cheese if using."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — cauliflower is high-FODMAP (mannitol) and is the whole soup, plus onion, celery, garlic powder and heavy cream. This one does not adapt well; keep it as a family recipe."
+  },
+  {
+    "id": "fam-ez-baked-potato-soup",
+    "name": "Baked Potato Soup",
+    "emoji": "🥔",
+    "category": "lunch",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pot",
+      "30-min",
+      "soup"
+    ],
+    "source": "https://www.spendwithpennies.com/baked-potato-soup/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "6 slices",
+        "item": "bacon, chopped"
+      },
+      {
+        "qty": "1 small",
+        "item": "onion, diced"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "2 cloves",
+        "item": "garlic, minced"
+      },
+      {
+        "qty": "3 cups",
+        "item": "reduced sodium chicken broth"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "3 cups",
+        "item": "prepared mashed potatoes"
+      },
+      {
+        "qty": "1 ¼ cups",
+        "item": "shredded sharp cheddar cheese, divided"
+      },
+      {
+        "qty": "½ cup",
+        "item": "buttermilk"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "sour cream, plus extra for garnish"
+      },
+      {
+        "qty": "2",
+        "item": "green onions, finely chopped"
+      }
+    ],
+    "steps": [
+      "Fry bacon in a large pot until crisp. Remove bacon and set aside leaving the drippings in the pot.",
+      "Reduce heat to medium low and add diced onion to drippings. Cook until tender, about 5-7 minutes.",
+      "Add garlic and flour, cook 1 minute while stirring. Whisk in chicken broth, bring to a boil over medium high heat and simmer for 5 minutes.",
+      "Stir in mashed potatoes. Simmer an additional 5 minutes. Add the buttermilk and stir to combine allowing mixture to just come to a boil.",
+      "Remove from heat and stir in 1 cup cheese, half of the bacon, and ⅓ cup sour cream.",
+      "Garnish with a dollop of sour cream, reamining bacon, green onion and serve hot."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat flour, buttermilk and sour cream (lactose). Potatoes, bacon, cheddar and green-onion tops are fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas."
+  },
+  {
+    "id": "fam-ez-baked-oatmeal",
+    "name": "Baked Oatmeal",
+    "emoji": "🥣",
+    "category": "breakfast",
+    "time": "55 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "meal-prep",
+      "make-ahead"
+    ],
+    "source": "https://www.wellplated.com/baked-oatmeal/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "½ cup",
+        "item": "sliced almonds, or pecans or walnuts"
+      },
+      {
+        "qty": "1 cup",
+        "item": "unsweetened applesauce"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "pure maple syrup"
+      },
+      {
+        "qty": "2 large",
+        "item": "eggs"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "pure vanilla extract"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "ground cinnamon"
+      },
+      {
+        "qty": "⅛ teaspoon",
+        "item": "ground nutmeg"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "¾ teaspoon",
+        "item": "baking powder"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "unsalted butter, melted and cooled"
+      },
+      {
+        "qty": "1 cup",
+        "item": "nonfat milk"
+      },
+      {
+        "qty": "2 cups",
+        "item": "old-fashioned oats"
+      },
+      {
+        "qty": "2 cups",
+        "item": "blueberries, or diced apples, strawberries, or your fruit of choice, fresh or frozen"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "turbinado sugar, or similar coarse sugar (optional)"
+      },
+      {
+        "qty": "to taste",
+        "item": "Optional for serving: nonfat Greek yogurt, peanut butter, banana slices, an extra drizzle of maple syrup, or all of the above"
+      }
+    ],
+    "steps": [
+      "Place a rack in the center of your oven and preheat the oven to 375°F. Lightly coat a 9x9-inch baking pan with nonstick spray. Spread the almonds onto an ungreased baking sheet. Bake in the oven until the almonds are fragrant and toasted, about 8 minutes. Do not walk away towards the end of the cook time to ensure they do not burn. Immediately transfer to a cutting board. Let cool, then set aside.",
+      "In a large mixing bowl, whisk together the applesauce, maple syrup, eggs, vanilla, cinnamon, nutmeg, salt, and baking powder until smooth. Whisk in the melted butter and milk (if the butter resolidifies, warm the bowl in the microwave in 15-second increments until it melts).",
+      "Fold in the oats, then the almonds and blueberries (if your berries are frozen, do not thaw first).",
+      "Pour the oatmeal mixture into the prepared dish and smooth the top. Sprinkle evenly with the turbinado sugar. Bake in the preheated oven for 40 to 50 minutes, or until the center is moist but no longer damp and feels mostly firm to the touch and the edges are light golden brown (if your fruit is frozen, extend the baking time by 5 to 10 minutes). This will yield a moist oatmeal that's not quite set enough to easily cut with a knife; if you'd like a softer, more pudding-like texture, bake it for 5 minutes less.. Remove from the oven and let cool 5 minutes. Serve hot with your desired toppings."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — 1 cup of applesauce (fructose), regular milk (lactose), and apples if used as the fruit. Oats, maple syrup, eggs and blueberries are fine. Use lactose-free milk, mashed banana or canned pumpkin in place of the applesauce, and blueberries or strawberries as the fruit. One 9x9 pan; serving count is an estimate."
+  },
+  {
+    "id": "fam-ez-breakfast-quesadilla",
+    "name": "Breakfast Quesadilla",
+    "emoji": "🌯",
+    "category": "breakfast",
+    "time": "20 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "meal-prep",
+      "freezer-friendly",
+      "20-min"
+    ],
+    "source": "https://www.wellplated.com/breakfast-quesadilla/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "10 large",
+        "item": "eggs"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "milk"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "garlic powder"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "ground black pepper"
+      },
+      {
+        "qty": "½ tablespoon",
+        "item": "extra-virgin olive oil"
+      },
+      {
+        "qty": "5 cups",
+        "item": "lightly packed fresh spinach, roughly torn or chopped (about 4 ounces)"
+      },
+      {
+        "qty": "1 can",
+        "item": "reduced-sodium white beans"
+      },
+      {
+        "qty": "1 ½ cups",
+        "item": "freshly grated cheese"
+      },
+      {
+        "qty": "8",
+        "item": "whole wheat tortillas, medium taco size (about 7 inches)"
+      }
+    ],
+    "steps": [
+      "In a large bowl, whisk together the eggs, milk, salt, garlic powder, and pepper. Set aside.",
+      "Add the olive oil to a large nonstick skillet over medium heat until it is hot and shimmers. Swirl to coat the pan, then add the spinach and cook, stirring often, until it begins to wilt, about 1 minute. Add the beans, reduce the heat to medium low, then carefully pour in the eggs. With a rubber spatula, cook the eggs low and slow, using the spatula to move them around the pan often. Continue cooking until the eggs are scrambled and just set, about 5 minutes. Taste and season with additional salt or pepper as desired. Remove from the heat. (If freezing the quesadillas, let the filling cool completely.)",
+      "Assemble the quesadillas by sprinkling a tortilla with one-eighth of the shredded cheese, leaving a small border all the way around the edge. Spoon one-eighth of the egg mixture on top, then fold the tortilla in half. Repeat with the remaining tortillas.",
+      "Carefully wipe out the skillet. Increase the heat to medium and lightly coat the skillet with nonstick spray (or brush with a bit of additional olive oil). Cook the assembled quesadillas on both sides until golden and the cheese is melted, about 5 to 6 minutes total. Cut into wedges and serve warm.",
+      "Let the egg filling cool completely to room temperature. Once cooled, form the quesadillas as directed above, then wrap each assembled quesadilla individually in plastic wrap. Arrange the quesadillas in a single layer on a baking sheet or similar flat surface that will fit in your freezer. Place the sheet in the freezer until the quesadillas are firm, then transfer them to a freezer bag or airtight container. Freeze for up to 2 months. To cook from frozen, remove the plastic wrap and warm the quesadilla in the microwave for 2 to 3 minutes until heated through. Alternatively, you can let them thaw overnight in the refrigerator and cook in a skillet as directed above."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — garlic powder, a can of white beans and wheat tortillas. Eggs, spinach and cheese are fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas. Use corn tortillas and keep beans to about 1/4 cup per quesadilla."
+  },
+  {
+    "id": "fam-ez-greek-bowls",
+    "name": "Greek Bowls",
+    "emoji": "🥗",
+    "category": "dinner",
+    "time": "35 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "meal-prep"
+    ],
+    "source": "https://www.wellplated.com/greek-bowls/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 ½ pounds",
+        "item": "boneless skinless chicken thighs"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "extra-virgin olive oil"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "red wine vinegar"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "paprika"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "dried oregano"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "ground black pepper"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "canola oil, or avocado oil, grapeseed oil, or a different neutral cooking oil"
+      },
+      {
+        "qty": "2 cups",
+        "item": "prepared brown rice or quinoa, 1 cup uncooked"
+      },
+      {
+        "qty": "6 cups",
+        "item": "chopped romaine lettuce or mixed greens of choice"
+      },
+      {
+        "qty": "1 pint",
+        "item": "cherry tomatoes, halved"
+      },
+      {
+        "qty": "1",
+        "item": "English cucumber, thinly sliced"
+      },
+      {
+        "qty": "½ small",
+        "item": "red onion, thinly sliced"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "crumbled feta cheese"
+      },
+      {
+        "qty": "to taste",
+        "item": "Air Fryer Chickpeas"
+      },
+      {
+        "qty": "½ large",
+        "item": "English cucumber, peel on (about 8 ounces)"
+      },
+      {
+        "qty": "1 cup",
+        "item": "nonfat plain Greek yogurt"
+      },
+      {
+        "qty": "2 cloves",
+        "item": "minced garlic, about 2 teaspoons"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "freshly squeezed lemon juice"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "finely chopped fresh dill"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "extra virgin olive oil"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "kosher salt"
+      }
+    ],
+    "steps": [
+      "Place the chicken in a bowl and toss with the oil, vinegar, paprika, oregano, salt, and pepper. Let sit while you prepare the tzatziki sauce and any desired toppings.",
+      "Prepare the Tzatziki: Grate the cucumber onto a double stack of paper towels. Fold the towels around the cucumber. Over the sink, squeeze out as much excess water as possible, adding another layer of paper towels as needed. Transfer to a bowl, then stir together with the Greek yogurt, garlic, lemon juice, dill, olive oil, and salt. If time allows, cover and refrigerate for at least 30 minutes or up to 3 days (or use it right away and know the leftovers will taste even better!).",
+      "Heat a cast iron on similar sturdy, heavy-bottomed skillet over medium high heat. Once it's nice and hot, add the oil and swirl to coat. With tongs, remove the chicken thighs from the marinade and lower into the skillet, smooth-side down. Let cook on the first side undisturbed for 5 minutes (no peeking!).",
+      "After 5 minutes, lift the chicken and flip it over — if the chicken is sticking to the skilet, let it cook for 1 additional minute; it should remove easily.",
+      "Cook on the other side until the chicken reaches 165°F on an instant read thermometer, about 5 to 6 minutes more. Remove to a cutting board and let rest 5 minutes. Cut into bite-sized pieces.",
+      "Assemble the Bowls: fill a big bowl with your desired mix of rice and lettuce, then top with the chicken and any desired toppings. Serve with tzatziki on top or alongside."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — red onion, garlic in the tzatziki, chickpeas, and 1 cup of regular Greek yogurt (lactose). Chicken, rice or quinoa, cucumber, tomato, lettuce and feta are fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas. Use lactose-free yogurt for the tzatziki and skip or limit the chickpeas."
+  },
+  {
+    "id": "fam-ez-healthy-egg-salad",
+    "name": "Healthy Egg Salad",
+    "emoji": "🥚",
+    "category": "lunch",
+    "time": "15 min",
+    "serves": 3,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "15-min",
+      "meal-prep",
+      "high-protein"
+    ],
+    "source": "https://www.wellplated.com/healthy-egg-salad/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "6",
+        "item": "hard cooked eggs, 2 of the whites-only; 4 whole eggs"
+      },
+      {
+        "qty": "¾ cup",
+        "item": "diced celery, about 3 medium stalks"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "plain non-fat Greek yogurt"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "dijon mustard"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "ground black pepper"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "chopped fresh dill"
+      },
+      {
+        "qty": "to taste",
+        "item": "Whole grain bread, toasted (for 4 open faced sandwiches)"
+      },
+      {
+        "qty": "to taste",
+        "item": "Arugula, tomato, additional chopped fresh dill"
+      }
+    ],
+    "steps": [
+      "Peel the eggs and cut into a rough dice. (For detailed instructions on how to hard boil eggs, see Step 2 of my Avocado Egg Salad recipe.) Place in a large mixing bowl, then add the celery, Greek yogurt, mustard, salt, pepper, and dill. Stir to combine.",
+      "Serve egg salad on toasted bread with tomatoes and arugula, or enjoy atop greens for a healthy salad."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — 3/4 cup of celery (moderate-FODMAP in that amount), Greek yogurt (lactose) and whole-grain bread. Eggs, Dijon and dill are fine. Use a small amount of celery, lactose-free yogurt or mayonnaise, and gluten-free bread."
+  },
+  {
+    "id": "fam-ez-crispy-breaded-chicken-cutlets",
+    "name": "Crispy Breaded Chicken Cutlets",
+    "emoji": "🍗",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "30-min"
+    ],
+    "source": "https://natashaskitchen.com/chicken-cutlets/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "4 medium",
+        "item": "boneless, skinless chicken breasts (about 2 lbs total, 8 oz each)"
+      },
+      {
+        "qty": "1 1/2 tsp",
+        "item": "fine sea salt, divided"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "black pepper"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "2 large",
+        "item": "eggs, plus 1 Tbsp water"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "panko breadcrumbs, or Italian breadcrumbs"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "finely grated Parmesan cheese"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "garlic powder"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "Italian seasoning"
+      },
+      {
+        "qty": "to taste",
+        "item": "Extra light olive oil, or a neutral oil like canola, or avocado"
+      },
+      {
+        "qty": "to taste",
+        "item": "Lemon wedges, chopped parsley and coarse salt, for serving"
+      }
+    ],
+    "steps": [
+      "Prep the chicken: Slice each chicken breast in half horizontally to make 8 thin cutlets. Place between sheets of plastic wrap or parchment and pound to 1/4-inch thickness. Season all over with 1 tsp salt and 1/2 tsp black pepper.",
+      "Make the breading station: In the first dish, add the plain flour. In the second dish, whisk together the eggs and water. In the third dish, combine panko, Parmesan, garlic powder, Italian seasoning, and the remaining 1/2 tsp salt.",
+      "Bread the cutlets: Dredge each cutlet lightly in the flour, shaking off excess. Dip in the egg wash, then press into the breadcrumb mixture so it adheres. Place on a tray and repeat. Let breaded cutlets rest 5–10 minutes to help the coating set.",
+      "Pan-fry: Add enough oil to a large skillet so it comes about halfway up the sides of the chicken. Heat over medium until the oil is shimmering and hot (a breadcrumb should sizzle immediately when dropped in. Keep the oil between 350-375˚F. Sauté about 2 minutes per side or until deep golden and the center reaches 165˚F on an instant thermometer. Transfer to a wire rack or paper towels and sprinkle with a pinch of flaky salt. Squeeze on some lemon juice and serve with more lemon wedges and parsley for garnish."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — wheat flour and panko breadcrumbs, and garlic powder. Chicken, Parmesan, eggs and lemon are fine. Use gluten-free breadcrumbs and flour and leave out the garlic powder."
+  },
+  {
+    "id": "fam-ez-spinach-stuffed-chicken-breast",
+    "name": "Spinach Stuffed Chicken Breast",
+    "emoji": "🍗",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://natashaskitchen.com/spinach-stuffed-chicken/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "3 large",
+        "item": "chicken breasts, boneless, skinless (1 3/4 to 2 lbs, even-sized pieces)"
+      },
+      {
+        "qty": "3/4 tsp",
+        "item": "salt"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "black pepper"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "garlic powder"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "paprika"
+      },
+      {
+        "qty": "1 1/2 Tbsp",
+        "item": "olive oil"
+      },
+      {
+        "qty": "4 oz",
+        "item": "cream cheese, cold"
+      },
+      {
+        "qty": "1 Tbsp",
+        "item": "mayonnaise"
+      },
+      {
+        "qty": "2",
+        "item": "garlic cloves"
+      },
+      {
+        "qty": "1/4 tsp",
+        "item": "salt"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "baby spinach leaves, chopped"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "mozzarella cheese"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "parmesan cheese"
+      }
+    ],
+    "steps": [
+      "Make filling - Preheat oven to 425˚F with a rack in the center. In a mixing bowl, mash together 4 oz of cream cheese, 1 tablespoon of mayo, and 2 garlic cloves with a fork, then stir in 1/4 cup mozzarella, 1/4 cup parmesan, and 1 1/2 cups chopped spinach leaves until combined.",
+      "Stuff chicken breasts - Lay chicken on a flat surface and with a sharp knife, cut a slit 3/4 of the way through without cutting all the way through. Divide the filling evenly among the chicken breasts and stuff each breast with its portion, then seal horizontally with a toothpick (make sure the chicken breast can lie flat on the sides for searing).",
+      "Season chicken - Season the outside of the chicken breast all over with 3/4 tsp salt, 1/2 tsp pepper, 1/2 tsp garlic powder, and 1/2 tsp paprika, or season to taste.",
+      "Sear chicken - Heat 1 1/2 Tbsp olive oil in an oven-proof pan such as cast iron, or a large heavy-bottomed skillet over medium heat. Add chicken and sauté for 4 minutes per side until golden brown on each side.",
+      "Bake - Flip a second time and immediately transfer skillet to preheated oven. Bake at 425˚F for 10-15 minutes until an instant-read thermometer inserted into the thickest part of the chicken registers at 165˚F. Rest the chicken 5 minutes before slicing. Remove the toothpicks and spoon the pan juices over the chicken to serve."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — garlic powder, two garlic cloves and 4 oz of cream cheese (lactose). Spinach, mozzarella and Parmesan are fine. Use lactose-free cream cheese and garlic-infused oil in the filling."
+  },
+  {
+    "id": "fam-ez-cheesy-vegan-enchilada-skillet",
+    "name": "Cheesy Vegan Enchilada Skillet",
+    "emoji": "🌮",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "30-min",
+      "vegan"
+    ],
+    "source": "https://minimalistbaker.com/cheesy-vegan-enchilada-skillet/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1/2 cup",
+        "item": "raw cashews"
+      },
+      {
+        "qty": "2/3 cup",
+        "item": "water"
+      },
+      {
+        "qty": "1 Tbsp",
+        "item": "lime juice"
+      },
+      {
+        "qty": "1/2 small",
+        "item": "clove garlic, or 1/8 tsp garlic powder"
+      },
+      {
+        "qty": "2 Tbsp",
+        "item": "tapioca starch, also called tapioca flour"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "sea salt"
+      },
+      {
+        "qty": "1-2 Tbsp",
+        "item": "olive or avocado oil"
+      },
+      {
+        "qty": "1/2 medium",
+        "item": "yellow or white onion, diced (about 1 heaping cup)"
+      },
+      {
+        "qty": "1/4 tsp",
+        "item": "sea salt"
+      },
+      {
+        "qty": "4 medium cloves",
+        "item": "garlic, minced (about 2 Tbsp)"
+      },
+      {
+        "qty": "2 cups",
+        "item": "sweet potato or kabocha squash, peeled, diced into 1/4-1/2-inch cubes"
+      },
+      {
+        "qty": "1 medium",
+        "item": "poblano pepper, stemmed, seeded, and diced into 1/2-inch squares, or green bell pepper"
+      },
+      {
+        "qty": "1 (15 oz) can",
+        "item": "black beans, drained and rinsed"
+      },
+      {
+        "qty": "4 (4-inch)",
+        "item": "corn tortillas, sliced into 1/4-inch x 2-inch strips"
+      },
+      {
+        "qty": "1 (15 oz) jar",
+        "item": "red enchilada sauce"
+      },
+      {
+        "qty": "to taste",
+        "item": "Green onion, thinly sliced"
+      },
+      {
+        "qty": "to taste",
+        "item": "Fresh cilantro, roughly chopped"
+      }
+    ],
+    "steps": [
+      "Start by cooking the veggies for the skillet. Heat a large (preferably oven-safe) skillet over medium heat. Once hot, add oil and onion and sauté for a few minutes until translucent. Add the sea salt and garlic and cook for another 1-2 minutes.",
+      "Next, add the sweet potato (or squash) and pepper. Sauté, stirring occasionally, until they are starting to soften — about 5 minutes.",
+      "Add the drained and rinsed black beans (or pinto beans) and tortilla strips and stir.",
+      "Finally, add the enchilada sauce, stir well, and bring to a simmer over medium heat. Once simmering, cover and lower the heat to medium-low. Cook for ~10 minutes, stirring occasionally, until the sweet potato (or squash) is tender when pierced with a fork.",
+      "Meanwhile, to a small high-speed blender, add the cashew sauce ingredients (cashews, water, lime juice, garlic, tapioca starch, and sea salt). Blend on high until smooth and creamy.",
+      "After the skillet has sautéed and your squash/sweet potatoes are tender, remove the lid, reduce the heat to low, and carefully pour the cashew sauce (or sprinkle shredded cheese) over the beans in an even layer. Cover and steam for 3-5 minutes to encourage the cheese to firm up (or melt) a bit. Then remove the lid and (optionally) transfer to the oven to broil for another 2-3 minutes, or until the cheese is darkened in spots and dry to the touch.",
+      "Serve warm garnished with green onions and cilantro (both optional). Store leftovers in an airtight container in the refrigerator for up to 3-4 days or in the freezer for 1 month (or longer).",
+      "Freezing: You can freeze the enchilada skillet in individual containers for quicker reheating or freeze the entire dish. To freeze in individual containers, transfer individual servings to freezer-safe containers (we like glass storage containers), let cool in the refrigerator, then cover with a lid or foil and freeze. When ready to eat, uncover and microwave using the defrost then full power settings to heat until warmed through. To freeze the entire dish, transfer to a large freezer-safe container (such as a casserole dish), let cool in the refrigerator, then cover and transfer to the freezer. When ready to eat/serve, defrost overnight in the refrigerator, then bake in a 350 degree F (176 C) oven until warmed through."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, a can of black beans, cashews in the sauce, and jarred enchilada sauce usually contains onion and garlic. Sweet potato is moderate in larger serves. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas. Keep beans to about 1/4 cup per serve and use a low-FODMAP enchilada sauce."
+  },
+  {
+    "id": "fam-ez-creamy-salmon-orzo",
+    "name": "Creamy Salmon Orzo (Risoni)",
+    "emoji": "🐟",
+    "category": "dinner",
+    "time": "15 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pot",
+      "15-min"
+    ],
+    "source": "https://www.recipetineats.com/creamy-salmon-risoni-orzo-15-minute-meal/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "3 tbsp (40 g)",
+        "item": "unsalted butter"
+      },
+      {
+        "qty": "1/2",
+        "item": "onion, diced (brown, white, yellow)"
+      },
+      {
+        "qty": "2",
+        "item": "garlic cloves, minced"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "plain flour"
+      },
+      {
+        "qty": "2 cups",
+        "item": "milk, light or full fat"
+      },
+      {
+        "qty": "2 1/4 cups",
+        "item": "chicken broth / stock"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "dried risoni / orzo"
+      },
+      {
+        "qty": "2 cups",
+        "item": "frozen peas"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "grated parmesan"
+      },
+      {
+        "qty": "185 g / 6 oz",
+        "item": "hot-smoked salmon, flaked into large chunks"
+      },
+      {
+        "qty": "to taste",
+        "item": "Parsley, chopped, to garnish"
+      }
+    ],
+    "steps": [
+      "Melt butter in a deep skillet or pot over medium high heat.",
+      "Add onion and garlic, cook for 2 minutes until translucent.",
+      "Add flour and cook for 1 minute.",
+      "Switch to a whisk and add half the milk. Whisk to dissolve the pasty onion mixture into the milk (about 20 seconds). Then add remaining milk, chicken broth, risoni and peas.",
+      "Bring to simmer then turn heat down to medium so it bubbles gently. Cook for 5 minutes - stir occasionally for the first half then more frequently during the second half.",
+      "At 5 minutes, take it off the stove - it will still be quite saucy (see video) but will reduce in the next steps and while serving.",
+      "Stir through parmesan cheese, salt and pepper to taste. Then gently stir through salmon.",
+      "Serve immediately, sprinkled with parsley leaves if desired."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat flour and orzo, and 2 cups of regular milk (lactose). Peas are moderate; keep to a small serve. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas."
+  },
+  {
+    "id": "fam-ez-15-minute-sausage-meatballs",
+    "name": "15 Minute Sausage Meatballs",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "15 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "15-min"
+    ],
+    "source": "https://www.recipetineats.com/15-minute-sausage-meatballs/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 tbsp",
+        "item": "olive oil"
+      },
+      {
+        "qty": "700 g / 1.4 lb",
+        "item": "good-quality sausages"
+      },
+      {
+        "qty": "2",
+        "item": "garlic cloves, finely chopped"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "chicken stock/broth, low sodium - sub water"
+      },
+      {
+        "qty": "700 g / 24 oz",
+        "item": "tomato passata (US: plain tomato sauce such as Hunt's)"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "dried Italian herb mix, sub dried oregano, or 50/50 oregano/thyme"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "cooking salt / kosher salt, +50% for flakes, halve for table salt"
+      },
+      {
+        "qty": "1/4 tsp",
+        "item": "red pepper flakes, optional (hint of warmth - sub pinch of pepper)"
+      },
+      {
+        "qty": "1 sprig",
+        "item": "basil, - stalk for sauce, leaves for garnish (optional)"
+      },
+      {
+        "qty": "to taste",
+        "item": "Parmesan, finely grated"
+      },
+      {
+        "qty": "350 g / 12 oz",
+        "item": "pasta of choice, or polenta or mash"
+      }
+    ],
+    "steps": [
+      "Brown meatballs (3-4 min), add garlic for last 15 seconds. Reduce stock by half (1 min), add everything else, simmer 4 minutes. Serve!",
+      "Brown meatballs - Heat the oil in a large non-stick pan over high heat. Add the meatballs and stir for 4 - 5 minutes until lightly browned but still raw inside. (Note 4)",
+      "Add garlic and stir for just 15 seconds until light golden (careful, don't let it burn!)",
+      "Simmer - Add the stock and simmer rapidly for 1 minute to reduce by half. Add everything else, stir, bring to a simmer, then lower heat to medium high and let it simmer energetically (but not crazy rapidly) for 4 minutes.",
+      "Serve with lots of parmesan and hand-torn basil leaves over pasta, polenta, mash or other starchy vehicle of choice, or stuff into subs!",
+      "Add cooked pasta with 1/2 cup of the pasta cooking water into the pan with meatballs. Toss over medium heat for 1 - 2 minutes until the sauce is stuck to the pasta and it's stained red, rather than pooled in the base of the pan. Divide between bowls and enjoy!"
+    ],
+    "fodmapNote": "Not low-FODMAP as written — garlic, wheat pasta, and most sausages are seasoned with garlic and onion. Passata is fine in a normal serve. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas. Pick a sausage without onion or garlic in the ingredients."
+  },
+  {
+    "id": "fam-ez-asian-beef-bowls",
+    "name": "Asian Beef Bowls",
+    "emoji": "🍚",
+    "category": "dinner",
+    "time": "12 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "15-min"
+    ],
+    "source": "https://www.recipetineats.com/asian-beef-bowls/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 tbsp",
+        "item": "Hoisin Sauce, or sub with Oyster"
+      },
+      {
+        "qty": "2 tbsp",
+        "item": "Oyster Sauce, or sub with 1 1/2 tbsp Hoisin"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "Chinese cooking wine, or mirin, dry sherry, sake or any rice wine"
+      },
+      {
+        "qty": "2 1/2 tbsp",
+        "item": "dark soy sauce"
+      },
+      {
+        "qty": "2 tsp",
+        "item": "white sugar"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "sesame oil"
+      },
+      {
+        "qty": "1/4 tsp",
+        "item": "white pepper, or sub with black"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "oil"
+      },
+      {
+        "qty": "2",
+        "item": "garlic cloves, minced"
+      },
+      {
+        "qty": "1 small",
+        "item": "onion, finely chopped"
+      },
+      {
+        "qty": "500 g / 1 lb",
+        "item": "ground beef (lean is good)"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "scallions, sliced, plus more for garnish"
+      },
+      {
+        "qty": "to taste",
+        "item": "Sesame seeds"
+      }
+    ],
+    "steps": [
+      "Mix Sauce together in a bowl",
+      "Heat oil in a large skillet over high heat. Add garlic and onion, cook for 1 minute or until onion starts browning.",
+      "Add beef and cook, breaking it up as you go.",
+      "Once the beef has all changed from red to brown, add Sauce. Cook for a further 2 minutes, or until Sauce has evaporated and beef is cooked. If you want the beef cooked more, add a splash of water and keep cooking (I don't do this).",
+      "Stir through shallots, then serve over rice, garnished with more shallots and sesame seeds, if desired. Or for a low carb, low cal option, try Cauliflower Rice!"
+    ],
+    "fodmapNote": "Close to low-FODMAP but not as written — onion and garlic. Hoisin and oyster sauce can contain garlic, so check the label; soy sauce is fine. Use garlic-infused oil and only the green tops of the scallions and this one is low-FODMAP."
+  },
+  {
+    "id": "fam-ez-fish-piccata-with-crispy-smashed-potatoes",
+    "name": "Fish Piccata with Crispy Smashed Potatoes",
+    "emoji": "🐟",
+    "category": "dinner",
+    "time": "15 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "15-min"
+    ],
+    "source": "https://www.recipetineats.com/fish-piccata-crispy-smashed-potatoes-15-minute-meal/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2",
+        "item": "firm white fish fillets (150–200 g / 5–7 oz each), skin on or off"
+      },
+      {
+        "qty": "6",
+        "item": "baby potatoes, about golf-ball size"
+      },
+      {
+        "qty": "200 g / 7 oz",
+        "item": "green beans, trimmed"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "fresh parsley, finely chopped"
+      },
+      {
+        "qty": "2 tbsp",
+        "item": "olive oil"
+      },
+      {
+        "qty": "3 tbsp",
+        "item": "plain flour"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Black pepper"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "white wine"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "water"
+      },
+      {
+        "qty": "1 - 2 tbsp",
+        "item": "fresh lemon juice, adjust to your taste"
+      },
+      {
+        "qty": "2 tbsp",
+        "item": "butter"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "baby capers, canned"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and pepper"
+      }
+    ],
+    "steps": [
+      "Cook the potatoes in the microwave for 2 minutes, turn potatoes, then cook for another 1 1/2 - 2 minutes. You will be able to tell by squeezing them if they are ready. Don't worry if the skin bursts, you are smashing them anyway.",
+      "Use the side of a knife, meat mallet or your hand (covered with a dish cloth) and smash each potato so they are flattened to around 1.5cm/ 0.5\" thick with a flattish surface. Sprinkle with a pinch of salt.",
+      "Meanwhile, combine flour, salt and pepper on a plate and dredge each side of the fish in the flour mixture. Shake off excess flour.",
+      "Heat olive oil in a non stick pan over high heat. Place fish and potatoes in the pan. Press the potatoes down lightly with a spatula to help it crisp up.",
+      "Cook the first side of both the fish and potatoes for around 2 minutes until golden brown, then turn. Make sure the potato is crispy and brown.",
+      "Cook the other side of the fish for 1 1/2 minutes (also see notes for fish cooking time). Then remove from the pan onto a plate and cover loosely with foil.",
+      "Give the potatoes another 30 seconds to 1 minute to make it nice and brown and crispy, then remove from the pan.",
+      "Turn heat down to medium high.",
+      "Add wine and water to the pan. Scrape the brown bits off the bottom of the pan and mix it in. When the liquid comes to a rapid simmer, add the beans.",
+      "Shake the pan occasionally to help the beans cook evenly. Cook the beans in the liquid for around 1 1/2 minutes until \"tender crisp\" (i.e. cooked but still crisp) and remove from pan. If the liquid reduces too much while cooking the beans (which might be the case if you are using a very large heavy based pan), just add a splash of water.",
+      "Remove pan from heat. By the time you remove the beans, there should just be a bit of sauce left at the bottom of the fry pan, not even covering the entire base of the fry pan.",
+      "Add lemon juice then stir through butter and capers. Adjust seasoning to taste with salt and pepper.",
+      "Place half the beans on each plate and place 3 potatoes on top. Top with a piece of fish. Spoon over the Sauce onto each fish and scatter with parsley. Serve immediately."
+    ],
+    "fodmapNote": "Nearly low-FODMAP — the only flag is the wheat flour used to dust the fish. Potatoes, green beans, capers, lemon, butter and white wine are all fine. Dust with rice flour or cornstarch and this one is low-FODMAP. Serves 2."
+  },
+  {
+    "id": "fam-ez-thai-red-curry-with-chicken",
+    "name": "Thai Red Curry with Chicken",
+    "emoji": "🍛",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pot",
+      "30-min"
+    ],
+    "source": "https://www.recipetineats.com/thai-red-curry-with-chicken/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "5–6 tbsp",
+        "item": "Thai red curry paste, store-bought (Maesri recommended)"
+      },
+      {
+        "qty": "or 1 quantity",
+        "item": "homemade Thai red curry paste"
+      },
+      {
+        "qty": "2 large",
+        "item": "garlic cloves, minced"
+      },
+      {
+        "qty": "2 tsp",
+        "item": "fresh ginger, finely grated"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "lemongrass paste, or finely chopped fresh"
+      },
+      {
+        "qty": "3 tbsp",
+        "item": "vegetable oil, or canola or peanut"
+      },
+      {
+        "qty": "1 cup (250 ml)",
+        "item": "chicken broth/stock, low sodium"
+      },
+      {
+        "qty": "400 ml / 14 oz",
+        "item": "coconut milk, full fat"
+      },
+      {
+        "qty": "6",
+        "item": "kaffir lime leaves"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "sugar, white, brown or palm"
+      },
+      {
+        "qty": "2 tsp",
+        "item": "fish sauce, plus more to taste"
+      },
+      {
+        "qty": "350 g / 12 oz",
+        "item": "chicken thighs, boneless and skinless, cut into 1/3-inch slices"
+      },
+      {
+        "qty": "150 g / 5 oz",
+        "item": "pumpkin or butternut squash, cut into 1.5 cm cubes (about 1 heaped cup)"
+      },
+      {
+        "qty": "120 g / 4 oz",
+        "item": "green beans, trimmed and cut into 2-inch pieces"
+      },
+      {
+        "qty": "12",
+        "item": "Thai basil leaves"
+      },
+      {
+        "qty": "to taste",
+        "item": "Fresh red chilli slices, small chilli - spicy, large = less spicy"
+      },
+      {
+        "qty": "to taste",
+        "item": "Fresh coriander / cilantro leaves"
+      },
+      {
+        "qty": "to taste",
+        "item": "Steamed jasmine rice"
+      }
+    ],
+    "steps": [
+      "Heat oil in a large heavy based skillet over medium high heat.",
+      "Add curry paste and Extras (if using jar paste) and cook for about 2 minutes so it \"dries out\" (See video)",
+      "Add chicken broth and stir to dissolve paste. Simmer rapidly for 3 minutes or until liquid reduces by half.",
+      "Add coconut milk, lime leaves, sugar and fish sauce. Stir, then add chicken.",
+      "Spread chicken out, bring to simmer, then turn heat down to medium. Simmer for about 8- 10 minutes or until Sauce reduces, the chicken is cooked and the sauce is almost at the thickness you want.",
+      "Do a taste test. Add more fish sauce (or even shrimp paste) to add more saltiness, sugar for sweetness.",
+      "Add pumpkin and beans, stir. Cook for 3 minutes or until pumpkin is just cooked through and Sauce is thickened - see video for Sauce thickness.",
+      "Remove from heat. Stir through a handful of Thai basil leaves.",
+      "Serve over jasmine rice, garnished with fresh red chilli slices and fresh coriander/cilantro leaves, if desired."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — fresh garlic, and store-bought red curry paste contains garlic and shallot. Coconut milk and butternut squash are moderate in larger serves. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas. A garlic-free curry paste (some low-FODMAP brands exist) is the main fix."
+  },
+  {
+    "id": "fam-ez-air-fryer-greek-chicken",
+    "name": "Air Fryer Greek Chicken (Skinnytaste)",
+    "emoji": "🍗",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "air-fryer",
+      "30-min"
+    ],
+    "source": "https://www.skinnytaste.com/air-fryer-greek-chicken/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 teaspoons",
+        "item": "extra virgin olive oil"
+      },
+      {
+        "qty": "2 ½ tablespoons",
+        "item": "lemon juice"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "dried oregano"
+      },
+      {
+        "qty": "¾ teaspoon",
+        "item": "Dijon mustard"
+      },
+      {
+        "qty": "¾ teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "12 ounces",
+        "item": "boneless skinless chicken breasts, cut into 1-inch cubes"
+      },
+      {
+        "qty": "1 medium",
+        "item": "zucchini, 8 ounces, sliced into ¼-inch thick half moons"
+      },
+      {
+        "qty": "½ cup",
+        "item": "cherry tomatoes, halved"
+      },
+      {
+        "qty": "½ small",
+        "item": "red onion, cut into wedges"
+      },
+      {
+        "qty": "½ cup",
+        "item": "canned chickpeas, rinsed and drained"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "kalamata olives, pitted and sliced"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "feta cheese, crumbled"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "fresh dill, chopped"
+      }
+    ],
+    "steps": [
+      "Add the olive oil, lemon juice, dried oregano, Dijon mustard and salt to a mixing bowl and whisk to combine.",
+      "Add the chicken, zucchini, tomatoes, red onion, chickpeas, and olives to the bowl and toss to coat everything in the marinade.",
+      "In a single layer, (in batches as needed for smaller baskets), transfer the chicken and vegetables to the air fryer basket and cook 400°F about 10 minutes, shaking the basket 2 to 3 times, until the chicken is browned and the vegetables are tender.",
+      "Top with feta cheese and chopped dill and serve right away."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — red onion and 1/2 cup of chickpeas. Chicken, zucchini, cherry tomatoes, olives and feta are fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas. Keep chickpeas to about 1/4 cup drained per serve. Serves 2. A different recipe from the \"Air Fryer Greek Chicken & Veggies\" link card already in the cookbook."
+  },
+  {
+    "id": "fam-ez-air-fryer-cajun-shrimp-dinner",
+    "name": "Air Fryer Cajun Shrimp Dinner",
+    "emoji": "🍤",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "air-fryer",
+      "30-min"
+    ],
+    "source": "https://www.skinnytaste.com/air-fryer-cajun-shrimp-dinner/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 tablespoon",
+        "item": "Cajun or Creole seasoning"
+      },
+      {
+        "qty": "24 (1 pound)",
+        "item": "cleaned and peeled extra jumbo shrimp"
+      },
+      {
+        "qty": "6 ounces",
+        "item": "fully cooked Turkey/Chicken Andouille sausage or kielbasa, sliced"
+      },
+      {
+        "qty": "1 medium",
+        "item": "zucchini, 8 ounces, sliced into 1/4-inch thick half moons"
+      },
+      {
+        "qty": "1 medium",
+        "item": "yellow squash, 8 ounces, sliced into 1/4-inch thick half moons"
+      },
+      {
+        "qty": "1 large",
+        "item": "red bell pepper, seeded and cut into thin 1-inch pieces"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "olive oil"
+      }
+    ],
+    "steps": [
+      "In a large bowl, combine the Cajun seasoning and shrimp, toss to coat.",
+      "Add the sausage, zucchini, squash, bell peppers, and salt and toss with the oil.",
+      "Preheat the air fryer 400F.",
+      "In 2 batches (for smaller baskets), transfer the shrimp and vegetables to the air fryer basket and cook 8 minutes, shaking the basket 2 to 3 times.",
+      "Set aside, repeat with remaining shrimp and veggies.",
+      "Once both batches are cooked, return the first batch to the air fryer and cook 1 minute."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — store-bought Cajun seasoning and andouille sausage usually contain onion and garlic powder. Shrimp, zucchini, yellow squash and bell pepper are fine in a normal serve. Use a Cajun blend without onion or garlic and a plain smoked sausage."
+  },
+  {
+    "id": "fam-ez-marry-me-chicken",
+    "name": "Marry Me Chicken (Skinnytaste)",
+    "emoji": "🍗",
+    "category": "dinner",
+    "time": "35 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan"
+    ],
+    "source": "https://www.skinnytaste.com/marry-me-chicken/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1/4 cup",
+        "item": "sundried tomatoes in oil, drained and chopped"
+      },
+      {
+        "qty": "2 (8 oz)",
+        "item": "boneless skinless chicken breasts, halved lengthwise (1 lb total)"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "freshly ground black pepper"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "all purpose flour, or gluten-free flour mix"
+      },
+      {
+        "qty": "1 1/2 tablespoons",
+        "item": "olive oil, divided (I used oil from the sundried tomatoes)"
+      },
+      {
+        "qty": "1 small",
+        "item": "shallot, minced"
+      },
+      {
+        "qty": "2 cloves",
+        "item": "garlic, minced"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "tomato paste"
+      },
+      {
+        "qty": "4 cups",
+        "item": "baby spinach, packed"
+      },
+      {
+        "qty": "1 1/2 ounces",
+        "item": "reduced-fat cream cheese, 3 tablespoons"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "chicken broth"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "half-and-half"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "dried oregano"
+      },
+      {
+        "qty": "to taste",
+        "item": "pinch red pepper flakes, adjust to your taste"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "grated Parmesan cheese"
+      }
+    ],
+    "steps": [
+      "Begin by pounding the halved chicken breasts to an even thickness (about 1/2-inch thick). Season them with salt and black pepper. Dredge each chicken piece in flour, shaking off any excess.",
+      "Heat 1 tablespoon of olive oil (or use from the sun dried tomatoes) in a large skillet over medium-high heat. Add the chicken and cook for about 4-5 minutes per side or until the chicken is cooked through and has a golden-brown crust. Remove the chicken from the skillet and set it aside.",
+      "In the same skillet, add the remaining 1/2 tablespoon of olive oil. Add the minced shallot and garlic and sauté for about 1-2 minutes until they become fragrant and translucent.",
+      "Stir in the tomato paste and cook for another 1-2 minutes.",
+      "Add the chopped sundried tomatoes and baby spinach to the skillet. Cook until the spinach wilts.",
+      "Reduce the heat to low, and then add the cream cheese, chicken broth, half-and-half, dried oregano, and red pepper flakes. Stir until the cream cheese is fully melted and the sauce is well combined.",
+      "Return the cooked chicken to the skillet and let it simmer in the sauce for a few minutes until heated through.",
+      "Sprinkle with grated Parmesan cheese and serve."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — shallot, garlic, wheat flour, cream cheese and half-and-half (lactose). Sun-dried tomatoes are fine in a small serve. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas. A lighter version than the \"Marry Me Chicken\" already in the cookbook, so both are kept."
+  },
+  {
+    "id": "fam-ez-instant-pot-spaghetti-and-meat-sauce",
+    "name": "Instant Pot Spaghetti and Meat Sauce",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "24 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "instant-pot",
+      "one-pot",
+      "30-min"
+    ],
+    "source": "https://www.skinnytaste.com/instant-pot-one-pot-spaghetti-with-meat-sauce/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "93% ground turkey, or lean ground beef"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "diced onion"
+      },
+      {
+        "qty": "1 clove",
+        "item": "minced garlic"
+      },
+      {
+        "qty": "2 cups",
+        "item": "water"
+      },
+      {
+        "qty": "1 (24 oz) jar",
+        "item": "marinara sauce, your favorite or homemade"
+      },
+      {
+        "qty": "10 ounces",
+        "item": "spaghetti, wheat or gluten-free, or bucatini, linguini"
+      },
+      {
+        "qty": "to taste",
+        "item": "grated parmesan cheese, optional for serving"
+      }
+    ],
+    "steps": [
+      "Press saute on the Instant Pot. When hot add the ground turkey or beef and salt and cook, breaking up with a wooden spoon about 3 minutes.",
+      "Add the onions, and garlic and cook until softened, 3 to 4 minutes.",
+      "Press cancel then add the water and using a wooden spoon, scrape up any food stuck to the bottom of the pot (to avoid the burn message).",
+      "Add spaghetti (broken in half so it fits), then cover with the marinara sauce, making sure it covers the pasta, without stirring.",
+      "Cover and cook on high pressure 9 minutes.",
+      "After 9 minutes, use the quick release method (which means turn the knob to venting so the steam releases) so the pasta doesn’t continue cooking, and open the lid. Stir and serve topped with grated cheese if desired!"
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat spaghetti, and jarred marinara almost always contains onion and garlic. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas. Use a low-FODMAP marinara and gluten-free spaghetti."
   }
 ];
 
