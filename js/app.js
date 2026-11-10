@@ -2983,7 +2983,8 @@
 
 
 
-      <div class="recipe-card-banner">
+      <div class="recipe-card-banner${r.image ? ' has-img' : ''}">
+        ${r.image ? `<img class="recipe-card-img" src="${r.image}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-img'); this.remove()">` : ''}
 
 
 
@@ -3008,7 +3009,7 @@
 
 
 
-        ${r.emoji || '🍽️'}
+        <span class="recipe-card-emoji">${r.emoji || '🍽️'}</span>
 
 
 
@@ -4310,6 +4311,7 @@
 
 
 
+          ${recipe.image ? `<img class="rmodal-img" src="${recipe.image}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
           <span class="rmodal-emoji">${recipe.emoji || '🍽️'}</span>
 
 

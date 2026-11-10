@@ -164,6 +164,19 @@ function findRecipesInLd(data) {
   return out;
 }
 
+// First usable image URL from a JSON-LD Recipe's `image` (string, array,
+// or ImageObject). Undefined when the page gives none.
+function ldImage(img) {
+  const one = (v) => {
+    if (!v) return undefined;
+    if (typeof v === 'string') return /^https?:\/\//.test(v) ? v : undefined;
+    if (Array.isArray(v)) { for (const x of v) { const u = one(x); if (u) return u; } return undefined; }
+    if (typeof v === 'object') return one(v.url || v.contentUrl || v['@id']);
+    return undefined;
+  };
+  return one(img);
+}
+
 // One JSON-LD Recipe → the object js/added-recipes.js and the Add My Recipe
 // form both use. `today` is YYYY-MM-DD (the 🆕 Newest filter reads it).
 function toAppRecipe(r, url, today) {
@@ -184,6 +197,7 @@ function toAppRecipe(r, url, today) {
     difficulty: 'easy',
     tags: ['added'],
     source: cleanSourceUrl(url),
+    ...(ldImage(r.image) ? { image: ldImage(r.image) } : {}),
     added: today,
     ingredients,
     steps,
