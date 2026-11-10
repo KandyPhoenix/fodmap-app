@@ -963,4 +963,1678 @@ const KANDY_RECIPES = [
     "isCustom": true
   },
 
+
+  // ─── RACHEL PAULS FOOD — 30-minute low-FODMAP, gluten-free dinners ─────────
+  {
+    "id": "kandy-rp-skillet-chicken-cacciatore",
+    "name": "Skillet Chicken Cacciatore",
+    "emoji": "🍅",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free option",
+      "one-pan",
+      "30-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-skillet-chicken-cacciatore-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 lb (16 ounces)",
+        "item": "boneless skinless chicken breasts, of uniform thickness"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "garlic-infused olive oil"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "low-FODMAP certified Italian Seasoning"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "1 teaspoon + 1 tablespoon",
+        "item": "onion- or shallot-infused oil, divided"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "garlic-infused oil"
+      },
+      {
+        "qty": "1",
+        "item": "green bell pepper (75g), sliced"
+      },
+      {
+        "qty": "4.5 ounces (127 g)",
+        "item": "canned sliced mushrooms, rinsed and drained"
+      },
+      {
+        "qty": "1 medium",
+        "item": "zucchini (150 g), sliced into sticks"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "crushed red pepper flakes, optional, will add a bit of heat"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "dried thyme"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "kosher salt, plus to taste"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "black pepper, plus to taste"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "dry white wine"
+      },
+      {
+        "qty": "1/4 cup (15g, 0.5 oz)",
+        "item": "fresh basil, chopped; divided"
+      },
+      {
+        "qty": "1/4 cup (15g)",
+        "item": "fresh flat leaf parsley, chopped; divided"
+      },
+      {
+        "qty": "15 ounces",
+        "item": "diced or crushed tomatoes (canned)"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "tomato paste"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "capers"
+      },
+      {
+        "qty": "to taste",
+        "item": "Freshly grated parmesan cheese to taste (garnish, omit for dairy-free)"
+      }
+    ],
+    "steps": [
+      "Combine first 5 ingredients for chicken marinade in a small bowl or freezer bag. Rub the chicken into the oil and spices and place in refrigerator while you prep the other ingredients",
+      "Place a large skillet (I used 11 inch cast iron) over medium high heat",
+      "Add 1 tablespoon of onion-infused oil to the skillet",
+      "When oil shimmers, add the chicken and the marinade to the pan",
+      "Sear the chicken for about 2 minutes per side, then remove to a covered plate to keep warm (it will not be fully cooked, that is OK)",
+      "Add remaining teaspoon of onion infused oil to the skillet with the garlic-infused oil",
+      "Add the bell pepper, mushrooms, zucchini, crushed red pepper flakes, thyme, salt and pepper to the skillet and cook for about 3-4 minutes until the vegetables start to soften, covering if desired",
+      "Add in the wine and cook for another minute or until the liquid reduces by about half, adjusting the temperature as necessary",
+      "Stir in half of each of the parsley and basil",
+      "Pour the canned tomatoes in the skillet, then tomato paste, and stir well, then add capers and taste and adjust seasonings as desired",
+      "Replace the chicken breasts and cover with sauce",
+      "Reduce the heat, cover and simmer for about 10-15 minutes or until the chicken is cooked through (internal temperature of 165F)",
+      "Sprinkle the remaining herbs and shredded parmesan cheese (optional) over top and serve immediately",
+      "Delicious with low-FODMAP bread, salad or low-FODMAP pasta"
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Green bell pepper, zucchini, canned tomatoes and tomato paste are portioned to low-FODMAP amounts by the author; canned mushrooms rinsed are fine. White wine and capers are fine. Skip the Parmesan garnish for dairy-free.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-chicken-marsala",
+    "name": "Chicken Marsala",
+    "emoji": "🍷",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "30-min"
+    ],
+    "source": "https://rachelpaulsfood.com/homemade-low-fodmap-30-minute-chicken-marsala-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1/2 cup",
+        "item": "low-FODMAP, gluten-free rice flour"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "16 ounces",
+        "item": "boneless skinless chicken breasts, pounded to 1/4 inch thickness"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "olive oil"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "garlic infused oil"
+      },
+      {
+        "qty": "4.5 ounces (127 g)",
+        "item": "canned, sliced mushrooms, rinsed and drained"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "dry Marsala wine"
+      },
+      {
+        "qty": "1 1/4 cups",
+        "item": "low-FODMAP chicken broth or stock"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "heavy cream"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "fresh chopped parsley"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and pepper to taste"
+      },
+      {
+        "qty": "to taste",
+        "item": "Optional: 1/2-1 teaspoon truffle oil (titrate to the potency of your product), or 1 tablespoon mushroom infused oil"
+      }
+    ],
+    "steps": [
+      "If not already done so, pound your chicken breasts with your mallet to ¼-inch thickness between plastic wrap or wax paper",
+      "Mix the low-FODMAP rice flour, salt and pepper in a shallow bowl",
+      "Set up a large skillet with your 3 tablespoons oil and allow the oil to heat until shimmering",
+      "While oil is heating, dredge the chicken in the flour mixture and shake off any excess",
+      "When oil is hot, fry chicken breasts until golden-brown on both sides (about 3 to 4 minutes per side) They don’t need to be fully cooked at this point",
+      "Transfer browned chicken to a plate to keep warm (you will replace it in the sauce later)",
+      "When all the chicken is finished, in the same pan, prepare the low-FODMAP Marsala sauce",
+      "Turn down your heat as needed and place the garlic infused oil in skillet to warm, scrape pan to deglaze if needed",
+      "Press your sliced, drained mushrooms between paper towels to blot dry, then add the mushrooms to the skillet to brown lightly, about 2 minutes",
+      "Next, pour in the Marsala wine and the low-FODMAP Chicken broth and simmer, uncovered, until reduced by half and starting to thicken",
+      "This takes a little time, about 10 minutes, adjust your heat as necessary",
+      "Pour in the heavy cream and stir, then add the mushroom infused oil, if using",
+      "Return the chicken to the sauce",
+      "Cook until the sauce thickens more (about 3-8 minutes)",
+      "Taste sauce, add salt and pepper to taste",
+      "Garnish with chopped parsley prior to serving",
+      "Serve with your favorite low-FODMAP, GF Pasta (I used spaghettini, Ronzoni brand)"
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Rice flour replaces wheat flour, canned mushrooms (rinsed) replace fresh, and the heavy cream works out to a small serve. Marsala wine is fine in this amount.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-30-minute-chicken-quesadillas",
+    "name": "30-Minute Chicken Quesadillas",
+    "emoji": "🫓",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-gluten-free-30-minute-chicken-quesadillas/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "3 cups (14 ounces)",
+        "item": "shredded or chopped, cooked chicken (breast or thigh meat)"
+      },
+      {
+        "qty": "6 tablespoons",
+        "item": "canned, diced fire roasted tomatoes or low-FODMAP salsa"
+      },
+      {
+        "qty": "4",
+        "item": "scallions, green tips only"
+      },
+      {
+        "qty": "3/4 teaspoon",
+        "item": "ground cumin"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "dried oregano"
+      },
+      {
+        "qty": "12",
+        "item": "five-inch low-FODMAP and gluten-free tortillas"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "avocado oil or other preferred oil for cooking; divided"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "garlic-infused oil"
+      },
+      {
+        "qty": "2 cups",
+        "item": "shredded Monterey Jack cheese or mixed blend cheddar cheese; divided"
+      },
+      {
+        "qty": "to taste",
+        "item": "Desired toppings: lactose-free sour cream, low-FODMAP salsa, chopped avocado, black olives"
+      }
+    ],
+    "steps": [
+      "Preheat your oven to 400F and line a baking sheet with parchment paper, or silicone liners",
+      "In a large skillet, heat 2 teaspoons of avocado oil. Gently brown the first tortilla on one side and lay it on your baking sheet. Repeat until all have been toasted",
+      "Add infused oil to the skillet, followed by chicken, scallion tips, cumin, salt and oregano",
+      "Cook, uncovered, over medium heat until heated through, about 5 minutes",
+      "Spoon 1/6 chicken mixture over half of each tortilla; then sprinkle with 1/3 cup cheese and 1 tablespoon fire roasted tomatoes or salsa",
+      "Cover with a second tortilla half (grilled side on outside) and place in preheated oven",
+      "Bake until tortillas are crisp and golden brown, about 7-10 minutes",
+      "To make extra crispy, press down on each one with a spatula, then broil on high for another 5 minutes",
+      "Cut into wedges; serve with desired toppings"
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Use low-FODMAP gluten-free tortillas and a low-FODMAP salsa or plain fire-roasted tomatoes. Monterey Jack and cheddar are low-lactose cheeses; lactose-free sour cream for topping. Serves 6.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-salisbury-steak",
+    "name": "Salisbury Steak (Rachel Pauls)",
+    "emoji": "🥩",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/family-favorite-30-minute-low-fodmap-salisbury-steak-recipe-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1/2 cup",
+        "item": "low-FODMAP, gluten-free breadcrumbs, such as Panko"
+      },
+      {
+        "qty": "1 lb (16 oz)",
+        "item": "lean ground beef"
+      },
+      {
+        "qty": "1 large",
+        "item": "egg"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "onion or shallot infused oil"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "garlic infused oil"
+      },
+      {
+        "qty": "2 tablespoons (30 g)",
+        "item": "ketchup"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "Worcestershire sauce"
+      },
+      {
+        "qty": "3 teaspoons",
+        "item": "Dijon mustard"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "each of salt and pepper"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "oil for cooking"
+      },
+      {
+        "qty": "",
+        "item": "— For the gravy —"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "oil"
+      },
+      {
+        "qty": "5 ounces (127 g)",
+        "item": "sliced, canned mushrooms, rinsed and drained"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "garlic infused oil"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "low-FODMAP, gluten-free rice flour or potato flour"
+      },
+      {
+        "qty": "2 cups",
+        "item": "low-FODMAP beef broth / stock, plus extra as needed"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "Dijon mustard"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "Worcestershire sauce"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and pepper to taste"
+      },
+      {
+        "qty": "to taste",
+        "item": "Fresh parsley, for garnish, optional"
+      }
+    ],
+    "steps": [
+      "Place all Salisbury Steak ingredients into a large bowl and mix with your hands until combined.",
+      "Divide into 4 oval patties.",
+      "Heat a large non-stick cast iron skillet over high heat and add oil for cooking.",
+      "Add the steaks and cook the first side for 1 minute or until browned, then flip and brown the other side (they will still be raw inside).",
+      "Place onto a plate for now.",
+      "Prepare the gravy: Turn heat to medium and add oil to the skillet to warm. Place the mushrooms into the skillet and cook for 2 - 3 minutes.",
+      "Add the garlic infused oil then stir in the low-FODMAP, GF flour and stir for about 30 seconds. Gradually add in low-FODMAP beef broth, stirring as you go.",
+      "Once mostly lump free, whisk in remaining ingredients.",
+      "Taste sauce, and add salt and pepper as needed.",
+      "Add the prepared steaks, then cook for 5 - 7 minutes, or until gravy is thickened, stirring occasionally. If the gravy thickens too much, add more low-FODMAP broth."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Gluten-free breadcrumbs and rice flour, canned mushrooms rinsed, and only 2 tablespoons of ketchup across 4 serves. Check that your ketchup and Worcestershire have no onion or garlic. A \"Salisbury Steak\" already exists in the cookbook, so this one carries the source name.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-sesame-glazed-tofu",
+    "name": "Sesame Glazed Tofu",
+    "emoji": "🥢",
+    "category": "dinner",
+    "time": "20 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegan",
+      "20-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-sesame-glazed-tofu-gluten-free-vegan/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "7 oz (200 g)",
+        "item": "extra-firm tofu, drained and pressed"
+      },
+      {
+        "qty": "4 tablespoons",
+        "item": "cornstarch, divided (3 tbsp + 1 tbsp)"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "paprika"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "garlic infused olive oil, or canola oil, depending on your preference, for frying"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "soy sauce or gluten-free soy sauce"
+      },
+      {
+        "qty": "1/4 cup + 1 tablespoon",
+        "item": "water, divided"
+      },
+      {
+        "qty": "1 1/2 tablespoons",
+        "item": "sesame oil"
+      },
+      {
+        "qty": "1 1/2 tablespoons",
+        "item": "rice vinegar (not seasoned rice vinegar)"
+      },
+      {
+        "qty": "3 1/2 tablespoons",
+        "item": "maple syrup"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "toasted sesame seeds, plus extra for garnish"
+      },
+      {
+        "qty": "to taste",
+        "item": "Green scallion tips, chopped"
+      }
+    ],
+    "steps": [
+      "Begin by pressing your tofu, wrap it in a towel and leave something heavy on it for a 2-3 minutes While tofu is pressing, create a slurry with 1 tbsp of the cornstarch in 1 tbsp of water, mixed well.",
+      "Set aside for later.",
+      "Cut tofu into chunks, bite sized.",
+      "Mix remaining 3 tbsp cornstarch and paprika together in a medium bowl, then add in chunks of tofu and toss to coat.",
+      "Place coated tofu pieces into a non-stick medium sized saucepan over medium low heat with your oil Do not crowd your pieces, work in batches if necessary.",
+      "Cook for about 5-7 minutes, flipping often until all sides are golden.",
+      "While cooking, prepare sauce.",
+      "In a medium pot, place soy sauce, water, sesame oil, rice vinegar and maple syrup and mix well.",
+      "Place sauce on the stove and cook over medium low until heated well but not boiling.",
+      "Add in the slurry and begin to stir the sauce for 3-5 mins until the cornstarch has dissolved.",
+      "Remove from heat, add the tofu and 2 tbsp sesame seeds.",
+      "Toss to coat everything.",
+      "Serve over white rice and top with extra sesame seeds and scallion tips"
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Firm tofu, cornstarch, soy sauce, maple syrup and sesame are all fine. Use gluten-free soy sauce if needed. Serves 2.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-sheet-pan-caprese-chicken",
+    "name": "Sheet Pan Caprese Chicken",
+    "emoji": "🍅",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "sheet-pan",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/easy-low-fodmap-sheet-pan-caprese-chicken-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 tablespoons",
+        "item": "olive oil or garlic infused oil; divided"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "low-FODMAP Italian seasoning"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "Kosher salt, plus to taste"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "freshly ground black pepper, plus to taste"
+      },
+      {
+        "qty": "2 large",
+        "item": "tomatoes, sliced"
+      },
+      {
+        "qty": "4-6",
+        "item": "boneless, skinless chicken breasts, about 24 ounces"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "balsamic vinegar"
+      },
+      {
+        "qty": "about 3/4 lb",
+        "item": "fresh mozzarella, sliced into 6-12 rounds"
+      },
+      {
+        "qty": "6-8",
+        "item": "fresh basil leaves, torn"
+      },
+      {
+        "qty": "3-4 cups",
+        "item": "of baby arugula, for serving, optional"
+      },
+      {
+        "qty": "to taste",
+        "item": "Crusty low-FODMAP, gluten-free bread for serving"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 400 degrees F and place rack in the center of oven.",
+      "Place the chicken breasts in a large bowl.",
+      "Add oil or infused oil, low-FODMAP Italian seasoning, salt, and pepper to the chicken and rub the seasoning and oil over the breasts.",
+      "Lay the chicken breasts on the sheet pan, and drizzle the chicken with the remaining tablespoon of oil.",
+      "Place chicken in oven for about 15 minutes.",
+      "While this is baking, place your balsamic vinegar in a small saucepan and bring to a boil over medium-high heat.",
+      "Lower the heat to medium, and simmer until the vinegar has reduced by half and is thick enough to coat back of the spoon, about 5 minutes.",
+      "Remove from heat and set aside for now After 15 minutes, remove chicken from oven, place sliced mozzarella cheese over each piece of chicken and then tomato slice Replace in oven for 5-10 minutes Chicken is done when the internal temperature is 165 degrees F When chicken is cooked, remove from oven and sprinkle the chicken with the fresh basil and drizzle with the balsamic reduction.",
+      "Add salt and pepper to taste Tilting the pan, spoon the collected pan juices over the tomatoes and chicken Serve on a bed of arugula with low-FODMAP crusty bread on the side"
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Fresh mozzarella is a low-lactose cheese, tomatoes and basil are fine, and the balsamic works out to 1 tablespoon per serve. Serve with gluten-free bread or over arugula.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-penne-alla-vodka",
+    "name": "Penne alla Vodka",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "20 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "20-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-gluten-free-penne-alla-vodka/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "8 ounces",
+        "item": "uncooked LF, gluten-free penne pasta"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "garlic infused olive oil"
+      },
+      {
+        "qty": "1 tablespoon + 1 teaspoon",
+        "item": "onion-infused oil, divided"
+      },
+      {
+        "qty": "1/4 cup (2 ounces)",
+        "item": "vodka"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "all-natural tomato paste"
+      },
+      {
+        "qty": "3/4 cup + 2 tablespoons",
+        "item": "heavy whipping cream"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "Kosher salt, plus to taste"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "black pepper, plus to taste"
+      },
+      {
+        "qty": "1/8 teaspoon",
+        "item": "red pepper flakes, optional"
+      },
+      {
+        "qty": "1/2 ounce",
+        "item": "fresh basil, chopped, plus for garnish"
+      },
+      {
+        "qty": "to taste",
+        "item": "Freshly grated Parmesan, optional"
+      }
+    ],
+    "steps": [
+      "Boil a large pot of water for the penne and cook it al dente according to package instructions (about 7 minutes)",
+      "While cooking, add the infused oils to a skillet over medium heat and allow to warm",
+      "Add the vodka and let the sauce bubble for 30 seconds or so",
+      "Stir in the tomato paste until well combined, then add the cream slowly and reduce heat",
+      "As the sauce thickens, stir intermittently and season with salt, black pepper, and red pepper flakes, if using",
+      "Before draining pasta, reserve 1/2 cup of the water from the pasta, set aside for later",
+      "Add the pasta water to the sauce to loosen, as needed (start with 1/4 cup, then add a tablespoon at a time)",
+      "Stir in the basil, and add seasoning to taste",
+      "Drain pasta and toss with 1 teaspoon of infused oil, then place in the skillet to cover with the sauce",
+      "Sprinkle with Parmesan before serving"
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Tomato paste is 1/2 cup across four serves and heavy cream works out to a small serve each; if you are sensitive to either, make it a side portion. Vodka is fine.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-honey-walnut-shrimp",
+    "name": "Honey Walnut Shrimp",
+    "emoji": "🍤",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free option",
+      "30-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-honey-walnut-shrimp-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1/2 cup",
+        "item": "water"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "granulated sugar"
+      },
+      {
+        "qty": "to taste",
+        "item": "Pinch of salt"
+      },
+      {
+        "qty": "1/2 cup (50 g)",
+        "item": "walnut halves, raw"
+      },
+      {
+        "qty": "4 large",
+        "item": "egg whites"
+      },
+      {
+        "qty": "2/3 cup",
+        "item": "cornstarch"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "mayonnaise"
+      },
+      {
+        "qty": "1 pound (18-20)",
+        "item": "large shrimp, tails off, peeled and deveined"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "light corn syrup"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "honey"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "sweetened condensed milk"
+      },
+      {
+        "qty": "1 cup",
+        "item": "canola or other high smoke point oil for frying"
+      },
+      {
+        "qty": "to taste",
+        "item": "Green scallion tips for garnish, optional"
+      }
+    ],
+    "steps": [
+      "Place water, salt, sugar and walnuts in small saucepan and bring to a boil over medium high heat (this will create the candied walnuts for the dish).",
+      "Boil for 2 minutes, then remove the walnuts using a slotted spoon and place on a small plate to dry and cool.",
+      "In a small bowl, stir together corn syrup, honey, mayonnaise and sweetened condensed milk to create your sauce.",
+      "Set aside for later In a medium bowl, whisk the egg whites until they are foamy Add cornstarch, whisk again until these are well incorporated.",
+      "This will create your tempura-like batter.",
+      "Dip shrimp in the batter one at a time using a fork or other dipping tool The coating should be somewhat light on the shrimp.",
+      "In a deep pan or pot, heat oil until shimmering, then add shrimp to brown lightly on both sides, about 5 minutes You may need to work in batches, use a cover to prevent spattering of the hot oil.",
+      "Add the fried shrimp to the prepared mayonnaise sauce and toss lightly to coat.",
+      "Place into your serving plate and top with the candied walnuts.",
+      "Serve immediately, topped with sliced scallion tips, over white rice."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. The sweet sauce uses mayonnaise with just 1 tablespoon each of honey and condensed milk across four serves, which the author counts as low-FODMAP; if you react to fructose, treat it as borderline. Walnuts are fine in this amount. Shrimp and cornstarch batter are fine.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-lemon-artichoke-fettuccine",
+    "name": "Lemon Artichoke Fettuccine",
+    "emoji": "🍋",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegetarian",
+      "30-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-lemon-artichoke-fettuccine-pasta-gluten-free-vegetarian/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "8 ounces",
+        "item": "low-FODMAP, gluten-free fettuccini pasta, or your preferred alternative"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "garlic infused oil"
+      },
+      {
+        "qty": "1 (14 oz) jar or can",
+        "item": "artichoke hearts, quartered and drained"
+      },
+      {
+        "qty": "to taste",
+        "item": "Zest of 1 medium lemon"
+      },
+      {
+        "qty": "to taste",
+        "item": "Juice of 1 medium lemon"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "dry white wine, such as chardonnay"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "chopped fresh parsley, plus additional for garnish; divided"
+      },
+      {
+        "qty": "6",
+        "item": "basil leaves, chopped, plus additional for garnish; divided"
+      },
+      {
+        "qty": "4 tablespoons",
+        "item": "unsalted butter"
+      },
+      {
+        "qty": "1 1/2 teaspoons",
+        "item": "salt, divided"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "freshly ground black pepper"
+      },
+      {
+        "qty": "½ cup",
+        "item": "freshly grated Parmesan cheese"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "toasted pine nuts"
+      }
+    ],
+    "steps": [
+      "Add 1 teaspoon of the salt to a large pot of water and bring to a boil.",
+      "Cook the pasta until al-dente (slightly firm).",
+      "While the water is boiling, add the infused oil to a large skillet and heat over medium-high heat.",
+      "Add the artichoke hearts, lemon zest, lemon juice, and white wine.",
+      "Bring to a simmer for about 10 minutes, or until the liquid has reduced to half.",
+      "Stir in half the parsley and basil.",
+      "Add the butter and let it melt into the sauce.",
+      "Season with the ½ tsp each of salt and pepper and stir, then turn down the heat on the sauce to stay just warm until pasta is ready.",
+      "When the pasta is cooked, drain and toss it in the skillet with the sauce and remaining parsley and basil to coat.",
+      "Sprinkle with the freshly grated Parmesan cheese, garnish with your fresh basil and parsley as well as toasted pine nuts.",
+      "Serve immediately."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Canned artichoke hearts are low-FODMAP in a small serve (fresh artichoke is not); one can across four serves fits. The author notes 1 cup of white wine is one low-FODMAP serve, and this uses 1 1/2 cups across four. Parmesan and pine nuts are fine.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-pasta-alle-vongole",
+    "name": "Pasta alle Vongole",
+    "emoji": "🐚",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "30-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-pasta-alla-vongole-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "4 tablespoons",
+        "item": "garlic infused oil"
+      },
+      {
+        "qty": "6 tablespoons",
+        "item": "unsalted butter"
+      },
+      {
+        "qty": "to taste",
+        "item": "Pinch red pepper flakes"
+      },
+      {
+        "qty": "2 (6.5 ounce) cans",
+        "item": "chopped clams"
+      },
+      {
+        "qty": "1 (10 ounce) can",
+        "item": "whole clams"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "white wine"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "finely chopped Italian Parsley"
+      },
+      {
+        "qty": "to taste",
+        "item": "Zest of one lemon, optional"
+      },
+      {
+        "qty": "to taste",
+        "item": "Grated Parmesan, optional"
+      },
+      {
+        "qty": "12 ounces",
+        "item": "dry low-FODMAP, Gluten-free pasta, I like Linguini"
+      }
+    ],
+    "steps": [
+      "Drain clams and reserve clam water/juice from 2 of the cans of chopped clams.",
+      "Heat infused oil in saucepan on low and simmer for about 2 minutes.",
+      "Add butter and red pepper flakes.",
+      "When butter is melted, add reserved clam water/juice and wine and heat until broth is reduced by half.",
+      "While this is cooking, boil your pasta in a large pot with salted water until al-dente.",
+      "Drain pasta when cooked.",
+      "When sauce is reduced, stir in cooked pasta, clams, parsley and lemon zest until combined.",
+      "Serve hot with freshly ground black pepper topped with optional Parmesan cheese, if desired."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Canned clams, butter, white wine and parsley are all fine. Use low-FODMAP gluten-free linguine. Serves 6.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-30-minute-korean-beef",
+    "name": "30-Minute Korean Beef",
+    "emoji": "🥩",
+    "category": "dinner",
+    "time": "15 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "15-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-korean-beef-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 tablespoon",
+        "item": "garlic infused oil"
+      },
+      {
+        "qty": "1 pound",
+        "item": "lean ground beef"
+      },
+      {
+        "qty": "1/4-1/2 cup",
+        "item": "dark brown sugar, per your desired sweetness"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "soy sauce, gluten-free if necessary"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "toasted sesame oil"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "fresh ginger, minced or grated"
+      },
+      {
+        "qty": "1/2 – 1 teaspoon",
+        "item": "crushed red pepper, titrate to taste"
+      },
+      {
+        "qty": "4-6",
+        "item": "scallions, green tips only"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and pepper, if desired"
+      },
+      {
+        "qty": "to taste",
+        "item": "Toasted sesame seeds, for garnish"
+      },
+      {
+        "qty": "to taste",
+        "item": "Cooked white rice, or lettuce leaves/lettuce cups, for serving"
+      }
+    ],
+    "steps": [
+      "Heat infused oil in a large skillet over medium heat",
+      "Add the beef, and brown it completely, breaking into pieces as it cooks with a wooden spoon or spatula (This part takes about 5-7 minutes)",
+      "While beef is cooking, in a small bowl, combine your sesame oil, brown sugar, soy sauce, ginger, and red pepper flakes",
+      "Once beef is cooked, drain excess grease, if necessary",
+      "Pour the sauce over the beef in the skillet, and allow to simmer for a few minutes on medium, or medium-low heat",
+      "Taste, and season as desired (more sugar, pepper, etc)",
+      "Remove from heat and stir in scallion tips. Garnish with sesame seeds",
+      "Serve over steamed rice, or in lettuce leaves/cups"
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Soy sauce, brown sugar and sesame oil are fine in these amounts. Use gluten-free soy sauce if needed. Serve over rice or in lettuce cups.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-creamy-tuscan-chicken",
+    "name": "Creamy Tuscan Chicken",
+    "emoji": "🍗",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "one-pan",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-creamy-tuscan-chicken-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "3 tablespoons",
+        "item": "olive oil or your preferred oil for pan cooking; divided"
+      },
+      {
+        "qty": "24 ounces",
+        "item": "boneless, skinless chicken breasts"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "low-FODMAP Italian seasoning"
+      },
+      {
+        "qty": "5 tablespoons",
+        "item": "low-FODMAP gluten-free flour, divided"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "salt, plus additional for sprinkling"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "pepper, plus additional for sprinkling"
+      },
+      {
+        "qty": "1/2 cup (27 g)",
+        "item": "chopped sun dried tomatoes"
+      },
+      {
+        "qty": "1 cup",
+        "item": "low-FODMAP chicken broth, prepared"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "heavy cream or canned coconut cream for dairy-free"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "grated Parmesan cheese, plus additional for serving"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "garlic-infused oil"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "shallot or onion infused oil"
+      },
+      {
+        "qty": "3 tablespoons (14g)",
+        "item": "fresh basil; chopped, plus for garnish"
+      },
+      {
+        "qty": "5 ounces (143 g)",
+        "item": "fresh spinach, lightly torn"
+      }
+    ],
+    "steps": [
+      "Pound your chicken breasts using a mallet or rolling pin between plastic wrap or parchment to tenderize",
+      "Place 4 tablespoons of flour, low-FODMAP Italian seasoning, salt and pepper on a shallow plate, and mix lightly",
+      "Lightly dredge chicken in the flour mixture",
+      "Heat the olive oil or other oil in a skillet over medium high heat",
+      "When the pan is hot, add the chicken pieces and brown on both sides, about 2-4 minutes per side",
+      "Remove chicken to a plate to keep warm",
+      "To the skillet, add remaining 2 tablespoons olive oil and sundried tomatoes cook for 1-2 minutes or until fragrant.",
+      "Whisk in the remaining 1 tablespoon LF flour and allow to thicken for approximately 1 minute",
+      "Add the heavy cream, LF chicken broth, 1/4 cup parmesan cheese, 2 infused oils and stir to combine",
+      "Allow to cook until the sauce begins to thicken",
+      "Add the spinach and fresh basil and reduce heat to simmer",
+      "Cook until the spinach wilts slightly",
+      "Taste sauce and add salt and pepper to taste",
+      "Add the chicken back into the skillet and turn to coat in the sauce",
+      "Simmer until the chicken is heated through, and internal temperature is 165F, about 5 minutes. Garnish with additional fresh parmesan and fresh basil, and serve alongside your preferred low-FODMAP, GF Pasta or potatoes (try my low-FODMAP Rosemary Lemon Roasted Potatoes!)."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Heavy cream is a small amount per serve; use the canned coconut cream option if lactose bothers you. Keep the sun-dried tomatoes to the listed 1/2 cup across six serves. Parmesan is a hard, low-lactose cheese.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-spaghetti-alla-carbonara",
+    "name": "Spaghetti alla Carbonara",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "30-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-spaghetti-alla-carbonara-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "16 ounces (375 g)",
+        "item": "low-FODMAP, gluten-free dry spaghetti"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "garlic infused oil"
+      },
+      {
+        "qty": "6 ounces",
+        "item": "pancetta or slab bacon, cubed or sliced into small strips"
+      },
+      {
+        "qty": "2 large",
+        "item": "eggs and 2 egg yolks, room temperature"
+      },
+      {
+        "qty": "1 cup (90 g)",
+        "item": "freshly grated Pecorino Romano or Parmigiano-Reggiano (Parmesan cheese), plus more for serving"
+      },
+      {
+        "qty": "½ tsp",
+        "item": "freshly ground black pepper, plus to taste"
+      },
+      {
+        "qty": "to taste",
+        "item": "Kosher salt, to taste"
+      },
+      {
+        "qty": "1",
+        "item": "handful fresh Italian (flat) parsley, chopped"
+      }
+    ],
+    "steps": [
+      "Bring a large pot of salted water to a boil.",
+      "Add your pasta and cook for 7 to 10 minutes until cooked but still slightly firm (otherwise known as al-dente).",
+      "Adjust this cook time based on your pasta brand (gluten-free will get mushy so do NOT overcook).",
+      "In a small bowl, beat the egg, egg yolks and Pecorino or Parmesan together well, then add the 1/2 teaspoon of black pepper and whisk again.",
+      "Set aside for later.",
+      "It should be like a creamy sauce.",
+      "Once your pasta is about halfway through cooking, heat the infused oil in a deep skillet over medium heat (I prefer a cast iron skillet for this).",
+      "Add the pancetta or slab bacon and sauté until the bacon is crisp (about 3 minutes).",
+      "Drain the pasta, and reserve 1/2 cup of the pasta water for later.",
+      "Remove the pan from heat and turn off burner.",
+      "Add the drained pasta to the pan and toss for 2 minutes to coat the noodles in the residual fat.",
+      "Slowly pour the egg/cheese mixture into the pasta, whisking quickly until the eggs thicken, but do not scramble (this is done off the heat to limit the eggs from overcooking).",
+      "Thin out the sauce with the reserved pasta water, a bit at a time, until it reaches your desired consistency.",
+      "Season the carbonara with several turns of freshly ground black pepper and salt to taste.",
+      "Serve the low-FODMAP Spaghetti Alla Carbonara garnished with the chopped parsley and additional Pecorino/Parmesan."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Pecorino and Parmesan are hard, low-lactose cheeses; pancetta, eggs and black pepper are fine. Eight ingredients.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-chicken-a-la-king",
+    "name": "Chicken à la King",
+    "emoji": "🍲",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free option",
+      "one-pot",
+      "30-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-30-minute-chicken-a-la-king-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 1/2 tablespoons",
+        "item": "onion- or shallot-infused oil"
+      },
+      {
+        "qty": "1 1/2 tablespoons",
+        "item": "garlic-infused oil"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "unsalted butter, or olive oil"
+      },
+      {
+        "qty": "4.5 ounces",
+        "item": "canned sliced mushrooms, drained and rinsed"
+      },
+      {
+        "qty": "1 medium",
+        "item": "green bell pepper, chopped"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "low-FODMAP, gluten-free all-purpose flour"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "low-FODMAP chicken broth or stock"
+      },
+      {
+        "qty": "1 cup",
+        "item": "low-FODMAP milk"
+      },
+      {
+        "qty": "3/4 teaspoon",
+        "item": "salt, plus to taste"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "fresh ground black pepper, plus to taste"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "Dijon mustard"
+      },
+      {
+        "qty": "24 ounces",
+        "item": "chopped or shredded chicken breast"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "heavy cream or canned coconut cream"
+      },
+      {
+        "qty": "1 cup",
+        "item": "canned peas, rinsed and drained, about 150 g"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "finely minced red bell pepper or pimentos, drained"
+      },
+      {
+        "qty": "6 cups",
+        "item": "of your preferred choice of rice, prepared"
+      }
+    ],
+    "steps": [
+      "Melt butter or olive oil over medium-high heat in a heavy stockpot or Dutch oven, then stir in the onion/shallot and garlic infused oils.",
+      "Add green pepper and cook for 5 minutes or until softens.",
+      "Add mushrooms and cook until golden brown (about 2 minutes).",
+      "Adjust heat to medium or medium-low, and stir in the LF,GF rice flour.",
+      "Continue to stir and cook for about 1-2 minutes, the flour will slightly brown.",
+      "Add in the low-FODMAP chicken broth while stirring to combine.",
+      "Once well combined, add the low-FODMAP milk, salt, pepper, and Dijon mustard and simmer for about 3 minutes.",
+      "It should begin to thicken.",
+      "Taste sauce, and adjust seasonings to your preference.",
+      "Reduce heat to low and gently add the heavy cream.",
+      "Next, stir in chicken followed by canned peas and red peppers or pimentos.",
+      "Cook for about 2-3 minutes, until heated through.",
+      "Serve over your prepared rice."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Canned mushrooms, drained and rinsed, are low-FODMAP per Monash (fresh mushrooms are not). Use lactose-free milk and the coconut-cream option for dairy-free. Keep the canned peas to the listed amount.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-one-skillet-bacon-maple-and-mustard-chicken",
+    "name": "One-Skillet Bacon, Maple and Mustard Chicken",
+    "emoji": "🥓",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "one-pan",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/one-skillet-low-fodmap-bacon-maple-and-mustard-chicken-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 1/2 cups",
+        "item": "low-FODMAP chicken broth or stock"
+      },
+      {
+        "qty": "2/3 cup",
+        "item": "Dijon mustard"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "paprika"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/8 teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "8",
+        "item": "strips bacon uncooked, chopped"
+      },
+      {
+        "qty": "2 lbs",
+        "item": "chicken breasts, boneless, skinless, eight 4 ounce breasts"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "onion-infused olive oil"
+      },
+      {
+        "qty": "3 sprigs",
+        "item": "fresh rosemary, plus additional for garnish"
+      },
+      {
+        "qty": "4 tablespoons",
+        "item": "pure maple syrup"
+      }
+    ],
+    "steps": [
+      "In a small bowl or large cup, combine the 1 & 1/2 cups low-FODMAP chicken broth, mustard, paprika, salt and pepper.",
+      "Set aside.",
+      "In a large skillet, cook chopped bacon over medium-high heat just until it starts to brown.",
+      "Remove to a plate, leaving the bacon fat in the skillet To the same skillet, add chicken breasts and brown well on both sides.",
+      "You don’t need to cook them thoroughly at this point.",
+      "Remove to the same plate, with bacon.",
+      "Add 1 tablespoon infused olive oil to the hot skillet (there will still be bacon grease on it too, that is fine), adjusting heat to medium depending on your stovetop.",
+      "Add the chicken broth mixture and stir to combine.",
+      "Bring to boil, scraping the bottom of the pan as needed.",
+      "Add the cooked bacon and mix well Replace the chicken breasts and add the rosemary sprigs.",
+      "Reduce the heat to medium-low and cook for about 15-20 minutes, turning chicken once, until chicken breast is fully cooked and no longer pink in the center (internal temperature of 165 F).",
+      "Remove the chicken to a covered dish to keep warm, leaving the bacon pieces in the skillet.",
+      "Finish the sauce by allowing to boil, stirring frequently, until reduced by half.",
+      "Remove the rosemary and stir in the maple syrup.",
+      "Taste and add salt and pepper as desired.",
+      "Serve chicken with sauce spooned over top, garnished with additional fresh rosemary."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Maple syrup, Dijon mustard, bacon and rosemary are all fine. Serves 8 as written; halve it for a family dinner.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-lemon-butter-chicken-over-pasta",
+    "name": "Lemon Butter Chicken over Pasta",
+    "emoji": "🍋",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "30-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-lemon-butter-chicken-with-pasta-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "4 (4 oz)",
+        "item": "boneless skinless chicken breasts"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "low-FODMAP, gluten-free all-purpose flour"
+      },
+      {
+        "qty": "4 tablespoons",
+        "item": "butter; divided"
+      },
+      {
+        "qty": "2 tbsp",
+        "item": "chopped chives or green scallion tips"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "shallot or onion infused oil"
+      },
+      {
+        "qty": "1 cup",
+        "item": "low-FODMAP chicken broth/stock"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "fresh lemon juice, about 1 medium lemon"
+      },
+      {
+        "qty": "8 ounces",
+        "item": "low-FODMAP, gluten-free Penne or Farfalle Pasta"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and pepper"
+      }
+    ],
+    "steps": [
+      "Slice raw chicken crosswise into narrow strips.",
+      "Place low-FODMAP flour in a shallow dish or plate and coat chicken pieces in it.",
+      "Heat a large pan over medium heat and add 2 tablespoons butter.",
+      "When butter is melted, add chives and let infuse the oil for 2-3 minutes.",
+      "Next, add the chicken strips and saute, stirring frequently, until cooked through (about 3-5 minutes).",
+      "While cooking chicken, in a separate saucepan, cook pasta until al-dente style (slightly firm).",
+      "Remove pasta and drain, toss with infused oil.",
+      "When chicken is cooked, place in covered dish to keep warm.",
+      "Add low-FODMAP chicken broth to the pan and allow to simmer.",
+      "Add lemon juice and boil until mixture is reduced to about 1/3 cup (about 4 to 5 minutes).",
+      "Remove from heat and add remaining 2 tablespoons butter.",
+      "Return chicken to pan and heat through.",
+      "Taste sauce, and add salt and pepper as desired.",
+      "Toss with pasta to coat and serve in a large bowl or casserole dish."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Chives or scallion green tips give the onion flavour. Butter is fine in this amount. Use low-FODMAP gluten-free penne or farfalle.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-vegetarian-pad-thai",
+    "name": "Vegetarian Pad Thai",
+    "emoji": "🍜",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 3,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegetarian",
+      "vegan option",
+      "30-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-pad-thai-perfection-recipe/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1/3 cup",
+        "item": "water or low-FODMAP vegetable stock"
+      },
+      {
+        "qty": "2 tbsps",
+        "item": "soy sauce, optional use gluten free"
+      },
+      {
+        "qty": "3 tbsps",
+        "item": "brown sugar"
+      },
+      {
+        "qty": "3 tbsps",
+        "item": "natural peanut butter, salted or unsalted"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "fresh squeezed lime juice"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "rice wine vinegar"
+      },
+      {
+        "qty": "2 tsps",
+        "item": "Tabasco Original sauce, more to taste"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "grated fresh ginger, or 1/2 tsp ground ginger"
+      },
+      {
+        "qty": "4 ounces",
+        "item": "rice noodles, cooked and rinsed per package instructions"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "bean sprouts"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "garlic infused oil"
+      },
+      {
+        "qty": "1 large",
+        "item": "egg, beaten, optional for vegans"
+      },
+      {
+        "qty": "2 cups",
+        "item": "firm or extra-firm tofu, cut in cubes"
+      },
+      {
+        "qty": "to taste",
+        "item": "Chopped cilantro, crushed peanuts, bean sprouts and lime wedges"
+      }
+    ],
+    "steps": [
+      "Combine ingredients for sauce in medium bowl and mix well (I used a mini-processor to combine)",
+      "Cook tofu in infused oil over medium heat",
+      "If skillet large enough move to side (or remove temporarily) and add egg",
+      "Scramble egg",
+      "Add cooked and drained noodles to skillet with tofu/egg and pour sauce over the top",
+      "Cook for 3-5 minutes until sauce thickens slightly",
+      "Add bean sprouts and cook 1 minute, or less if you prefer your sprouts crunchy",
+      "Plate with assorted garnish as desired",
+      "Add additional Tabasco to taste"
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Rice noodles, firm tofu, peanut butter and bean sprouts are low-FODMAP in these amounts; the heat comes from Tabasco rather than a garlic chilli sauce. Leave out the egg for vegan. Serves 3.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-bourbon-chicken",
+    "name": "Bourbon Chicken (Rachel Pauls)",
+    "emoji": "🍗",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "one-pan",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/one-skillet-low-fodmap-bourbon-chicken-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1/4 cup",
+        "item": "low sodium soy sauce"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "bourbon"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "unsweetened pure cranberry juice"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "rice wine vinegar"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "pure maple syrup"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "brown sugar"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "grated fresh ginger"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "crushed red pepper, optional"
+      },
+      {
+        "qty": "24 ounces",
+        "item": "boneless, skinless chicken thighs, cut into 1/2-inch-thick strips"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "cornstarch, plus 1 teaspoon, divided"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "canola oil, for cooking"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "garlic infused oil"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "water"
+      },
+      {
+        "qty": "3 cups",
+        "item": "cooked rice, for serving"
+      },
+      {
+        "qty": "to taste",
+        "item": "Sliced green scallion tips for garnish"
+      }
+    ],
+    "steps": [
+      "In a medium bowl, whisk together your GF soy sauce, bourbon, cranberry juice, rice vinegar, maple syrup, brown sugar, infused oil, ginger and crushed red pepper (if using).",
+      "In a second large bowl, place 1 tablespoon cornstarch and toss your chicken pieces to coat lightly.",
+      "Heat a large skillet over medium high and add your 1 tablespoon of canola oil.",
+      "Add the chicken pieces and cook through, until golden brown and slightly crispy, about 7 minutes.",
+      "Add the soy-bourbon mixture; stir to coat pieces in the sauce.",
+      "Cook, stirring often, until the sauce has reduced and the chicken is cooked through (internal temp is 165F), about another 7 minutes.",
+      "In a small cup or bowl, create a slurry with the remaining cornstarch and water.",
+      "Stir this into the sauce Continue mixing the chicken over heat, adjusting heat as necessary, until the sauce is thickened to your taste Serve over rice, garnished with fresh scallion tips"
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Pure cranberry juice, maple syrup and brown sugar are fine in these amounts; use gluten-free soy sauce if needed. A \"Bourbon Chicken\" already exists in the cookbook, so this one carries the source name.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp-vegetarian-fried-rice",
+    "name": "Vegetarian Fried Rice",
+    "emoji": "🍚",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegetarian",
+      "vegan option",
+      "30-min"
+    ],
+    "source": "https://rachelpaulsfood.com/easy-low-fodmap-vegetarian-or-vegan-fried-rice-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "21 oz (600 g)",
+        "item": "extra-firm tofu, chopped (160 g is one low-FODMAP serve)"
+      },
+      {
+        "qty": "5 teaspoons",
+        "item": "toasted sesame oil, divided"
+      },
+      {
+        "qty": "3 teaspoons",
+        "item": "garlic infused olive oil; divided"
+      },
+      {
+        "qty": "1 cup (about 2-3 medium)",
+        "item": "chopped carrots"
+      },
+      {
+        "qty": "1/2 cup (64 g)",
+        "item": "fresh or fresh frozen corn kernels, do not substitute canned"
+      },
+      {
+        "qty": "1 cup (about 1 medium)",
+        "item": "zucchini, chopped"
+      },
+      {
+        "qty": "1 cup",
+        "item": "yellow squash, chopped"
+      },
+      {
+        "qty": "2 tablespoons (8 g)",
+        "item": "chopped green scallion tips, plus additional for garnish"
+      },
+      {
+        "qty": "2 large",
+        "item": "eggs, whisked, omit for vegan version"
+      },
+      {
+        "qty": "4 cups",
+        "item": "cooked rice of your choice, long grain, white rice or basmati work well"
+      },
+      {
+        "qty": "4 tablespoons",
+        "item": "low-sodium tamari (gluten free soy sauce) or soy sauce"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and freshly ground black pepper to taste"
+      }
+    ],
+    "steps": [
+      "In a large non-stick wok or skillet, heat 2 teaspoons sesame oil and 2 teaspoons of the infused oil over medium-high heat.",
+      "Once hot, add tofu pieces and season lightly with salt and pepper.",
+      "Cook over medium until done, flipping once (about 4 minutes).",
+      "Transfer tofu to a plate for later.",
+      "Return skillet to medium-high heat, and add remaining 3 teaspoons sesame oil and 1 teaspoon garlic infused oil.",
+      "Add carrots and sauté 3 minutes, then add zucchini and squash and cook until soft.",
+      "Add corn and scallion tips and sauté 1 minute longer.",
+      "Push veggies to one side of the pan of pan, and place eggs on the other side.",
+      "Season eggs with salt and pepper lightly and scramble them Return tofu to skillet along with the cooked rice Add in tamari or soy sauce and stir fry until warmed and coated with sauce Serve immediately"
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): garlic- and onion-infused oils stand in for garlic and onion, and the flour, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Firm tofu is low-FODMAP; the author sizes it at 160 g per serve. Fresh or frozen corn is kept to 1/2 cup across the batch (canned corn is higher). Carrot, zucchini, yellow squash, eggs and rice are fine. Omit the eggs for vegan.",
+    "isCustom": true
+  },
+
 ];

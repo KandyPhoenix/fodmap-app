@@ -3185,6 +3185,980 @@ const EASY_WEEKNIGHT_RECIPES = [
       "After 9 minutes, use the quick release method (which means turn the knob to venting so the steam releases) so the pasta doesn’t continue cooking, and open the lid. Stir and serve topped with grated cheese if desired!"
     ],
     "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat spaghetti, and jarred marinara almost always contains onion and garlic. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta, bread or tortillas. Use a low-FODMAP marinara and gluten-free spaghetti."
+  },
+  {
+    "id": "fam-ez-chicken-stir-fry",
+    "name": "Chicken Stir Fry (Downshiftology)",
+    "emoji": "🥦",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "30-min",
+      "gluten-free"
+    ],
+    "source": "https://downshiftology.com/recipes/chicken-stir-fry/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "¼ cup",
+        "item": "chicken broth"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "tamari soy sauce, or coconut aminos"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "dry sherry, optional - this isn't required, it's just an extra flavor-boost if you have it"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "honey"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "sesame oil"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "rice vinegar, or apple cider vinegar"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "cornstarch, or arrowroot powder"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "avocado oil"
+      },
+      {
+        "qty": "1 pound",
+        "item": "boneless skinless chicken breast, cut into 1-inch pieces"
+      },
+      {
+        "qty": "to taste",
+        "item": "salt and pepper, to taste"
+      },
+      {
+        "qty": "1",
+        "item": "red bell pepper, deseeded and chopped"
+      },
+      {
+        "qty": "1 small",
+        "item": "carrot, thinly sliced"
+      },
+      {
+        "qty": "2 cups",
+        "item": "broccoli florets, cut into bite-sized pieces"
+      },
+      {
+        "qty": "1 small",
+        "item": "yellow onion, chopped"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "finely grated fresh ginger"
+      },
+      {
+        "qty": "4",
+        "item": "garlic cloves, minced"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "sesame seeds"
+      },
+      {
+        "qty": "1",
+        "item": "green onion, sliced"
+      }
+    ],
+    "steps": [
+      "Make the sauce. In a small bowl, whisk together the chicken broth, soy sauce, dry sherry, honey, sesame oil, rice vinegar, and arrowroot powder. Set aside.",
+      "Cook the chicken. In a large skillet or wok on medium high heat, add one tablespoon of oil. Add the chicken in a flat layer. Season with salt and black pepper, and cook until lightly browned, about 4 to 5 minutes, stirring as needed. Remove the chicken to a plate.",
+      "Cook the vegetables. Leaving any juices in the pan, add one tablespoon of oil along with the red bell pepper, onion, carrot, and broccoli. Cook the vegetables until tender, about 3 to 4 minutes.",
+      "Toss it all together. Add the chicken back to the pan with the minced ginger and garlic. Stir for 30 seconds. Pour in the sauce and stir fry for another 1 to 2 minutes, until the sauce thickens.",
+      "Garnish with green onion and sesame seeds before serving."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — yellow onion, four garlic cloves and honey. Broccoli florets are fine at about 3/4 cup per serve; bell pepper, carrot and tamari are fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta or tortillas. Use maple syrup in place of the honey. Two other chicken stir fries are already in the cookbook, so this one carries the source name."
+  },
+  {
+    "id": "fam-ez-korean-beef-bowl",
+    "name": "Korean Beef Bowl",
+    "emoji": "🍚",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "30-min",
+      "gluten-free",
+      "high-protein"
+    ],
+    "source": "https://downshiftology.com/recipes/korean-beef-bowl/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "lean ground beef"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "tamari soy sauce"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "honey"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "toasted sesame oil"
+      },
+      {
+        "qty": "4",
+        "item": "garlic cloves, minced"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "freshly minced ginger"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "red pepper flakes"
+      },
+      {
+        "qty": "to taste",
+        "item": "optional: 1 tablespoon gochujang"
+      },
+      {
+        "qty": "3 cups",
+        "item": "cooked white rice"
+      },
+      {
+        "qty": "2 medium",
+        "item": "carrots, peeled and grated"
+      },
+      {
+        "qty": "2",
+        "item": "Persian cucumbers, halved and sliced"
+      },
+      {
+        "qty": "1",
+        "item": "green onion, sliced"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "sesame seeds"
+      }
+    ],
+    "steps": [
+      "Brown the beef. Heat a large skillet over medium-high heat. Add the ground beef and cook for 5 to 6 minutes, breaking it up with your spatula, until browned.",
+      "Make the sauce. In a small mixing bowl, whisk together the soy sauce, honey, sesame oil, garlic, ginger, red pepper flakes, and gochujang (if you'd like).",
+      "Add the sauce. Pour the sauce over the ground beef and simmer for about 2 minutes, until thickened and coating the ground beef.",
+      "Make the Korean beef bowl. Add a portion of rice (about ¾ cup) to a serving bowl. Top with a portion of the beef, some grated carrots, sliced cucumbers, and a sprinkle of green onion and sesame seeds."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — garlic, honey and the optional gochujang (which usually contains garlic). Tamari, ginger, rice, carrot and cucumber are fine. Use garlic-infused oil and maple syrup and this one is low-FODMAP. The Rachel Pauls \"30-Minute Korean Beef\" is the ready-made low-FODMAP version."
+  },
+  {
+    "id": "fam-ez-garlic-herb-baked-cod",
+    "name": "Garlic Herb Baked Cod",
+    "emoji": "🐟",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "sheet-pan",
+      "30-min",
+      "gluten-free"
+    ],
+    "source": "https://downshiftology.com/recipes/baked-cod/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "4 (6 oz)",
+        "item": "cod fillets"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "butter, softened"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "extra virgin olive oil"
+      },
+      {
+        "qty": "3",
+        "item": "garlic cloves, minced"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "parsley, chives, thyme or other herbs, finely chopped"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "paprika"
+      },
+      {
+        "qty": "1",
+        "item": "lemon, thinly sliced"
+      },
+      {
+        "qty": "to taste",
+        "item": "kosher salt and freshly ground black pepper, to taste"
+      }
+    ],
+    "steps": [
+      "Place the cod. Preheat your oven to 400°F (200°C). Place the cod in a baking dish.",
+      "Stir the compound butter. In a small bowl, mix together the butter, olive oil, minced garlic, parsley, paprika, salt, and pepper.",
+      "Spread it on the cod. Spread the compound butter mixture on top of each filet.",
+      "Add the lemon. Lay the lemon slices both on top and under the cod filets.",
+      "Bake the cod. Bake in the oven for 13 to 15 minutes, or until the cod is opaque and flakes easily with a fork. Before serving, spoon the juices from the baking dish over the cod."
+    ],
+    "fodmapNote": "Close to low-FODMAP — the only flag is three cloves of garlic. Cod, butter, herbs, paprika and lemon are fine. Use garlic-infused butter or oil and this one is low-FODMAP."
+  },
+  {
+    "id": "fam-ez-healthy-hamburger-helper",
+    "name": "Healthy Hamburger Helper (No Pasta)",
+    "emoji": "🍔",
+    "category": "dinner",
+    "time": "20 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "20-min",
+      "gluten-free",
+      "high-protein"
+    ],
+    "source": "https://downshiftology.com/recipes/healthy-hamburger-helper/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "ground beef"
+      },
+      {
+        "qty": "½ medium",
+        "item": "yellow onion, finely chopped"
+      },
+      {
+        "qty": "3",
+        "item": "garlic cloves, minced"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "tomato paste"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "chili powder"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "ground black pepper"
+      },
+      {
+        "qty": "2 (15 oz) cans",
+        "item": "butter beans, drained and rinsed"
+      },
+      {
+        "qty": "¾ cup",
+        "item": "low-sodium beef broth"
+      },
+      {
+        "qty": "1 cup",
+        "item": "grated sharp cheddar cheese"
+      },
+      {
+        "qty": "to taste",
+        "item": "finely chopped parsley for serving, optional"
+      }
+    ],
+    "steps": [
+      "Brown the beef and onion. Heat a large skillet over medium-high heat. Add the ground beef and onion and cook for about 5 minutes, stirring frequently and breaking up the meat with your spatula, until the meat is browned.",
+      "Season the beef. Add the minced garlic, tomato paste, chili powder, salt, and pepper. Stir for another minute.",
+      "Add the broth and beans. Add the beef broth, stir together, and bring to a simmer. Then stir in the butter beans.",
+      "Make it cheesy. Remove the skillet from the heat, add the cheese, and stir until melted. Sprinkle with chopped parsley before serving."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic and two cans of butter beans, which are high-FODMAP in this quantity. Cheddar is fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta or tortillas. This one does not adapt well because the beans are the base; keep it as a family recipe."
+  },
+  {
+    "id": "fam-ez-taco-skillet",
+    "name": "Taco Skillet",
+    "emoji": "🌮",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "30-min"
+    ],
+    "source": "https://themodernproper.com/taco-skillet",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "90/10 ground beef"
+      },
+      {
+        "qty": "½ medium",
+        "item": "yellow onion, chopped"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "minced garlic"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "taco seasoning, store-bought or homemade"
+      },
+      {
+        "qty": "2 (10 oz) cans",
+        "item": "Rotel seasoned tomatoes"
+      },
+      {
+        "qty": "1 (15 oz) can",
+        "item": "black beans, drained and rinsed"
+      },
+      {
+        "qty": "1½ cups",
+        "item": "shredded Mexican cheese blend"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salsa"
+      },
+      {
+        "qty": "to taste",
+        "item": "Sour cream"
+      },
+      {
+        "qty": "to taste",
+        "item": "Minced fresh cilantro"
+      },
+      {
+        "qty": "to taste",
+        "item": "Sliced avocado"
+      },
+      {
+        "qty": "to taste",
+        "item": "Lime wedges"
+      },
+      {
+        "qty": "to taste",
+        "item": "Thinly sliced jalapeño"
+      },
+      {
+        "qty": "to taste",
+        "item": "Tortilla chips, warmed tortillas, or taco shells"
+      }
+    ],
+    "steps": [
+      "Place the beef, onion, and garlic in a large ovenproof skillet over medium-high heat. Cook, breaking up the meat with a wooden spoon, until browned, about 8 minutes.",
+      "Stir in the taco seasoning and Rotel and bring to a simmer. Cook, stirring occasionally, until the sauce thickens, about 5 minutes. Stir in the beans and cook until heated through, about 2 minutes more.",
+      "Turn on the broiler. Sprinkle the cheese over the skillet and broil until melted and bubbly, 2 to 3 minutes.",
+      "Serve with desired toppings and tortilla chips for dipping, or use the skillet and toppings as taco fillings."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, taco seasoning (store-bought blends have onion and garlic powder), Rotel tomatoes with seasonings, and a can of black beans. Cheese is fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta or tortillas. Use plain diced tomatoes with green chilies, a homemade seasoning, and about 1/4 cup drained beans per serve."
+  },
+  {
+    "id": "fam-ez-white-bean-sausage-skillet",
+    "name": "White Bean Sausage Skillet",
+    "emoji": "🍲",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://themodernproper.com/white-bean-sausage-skillet",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 tablespoon",
+        "item": "extra-virgin olive oil"
+      },
+      {
+        "qty": "12 to 14 ounces",
+        "item": "smoked or Italian sausage, sliced ¼-inch thick"
+      },
+      {
+        "qty": "3",
+        "item": "garlic cloves, minced"
+      },
+      {
+        "qty": "2 (15 oz) cans",
+        "item": "white beans (great northern, butter beans or cannellini), drained and rinsed"
+      },
+      {
+        "qty": "1½ cups",
+        "item": "chicken stock"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "freshly cracked black pepper"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "minced fresh thyme leaves"
+      },
+      {
+        "qty": "½ bunch",
+        "item": "curly kale, stemmed, and torn into bite-size pieces, about 3 cups packed"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "fresh lemon juice, from 1 lemon"
+      },
+      {
+        "qty": "½ cup",
+        "item": "freshly grated Parmesan cheese, plus extra for serving"
+      },
+      {
+        "qty": "to taste",
+        "item": "Red pepper fakes, for serving, optional"
+      },
+      {
+        "qty": "to taste",
+        "item": "Crusty bread, for serving, optional"
+      }
+    ],
+    "steps": [
+      "Heat the olive oil in a 12-inch skillet over medium-high heat. Once the oil is glistening, add the sausage and cook until browned on both sides, 4 to 5 minutes. Transfer to a plate.",
+      "Add the garlic and cook until fragrant, about 30 seconds. Add two thirds of the beans and 1 cup of the chicken stock. Season with the salt, pepper, and thyme. Stir to combine and bring to a simmer over medium heat.",
+      "In a medium bowl, mash the remaining beans with a fork until a thick paste forms. Add the smashed beans to the skillet and stir to combine. Simmer until the beans are heated through and the stock is bubbling, 2 to 3 minutes.",
+      "Add the kale, reduce the heat to medium-low, and cook, stirring often, until the sauce becomes creamy, is slightly reduced, and the kale has wilted, about 2 more minutes.",
+      "Stir in the Parmesan, lemon juice, and sausage. Add the remaining stock a little at a time if you need more creaminess. Adjust the seasoning to taste. Transfer the sausage back to the skillet and cook, stirring, until the sausage is warmed through.",
+      "Serve with extra Parmesan and red pepper flakes, if desired, and crusty bread alongside."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — garlic, two cans of white beans, and most sausage is seasoned with garlic and onion. Kale, lemon, thyme and Parmesan are fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta or tortillas. Pick a plain sausage and keep beans to about 1/4 cup drained per serve."
+  },
+  {
+    "id": "fam-ez-linguine-with-lemon-garlic-sauce",
+    "name": "Linguine with Lemon Garlic Sauce",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "30-min",
+      "vegetarian"
+    ],
+    "source": "https://themodernproper.com/linguine-with-lemon-garlic-sauce",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "10 ounces",
+        "item": "linguine pasta"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "finely chopped flat-leaf parsley leaves"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "lemon zest"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "red pepper flakes"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "extra-virgin olive oil"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "salted butter"
+      },
+      {
+        "qty": "4",
+        "item": "garlic cloves, thinly sliced"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "fresh lemon juice, from 2 lemons"
+      },
+      {
+        "qty": "to taste",
+        "item": "Freshly grated Parmesan cheese, for serving, optional"
+      }
+    ],
+    "steps": [
+      "Bring a large pot of water to a boil over high heat and salt it. Add the linguine and cook until al dente, according to the package instructions. Reserve ½ cup of the pasta cooking water. Drain.",
+      "Meanwhile, in a large heat proof bowl, combine the parsley, lemon zest, red pepper flakes, and salt.",
+      "In a small saucepan over medium heat, combine the olive oil, butter and garlic. Once the butter is bubbling, pour it over the parsley mixture. Stir to combine.",
+      "Add the cooked linguine to the bowl along with the lemon juice and the reserved pasta water. Use tongs to toss the pasta until combined and fully coated.",
+      "Serve topped with Parmesan cheese."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — four cloves of garlic and wheat linguine. Lemon, parsley, butter, olive oil and Parmesan are fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta or tortillas. Serves 2."
+  },
+  {
+    "id": "fam-ez-chicken-tinga",
+    "name": "Chicken Tinga",
+    "emoji": "🌮",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pot",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://themodernproper.com/chicken-tinga",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 tablespoons",
+        "item": "extra virgin olive oil"
+      },
+      {
+        "qty": "1 medium",
+        "item": "yellow onion, chopped"
+      },
+      {
+        "qty": "4",
+        "item": "garlic cloves, minced"
+      },
+      {
+        "qty": "1",
+        "item": "chipotle pepper in adobo sauce"
+      },
+      {
+        "qty": "1 to 3 teaspoons",
+        "item": "adobo sauce, to taste"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "Taco Seasoning, plus more to taste"
+      },
+      {
+        "qty": "1 (14.5 ounce) can",
+        "item": "fire roasted tomatoes"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "chicken flavored “better than bouillon” or 1 chicken bouillon cube"
+      },
+      {
+        "qty": "4 cups",
+        "item": "cooked, shredded chicken"
+      },
+      {
+        "qty": "to taste",
+        "item": "Sea salt, to taste"
+      },
+      {
+        "qty": "8",
+        "item": "tostada shells or 16 corn tortillas, warmed"
+      },
+      {
+        "qty": "3 cups",
+        "item": "Mexican rice"
+      },
+      {
+        "qty": "3 cups",
+        "item": "Refried beans"
+      },
+      {
+        "qty": "3 cups",
+        "item": "shredded green cabbage"
+      },
+      {
+        "qty": "½ cup",
+        "item": "thinly sliced radishes"
+      },
+      {
+        "qty": "½ cup",
+        "item": "crumbled cotija or queso fresco"
+      },
+      {
+        "qty": "1",
+        "item": "avocado, sliced"
+      }
+    ],
+    "steps": [
+      "Heat the oil in a large skillet over medium-high heat. Once the oil is glistening, add the onion and cook, stirring often, until softened, about 6 minutes. Reduce the heat to medium. Add the garlic and cook, stirring, until fragrant, about 1 more minute.",
+      "Transfer the onion mixture to a blender. Add the chipotle pepper, adobo sauce (see Note), taco seasoning, tomatoes and bouillon. Blend the sauce on high until smooth, about 1 minute.",
+      "Transfer the sauce back to the skillet and bring to a simmer over medium heat. Cook, stirring occasionally until slightly thickened, about 8 minutes. Add the chicken and stir until warmed through. Season with salt, more taco seasoning or adobo sauce, if desired.",
+      "Serve the chicken tinga warm with tostada shells, tortillas or over rice. Garnish with cabbage, radishes, cotija and avocado as desired."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, chipotle in adobo (adobo sauce usually contains onion and garlic), taco seasoning and the refried beans on the side. Shredded chicken, fire-roasted tomatoes, corn tostadas, cabbage, radish and cotija are fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta or tortillas. Serves 8."
+  },
+  {
+    "id": "fam-ez-chicken-curry",
+    "name": "Chicken Curry (Once Upon a Chef)",
+    "emoji": "🍛",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://www.onceuponachef.com/recipes/chicken-curry.html",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1¼ pounds",
+        "item": "boneless, skinless chicken breasts, cut into ¼-in (6-mm) strips"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and freshly ground black pepper"
+      },
+      {
+        "qty": "2½ teaspoons",
+        "item": "curry powder, divided"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "vegetable oil, divided"
+      },
+      {
+        "qty": "1 medium",
+        "item": "yellow onion, finely chopped"
+      },
+      {
+        "qty": "4 cloves",
+        "item": "garlic, minced"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "grated fresh ginger, see note"
+      },
+      {
+        "qty": "2 cups",
+        "item": "low-sodium chicken broth, best quality such as Swanson"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "cornstarch"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "sugar"
+      },
+      {
+        "qty": "1 cup",
+        "item": "frozen peas, no need to thaw"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "plain low-fat (2%) or whole Greek yogurt, not nonfat"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "chopped fresh cilantro"
+      }
+    ],
+    "steps": [
+      "Sprinkle the chicken evenly with ¾ teaspoon salt, ¼ teaspoon pepper and 1 teaspoon curry powder.",
+      "Heat 1½ tablespoons of oil in a 12-in (30-cm) skillet over high heat until just smoking. Add the chicken in a single layer and cook, stirring occasionally, until lightly browned but still pink in spots, about 3 minutes. Transfer the partially cooked chicken to a clean bowl and set aside.",
+      "Add the remaining 1½ tablespoons oil to the skillet and set heat to medium. Add the onions and cook, stirring occasionally, until softened, about 5 minutes. Stir in the garlic, ginger and remaining 1½ teaspoons curry powder and cook until fragrant, about a minute more.",
+      "Whisk the chicken broth and cornstarch together to dissolve the cornstarch, then add to the skillet along with the sugar and ⅛ teaspoon salt. Bring to a boil, then reduce the heat to medium and cook until the sauce is nicely thickened, about 5 minutes.",
+      "Add the peas and partially cooked chicken to the skillet, turn the heat down to low and simmer until the chicken is cooked through, a few minutes. Off the heat, stir in the yogurt and cilantro; then season with salt and pepper, to taste. Serve with basmati rice."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, four cloves of garlic, regular Greek yogurt (lactose) and 1 cup of peas (moderate). Curry powder, ginger, chicken and cilantro are fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta or tortillas. Use lactose-free yogurt and halve the peas. Several chicken curries are already in the cookbook, so this one carries the source name."
+  },
+  {
+    "id": "fam-ez-thai-red-curry-chicken",
+    "name": "Thai Red Curry Chicken (Once Upon a Chef)",
+    "emoji": "🍛",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pot",
+      "30-min"
+    ],
+    "source": "https://www.onceuponachef.com/recipes/thai-red-curry-chicken.html",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 tablespoon",
+        "item": "vegetable oil"
+      },
+      {
+        "qty": "1 small",
+        "item": "bunch scallions, light and dark green parts, thinly sliced, divided"
+      },
+      {
+        "qty": "3 cloves",
+        "item": "garlic, chopped"
+      },
+      {
+        "qty": "1",
+        "item": "jalapeño pepper, seeded and diced"
+      },
+      {
+        "qty": "1 (14 oz) can",
+        "item": "coconut milk, unsweetened"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "Thai red curry paste"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "fish sauce"
+      },
+      {
+        "qty": "2½ tablespoons (packed)",
+        "item": "dark brown sugar"
+      },
+      {
+        "qty": "1½ lb",
+        "item": "chicken tenderloins, cut into 1-in (2.5-cm) cubes"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "lime juice, from 1 lime"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "chopped fresh cilantro"
+      }
+    ],
+    "steps": [
+      "Heat the oil over medium-low heat in a large nonstick pan. Add the light scallions, garlic, and jalapeño and cook, stirring frequently, until softened, 3 to 4 minutes. Do not brown.",
+      "Add the coconut milk, red curry paste, fish sauce, and brown sugar, and whisk together. Bring to a gentle boil, then reduce heat and simmer until thickened, a few minutes.",
+      "Add the chicken and simmer, uncovered, stirring occasionally to promote even cooking, until the chicken is cooked through, 5 to 6 minutes. (Do not let the sauce boil; the idea is to cook the chicken gently so that it's tender.).",
+      "Stir in the lime juice, dark scallion greens, and cilantro. Taste and adjust seasoning with more lime, if necessary. Serve with jasmine rice."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — garlic, the light-green parts of the scallions, and store-bought red curry paste (contains garlic and shallot). Coconut milk is moderate in larger serves. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta or tortillas. Use only the dark-green scallion tops and a garlic-free curry paste. The RecipeTin \"Thai Red Curry with Chicken\" is already in the cookbook, so this one carries the source name."
+  },
+  {
+    "id": "fam-ez-kung-pao-chicken",
+    "name": "Kung Pao Chicken",
+    "emoji": "🥜",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://www.onceuponachef.com/recipes/kung-pao-chicken.html",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1½ tablespoons",
+        "item": "soy sauce"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "dry sherry"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "cornstarch"
+      },
+      {
+        "qty": "1½ lbs",
+        "item": "chicken tenderloins, (or boneless skinless chicken breasts), cut into 1-in (2.5-cm) pieces"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "balsamic vinegar"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "soy sauce"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "hoisin sauce, best quality such as Kikkoman or Lee Kum Kee"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "sesame oil"
+      },
+      {
+        "qty": "1½ tablespoons",
+        "item": "sugar"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "cornstarch"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "crushed red pepper flakes, use half the amount for a milder sauce"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "ground ginger"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "water"
+      },
+      {
+        "qty": "2½ tablespoons",
+        "item": "vegetable oil"
+      },
+      {
+        "qty": "1 large",
+        "item": "red bell pepper, diced"
+      },
+      {
+        "qty": "2 stalks",
+        "item": "celery, halved lengthwise and thinly sliced"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "3 cloves",
+        "item": "garlic, chopped"
+      },
+      {
+        "qty": "5",
+        "item": "scallions, white and green parts, thinly sliced"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "whole roasted unsalted peanuts or cashews"
+      }
+    ],
+    "steps": [
+      "Marinate the chicken: In a medium bowl, whisk together the soy sauce, dry sherry, and cornstarch until the cornstarch is dissolved. Add the chicken and toss to coat. Let stand at room temperature for 15 minutes, stirring occasionally.",
+      "Prepare the sauce: In another medium bowl, whisk together all of the sauce ingredients until the cornstarch is dissolved (it can stick to the bottom of the bowl so be sure to scrape it up).",
+      "Heat a large nonstick skillet over high heat until very hot. Add 1 tablespoon of the oil and swirl to coat. Add the bell pepper, celery, and salt and cook, stirring frequently, until slightly softened and starting to brown, about 5 minutes. Transfer the vegetables to a large bowl and set aside.",
+      "Add an additional ½ tablespoon of oil to the pan and set over high heat. Add half of the chicken and brown on one side, about 1½ minutes. Turn the chicken pieces and continue cooking for about 1½ minutes more, or until the chicken is just cooked through. Transfer the chicken to the bowl with the peppers and celery.",
+      "Add another ½ tablespoon of oil to the pan. Add the remaining chicken and cook until golden on one side, about 1½ minutes. Turn the chicken pieces over and cook for 1 minute. Add ½ tablespoon more oil to the pan, along with the garlic and scallions, and cook, stirring with the chicken, for about 30 seconds more.",
+      "Add the reserved vegetables and reserved chicken to the pan, along with the sauce. Reduce the heat to low and cook until the chicken and vegetables are warmed through and the sauce is thickened, about 30 seconds. Stir in the nuts.",
+      "Taste and adjust seasoning, if necessary, and serve. The sauce will thicken as it sits; thin it with a few tablespoons of water, if necessary."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — garlic, the white parts of the scallions, hoisin sauce (contains garlic), two stalks of celery and the cashew option. Soy sauce, sherry, bell pepper, ginger and peanuts are fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta or tortillas. Use peanuts, skip the hoisin or use a low-FODMAP version, and keep celery small."
+  },
+  {
+    "id": "fam-ez-blackened-tilapia",
+    "name": "Blackened Tilapia",
+    "emoji": "🐟",
+    "category": "dinner",
+    "time": "15 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "15-min",
+      "gluten-free",
+      "high-protein"
+    ],
+    "source": "https://www.onceuponachef.com/recipes/blackened-tilapia.html",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1½ teaspoons",
+        "item": "paprika"
+      },
+      {
+        "qty": "1½ teaspoons",
+        "item": "light brown sugar"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "dried oregano"
+      },
+      {
+        "qty": "¾ teaspoon",
+        "item": "garlic powder"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "ground cumin"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "cayenne pepper"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "4 (6 oz)",
+        "item": "tilapia fillets"
+      },
+      {
+        "qty": "1",
+        "item": "lime, cut into wedges (optional, for serving)"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "olive oil, for cooking"
+      }
+    ],
+    "steps": [
+      "Combine the paprika, brown sugar, oregano, garlic powder, cumin, cayenne pepper and salt in a small bowl; mix until well combined (use your fingers to break up the lumps of brown sugar). Sprinkle the spice rub evenly over both sides of the tilapia fillets.",
+      "Heat the olive oil over medium-high heat in a large non-stick pan. Cook the fillets for 2 to 3 minutes on each side until reddish-brown on the outside and flaky on the inside. Serve immediately with lime wedges."
+    ],
+    "fodmapNote": "Close to low-FODMAP — the only flag is 3/4 teaspoon of garlic powder in the spice rub. Paprika, oregano, cumin, cayenne, brown sugar, lime and tilapia are all fine. Leave out the garlic powder (or use a pinch of asafoetida) and this one is low-FODMAP."
   }
 ];
 
