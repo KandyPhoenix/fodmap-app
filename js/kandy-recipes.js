@@ -2637,4 +2637,3359 @@ const KANDY_RECIPES = [
     "isCustom": true
   },
 
+
+  // ─── RACHEL PAULS FOOD + THE FODMAP FORMULA — low-FODMAP breakfasts, lunches, Tex-Mex and one-pan dinners ─────────
+  {
+    "id": "kandy-rp4-air-fryer-egg-bites",
+    "name": "Air-Fryer Egg Bites",
+    "emoji": "🥚",
+    "category": "breakfast",
+    "time": "20 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "air-fryer",
+      "20-min",
+      "high-protein",
+      "meal-prep"
+    ],
+    "source": "https://rachelpaulsfood.com/easy-20-minute-low-fodmap-air-fryer-egg-bites-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "6 large",
+        "item": "eggs"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "low-FODMAP milk"
+      },
+      {
+        "qty": "4 slices",
+        "item": "cooked bacon, crumbled"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "sharp cheddar cheese, shredded"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/8 teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "to taste",
+        "item": "Pinch of paprika"
+      },
+      {
+        "qty": "1",
+        "item": "scallion, green tips only, chopped"
+      },
+      {
+        "qty": "4",
+        "item": "cherry tomatoes, sliced"
+      },
+      {
+        "qty": "to taste",
+        "item": "Baking spray"
+      }
+    ],
+    "steps": [
+      "In a large bowl, combine the eggs and low-FODMAP milk, whisk well.",
+      "Mix in the crumbled cooked bacon, cheddar cheese, salt, pepper, paprika and scallion tips.",
+      "Spray six 3-inch silicone baking cups, or oven-safe ramekins with baking spray.",
+      "Equally divide the egg mixture into the 6 cups, about 2/3 full.",
+      "Lay your cherry tomato slices on top.",
+      "Place in the air-fryer basket, or on a baking sheet if you have tray air-fryer.",
+      "Cook at 300 degrees F (on air-fry mode) for 8-10 minutes, or until done.",
+      "Let stand one minute, then gently remove from baking cups, or enjoy straight from the ramekins.",
+      "Serve immediately, alongside low-FODMAP fruit, bread, or potatoes.",
+      "Store leftovers wrapped in plastic in the fridge for 5 days, or you can freeze, tightly wrapped in plastic for 1 month."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Eggs, bacon, cheddar (a low-lactose cheese), lactose-free milk and scallion green tips. Makes 6; they reheat well.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-chai-overnight-oats",
+    "name": "Chai Overnight Oats",
+    "emoji": "🥣",
+    "category": "breakfast",
+    "time": "10 min",
+    "serves": 1,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegan",
+      "make-ahead",
+      "5-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-chai-overnight-oats-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1/8 tsp",
+        "item": "cardamom"
+      },
+      {
+        "qty": "1/8 tsp",
+        "item": "cinnamon"
+      },
+      {
+        "qty": "1/8 tsp",
+        "item": "nutmeg"
+      },
+      {
+        "qty": "1/4 tsp",
+        "item": "vanilla"
+      },
+      {
+        "qty": "1/8 tsp",
+        "item": "ground ginger"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "almond milk, unsweetened, or other low-FODMAP milk such as lactose-free for dairy version"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "old fashioned rolled oats"
+      },
+      {
+        "qty": "1/2 tbsp",
+        "item": "pure maple syrup"
+      },
+      {
+        "qty": "1/2 tbsp",
+        "item": "chia seeds"
+      },
+      {
+        "qty": "1/2 tablespoon",
+        "item": "ground flax"
+      },
+      {
+        "qty": "to taste",
+        "item": "Optional toppings: semi-sweet chocolate chips, sliced coconut, chopped low-FODMAP nuts, almond/peanut butter, low-FODMAP hazelnut chocolate spread, or your favorite low-FODMAP fruit"
+      }
+    ],
+    "steps": [
+      "Place the oats, chia seeds, flax and spices in a small bowl or mason jar and stir to combine.",
+      "Add the almond milk and maple syrup and stir or shake covered until incorporated.",
+      "Cover and chill overnight."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Rolled oats, almond or lactose-free milk, chai spices and 1/2 tablespoon maple syrup. Single serve; multiply for the week. Keep optional toppings to low-FODMAP nuts.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-almond-joy-overnight-oats",
+    "name": "Almond Joy Overnight Oats",
+    "emoji": "🥥",
+    "category": "breakfast",
+    "time": "5 min",
+    "serves": 1,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegan",
+      "make-ahead",
+      "5-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-almond-joy-overnight-oats-gluten-free-vegan/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "3/4 cup (177 ml)",
+        "item": "low-FODMAP milk"
+      },
+      {
+        "qty": "1/2 cup (40 g)",
+        "item": "traditional (old-fashioned) rolled oats"
+      },
+      {
+        "qty": "1 tablespoon (15 ml)",
+        "item": "pure maple syrup"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "chia seeds"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "almond extract"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "vanilla extract"
+      },
+      {
+        "qty": "to taste",
+        "item": "Pinch of salt"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "coconut flakes or shredded coconut"
+      },
+      {
+        "qty": "1 teaspoon (2.5 g)",
+        "item": "cocoa powder"
+      }
+    ],
+    "steps": [
+      "Place all the ingredients in a mason jar or other covered bowl and stir well to combine Leave overnight or longer in the refrigerator.",
+      "Top with coconut, chocolate and almond slices prior to serving.",
+      "Can be served cold or warmed in the microwave."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Oats, low-FODMAP milk, cocoa, almond extract and a tablespoon of shredded coconut, all within low-FODMAP serves. Single serve.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-oatmeal-blueberry-mug-muffin",
+    "name": "Oatmeal Blueberry Mug Muffin",
+    "emoji": "🫐",
+    "category": "breakfast",
+    "time": "5 min",
+    "serves": 1,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "5-min",
+      "microwave"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-oatmeal-blueberry-mug-muffin-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 large",
+        "item": "egg"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "sugar, plus more for sprinkling"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "low-FODMAP milk, such as almond milk, or lactose-free milk"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "gluten-free low-FODMAP pancake/biscuit mix"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "quick oats"
+      },
+      {
+        "qty": "2 tablespoons + 1 teaspoon",
+        "item": "canola oil, or melted coconut oil"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "vanilla extract"
+      },
+      {
+        "qty": "4 tablespoons (40 g)",
+        "item": "fresh blueberries, I like using wild blueberries"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "ground cinnamon, plus additional for sprinkling"
+      }
+    ],
+    "steps": [
+      "Crack the egg into a cup or small bowl and whisk well.",
+      "Measure out 2 tablespoons (30 ml) of this whisked egg into a 12-ounce or larger microwave-safe mug and discard or set aside the unused egg for another recipe.",
+      "Add the sugar and whisk to combine well.",
+      "Slowly add the low-FODMAP milk to the egg mixture while whisking.",
+      "Add the GF Bisquick, quick oats, cinnamon, canola oil, and vanilla and mix until blended.",
+      "Fold in the blueberries, ensuring they are below the surface of the batter, so they don’t spatter during cooking.",
+      "Sprinkle with additional cinnamon and sugar, if desired.",
+      "Microwave for 1 minute 15 seconds to 1 minute 30 seconds (should not bubble over).",
+      "Let rest for about 1 minute then enjoy!"
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Oats, blueberries, almond or lactose-free milk and sugar; made in the microwave in a mug. Single serve.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-egg-cups-with-turkey-bacon-and-cheese",
+    "name": "Egg Cups with Turkey Bacon and Cheese",
+    "emoji": "🧁",
+    "category": "breakfast",
+    "time": "45 min",
+    "serves": 12,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "meal-prep",
+      "freezer-friendly",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-egg-cups-with-turkey-bacon-and-cheese-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 cups",
+        "item": "all-purpose, gluten-free Bisquick"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "salt"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "melted butter or coconut oil"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "low-FODMAP milk, such as almond or lactose-free"
+      },
+      {
+        "qty": "13 small",
+        "item": "or medium eggs, divided into 1 and 12, depending on how big your muffin cups are"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "cayenne, optional"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "shredded sharp cheddar or mozzarella, divided"
+      },
+      {
+        "qty": "to taste",
+        "item": "About 3-4 tbsp finely chopped fresh basil or 2 tbsp chopped dried basil"
+      },
+      {
+        "qty": "to taste",
+        "item": "Can also substitute sliced tomato or green pepper"
+      },
+      {
+        "qty": "6",
+        "item": "pieces turkey bacon (about 2 ounce each) or regular bacon"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and pepper to taste"
+      },
+      {
+        "qty": "to taste",
+        "item": "Vegetable shortening, or baking spray for greasing"
+      }
+    ],
+    "steps": [
+      "Pre-heat oven to 400 F Grease muffin cups or spray with baking spray (do not use liners).",
+      "In a large mixing bowl, whisk together low-FODMAP gluten-free Bisquick, salt and cayenne (if using).",
+      "In a smaller bowl, whisk one egg with low-FODMAP milk.",
+      "Add the milk mixture to the gluten-free Bisquick and stir.",
+      "Then add the melted butter to combine.",
+      "You may wish to use your hands Use a trigger ice cream scoop or a 1/4 c measure, portion out 12 biscuits into muffin cups and press out on the sides Do not overhandle the dough, and try not to press too high on the cup sides.",
+      "If the dough is very flaky then add more butter.",
+      "In a skillet, or covered in microwave, cook bacon until softened, but not crisp.",
+      "If bacon strips are large, cut in half lengthwise and then in half again horizontally You will use 2 strips in each low-FODMAP egg cup.",
+      "Lay strips of bacon over the biscuit dough You may also opt for other meat, spinach or alternate low-FODMAP vegetables.",
+      "Sprinkle with the cheese and chopped basil.",
+      "Crack the egg in each cup, be careful not to overfill They don't have to look perfect :); They will still taste delicious.",
+      "Bake at 400 F for 25-30 min until egg whites are set I put the muffin tray on a larger baking sheet in case of drips.",
+      "Let sit in baking tin for about 5 minutes, then remove carefully to a cooling rack."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Eggs, turkey bacon, cheddar or mozzarella and lactose-free milk baked in a muffin tin. Makes 12; 45 minutes is mostly oven time.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-bacon-spinach-and-basil-frittata",
+    "name": "Bacon, Spinach and Basil Frittata",
+    "emoji": "🍳",
+    "category": "breakfast",
+    "time": "35 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "one-pan",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/sensational-low-fodmap-bacon-spinach-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "8 large",
+        "item": "organic eggs"
+      },
+      {
+        "qty": "½ cup",
+        "item": "coconut cream (canned) or coconut milk"
+      },
+      {
+        "qty": "4 oz",
+        "item": "pancetta or 4-6 pieces of bacon cut into 1″ pieces"
+      },
+      {
+        "qty": "1 cup",
+        "item": "chopped potato, pre-cooked"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "corn"
+      },
+      {
+        "qty": "2",
+        "item": "TB fresh basil"
+      },
+      {
+        "qty": "1",
+        "item": "tomato, sliced"
+      },
+      {
+        "qty": "½ cup",
+        "item": "chopped deli turkey or leftover turkey/chicken breast"
+      },
+      {
+        "qty": "½ cup",
+        "item": "baby spinach"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "cheese of choice"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "each salt and pepper"
+      },
+      {
+        "qty": "¼ tsp",
+        "item": "cayenne pepper"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "onion-infused oil, optional"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 450 FIn an oven safe 10-12″ skillet over medium heat, cook the pancetta or bacon until almost done (about 5 minutes) Leave the bacon grease in the skillet and if necessary add the optional oil to coat the sides of the pan.",
+      "Place spinach in skillet and stir.",
+      "Add corn and cooked potatoes and stir.",
+      "When these are warmed, add the basil and then the turkey.",
+      "In a medium bowl place the eggs, cream, salt, pepper and cayenne and whisk together until well blended Ensure there is oil coating the sides of the pan.",
+      "Pour egg mixture into skillet.",
+      "Top mixture with cheese and sliced tomato and place your oven safe skillet into the oven, add additional basil if desired.",
+      "Bake 20 min or until center is fluffy.",
+      "Serve immediately."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Eggs, bacon, spinach, basil, 1/4 cup corn and canned coconut cream in place of regular cream. Serves 6; good cold for lunch.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-blueberry-pancakes",
+    "name": "Blueberry Pancakes",
+    "emoji": "🥞",
+    "category": "breakfast",
+    "time": "20 min",
+    "serves": 3,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "20-min"
+    ],
+    "source": "https://rachelpaulsfood.com/simply-delicious-low-fodmap-blueberry-pancakes-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 cup",
+        "item": "Original Gluten-free Bisquick™ mix"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "low-FODMAP milk, almond milk for non-dairy version, or lactose-free milk"
+      },
+      {
+        "qty": "1 large",
+        "item": "egg"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "vanilla"
+      },
+      {
+        "qty": "1 cup",
+        "item": "blueberries, I used wild blueberries"
+      },
+      {
+        "qty": "to taste",
+        "item": "Canola oil, for frying"
+      }
+    ],
+    "steps": [
+      "Crack egg in a large mixing bowl, whisk well.",
+      "Add about 1/4 cup of the milk and whisk together.",
+      "Begin incorporating gluten-free Bisquick a little at a time, alternating with milk until all the Bisquick is incorporated.",
+      "Add additional milk to desired consistency.",
+      "Add vanilla and stir together.",
+      "Fold in blueberiies.",
+      "Place large skillet on medium heat and add about a teaspoon of oil.",
+      "When oil is hot, ladle batter onto griddle, about 1/4 cup per pancake.",
+      "Cook until crispy edges and flip.",
+      "Serve with low-FODMAP vegan spread, or butter, and pure maple syrup."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Six ingredients: gluten-free flour, lactose-free or almond milk, egg, blueberries, oil and baking powder. Serves 3.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-classic-french-toast",
+    "name": "Classic French Toast",
+    "emoji": "🍞",
+    "category": "breakfast",
+    "time": "30 min",
+    "serves": 3,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "30-min"
+    ],
+    "source": "https://rachelpaulsfood.com/classic-low-fodmap-french-toast-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 large",
+        "item": "eggs"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "low-FODMAP lactose-free milk or dairy-free milk"
+      },
+      {
+        "qty": "6 slices",
+        "item": "of low-FODMAP bread"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "vanilla"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "cinnamon"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "of other flavoring if desired, such as caramel or maple"
+      },
+      {
+        "qty": "to taste",
+        "item": "Olive, canola or other preferred oil for cooking"
+      },
+      {
+        "qty": "to taste",
+        "item": "Confectioner's sugar"
+      },
+      {
+        "qty": "to taste",
+        "item": "Maple syrup"
+      },
+      {
+        "qty": "to taste",
+        "item": "Low-FODMAP strawberry coulis or other desired toppings"
+      }
+    ],
+    "steps": [
+      "Beat eggs and milk with vanilla and cinnamon in a shallow bowl.",
+      "Dip bread in egg mixture and let the bread soak up the liquid for 3 minutes on each side.",
+      "Heat oil in skillet on medium heat.",
+      "Place bread in skillet and cook each side until golden brown.",
+      "Dust with confectioner's sugar, or your preferred low-FODMAP syrup.",
+      "Serve immediately."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Use a low-FODMAP bread (gluten-free or true sourdough spelt) and lactose-free or dairy-free milk; eggs, cinnamon and maple syrup are fine. Serves 3.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-pbj-smoothie",
+    "name": "PB&J Smoothie",
+    "emoji": "🥤",
+    "category": "breakfast",
+    "time": "5 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegan",
+      "5-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-pb-gluten-free-vegan/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 medium",
+        "item": "unripe banana"
+      },
+      {
+        "qty": "1 cup",
+        "item": "low-FODMAP milk, ex: lactose-free or unsweetened almond milk"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "peanut butter, I like creamy all-natural, no sugar added"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "frozen or fresh strawberries, chopped"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "frozen blueberries or raspberries"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "ice cubes"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "brown rice protein powder or other low-FODMAP protein powder"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "maple syrup or 2 teaspoons sucralose or stevia powder for sugar-free version"
+      }
+    ],
+    "steps": [
+      "Add all ingredients to blender, and blend on high speed until completely smooth, adding more low-FODMAP milk if needed.",
+      "Let blend for 1-2 minutes or longer until well blended.",
+      "Adjust to taste.",
+      "Serve immediately, or can be frozen up to one month in sealed container."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Peanut butter (2 tablespoons across 2 serves), strawberries as the \"jelly\", low-FODMAP milk and a little maple syrup. Serves 2.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-protein-waffles",
+    "name": "Protein Waffles",
+    "emoji": "🧇",
+    "category": "breakfast",
+    "time": "25 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "high-protein",
+      "freezer-friendly"
+    ],
+    "source": "https://rachelpaulsfood.com/healthy-low-fodmap-protein-waffles-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 1/3 cups",
+        "item": "gluten-free oat flour"
+      },
+      {
+        "qty": "2 tsp",
+        "item": "baking powder"
+      },
+      {
+        "qty": "1",
+        "item": "scoop vanilla flavored brown-rice protein powder or your favorite low-FODMAP protein powder"
+      },
+      {
+        "qty": "2",
+        "item": "eggs, separated"
+      },
+      {
+        "qty": "1",
+        "item": "egg white"
+      },
+      {
+        "qty": "4 tbsp",
+        "item": "melted coconut oil (for dairy-free version) or butter"
+      },
+      {
+        "qty": "1 cup",
+        "item": "low-FODMAP almond milk (for dairy-free version) or other low-FODMAP milk such as lactose-free"
+      },
+      {
+        "qty": "2 tbsp",
+        "item": "maple syrup"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "maple extract, optional"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "vanilla extract"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "cinnamon, optional"
+      },
+      {
+        "qty": "to taste",
+        "item": "Vegetable shortening, or spray for greasing waffle iron, if needed"
+      }
+    ],
+    "steps": [
+      "Combine low-FODMAP, gluten-free flour, baking powder, and protein powder in a large bowl.",
+      "Stir until mixed well.",
+      "In a separate bowl, whisk 2 egg yolks and low-FODMAP milk together.",
+      "Add egg mixture to the dry ingredients and stir to combine.",
+      "Add coconut oil, maple syrup and extract, cinnamon and vanilla.",
+      "Stir until clumps dissolve and batter is formed.",
+      "In a third smaller bowl, beat 3 egg whites until stiff peaks form.",
+      "Fold egg whites into the batter.",
+      "Pour a ladleful of batter into each waffle well and bake according to maker's directions until crispy.",
+      "Repeat, makes 10 or more waffles depending on size."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Oat flour, protein powder, eggs, almond or lactose-free milk and maple syrup. Check your protein powder for inulin, chicory root or sugar alcohols, which are high-FODMAP. Makes 6; freeze extras.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-5-minute-banana-muffin-in-a-mug",
+    "name": "5-Minute Banana Muffin in a Mug",
+    "emoji": "🍌",
+    "category": "breakfast",
+    "time": "5 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegan",
+      "5-min",
+      "microwave"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-5-minute-banana-muffin-mug-gluten-free-vegan/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "4 tablespoons",
+        "item": "gluten-free, low-FODMAP flour, I use Authentic Foods GF Classical Blend"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "flaxseed meal mixed with 1 tablespoon warm water, you can also substitute 2 tablespoons whisked egg, for non vegans"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "xanthan gum, if not an additive in your flour"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "baking powder"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "baking soda"
+      },
+      {
+        "qty": "1/8 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "cinnamon"
+      },
+      {
+        "qty": "1/3 cup (88g)",
+        "item": "ripe yellow banana, mashed, 1 medium"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "packed brown sugar"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "canola oil, or melted coconut oil"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "pure vanilla extract"
+      },
+      {
+        "qty": "to taste",
+        "item": "Your choice of ‘stir-in’ Up to 30 g semisweet/dark chocolate chips, or up to 20 g chopped pecans or walnuts"
+      },
+      {
+        "qty": "to taste",
+        "item": "Sugar and cinnamon to sprinkle on top, optional"
+      }
+    ],
+    "steps": [
+      "Mix your flaxseed meal with water, and allow to stand to thicken, while getting other ingredients (this creates a vegan ‘egg’).",
+      "In a standard sized mug combine flour, xanthan gum, cinnamon, baking powder, baking soda, and salt.",
+      "Stir in mashed banana, flax meal mixture, brown sugar, oil and vanilla. Do not overmix.",
+      "For non-vegan version, add 2 tablespoons beaten egg in place of the flax meal.",
+      "Add chocolate chips or nuts, based on preference.",
+      "Microwave, 1 minute at a time, for 1-2 minutes, until toothpick inserted comes out clean or with a few moist crumbs Mine took 2 minutes. Do not overcook, as it could become rubbery in the microwave.",
+      "Allow to stand to finish cooking, then enjoy!"
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Gluten-free flour, mashed banana, oil and brown sugar in the microwave. Banana: a firm (less ripe) banana is low-FODMAP; a very ripe one is higher in fructans, so use a just-yellow banana. Serves 2.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-peanut-butter-and-banana-baked-oatmeal-bars",
+    "name": "Peanut Butter and Banana Baked Oatmeal Bars",
+    "emoji": "🍫",
+    "category": "breakfast",
+    "time": "30 min",
+    "serves": 16,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegan",
+      "meal-prep",
+      "30-min"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-peanut-butter-and-banana-baked-oatmeal-bars-gluten-free-vegan/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 1/2 cups",
+        "item": "quick oats"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "baking powder"
+      },
+      {
+        "qty": "½ tsp",
+        "item": "salt"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "cinnamon"
+      },
+      {
+        "qty": "2",
+        "item": "ripe bananas, mashed"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "all-natural smooth peanut butter, divided into ¼ cup and ¼ cup"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "pure vanilla extract"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "plus 1 tbsp pure maple syrup, divided"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "flax seed meal, mixed into 3 tbsp warm water"
+      },
+      {
+        "qty": "¾ cup",
+        "item": "low-FODMAP milk"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "chopped peanuts plus extra for sprinkling"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 350 degrees F, place rack in middle of oven.",
+      "Line an 8 by 8 square square baking pan with parchment paper with a folded edge over sides to help you lift out of pan.",
+      "In a small bowl, mix together the quick cooking oats, baking powder, salt and ground cinnamon.",
+      "Set aside.",
+      "In a large bowl, mix mashed banana and ¼ cup peanut butter together until combined.",
+      "To the banana mixture, add the vanilla, ½ cup maple syrup and 'flax egg substitute' (or beaten egg).",
+      "Mix until combined.",
+      "Add the low-FODMAP milk and chopped peanuts and stir until batter is smooth.",
+      "Add dry ingredients (the oat mixture) to wet ingredients and mix thoroughly.",
+      "Pour/spread the mixture into prepared pan.",
+      "Bake at 350 degrees for 25 minutes The bars are quite soft, if you prefer a harder texture then bake about 5 minutes longer.",
+      "Mix remaining ¼ cup peanut butter with 1 tbsp maple syrup.",
+      "Pour/drizzle it over top of the warm oat bars, sprinkle with additional chopped peanuts if desired.",
+      "Cut into squares and enjoy warm, or refrigerate until serving."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Quick oats, peanut butter, banana, maple syrup and low-FODMAP milk, cut into 16 bars. Use firm bananas (ripe ones carry more fructans) and keep to one or two bars per serve.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-cajun-tuna-salad-tuna-melt",
+    "name": "Cajun Tuna Salad / Tuna Melt",
+    "emoji": "🐟",
+    "category": "lunch",
+    "time": "15 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "15-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-cajun-tuna-salad-tuna-melt-recipe-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "½ cup",
+        "item": "mayonnaise"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "fresh squeezed lemon juice"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "paprika"
+      },
+      {
+        "qty": "2 teaspoon",
+        "item": "low-FODMAP Happy Spices Taco Seasoning"
+      },
+      {
+        "qty": "½ tsp",
+        "item": "black pepper"
+      },
+      {
+        "qty": "3",
+        "item": "five ounce cans drained white solid Albacore tuna, for best results, but you can substitute any canned tuna variety if necessary"
+      },
+      {
+        "qty": "½ cup",
+        "item": "chopped red sweet pepper"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "finely chopped celery"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "chopped chives, green tip only"
+      },
+      {
+        "qty": "1-2",
+        "item": "tomatoes, sliced, optional, for serving"
+      }
+    ],
+    "steps": [
+      "Place tuna in bowl and mince well with a fork until fine.",
+      "Add all additional ingredients and stir to combine.",
+      "Serve immediately with sliced tomatoes in low-FODMAP, gluten-free bread or bed of lettuce."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Canned tuna, mayonnaise, lemon, Cajun spices, 2 tablespoons celery and chive tips. Check your Cajun blend has no onion or garlic. Make it a melt on low-FODMAP bread with cheddar. Serves 4.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-chicken-noodle-soup",
+    "name": "Chicken Noodle Soup (Rachel Pauls)",
+    "emoji": "🍜",
+    "category": "lunch",
+    "time": "20 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "one-pot",
+      "20-min",
+      "soup"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-chicken-noodle-soup-recipe-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "3",
+        "item": "cooked and cubed boneless, skinless chicken breasts, about 12 ounces total"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "onion or garlic infused oil, plus extra for drizzling"
+      },
+      {
+        "qty": "to taste",
+        "item": "see my recipe swap blog for tips on shopping for these oils"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "dried thyme"
+      },
+      {
+        "qty": "1-2 teaspoons",
+        "item": "each of: salt and freshly ground black pepper"
+      },
+      {
+        "qty": "8 cups",
+        "item": "low-FODMAP chicken broth, see recipe"
+      },
+      {
+        "qty": "to taste",
+        "item": "Can also try my low-FODMAP Happy Soup for easier prep!"
+      },
+      {
+        "qty": "2 cups",
+        "item": "raw low-FODMAP noodles: try Asian rice vermicelli noodles or gluten-free, low-FODMAP thin spaghetti pasta"
+      },
+      {
+        "qty": "to taste",
+        "item": "Minced fresh parsley and/or dill, for garnish"
+      },
+      {
+        "qty": "to taste",
+        "item": "Serve with gluten-free crackers (I like Glutino brand), or if you can tolerate gluten then regular saltine crackers have tested to be low-FODMAP in recent US based research"
+      }
+    ],
+    "steps": [
+      "In a pot over medium heat, pour in the chicken broth.",
+      "Cover and bring to a simmer, stir in the 2 tablespoons of oil.",
+      "Add the noodles and cook in the broth until al-dente.",
+      "Add chopped chicken to the pot.",
+      "Add salt and pepper to taste.",
+      "Serve garnished with fresh dill and parsley, if desired."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Infused oil, carrot, chicken, a low-FODMAP broth (store-bought broths often hide onion and garlic in \"natural flavors\") and rice vermicelli or gluten-free thin spaghetti. Two other chicken noodle soups are already in the cookbook, so this one carries the source name. Serves 6.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-carrot-and-curry-soup",
+    "name": "Carrot and Curry Soup",
+    "emoji": "🥕",
+    "category": "lunch",
+    "time": "30 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegan",
+      "30-min",
+      "soup"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-carrot-and-curry-soup-gluten-free-vegan/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "3 tablespoons",
+        "item": "infused olive oil"
+      },
+      {
+        "qty": "¾ pound",
+        "item": "carrots, peeled and cut into 1/2-inch coins"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "peeled, grated fresh ginger"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "ground cumin"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "ground turmeric"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "ground coriander"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "freshly ground pepper"
+      },
+      {
+        "qty": "2 cups",
+        "item": "low-FODMAP chicken or low-FODMAP vegetable stock for vegan version"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "canned coconut cream"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "low-FODMAP milk"
+      },
+      {
+        "qty": "to taste",
+        "item": "Juice from ½ lime, about 4 tsp"
+      },
+      {
+        "qty": "to taste",
+        "item": "Fresh chopped cilantro and toasted pumpkin seeds for garnish, optional"
+      }
+    ],
+    "steps": [
+      "Heat the oil in a heavy saucepan or dutch oven.",
+      "Add the chopped carrots along with the ginger, cumin, turmeric, and coriander.",
+      "Stir and cook until softened, about 10 minutes.",
+      "Add the stock; there should be enough to cover the carrots.",
+      "Bring the pot to a boil over high heat.",
+      "Reduce the heat to medium and continue cooking until the carrots are cooked through, about 10 to 15 minutes.",
+      "If you have an immersion blender, purée the soup in the pot.",
+      "If not, wait until the soup cools slightly, and purée in a food processor or blender.",
+      "Add the coconut cream and low-FODMAP milk while you puree to get to desired consistency.",
+      "If needed, add more stock or water to bring the soup to the consistency you want (I added about an additional cup of broth as I prefer a more liquidy soup).",
+      "Adjust the seasonings (depending on the stock you use, you may need more or less salt), and add the lime juice to taste.",
+      "Garnish with cilantro and toasted pumpkin seeds if desired."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Carrots, curry powder, low-FODMAP stock, canned coconut cream and low-FODMAP milk, blended smooth. Serves 2.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-light-chicken-salad",
+    "name": "Light Chicken Salad",
+    "emoji": "🥗",
+    "category": "lunch",
+    "time": "15 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "15-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/light-satisfying-low-fodmap-chicken-salad-recipe/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 cups",
+        "item": "chicken, about 2-3 chicken breast/thigh pieces"
+      },
+      {
+        "qty": "½ cup",
+        "item": "green or red grapes, halved"
+      },
+      {
+        "qty": "½ cup",
+        "item": "celery, finely sliced"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "green chives, finely sliced"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "mayonnaise, I like Hellman’s Real Mayonnaise or Hellmann’s Light Mayonnaise"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "fresh lemon juice"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "fresh rosemary, minced"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "fresh parsley, minced"
+      },
+      {
+        "qty": "2 tsp.",
+        "item": "garlic infused olive oil"
+      },
+      {
+        "qty": "½ tsp.",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "½ tsp.",
+        "item": "ground black pepper"
+      },
+      {
+        "qty": "to taste",
+        "item": "Optional toppings: 1/3 cup almonds: toasted or raw, whole, chopped or sliced"
+      },
+      {
+        "qty": "¼",
+        "item": "c pinenuts"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "pecans: toasted or raw, whole, halves or chopped"
+      },
+      {
+        "qty": "5",
+        "item": "TB sunflower seeds"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "coarsely grated parmesan cheese"
+      }
+    ],
+    "steps": [
+      "Dice chicken into small pieces.",
+      "Place all the dressing ingredients together in a jar with a tight lid and shake well to combine Can also blend in mini-blender or processor.",
+      "Combine salad ingredients and dressing in a medium sized bowl and mix well.",
+      "Refrigerate for at least one hour, or overnight to allow the flavors to marinate.",
+      "Plate on bread, bed of spinach or baby lettuce greens.",
+      "Sprinkle with one or more optional toppings."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Chicken, 1/2 cup celery across 4 serves (celery is low-FODMAP in small amounts), chives, lemon, garlic-infused oil and optional almonds. The Parmesan is optional. Serves 4.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-classic-egg-salad",
+    "name": "Classic Egg Salad",
+    "emoji": "🥚",
+    "category": "lunch",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegetarian",
+      "dairy-free",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/the-best-low-fodmap-egg-salad-recipe-gluten-free-vegetarian-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "6 large",
+        "item": "eggs, hard boiled, or see directions below for boiling"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "full fat mayonnaise, Hellman's is my favorite, check to ensure no high-fructose corn syrup in your brand"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "mustard powder"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "chopped chives or green scallion tips"
+      },
+      {
+        "qty": "2 tbsps (20 g)",
+        "item": "finely chopped celery"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "red wine vinegar"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "paprika"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and pepper to taste"
+      },
+      {
+        "qty": "to taste",
+        "item": "Optional: 1-2 drops hot sauce"
+      },
+      {
+        "qty": "to taste",
+        "item": "low-FODMAP bread (true sourdough) or gluten-free toasted bagel halves, to serve"
+      },
+      {
+        "qty": "to taste",
+        "item": "Garnish: Butter lettuce, torn, sliced tomatoes, avocado (1/8 avocado per serving), alfalfa sprouts (2 cups per serving), sliced cucumber, low-FODMAP Pickles"
+      }
+    ],
+    "steps": [
+      "Put the 6 eggs in a medium pot and cover with water.",
+      "Place pot over high heat and let it come to a boil (about 3-5 minutes).",
+      "Once it boils, take the pot off the heat, cover it, and let it stand for 10 minutes.",
+      "Meanwhile, chop the chives and celery.",
+      "In a small bowl or measuring cup combine mayo with the mustard powder and paprika, then add the chives and celery as well as red wine vinegar.",
+      "Cover and place in fridge to allow the flavors to marinate together.",
+      "Once the eggs have been in their hot bath for ten minutes, put them in a bowl with some ice and water until they are completely chilled about 30 minutes (can also put in fridge for later) This step makes them easier to peel.",
+      "Once well chilled, peel and coarsely chop the eggs, then place in a medium bowl, and fold the mayo mixture into them a little at a time (if you prefer a ‘drier’ egg salad then you may not use all the mayo mixture.",
+      "Adjust to your preference) Stir to combine well, taste and add salt and pepper.",
+      "Add more mayo or other spices or hot sauce as needed to consistency, and desired taste.",
+      "Serve with the lettuce and choice of garnishes on your low-FODMAP bread choice, or simply serve on the lettuce leaves for a low-carb version."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Eggs, mayonnaise (check for high-fructose corn syrup), Dijon, chives and 2 tablespoons celery. Serve on low-FODMAP bread with 1/8 avocado per serve. Serves 4; 25 minutes includes boiling the eggs.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-curry-chicken-salad",
+    "name": "Curry Chicken Salad",
+    "emoji": "🍛",
+    "category": "lunch",
+    "time": "10 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "10-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-curry-chicken-salad-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "3 cups",
+        "item": "shredded or cubed, fully cooked chicken breasts or thighs"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "plus 2 tbsp real mayonnaise with low-FODMAP ingredients"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "plus 2 tbsp lactose-free sour cream"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "yellow curry powder, plus to taste"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "apple cider vinegar"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "ground pepper"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "sea salt"
+      },
+      {
+        "qty": "1/8 teaspoon",
+        "item": "paprika"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "maple syrup"
+      },
+      {
+        "qty": "40g (about 1 stalk)",
+        "item": "chopped celery"
+      },
+      {
+        "qty": "3",
+        "item": "scallions, green tips only"
+      },
+      {
+        "qty": "3/4 cup (100g)",
+        "item": "seedless grapes, cut in half"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "water chestnuts, chopped"
+      },
+      {
+        "qty": "1/4 cup (25g)",
+        "item": "toasted almond slivers, salted peanuts, or toasted hazelnuts"
+      }
+    ],
+    "steps": [
+      "In a large bowl, stir together mayo, lactose-free sour cream, apple cider vinegar, curry powder, paprika, pepper and salt.",
+      "Add maple syrup, taste and adjust seasonings as desired.",
+      "Add the chicken, celery, scallions, water chestnuts to the mayo mixture then gently fold in grapes.",
+      "Serve on low-FODMAP bread as a sandwich, in lettuce wraps or over a bed of greens, topped with toasted nuts, if desired."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Chicken, lactose-free sour cream and mayonnaise, curry powder, a tablespoon of maple syrup, 1 stalk celery across 4 serves, scallion tips and toasted nuts. Serves 4.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-crunchy-thai-peanut-salad",
+    "name": "Crunchy Thai Peanut Salad",
+    "emoji": "🥜",
+    "category": "lunch",
+    "time": "25 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegan",
+      "meal-prep"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-crunchy-thai-peanut-salad-gluten-free-vegan/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "12 ounces (340g)",
+        "item": "edamame, frozen"
+      },
+      {
+        "qty": "1 cup",
+        "item": "dry quinoa, uncooked"
+      },
+      {
+        "qty": "4 cups (300g)",
+        "item": "iceberg lettuce, finely chopped"
+      },
+      {
+        "qty": "2 cups (200g)",
+        "item": "purple cabbage, finely chopped"
+      },
+      {
+        "qty": "2 cup",
+        "item": "carrots, finely grated, about 1 large carrot"
+      },
+      {
+        "qty": "1 cup (16g)",
+        "item": "cilantro, roughly chopped"
+      },
+      {
+        "qty": "1 cup (75g)",
+        "item": "green scallion tips"
+      },
+      {
+        "qty": "8 tablespoons (90g)",
+        "item": "roasted and unsalted peanuts, chopped"
+      },
+      {
+        "qty": "4 tablespoons (44g)",
+        "item": "toasted sesame seeds"
+      }
+    ],
+    "steps": [
+      "In 2 separate saucepans, cook your edamame and quinoa according to the package instructions.",
+      "While this is cooking, prepare your Low-FODMAP Dressing (if not already done so) and all of the veggies (iceberg, cabbage, carrots, green onion, cilantro).",
+      "Place the vegetables in a large salad bowl.",
+      "Drain the edamame and toss this into the bowl with the quinoa, peanuts and seeds, then drizzle with dressing (you may have leftover dressing).",
+      "Serve immediately."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Red cabbage (low-FODMAP at about 3/4 cup per serve; this is 2 cups across 8), carrot, scallion tips and a peanut dressing. Serves 8 as a side or 4 as a lunch. Pairs with the Asian peanut dressing in the recipe.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-mediterranean-tuna-salad-with-olives",
+    "name": "Mediterranean Tuna Salad with Olives",
+    "emoji": "🫒",
+    "category": "lunch",
+    "time": "10 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "10-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/gut-friendly-mediterranean-tuna-salad-with-olives-low-fodmap-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2",
+        "item": "five-ounce cans of white tuna in water, drained and flaked to your desired consistency"
+      },
+      {
+        "qty": "1 large",
+        "item": "ripe tomato (175 g), diced"
+      },
+      {
+        "qty": "1/4 cup (45g)",
+        "item": "chopped kalamata black olives"
+      },
+      {
+        "qty": "1/4 cup (45g)",
+        "item": "sliced green olives"
+      },
+      {
+        "qty": "1 medium",
+        "item": "carrot (65g), chopped into small chunks or coins"
+      },
+      {
+        "qty": "3",
+        "item": "hearts of palm (85 g from a 14 ounce jar or can), chopped"
+      },
+      {
+        "qty": "2 small",
+        "item": "pickled onions in vinegar (8g), chopped (optional)"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "fresh squeezed lemon juice"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "garlic infused oil"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "shallot or onion infused oil"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "Dijon mustard"
+      },
+      {
+        "qty": "to taste",
+        "item": "Freshly ground pepper, to taste"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "fresh parsley, chopped"
+      }
+    ],
+    "steps": [
+      "Place tuna, tomato, olives, carrots, hearts of palm, and optional pickled onion in a large bowl.",
+      "Whisk lemon juice, infused oils, and Dijon in a small bowl.",
+      "Toss dressing together with the tuna mixture, then season with pepper and parsley.",
+      "Serve in lettuce cups, or with LF toast or crackers*."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Tuna, olives, tomato, lemon, infused oils and two small pickled onions (optional; pickling removes most of the fructans, and the amount is tiny). Serves 4.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-turkey-burgers-with-asian-slaw",
+    "name": "Turkey Burgers with Asian Slaw",
+    "emoji": "🍔",
+    "category": "dinner",
+    "time": "45 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/juicy-low-fodmap-turkey-burgers-with-low-fodmap-asian-slaw-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1/3 cup",
+        "item": "rice vinegar, not ‘seasoned’ rice vinegar as that contains extra sugar"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "canola or olive oil"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "garlic infused olive oil"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "sugar"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "corn syrup"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "sesame oil"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "minced ginger"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "freshly squeezed lime juice, from 1 lime"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "salt"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "crushed red pepper flakes"
+      },
+      {
+        "qty": "1 ½ cups",
+        "item": "green cabbage, shredded"
+      },
+      {
+        "qty": "1 ½ cups",
+        "item": "red cabbage, shredded"
+      },
+      {
+        "qty": "2",
+        "item": "carrots, peeled and shredded"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "chopped fresh cilantro leaves"
+      },
+      {
+        "qty": "to taste",
+        "item": "For low-FODMAP Turkey Burgers"
+      },
+      {
+        "qty": "1 pound",
+        "item": "ground turkey"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "ground ginger"
+      },
+      {
+        "qty": "1/4",
+        "item": "red pepper, finely chopped"
+      },
+      {
+        "qty": "2",
+        "item": "scallions, green tips only, chopped"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "low-sodium soy sauce, gluten-free if necessary"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "maple syrup"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "sesame oil"
+      },
+      {
+        "qty": "to taste",
+        "item": "Your choice of oil, for frying, or grill"
+      },
+      {
+        "qty": "6",
+        "item": "low-FODMAP, gluten-free burger buns, rolls or thickly sliced bread"
+      }
+    ],
+    "steps": [
+      "In a small bowl, mix together the rice vinegar, canola or olive oil, garlic- infused olive oil, sugar, sesame oil, corn syrup, ginger, lime juice, salt and red pepper flakes.",
+      "Cover and refrigerate, at least an hour or overnight.",
+      "At least 30 minutes before serving, place the cabbage and carrots in a large bowl and pour the dressing over the coleslaw.",
+      "Add the cilantro and toss. Then make the turkey burgers:",
+      "In a large bowl, mix all the ingredients for the burgers thoroughly.",
+      "Pat the mixture into 6 large patties of equal thickness.",
+      "Heat grill to medium, or place a large saucepan over stovetop set to medium-high and add desired oil.",
+      "Place burgers on heated grill or skillet and cook thoroughly, turning occasionally ◦If concerns about outside burning, turn heat to low and cover to completely cook the inside of the burger ◦Cooking time will vary but around 10 minutes.",
+      "Serve topped with low-FODMAP Asian Coleslaw or your choice of condiments."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Turkey patties with a cabbage slaw: 3 cups cabbage across 6 serves is within the low-FODMAP amount. Use gluten-free, low-FODMAP buns. Soy sauce and 1 tablespoon maple syrup are fine. Serves 6; 45 minutes includes making the slaw.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-broccoli-cheddar-soup-for-two",
+    "name": "Broccoli Cheddar Soup for Two",
+    "emoji": "🥦",
+    "category": "lunch",
+    "time": "25 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "30-min",
+      "soup"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-gluten-free-broccoli-cheddar-soup-for-two/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 tablespoons",
+        "item": "unsalted butter"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "onion or shallot infused oil"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "all-purpose, low-FODMAP and gluten-free flour"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "1 cup",
+        "item": "low-FODMAP milk"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "lactose-free half and half milk"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "low-FODMAP vegan or chicken broth, prepared"
+      },
+      {
+        "qty": "1 cup (100g)",
+        "item": "cooked broccoli heads"
+      },
+      {
+        "qty": "1/2 cup (60g)",
+        "item": "shredded cheddar cheese"
+      }
+    ],
+    "steps": [
+      "In a small saucepan, melt butter with infused oil over medium heat.",
+      "Add the low-FODMAP flour, salt and pepper and stir until slightly browned.",
+      "Stir in low-FODMAP milk, then half-and-half, and prepared LF broth.",
+      "Bring to a boil and stir continuously until it thickens, about 2 minutes.",
+      "Stir in the broccoli, then remove from heat and add cheese.",
+      "Taste, adjust seasonings as desired.",
+      "Serve hot with low-FODMAP bread or crackers."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Broccoli florets are low-FODMAP at about 3/4 cup per serve, which this recipe keeps to. Lactose-free milk and half-and-half, gluten-free flour, onion-infused oil and cheddar. Serves 2.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-chicken-corn-chowder",
+    "name": "Chicken Corn Chowder",
+    "emoji": "🌽",
+    "category": "dinner",
+    "time": "50 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "one-pot",
+      "soup"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-gluten-free-chicken-corn-chowder/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "6",
+        "item": "strips uncooked bacon, cut into 1/2-inch pieces"
+      },
+      {
+        "qty": "1 1/2 tablespoons",
+        "item": "garlic-infused oil"
+      },
+      {
+        "qty": "1 1/2 tablespoons",
+        "item": "onion- or shallot-infused oil"
+      },
+      {
+        "qty": "1 (40 g) stalk",
+        "item": "celery, minced"
+      },
+      {
+        "qty": "1 medium",
+        "item": "carrot (70 g), chopped"
+      },
+      {
+        "qty": "1/4 cup (30 g)",
+        "item": "low-FODMAP, gluten-free flour"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "salt, plus more to taste"
+      },
+      {
+        "qty": "3/4 teaspoon",
+        "item": "freshly ground black pepper"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "smoked paprika or paprika"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "rosemary"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "oregano"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "dried thyme"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "dry mustard powder"
+      },
+      {
+        "qty": "5 cups",
+        "item": "low-FODMAP chicken broth"
+      },
+      {
+        "qty": "1 cup",
+        "item": "low-FODMAP milk"
+      },
+      {
+        "qty": "1 cup",
+        "item": "heavy cream, or canned coconut cream for dairy-free"
+      },
+      {
+        "qty": "1 lb.",
+        "item": "Yukon gold potatoes, diced into 1-inch cubes, peeled or unpeeled"
+      },
+      {
+        "qty": "1 lb (16 ounces)",
+        "item": "boneless skinless chicken breasts, uncooked"
+      },
+      {
+        "qty": "2 1/2 cups (275 g)",
+        "item": "canned sweet corn, rinsed well and drained"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "cornstarch, optional"
+      },
+      {
+        "qty": "to taste",
+        "item": "Optional garnish: green scallion tips, jalapeno, cilantro, shredded cheddar cheese, shredded corn chips"
+      }
+    ],
+    "steps": [
+      "Place chopped bacon pieces in your large saucepan or Dutch oven over medium heat.",
+      "Cook until bacon is well crisped, then set aside on a paper-towel lined plate.",
+      "Drain half of the bacon grease, then add your infused oils to the saucepan and sear the chicken breasts on both sides, but do not cook through (this gives the chicken a nice flavor).",
+      "Remove the chicken to a plate, then add the celery and carrot and fry until soft (about 5 minutes).",
+      "In the saucepan, sprinkle in the LF flour and cook until lightly browned, then add the salt, pepper, paprika, rosemary, oregano, thyme and dry mustard powder, adjusting heat as necessary to medium-low.",
+      "Add the 5 cups LF chicken broth, then the LF milk and cream or coconut cream and stir to combine.",
+      "Next, add the chopped potatoes, chicken and drained corn.",
+      "Bring the soup to a boil and cook until the potatoes are tender and chicken is cooked through.",
+      "Remove cooked chicken to a plate or cutting board, and shred or dice into bite sized pieces. Cover to keep warm for now.",
+      "Puree about 1/2 the soup using your immersion blender (or transfer to a stand blender if you don’t have an immersion blender). You can also choose to mash about half the potatoes in the pot using a potato masher.",
+      "If the broth is still thin, create a roux by mixing your cornstarch with 1/2 cup of the broth, then return this to the pot and allow to simmer.",
+      "Put the chicken pieces back in the pot, as well as half the bacon.",
+      "Taste soup and add seasoning if desired. Serve topped with the remaining bacon pieces, as well as optional garnish."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Canned corn, rinsed, is the low-FODMAP form the author uses (about 1/2 cup per serve here). Heavy cream is a small serve each, with a coconut-cream option. One stalk of celery across 6. Serves 6; 50 minutes, mostly simmering.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-southwest-salad-with-southwest-dressing",
+    "name": "Southwest Salad with Southwest Dressing",
+    "emoji": "🥗",
+    "category": "lunch",
+    "time": "30 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-southwest-salad-low-fodmap-southwest-dressing/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "8",
+        "item": "TB light mayo, I used Hellman’s Light"
+      },
+      {
+        "qty": "3 Tbsp",
+        "item": "plain Greek yogurt, or lactose-free yogurt or sour cream"
+      },
+      {
+        "qty": "2",
+        "item": "TB water"
+      },
+      {
+        "qty": "2 Tbsp",
+        "item": "light corn syrup"
+      },
+      {
+        "qty": "2 tsp",
+        "item": "red wine vinegar"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "lime juice"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "cilantro"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "chili powder"
+      },
+      {
+        "qty": "1/4 tsp",
+        "item": "cayenne"
+      },
+      {
+        "qty": "¼ tsp",
+        "item": "cumin"
+      },
+      {
+        "qty": "to taste",
+        "item": "Low-FODMAP Grilled Lime Chicken, prepared, best marinated day before"
+      },
+      {
+        "qty": "1 1/4 cups (120 g)",
+        "item": "grated cheddar cheese"
+      },
+      {
+        "qty": "1 head",
+        "item": "iceberg lettuce, chopped or torn, or 2 heads bib lettuce"
+      },
+      {
+        "qty": "2",
+        "item": "shredded carrots"
+      },
+      {
+        "qty": "3",
+        "item": "tomatoes, chopped"
+      },
+      {
+        "qty": "2 cobs",
+        "item": "fresh corn, cooked and kernels removed (about 170 g)"
+      },
+      {
+        "qty": "to taste",
+        "item": "Tortilla strips for topping"
+      },
+      {
+        "qty": "to taste",
+        "item": "Fresh cilantro and lime wedge for garnish"
+      }
+    ],
+    "steps": [
+      "Combine all low-FODMAP salad dressing ingredients in mason jar, shake well.",
+      "Place in refrigerator until use Best made a day ahead for flavors to combine.",
+      "Combine all vegetable salad ingredients in bowl Prior to serving toss cheese, tortilla strips over top.",
+      "Lay low-FODMAP Lime chicken breasts over top of greens and drizzle with dressing.",
+      "Sprinkle cilantro and garnish with limes."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Use the lactose-free yogurt option for the dressing. Fresh corn is kept to about 1/2 cob per serve, cheddar is low-lactose, and the tortilla strips should be corn. Serves 6.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-classic-low-fodmap-tacos",
+    "name": "Classic Low-FODMAP Tacos",
+    "emoji": "🌮",
+    "category": "dinner",
+    "time": "27 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/best-low-fodmap-taco-recipe-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 tablespoon",
+        "item": "onion or shallot infused olive oil"
+      },
+      {
+        "qty": "2 pounds",
+        "item": "ground beef"
+      },
+      {
+        "qty": "to taste",
+        "item": "I use extra-lean beef"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "low-FODMAP Happy Spices Taco Seasoning"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "water"
+      },
+      {
+        "qty": "to taste",
+        "item": "Toppings"
+      },
+      {
+        "qty": "16",
+        "item": "low-FODMAP, gluten-free hard taco shells, corn only, not wheat"
+      },
+      {
+        "qty": "3 cups",
+        "item": "Cheddar-Jack cheese, grated"
+      },
+      {
+        "qty": "6",
+        "item": "Roma tomatoes, diced"
+      },
+      {
+        "qty": "1 head",
+        "item": "green leaf lettuce, shredded"
+      },
+      {
+        "qty": "1 cup",
+        "item": "chopped canned black olives"
+      },
+      {
+        "qty": "to taste",
+        "item": "Low-FODMAP Salsa recipe"
+      },
+      {
+        "qty": "to taste",
+        "item": "Chopped cilantro and limes for garnish"
+      }
+    ],
+    "steps": [
+      "In a skillet over medium-high heat, add the infused olive oil, warm the oil.",
+      "Place the ground beef in skillet and cook the meat until it's browned, then drain the fat.",
+      "Add the low-FODMAP Taco seasoning and stir to combine.",
+      "Add 3/4 cup hot water and stir.",
+      "Reduce the heat to low and simmer for 15 minutes.",
+      "Serve immediately, or refrigerate until use (tastes great a day later).",
+      "Warm taco shells in microwave oven or standard oven as per package instructions.",
+      "Layer meat in the bottom of the shell and top with lettuce, cheese, diced tomatoes, olives."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Seasoned beef with onion-infused oil and a homemade taco spice (store blends carry onion and garlic), in corn-only hard shells with cheddar-jack, lettuce and tomato. Pair with the Sassy Salsa in this collection. Serves 8.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-sheet-pan-chicken-fajitas",
+    "name": "Sheet Pan Chicken Fajitas (Rachel Pauls)",
+    "emoji": "🌯",
+    "category": "dinner",
+    "time": "45 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free option",
+      "sheet-pan"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-sheet-pan-chicken-fajitas-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 tablespoons",
+        "item": "low-FODMAP Happy Spices Taco Seasoning"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "paprika"
+      },
+      {
+        "qty": "1 1/4 tsp",
+        "item": "salt, plus more to taste"
+      },
+      {
+        "qty": "1 1/4 tsp",
+        "item": "black pepper, plus more to taste"
+      },
+      {
+        "qty": "1 1/2 pounds",
+        "item": "boneless, skinless chicken breasts, cut into thin strips"
+      },
+      {
+        "qty": "1",
+        "item": "red bell pepper, cut into strips"
+      },
+      {
+        "qty": "1",
+        "item": "green bell pepper, cut into strips"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "onion or shallot infused oil"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "garlic infused oil"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "chopped fresh cilantro leaves"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "freshly squeezed lime juice"
+      },
+      {
+        "qty": "6 (8-inch)",
+        "item": "gluten-free corn tortillas, or gluten-free flour tortillas with low-FODMAP ingredients"
+      },
+      {
+        "qty": "to taste",
+        "item": "Optional garnish:, note: some items contain dairy"
+      },
+      {
+        "qty": "1 cup",
+        "item": "shredded cheddar cheese"
+      },
+      {
+        "qty": "1 medium",
+        "item": "tomato, chopped"
+      },
+      {
+        "qty": "1/2",
+        "item": "avocado, sliced"
+      },
+      {
+        "qty": "to taste",
+        "item": "Lactose free sour cream"
+      },
+      {
+        "qty": "to taste",
+        "item": "Chopped black olives"
+      },
+      {
+        "qty": "to taste",
+        "item": "Additional cilantro"
+      },
+      {
+        "qty": "to taste",
+        "item": "Low-FODMAP Sassy Salsa, prepared"
+      },
+      {
+        "qty": "to taste",
+        "item": "Baking spray"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 425 degrees F.",
+      "Line a rimmed baking sheet with aluminum foil and spray with baking spray.",
+      "In a small bowl, combine low-FODMAP Happy Spices Taco Seasoning, paprika, 1 & 1/4 teaspoons salt and 1 & 1/4 teaspoons pepper.",
+      "Place chicken and bell peppers in a bowl, and toss with the infused oils and the seasoning mixture.",
+      "Lay chicken and peppers on the prepared pan in a single layer and bake for 25 minutes, or until the chicken is completely cooked through and the vegetables are slightly crisp.",
+      "In the last few minutes, warm tortillas on a skillet or microwave, set aside.",
+      "Remove chicken from oven and toss with cilantro and lime juice.",
+      "Serve chicken with tortillas, chopped tomatoes and additional optional garnish per your taste."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Bell peppers, chicken, infused oils and homemade fajita spice on one pan; serve in corn tortillas with 1/8 avocado per serve, cheddar and lactose-free sour cream. Two other sheet-pan fajita recipes exist, so this one carries the source name. Serves 6; 45 minutes is mostly roasting.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-chicken-tortilla-soup",
+    "name": "Chicken Tortilla Soup (Rachel Pauls)",
+    "emoji": "🍲",
+    "category": "dinner",
+    "time": "45 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "one-pot",
+      "soup"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-gluten-free-chicken-tortilla-soup/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 pound (16 ounces)",
+        "item": "boneless, skinless chicken breasts"
+      },
+      {
+        "qty": "1",
+        "item": "jalapeno pepper, seeded and diced, optional"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "low-FODMAP taco seasoning"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "salt, plus to taste"
+      },
+      {
+        "qty": "15 ounces",
+        "item": "canned fire-roasted crushed tomatoes"
+      },
+      {
+        "qty": "4 cups",
+        "item": "low-FODMAP Chicken Broth, prepared"
+      },
+      {
+        "qty": "8 ounces (200g)",
+        "item": "canned black beans, drained and rinsed"
+      },
+      {
+        "qty": "10 ounces (300g)",
+        "item": "canned corn, drained and rinsed"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "corn meal or polenta"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "fresh cilantro, chopped, will use 1/4 cup for topping"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "garlic infused oil"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "onion or shallot infused oil"
+      },
+      {
+        "qty": "2",
+        "item": "limes, juiced"
+      },
+      {
+        "qty": "to taste",
+        "item": "Pepper, to taste"
+      },
+      {
+        "qty": "to taste",
+        "item": "Tortilla strips, gluten-free and with low-FODMAP ingredientssee below for a recipe"
+      },
+      {
+        "qty": "1 large",
+        "item": "avocado, diced"
+      },
+      {
+        "qty": "1",
+        "item": "lime, cut into wedges, to serve"
+      },
+      {
+        "qty": "to taste",
+        "item": "Fresh cilantro"
+      },
+      {
+        "qty": "to taste",
+        "item": "Shredded sharp cheddar or Monterey Jack Cheese, optional"
+      }
+    ],
+    "steps": [
+      "Place your pot over medium-high heat.",
+      "Add chicken breasts and 1 teaspoon garlic infused oil. Allow to sear on both sides for about 2 minutes.",
+      "Add in the low-FODMAP chicken broth, low-FODMAP taco seasoning, fire roasted tomatoes, black beans, corn, corn meal, and salt.",
+      "Bring to a boil and let simmer for at least 25 minutes, covered.",
+      "Remove chicken from the pot and shred it using 2 forks or your hands, or chop into pieces if you prefer.",
+      "Add shredded chicken back to the soup.",
+      "Stir in 1/2 cup fresh cilantro and the remaining infused oils.",
+      "Simmer another 5 minutes then add lime juice. Taste, and adjust seasonings as desired.",
+      "Serve the soup with some tortilla strips, pieces of avocado, remaining 1/4 cup fresh cilantro, shredded cheese and lime wedges."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Canned black beans (200 g rinsed across 6 serves) and canned corn (rinsed) are kept to low-FODMAP amounts by the author; infused oils, lime, cumin and chicken. Top with corn tortilla strips and a little avocado. Two other tortilla soups exist, so this carries the source name. Serves 6.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-one-pot-chicken-with-cilantro-lime-rice",
+    "name": "One-Pot Chicken with Cilantro Lime Rice",
+    "emoji": "🍚",
+    "category": "dinner",
+    "time": "55 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "one-pot"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-one-pot-chicken-with-cilantro-lime-rice-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 large",
+        "item": "pack (4–6 pieces) skin-on, bone-in chicken thighs. Due to the weight of the bones, this amount of chicken will weigh between 32-36 ounces"
+      },
+      {
+        "qty": "2-3 tablespoons",
+        "item": "of canola or olive oil"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "garlic-infused oil"
+      },
+      {
+        "qty": "3 cups",
+        "item": "of low-FODMAP chicken broth/stock"
+      },
+      {
+        "qty": "2 cups",
+        "item": "uncooked jasmine or basmati rice, rinsed"
+      },
+      {
+        "qty": "4 tablespoons (about 2 limes)",
+        "item": "fresh squeezed lime juice, do not substitute concentrates"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "finely chopped fresh cilantro"
+      },
+      {
+        "qty": "to taste",
+        "item": "Liberal amounts of salt and pepper, to taste"
+      }
+    ],
+    "steps": [
+      "Pat chicken dry and season all over with salt and pepper (don’t skimp on the salt- it really provides flavor).",
+      "Add 2-3 tablespoons of canola or olive oil to a cold large sized Dutch oven and tilt to coat the pot bottom.",
+      "Arrange chicken, skin side down, and turn to medium heat (you want to get the skin nicely browned).",
+      "Cook chicken, undisturbed, until the skin is golden and easily releases from the pot, about 8-10 minutes.",
+      "Flip thighs and cook 3-5 minutes longer.",
+      "Transfer chicken to a plate and remove pot from the heat for 2-3 minutes to cool.",
+      "If there is a lot of excess juice and oil in the pot, you can discard it or leave it behind for flavor.",
+      "Return Dutch oven to the stovetop and turn to low.",
+      "Add your garlic infused oil to warm, then add rice and stir to coat in the oil.",
+      "Season with salt and pepper to taste.",
+      "Add 3 cups of low-FODMAP chicken stock/broth and mix.",
+      "Place chicken back into the rice mixture skin side up.",
+      "Increase heat to medium and bring liquid to a simmer, once it is bubbling cover pot, reduce heat to low, and cook for 25 minutes.",
+      "Remove from heat and let chicken and rice sit for 10 minutes with the lid on.",
+      "Remove chicken from the pot and add lime juice and cilantro, then mix.",
+      "Taste rice and add salt and pepper as desired.",
+      "Serve chicken over the rice."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Eight ingredients: chicken thighs, rice, low-FODMAP broth, garlic-infused oil, fresh lime and cilantro. Serves 4; 55 minutes is mostly unattended simmering.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-chipotle-style-chicken-burrito-bowl",
+    "name": "Chipotle-Style Chicken Burrito Bowl",
+    "emoji": "🥙",
+    "category": "dinner",
+    "time": "40 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "meal-prep",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-chipotle-chicken-burrito-bowl-with-cilantro-lime-rice-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "to taste",
+        "item": "For Chicken:"
+      },
+      {
+        "qty": "20 ounces (about 4)",
+        "item": "boneless skinless chicken thighs"
+      },
+      {
+        "qty": "to taste",
+        "item": "Juice of 1 lime"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "garlic infused olive oil"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "onion or shallot infused olive oil"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "low-FODMAP Happy Spices Taco Seasoning"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "tomato paste"
+      },
+      {
+        "qty": "to taste",
+        "item": "For Rice:"
+      },
+      {
+        "qty": "2 cups",
+        "item": "Long Grain White Rice, or Basmati, rinsed"
+      },
+      {
+        "qty": "4 cups",
+        "item": "low-FODMAP Chicken Soup"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "butter or olive oil, dairy-free version"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Juice of 1 lime"
+      },
+      {
+        "qty": "to taste",
+        "item": "Zest of 1 lime"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "fresh cilantro, chopped"
+      },
+      {
+        "qty": "to taste",
+        "item": "For Salad:"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "sliced red bell peppers"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "diced roma or vine-ripened tomatoes"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "fresh or canned corn"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "canned black beans, drained and rinsed"
+      },
+      {
+        "qty": "1 cup",
+        "item": "chopped lettuce"
+      },
+      {
+        "qty": "to taste",
+        "item": "For Garnish:"
+      },
+      {
+        "qty": "1",
+        "item": "lime"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "green scallion tips"
+      },
+      {
+        "qty": "to taste",
+        "item": "Chopped fresh cilantro, chopped"
+      },
+      {
+        "qty": "1/2",
+        "item": "avocado, sliced"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "shredded white cheddar and Monterey Jack cheese, omit for dairy-free"
+      },
+      {
+        "qty": "to taste",
+        "item": "Lactose-free sour cream, omit for dairy-free"
+      }
+    ],
+    "steps": [
+      "In a medium bowl or large resealable bag combine the raw chicken thighs with the infused oils, lime juice, tomato paste, and low-FODMAP Happy Spices Taco Seasoning.",
+      "Mix to coat, then cover the chicken and allow to marinate in the fridge for 30 minutes to overnight.",
+      "When ready to cook, chop and toss all your vegetables for the salad together, then toss and set aside (can also leave separately).",
+      "Prepare items for garnish.",
+      "Place 4 cups of low-FODMAP Chicken Soup in a large saucepan and bring to a boil then mix in rice.",
+      "Allow rice to simmer on low heat for 10 minutes or until the broth has absorbed completely and the rice is soft.",
+      "Stir in butter or olive oil, season with salt, and cover and set aside for later (you will add the lime and cilantro later).",
+      "While rice is cooking, heat a grill or pan over medium-high heat, and remove chicken from marinade.",
+      "Discard the marinade.",
+      "Place chicken on your warm pan and cook for about 5 minutes on each side until inrternal temperature is 165 F Remove from heat for 1 minute to rest, then chop chicken into chunks Fluff the rice, and stir in your zest, juice and cilantro.",
+      "Ladle the rice into bowls, then top your choices of the salad mixture followed by chicken, cheese, sliced avocado, sour cream, cilantro, and chopped scallion tips Squirt the lime juice over top of the bowls prior to serving."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Cilantro-lime rice, marinated chicken, 1/2 cup each of corn and rinsed black beans across 4 serves, lettuce, tomato, scallion tips, cheese and 1/8 avocado per bowl. Long ingredient list because it builds every component. Serves 4.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-one-pan-chili-and-lime-tilapia",
+    "name": "One-Pan Chili and Lime Tilapia",
+    "emoji": "🐟",
+    "category": "dinner",
+    "time": "1 hr",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "sheet-pan"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-one-pan-chili-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "16 ounces (about 3-4)",
+        "item": "tilapia fillets, or any white fish"
+      },
+      {
+        "qty": "1 large (or 2 medium)",
+        "item": "potato, cut into thinly sliced fries"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "sliced carrots"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "sliced zucchini"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "freshly squeezed lime juice, juice of 2 limes"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "fresh chopped cilantro, plus 2 tablespoons for garnish"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "olive oil"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "garlic infused olive oil"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "water"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "maple syrup or light corn syrup"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "low-FODMAP Happy Spices Taco Seasoning"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and fresh cracked pepper to taste"
+      },
+      {
+        "qty": "to taste",
+        "item": "Cooking spray"
+      },
+      {
+        "qty": "to taste",
+        "item": "Lime wedges, for garnish"
+      }
+    ],
+    "steps": [
+      "Preheat your oven to 425°F (210°C) Lightly oil a baking sheet or coat with nonstick spray.",
+      "Whisk together 2 tablespoons garlic infused olive oil, water, lime juice, maple syrup (or corn syrup), low-FODMAP seasonings and cilantro in a small bowl or freezer bag.",
+      "Place tilapia fillets in bag or bowl and marinate for 30 min in refrigerator.",
+      "While fish is marinating- slice vegetables and start the potatoes baking.",
+      "Place potato fries in a single layer onto the prepared baking sheet.",
+      "Drizzle with 1 remaining tablespoon olive oil and season with salt and pepper.",
+      "Bake potato fries about 20 minutes until beginning to brown (these take longer than the other vegetables).",
+      "Remove from oven and make spaces; place vegetables and tilapia in the reserved spaces.",
+      "Drizzle the last tablespoon olive oil over the rest of the veggies and season the tray with salt and pepper to taste.",
+      "Bake until fish flakes easily with a fork and the vegetables begin to crisp up on the edges and have softened, about 20 – 25 minutes."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Tilapia in a chili-lime marinade with garlic-infused oil and a tablespoon of maple syrup, roasted with vegetables on one pan. The hour includes marinating time. Serves 4.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-one-pan-beef-and-cheese-macaroni",
+    "name": "One-Pan Beef and Cheese Macaroni",
+    "emoji": "🧀",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 10,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "one-pot",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-one-pan-beef-and-cheese-macaroni-gluten-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 pounds",
+        "item": "lean or extra lean ground beef"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "garlic infused olive oil"
+      },
+      {
+        "qty": "1 cup (149g)",
+        "item": "chopped red or green bell pepper"
+      },
+      {
+        "qty": "1 cup",
+        "item": "chopped peeled carrots"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "fresh basil or 1 teaspoon dried basil, plus additional for garnish"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "dried oregano"
+      },
+      {
+        "qty": "1 1/2 cans",
+        "item": "crushed or diced tomatoes in juice, no added onion or garlic"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "water"
+      },
+      {
+        "qty": "1 cup",
+        "item": "low-FODMAP Beef Broth or Chicken Broth"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "Worcestershire sauce"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "low-FODMAP certified Taco seasoning"
+      },
+      {
+        "qty": "to taste",
+        "item": "Kosher salt and freshly ground pepper to taste"
+      },
+      {
+        "qty": "3/4 pound",
+        "item": "dried elbow macaroni; gluten-free and low-FODMAP"
+      },
+      {
+        "qty": "2 cups (8 ounces)",
+        "item": "grated cheddar cheese, ensure no added onion or garlic if purchasing a cheese blend"
+      }
+    ],
+    "steps": [
+      "Heat a very large skillet or Dutch Oven over medium high heat and brown the beef, stirring until no pink remains, about 5 minutes.",
+      "Drain the beef and set aside.",
+      "Wipe out the skillet, heat the infused oil over medium heat.",
+      "Add the red pepper and carrots and sauté until almost tender, about 5 minutes.",
+      "Add the ground beef back to the skillet, as well as the basil, oregano, tomatoes with their juice, water, beef base, Worcestershire sauce, and low-FODMAP taco seasoning.",
+      "Season with salt and pepper, turn the heat to high, and bring to a simmer.",
+      "Add the gluten-free macaroni, stir and cover.",
+      "Lower the heat to medium and simmer covered, stirring occasionally, until the pasta is tender but still firm (al-dente), and most of the liquid is absorbed, about 8 to 10 minutes.",
+      "Taste and season again with more salt and pepper to taste.",
+      "Sprinkle the cheese over the mixture, then cover until the cheese is melted.",
+      "Serve immediately."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. A homemade Hamburger Helper: beef, gluten-free macaroni, canned tomatoes without onion or garlic, low-FODMAP broth, a tablespoon of Worcestershire and cheddar. Serves 10, so it halves well.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-sheet-pan-chicken-thighs-with-harvest-vegetables",
+    "name": "Sheet Pan Chicken Thighs with Harvest Vegetables",
+    "emoji": "🍂",
+    "category": "dinner",
+    "time": "1 hr",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "sheet-pan"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-sheet-pan-chicken-thighs-with-harvest-vegetables-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "8-10",
+        "item": "raw bone-in, skin-on, chicken thighs, about 5 lbs"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "plus 1 teaspoon olive oil; divided"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "plus 1 teaspoon garlic-infused oil;divided"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "fresh squeezed lemon juice, do not substitute concentrates"
+      },
+      {
+        "qty": "4 tablespoons",
+        "item": "maple syrup"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "thyme"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "rosemary"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "kosher salt; plus to taste"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "pepper; plus to taste"
+      },
+      {
+        "qty": "3 medium",
+        "item": "sweet potatoes, peeled and cubed"
+      },
+      {
+        "qty": "2 large",
+        "item": "carrots, cut into coins"
+      },
+      {
+        "qty": "2 large",
+        "item": "parsnips, cut into coins"
+      },
+      {
+        "qty": "1 medium",
+        "item": "zucchini (196 g), cut into sticks or wedges"
+      },
+      {
+        "qty": "6 slices",
+        "item": "thick-cut bacon (ensure no onion or garlic added); chopped into 1 inch pieces"
+      },
+      {
+        "qty": "to taste",
+        "item": "Optional garnish: fresh rosemary and thyme sprigs"
+      },
+      {
+        "qty": "to taste",
+        "item": "Baking spray"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 425°F.",
+      "Lay aluminum foil over a large rimmed sheet pan and spray with baking spray.",
+      "Combine olive oil, infused oil, lemon juice, maple syrup, salt, pepper. dried rosemary and thyme in a large bowl or resealable large bag.",
+      "Pat chicken dry and place in the bowl or bag to coat the pieces in the marinade.",
+      "Refrigerate for 15 minutes, or overnight, if desired.",
+      "While this is marinating, chop your vegetables and bacon as per above directions.",
+      "Arrange vegetables on your prepared sheet pan to completely cover the bottom of the pan.",
+      "Drizzle with additional teaspoon of oils and sprinkle with salt and pepper to taste.",
+      "Lay the bacon randomly over the vegetables, then place the chicken pieces over the top of the vegetables as well.",
+      "Drizzle the remaining marinade over everything and bake for 40-50 minutes, or until chicken is 165°F on a meat thermometer.",
+      "Garnish with fresh herbs and serve immediately."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Chicken thighs, bacon (check for no onion or garlic), carrots, Brussels sprouts or green beans and 3 sweet potatoes across 8 serves, which keeps sweet potato to a low-FODMAP amount, with maple and lemon. Serves 8; mostly oven time.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-one-pan-italian-chicken-and-vegetables",
+    "name": "One-Pan Italian Chicken and Vegetables",
+    "emoji": "🍗",
+    "category": "dinner",
+    "time": "1 hr 5 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free option",
+      "sheet-pan"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-one-pan-italian-chicken-and-vegetables-gluten-free-dairy-free/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "6 (6 to (8 ounce)",
+        "item": ") boneless, skinless chicken breasts"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "kosher salt, divided"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "extra-virgin olive oil"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "balsamic vinegar, ensure gluten-free if necessary"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "low-FODMAP Happy Spice Italian Seasoning"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "1 pint",
+        "item": "cherry tomatoes, left wholea"
+      },
+      {
+        "qty": "to taste",
+        "item": "bout 4 low-FODMAP servings per pint"
+      },
+      {
+        "qty": "1 medium",
+        "item": "zucchini"
+      },
+      {
+        "qty": "3 medium",
+        "item": "carrots"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "freshly grated Parmesan cheese, omit for dairy-free version"
+      },
+      {
+        "qty": "2 to 3 tablespoons",
+        "item": "chopped fresh parsley"
+      },
+      {
+        "qty": "to taste",
+        "item": "Baking spray"
+      },
+      {
+        "qty": "to taste",
+        "item": "Flaked sea salt (optional for serving"
+      }
+    ],
+    "steps": [
+      "Place chicken breasts between 2 pieces of wax paper and using a meat tenderizer, pound them to an even 1/2-inch thickness.",
+      "Sprinkle the chicken with 1/2 teaspoon kosher salt and place in a large resealable bag.",
+      "In a large measuring cup or mixing bowl, whisk together the olive oil, balsamic vinegar, low-FODMAP Happy Spice Italian seasoning, black pepper, and remaining 1/2 teaspoon salt.",
+      "Pour half of this marinade mixture into the resealable bag with the chicken.",
+      "Seal the bag (removing as much air as possible), then tip the bag around to ensure the chicken is thoroughly coated.",
+      "Place bag in the refrigerator to marinade for 30 minutes or overnight I place it flat on the baking pan.",
+      "While the chicken marinates, prepare the vegetables.",
+      "Peel the carrots and cut the zucchini and peeled carrots into 3/4 inch slices.",
+      "Place the vegetables in a second resealable bag.",
+      "Pour in the remaining balsamic marinade mixture, seal, and place in the refrigerator with the chicken to marinate also.",
+      "When you are ready to cook, preheat your oven to 425 degrees F Prepare a large rimmed baking sheet with aluminum foil and coat with baking sprayArrange the vegetables and chicken on the pan, with the chicken towards the center, not covered by any vegetables The chicken will shrink as it cooks.",
+      "Bake for 15 to 20 minutes, until the chicken reaches an internal temperature of 165 degrees F Cooking time will vary based on the size of your chicken and how thinly you have pounded it.",
+      "If the vegetables are not as tender as you would like when the chicken is done, you can remove the chicken from the pan (transfer it to a plate and cover) then return the pan with the vegetables to the oven and continue baking until the vegetables have completed cookingIn my oven, 17 minutes was perfect for it all to cook.",
+      "Sprinkle with the grated Parmesan, flaked sea salt and chopped parsley before serving."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Chicken, potatoes, zucchini, bell pepper and tomatoes with Italian herbs; the Parmesan garnish is optional. Serves 6; about an hour, mostly roasting.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-sassy-low-fodmap-salsa",
+    "name": "Sassy Low-FODMAP Salsa",
+    "emoji": "🌶️",
+    "category": "sides",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "vegan",
+      "condiment"
+    ],
+    "source": "https://rachelpaulsfood.com/sassy-low-fodmap-salsa-recipe-gluten-free-vegan/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "4 large",
+        "item": "very ripe plum/roma or vine ripened tomatoes or 1 can (14.5 ounces) organic diced tomatoes, no seasoning added"
+      },
+      {
+        "qty": "1-2",
+        "item": "serrano or red chiles (1/2 for mild, 1 for medium, 1 1/2 to 2 for hot)"
+      },
+      {
+        "qty": "8 sprigs",
+        "item": "of fresh cilantro or 3 tsp dried cilantro, I prefer fresh"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "cooking oil infused with onion or garlic or 1 tablespoon of each"
+      },
+      {
+        "qty": "1/4-1/2 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "Juice from 1 lime"
+      },
+      {
+        "qty": "1/4 tsp",
+        "item": "cumin, optional"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "sugar, optional"
+      }
+    ],
+    "steps": [
+      "Remove the seeds and veins from the chiles.",
+      "If using fresh vegetables, roughly chop the tomatoes, chiles and cilantro.",
+      "Add the chopped vegetables to your blender with spices, salt and lime juice.",
+      "Blend the salsa slightly until it has a coarse texture.",
+      "If using canned tomatoes then skip the blending step and place the canned tomatoes, chopped chilis, cilantro, cumin, lime juice, and salt into a bowl and stir to combine.",
+      "Preheat 2 tablespoons of oil in a pan or small pot.",
+      "Pour the blended/mixed salsa in the hot oil.",
+      "Bring to a boil and then reduce the heat to low.",
+      "Add sugar to taste if desiredSimmer for 15 minutes.",
+      "Adjust the salt to taste.",
+      "Serve immediately or store in refrigerator until use (tastes even better a day later)."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Tomatoes, chiles, cilantro, lime and infused oil in place of onion and garlic. Use it with the tacos, fajitas, quesadillas and burrito bowl in this collection. Serves 4.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-slow-cooker-sloppy-joes",
+    "name": "Slow-Cooker Sloppy Joes",
+    "emoji": "🥪",
+    "category": "dinner",
+    "time": "2 hr 30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "dairy-free",
+      "slow cooker",
+      "high-protein"
+    ],
+    "source": "https://rachelpaulsfood.com/low-fodmap-slow-cooker-sloppy-joes-gluten-free-dairy-free-no-onion-or-garlic/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "lean ground beef, turkey, chicken, or pork"
+      },
+      {
+        "qty": "1/2 cup (56 g, 2 ounces)",
+        "item": "diced green bell pepper"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "garlic infused olive oil"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "green scallion tips or chives"
+      },
+      {
+        "qty": "1/2 can (3 ounces, 6 tbsp)",
+        "item": "tomato paste"
+      },
+      {
+        "qty": "3 tbsp",
+        "item": "light brown sugar"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "yellow mustard, or Dijon"
+      },
+      {
+        "qty": "2 tsp",
+        "item": "red wine vinegar"
+      },
+      {
+        "qty": "2 tsp",
+        "item": "Worcestershire sauce"
+      },
+      {
+        "qty": "1 cup",
+        "item": "low-FODMAP beef broth, prepared"
+      },
+      {
+        "qty": "1/4 tsp",
+        "item": "each of salt and pepper, and to taste"
+      },
+      {
+        "qty": "4",
+        "item": "low-FODMAP, gluten-free buns, for serving"
+      }
+    ],
+    "steps": [
+      "Set a large pot or pan over medium-low heat.",
+      "Add the infused olive oil and once shimmering add the scallion tips.",
+      "Saute for a couple of minutes and then add in the bell pepper.",
+      "Once the pepper is ‘crisp tender’, add your lean ground beef or other protein choice, and cook until browned through.",
+      "Drain grease from the meat (discard grease) and transfer to your slow cooker.",
+      "To the slow cooker, add the tomato paste, brown sugar, mustard, vinegar, Worcestershire sauce, broth, black pepper and salt to taste and stir.",
+      "Cover and cook on low for 2-3 hours, stirring occasionally.",
+      "Taste and adjust any seasonings (salt, pepper, sugar) prior to serving.",
+      "For best flavor, butter both sides of the buns and toast on a hot griddle or in a large skillet over medium high heat."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (Rachel Pauls Food, a physician who develops low-FODMAP recipes): infused oils stand in for garlic and onion, and the flour, bread, pasta or tortillas are gluten-free. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Beef with garlic-infused oil, scallion tips, tomato, brown sugar and 2 teaspoons Worcestershire, cooked low in the slow cooker. Serve on low-FODMAP gluten-free buns. A regular \"Sloppy Joes\" is in the Family set. Serves 4.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-sesame-beef-stir-fry",
+    "name": "Sesame Beef Stir-Fry",
+    "emoji": "🥢",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://www.fodmapformula.com/low-fodmap-sesame-beef-stir-fry/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2 tsp",
+        "item": "cornstarch"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "low FODMAP beef broth"
+      },
+      {
+        "qty": "4 tsp",
+        "item": "low sodium soy sauce"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "fresh ginger, minced"
+      },
+      {
+        "qty": "2 tsp",
+        "item": "vegetable oil, divided"
+      },
+      {
+        "qty": "1/2 lb",
+        "item": "top sirloin steak, thinly sliced"
+      },
+      {
+        "qty": "2 tsp",
+        "item": "toasted sesame seeds, divided"
+      },
+      {
+        "qty": "1 cup",
+        "item": "broccoli – heads only"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "red pepper, thinly sliced"
+      },
+      {
+        "qty": "1 cup",
+        "item": "cooked white or brown rice"
+      }
+    ],
+    "steps": [
+      "Combine the cornstarch and a spoonfull or two of beef broth in a small bowl and whisk until it forms a paste.",
+      "Add the remaining beef broth, soy sauce, and ginger and whisk until thoroughly combined.",
+      "Heat 1 tsp of oil in a large frying pan and add the beef and 1 tsp of sesame seeds.",
+      "Stir-fry the beef until it’s cooked through and transfer to a plate.",
+      "Cover to keep warm.",
+      "Add the remaining oil and broccoli heads to the pan.",
+      "Cook for 2 minutes, then add the peppers and cook for another 4-6 minutes (or until the vegetables are tender but still crisp).",
+      "Give your cornstarch mixture a final stir and pour it over the vegetables.",
+      "Bring the sauce to a light boil and stir for 2 minutes (or until the sauce has thickened).",
+      "Add the beef and stir until it’s heated through.",
+      "Divide the rice between two plates and top each with an even serving of the beef mixture. Sprinkle with the remaining sesame seeds and serve."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (The FODMAP Formula, a low-FODMAP recipe site): no onion or garlic, gluten-free where it matters. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Beef, low-FODMAP beef broth (most store broths contain onion and garlic, so check), soy sauce, sesame and low-FODMAP vegetables. Serves 2.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-sweet-and-sour-chicken",
+    "name": "Sweet and Sour Chicken",
+    "emoji": "🍍",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://www.fodmapformula.com/low-fodmap-sweet-sour-chicken/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "2",
+        "item": "lg egg whites"
+      },
+      {
+        "qty": "4 tsp",
+        "item": "cornstarch, divided"
+      },
+      {
+        "qty": "1 lb",
+        "item": "chicken breasts, boneless, skinless, cut into 1\" pieces"
+      },
+      {
+        "qty": "6 tbsp",
+        "item": "low FODMAP ketchup"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "water"
+      },
+      {
+        "qty": "3 tbsp",
+        "item": "apple cider vinegar"
+      },
+      {
+        "qty": "2 tbsp",
+        "item": "brown sugar"
+      },
+      {
+        "qty": "1.5 tbsp",
+        "item": "gluten-free soy sauce, low sodium"
+      },
+      {
+        "qty": "2 tbsp",
+        "item": "canola oil, divided"
+      },
+      {
+        "qty": "1",
+        "item": "red bell pepper, cut into 1\" pieces"
+      },
+      {
+        "qty": "1.5 cups",
+        "item": "fresh pineapple, cut into chunks"
+      },
+      {
+        "qty": "2 tsp",
+        "item": "fresh ginger, grated"
+      },
+      {
+        "qty": "3",
+        "item": "green onions, green parts only, cut into 1\" pieces"
+      },
+      {
+        "qty": "3/8 tsp",
+        "item": "kosher salt"
+      },
+      {
+        "qty": "to taste",
+        "item": "rice or low FODMAP noodles for serving"
+      }
+    ],
+    "steps": [
+      "Combine egg whites with 1 tbsp of cornstarch in a large bowl. Add chicken to the bowl and toss it until each piece is coated.",
+      "Combine the rest of the cornstarch, ketchup, water, apple cider vinegar, brown sugar, and soy sauce in a second bowl.",
+      "Heat 1 tbsp of oil in a large non-stick frying pan on medium-high.",
+      "Add the bell peppers to the pan and cook for 2 minutes, stirring frequently.",
+      "Add the pineapple, ginger, and green onions to the pan.",
+      "Cook for another 2 minutes, stirring consistently.",
+      "Transfer to plate and set aside.",
+      "Add remaining oil to the pan.",
+      "Then add the chicken (allowing any excess egg whites to drip back into the bowl before transferring it to the pan).",
+      "Cook the chicken for 6 minutes (or until the chicken is browned and cooked through).",
+      "Then add your bell pepper mixture and your ketchup mixture to the frying pan and bring it to a simmer.",
+      "Allow it to simmer for one minute to thicken up, then sprinkle with salt and serve immediately on rice or low FODMAP noodles."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (The FODMAP Formula, a low-FODMAP recipe site): no onion or garlic, gluten-free where it matters. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Uses a low-FODMAP ketchup, gluten-free soy sauce, apple cider vinegar and 1 1/2 cups fresh pineapple across 4 serves (pineapple is low-FODMAP at about 1 cup). Green onion tops only. Serves 4.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-soy-glazed-salmon",
+    "name": "Soy-Glazed Salmon",
+    "emoji": "🐟",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://www.fodmapformula.com/low-fodmap-soy-glazed-salmon/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "to taste",
+        "item": "cooking spray"
+      },
+      {
+        "qty": "4",
+        "item": "salmon fillets, skin on"
+      },
+      {
+        "qty": "2 tbsp",
+        "item": "light brown sugar"
+      },
+      {
+        "qty": "3 tbsp",
+        "item": "low-sodium soy sauce"
+      },
+      {
+        "qty": "2 tbsp",
+        "item": "lemon juice"
+      },
+      {
+        "qty": "2 tbsp",
+        "item": "water"
+      },
+      {
+        "qty": "2 cups",
+        "item": "whole-grain brown rice, cooked"
+      },
+      {
+        "qty": "1 cup",
+        "item": "green beans, trimmed and cut in half"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "unsalted butter"
+      },
+      {
+        "qty": "1.5 tsp",
+        "item": "fresh ginger, peeled and chopped"
+      },
+      {
+        "qty": "0.5 tsp",
+        "item": "salt"
+      },
+      {
+        "qty": "0.5 tsp",
+        "item": "pepper"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "green onions, sliced"
+      }
+    ],
+    "steps": [
+      "Preheat your oven to 400 degrees and spray a 9 x 13\" baking dish with cooking spray. Set aside.",
+      "Combine the brown sugar, soy sauce, lemon juice, and water in a small bowl and whisk until the sugar is completely dissolved.",
+      "Place 1 tbsp of sauce in a small dish for later.",
+      "Place your fish (skin side down) in the prepared baking dish and pour the soy sauce mixture evenly over the fish.",
+      "Bake for 15-20 minutes or until cooked through.",
+      "Place your green beans in a microwave-safe bowl with 1 tbsp of water and cover with a ceramic plate. Microwave on high for 2 minutes.",
+      "Heat a large frying pan on medium-high heat and add the butter, ginger, salt, and pepper.",
+      "Cook for 30 seconds or until you can smell the ginger.",
+      "Add the rice and stir to combine.",
+      "Then add the green beans and the green onions.",
+      "Cook until the rice is heated through.",
+      "Divide the rice between 4 plates. Place one fillet on each plate and drizzle with the remaining soy-sauce mixture. Serve immediately."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (The FODMAP Formula, a low-FODMAP recipe site): no onion or garlic, gluten-free where it matters. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Salmon in a soy, brown sugar and lemon glaze with green beans and rice. Use gluten-free soy sauce and only the green parts of the green onions. Serves 4.",
+    "isCustom": true
+  },
+  {
+    "id": "kandy-rp4-breaded-pork-chops",
+    "name": "Breaded Pork Chops",
+    "emoji": "🐖",
+    "category": "dinner",
+    "time": "20 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "gluten-free",
+      "20-min",
+      "high-protein"
+    ],
+    "source": "https://www.fodmapformula.com/fodmap-friendly-breaded-pork-chops/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1/3 cup",
+        "item": "gluten-free breadcrumbs"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "parmesan cheese, finely grated"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "dried basil"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "dried oregano"
+      },
+      {
+        "qty": "4",
+        "item": "pork chops"
+      },
+      {
+        "qty": "1 tbsp",
+        "item": "Dijon mustard"
+      },
+      {
+        "qty": "to taste",
+        "item": "pinch salt and pepper"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 450 degrees. Combine breadcrumbs, parmesan, basil and oregano in a small bowl.",
+      "Pat each pork chop dry with a paper towel. Rub mustard over pork chops and sprinkle with salt and pepper. Then dredge in breadcrumb mix.",
+      "Place breaded pork chops on a baking sheet lined with parchment paper and bake for 10-15 minutes (until pork is cooked through). Serve warm."
+    ],
+    "fodmapNote": "Low-FODMAP as written, per the author (The FODMAP Formula, a low-FODMAP recipe site): no onion or garlic, gluten-free where it matters. I checked the ingredient list against general Monash guidance but cannot confirm Monash certification. Seven ingredients: pork chops, gluten-free breadcrumbs, Parmesan, egg and seasonings. Serves 4.",
+    "isCustom": true
+  },
+
 ];

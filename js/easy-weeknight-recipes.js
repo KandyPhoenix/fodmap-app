@@ -3876,7 +3876,7 @@ const EASY_WEEKNIGHT_RECIPES = [
       },
       {
         "qty": "1 tablespoon",
-        "item": "grated fresh ginger, see note"
+        "item": "grated fresh ginger"
       },
       {
         "qty": "2 cups",
@@ -4159,6 +4159,327 @@ const EASY_WEEKNIGHT_RECIPES = [
       "Heat the olive oil over medium-high heat in a large non-stick pan. Cook the fillets for 2 to 3 minutes on each side until reddish-brown on the outside and flaky on the inside. Serve immediately with lime wedges."
     ],
     "fodmapNote": "Close to low-FODMAP — the only flag is 3/4 teaspoon of garlic powder in the spice rub. Paprika, oregano, cumin, cayenne, brown sugar, lime and tilapia are all fine. Leave out the garlic powder (or use a pinch of asafoetida) and this one is low-FODMAP."
+  },
+  {
+    "id": "fam-ez-one-pot-chicken-alfredo-with-mushrooms",
+    "name": "One Pot Chicken Alfredo with Mushrooms",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pot",
+      "30-min"
+    ],
+    "source": "https://cafedelites.com/one-pot-chicken-alfredo/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "9 oz",
+        "item": "uncooked pasta, fettuccine"
+      },
+      {
+        "qty": "4 cloves",
+        "item": "garlic cloves, grated"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "shallot, (scallions) finely chopped"
+      },
+      {
+        "qty": "5.3 oz",
+        "item": "brown mushroom, sliced"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "fresh rosemary leaves, chopped"
+      },
+      {
+        "qty": "1 tsp",
+        "item": "fresh thyme leaves, chopped"
+      },
+      {
+        "qty": "2",
+        "item": "chicken thighs, cut into little cubes, 1/2 inch"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "pinot grigio, or white wine"
+      },
+      {
+        "qty": "1 cup",
+        "item": "light cream"
+      },
+      {
+        "qty": "1 cup",
+        "item": "parmesan cheese, grated"
+      },
+      {
+        "qty": "5.5 tbsp",
+        "item": "butter"
+      },
+      {
+        "qty": "3 cups",
+        "item": "chicken broth, stock"
+      },
+      {
+        "qty": "to taste",
+        "item": "salt and pepper, to taste"
+      }
+    ],
+    "steps": [
+      "In a large pan over medium-high heat, melt the butter.",
+      "Once the butter begins to brown, add the chicken, season with salt and pepper, and cook for about 3 minutes until golden.",
+      "Add the mushrooms to the pan and cook for 2 minutes, stirring occasionally.",
+      "Stir in the herbs, shallots, and garlic, cooking for 1 minute until the shallots are soft and the garlic is fragrant.",
+      "Pour in the pinot grigio and let it reduce for 1 minute.",
+      "Add the cream and chicken broth, stirring to combine. Bring the mixture to a boil.",
+      "Add the pasta DIRECTLY to the pan with the sauce ingredients.",
+      "Once the pasta is cooked, stir in the Parmesan cheese. Continue cooking until the sauce achieves a creamy consistency that nicely coats the pasta.",
+      "Serve on a plate and garnish with fresh parmesan and freshly chopped parsley."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — garlic, scallions (use green tops only), mushrooms (high-FODMAP), wheat fettuccine and light cream. Parmesan is fine. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta. Swap the mushrooms for canned champignons, rinsed, or leave them out."
+  },
+  {
+    "id": "fam-ez-honey-soy-chicken-stir-fry",
+    "name": "Honey Soy Chicken Stir Fry",
+    "emoji": "🍯",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://cafedelites.com/honey-soy-chicken-stir-fry/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "1 tablespoon",
+        "item": "vegetable oil"
+      },
+      {
+        "qty": "1 lb",
+        "item": "boneless skinless chicken breasts, cut into 1 inch pieces"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "minced ginger"
+      },
+      {
+        "qty": "2",
+        "item": "zucchini, quartered and sliced"
+      },
+      {
+        "qty": "1",
+        "item": "red bell pepper, cored, seeded and cut into 1 inch pieces"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "low sodium chicken broth"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "low sodium soy sauce"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "honey"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "cornstarch"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "green onions, sliced"
+      },
+      {
+        "qty": "1 pinch",
+        "item": "salt, to taste"
+      },
+      {
+        "qty": "1 pinch",
+        "item": "pepper, to taste"
+      }
+    ],
+    "steps": [
+      "Heat the oil in a large pan over medium high heat. Season the chicken with salt and pepper to taste.",
+      "Add the chicken to the pan in a single layer and cook until browned. You may need to work in batches.",
+      "Add the ginger to the chicken and cook for 30 seconds more.",
+      "Place the chicken mixture on a plate and cover with foil to keep warm.",
+      "Add the zucchini and red bell pepper to the pan and cook for 3-4 minutes or until softened. Add the chicken back to the pan with the vegetables.",
+      "In a bowl whisk together the chicken broth, honey and soy sauce.",
+      "In a small bowl mix the cornstarch with a tablespoon of cold water.",
+      "Pour the chicken broth mixture over the chicken and vegetables; cook for 30 seconds.",
+      "Add the cornstarch and bring to a boil; cook for 1 more minute or until sauce has just started to thicken.",
+      "Sprinkle with green onions and serve."
+    ],
+    "fodmapNote": "Close to low-FODMAP — the flags are 3 tablespoons of honey and the green onions. Use maple syrup in place of honey and only the green tops of the onions and this one is low-FODMAP; soy sauce and broth are fine (check the broth for onion and garlic)."
+  },
+  {
+    "id": "fam-ez-garlic-tomato-basil-chicken",
+    "name": "Garlic Tomato Basil Chicken",
+    "emoji": "🍅",
+    "category": "dinner",
+    "time": "20 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "20-min",
+      "high-protein"
+    ],
+    "source": "https://cafedelites.com/garlic-tomato-basil-chicken/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "4",
+        "item": "chicken breasts fillets, skinless and boneless"
+      },
+      {
+        "qty": "1 pinch",
+        "item": "salt, to season"
+      },
+      {
+        "qty": "1 pinch",
+        "item": "pepper, to season"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "garlic powder"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "butter, divided"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "olive oil, divided"
+      },
+      {
+        "qty": "2 cups",
+        "item": "grape tomatoes, halved"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "fresh basil, shredded"
+      },
+      {
+        "qty": "1 1/2 tablespoons",
+        "item": "garlic, minced, or 6 large cloves of garlic"
+      }
+    ],
+    "steps": [
+      "Lightly pound chicken breasts between 2 sheets of parchment paper until they are all the same thickness. Season with salt, pepper and garlic powder.",
+      "Heat 2 teaspoons of oil and 2 teaspoons of butter in a skillet or pan over medium-high heat.",
+      "Fry breasts on both sides until golden browned and completely cooked through (about 5-6 minutes per side, depending on the thickness of your fillets).",
+      "Once cooked, transfer to a plate and tent with foil to keep warm.",
+      "Heat remaining butter and oil in the pan.",
+      "Fry garlic until fragrant (about one minute).",
+      "Add the tomatoes and cook for two minutes, or until they just begin to soften.",
+      "Turn off the heat and stir through basil.",
+      "Season with any extra salt and pepper, if needed.",
+      "Add the chicken back into the pan, and spoon the pan juices and tomato/garlic mixture all over the chicken!",
+      "Perfect to serve with a salad, garlic bread, rice or pasta! Serve with balsamic glaze for extra flavour! (Use store bought, or bring 1/2 cup balsamic vinegar to a simmer over low heat until thickened.)."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — six cloves of garlic plus garlic powder, which is the point of the dish. Tomatoes, basil and butter are fine. For low-FODMAP, use garlic-infused oil for the whole garlic hit and skip the powder."
+  },
+  {
+    "id": "fam-ez-balsamic-baked-chicken-with-tomato-sauce-and-mozzarella",
+    "name": "Balsamic Baked Chicken with Tomato Sauce and Mozzarella",
+    "emoji": "🧀",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "easy",
+      "weeknight",
+      "one-pan",
+      "30-min",
+      "high-protein"
+    ],
+    "source": "https://cafedelites.com/balsamic-baked-chicken-breast/",
+    "added": "2026-11-10",
+    "ingredients": [
+      {
+        "qty": "4",
+        "item": "skinless chicken breasts"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "olive oil"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "dried oregano"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "dried basil"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1 pinch",
+        "item": "cracked pepper, to taste"
+      },
+      {
+        "qty": "1 1/2 tablespoons",
+        "item": "minced garlic, 5-6 cloves garlic"
+      },
+      {
+        "qty": "2 cups",
+        "item": "grape tomatoes, or cherry tomatoes, halved"
+      },
+      {
+        "qty": "1/4",
+        "item": "red onion, peeled and sliced"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "balsamic vinegar"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "brown sugar, packed"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "mozzarella cheese, fresh shredded"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "fresh parsley, chopped, or basil, to garnish"
+      }
+    ],
+    "steps": [
+      "Place chicken breasts in a baking dish and drizzle with olive oil.",
+      "Season with oregano, basil, salt, pepper, and 1 tablespoon of minced garlic.",
+      "Arrange the tomatoes and red onion around the chicken in the dish.",
+      "Whisk together the balsamic vinegar, sugar and remaining garlic in a jug to combine.",
+      "Pour over the chicken breasts, flip each breast in the sauce to evenly coat.",
+      "Bake in a preheated oven for 20-25 minutes, or until no longer pink in the middle.",
+      "Sprinkle with cheese and broil (or grill) for 4-5 minutes, or until cheese is melted and golden.",
+      "Garnish with parsley, and serve with rice or pasta drizzled with the pan juices."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — 5-6 cloves of garlic and 1/4 red onion. Mozzarella, tomatoes, balsamic and brown sugar are fine in these amounts. For low-FODMAP: swap fresh garlic and onion for garlic-infused oil and the green tops of spring onions, use lactose-free dairy or a hard cheese, and choose gluten-free pasta."
   }
 ];
 
