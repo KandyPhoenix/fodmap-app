@@ -4614,6 +4614,2664 @@ const COMFORT_FOOD_RECIPES = [
       "Serve over mashed potatoes, egg noodles, or rice."
     ],
     "fodmapNote": "Not low-FODMAP as written — ranch seasoning and au jus gravy mix (both carry onion and garlic powder). Chicken, butter and pepperoncini are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens in place of onion and garlic, lactose-free dairy or hard cheeses, gluten-free flour, pasta or bread, and a homemade white sauce instead of condensed \"cream of\" soups and packet mixes. Five ingredients, dump-and-go, 3 hours on high. Serves 4."
+  },
+  {
+    "id": "fam-cf-salmon-patties",
+    "name": "Salmon Patties",
+    "emoji": "🐟",
+    "category": "dinner",
+    "time": "1 hr 5 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "pantry"
+    ],
+    "source": "https://www.spendwithpennies.com/easy-salmon-patties/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2025/01/Salmon-Patties-SpendWithPennies-9.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "2 tablespoons",
+        "item": "salted butter"
+      },
+      {
+        "qty": "½ cup",
+        "item": "finely diced onion"
+      },
+      {
+        "qty": "12 ounces",
+        "item": "flaked salmon, 2 cans, or 2-3 cups leftover flaked salmon"
+      },
+      {
+        "qty": "1 cup",
+        "item": "seasoned bread crumbs, divided"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "Old Bay seasoning"
+      },
+      {
+        "qty": "2",
+        "item": "eggs"
+      },
+      {
+        "qty": "1",
+        "item": "lemon"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "chopped fresh dill, or 1 ½ teaspoons dried dill"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "chopped fresh parsley, or 2 teaspoons dried parsley"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "olive oil, or as needed"
+      }
+    ],
+    "steps": [
+      "Zest the lemon and juice 1 tablespoon of lemon juice. Cut the remaining lemon into wedges for serving.",
+      "In a small skillet, melt butter over medium heat. Add onion and cook until softened, about 3-4 minutes. Cool.",
+      "In a large bowl combine drained salmon, ½ cup breadcrumbs, old bay seasoning, eggs, 1 teaspoon lemon zest, 1 tablespoon lemon juice, cooled onions, dill, and parsley. Mix well.",
+      "Refrigerate mixture 15 minutes. Remove from fridge and form salmon mixture into 8 patties.",
+      "Place the remaining ½ cup breadcrumbs in a shallow dish. Dip the salmon patties into the breadcrumbs and gently press to adhere. Place in a refrigerator for at least 20 minutes or up to 1 hour (this helps them to hold their shape).",
+      "Heat olive oil in a large skillet or cast iron pan over medium heat. Add salmon patties and cook until golden, about 3-4 minutes on each side. Cook in batches if necessary.",
+      "Serve with tartar sauce and additional herbs if desired."
+    ],
+    "fodmapNote": "Canned-salmon patties. Not low-FODMAP as written — onion and seasoned breadcrumbs (wheat, onion). For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: bake or pan-fry in a little oil instead of butter; canned salmon is a cheap source of omega-3s and calcium. The hour includes chilling the mix. Serves 8."
+  },
+  {
+    "id": "fam-cf-hamburger-gravy-sos",
+    "name": "Hamburger Gravy (SOS)",
+    "emoji": "🥣",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "30-min",
+      "classic"
+    ],
+    "source": "https://www.spendwithpennies.com/hamburger-gravy/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2019/12/Hamburger-Gravy-SpendWithPennies-5.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "lean ground beef"
+      },
+      {
+        "qty": "½ small",
+        "item": "onion, diced"
+      },
+      {
+        "qty": "2 cloves",
+        "item": "garlic, minced"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "Worcestershire sauce"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "1 cup",
+        "item": "milk"
+      },
+      {
+        "qty": "1 cup",
+        "item": "beef broth"
+      },
+      {
+        "qty": "1",
+        "item": "beef bouillon cube"
+      }
+    ],
+    "steps": [
+      "Brown ground beef, onion and garlic until no pink remains. Do not drain.",
+      "You should have some fat in the bottom of the skillet, if not, add 1 tablespoon butter or oil. Stir in Worcestershire.",
+      "Stir in flour and allow to cook 2 minutes.",
+      "Add remaining ingredients and stir. Cook over medium heat until thickened and bubbly. Season with salt & pepper to taste.",
+      "Serve over biscuits or mashed potatoes."
+    ],
+    "fodmapNote": "Ground beef in milk gravy over toast, biscuits or mashed potatoes. Not low-FODMAP as written — onion, garlic, milk, bouillon (onion and garlic) and flour. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: use 90% lean beef, low-sodium broth and skip the bouillon cube; serve over whole-wheat toast or a baked potato. Eight ingredients, 30 minutes. Serves 6."
+  },
+  {
+    "id": "fam-cf-easy-tuna-casserole",
+    "name": "Easy Tuna Casserole",
+    "emoji": "🐟",
+    "category": "dinner",
+    "time": "33 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "casserole",
+      "pantry"
+    ],
+    "source": "https://www.spendwithpennies.com/easy-tuna-casserole/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2018/10/SpendWithPennies-Tuna-Casserole-25.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "3 cups",
+        "item": "egg noodles, measured dry approx 6 ounces"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "butter"
+      },
+      {
+        "qty": "1 small",
+        "item": "onion, diced"
+      },
+      {
+        "qty": "2",
+        "item": "ribs celery, diced"
+      },
+      {
+        "qty": "⅔ cup",
+        "item": "frozen peas, thawed"
+      },
+      {
+        "qty": "1 (5 oz) can",
+        "item": "tuna, drained"
+      },
+      {
+        "qty": "1 (10.5 oz) can",
+        "item": "condensed cream of mushroom soup"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "milk"
+      },
+      {
+        "qty": "1 cup",
+        "item": "shredded cheddar cheese"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "chopped fresh parsley, or 1 teaspoon dried parsley"
+      },
+      {
+        "qty": "½ cup",
+        "item": "panko bread crumbs"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "melted butter"
+      },
+      {
+        "qty": "½ cup",
+        "item": "shredded cheddar cheese"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "chopped fresh parsley, or 1 teaspoon dried parsley"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 425°F. Combine topping ingredients and set aside.",
+      "Boil noodles al dente according to package directions. Drain and rinse under cold water.",
+      "Cook onion and celery in butter until tender, about 5 to 7 minutes.",
+      "In a large bowl combine noodles, onion mixture, peas, soup, milk, cheese, tuna and parsley. Mix well.",
+      "Spread into a 2qt casserole dish and top with crumb topping.",
+      "Bake 18 to 20 minutes or until bubbly."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, celery, peas, condensed cream of mushroom soup and wheat egg noodles. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: whole-grain noodles, reduced-sodium soup, and add an extra cup of frozen peas or broccoli. 33 minutes. Serves 6."
+  },
+  {
+    "id": "fam-cf-kielbasa-and-sauerkraut",
+    "name": "Kielbasa and Sauerkraut",
+    "emoji": "🌭",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pan",
+      "30-min",
+      "few-ingredients"
+    ],
+    "source": "https://www.spendwithpennies.com/kielbasa-and-sauerkraut/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2025/12/Cropped-Kielbasa-and-Sauerkraut-SpendWithPennies.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 tablespoon",
+        "item": "olive oil"
+      },
+      {
+        "qty": "1 pound",
+        "item": "kielbasa, or smoked sausage sliced diagonally, ¾-inch"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "unsalted butter"
+      },
+      {
+        "qty": "1 medium",
+        "item": "white onion, sliced"
+      },
+      {
+        "qty": "2 cups",
+        "item": "sauerkraut, drained"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "chicken broth, or water"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "dried oregano"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "black pepper"
+      }
+    ],
+    "steps": [
+      "Heat oil in a large skillet over medium-high heat. Add kielbasa and cook until browned on both sides, about 5 minutes. Transfer to a bowl and set aside.",
+      "Reduce the heat to medium and to the same pan, add butter and onions. Cook, stirring occasionally, until tender, about 5 minutes.",
+      "Stir in sauerkraut, broth, oregano, and black pepper. Mix well to combine. Add kielbasa.",
+      "Cover and simmer over medium-low heat for 10 to 15 minutes, stirring occasionally, until heated through and flavors are blended.",
+      "Serve warm with crusty bread or boiled potatoes."
+    ],
+    "fodmapNote": "Five main ingredients. Not low-FODMAP as written — onion, and most kielbasa is seasoned with garlic; sauerkraut is fine in a small serve. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: turkey kielbasa, rinse the sauerkraut to cut sodium, and serve with potatoes rather than bread. 25 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-hamburger-hash",
+    "name": "Hamburger Hash",
+    "emoji": "🥔",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pan",
+      "30-min"
+    ],
+    "source": "https://www.spendwithpennies.com/hamburger-hash/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2026/01/Hamburger-Hash-SpendWithPennies-8.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "Yukon gold potatoes, or red potatoes, cut into ½-inch cubes"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "olive oil"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "butter, divided"
+      },
+      {
+        "qty": "1 medium",
+        "item": "onion, diced"
+      },
+      {
+        "qty": "1 pound",
+        "item": "lean ground beef"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "steak spice"
+      },
+      {
+        "qty": "2 cloves",
+        "item": "garlic, minced"
+      },
+      {
+        "qty": "to taste",
+        "item": "chopped fresh parsley, optional"
+      }
+    ],
+    "steps": [
+      "Add the diced potatoes to a saucepan of cold salted water. Bring to a boil and cook 8-10 minutes, or just until fork-tender. Drain well and let rest in the strainer for 3 minutes to dry.",
+      "Meanwhile, heat the olive oil in a 12-inch skillet over medium heat. Add the onion and cook 3 minutes to soften.",
+      "Push the onion to the sides and add the ground beef to the center of the pan, breaking it apart and cooking until no pink remains. Drain any fat if needed and transfer to a bowl.",
+      "Add the potatoes to the skillet along with 2 tablespoons of butter. Season with steak spice. Cook over medium-high heat, stirring occasionally, until the potatoes are golden and lightly crisp, about 10 minutes. (don't stir too often or the potatoes won't have time to get crisp)",
+      "Move the mixture to one side of the skillet. Add the remaining tablespoon of butter and the garlic. Cook 1 minute until fragrant.",
+      "Add the beef and onions with any juices back to the skillet and stir. Taste and season with additional steak spice or salt and pepper if needed."
+    ],
+    "fodmapNote": "Potatoes, onion and ground beef in one skillet. Not low-FODMAP as written — onion, garlic and steak spice (usually onion and garlic). For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: 90% lean beef, leave the potato skins on, and top with a fried egg instead of cheese. 25 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-easy-hamburger-soup",
+    "name": "Easy Hamburger Soup",
+    "emoji": "🍲",
+    "category": "dinner",
+    "time": "35 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pot",
+      "soup",
+      "freezer-friendly"
+    ],
+    "source": "https://www.spendwithpennies.com/hamburger-soup/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2017/04/Hamburger-Soup-21.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "lean ground beef"
+      },
+      {
+        "qty": "1",
+        "item": "onion, diced"
+      },
+      {
+        "qty": "2 cloves",
+        "item": "garlic, minced"
+      },
+      {
+        "qty": "2 medium",
+        "item": "potatoes, peeled and diced"
+      },
+      {
+        "qty": "3 ½ cups",
+        "item": "beef broth"
+      },
+      {
+        "qty": "28 ounces",
+        "item": "canned diced tomatoes, with juices, 1 can"
+      },
+      {
+        "qty": "10.75 ounces",
+        "item": "condensed tomato soup, 1 can"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "Worcestershire sauce"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "Italian seasoning"
+      },
+      {
+        "qty": "1",
+        "item": "bay leaf"
+      },
+      {
+        "qty": "to taste",
+        "item": "salt and black pepper, to taste"
+      },
+      {
+        "qty": "3 cups",
+        "item": "frozen mixed vegetables, or fresh chopped vegetables"
+      }
+    ],
+    "steps": [
+      "Brown onion, ground beef and garlic until no pink remains. Drain any fat.",
+      "Add potatoes, broth, tomatoes, tomato soup, Worcestershire sauce, seasoning and bay leaves. Simmer covered 10 minutes.",
+      "Stir in vegetables. Simmer 15-20 minutes or until potatoes are tender."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic, condensed tomato soup and the peas and onion in mixed vegetables. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: already a vegetable-heavy soup; use lean beef and low-sodium broth, and skip the condensed soup for an extra can of tomatoes. 35 minutes. Serves 8; freezes well."
+  },
+  {
+    "id": "fam-cf-fried-cabbage-with-bacon",
+    "name": "Fried Cabbage with Bacon",
+    "emoji": "🥬",
+    "category": "dinner",
+    "time": "35 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pan",
+      "few-ingredients"
+    ],
+    "source": "https://www.spendwithpennies.com/fried-cabbage/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2026/02/cropped-Fried-Cabbage-2-SpendWithPennies.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "6 slices",
+        "item": "bacon, chopped"
+      },
+      {
+        "qty": "1 small",
+        "item": "onion, diced"
+      },
+      {
+        "qty": "6 cups",
+        "item": "chopped green cabbage, core removed, 1-inch pieces"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "red pepper flakes, or to taste, optional"
+      },
+      {
+        "qty": "to taste",
+        "item": "salt and pepper to taste"
+      }
+    ],
+    "steps": [
+      "Heat a large skillet or cast iron pan over medium heat. Add the chopped bacon and cook until crisp. Remove with a slotted spoon and set aside, leaving the drippings in the pan.",
+      "Add chopped onion to the bacon drippings and cook until tender, about 3-4 minutes.",
+      "Stir in chopped cabbage and cook for 15-20 minutes or until tender.",
+      "Season with chili flakes if using and salt & pepper to taste.",
+      "Sprinkle with the cooked bacon and serve."
+    ],
+    "fodmapNote": "Five ingredients. Not low-FODMAP as written — onion, and green cabbage is fine at about ¾ cup per serve. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: drain most of the bacon fat before the cabbage goes in, or use turkey bacon; add a can of drained white beans or sliced smoked sausage to make it a full dinner. 35 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-cabbage-and-noodles-with-kielbasa",
+    "name": "Cabbage and Noodles with Kielbasa",
+    "emoji": "🍜",
+    "category": "dinner",
+    "time": "40 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pan"
+    ],
+    "source": "https://www.spendwithpennies.com/cabbage-noodles/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2016/10/Cabbage-and-Noodles-with-Sausage-29.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "12 ounces",
+        "item": "Kielbasa, or smoked sausage, sliced"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "olive oil, divided"
+      },
+      {
+        "qty": "¼ cup",
+        "item": "salted butter"
+      },
+      {
+        "qty": "1 large",
+        "item": "onion, diced"
+      },
+      {
+        "qty": "½ head",
+        "item": "green cabbage, chopped into ¾-inch squares, approx. 6 to 7 cups"
+      },
+      {
+        "qty": "1 clove",
+        "item": "garlic, minced"
+      },
+      {
+        "qty": "⅔ cup",
+        "item": "frozen peas"
+      },
+      {
+        "qty": "8 ounces",
+        "item": "egg noodles, measured dry"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "salt, more to taste"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "black pepper"
+      }
+    ],
+    "steps": [
+      "Cook noodles according to package directions, drain, and set aside.",
+      "In a large saucepan, heat 1 tablespoon olive oil. Cook sausage until lightly browned.",
+      "Add remaining olive oil, butter and onion. Cook until softened, about 5 minutes.",
+      "Add cabbage and garlic. Cook until tender (10-15 minutes). Stir in peas, cooked noodles, salt, and pepper. Cook 2-3 minutes or until heated through."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — a large onion, garlic, kielbasa (garlic), peas and wheat egg noodles. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: turkey kielbasa, half the butter, whole-grain noodles. 40 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-slow-cooker-ham-and-bean-soup",
+    "name": "Slow Cooker Ham and Bean Soup",
+    "emoji": "🍲",
+    "category": "dinner",
+    "time": "6 hr 20 min",
+    "serves": 12,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "slow cooker",
+      "soup",
+      "freezer-friendly"
+    ],
+    "source": "https://www.spendwithpennies.com/slow-cooker-ham-and-bean-soup/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2018/12/SWP-Hurst-Crock-Pot-Ham-and-Bean-Soup-4.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 package",
+        "item": "HamBeens® 15 BEAN SOUP®, with seasoning packet"
+      },
+      {
+        "qty": "8 cups",
+        "item": "reduced sodium chicken broth, or chicken stock"
+      },
+      {
+        "qty": "1",
+        "item": "meaty ham bone, or ham hocks, diced ham or 1 lb. cooked sausage"
+      },
+      {
+        "qty": "1 medium",
+        "item": "yellow onion, diced"
+      },
+      {
+        "qty": "1 clove",
+        "item": "garlic, minced"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "chili powder, optional"
+      },
+      {
+        "qty": "15 ounces",
+        "item": "canned diced tomatoes, with juices, 1 can"
+      },
+      {
+        "qty": "1",
+        "item": "lemon, juiced"
+      },
+      {
+        "qty": "to taste",
+        "item": "hot sauce, or red pepper flakes to taste, optional"
+      }
+    ],
+    "steps": [
+      "Rinse the beans and drain. Sort any unwanted debris and set seasoning packet aside.",
+      "In a 6qt crockpot, add the beans, broth, ham bone (if using), onion, garlic, and chili powder in a 6qt slow cooker. Do not add lemon or tomatoes until the beans are softened.",
+      "Cook on high for 5 hours (or low for 7-8) or until the beans are tender.",
+      "Once the beans are tender, remove the ham bone (if using), chop any meat left on the bone, and add it back to the slow cooker.",
+      "Stir in the diced tomatoes, ham seasoning packet, and lemon juice.",
+      "Cook for an additional 30 minutes. Season with salt and black pepper to taste and garnish with fresh parsley if desired."
+    ],
+    "fodmapNote": "Ham bone and a bag of 15-bean mix, no soaking. Not low-FODMAP as written — a whole bag of dried beans, onion, garlic and the seasoning packet. Not adaptable; family recipe.  Healthier, same dish: skip the seasoning packet (mostly salt), use reduced-sodium broth; beans and ham are cheap protein and fiber. Mostly unattended. Serves 12; freezes well."
+  },
+  {
+    "id": "fam-cf-cabbage-soup",
+    "name": "Cabbage Soup",
+    "emoji": "🥬",
+    "category": "dinner",
+    "time": "45 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pot",
+      "soup",
+      "vegetarian option"
+    ],
+    "source": "https://www.spendwithpennies.com/quick-cabbage-soup/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2026/08/cropped-Cabbage-Soup-SpendWithPennies.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "2 teaspoons",
+        "item": "olive oil"
+      },
+      {
+        "qty": "½ medium",
+        "item": "onion, diced"
+      },
+      {
+        "qty": "6 cups",
+        "item": "chopped green cabbage"
+      },
+      {
+        "qty": "6 cups",
+        "item": "beef broth, or chicken broth"
+      },
+      {
+        "qty": "14 ounces",
+        "item": "canned diced tomatoes, with juices"
+      },
+      {
+        "qty": "1",
+        "item": "carrot, shredded"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "tomato paste"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "chopped fresh parsley, or 1 teaspoon dried parsley leaves"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "Italian seasoning"
+      },
+      {
+        "qty": "1",
+        "item": "bay leaf"
+      }
+    ],
+    "steps": [
+      "In a large pot, cook onion in olive oil until tender, 3 to 4 minutes.",
+      "While onion is cooking, dice cabbage into ½\" pieces. Add cabbage to the pot and cook over medium heat until it starts to soften, about 8 minutes.",
+      "Add remaining ingredients to the pot, bring to a boil, and simmer uncovered 15 minutes or until cabbage is tender.",
+      "Discard bay leaf, season with salt & pepper to taste and serve."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion; cabbage is fine at about ¾ cup per serve. Broth, tomatoes, carrot and tomato paste are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: already light; add browned lean beef, leftover ham or a can of beans to make it a meal. 45 minutes. Serves 8."
+  },
+  {
+    "id": "fam-cf-corned-beef-hash",
+    "name": "Corned Beef Hash",
+    "emoji": "🥔",
+    "category": "dinner",
+    "time": "22 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pan",
+      "30-min"
+    ],
+    "source": "https://www.spendwithpennies.com/corned-beef-hash/",
+    "image": "https://www.spendwithpennies.com/wp-content/uploads/2026/02/cropped-Corned-Beef-Hash-4-SpendWithPennies.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "3 medium",
+        "item": "Russet potatoes, peeled and diced 1-inch"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "butter, divided"
+      },
+      {
+        "qty": "8 ounces",
+        "item": "diced corned beef, about 2 cups, cooked"
+      },
+      {
+        "qty": "¾ cup",
+        "item": "diced onion, or 1 small onion"
+      },
+      {
+        "qty": "1",
+        "item": "green bell pepper, finely diced"
+      },
+      {
+        "qty": "4",
+        "item": "eggs"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "salt, or to taste"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "black pepper, or to taste"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "chopped fresh parsley, for garnish"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 375°F",
+      "Add the potatoes to a medium pot and fill with water. Add salt and bring to a gentle boil. Cook until the potatoes are fork tender, 11-14 minutes.",
+      "In an ovenproof skillet over medium heat, melt 2 tablespoons of butter. Add corned beef and onion, cooking until the onion is softened, about 5 minutes.",
+      "Stir in the remaining 1 tablespoon butter, along with the potato and green pepper. Continue cooking for 5-7 minutes or until the potato starts to brown, adding additional butter if needed. Do not stir too frequently, so the potatoes brown on one side.",
+      "Once the potatoes are browned, create four wells in the hash. Carefully crack an egg into each well. Sprinkle with salt and pepper to taste.",
+      "Place the skillet in the preheated oven for 12-15 minutes. Cook until the eggs are done to your preference. Keep in mind that the eggs will continue to cook once removed from the oven, so avoid overcooking.",
+      "Remove from the oven and garnish with fresh parsley if desired. Serve immediately."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion; corned beef, potatoes, green pepper and eggs are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: leave the potato skins on, use less oil, and top with eggs for protein. 22 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-poor-mans-meal-hot-dogs-potatoes-and-onions",
+    "name": "Poor Man's Meal (Hot Dogs, Potatoes and Onions)",
+    "emoji": "🌭",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pan",
+      "few-ingredients",
+      "depression-era"
+    ],
+    "source": "https://www.deepsouthdish.com/2026/01/poor-mans-meal-of-hot-dogs-with.html",
+    "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEd7jYi6wL63w_2jxDxbWYlLPCBzdAO3WHNMfikQQCkuN04k1MHivADWz74uppqsacl7RHSeiuHxGrQN72moGPhsKyl9VvP5e6XSFIK5DslBGKSSqbjDhtVMAeMlAGuEKH9UPQqVY_PqP9yfiCuUvFItQVFgrOAtoGSg7Q_eEHRumriUkogdJWob7XCDEA/s400/Hot%20Dogs%20with%20Potatoes%20and%20Onions%20on%20Platter%2001%20WM02.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1/4 cup",
+        "item": "bacon drippings, lard, extra virgin olive oil or other cooking oil"
+      },
+      {
+        "qty": "4 medium",
+        "item": "russet potatoes, peeled and cubed or other scrubbed skin-on red or yellow potatoes"
+      },
+      {
+        "qty": "1 small",
+        "item": "sweet onion, halved and sliced"
+      },
+      {
+        "qty": "4",
+        "item": "classic franks or other hot dogs, sliced 1/4 inch thick"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and pepper, to taste"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "water"
+      },
+      {
+        "qty": "to taste",
+        "item": "Freshly grated Parmesan or Pecorino Romano cheese, optional"
+      }
+    ],
+    "steps": [
+      "Heat fat in a 10-inch skillet over medium high.",
+      "Add the potatoes and onion; season to taste with salt and pepper and toss to coat with the fat.",
+      "Scoot potatoes to the outside of skillet and add hot dogs into the center, adding more fat to skillet if needed.",
+      "Toss hot dogs to coat with the fat but leave in the center of the skillet.",
+      "Pour water all around the outside edges of the skillet.",
+      "Reduce heat to medium, cover skillet and steam cook for 10 minutes covered, without disturbing or stirring.",
+      "Remove cover and stir, drawing the potatoes into the hot dogs and increase heat to medium high.",
+      "Continue cooking, uncovered, turning and stirring regularly, or until potatoes are tender and browned as desired.",
+      "Taste and adjust seasonings as needed.",
+      "Top with shredded Parmesan or Pecorino Romano cheese, if desired."
+    ],
+    "fodmapNote": "The Depression-era classic: potatoes, onion and sliced hot dogs fried in one skillet. Not low-FODMAP as written — onion, and hot dogs usually contain garlic and onion powder. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: all-beef or turkey franks, olive oil instead of bacon drippings, skins on the potatoes, and a side of green beans or slaw. Time is my estimate (about 30 minutes); the page gives none. Serves 4."
+  },
+  {
+    "id": "fam-cf-old-fashioned-liver-and-onions-with-gravy",
+    "name": "Old Fashioned Liver and Onions with Gravy",
+    "emoji": "🧅",
+    "category": "dinner",
+    "time": "35 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "classic",
+      "one-pan"
+    ],
+    "source": "https://juliassimplysouthern.com/2024/10/tender-old-fashioned-beef-liver-and-onions-with-gravy-recipe.html",
+    "image": "https://juliassimplysouthern.com/wp-content/uploads/COVER-Beef-Liver-Onions-Gravy-Grandma-Recipe-Old-Fashioned-Julias-Simply-Southern-country-cooking.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "⅓ cup",
+        "item": "Cooking Oil"
+      },
+      {
+        "qty": "1 pound",
+        "item": "Calf Beef Liver, thawed"
+      },
+      {
+        "qty": "1½ cup",
+        "item": "All Purpose Flour"
+      },
+      {
+        "qty": "1½ teaspoon",
+        "item": "Kosher Salt"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "Black Pepper"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "Onion Powder"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "Garlic Powder"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "Paprika"
+      },
+      {
+        "qty": "1 Large",
+        "item": "Onion, peeled and sliced"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "of Seasoned Flour, reserved from dredging the liver meat"
+      },
+      {
+        "qty": "1½ cup",
+        "item": "Water"
+      },
+      {
+        "qty": "½ cup",
+        "item": "Milk, optional, can use all water instead"
+      }
+    ],
+    "steps": [
+      "Preheat a large skillet over medium heat; add cooking oil and heat to 350°F.",
+      "In a shallow dish, mix the flour, salt, pepper, onion powder, garlic powder, and paprika. Dredge the liver slices in the seasoned flour, shaking off excess. If you wish to cut the liver slices in half, do so while in flour mixture as it is easier to handle without tearing the meat. Place the dredged liver slices into the skillet. Reserve a couple tablespoons of the seasoned flour for gravy and discard the rest.",
+      "Sear the liver slices for 3-4 minutes per side until browned (overcooking can make liver tough). Remove from the pan and set aside on a paper towel lined sheet pan to remove excess grease.",
+      "Next, add the onions and cook until softened or caramelized (about 5 minutes), stirring occasionally. Be sure to scrape the tasty bits from the bottom of the skillet.",
+      "Next, add 2 tablespoons of the reserved seasoned flour to the pan with the onions and stir to incorporate with the onions and pan drippings. Allow the mixture to cook 2-3 minutes.",
+      "Next, add the water and milk to the pan and stir to combine with the onion and flour mixture. The gravy will not be thick at this time.",
+      "Return the liver to the skillet and reduce the heat to medium low and simmer 20 minutes until the gravy is thickened. Taste the gravy and adjust seasonings, if necessary.",
+      "Serve liver, onions, and gravy hot with your favorite sides."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — a large onion, onion and garlic powder, flour and milk. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: liver is one of the most nutrient-dense cheap foods there is (iron, B12, vitamin A); use less oil for frying and water rather than milk in the gravy. 35 minutes. One pound of liver serves about 4; the page lists 1, which is a yield-parsing error."
+  },
+  {
+    "id": "fam-cf-old-fashioned-meatballs-and-gravy",
+    "name": "Old Fashioned Meatballs and Gravy",
+    "emoji": "🧆",
+    "category": "dinner",
+    "time": "20 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "few-ingredients",
+      "20-min"
+    ],
+    "source": "https://juliassimplysouthern.com/2024/08/easy-old-fashioned-meatballs-and-gravy-recipe.html",
+    "image": "https://juliassimplysouthern.com/wp-content/uploads/COVER-Meatballs-and-Gravy-Cream-of-Mushroom-Old-Fashioned-Recipe-Julias-Simply-Southern-Budget-Meals-Family-Dinner-Ground-Beef.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "Ground Beef, I use 80/20"
+      },
+      {
+        "qty": "⅓ cup",
+        "item": "Quick Cook Oats"
+      },
+      {
+        "qty": "½ teaspoon",
+        "item": "Kosher Salt"
+      },
+      {
+        "qty": "¼ teaspoon",
+        "item": "Cracked Black Pepper"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "onion powder"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "garlic powder"
+      },
+      {
+        "qty": "10.5 ounce",
+        "item": "Cream of Mushroom Condensed Soup"
+      },
+      {
+        "qty": "½ cup",
+        "item": "Whole Milk"
+      }
+    ],
+    "steps": [
+      "Begin by using your fingers to gently break apart the ground beef into a large bowl.",
+      "Next, add the oats and seasonings to the meat.",
+      "Using clean hands, gently toss the ingredients together until evenly combined.",
+      "Pre-heat a large skillet over medium heat while your form the meatballs.",
+      "Form the mixture into meatballs, using a food scale to create 1-ounce portions (about 1 inch in size). This should yield approximately 16 meatballs. Alternatively, you can use a scoop or eyeball the mixture to create evenly sized meatballs. Next, place the meatballs in a single layer in the preheated skillet.",
+      "Cook the meatballs, browning on all sides, for about 8 minutes.",
+      "Prepare the gravy sauce mixture; In a measuring cup, combine the cream of mushroom condensed soup with the milk. Use a fork or small whisk to mix until smooth.",
+      "Pour the creamy gravy mixture into the skillet with the browned meatballs and any pan drippings.",
+      "Use a spatula to stir and combine everything.",
+      "Reduce the heat to medium-low and simmer for 15 minutes, or until the meatballs are fully cooked through.",
+      "Serve the meatballs with cooked rice or creamy mashed potatoes and your favorite side dishes."
+    ],
+    "fodmapNote": "Eight ingredients, 20 minutes; oats are the binder, which is how it was done when bread was dear. Not low-FODMAP as written — onion and garlic powder and condensed cream of mushroom soup. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: use 90% lean beef and reduced-sodium soup, serve over rice or mashed potatoes with a green vegetable. Makes about 16 meatballs, roughly 4 servings."
+  },
+  {
+    "id": "fam-cf-bratwurst-potatoes-and-sauerkraut-skillet",
+    "name": "Bratwurst, Potatoes and Sauerkraut Skillet",
+    "emoji": "🌭",
+    "category": "dinner",
+    "time": "40 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pan",
+      "40-min"
+    ],
+    "source": "https://juliassimplysouthern.com/2020/09/bratwurst-potatoes-and-sauerkraut-skillet-meal.html",
+    "image": "https://juliassimplysouthern.com/wp-content/uploads/COVER-2-Skillet-Bratwurst-Sausage-Sauerkraut-Pan-Fried-Potatoes-Recipe-Easy-Meals-Julias-Simply-Southern-Oktoberfest-e1613578665246.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1/4 cup",
+        "item": "cooking oil (peanut or vegetable)"
+      },
+      {
+        "qty": "3-5",
+        "item": "Bratwurst Sausages, sliced into bite sized pieces"
+      },
+      {
+        "qty": "3",
+        "item": "Russet Potatoes, medium to large, peeled and diced"
+      },
+      {
+        "qty": "1 Small",
+        "item": "Onion, diced"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and Cracked Black Pepper, to taste"
+      },
+      {
+        "qty": "1/2 tsp",
+        "item": "Fresh Chopped Rosemary, optional"
+      },
+      {
+        "qty": "1/4 tsp",
+        "item": "Garlic Powder"
+      },
+      {
+        "qty": "1/4 tsp",
+        "item": "Paprika"
+      },
+      {
+        "qty": "32 oz",
+        "item": "Sauerkraut, drained"
+      },
+      {
+        "qty": "to taste",
+        "item": "Stone Ground Mustard, for serving, if desired"
+      }
+    ],
+    "steps": [
+      "Add the cooking oil to a large cast iron skillet and heat over medium.",
+      "Next - add the potatoes, bratwurst pieces diced onion and all of the herbs and seasonings with the exception of the salt.",
+      "Cook, stirring occasionally, until the potatoes and bratwurst are cooked through (about 25 minutes).",
+      "Add the drained sauerkraut and cook until heated through (about 5 minutes more).",
+      "Taste for seasonings and add salt if needed."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, garlic powder, and bratwurst is seasoned with garlic and onion; sauerkraut is fine in a small serve. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: chicken or turkey brats, half the oil, rinse the sauerkraut. 40 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-classic-macaroni-and-tomatoes",
+    "name": "Classic Macaroni and Tomatoes",
+    "emoji": "🍅",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "few-ingredients",
+      "30-min",
+      "vegetarian option"
+    ],
+    "source": "https://southernbite.com/classic-macaroni-and-tomatoes/",
+    "image": "https://southernbite.com/wp-content/uploads/2019/07/Macaroni-and-Tomatoes-3.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "2 cups",
+        "item": "uncooked macaroni"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "bacon grease"
+      },
+      {
+        "qty": "1 (28 oz) can",
+        "item": "diced tomatoes"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "black pepper"
+      },
+      {
+        "qty": "to taste",
+        "item": "sugar, optional -"
+      }
+    ],
+    "steps": [
+      "Cook the macaroni in salted water to al dente according to the package instructions then drain and rinse with cold water to stop the cooking process.",
+      "In a large pot, melt the bacon grease and pour in the tomatoes with the juice. Bring to a boil, then reduce the heat to medium and cook until most of the liquid has evaporated, stirring occasionally - about 10 minutes.",
+      "Add the macaroni to the tomatoes and mix well. Add the salt and pepper. Mix well then adjust seasoning to taste. (See my note about sugar below.) Serve warm."
+    ],
+    "fodmapNote": "Three ingredients plus seasoning: macaroni, a can of tomatoes and a spoon of bacon grease. Not low-FODMAP as written only for the wheat macaroni; canned tomatoes are fine in a normal serve. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: whole-grain macaroni and olive oil in place of the bacon grease; stir in a can of white beans for protein. 25 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-goop-great-depression-dinner",
+    "name": "\"Goop\" Great Depression Dinner",
+    "emoji": "🍚",
+    "category": "dinner",
+    "time": "1 hr 17 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pot",
+      "depression-era"
+    ],
+    "source": "https://12tomatoes.com/goop-great-depression-dinner/",
+    "image": "https://cdn.greatlifepublishing.net/wp-content/uploads/sites/2/2022/06/17130635/Goop-Great-Depression-Meal-Vertical-6.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1/2 lb",
+        "item": "ground beef"
+      },
+      {
+        "qty": "to taste",
+        "item": "salt and pepper to taste"
+      },
+      {
+        "qty": "1",
+        "item": "white onion, chopped"
+      },
+      {
+        "qty": "1 cup",
+        "item": "sliced, fresh mushrooms"
+      },
+      {
+        "qty": "1",
+        "item": "green bell pepper, chopped"
+      },
+      {
+        "qty": "3 stalks",
+        "item": "celery, diced"
+      },
+      {
+        "qty": "1 cup",
+        "item": "uncooked white rice"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "orzo or short vermicelli"
+      },
+      {
+        "qty": "1",
+        "item": "chicken or beef bullion cube"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "onion powder"
+      },
+      {
+        "qty": "2 3/4 cups",
+        "item": "water"
+      }
+    ],
+    "steps": [
+      "Cook meat stock pot over medium heat until just beginning to brown.",
+      "Season beef with salt and pepper.",
+      "Add chopped onion and mushroom.",
+      "Cook until onions begin to turn translucent.",
+      "Add the rest of ingredients and bring to a boil.",
+      "Cook for 2 minutes.",
+      "Reduce heat to simmer and cook (covered) for 35-45 minutes.",
+      "If mixture becomes dry in cooking add 1/4 cup of water at a time until rice is cooked and meal is moist.",
+      "Add salt and pepper to taste and serve piping hot."
+    ],
+    "fodmapNote": "Stretches half a pound of ground beef to feed four with rice and orzo. Not low-FODMAP as written — onion, mushrooms, celery, bouillon and wheat orzo. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: this is already a vegetable-and-grain dish with little meat; use brown rice and low-sodium bouillon. About 1 hr 15 min, mostly simmering. Serves 4."
+  },
+  {
+    "id": "fam-cf-husbands-delight-casserole",
+    "name": "Husband's Delight Casserole",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "40 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "casserole"
+    ],
+    "source": "https://12tomatoes.com/husbands-delight-casserole/",
+    "image": "https://cdn.greatlifepublishing.net/wp-content/uploads/sites/2/2021/03/31101247/Husbands-Delight-Casserole-Vertical-6.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 lb",
+        "item": "ground beef"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "garlic salt"
+      },
+      {
+        "qty": "1 (24 oz) jar",
+        "item": "marinara sauce"
+      },
+      {
+        "qty": "12 oz",
+        "item": "egg noodles"
+      },
+      {
+        "qty": "2 cups",
+        "item": "sour cream"
+      },
+      {
+        "qty": "3 oz",
+        "item": "cream cheese"
+      },
+      {
+        "qty": "1/2",
+        "item": "white onion, chopped"
+      },
+      {
+        "qty": "2 cups",
+        "item": "Cheddar cheese, grated"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 350°F.",
+      "In a large pot of boiling salted water, cook pasta to al dente. Drain and set aside.",
+      "In a large skillet over medium heat, brown the ground beef. Season with garlic salt. Drain fat, if needed. Stir in marinara sauce and let simmer 10 minutes.",
+      "In a medium bowl, combine sour cream, cream cheese, and onion and mix well.",
+      "In a 9x13-inch baking dish, arrange half of the noodles, followed by the meat mixture, followed by the sour cream mixture, and finally by the remaining noodles.",
+      "Top with cheese and bake 25 minutes. Enjoy!"
+    ],
+    "fodmapNote": "Not low-FODMAP as written — garlic salt, onion, jarred marinara (onion and garlic), wheat egg noodles, 2 cups sour cream and cream cheese. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: lean beef, light sour cream, whole-grain noodles and half the cheese. 40 minutes. Serves 6."
+  },
+  {
+    "id": "fam-cf-sour-cream-noodle-bake",
+    "name": "Sour Cream Noodle Bake",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "35 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "casserole",
+      "few-ingredients"
+    ],
+    "source": "https://12tomatoes.com/sour-cream-noodle-bake/",
+    "image": "https://cdn.greatlifepublishing.net/wp-content/uploads/sites/2/2023/02/21134901/Sour-Cream-Noodle-Bake-Vertical-12.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 lb",
+        "item": "lean ground beef"
+      },
+      {
+        "qty": "1 (15 oz) can",
+        "item": "tomato sauce"
+      },
+      {
+        "qty": "8 oz",
+        "item": "uncooked egg noodles"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "sour cream"
+      },
+      {
+        "qty": "1 1/2 cup",
+        "item": "small curd cottage cheese"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "green onions, sliced"
+      },
+      {
+        "qty": "1 cup",
+        "item": "sharp cheddar cheese, grated"
+      },
+      {
+        "qty": "to taste",
+        "item": "Kosher salt and freshly ground black pepper, to taste"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 350°F.",
+      "Bring a large pot of salted water to a boil and cook egg noodles until al dente. Drain and set aside.",
+      "Meanwhile, brown the ground beef in a large skillet over medium-high heat.",
+      "Drain fat as needed, then add tomato sauce and season with salt and pepper. Reduce to a simmer while you prepare the sour cream mixture.",
+      "In a medium bowl, stir together the sour cream and cottage cheese. Season with salt and pepper, then add green onions and stir to combine. Add cooked and drained noodles and stir once more.",
+      "Add half of the noodle mixture to a 9x13-inch baking dish. Top with half of the meat mixture, followed by half of the cheese.",
+      "Repeat layers -- noodles, meat, then cheese, then bake until cheese has melted, about 20 minutes. Enjoy!"
+    ],
+    "fodmapNote": "Eight ingredients. Not low-FODMAP as written — wheat egg noodles, sour cream and cottage cheese (lactose), and the white parts of the green onions. Tomato sauce, lean beef and cheddar are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: cottage cheese already adds protein; use low-fat cottage cheese and sour cream, whole-grain noodles. 35 minutes. Serves 8."
+  },
+  {
+    "id": "fam-cf-chili-parlor-chili",
+    "name": "Chili Parlor Chili",
+    "emoji": "🌶️",
+    "category": "dinner",
+    "time": "50 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pot",
+      "freezer-friendly"
+    ],
+    "source": "https://12tomatoes.com/chili-parlor-chili/",
+    "image": "https://cdn.greatlifepublishing.net/wp-content/uploads/sites/2/2023/05/16183300/Chili-Parlor-Chili-OG3-1.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 tablespoon",
+        "item": "olive oil"
+      },
+      {
+        "qty": "1 lbs",
+        "item": "ground beef, you can use either 90/10 or 80/20"
+      },
+      {
+        "qty": "2 cups",
+        "item": "beef or chicken broth"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "tomato sauce or puree"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "chili powder"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "unsweetened cocoa powder"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "Worcestershire sauce"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "chili flakes"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "paprika"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "soy sauce"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "onion powder"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "garlic powder"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "cayenne pepper"
+      },
+      {
+        "qty": "to taste",
+        "item": "Kosher salt and freshly ground black pepper, to taste"
+      }
+    ],
+    "steps": [
+      "In a large pot heat oil over medium heat and then add in ground beef. Use your spoon or spatula to break up the meat. Cook for 3 to 5 minutes, until most of the pink is gone.",
+      "Add in broth, tomato sauce, chili powder, cocoa powder, Worcestershire sauce, chili flakes, paprika, soy sauce, onion powder, garlic powder, and cayenne pepper.",
+      "Bring to a simmer, and then lower the flame. Cover the pot, and cook for 35 to 40 minutes, stirring frequently to prevent chili from sticking to the bottom.",
+      "Season with salt and pepper and enjoy."
+    ],
+    "fodmapNote": "Cincinnati-style: the beef simmers in broth with chili powder and cocoa, no beans, served over spaghetti or hot dogs. Not low-FODMAP as written — onion, garlic and Worcestershire. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: 90% lean beef, low-sodium broth; serve over a baked potato or with a side salad instead of spaghetti. 50 minutes. Serves 6; freezes well."
+  },
+  {
+    "id": "fam-cf-haluski-cabbage-and-noodles-with-bacon",
+    "name": "Haluski (Cabbage and Noodles with Bacon)",
+    "emoji": "🍜",
+    "category": "dinner",
+    "time": "35 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pan",
+      "few-ingredients"
+    ],
+    "source": "https://www.smalltownwoman.com/savory-bacon-cabbage-noodles/",
+    "image": "https://www.smalltownwoman.com/wp-content/uploads/2022/05/HaluskiFacebook-Presetx-.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "8 ounces",
+        "item": "uncooked egg noodles, Amish egg noodles are perfect for this"
+      },
+      {
+        "qty": "6 tablespoons",
+        "item": "butter, unsalted"
+      },
+      {
+        "qty": "6 slices",
+        "item": "bacon uncooked coarsely chopped"
+      },
+      {
+        "qty": "1 large",
+        "item": "onion chopped"
+      },
+      {
+        "qty": "2 cloves",
+        "item": "garlic minced"
+      },
+      {
+        "qty": "1½ -2 pounds",
+        "item": "green cabbage cut in bite sized pices"
+      },
+      {
+        "qty": "to taste",
+        "item": "salt and pepper to taste"
+      }
+    ],
+    "steps": [
+      "Boil the egg noodles in a large pot of salted water according to package directions and drain well.",
+      "Meanwhile, melt the butter in a large skillet over medium heat. Add the bacon and onion to the skillet until the onions are soft and the bacon is almost completely browned.",
+      "Reduce the heat to low and add the garlic, cooking for about 30 seconds while stirring continuously. Add the cabbage and continue cooking and stirring until the cabbage is tender.",
+      "Add the cooked egg noodles to the cabbage mixture and toss to coat.",
+      "Season with kosher salt and plenty of fresh ground black pepper."
+    ],
+    "fodmapNote": "Seven ingredients. Not low-FODMAP as written — a large onion, garlic and wheat egg noodles; cabbage is fine at about ¾ cup per serve. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: drain most of the bacon fat, use whole-grain noodles, and double the cabbage. 35 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-poor-mans-meal-ground-beef-and-potato-bake",
+    "name": "Poor Man's Meal (Ground Beef and Potato Bake)",
+    "emoji": "🥔",
+    "category": "dinner",
+    "time": "1 hr 35 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "casserole",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/poor-man-s-dinner/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2025/04/Poor-Man-s-Dinner_EXPS_TOHD24_5994_SarahTramonte_6.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "ground beef"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "garlic powder"
+      },
+      {
+        "qty": "5 large",
+        "item": "potatoes, peeled and sliced"
+      },
+      {
+        "qty": "1 large",
+        "item": "onion, sliced"
+      },
+      {
+        "qty": "2 cans (10 3/4 oz each)",
+        "item": "condensed cream of mushroom soup, undiluted"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "2% milk"
+      },
+      {
+        "qty": "to taste",
+        "item": "Minced fresh parsley"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 350°F. In a large skillet, cook the beef over medium heat until no longer pink. Drain. Season with pepper and garlic powder.",
+      "Layer the beef, potatoes and onion slices in a shallow 2-quart baking dish. Combine the soup and milk, and pour the mixture over everything.",
+      "Cover and bake for 1 hour and 15 minutes or until the potatoes are tender. Garnish with parsley."
+    ],
+    "fodmapNote": "Layered potatoes, onion and ground beef baked in cream of mushroom soup. Not low-FODMAP as written — onion and two cans of condensed cream of mushroom soup. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: lean beef, reduced-sodium soup, leave the potato skins on and serve with a green vegetable. 1 hr 35 min, mostly baking. Serves 6."
+  },
+  {
+    "id": "fam-cf-poor-mans-hash",
+    "name": "Poor Man's Hash",
+    "emoji": "🥔",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pan",
+      "30-min",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/poor-man-s-hash/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2017/09/Poor-Man-s-Hash_exps139420_REX2235830A08_17_1bC_RMS.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 tablespoon",
+        "item": "butter"
+      },
+      {
+        "qty": "2 cups",
+        "item": "cubed peeled potatoes"
+      },
+      {
+        "qty": "5 ounces",
+        "item": "SPAM or hot dogs, finely chopped"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "2% milk"
+      },
+      {
+        "qty": "1 small",
+        "item": "onion, chopped"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "minced fresh parsley"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "1/8 teaspoon",
+        "item": "salt"
+      }
+    ],
+    "steps": [
+      "In a large skillet, melt butter over medium-high heat.",
+      "Stir in the remaining ingredients.",
+      "Cook and stir for 10-12 minutes or until browned and potatoes are tender."
+    ],
+    "fodmapNote": "Potatoes, onion and chopped Spam or hot dogs in a milk sauce. Not low-FODMAP as written — onion, milk, and Spam or hot dogs (garlic and onion powder). For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: use the hot-dog option with turkey franks or swap in leftover ham, and lactose-free or 2% milk. 25 minutes. Serves 2; double it."
+  },
+  {
+    "id": "fam-cf-cowboy-stew",
+    "name": "Cowboy Stew",
+    "emoji": "🤠",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 11,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pot",
+      "30-min",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/cowboy-stew/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Cowboy-Stew_EXPS_FT21_63233_F_0720_1.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "2 pounds",
+        "item": "ground beef"
+      },
+      {
+        "qty": "4 cans (16 oz each)",
+        "item": "baked beans"
+      },
+      {
+        "qty": "8",
+        "item": "hot dogs, sliced"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "barbecue sauce"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "grated Parmesan cheese"
+      }
+    ],
+    "steps": [
+      "In a Dutch oven, cook beef over medium heat until no longer pink; drain.",
+      "Stir in the remaining ingredients.",
+      "Bring to a boil.",
+      "Reduce heat; cover and simmer for 4-6 minutes or until flavors are blended."
+    ],
+    "fodmapNote": "Five ingredients: ground beef, baked beans, hot dogs, barbecue sauce and Parmesan. Not low-FODMAP as written — four cans of baked beans, barbecue sauce and hot dogs. Not adaptable; family recipe.  Healthier, same dish: 90% lean beef, reduced-sugar baked beans, and all-beef or turkey franks; this feeds a crowd (serves 11) so it halves easily."
+  },
+  {
+    "id": "fam-cf-hamburger-stew",
+    "name": "Hamburger Stew",
+    "emoji": "🍲",
+    "category": "dinner",
+    "time": "1 hr 20 min",
+    "serves": 16,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pot",
+      "soup",
+      "freezer-friendly"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/favorite-hamburger-stew/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Favorite-Hamburger-Stew_EXPS_FT24_21692_ST_0308_1.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "2 pounds",
+        "item": "ground beef"
+      },
+      {
+        "qty": "2 medium",
+        "item": "onions, chopped"
+      },
+      {
+        "qty": "4 cans (14 1/2 oz each)",
+        "item": "stewed tomatoes, undrained"
+      },
+      {
+        "qty": "8 medium",
+        "item": "carrots, thinly sliced"
+      },
+      {
+        "qty": "4",
+        "item": "celery ribs, thinly sliced"
+      },
+      {
+        "qty": "2 medium",
+        "item": "potatoes, peeled and cubed"
+      },
+      {
+        "qty": "2 cups",
+        "item": "water"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "uncooked long grain rice"
+      },
+      {
+        "qty": "3 teaspoons",
+        "item": "salt"
+      },
+      {
+        "qty": "1 teaspoon",
+        "item": "pepper"
+      }
+    ],
+    "steps": [
+      "In a Dutch oven, cook the ground beef and onions over medium heat until the meat is no longer pink, crumbling it as it cooks. Drain off any excess grease. Editor's Tip: Choose a 6-quart or larger Dutch oven to fit everything in the pot. If you're in the market for a new Dutch oven, we like these Dutch oven brands best.",
+      "Add the stewed tomatoes (and their liquid), sliced carrots and celery, cubed potatoes, water, rice, salt and pepper to the pot with the beef and onions. Increase the heat and bring everything to a boil.",
+      "Turn the heat down to low and cover the pot. Simmer the stew for 30 minutes, or until the rice and vegetables are tender.",
+      "Remove the lid and simmer the stew for another 20 to 30 minutes, until it has thickened into your desired consistency."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — two onions, celery and stewed tomatoes (often with onion). Carrots, potatoes and rice are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: already mostly vegetables; use lean beef and no-salt-added tomatoes. 1 hr 20 min, mostly simmering. Serves 16; halve it or freeze half."
+  },
+  {
+    "id": "fam-cf-ground-beef-stir-fry",
+    "name": "Ground Beef Stir-Fry",
+    "emoji": "🥢",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pan",
+      "30-min"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/hamburger-stir-fry/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Hamburger-Stir-Fry_EXPS_GBBZ22_40458_E10_15_3b.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 tablespoon",
+        "item": "sugar"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "cornstarch"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "ground mustard"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "cold water"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "reduced-sodium teriyaki sauce"
+      },
+      {
+        "qty": "1 pound",
+        "item": "lean ground beef, 90% lean"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "canola oil"
+      },
+      {
+        "qty": "1 package (16 oz)",
+        "item": "frozen asparagus stir-fry vegetable blend"
+      },
+      {
+        "qty": "1 medium",
+        "item": "onion, halved and thinly sliced"
+      },
+      {
+        "qty": "2 cups",
+        "item": "hot cooked rice"
+      },
+      {
+        "qty": "2 teaspoons",
+        "item": "sesame seeds"
+      },
+      {
+        "qty": "to taste",
+        "item": "Julienned green onions, optional"
+      }
+    ],
+    "steps": [
+      "In a small bowl, combine the sugar, cornstarch and mustard. Stir in the water and teriyaki sauce until smooth.",
+      "In a large nonstick skillet or wok over medium heat, cook the beef until no longer pink, five to seven minutes, crumbling the meat with a spatula or wooden spoon as it cooks. Drain and set aside.",
+      "In the same pan, heat the oil over medium heat. Add the vegetable blend and onion. Cook and stir until the vegetables are crisp-tender, six to eight minutes.",
+      "Stir the cornstarch mixture, and add to the pan. Bring to a boil, then cook and stir until thickened, one to two minutes longer. Add beef, and heat through.",
+      "Serve with rice. Sprinkle with sesame seeds, and, if desired, top with green onions."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — onion, teriyaki sauce (usually garlic) and the asparagus in the vegetable blend. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: 90% lean beef, reduced-sodium teriyaki as written, brown rice. 25 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-hay-and-straw",
+    "name": "Hay and Straw",
+    "emoji": "🍝",
+    "category": "dinner",
+    "time": "20 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "20-min",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/hay-and-straw/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2017/09/exps21282_FF163882B01_13_6b.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 package (16 oz)",
+        "item": "linguine"
+      },
+      {
+        "qty": "2 cups",
+        "item": "julienned fully cooked ham"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "butter"
+      },
+      {
+        "qty": "3 cups",
+        "item": "frozen peas"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "shredded Parmesan cheese"
+      },
+      {
+        "qty": "1/3 cup",
+        "item": "heavy whipping cream"
+      }
+    ],
+    "steps": [
+      "Cook linguine according to package directions.",
+      "Meanwhile, in a large skillet, saute ham in butter for 3 minutes.",
+      "Add peas; heat through.",
+      "Drain linguine; toss with the ham mixture, Parmesan cheese and cream.",
+      "Serve immediately."
+    ],
+    "fodmapNote": "Linguine with ham, peas and Parmesan in a little cream. Six ingredients. Not low-FODMAP as written — wheat linguine, 3 cups of peas and heavy cream. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: whole-grain pasta, lower-sodium ham, and half-and-half instead of cream. 20 minutes. Serves 8."
+  },
+  {
+    "id": "fam-cf-grandmas-tomato-soup",
+    "name": "Grandma's Tomato Soup",
+    "emoji": "🍅",
+    "category": "dinner",
+    "time": "15 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "15-min",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/grandma-s-tomato-soup/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Grandma-s-Tomato-Soup_EXPS_CF219_3984_B12_18_1b.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "2 tablespoons",
+        "item": "butter"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "all-purpose flour"
+      },
+      {
+        "qty": "2 cups",
+        "item": "tomato juice"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "water"
+      },
+      {
+        "qty": "2 tablespoons",
+        "item": "sugar"
+      },
+      {
+        "qty": "1/8 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "3/4 cup",
+        "item": "cooked wide egg noodles"
+      },
+      {
+        "qty": "to taste",
+        "item": "Chopped fresh parsley, optional"
+      }
+    ],
+    "steps": [
+      "In a saucepan over medium heat, melt butter.",
+      "Add flour; stir to form a smooth paste.",
+      "Gradually add tomato juice and water, stirring constantly; bring to a boil.",
+      "Cook and stir until thickened, about 2 minutes.",
+      "Add sugar and salt.",
+      "Stir in noodles and heat through.",
+      "If desired, sprinkle with parsley."
+    ],
+    "fodmapNote": "Tomato juice thickened with a flour-and-butter roux, with egg noodles stirred in. Not low-FODMAP as written — wheat flour and noodles; tomato juice is fine in a modest serve. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: low-sodium tomato juice; pair with a grilled cheese on whole-grain bread for a full dinner. 15 minutes. Serves 2; double it."
+  },
+  {
+    "id": "fam-cf-hungry-mans-baked-potatoes",
+    "name": "Hungry Man's Baked Potatoes",
+    "emoji": "🥔",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "30-min",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/hungry-man-s-baked-potatoes/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Hungry-Man-s-Baked-Potatoes_EXPS_TOHFM20_158200_B09_25_4b.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "4 large",
+        "item": "sweet or Russet potatoes"
+      },
+      {
+        "qty": "3",
+        "item": "thick-sliced bacon strips, cut into quarters"
+      },
+      {
+        "qty": "1 cup",
+        "item": "fresh or frozen corn"
+      },
+      {
+        "qty": "1 medium",
+        "item": "red onion, halved and thinly sliced"
+      },
+      {
+        "qty": "2 cups",
+        "item": "refrigerated fully cooked barbecued shredded pork"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "crumbled goat cheese"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "minced fresh cilantro"
+      }
+    ],
+    "steps": [
+      "Scrub and pierce potatoes; place on a microwave-safe plate. Microwave, uncovered, on high for 12-15 minutes or until tender, turning once.",
+      "In a large skillet, cook bacon over medium heat until crisp. Remove to paper towels with a slotted spoon; drain, reserving 1 tablespoon drippings. Saute corn and onion in drippings until tender.",
+      "With a sharp knife, cut an \"X\" in each potato; fluff pulp with a fork. Place pork in a microwave-safe bowl. Microwave, uncovered, for 1-2 minutes or until heated through. Top potatoes with pork, corn mixture, bacon, goat cheese and cilantro."
+    ],
+    "fodmapNote": "Baked potatoes loaded with barbecue pulled pork, bacon, corn and goat cheese. Not low-FODMAP as written — red onion, store-bought barbecue pork (onion, garlic, sugar) and the corn amount. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: use sweet potatoes as the recipe allows, go light on the bacon, and add a big spoon of slaw or steamed broccoli. 30 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-one-pot-mac-and-cheese",
+    "name": "One-Pot Mac and Cheese",
+    "emoji": "🧀",
+    "category": "dinner",
+    "time": "40 min",
+    "serves": 10,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pot",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/one-pot-mac-and-cheese/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2024/10/EXPS_TOHD24_197484_NicolePerry_1.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "3 1/2 cups",
+        "item": "whole milk"
+      },
+      {
+        "qty": "3 cups",
+        "item": "water"
+      },
+      {
+        "qty": "1 package (16 oz)",
+        "item": "elbow macaroni"
+      },
+      {
+        "qty": "4 ounces",
+        "item": "Velveeta, cubed"
+      },
+      {
+        "qty": "2 cups",
+        "item": "shredded sharp cheddar cheese"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "coarsely ground pepper"
+      }
+    ],
+    "steps": [
+      "In a Dutch oven, combine milk, water and macaroni; bring to a boil over medium heat.",
+      "Reduce heat and simmer until macaroni is tender and almost all the cooking liquid has been absorbed, 12-15 minutes, stirring frequently.",
+      "Reduce heat to low; stir in cheeses until melted.",
+      "Season with salt and pepper."
+    ],
+    "fodmapNote": "Macaroni cooked right in the milk, then Velveeta and cheddar stirred in. Seven ingredients. Not low-FODMAP as written — 3½ cups whole milk and wheat macaroni. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: 2% milk, less Velveeta, and stir in frozen peas or broccoli florets at the end. 40 minutes. Serves 10."
+  },
+  {
+    "id": "fam-cf-sausage-and-potato-skillet",
+    "name": "Sausage and Potato Skillet",
+    "emoji": "🥔",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 2,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pan",
+      "30-min",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/sausage-potato-skillet/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2025/02/Sausage-Potato-Skillet_EXPS_TOHcom25_8169_DR_02_05_01b.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "2 small",
+        "item": "potatoes, sliced"
+      },
+      {
+        "qty": "2",
+        "item": "fresh Italian sausage links"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "canola oil"
+      },
+      {
+        "qty": "1 small",
+        "item": "onion, sliced"
+      },
+      {
+        "qty": "1/4 cup",
+        "item": "each sliced green and sweet red pepper"
+      },
+      {
+        "qty": "to taste",
+        "item": "Salt and pepper to taste"
+      }
+    ],
+    "steps": [
+      "In a large skillet, brown the sausage in oil, cooking it until a thermometer reads 160°F.",
+      "Add the onion and peppers, and saute until the vegetables are tender.",
+      "Next add the sliced potatoes and 2 cups of water, and bring the skillet to a boil.",
+      "Finally, reduce the heat, cover the skillet and let it simmer for 15 minutes or until the potatoes are tender.",
+      "Drain the excess liquid, and add salt and pepper to taste."
+    ],
+    "fodmapNote": "Six ingredients. Not low-FODMAP as written — onion, and Italian sausage is seasoned with garlic. Potatoes and peppers are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: chicken Italian sausage and a splash of water instead of extra oil. 30 minutes. Serves 2; double it."
+  },
+  {
+    "id": "fam-cf-hamburger-macaroni-soup",
+    "name": "Hamburger Macaroni Soup",
+    "emoji": "🍲",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 5,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pot",
+      "soup",
+      "30-min",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/beef-macaroni-soup/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2024/10/EXPS_TOHD24_35254_AlejandroMonfort_3.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "ground beef"
+      },
+      {
+        "qty": "2 cups",
+        "item": "frozen mixed vegetables"
+      },
+      {
+        "qty": "1 can (14 1/2 oz)",
+        "item": "diced tomatoes, undrained"
+      },
+      {
+        "qty": "1 can (14 1/2 oz)",
+        "item": "beef broth"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "1/2 cup",
+        "item": "uncooked elbow macaroni"
+      }
+    ],
+    "steps": [
+      "In a large saucepan, cook beef over medium heat until no longer pink; drain.",
+      "Stir in the mixed vegetables, tomatoes, broth and pepper.",
+      "Bring to a boil; add macaroni.",
+      "Reduce heat; cover and simmer for 8-10 minutes or until macaroni and vegetables are tender."
+    ],
+    "fodmapNote": "Six ingredients. Not low-FODMAP as written — the peas and onion in mixed vegetables and wheat macaroni; beef, diced tomatoes and broth are fine. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: lean beef, low-sodium broth, whole-grain macaroni. 25 minutes. Serves 5."
+  },
+  {
+    "id": "fam-cf-french-fry-casserole",
+    "name": "French Fry Casserole",
+    "emoji": "🍟",
+    "category": "dinner",
+    "time": "1 hr",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "casserole",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/cheeseburger-and-fries-casserole/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2024/08/French-Fry-Casserole_EXPS_TOHD24_7899_AlejandroMonfort_4.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "2 pounds",
+        "item": "lean ground beef, 90% lean"
+      },
+      {
+        "qty": "1 can (10 3/4 oz)",
+        "item": "condensed golden mushroom soup, undiluted"
+      },
+      {
+        "qty": "1 can (10 3/4 oz)",
+        "item": "condensed cheddar cheese soup, undiluted"
+      },
+      {
+        "qty": "1 package (20 oz)",
+        "item": "frozen crinkle-cut french fries"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 350°F.",
+      "In a large skillet, cook and crumble the beef over medium heat until it's no longer pink, then drain it.",
+      "Stir in the two soups, then pour the combination into a greased 13x9-inch baking dish.",
+      "Arrange the french fries on top of the beef mixture.",
+      "Bake the casserole, uncovered, until the fries are golden brown, 50 to 55 minutes."
+    ],
+    "fodmapNote": "Four ingredients: ground beef, two condensed soups and frozen crinkle fries. Not low-FODMAP as written — condensed golden mushroom and cheddar soups. Not adaptable; family recipe.  Healthier, same dish: 90% lean beef as written, drain it well, and serve with a salad or green beans; it is a treat dish. 1 hour, mostly baking. Serves 8."
+  },
+  {
+    "id": "fam-cf-creamy-beef-and-potatoes",
+    "name": "Creamy Beef and Potatoes",
+    "emoji": "🥔",
+    "category": "dinner",
+    "time": "20 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pan",
+      "20-min",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/creamy-beef-potatoes/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2017/09/Creamy-Beef-Potatoes_exps105559_SD132778B04_10_5bC_RMS.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "4 cups",
+        "item": "frozen O'Brien potatoes"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "water"
+      },
+      {
+        "qty": "1 pound",
+        "item": "ground beef"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "2 cans (10 3/4 oz each)",
+        "item": "condensed cream of mushroom soup, undiluted"
+      },
+      {
+        "qty": "2/3 cup",
+        "item": "2% milk"
+      },
+      {
+        "qty": "2 cups",
+        "item": "shredded Colby-Monterey Jack cheese"
+      }
+    ],
+    "steps": [
+      "Place potatoes and water in a microwave-safe bowl.",
+      "Microwave, covered, on high until tender, 8-10 minutes, stirring twice.",
+      "Meanwhile, in a Dutch oven, cook beef, breaking into crumbles, over medium heat until no longer pink, 6-8 minutes; drain.",
+      "Stir in salt and pepper.",
+      "In a small bowl, whisk soup and milk until blended; add to beef.",
+      "Stir in potatoes.",
+      "Sprinkle with cheese.",
+      "Reduce heat to low; cook, covered, until cheese is melted."
+    ],
+    "fodmapNote": "Frozen O'Brien potatoes, ground beef and cream of mushroom soup in one skillet. Not low-FODMAP as written — the onion and peppers in the potatoes, two cans of condensed soup and the cheese amount. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: lean beef, reduced-sodium soup, half the cheese, and a side of steamed vegetables. 20 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-beefy-french-onion-potpie",
+    "name": "Beefy French Onion Potpie",
+    "emoji": "🥧",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "30-min",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/beefy-french-onion-potpie/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Beefy-French-Onion-Potpie_EXPS_HHRBZ22_55453_P2_MD_08_09_3b.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "ground beef"
+      },
+      {
+        "qty": "1 small",
+        "item": "onion, chopped"
+      },
+      {
+        "qty": "1 can (10 1/2 oz)",
+        "item": "condensed French onion soup, undiluted"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "shredded part-skim mozzarella cheese"
+      },
+      {
+        "qty": "1 (12 oz) tube",
+        "item": "refrigerated buttermilk biscuits"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 350°.",
+      "In a large skillet, cook the beef and onion over medium heat 6-8 minutes or until beef is no longer pink, breaking the meat into crumbles; drain.",
+      "Stir in soup; bring to a boil.",
+      "Transfer mixture to an ungreased 9-in. deep-dish pie plate; sprinkle with mozzarella cheese.",
+      "Bake for 5 minutes or until cheese is melted.",
+      "Top with biscuits.",
+      "Bake 15-20 minutes longer or until the biscuits are golden brown."
+    ],
+    "fodmapNote": "Five ingredients: ground beef, onion, French onion soup, mozzarella and a tube of biscuits on top. Not low-FODMAP as written — onion, condensed French onion soup and biscuit dough. Not adaptable; family recipe.  Healthier, same dish: lean beef, part-skim mozzarella as written, and add a bag of frozen mixed vegetables to the filling. 30 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-cheeseburger-pockets",
+    "name": "Cheeseburger Pockets",
+    "emoji": "🍔",
+    "category": "dinner",
+    "time": "40 min",
+    "serves": 5,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "40-min",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/cheeseburger-pockets/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2017/09/Cheeseburger-Pockets_exps13674_FF2282132D03_02_5bC_RMS.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1/2 pound",
+        "item": "ground beef"
+      },
+      {
+        "qty": "1 tablespoon",
+        "item": "chopped onion"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/8 teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "1 (12 oz) tube",
+        "item": "refrigerated buttermilk biscuits"
+      },
+      {
+        "qty": "5 slices",
+        "item": "American cheese"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 400°. In a large skillet, cook beef, onion, salt and pepper over medium heat, crumbling beef, until meat is no longer pink; drain and cool.",
+      "Place 2 biscuits overlapping on a floured surface; roll out into a 5-in. oval. Place about 1/4 cup of meat mixture on 1 side of oval. Fold a cheese slice to fit over meat mixture. Fold dough over filling; press edges with a fork to seal. Repeat with remaining biscuits, meat mixture and cheese.",
+      "Place on a greased baking sheet. Prick tops with a fork. Bake 10 minutes or until golden brown."
+    ],
+    "fodmapNote": "Six ingredients: seasoned beef and American cheese folded into biscuit dough. Not low-FODMAP as written — onion, biscuit dough (wheat) and processed cheese. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: lean beef and reduced-fat biscuits; serve with raw vegetables. 40 minutes. Makes 5."
+  },
+  {
+    "id": "fam-cf-bubble-pizza",
+    "name": "Bubble Pizza",
+    "emoji": "🍕",
+    "category": "dinner",
+    "time": "40 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "casserole",
+      "few-ingredients",
+      "kid-friendly"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/bubble-pizza/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2026/10/EXPS_TOHD24_7953_OrlyCatz_06.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 1/2 pounds",
+        "item": "lean ground beef, 90% lean"
+      },
+      {
+        "qty": "1 can (15 oz)",
+        "item": "pizza sauce"
+      },
+      {
+        "qty": "2 (12 oz) tubes",
+        "item": "refrigerated buttermilk biscuits"
+      },
+      {
+        "qty": "1 1/2 cups",
+        "item": "shredded part-skim mozzarella cheese"
+      },
+      {
+        "qty": "1 cup",
+        "item": "shredded cheddar cheese"
+      }
+    ],
+    "steps": [
+      "Cook the beef over medium heat until no longer pink. Drain and stir in the pizza sauce.",
+      "Cut each biscuit into quarters and lay them in a greased 13x9 inch baking dish. Top with the beef and sauce.",
+      "Preheat the oven to 400°F. Bake for 20 minutes (uncovered), then sprinkle with cheese. Bake 5 to 10 minutes longer until the cheese is melted. Let it stand for 5 minutes before cutting."
+    ],
+    "fodmapNote": "Five ingredients: ground beef, pizza sauce, biscuit dough pieces and two cheeses. Not low-FODMAP as written — pizza sauce (onion and garlic), biscuit dough and the cheese amount. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: 90% lean beef as written, part-skim mozzarella as written, and pile on vegetables (peppers, mushrooms, spinach). 40 minutes. Serves 8."
+  },
+  {
+    "id": "fam-cf-french-bread-pizza",
+    "name": "French Bread Pizza",
+    "emoji": "🍕",
+    "category": "dinner",
+    "time": "25 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "30-min",
+      "few-ingredients",
+      "kid-friendly"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/french-bread-pizza/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2017/09/French-Bread-Pizza_exps3116_5ING133188C04_18_6bC_RMS.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1/2 pound",
+        "item": "ground beef"
+      },
+      {
+        "qty": "1 can (15 oz)",
+        "item": "pizza sauce"
+      },
+      {
+        "qty": "8 ounces",
+        "item": "canned sliced mushrooms, drained"
+      },
+      {
+        "qty": "1 (1 lb) loaf",
+        "item": "French bread"
+      },
+      {
+        "qty": "2 cups",
+        "item": "shredded part-skim mozzarella cheese"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 400 .",
+      "In a large skillet, cook beef over medium heat until no longer pink; drain.",
+      "Stir in pizza sauce and mushrooms; set aside.",
+      "Cut bread in half lengthwise, then into eight pieces.",
+      "Spread meat sauce on bread; place on a greased baking sheet.",
+      "Sprinkle with mozzarella.",
+      "Bake, uncovered, 10 minutes or until cheese melted and bubbly."
+    ],
+    "fodmapNote": "Five ingredients on a loaf of French bread. Not low-FODMAP as written — pizza sauce (onion and garlic), mushrooms and the bread. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: whole-grain loaf, lean beef, extra vegetables on top. 25 minutes. Serves 8."
+  },
+  {
+    "id": "fam-cf-hamburger-hash-brown-casserole",
+    "name": "Hamburger Hash Brown Casserole",
+    "emoji": "🥔",
+    "category": "dinner",
+    "time": "50 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "casserole"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/beefy-hash-brown-bake/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Beef-and-Noodle-Casserole_EXPS_14991_4243_F_0222_1.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "4 cups",
+        "item": "frozen shredded hash brown potatoes"
+      },
+      {
+        "qty": "3 tablespoons",
+        "item": "canola oil"
+      },
+      {
+        "qty": "1/8 teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "1 pound",
+        "item": "ground beef"
+      },
+      {
+        "qty": "1 cup",
+        "item": "water"
+      },
+      {
+        "qty": "1 envelope",
+        "item": "brown gravy mix"
+      },
+      {
+        "qty": "1/2 teaspoon",
+        "item": "garlic salt"
+      },
+      {
+        "qty": "2 cups",
+        "item": "frozen mixed vegetables"
+      },
+      {
+        "qty": "1 can (2.8 ounces)",
+        "item": "french-fried onions, divided"
+      },
+      {
+        "qty": "1 cup",
+        "item": "shredded cheddar cheese, divided"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 350°F. In a large bowl, combine the frozen hash brown potatoes with the oil and pepper. Press them into a greased 8-inch square baking dish, making sure that the hash browns reach the edges. Bake the hash browns, uncovered, until the potatoes are thawed and set, about 25 to 30 minutes.",
+      "Meanwhile, heat a large saucepan over medium heat. Add the beef and cook it for five to seven minutes until it is no longer pink, breaking it up into crumbles with the back of a spoon as it cooks. Drain any liquid, then stir in the water, gravy mix and garlic salt. Bring the mixture to a boil and continue to cook it for two minutes, stirring often. Add the vegetables and continue to cook and stir for five minutes. Add half of the onions and the cheese, and mix until everything is well incorporated. Pour the mixture over the potatoes, and even it out with a spatula.",
+      "Bake the casserole, uncovered, for 10 minutes. Remove it from the oven and sprinkle the top with the remaining onions and cheese. Continue to bake until the cheese is melted, about five minutes longer. Editor's Tip: For the best texture, let the casserole rest for up to 10 minutes before serving it."
+    ],
+    "fodmapNote": "Not low-FODMAP as written — brown gravy mix, garlic salt, French-fried onions, and the peas and onion in mixed vegetables. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: lean beef, low-sodium gravy mix, and half the fried onions. 50 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-best-hamburger",
+    "name": "Best Hamburger",
+    "emoji": "🍔",
+    "category": "dinner",
+    "time": "35 min",
+    "serves": 4,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "few-ingredients",
+      "30-min",
+      "grill"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/easy-hamburgers/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2024/07/Easy-Grilled-Hamburgers_EXPS_TOHcom20_258869_B10_06_7b-51-e1722238693140-3-e1784643866876.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 1/3 pounds",
+        "item": "ground beef"
+      },
+      {
+        "qty": "3/4 teaspoon",
+        "item": "salt"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "4",
+        "item": "hamburger buns, split and toasted"
+      },
+      {
+        "qty": "to taste",
+        "item": "Optional toppings: Lettuce leaves, sliced tomato, sliced onion, bacon and mayonnaise"
+      }
+    ],
+    "steps": [
+      "Shape ground beef into four 3/4-inch-thick patties. Editor's Tip: The meat will shrink as it cooks, so shape the patties slightly larger than the bun. To minimize shrinkage, create a tiny indentation in the center of the patty with your thumb. (If you're planning to cook the burgers inside on a skillet, make a doughnut hole in the center of the patty instead.)",
+      "Just before grilling, sprinkle the patties with salt and pepper. Editor's Tip: If you went all-in with high-quality beef, you don't need seasonings beyond salt and pepper. However, if you want to infuse the burgers with extra flavor, add seasonings like finely chopped green onions, Montreal seasoning and Worcestershire sauce before forming the patties. Using your hands, lightly but thoroughly mix the seasonings into the beef. Work as quickly as possible so the meat stays cold, and avoid squeezing or overworking the beef.",
+      "Grill the burgers, covered, over medium heat until a thermometer reads 160°, five to six minutes on each side. Editor's Tip: Thinner patties will cook more quickly than thicker patties, so use a digital thermometer to monitor the exact temperature of the burger. The USDA recommends a food-safe cooking temperature of 160°F for ground beef.",
+      "Top the bun bottoms with the burgers. If desired, serve with lettuce, tomato, onion, bacon and mayonnaise. Editor's Tip: For cheeseburgers, add a slice of cheese immediately after removing the burgers from the grill. Cover the burgers with a plate or tent with foil to help the cheese melt."
+    ],
+    "fodmapNote": "Five ingredients, a plain good burger. Not low-FODMAP as written — wheat buns and onion if used as a topping. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: 90% lean or ground turkey, whole-grain buns, load up the lettuce and tomato. 35 minutes. Serves 4."
+  },
+  {
+    "id": "fam-cf-cheese-chicken-soup",
+    "name": "Cheese Chicken Soup",
+    "emoji": "🧀",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 8,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "one-pot",
+      "soup",
+      "30-min",
+      "few-ingredients"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/cheese-chicken-soup/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2025/05/Cheese-Chicken-Soup_EXPS_SB25_42311_MD_P2_04_23_3b.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "4 cups",
+        "item": "shredded cooked chicken breast"
+      },
+      {
+        "qty": "3 1/2 cups",
+        "item": "water"
+      },
+      {
+        "qty": "2 cans (10 3/4 oz each)",
+        "item": "condensed cream of chicken soup, undiluted"
+      },
+      {
+        "qty": "1 package (16 oz)",
+        "item": "frozen mixed vegetables, thawed"
+      },
+      {
+        "qty": "1 can (14 1/2 oz)",
+        "item": "diced potatoes, drained"
+      },
+      {
+        "qty": "1 lb",
+        "item": "Velveeta, cubed"
+      },
+      {
+        "qty": "to taste",
+        "item": "Minced chives, optional"
+      }
+    ],
+    "steps": [
+      "In a Dutch oven, combine the first 5 ingredients.",
+      "Bring to a boil.",
+      "Reduce heat; cover and simmer until vegetables are tender, 8-10 minutes.",
+      "Stir in cheese just until melted (do not boil).",
+      "If desired, top with minced fresh chives."
+    ],
+    "fodmapNote": "Seven ingredients. Not low-FODMAP as written — two cans of condensed cream of chicken soup, a pound of Velveeta, and the peas and onion in mixed vegetables. Not adaptable; family recipe.  Healthier, same dish: reduced-sodium soup, half the Velveeta, and an extra bag of vegetables. 30 minutes. Serves 8."
+  },
+  {
+    "id": "fam-cf-bean-burritos",
+    "name": "Bean Burritos",
+    "emoji": "🌯",
+    "category": "dinner",
+    "time": "30 min",
+    "serves": 6,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "30-min",
+      "few-ingredients",
+      "vegetarian",
+      "freezer-friendly"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/bean-burritos/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2026/11/Bean-Burritos_EXPS_TOHU5I23_8898_P2_MD_09_21_6b.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 can (16 oz)",
+        "item": "vegetarian refried beans"
+      },
+      {
+        "qty": "1 cup",
+        "item": "salsa"
+      },
+      {
+        "qty": "1 cup",
+        "item": "cooked long grain rice"
+      },
+      {
+        "qty": "2 cups",
+        "item": "shredded cheddar cheese, divided"
+      },
+      {
+        "qty": "12",
+        "item": "flour tortillas, 6 inches"
+      },
+      {
+        "qty": "to taste",
+        "item": "Optional: Shredded lettuce, sliced olives, halved grape tomatoes and sliced avocado"
+      }
+    ],
+    "steps": [
+      "Start by preheating your oven to 375°F. Then, in a large bowl, combine the refried beans, salsa, rice and 1 cup cheddar cheese. Mix well until everything is combined.",
+      "Spoon about 1/3 cup mixture off-center onto each tortilla. Then, fold the sides and ends over the filling. Roll up the burrito, and place each seam side down so the filling doesn't spill out.",
+      "Arrange the burritos in a greased 13x9-inch baking dish, then sprinkle the tops with the remaining cup of cheese. Cover and bake until heated through, for 20 to 25 minutes.",
+      "Serve with shredded lettuce, olives, halved grape tomatoes and sliced avocado, or any other toppings you like."
+    ],
+    "fodmapNote": "Six ingredients. Not low-FODMAP as written — refried beans, jarred salsa (onion and garlic) and flour tortillas. For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: fat-free refried beans, brown rice, less cheese, whole-wheat tortillas; add lettuce and tomato. Freeze extras. 30 minutes. Serves 6."
+  },
+  {
+    "id": "fam-cf-walking-tacos",
+    "name": "Walking Tacos",
+    "emoji": "🌮",
+    "category": "dinner",
+    "time": "40 min",
+    "serves": 5,
+    "difficulty": "easy",
+    "tags": [
+      "added",
+      "comfort-food",
+      "budget",
+      "40-min",
+      "few-ingredients",
+      "kid-friendly"
+    ],
+    "source": "https://www.tasteofhome.com/recipes/walking-tacos/",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2024/08/Walking-Tacos_EXPS_TOHD24_101359_AlejandroMonfort_14.jpg",
+    "added": "2026-11-13",
+    "ingredients": [
+      {
+        "qty": "1 pound",
+        "item": "ground beef"
+      },
+      {
+        "qty": "1 envelope",
+        "item": "reduced-sodium chili seasoning mix"
+      },
+      {
+        "qty": "1/4 teaspoon",
+        "item": "pepper"
+      },
+      {
+        "qty": "1 can (10 oz)",
+        "item": "diced tomatoes and green chiles"
+      },
+      {
+        "qty": "1 can (15 oz)",
+        "item": "Ranch Style beans, pinto beans in seasoned tomato sauce"
+      },
+      {
+        "qty": "5 packages (1 ounce each)",
+        "item": "corn chips"
+      },
+      {
+        "qty": "to taste",
+        "item": "Toppings: Shredded cheddar cheese, sour cream and sliced green onions"
+      }
+    ],
+    "steps": [
+      "In a large skillet over medium heat, cook the beef for 6 to 8 minutes until it’s no longer pink, breaking it into crumbles as it cooks.",
+      "Drain any excess fat from the pan, then stir in the chili seasoning mix, black pepper, tomatoes and beans, and bring the mixture to a boil.",
+      "Reduce the heat to a low simmer and cook, uncovered, for 20 to 25 minutes or until the mixture has thickened.",
+      "Stir occasionally, to keep the mixture from sticking to the skillet.",
+      "Once the meat filling has thickened, open the bags of corn chips.",
+      "Divide the beef mixture between the opened bags, and then top each one with the cheese, sour cream and green onions.",
+      "Serve the walking tacos immediately."
+    ],
+    "fodmapNote": "Taco meat spooned into single-serve bags of corn chips. Not low-FODMAP as written — chili seasoning mix, Ranch Style beans, and canned tomatoes with chiles (onion). For a low-FODMAP plate: garlic-infused oil and spring-onion greens instead of onion and garlic, lactose-free dairy, gluten-free noodles or bread, and a simple white sauce in place of condensed soups. Healthier, same dish: lean beef, reduced-sodium seasoning as written, and top with lettuce, tomato and plain yogurt instead of sour cream. 40 minutes. Serves 5."
   }
 ];
 
