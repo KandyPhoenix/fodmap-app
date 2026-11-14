@@ -809,6 +809,8 @@ const FAMILY_FILL = {
       { qty: '8 tbsp', item: 'butter, cut into pieces' },
       { qty: '1 cup', item: 'whole milk or half-and-half, warmed' },
       { qty: 'to taste', item: 'salt and white pepper' },
+      { qty: 'to taste', item: 'sour cream (optional, for tang)' },
+      { qty: 'to taste', item: 'chopped chives (optional, for garnish)' },
     ],
     steps: [
       'Put the potato chunks in a pot and cover with COLD water by an inch, then add the salt. Starting cold means they cook evenly instead of going mushy outside and hard in the middle.',
@@ -817,8 +819,9 @@ const FAMILY_FILL = {
       'Warm the milk and butter together — cold dairy hitting hot potatoes makes them gluey and dull.',
       'Mash with a ricer or food mill for the smoothest result, or a hand masher for rustic. Never use a food processor or blender; it turns the starch to glue.',
       'Fold in the warm butter first, then the milk a little at a time until you hit the consistency you want. Season generously with salt and white pepper.',
+      'If using, stir in a spoonful of sour cream for tang and scatter chopped chives on top just before serving.',
     ],
-    note: 'Yukon Golds give you buttery and creamy; russets give you fluffy and light. Both work — do not mix them.',
+    note: 'Yukon Golds give you buttery and creamy; russets give you fluffy and light. Both work — do not mix them. For low-FODMAP: swap in lactose-free milk (regular milk and half-and-half are high in lactose), and use lactose-free sour cream or skip it. Butter and chives are generally low-FODMAP; check serving sizes in the Monash app. Refrigerate leftovers within 2 hours.',
   },
 
   'fam-c-3-new-ways-to-drink-your-hot-cocoa': {
