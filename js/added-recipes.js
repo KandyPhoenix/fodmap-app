@@ -2579,6 +2579,154 @@ const ADDED_RECIPES = [
       ],
       "fodmapNote": "Mostly low-FODMAP fruit (strawberries, kiwi, orange juice, spinach). Watch two things: regular Greek yogurt has lactose, so use lactose-free Greek yogurt, and keep the avocado to about 2 thin slices (⅛ of an avocado) to stay low-FODMAP."
   },
+  {
+      "id": "fam-add-marry-me-chicken-once-upon-a-chef",
+      "name": "Marry Me Chicken (Once Upon a Chef)",
+      "emoji": "🍗",
+      "category": "dinner",
+      "time": "30 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "added"
+      ],
+      "source": "https://www.onceuponachef.com/recipes/marry-me-chicken.html",
+      "image": "https://www.onceuponachef.com/images/2023/01/marry-me-chicken-9.jpg",
+      "added": "2026-11-14",
+      "ingredients": [
+          {
+              "qty": "3 tablespoons",
+              "item": "all-purpose flour"
+          },
+          {
+              "qty": "1 teaspoon",
+              "item": "salt, divided (¾ teaspoon for the flour, ¼ teaspoon for the sauce)"
+          },
+          {
+              "qty": "¼ teaspoon",
+              "item": "freshly ground black pepper"
+          },
+          {
+              "qty": "4",
+              "item": "thin-sliced chicken breasts (about 1¼ lbs / 567 g)"
+          },
+          {
+              "qty": "2 tablespoons",
+              "item": "extra-virgin olive oil"
+          },
+          {
+              "qty": "1 small",
+              "item": "yellow onion, finely chopped"
+          },
+          {
+              "qty": "3 cloves",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "1 cup",
+              "item": "heavy cream"
+          },
+          {
+              "qty": "1 cup",
+              "item": "chicken broth"
+          },
+          {
+              "qty": "⅓ cup",
+              "item": "sun-dried tomatoes packed in oil, drained and finely chopped"
+          },
+          {
+              "qty": "2 teaspoons",
+              "item": "tomato paste"
+          },
+          {
+              "qty": "½ teaspoon",
+              "item": "dried oregano"
+          },
+          {
+              "qty": "¼ teaspoon",
+              "item": "crushed red pepper flakes"
+          },
+          {
+              "qty": "¼ teaspoon",
+              "item": "sugar"
+          },
+          {
+              "qty": "2 tablespoons",
+              "item": "grated Parmigiano Reggiano or Pecorino Romano cheese"
+          },
+          {
+              "qty": "2 tablespoons",
+              "item": "chopped fresh basil, plus more for serving"
+          }
+      ],
+      "steps": [
+          "Place the flour, ¾ teaspoon salt, and the black pepper in a ziplock bag and shake to combine. Add the chicken to the bag; seal the bag tightly and shake to coat the chicken evenly. Set aside.",
+          "Heat the oil in a large nonstick skillet over medium-high heat. Place the flour-dusted chicken in the pan and cook, flipping once, until the chicken is lightly golden and just cooked through, about 3 minutes total. Transfer the chicken to a plate and set aside.",
+          "Reduce the heat to medium and add the onions to the skillet. Cook, stirring frequently, until softened and translucent, 2 to 3 minutes. Add the garlic and cook, stirring constantly, for 30 seconds more; do not brown.",
+          "Add the cream, broth, sun-dried tomatoes, tomato paste, oregano, red pepper flakes, sugar, and ¼ teaspoon salt; use a wooden spoon to scrape any brown bits from the pan into the liquid. Bring the liquid to a boil, then reduce the heat to medium and gently boil, uncovered, until the sauce is thickened, about 5 minutes.",
+          "Stir in the Parmigiano Reggiano (or Pecorino Romano) and basil. Add the chicken back to the pan, along with any juices that accumulated on the plate; reduce the heat to low and simmer until the chicken is warmed through and the sauce thickens a bit more, 1 to 2 minutes.",
+          "Sprinkle with more fresh basil, if desired, and serve."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — onion, garlic, wheat flour and heavy cream (lactose). For low-FODMAP: use garlic-infused oil instead of garlic, the green tops of spring onions instead of onion, gluten-free flour for dredging and lactose-free cream; Parmesan or Pecorino is a hard cheese and generally fine. Sun-dried tomatoes can be high-FODMAP in larger amounts, so check the Monash app for the serving size. This is the classic heavy-cream version; the lighter \"Marry Me Chicken (Skinnytaste)\" is also in the cookbook."
+  },
+  {
+      "id": "fam-add-easy-crockpot-beef-tips-with-gravy",
+      "name": "Easy Crockpot Beef Tips with Gravy",
+      "emoji": "🥩",
+      "category": "dinner",
+      "time": "7 hr 10 min",
+      "serves": 6,
+      "difficulty": "easy",
+      "tags": [
+          "added",
+          "slow cooker"
+      ],
+      "source": "https://www.familyfreshmeals.com/easy-crockpot-beef-tips-with-gravy/",
+      "image": "https://www.familyfreshmeals.com/wp-content/uploads/2015/05/Easy-Crockpot-Beef-Tips-and-Gravy-FamilyFreshMeals.com-1-1.png",
+      "added": "2026-11-14",
+      "ingredients": [
+          {
+              "qty": "2 lbs",
+              "item": "beef stew meat"
+          },
+          {
+              "qty": "1 (10.75 oz) can",
+              "item": "condensed cream of mushroom soup"
+          },
+          {
+              "qty": "1 (0.88 oz) packet",
+              "item": "brown gravy mix (packets up to 1 oz are fine)"
+          },
+          {
+              "qty": "1 cup",
+              "item": "beef broth"
+          },
+          {
+              "qty": "1 small",
+              "item": "onion, diced (about ⅓ cup)"
+          },
+          {
+              "qty": "1–2 cloves",
+              "item": "garlic, minced"
+          },
+          {
+              "qty": "1 tablespoon",
+              "item": "cornstarch, mixed with 1 tablespoon water (or 2 tablespoons flour with ¼ cup water)"
+          },
+          {
+              "qty": "optional",
+              "item": "egg noodles or mashed potatoes, for serving"
+          }
+      ],
+      "steps": [
+          "In a medium bowl, combine cream of mushroom soup, gravy mix, beef broth, onion and garlic. Whisk together. It's ok if it's a little lumpy, while it's cooking in the slow cooker, the lumps will mix in.",
+          "Place your stew meat into a 4 quart crockpot. Pour gravy mixture over beef and gently stir to combine. Cook covered on LOW for 7 hours.",
+          "Once done cooking, remove beef with a slotted spoon and set aside. Stir in cornstarch/water mixture (this will thicken up the gravy.)",
+          "Replace beef back into crockpot and continue cooking for 5 more minutes while gravy thickens.",
+          "Serve over egg noodles or mashed potatoes."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — onion, garlic, a brown gravy packet (these usually contain onion and garlic powder; check the label) and condensed cream of mushroom soup (mushrooms, wheat flour and dairy). The soup and gravy packet are the base of the sauce, so this one does not adapt well; keep it as a family recipe. About 10 minutes of hands-on work, then 7 hours on LOW."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
