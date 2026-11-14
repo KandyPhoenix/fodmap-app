@@ -2731,6 +2731,31 @@ body.dragging-meal { cursor: grabbing; user-select: none; -webkit-user-select: n
 
 }
 
+/* 📅 Add to Meal Planner from an open recipe: banner plus highlighted + slots */
+.place-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  background: var(--primary-light);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.35;
+}
+.place-banner[hidden] { display: none; }
+.place-banner .action-btn { flex-shrink: 0; }
+.add-meal-btn.place-target {
+  border-style: solid;
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-light);
+  font-weight: 800;
+}
+
 
 
 
