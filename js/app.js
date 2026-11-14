@@ -149,6 +149,11 @@
     return tags;
   }
 
+  // Photos looked up later for older recipes that link to a recipe site
+  // (js/recipe-photos.js). A recipe's own image always wins.
+  function recipePhoto(id) {
+    return (typeof RECIPE_PHOTOS !== 'undefined' && RECIPE_PHOTOS[id]) || null;
+  }
   function getBuiltinRecipes() {
 
 
@@ -176,7 +181,9 @@
     return [...ownSrc, ...fodmap, ...familySrc].map(r => {
       const existing = r.tags || [];
       const add = cuisineTagsFor(r).filter(t => !existing.includes(t));
-      return add.length ? { ...r, tags: [...existing, ...add] } : r;
+      const photo = !r.image && recipePhoto(r.id);
+      if (!add.length && !photo) return r;
+      return { ...r, ...(add.length ? { tags: [...existing, ...add] } : {}), ...(photo ? { image: photo } : {}) };
     });
 
 
@@ -314,8 +321,9 @@
 
 
     builtins.forEach(b => {
-      const ov = overrides.get(b.id);
+      let ov = overrides.get(b.id);
       if (!ov) { merged.push(b); return; }
+      if (!ov.image && b.image) ov = { ...ov, image: b.image };
       // Keep the user's edited copy, but re-apply the original recipe's
       // fodmap/family classification tag. Saved/synced copies were captured
       // before the tag existed, so without this they'd lose it and drop out
