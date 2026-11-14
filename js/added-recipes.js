@@ -2727,6 +2727,74 @@ const ADDED_RECIPES = [
       ],
       "fodmapNote": "Not low-FODMAP as written — onion, garlic, a brown gravy packet (these usually contain onion and garlic powder; check the label) and condensed cream of mushroom soup (mushrooms, wheat flour and dairy). The soup and gravy packet are the base of the sauce, so this one does not adapt well; keep it as a family recipe. About 10 minutes of hands-on work, then 7 hours on LOW."
   },
+  {
+      "id": "fam-add-easy-chicken-and-gravy",
+      "name": "Easy Chicken and Gravy",
+      "emoji": "🍗",
+      "category": "dinner",
+      "time": "30 min",
+      "serves": 4,
+      "difficulty": "easy",
+      "tags": [
+          "added"
+      ],
+      "source": "https://www.saltandlavender.com/chicken-and-gravy/",
+      "image": "https://www.saltandlavender.com/wp-content/uploads/2021/01/chicken-and-gravy-recipe-2.jpg",
+      "added": "2026-11-14",
+      "ingredients": [
+          {
+              "qty": "2 large",
+              "item": "chicken breasts"
+          },
+          {
+              "qty": "to taste",
+              "item": "salt and pepper"
+          },
+          {
+              "qty": "1/2 teaspoon",
+              "item": "garlic powder"
+          },
+          {
+              "qty": "1 tablespoon",
+              "item": "olive oil"
+          },
+          {
+              "qty": "3 tablespoons",
+              "item": "butter, divided"
+          },
+          {
+              "qty": "2 tablespoons",
+              "item": "flour"
+          },
+          {
+              "qty": "1 1/4 cups",
+              "item": "chicken broth"
+          },
+          {
+              "qty": "1/4 teaspoon",
+              "item": "Italian seasoning"
+          },
+          {
+              "qty": "1/4 teaspoon",
+              "item": "onion powder"
+          },
+          {
+              "qty": "1 tablespoon",
+              "item": "chopped fresh parsley, optional"
+          }
+      ],
+      "steps": [
+          "Cut the chicken in half lengthwise so you've got 4 thinner cutlets. Season each piece with salt & pepper and the garlic powder.",
+          "Add the olive oil and 1 tablespoon of the butter to a skillet over medium-high heat. Let the pan heat up for a few minutes.",
+          "Add the chicken to the pan and cook for about 4-5 minutes/side until golden. Transfer the chicken to a plate and set aside.",
+          "Reduce the heat to medium. Add the remaining butter to the skillet, and once it's melted, stir in the flour and cook for about a minute.",
+          "Slowly whisk in the chicken broth until the flour has fully dissolved.",
+          "Stir in the Italian seasoning and onion powder.",
+          "Add the chicken back to the skillet (along with any juices from the plate), and cook for another 4-5 minutes or until it has finished cooking through (165F) and the sauce has thickened up a bit more. You may need to turn the heat down again so it's gently bubbling (you don't want the sauce to get too thick before the chicken is cooked through).",
+          "Season with salt & pepper as needed. Sprinkle with fresh parsley if using, and serve immediately."
+      ],
+      "fodmapNote": "Not low-FODMAP as written — garlic powder, onion powder and wheat flour in the gravy. For low-FODMAP: leave out the garlic and onion powder (sear in garlic-infused oil instead of plain olive oil for the garlic flavor), thicken with a gluten-free flour blend, and check the chicken broth label for onion and garlic. Butter is generally fine. Stovetop, 30 minutes; the slow-cooker \"Crock Pot Chicken and Gravy\" is also in the cookbook."
+  },
 ];
 
 // Add to the family collection, skipping any id already present.
