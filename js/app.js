@@ -6980,6 +6980,12 @@
 
 
 
+  // YYYY-MM-DD for a date's LOCAL calendar day. toISOString() gives the UTC day,
+  // which in the US is already tomorrow by evening (6 PM in Central time), so
+  // planner columns, "today" and reminders used to slip a day every night.
+  function localDateKey(d = new Date()) {
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  }
   function getWeekDays() {
 
 
@@ -7036,7 +7042,7 @@
 
 
 
-      const key = d.toISOString().slice(0, 10);
+      const key = localDateKey(d);
 
 
 
@@ -7044,7 +7050,7 @@
 
 
 
-      return { key, label: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()], date: d.getDate(), month: d.getMonth() + 1, isToday: key === new Date().toISOString().slice(0, 10) };
+      return { key, label: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()], date: d.getDate(), month: d.getMonth() + 1, isToday: key === localDateKey() };
 
 
 
@@ -7357,10 +7363,10 @@
   // until a manual reload. Now any return to the app (focus, tab switch,
   // unlock, bfcache restore) re-reads storage and re-renders; when the date
   // has rolled over, the day card snaps back to the new today.
-  let lastSeenDay = new Date().toISOString().slice(0, 10);
+  let lastSeenDay = localDateKey();
 
   function refreshOnWake() {
-    const today = new Date().toISOString().slice(0, 10);
+    const today = localDateKey();
     if (today !== lastSeenDay) {
       lastSeenDay = today;
       selectedNutritionDay = null;
@@ -7376,7 +7382,7 @@
   // Midnight rollover for a window that stays open and visible
   setInterval(() => {
     if (document.visibilityState !== 'visible') return;
-    if (new Date().toISOString().slice(0, 10) !== lastSeenDay) refreshOnWake();
+    if (localDateKey() !== lastSeenDay) refreshOnWake();
   }, 60000);
 
   // Extra "🎯 Still Need" row along the bottom of the planner grid — one glance
@@ -20088,7 +20094,7 @@
 
 
 
-    a.download = `fodmap-backup-${new Date().toISOString().slice(0,10)}.json`;
+    a.download = `fodmap-backup-${localDateKey()}.json`;
 
 
 
@@ -21272,7 +21278,7 @@
 
 
 
-    reminders.push({ id: 'r' + Date.now().toString(36), label: label || 'Reminder', time, enabled: true, lastFired: '' });
+    reminders.push({ id: 'r' + Date.now().toString(36), label: label || 'Reminder', time, enabled: true, lastFiredDay: '' });
 
 
 
@@ -21408,7 +21414,7 @@
 
 
 
-    const today = now.toISOString().slice(0, 10);
+    const today = localDateKey(now);
 
 
 
@@ -21456,7 +21462,7 @@
 
 
 
-      if (r.lastFired !== today && nowMin >= rMin && nowMin < rMin + 15) {
+      if (r.lastFiredDay !== today && nowMin >= rMin && nowMin < rMin + 15) {
 
 
 
@@ -21464,7 +21470,7 @@
 
 
 
-        r.lastFired = today; changed = true;
+        r.lastFiredDay = today; changed = true;
 
 
 
@@ -23146,7 +23152,7 @@
     return Array.from({ length: count }, (_, i) => {
       const d = new Date(monday);
       d.setDate(monday.getDate() + i);
-      return d.toISOString().slice(0, 10);
+      return localDateKey(d);
     });
   }
   function loadMindDays(days, what, planName, emoji) {
