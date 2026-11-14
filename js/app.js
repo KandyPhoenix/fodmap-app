@@ -646,6 +646,9 @@
 
 
   let pendingCell = null;
+  // What the recipe list last drew: its filters and how many cards were showing.
+  // Declared up here because the list first draws during start-up.
+  let recipeGridState = { sig: null, rendered: 0 };
   // Set while a recipe opened from Recipes is being added to the planner:
   // { id, name, emoji, isSide, inLibrary, nut }. See startPlacingRecipe.
   let placingRecipe = null;
@@ -812,14 +815,10 @@
 
 
 
+  // Each tab keeps its own scroll position: leaving Recipes halfway down and
+  // coming back lands in the same spot instead of wherever the last tab was.
+  const viewScroll = {};
   document.querySelectorAll('.nav-btn').forEach(btn => {
-
-
-
-
-
-
-
     btn.addEventListener('click', () => {
 
 
@@ -828,6 +827,8 @@
 
 
 
+      const prevView = currentView;
+      viewScroll[prevView] = window.scrollY;
       currentView = btn.dataset.view;
       if (placingRecipe && currentView !== 'planner') { placingRecipe = null; renderPlanner(); }
 
@@ -1004,6 +1005,7 @@
 
 
 
+      if (currentView !== prevView) window.scrollTo(0, viewScroll[currentView] || 0);
       searchInput.placeholder = currentView === 'recipes' ? 'Search recipes…' : currentView === 'subs' ? 'Search substitutions…' : currentView === 'checker' ? 'Search recipes…' : currentView === 'finds' ? 'Search finds…' : currentView === 'snacks' ? 'Search snacks…' : currentView === 'guides' ? 'Search guides, nutrients, my library…' :currentView === 'planner' ? 'Search recipes…' : 'Search foods…';
 
 
@@ -3155,14 +3157,10 @@
 
     return card;
   }
+  // Redraws with the same search and filters (coming back to the app, a sync,
+  // a favorite) keep as many cards as were showing and the scroll position, so
+  // the list doesn't jump back to the top. A new search or filter starts fresh.
   function renderRecipeGrid() {
-
-
-
-
-
-
-
     const grid  = document.getElementById('recipe-grid');
 
 
@@ -3268,13 +3266,11 @@
 
 
     lastRecipeList = list;
-
-
-
-
-
-
-
+    const sig = JSON.stringify([recipeCategory, recipeFilter, recipeSection, showClips, searchQuery, excludeFoods]);
+    const sameList = sig === recipeGridState.sig;
+    const keepCount = sameList ? recipeGridState.rendered : 0;
+    const keepY = (sameList && currentView === 'recipes') ? window.scrollY : null;
+    recipeGridState = { sig, rendered: 0 };
     grid.innerHTML = '';
 
 
@@ -3357,10 +3353,11 @@
 
     }
 
-    function renderMore() {
-      const end = Math.min(rendered + RENDER_BATCH, list.length);
+    function renderMore(atLeast = 0) {
+      const end = Math.min(Math.max(rendered + RENDER_BATCH, atLeast), list.length);
       for (let i = rendered; i < end; i++) renderCard(list[i]);
       rendered = end;
+      recipeGridState.rendered = rendered;
       if (rendered < list.length) {
         grid.appendChild(sentinel); // keep the sentinel at the end
       } else if (sentinel.parentNode) {
@@ -3368,8 +3365,8 @@
       }
     }
 
-    renderMore();
-
+    renderMore(keepCount);
+    if (keepY != null) window.scrollTo(0, keepY);
     if (rendered < list.length) {
       recipeGridObserver = new IntersectionObserver(entries => {
         if (entries.some(e => e.isIntersecting)) renderMore();
