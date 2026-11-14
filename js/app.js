@@ -638,6 +638,9 @@
 
 
   let pendingCell = null;
+  // Set while a recipe opened from Recipes is being added to the planner:
+  // { id, name, emoji, isSide, inLibrary, nut }. See startPlacingRecipe.
+  let placingRecipe = null;
 
 
 
@@ -818,6 +821,7 @@
 
 
       currentView = btn.dataset.view;
+      if (placingRecipe && currentView !== 'planner') { placingRecipe = null; renderPlanner(); }
 
       // Remember the open tab so a page refresh returns here, not the home tab.
       try { localStorage.setItem('fodmap-view', currentView); } catch (e) {}
@@ -4908,38 +4912,10 @@
       if (res.unmatched.length) setTimeout(() => alert(`Estimated from ${res.handled} of ${res.total} ingredients. Couldn't read: ${res.unmatched.join(', ')} — tap ✏️ Edit Recipe to fine-tune.`), 80);
     });
 
+    // Carries this recipe to the planner, where every slot's + drops it straight in.
     document.getElementById('add-to-planner-btn').addEventListener('click', () => {
-
-
-
-
-
-
-
       closeAll();
-
-
-
-
-
-
-
-      document.querySelector('[data-view="planner"]').click();
-
-
-
-
-
-
-
-      setTimeout(() => openPicker(null, null, recipe), 120);
-
-
-
-
-
-
-
+      startPlacingRecipe(recipe);
     });
 
 
@@ -7825,6 +7801,7 @@
 
 
   function renderPlanner() {
+    renderPlaceBanner();
 
 
 
@@ -8317,23 +8294,10 @@
 
 
 
-        addBtn.className = 'add-meal-btn';
-
-
-
-
-
-
-
+        addBtn.className = 'add-meal-btn' + (placingRecipe ? ' place-target' : '');
         addBtn.textContent = '+';
-
-
-
-
-
-
-
-        addBtn.addEventListener('click', () => openPicker(d.key, mtype.id));
+        if (placingRecipe) addBtn.title = `Add ${placingRecipe.name} here`;
+        addBtn.addEventListener('click', () => placingRecipe ? placeRecipeInSlot(d, mtype) : openPicker(d.key, mtype.id));
 
 
 
@@ -9937,6 +9901,71 @@
 
 
 
+
+  // ── Add to Meal Planner from an open recipe ───────────
+  // The recipe modal's 📅 button hands its recipe here. The planner opens with a
+  // banner naming it and every slot's + places it directly, so there is no
+  // search step. Cancel, or leaving the planner, puts it back down.
+  function startPlacingRecipe(recipe) {
+    const id = resolveRecipeId(recipe.id);
+    const lib = getAllRecipes().find(x => x.id === id);
+    const r = lib || recipe;
+    placingRecipe = {
+      id,
+      name: r.name || 'Recipe',
+      emoji: r.emoji || '🍽️',
+      isSide: !!((window.SIDE_DISH_IDS && window.SIDE_DISH_IDS.has(id)) || (r.tags || []).some(t => String(t).toLowerCase() === 'side')),
+      // A recipe the library can't find again by id is planned by name instead.
+      inLibrary: !!lib,
+      nut: lib ? null : getRecipeNutrition(id, recipe),
+    };
+    if (currentView !== 'planner') document.querySelector('[data-view="planner"]').click();
+    renderPlanner();
+    const banner = document.getElementById('place-banner');
+    if (banner && banner.scrollIntoView) banner.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+
+  function renderPlaceBanner() {
+    const el = document.getElementById('place-banner');
+    if (!el) return;
+    if (!placingRecipe) { el.hidden = true; el.innerHTML = ''; return; }
+    const p = placingRecipe;
+    el.hidden = false;
+    el.innerHTML = `<span class="place-banner-text">${escHtml(p.emoji)} Tap <b>+</b> on a day to add <b>${escHtml(p.name)}</b>${p.isSide ? '. A slot that already has a meal gets it as a side.' : ''}</span>
+      <button type="button" class="action-btn" id="place-cancel">Cancel</button>`;
+    el.querySelector('#place-cancel').addEventListener('click', () => { placingRecipe = null; renderPlanner(); });
+  }
+
+  // d is a day from getWeekDays(), mtype an entry of MEAL_TYPES.
+  function placeRecipeInSlot(d, mtype) {
+    const p = placingRecipe;
+    if (!p) return;
+    const key = `${d.key}-${mtype.id}`;
+    const existing = meals[key];
+    const when = `${d.label} ${d.month}/${d.date} ${mtype.label.replace(/^\S+\s+/, '')}`;
+    if (existing && existing.type === 'recipe' && existing.id === p.id) {
+      placingRecipe = null; renderPlanner();
+      showToast(`${p.name} is already planned for ${when}`);
+      return;
+    }
+    if (p.inLibrary && p.isSide && existing) {
+      addSlotSide(key, p.id);
+    } else {
+      if (existing) {
+        const er = existing.type === 'recipe' ? getAllRecipes().find(x => x.id === existing.id) : null;
+        const existingName = er ? er.name : (existing.text || 'a meal');
+        if (!confirm(`${when} already has ${existingName}. Replace it with ${p.name}?`)) return;
+      }
+      const main = p.inLibrary ? { type: 'recipe', id: p.id } : { type: 'custom', text: p.name };
+      if (!p.inLibrary && p.nut && (p.nut.cal != null || p.nut.protein != null || p.nut.fiber != null)) {
+        main.nut = { cal: p.nut.cal, protein: p.nut.protein, fiber: p.nut.fiber };
+      }
+      setSlotMain(key, main);
+    }
+    placingRecipe = null;
+    saveMeals(); renderPlanner();
+    showToast(`📅 ${p.name} added to ${when}`);
+  }
 
   // ── Picker ────────────────────────────────────────────
 
