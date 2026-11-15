@@ -126,6 +126,12 @@ The scraper is good but not perfect. Read what it produced:
 - **Emoji and category** are guesses from the title. Fix them if wrong.
 - **`serves`** is parsed from the first number in the yield string; check it
   isn't nonsense like `serves 1` for a family bake.
+- **American kitchen.** Kandy cooks in the US. The scraper converts every
+  recipe to American names (yellow onion, cilantro, eggplant, heavy cream,
+  green onion) and measures (cups / tbsp / tsp, oz / lb, °F, inches) through
+  `usRecipe` in `js/recipe-import.js`. Check the result reads the way an
+  American recipe would. Anything typed by hand goes in American too: no
+  grams, milliliters, °C or British names.
 
 ## 4. FODMAP note
 

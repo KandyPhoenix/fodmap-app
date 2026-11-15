@@ -340,14 +340,52 @@
 
 
 
+  // Every recipe reads the American way: US ingredient names, cups / oz / lb,
+  // °F and inches (usRecipe in js/recipe-import.js). The data files keep what
+  // each source wrote. Start-up only checks which recipes need it and converts
+  // their names; a recipe's ingredients and steps are converted the first time
+  // something reads them, and kept until that recipe's text changes.
+  const usRecipeCache = new Map();
+  function toUSRecipe(r) {
+    if (!r || typeof RecipeImport === 'undefined' || !RecipeImport.usMaybe) return r;
+    let c = usRecipeCache.get(r.id);
+    const sameRefs = c && c.ing === r.ingredients && c.steps === r.steps && c.name === r.name && c.note === r.fodmapNote && c.notes === r.notes;
+    // A user's recipe is re-read from storage on every call (new arrays), so
+    // compare its text; built-ins keep the same arrays and match by reference.
+    const sigOf = x => JSON.stringify([x.name, x.ingredients, x.steps, x.fodmapNote, x.notes]);
+    if (c && !sameRefs) {
+      if (c.sig === undefined) c.sig = sigOf({ name: c.name, ingredients: c.ing, steps: c.steps, fodmapNote: c.note, notes: c.notes });
+      if (sigOf(r) !== c.sig) c = null;
+    }
+    if (!c) {
+      c = { ing: r.ingredients, steps: r.steps, name: r.name, note: r.fodmapNote, notes: r.notes, src: r,
+            maybe: RecipeImport.usMaybe(r), usName: RecipeImport.usName(r.name), patch: undefined };
+      usRecipeCache.set(r.id, c);
+    }
+    if (!c.maybe) return r;
+    // Already converted: plain copy, no deferred look-ups.
+    if (c.patch !== undefined) {
+      if (!c.patch) return c.usName === r.name ? r : Object.assign({}, r, { name: c.usName });
+      const o = Object.assign({}, r, { name: c.usName });
+      ['ingredients', 'steps', 'fodmapNote', 'notes'].forEach(k => { if (r[k] !== undefined) o[k] = c.patch[k]; });
+      return o;
+    }
+    const entry = c;
+    const full = () => {
+      if (entry.patch === undefined) {
+        const u = RecipeImport.usRecipe(entry.src);
+        entry.patch = u === entry.src ? null : { ingredients: u.ingredients, steps: u.steps, fodmapNote: u.fodmapNote, notes: u.notes };
+      }
+      return entry.patch;
+    };
+    const o = Object.assign({}, r, { name: c.usName });
+    ['ingredients', 'steps', 'fodmapNote', 'notes'].forEach(k => {
+      if (r[k] === undefined) return;
+      Object.defineProperty(o, k, { get() { const p = full(); return p ? p[k] : r[k]; }, enumerable: true, configurable: true });
+    });
+    return o;
+  }
   function getAllRecipes() {
-
-
-
-
-
-
-
     const builtins   = getBuiltinRecipes();
 
 
@@ -438,7 +476,7 @@
     // Drop recipes the user has deleted/hidden (built-ins can't be removed from
     // the data files, so we filter them out here).
     const hidden = getHiddenRecipes();
-    return hidden.length ? merged.filter(r => !hidden.includes(r.id)) : merged;
+    return (hidden.length ? merged.filter(r => !hidden.includes(r.id)) : merged).map(toUSRecipe);
   }
 
   // IDs of recipes the user has deleted (built-in/family recipes are hidden
@@ -23985,6 +24023,22 @@
     });
   })();
 
+  // Convert every recipe to American measures in small pieces while the app
+  // sits idle after opening, so the first search doesn't pause to do it.
+  (function warmUSRecipes() {
+    let list = null, i = 0;
+    const step = deadline => {
+      if (!list) list = getAllRecipes();
+      const stopAt = performance.now() + 8;
+      while (i < list.length && (deadline && deadline.timeRemaining ? deadline.timeRemaining() > 2 : performance.now() < stopAt)) {
+        const r = list[i++];
+        if (r) void r.ingredients;
+      }
+      if (i < list.length) schedule();
+    };
+    const schedule = () => (window.requestIdleCallback ? requestIdleCallback(step, { timeout: 2000 }) : setTimeout(() => step(null), 40));
+    setTimeout(schedule, 1500);
+  })();
   window.fodmapRefresh = function() {
 
 
