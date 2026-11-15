@@ -3135,7 +3135,7 @@
 
 
 
-    const fiberHtml   = nut.fiber   != null ? `<span class="recipe-nut recipe-fiber">🌾 ${nut.fiber}g fibre</span>` : '';
+    const fiberHtml   = nut.fiber   != null ? `<span class="recipe-nut recipe-fiber">🌾 ${nut.fiber}g fiber</span>` : '';
 
 
 
@@ -4569,7 +4569,7 @@
 
 
 
-            ${recipeNut.fiber != null   ? `<div class="rmodal-nut-item"><div class="rmodal-nut-val">${recipeNut.fiber}g</div><div class="rmodal-nut-label">🌾 fibre</div></div>` : ''}
+            ${recipeNut.fiber != null   ? `<div class="rmodal-nut-item"><div class="rmodal-nut-val">${recipeNut.fiber}g</div><div class="rmodal-nut-label">🌾 fiber</div></div>` : ''}
 
 
 

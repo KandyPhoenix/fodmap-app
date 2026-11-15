@@ -25,32 +25,32 @@ const FODMAP_TYPES = {
 // Auto-scanned against recipe ingredients. Shows a yellow warning box in the
 // recipe modal for any moderate-FODMAP ingredients so users know what to watch.
 const FODMAP_PORTION_WATCH = [
-  { triggers: ['broccoli'],           label: 'Broccoli',            safe: '¾ cup (75g) floret heads per person — florets only, not the stalk.' },
-  { triggers: ['broccolini'],         label: 'Broccolini',          safe: '½ cup (37g) per person max.' },
-  { triggers: ['sweet potato'],       label: 'Sweet Potato',        safe: '½ cup / 75g per person. Over 1 cup becomes high FODMAP.' },
-  { triggers: ['butternut', 'butternut squash'], label: 'Butternut Squash', safe: '¼ cup (45g) per person. Becomes high FODMAP at ½ cup+.' },
-  { triggers: ['pumpkin'],            label: 'Pumpkin',             safe: '¼ cup (45g) per person. Small side portion only.' },
-  { triggers: ['canned coconut milk'], label: 'Canned Coconut Milk', safe: '¼ cup (60ml) TOTAL for the whole recipe — about 2 tbsp per person.' },
-  { triggers: ['coconut milk'],       label: 'Coconut Milk (canned)', safe: '¼ cup (60ml) total for the recipe. Use carton/drinking coconut milk for larger amounts.' },
-  { triggers: ['chickpea'],           label: 'Chickpeas',           safe: '¼ cup (42g) rinsed per person MAX. Must rinse canned chickpeas thoroughly.' },
-  { triggers: ['lentil'],             label: 'Lentils',             safe: '¼ cup (46g) rinsed per person MAX. Use canned and rinse well under cold water.' },
-  { triggers: ['feta'],               label: 'Feta Cheese',         safe: '28g (about 2 tbsp) per person. More lactose than hard cheeses.' },
-  { triggers: ['bocconcini', 'fresh mozzarella', 'fresh mini mozzarella'], label: 'Bocconcini / Fresh Mozzarella', safe: '40g per person. Fresh mozzarella is higher in lactose than aged varieties.' },
-  { triggers: ['cream cheese'],       label: 'Cream Cheese',        safe: '2 tbsp (30g) per person. Moderate lactose — keep portions small.' },
+  { triggers: ['broccoli'],           label: 'Broccoli',            safe: '¾ cup floret heads per person — florets only, not the stalk.' },
+  { triggers: ['broccolini'],         label: 'Broccolini',          safe: '½ cup per person max.' },
+  { triggers: ['sweet potato'],       label: 'Sweet Potato',        safe: '½ cup per person. Over 1 cup becomes high FODMAP.' },
+  { triggers: ['butternut', 'butternut squash'], label: 'Butternut Squash', safe: '¼ cup per person. Becomes high FODMAP at ½ cup+.' },
+  { triggers: ['pumpkin'],            label: 'Pumpkin',             safe: '¼ cup per person. Small side portion only.' },
+  { triggers: ['canned coconut milk'], label: 'Canned Coconut Milk', safe: '¼ cup TOTAL for the whole recipe — about 2 tbsp per person.' },
+  { triggers: ['coconut milk'],       label: 'Coconut Milk (canned)', safe: '¼ cup total for the recipe. Use carton/drinking coconut milk for larger amounts.' },
+  { triggers: ['chickpea'],           label: 'Chickpeas',           safe: '¼ cup rinsed per person MAX. Must rinse canned chickpeas thoroughly.' },
+  { triggers: ['lentil'],             label: 'Lentils',             safe: '¼ cup rinsed per person MAX. Use canned and rinse well under cold water.' },
+  { triggers: ['feta'],               label: 'Feta Cheese',         safe: '1 oz (about 2 tbsp) per person. More lactose than hard cheeses.' },
+  { triggers: ['bocconcini', 'fresh mozzarella', 'fresh mini mozzarella'], label: 'Bocconcini / Fresh Mozzarella', safe: '1.4 oz per person. Fresh mozzarella is higher in lactose than aged varieties.' },
+  { triggers: ['cream cheese'],       label: 'Cream Cheese',        safe: '2 tbsp per person. Moderate lactose — keep portions small.' },
   { triggers: ['sour cream'],         label: 'Sour Cream',          safe: '1–2 tbsp per person. Test your individual lactose tolerance.' },
-  { triggers: ['ricotta'],            label: 'Ricotta',             safe: '2 tbsp (40g) per person. Moderate lactose.' },
-  { triggers: ['rolled oats', 'gluten-free rolled oats'], label: 'Oats', safe: '¼ cup (22g) dry per person. Certified GF oats if also coeliac.' },
-  { triggers: ['blueberr'],           label: 'Blueberries',         safe: '20 berries (28g) is low FODMAP. ½ cup (74g) is moderate. Do not exceed ½ cup per person.' },
-  { triggers: ['avocado'],            label: 'Avocado',             safe: '1/8 avocado (20g) per person. ¼ avocado pushes into moderate FODMAP range.' },
-  { triggers: ['snow pea', 'snap pea'], label: 'Snow / Snap Peas',  safe: '5 pods (35g) per person max. Fructans increase quickly with larger servings.' },
-  { triggers: ['celery'],             label: 'Celery',              safe: '¼ stalk (10g) per person. Larger amounts accumulate mannitol fast.' },
-  { triggers: ['almond butter'],      label: 'Almond Butter',       safe: '1 tbsp (16g) per person. Same FODMAP profile as whole almonds.' },
-  { triggers: ['miso'],               label: 'Miso Paste',          safe: '2 tsp (12g) per person. Use as a seasoning accent, not a main ingredient.' },
+  { triggers: ['ricotta'],            label: 'Ricotta',             safe: '2 tbsp per person. Moderate lactose.' },
+  { triggers: ['rolled oats', 'gluten-free rolled oats'], label: 'Oats', safe: '¼ cup dry per person. Certified GF oats if also celiac.' },
+  { triggers: ['blueberr'],           label: 'Blueberries',         safe: '20 berries is low FODMAP. ½ cup is moderate. Do not exceed ½ cup per person.' },
+  { triggers: ['avocado'],            label: 'Avocado',             safe: '1/8 avocado per person. ¼ avocado pushes into moderate FODMAP range.' },
+  { triggers: ['snow pea', 'snap pea'], label: 'Snow / Snap Peas',  safe: '5 pods per person max. Fructans increase quickly with larger servings.' },
+  { triggers: ['celery'],             label: 'Celery',              safe: '¼ stalk per person. Larger amounts accumulate mannitol fast.' },
+  { triggers: ['almond butter'],      label: 'Almond Butter',       safe: '1 tbsp per person. Same FODMAP profile as whole almonds.' },
+  { triggers: ['miso'],               label: 'Miso Paste',          safe: '2 tsp per person. Use as a seasoning accent, not a main ingredient.' },
   { triggers: ['oyster sauce'],       label: 'Oyster Sauce',        safe: 'Low FODMAP at 2 tbsp — but CHECK the label. Some brands add garlic or onion powder.' },
-  { triggers: ['corn', 'sweet corn'], label: 'Sweet Corn',          safe: '½ cob (38g) per person. A full cob is high FODMAP due to sorbitol.' },
-  { triggers: ['beetroot'],           label: 'Beetroot',            safe: '2 thin slices (20g) per person max. Larger amounts have significant fructans.' },
-  { triggers: ['raspberry'],          label: 'Raspberries',         safe: '10 berries (25g) per person is low FODMAP. 30 berries = moderate.' },
-  { triggers: ['pomegranate'],        label: 'Pomegranate Seeds',   safe: '¼ cup (45g) per person max. Moderate excess fructose.' },
+  { triggers: ['corn', 'sweet corn'], label: 'Sweet Corn',          safe: '½ cob per person. A full cob is high FODMAP due to sorbitol.' },
+  { triggers: ['beetroot'],           label: 'Beetroot',            safe: '2 thin slices per person max. Larger amounts have significant fructans.' },
+  { triggers: ['raspberry'],          label: 'Raspberries',         safe: '10 berries per person is low FODMAP. 30 berries = moderate.' },
+  { triggers: ['pomegranate'],        label: 'Pomegranate Seeds',   safe: '¼ cup per person max. Moderate excess fructose.' },
 ];
 
 // ─── HEALTHY SWAP SUGGESTIONS ────────────────────────────────────────────────
@@ -131,7 +131,7 @@ const HEALTHY_SWAPS = [
     triggers: ['chicken thigh', 'chicken thighs', 'bone-in chicken'],
     from: 'Chicken thighs (skin-on)',
     to: 'Skinless chicken thighs or chicken breast',
-    benefit: 'Removing the skin alone cuts fat by ~50%. Switching to breast reduces total fat from ~13g to ~3g per 100g — saving ~90 calories per serving with no FODMAP impact.',
+    benefit: 'Removing the skin alone cuts fat by ~50%. Switching to breast reduces total fat from ~13g to ~3g per 3½ oz — saving ~90 calories per serving with no FODMAP impact.',
     emoji: '🍗'
   },
   {
@@ -751,7 +751,7 @@ const FOODS = [
       { amount: '1/2 cup dry (52g)', rating: 'yellow', label: 'Moderate FODMAP' }
     ],
     fodmaps: ['fructans'],
-    tip: 'Rolled oats are low FODMAP in 1/4 cup (dry) serving. This equals about 1/2 cup cooked. Use certified gluten-free oats if you are also coeliac.'
+    tip: 'Rolled oats are low FODMAP in 1/4 cup (dry) serving. This equals about 1/2 cup cooked. Use certified gluten-free oats if you are also celiac.'
   },
   {
     id: 'gf-pasta', name: 'Gluten-Free Pasta', emoji: '🍝', category: 'grains', rating: 'green',

@@ -3270,60 +3270,56 @@ const MOB_RECIPES = [
     },
     "ingredients": [
       {
-        "qty": "800ml",
-        "item": "Chicken Stock"
+        "qty": "3⅓ cups",
+        "item": "chicken broth (boxed, or bouillon cube or paste mixed with water)"
       },
       {
         "qty": "2 tbsp",
-        "item": "Soy Sauce"
+        "item": "soy sauce"
       },
       {
         "qty": "2",
-        "item": "Skinless Chicken Thigh"
+        "item": "boneless, skinless chicken thighs (about 4 oz each)"
       },
       {
-        "qty": "125g",
-        "item": "Egg Noodle"
+        "qty": "4½ oz",
+        "item": "dried Chinese-style egg noodles, the kind sold in nests (a nest is about 2 oz)"
       },
       {
-        "qty": "100g",
-        "item": "Pea"
+        "qty": "¾ cup",
+        "item": "frozen peas"
       },
       {
-        "qty": "100g",
-        "item": "Broccoli"
+        "qty": "3½ oz",
+        "item": "broccolini, or broccoli florets (3½ oz is about 1 cup)"
       },
       {
-        "qty": "100g",
-        "item": "Spring Onion"
-      },
-      {
-        "qty": "2",
-        "item": "Red Chilli"
+        "qty": "1 bunch",
+        "item": "green onions (a bunch is about 6–7, or 1 cup sliced)"
       },
       {
         "qty": "2",
-        "item": "Lime"
+        "item": "fresh red chiles, such as Fresno or red jalapeño"
+      },
+      {
+        "qty": "2",
+        "item": "limes"
+      },
+      {
+        "qty": "optional",
+        "item": "olive oil, for drizzling"
       },
       {
         "qty": "to taste",
-        "item": "Olive Oil"
-      },
-      {
-        "qty": "to taste",
-        "item": "Salt"
-      },
-      {
-        "qty": "to taste",
-        "item": "Black Pepper"
+        "item": "salt and black pepper"
       }
     ],
     "steps": [
-      "Prepare the chicken stock according to the package instructions and tip into a saucepan. Bring to a boil and then reduce to a simmer. Add the soy and then drop the chicken thighs in for 9-10 mins, or until the chicken is completely cooked.",
-      "Remove the chicken from the broth and cut into bite size pieces. Bring the broth back to a boil and drop the noodles in for 2 mins before adding the peas and tenderstem broccoli. Once cooked, remove from the heat and add the chicken back to the pan.",
-      "Thinly slice the spring onions and chillies and set aside. Finish the broth with the juice of one lime and then divide between large bowls. Serve topped with the sliced spring onions, chillies and extra lime wedges."
+      "Make the broth: if you are using bouillon (cube or paste), mix it with water as the package says; boxed broth goes in as is. Bring it to a boil in a saucepan, then turn it down to a simmer. Stir in the soy sauce, add the chicken thighs and simmer 9–10 minutes, until cooked through (165°F in the thickest part).",
+      "Lift the chicken out (tongs help; it is slippery) and cut it into bite-size pieces. Bring the broth back to a boil, add the noodles and cook 2 minutes, then add the peas and broccolini. Cook until the noodles are tender (check the noodle package for the time) and the broccolini is bright green. Take the pan off the heat and put the chicken back in.",
+      "Thinly slice the green onions and chiles (scrape out the seeds for less heat). Stir the juice of one lime into the soup, season with salt and pepper, and divide between two large bowls. Top with the green onions and chiles, and serve with the other lime cut into wedges."
     ],
-    "fodmapNote": "Check the stock — most chicken stock contains onion and garlic (use a certified low-FODMAP stock). Egg noodles are wheat: keep to ~1/2 cup cooked per bowl or swap rice noodles. Peas at 50g per bowl are moderate (GOS) — halve or swap green beans. Spring onion: green tops only. Nutrition: estimated from ingredients."
+    "fodmapNote": "Check the broth: most chicken broth and bouillon contain onion and garlic (use a certified low-FODMAP broth). Egg noodles are wheat: keep to ~1/2 cup cooked per bowl or swap rice noodles. Peas at a heaping ⅓ cup per bowl are moderate (GOS): halve them or swap green beans. Green onions: use the green tops only. Nutrition: estimated from ingredients."
   },
   {
     "id": "fam-mob-chicken-satay-noodles",
