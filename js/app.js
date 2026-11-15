@@ -149,6 +149,98 @@
     return tags;
   }
 
+  // ── 📷 Photos saved on this device ─────────────────────────
+  // Everything synced lives in ONE cloud document (about 1 MB at most), so a
+  // photo taken or chosen in the recipe form is kept in this device's
+  // IndexedDB instead and shows only here. A pasted photo link is stored on
+  // the recipe itself and syncs everywhere.
+  const devicePhotos = new Map();   // recipe id -> object URL
+  function photoDb() {
+    return new Promise((res, rej) => {
+      if (!window.indexedDB) return rej(new Error('IndexedDB unavailable'));
+      const req = indexedDB.open('fodmap-recipe-photos', 1);
+      req.onupgradeneeded = () => req.result.createObjectStore('photos');
+      req.onsuccess = () => res(req.result);
+      req.onerror = () => rej(req.error);
+    });
+  }
+  function loadDevicePhotos() {
+    return photoDb().then(db => new Promise(res => {
+      const cur = db.transaction('photos', 'readonly').objectStore('photos').openCursor();
+      cur.onsuccess = () => {
+        const c = cur.result;
+        if (!c) return res(devicePhotos.size);
+        if (c.value instanceof Blob) devicePhotos.set(c.key, URL.createObjectURL(c.value));
+        c.continue();
+      };
+      cur.onerror = () => res(devicePhotos.size);
+    })).catch(() => 0);
+  }
+  function setDevicePhoto(id, blob) {
+    const old = devicePhotos.get(id);
+    if (old) URL.revokeObjectURL(old);
+    if (blob) devicePhotos.set(id, URL.createObjectURL(blob)); else devicePhotos.delete(id);
+    photoDb().then(db => {
+      const st = db.transaction('photos', 'readwrite').objectStore('photos');
+      if (blob) st.put(blob, id); else st.delete(id);
+    }).catch(() => {});
+  }
+  // The photo to show for a recipe: this device's photo, else its photo link.
+  function recipeImage(r) {
+    return (r && (devicePhotos.get(r.id) || r.image)) || '';
+  }
+  // Phone photos are several MB; keep a 1000px JPEG (typically 100–250 KB).
+  async function shrinkPhoto(file, maxSide = 1000, quality = 0.82) {
+    let src;
+    try { src = await createImageBitmap(file, { imageOrientation: 'from-image' }); }
+    catch (e) {
+      src = await new Promise((res, rej) => {
+        const im = new Image();
+        im.onload = () => res(im); im.onerror = rej;
+        im.src = URL.createObjectURL(file);
+      });
+    }
+    const w = src.width || src.naturalWidth, h = src.height || src.naturalHeight;
+    const scale = Math.min(1, maxSide / Math.max(w, h));
+    const c = document.createElement('canvas');
+    c.width = Math.max(1, Math.round(w * scale)); c.height = Math.max(1, Math.round(h * scale));
+    c.getContext('2d').drawImage(src, 0, 0, c.width, c.height);
+    return new Promise((res, rej) => c.toBlob(b => b ? res(b) : rej(new Error('Could not encode photo')), 'image/jpeg', quality));
+  }
+  loadDevicePhotos().then(n => { if (n) renderRecipeGrid(); });
+
+  // ── Recipes view memory ────────────────────────────────────
+  // Category, filter, section, search and how far down the list Recipes was,
+  // so a full restart of the app opens it the same way. Stored under
+  // fodmapRecipesView, with no "fodmap-" prefix, so each device keeps its
+  // own (only "fodmap-" keys sync).
+  const RECIPE_VIEW_KEY = 'fodmapRecipesView';
+  function recipeGridSig() {
+    return JSON.stringify([recipeCategory, recipeFilter, recipeSection, showClips, searchQuery, excludeFoods]);
+  }
+  function loadRecipeView() {
+    try { const v = JSON.parse(localStorage.getItem(RECIPE_VIEW_KEY) || 'null'); return v && typeof v === 'object' ? v : null; }
+    catch (e) { return null; }
+  }
+  function saveRecipeView() {
+    if (currentView === 'recipes') recipeViewSearch = searchInput.value;
+    const y = currentView === 'recipes' ? window.scrollY : (viewScroll.recipes || 0);
+    try {
+      localStorage.setItem(RECIPE_VIEW_KEY, JSON.stringify({
+        cat: recipeCategory, filter: recipeFilter, section: recipeSection,
+        search: recipeViewSearch, y: Math.round(y), rendered: recipeGridState.rendered,
+      }));
+    } catch (e) {}
+  }
+  let recipeViewSaveTimer = null;
+  function scheduleRecipeViewSave() {
+    clearTimeout(recipeViewSaveTimer);
+    recipeViewSaveTimer = setTimeout(saveRecipeView, 400);
+  }
+  window.addEventListener('scroll', () => { if (currentView === 'recipes') scheduleRecipeViewSave(); }, { passive: true });
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') saveRecipeView(); });
+  window.addEventListener('pagehide', saveRecipeView);
+
   // Photos looked up later for older recipes that link to a recipe site
   // (js/recipe-photos.js). A recipe's own image always wins.
   function recipePhoto(id) {
@@ -323,7 +415,7 @@
     builtins.forEach(b => {
       let ov = overrides.get(b.id);
       if (!ov) { merged.push(b); return; }
-      if (!ov.image && b.image) ov = { ...ov, image: b.image };
+      if (ov.image === undefined && b.image) ov = { ...ov, image: b.image };
       // Keep the user's edited copy, but re-apply the original recipe's
       // fodmap/family classification tag. Saved/synced copies were captured
       // before the tag existed, so without this they'd lose it and drop out
@@ -649,6 +741,14 @@
   // What the recipe list last drew: its filters and how many cards were showing.
   // Declared up here because the list first draws during start-up.
   let recipeGridState = { sig: null, rendered: 0 };
+  // Recipes view kept across restarts (see saveRecipeView): the spot to scroll
+  // back to on the first draw, and the search typed while on Recipes.
+  let pendingRecipeScroll = null;
+  let recipeViewSearch = '';
+  // Recipe form photo: undefined = this device's photo unchanged, a Blob = new
+  // photo to keep on this device, null = remove this device's photo.
+  let rfPhotoPending;
+  let rfPhotoObjectUrl = null;
   // Set while a recipe opened from Recipes is being added to the planner:
   // { id, name, emoji, isSide, inLibrary, nut }. See startPlacingRecipe.
   let placingRecipe = null;
@@ -2499,25 +2599,41 @@
 
 
       openRecipeModal(pick);
-
-
-
     });
-
-
-
-
-
-
-
+    // Put Recipes back the way it was left the last time the app was open.
+    // Deferred until start-up has finished: searching and some filters (e.g.
+    // iron-rich) use data set up further down this file, and touching it
+    // during start-up throws and stops the rest of the app from loading.
+    const savedRecipeView = loadRecipeView();
+    if (savedRecipeView) setTimeout(function restoreRecipeView() {
+      const v = savedRecipeView;
+      const catBtns = [...document.querySelectorAll('#recipe-categories .cat-btn')];
+      const catBtn = catBtns.find(b => b.dataset.cat === v.cat);
+      if (catBtn) { catBtns.forEach(b => b.classList.toggle('active', b === catBtn)); recipeCategory = v.cat; }
+      const fBtns = [...document.querySelectorAll('#recipe-filters .rfilter')];
+      const fBtn = fBtns.find(b => b.dataset.filter === v.filter);
+      if (fBtn) { fBtns.forEach(b => b.classList.toggle('active', b === fBtn)); recipeFilter = v.filter; }
+      if (sectionSelect && typeof v.section === 'string' && [...sectionSelect.options].some(o => o.value === v.section)) {
+        sectionSelect.value = v.section; recipeSection = v.section;
+      }
+      recipeViewSearch = typeof v.search === 'string' ? v.search : '';
+      const onRecipes = currentView === 'recipes';
+      if (onRecipes && recipeViewSearch) {
+        searchQuery = recipeViewSearch.trim().toLowerCase();
+        if (searchInput) searchInput.value = recipeViewSearch;
+        if (recipeSearchInput) recipeSearchInput.value = recipeViewSearch;
+        if (recipeSearchClear) recipeSearchClear.classList.remove('hidden');
+        searchWrap.classList.add('has-value');
+      }
+      // The saved spot only fits the same list, so skip it when the saved
+      // search can't be put back (the app opened on another tab).
+      if (!onRecipes && recipeViewSearch) { renderRecipeGrid(); return; }
+      recipeGridState = { sig: recipeGridSig(), rendered: Math.max(0, v.rendered | 0) };
+      if (onRecipes) pendingRecipeScroll = Math.max(0, v.y | 0);
+      else viewScroll.recipes = Math.max(0, v.y | 0);
+      renderRecipeGrid();
+    }, 0);
     renderRecipeGrid();
-
-
-
-
-
-
-
   })();
 
 
@@ -2997,8 +3113,8 @@
 
 
 
-      <div class="recipe-card-banner${r.image ? ' has-img' : ''}">
-        ${r.image ? `<img class="recipe-card-img" src="${r.image}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-img'); this.remove()">` : ''}
+      <div class="recipe-card-banner${recipeImage(r) ? ' has-img' : ''}">
+        ${recipeImage(r) ? `<img class="recipe-card-img" src="${escHtml(recipeImage(r))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-img'); this.remove()">` : ''}
 
 
 
@@ -3266,10 +3382,16 @@
 
 
     lastRecipeList = list;
-    const sig = JSON.stringify([recipeCategory, recipeFilter, recipeSection, showClips, searchQuery, excludeFoods]);
+    const sig = recipeGridSig();
     const sameList = sig === recipeGridState.sig;
     const keepCount = sameList ? recipeGridState.rendered : 0;
-    const keepY = (sameList && currentView === 'recipes') ? window.scrollY : null;
+    let keepY = (sameList && currentView === 'recipes') ? window.scrollY : null;
+    // First draw after a restart: back to where Recipes was left last time.
+    if (pendingRecipeScroll != null && currentView === 'recipes') {
+      if (sameList) keepY = pendingRecipeScroll;
+      pendingRecipeScroll = null;
+    }
+    scheduleRecipeViewSave();
     recipeGridState = { sig, rendered: 0 };
     grid.innerHTML = '';
 
@@ -4320,7 +4442,7 @@
 
 
 
-          ${recipe.image ? `<img class="rmodal-img" src="${recipe.image}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
+          ${recipeImage(recipe) ? `<img class="rmodal-img" src="${escHtml(recipeImage(recipe))}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
           <span class="rmodal-emoji">${recipe.emoji || '🍽️'}</span>
 
 
@@ -5108,13 +5230,9 @@
 
 
     document.getElementById('rf-name').value       = existing ? existing.name : '';
-
-
-
-
-
-
-
+    rfPhotoPending = undefined;
+    document.getElementById('rf-image').value = existing ? (existing.image || '') : '';
+    showRfPhotoPreview(existing ? recipeImage(existing) : '');
     document.getElementById('rf-category').value   = existing ? (existing.category || 'dinner') : 'dinner';
 
 
@@ -5589,6 +5707,11 @@
   // Put an imported recipe into the open form for review. Nothing is saved
   // until Save Recipe is pressed.
   function fillFormFromImport(r, meta) {
+    if (r.image) {
+      document.getElementById('rf-image').value = r.image;
+      rfPhotoPending = null;
+      showRfPhotoPreview(r.image);
+    }
     document.getElementById('rf-emoji').value      = r.emoji || '';
     document.getElementById('rf-name').value       = r.name || '';
     document.getElementById('rf-category').value   = r.category || 'dinner';
@@ -6048,6 +6171,54 @@
 
 
 
+  // ── 📷 Photo field on the recipe form ─────────────────────
+  const RF_PHOTO_NOTE = 'A photo link shows on all your devices. A photo you take or choose is saved on this device only.';
+  function showRfPhotoPreview(src) {
+    const img = document.getElementById('rf-photo-preview');
+    const rm = document.getElementById('rf-photo-remove');
+    const note = document.getElementById('rf-photo-note');
+    if (note) note.textContent = RF_PHOTO_NOTE;
+    if (!img) return;
+    if (src) { img.src = src; img.classList.remove('hidden'); }
+    else { img.removeAttribute('src'); img.classList.add('hidden'); }
+    if (rm) rm.classList.toggle('hidden', !src);
+  }
+  (function initRfPhoto() {
+    const link = document.getElementById('rf-image');
+    const file = document.getElementById('rf-photo-file');
+    const rm = document.getElementById('rf-photo-remove');
+    const img = document.getElementById('rf-photo-preview');
+    const note = document.getElementById('rf-photo-note');
+    if (!link || !file) return;
+    link.addEventListener('change', () => {
+      const v = link.value.trim();
+      // A new link replaces a photo kept on this device.
+      if (v) rfPhotoPending = null;
+      showRfPhotoPreview(v);
+    });
+    // A link that doesn't load: say so instead of showing a broken image.
+    if (img) img.addEventListener('error', () => {
+      if (!img.getAttribute('src')) return;
+      img.classList.add('hidden');
+      if (note) note.textContent = "That photo link didn't load. Check it, or take or choose a photo instead.";
+    });
+    file.addEventListener('change', async () => {
+      const f = file.files && file.files[0];
+      file.value = '';
+      if (!f) return;
+      if (note) note.textContent = 'Getting the photo ready…';
+      try {
+        const blob = await shrinkPhoto(f);
+        rfPhotoPending = blob;
+        if (rfPhotoObjectUrl) URL.revokeObjectURL(rfPhotoObjectUrl);
+        rfPhotoObjectUrl = URL.createObjectURL(blob);
+        showRfPhotoPreview(rfPhotoObjectUrl);
+      } catch (e) {
+        if (note) note.textContent = "Couldn't read that photo. Try a different one.";
+      }
+    });
+    if (rm) rm.addEventListener('click', () => { link.value = ''; rfPhotoPending = null; showRfPhotoPreview(''); });
+  })();
   function saveRecipeFromForm() {
 
 
@@ -6361,14 +6532,16 @@
       if (importedMeta.source) recipe.source = importedMeta.source;
       recipe.added = importedMeta.added;
     }
+    // 📷 The photo link travels with the recipe and syncs. A link cleared on a
+    // recipe that had a photo is saved as '' so a looked-up photo doesn't return.
+    const photoLink = document.getElementById('rf-image').value.trim();
+    if (photoLink) recipe.image = photoLink;
+    else if (rfPhotoPending === null || (existing && existing.image)) recipe.image = '';
+    else delete recipe.image;
+    if (rfPhotoPending instanceof Blob) setDevicePhoto(recipe.id, rfPhotoPending);
+    else if (rfPhotoPending === null) setDevicePhoto(recipe.id, null);
+    rfPhotoPending = undefined;
     const list = getUserRecipes();
-
-
-
-
-
-
-
     if (editingRecipeId) {
 
 
@@ -6466,13 +6639,7 @@
 
 
     if (!confirm(`Delete "${name}"? This cannot be undone.`)) return;
-
-
-
-
-
-
-
+    setDevicePhoto(id, null);
     const list = getUserRecipes().filter(r => r.id !== id);
 
 

@@ -743,6 +743,23 @@
             </div>
           </div>
           <div class="form-row">
+            <div class="form-group flex-grow">
+              <label for="rf-image">📷 Photo</label>
+              <div class="rf-photo">
+                <img id="rf-photo-preview" class="rf-photo-preview hidden" alt="Recipe photo">
+                <div class="rf-photo-controls">
+                  <input type="url" id="rf-image" placeholder="Paste a photo link: https://…" autocomplete="off" inputmode="url">
+                  <div class="rf-photo-btns">
+                    <label class="action-btn rf-photo-pick" for="rf-photo-file">📷 Take or choose a photo</label>
+                    <input type="file" id="rf-photo-file" accept="image/*" hidden>
+                    <button type="button" class="action-btn hidden" id="rf-photo-remove">Remove photo</button>
+                  </div>
+                  <div class="rf-photo-note" id="rf-photo-note">A photo link shows on all your devices. A photo you take or choose is saved on this device only.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
             <div class="form-group">
               <label>Category <span class="required">*</span></label>
               <select id="rf-category">
