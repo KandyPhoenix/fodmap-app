@@ -402,14 +402,14 @@ const US_DENSITY = [
   { re: /\brice\b/i, not: /noodle|vermicelli|paper|cooked|pouch|microwav|flour|wine|vinegar|cake|milk|syrup|pasta|macaroni|spaghetti|penne|fusilli|cracker|bran|krispie|cereal/i, cup: 185 },
   { re: /\bcouscous\b/i, not: /cooked|pearl|giant|israeli/i, cup: 173 },
   { re: /\bcooked quinoa\b|\bquinoa,? cooked\b/i, cup: 185 },
-  { re: /\bpeas\b/i, not: /chick|snap|snow|split|sugar|pod/i, cup: 134 },
+  { re: /\bpeas?\b/i, not: /chick|snap|snow|split|sugar|pod|shoot|sprout|protein|flour|eyed|pigeon/i, cup: 134 },
   { re: /\bgreek yog(?:h)?urt\b/i, cup: 227 },
   { re: /\byog(?:h)?urt\b/i, not: /greek|frozen|coconut|dressing/i, cup: 245 },
   { re: /\bcheddar\b/i, need: /grated|shredded/i, cup: 113 },
   { re: /\bparmesan\b|\bparmigiano\b/i, need: /grated/i, cup: 100 },
   { re: /\bfeta\b/i, need: /crumbled/i, cup: 150 },
   { re: /\b(?:icing|powdered|confectioners'?) sugar\b/i, cup: 120 },
-  { re: /\b(?:caster|granulated|white|superfine) sugar\b|^sugar\b/i, cup: 200 },
+  { re: /\b(?:caster|granulated|white|superfine) sugar\b|^sugar\b/i, not: /\bsnap\b|\bpeas?\b|syrup|cane\b/i, cup: 200 },
   { re: /\b(?:plain|all[- ]purpose) flour\b/i, cup: 125 },
   { re: /\bbutter\b/i, not: /peanut|almond|nut |cashew|apple|milk|cocoa|chicken|lettuce|squash|beans?\b|bean\b/i, tbsp: 14.2, wholeTbsp: true },
   { re: /\bparsley\b/i, not: /dried/i, cup: 60, form: 'chopped' },
@@ -569,8 +569,9 @@ function cachedRe(src, flags) {
   re.lastIndex = 0;
   return re;
 }
-const US_AMT = String.raw`[\d¼½¾⅓⅔][\d.\/¼½¾⅓⅔ ]*\s*(?:oz|ounces?|lbs?|pounds?|cups?|tbsp|tsp|tablespoons?|teaspoons?)\b`;
-const MET_AMT = String.raw`\d[\d.\/]*\s*(?:kg|g|ml|l)\b`;
+const US_AMT = String.raw`[\d¼½¾⅓⅔][\d.\/¼½¾⅓⅔ ]*\s*(?:oz|ounces?|lbs?|pounds?|cups?|tbsps?|tsps?|tablespoons?|teaspoons?)\b`;
+const MET_U = String.raw`(?:kilograms?|grams?|millilit(?:er|re)s?|kg|g|ml|l)\b`;
+const MET_AMT = String.raw`\d[\d.\/]*\s*${MET_U}`;
 function dropMetricEcho(s) {
   return String(s)
     .replace(cachedRe(`(${US_AMT})\\s*\\/\\s*${MET_AMT}`, 'gi'), '$1')
@@ -626,17 +627,17 @@ function usTemps(s) {
     .replace(/\bgas(?:\s*mark)?\s*(\d)\b/gi, (a, g) => GAS[g] ? `${GAS[g]}°F` : a);
 }
 const METRIC_QTY = cachedRe(`^\\s*(${NUM_PART}|[¼½¾⅓⅔])\\s*(kg|g|ml|l|cl)\\b\\.?\\s*(.*)$`, 'i');
-const US_UNIT_RE = /\b(?:cups?|tbsp|tsp|tablespoons?|teaspoons?|oz|ounces?|lbs?|pounds?|quarts?|pints?)\b/i;
+const US_UNIT_RE = /\b(?:cups?|tbsps?|tsps?|tablespoons?|teaspoons?|oz|ounces?|lbs?|pounds?|quarts?|pints?)\b/i;
 const FRAC_CHARS = { '¼': 0.25, '½': 0.5, '¾': 0.75, '⅓': 1 / 3, '⅔': 2 / 3 };
 const fracNum = t => FRAC_CHARS[t] !== undefined ? FRAC_CHARS[t] : parseNum(t);
 
-const MET_RANGE = String.raw`(?:about\s*)?\d[\d.\/]*\s*(?:(?:kg|g|ml|l)\b\s*)?(?:(?:-|–|to)\s*\d[\d.\/]*\s*)?(?:kg|g|ml|l)\b`;
+const MET_RANGE = String.raw`(?:about\s*)?\d[\d.\/]*\s*(?:${MET_U}\s*)?(?:(?:-|–|to)\s*\d[\d.\/]*\s*)?${MET_U}`;
 function stripMetric(s) {
   return String(s)
     .replace(cachedRe(`\\(\\s*${MET_RANGE}\\s*\\)`, 'gi'), '')
     .replace(cachedRe(`\\(\\s*${MET_RANGE}\\s*\\/\\s*`, 'gi'), '(')
     .replace(cachedRe(`\\(\\s*${MET_RANGE}\\s*,\\s*`, 'gi'), '(')
-    .replace(cachedRe(`,\\s*${MET_RANGE}(?=\\s*[,)])`, 'gi'), '')
+    .replace(cachedRe(`,\\s*${MET_RANGE}(?=\\s*[,)]|\\s*$)`, 'gi'), '')
     .replace(cachedRe(`${MET_RANGE}\\s*\\/\\s*`, 'gi'), '')
     .replace(cachedRe(`\\s*\\/\\s*${MET_RANGE}`, 'gi'), '')
     .replace(/^\s*\/\s*/, '')
@@ -644,7 +645,7 @@ function stripMetric(s) {
 }
 // One quick look before the full conversion: almost every line in an American
 // recipe has nothing to change, and skipping those keeps start-up fast.
-const US_TRIGGER = /\d\s*(?:k?g|ml|l|cl|cm)\b|\d\s*°?\s*C\b|\bgas\b|aubergine|courgette|spring onion|rocket|\bmince\b|minced (?:beef|pork|lamb|turkey|chicken|veal)|\(minced\)|plain flour|self[- ]raising|wholemeal|double cream|thickened cream|single cream|soured cream|caster|icing|purée|passata|stock cube|chilli|yoghurt|prawn|rapeseed|sultana|swede|beetroot|mangetout|broad bean|cos lettuce|cavolo|pak choi|tenderstem|chestnut mush|streaky|brown onion|cornflour|bicarbonate|demerara|fresh coriander|coriander leaves|tinned|\d\s*(?:g|ml|oz)?\s*tins?\b|\b(?:a|an|one|two|three) tins?\b|\b(tbsp|tsp|cups?|oz|lbs?)\s+\1\b/i;
+const US_TRIGGER = /\d\s*(?:k?g|ml|l|cl|cm|grams?|kilograms?|millilit(?:er|re)s?)\b|\d\s*°?\s*C\b|\bgas\b|aubergine|courgette|spring onion|rocket|\bmince\b|minced (?:beef|pork|lamb|turkey|chicken|veal)|\(minced\)|plain flour|self[- ]raising|wholemeal|double cream|thickened cream|single cream|soured cream|caster|icing|purée|passata|stock cube|chilli|yoghurt|prawn|rapeseed|sultana|swede|beetroot|mangetout|broad bean|cos lettuce|cavolo|pak choi|tenderstem|chestnut mush|streaky|brown onion|cornflour|bicarbonate|demerara|fresh coriander|coriander leaves|tinned|\d\s*(?:g|ml|oz)?\s*tins?\b|\b(?:a|an|one|two|three) tins?\b|\b(tbsp|tsp|cups?|oz|lbs?)\s+\1\b/i;
 // Kitchen words and spellings that only change in British recipes.
 const US_TRIGGER_UK = /coriander|tomato puree|grill|\bhob\b|frying pan|baking tray|\btins?\b|cling|kitchen paper|tin foil|aluminium|flavour|colour|favourite|savoury|centre|litre|caramelis|the boil/i;
 const needsUS = (uk, ...parts) => parts.some(p => p && (US_TRIGGER.test(p) || (uk && US_TRIGGER_UK.test(p))));
@@ -667,10 +668,12 @@ function usIngredient(ing, uk) {
   }
   // Already American with a metric echo: "500 g / 1 lb", "¾ cup (150g)",
   // "1¼ cups flour (150g, $0.22)" — keep the American amount, drop the metric.
+  const canQ = /^\s*([\d¼½¾⅓⅔\/ ]+?)\s*(?:cans?|tins?)\s*\(\s*(\d+(?:\.\d+)?)\s*(?:g|ml)\s*\)\s*$/i.exec(qty);
+  if (canQ) qty = `${canQ[1].trim()} (${usCanSize(+canQ[2], item)}) ${(fracNum(canQ[1].trim()) || 1) > 1 ? 'cans' : 'can'}`;
   const inner0 = /^\s*[\d.\/]+\s*(?:g|kg|ml|l)\b\s*\(([^)]*)\)\s*$/i.exec(qty);
   if (inner0 && US_UNIT_RE.test(inner0[1])) qty = inner0[1].trim();
   if (US_UNIT_RE.test(qty) || US_UNIT_RE.test(item)) {
-    qty = stripMetric(qty); item = usCm(stripMetric(item));
+    qty = stripMetric(qty).replace(/\b(tbsp|tsp)s\b/gi, '$1'); item = usInlineAmounts(stripMetric(item));
     if (uk) item = dedupeNames(swap(item, US_UK_ONLY));
     // "2 tbsp" + "tbsp ghee" -> "2 tbsp" + "ghee"
     const unitEnd = /\b(tbsp|tsp|cups?|oz|lbs?)\s*$/i.exec(qty);
@@ -693,7 +696,7 @@ function usIngredient(ing, uk) {
     } else if (/coconut (?:milk|cream)/i.test(item) && v >= 380 && v <= 420 && unit === 'ml') us = '1 (13.5-oz) can';
     else us = mlToUS(unit === 'l' ? v * 1000 : unit === 'cl' ? v * 10 : v);
     qty = us + tail;
-  }
+  } else if (!US_UNIT_RE.test(qty) && /\(\s*\d[\d.]*\s*(?:kg|g|ml)\s*\)/i.test(qty)) qty = usInlineAmounts(qty);
   item = usInlineAmounts(item);
   if (uk) item = dedupeNames(swap(item, US_UK_ONLY));
   return { qty, item };
