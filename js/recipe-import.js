@@ -236,7 +236,7 @@ function toAppRecipe(r, url, today) {
   const yieldRaw = Array.isArray(r.recipeYield) ? r.recipeYield[0] : r.recipeYield;
   const servesMatch = String(yieldRaw || '').match(/\d+/);
   const serves = parseInt(servesMatch ? servesMatch[0] : '4', 10);
-  return {
+  return usRecipe({
     id: 'fam-add-' + slugify(name),
     name,
     emoji: pick(EMOJI, name, '🍽️'),
@@ -251,7 +251,7 @@ function toAppRecipe(r, url, today) {
     ingredients,
     steps,
     fodmapNote: fodmapNote(ingredients),
-  };
+  });
 }
 
 // ── Plain text → recipe ───────────────────────────────────────
@@ -354,8 +354,413 @@ function cleanSourceUrl(url) {
   } catch (e) { return String(url || '').split('?')[0]; }
 }
 
+// ── American kitchen: US ingredient names, US measures, °F ─────
+// Kandy cooks in the US. Every recipe is shown — and every import is saved —
+// with American names (yellow onion, cilantro, eggplant, heavy cream) and
+// American measures (cups and spoons, ounces and pounds, °F, inches).
+//
+// Weights become cups only for foods Americans measure that way, using
+// published grams-per-cup figures (USDA FoodData Central where available);
+// everything else becomes oz / lb, which needs no density. Liquids become
+// tsp / tbsp / cups. British-only kitchen words (grill = broiler, hob, tin)
+// change only in recipes from British sources, because in American recipes
+// "grill" means an outdoor grill.
+const G_PER_OZ = 28.3495;
+const ML_PER_TSP = 4.92892, ML_PER_TBSP = 14.7868, ML_PER_CUP = 236.588;
+const US_FRAC = { 0.125: '⅛', 0.25: '¼', 0.5: '½', 0.75: '¾' };
+US_FRAC[1 / 3] = '⅓'; US_FRAC[2 / 3] = '⅔';
+// Round to the nearest whole-plus-fraction from `fracs` (never to zero).
+function usNum(x, fracs) {
+  const opts = [0, ...fracs, 1];
+  let whole = Math.floor(x), rem = x - whole, best = 0;
+  for (const f of opts) if (Math.abs(rem - f) < Math.abs(rem - best)) best = f;
+  if (best === 1) { whole += 1; best = 0; }
+  if (whole === 0 && best === 0) best = fracs[0];
+  const fr = best ? US_FRAC[best] : '';
+  return { text: (whole ? String(whole) : '') + fr, value: whole + best };
+}
+const plural = (v, one, many) => (v > 1 ? many : one);
+function mlToUS(ml) {
+  const tsp = ml / ML_PER_TSP;
+  if (tsp < 2.75) { const n = usNum(tsp, [0.25, 0.5, 0.75]); return `${n.text} tsp`; }
+  const tbsp = ml / ML_PER_TBSP;
+  if (tbsp < 3.5) { const n = usNum(tbsp, [0.5]); return `${n.text} tbsp`; }
+  const n = usNum(ml / ML_PER_CUP, [0.25, 1 / 3, 0.5, 2 / 3, 0.75]);
+  return `${n.text} ${plural(n.value, 'cup', 'cups')}`;
+}
+function gToUS(g) {
+  const oz = g / G_PER_OZ;
+  if (oz < 15.5) { const n = usNum(oz, oz < 2 ? [0.25, 0.5, 0.75] : oz < 10 ? [0.5] : []); return `${n.text} oz`; }
+  const n = usNum(oz / 16, [0.25, 0.5, 0.75]);
+  return `${n.text} lb`;
+}
+// Grams per US cup (`cup`) or per tablespoon (`tbsp`) for foods measured by
+// volume in American kitchens. `form` is added to the name when it says how
+// the amount was measured (chopped parsley weighs more per cup than sprigs).
+const US_DENSITY = [
+  { re: /\bcooked (?:white |brown |basmati |jasmine |long[- ]grain )?rice\b/i, cup: 158 },
+  { re: /\brice\b/i, not: /noodle|vermicelli|paper|cooked|pouch|microwav|flour|wine|vinegar|cake|milk|syrup|pasta|macaroni|spaghetti|penne|fusilli|cracker|bran|krispie|cereal/i, cup: 185 },
+  { re: /\bcouscous\b/i, not: /cooked|pearl|giant|israeli/i, cup: 173 },
+  { re: /\bcooked quinoa\b|\bquinoa,? cooked\b/i, cup: 185 },
+  { re: /\bpeas\b/i, not: /chick|snap|snow|split|sugar|pod/i, cup: 134 },
+  { re: /\bgreek yog(?:h)?urt\b/i, cup: 227 },
+  { re: /\byog(?:h)?urt\b/i, not: /greek|frozen|coconut|dressing/i, cup: 245 },
+  { re: /\bcheddar\b/i, need: /grated|shredded/i, cup: 113 },
+  { re: /\bparmesan\b|\bparmigiano\b/i, need: /grated/i, cup: 100 },
+  { re: /\bfeta\b/i, need: /crumbled/i, cup: 150 },
+  { re: /\b(?:icing|powdered|confectioners'?) sugar\b/i, cup: 120 },
+  { re: /\b(?:caster|granulated|white|superfine) sugar\b|^sugar\b/i, cup: 200 },
+  { re: /\b(?:plain|all[- ]purpose) flour\b/i, cup: 125 },
+  { re: /\bbutter\b/i, not: /peanut|almond|nut |cashew|apple|milk|cocoa|chicken|lettuce|squash|beans?\b|bean\b/i, tbsp: 14.2, wholeTbsp: true },
+  { re: /\bparsley\b/i, not: /dried/i, cup: 60, form: 'chopped' },
+  { re: /\b(?:coriander|cilantro)\b/i, not: /ground|seed|dried/i, cup: 16, form: 'leaves, loosely packed' },
+  { re: /\bbasil\b/i, not: /dried|paste|thai basil paste/i, cup: 24, form: 'leaves' },
+  { re: /\bmint\b/i, not: /dried|sauce|jelly|tea/i, tbsp: 5.5, form: 'chopped' },
+  { re: /\bdill\b/i, not: /dried|seed|pickle/i, cup: 9, form: 'sprigs' },
+  { re: /\bchives?\b/i, not: /dried/i, tbsp: 3, form: 'chopped' },
+  { re: /\bginger\b/i, not: /ground|paste|pur[ée]e|ale|beer|syrup|pickled|stem|biscuit|snap/i, tbsp: 6, form: 'grated' },
+  { re: /\bbean ?sprouts\b/i, cup: 104 },
+  { re: /\bkimchi\b/i, cup: 150 },
+];
+function densityFor(item) {
+  return US_DENSITY.find(d => d.re.test(item) && !(d.not && d.not.test(item)) && !(d.need && !d.need.test(item))) || null;
+}
+// A weight of something measured by volume: cups, or tbsp / tsp when small.
+function gByVolume(g, d) {
+  const tbsp = d.tbsp ? g / d.tbsp : (g / d.cup) * 16;
+  if (d.wholeTbsp && tbsp <= 16) { const n = usNum(tbsp, tbsp < 3 ? [0.5] : []); return `${n.text} tbsp`; }
+  if (tbsp < 1) { const n = usNum(tbsp * 3, [0.25, 0.5, 0.75]); return `${n.text} tsp`; }
+  if (tbsp < 4) { const n = usNum(tbsp, [0.5]); return `${n.text} tbsp`; }
+  const n = usNum(tbsp / 16, [0.25, 1 / 3, 0.5, 2 / 3, 0.75]);
+  return `${n.text} ${plural(n.value, 'cup', 'cups')}`;
+}
+// A British 400 g tin is a standard US can; other sizes become exact ounces.
+function usCanSize(grams, item) {
+  if (grams >= 380 && grams <= 425) {
+    if (/coconut/i.test(item)) return '13.5-oz';
+    if (/tomato/i.test(item)) return '14.5-oz';
+    if (/beans?\b|chickpea|lentil|garbanzo/i.test(item)) return '15-oz';
+  }
+  const oz = Math.round((grams / G_PER_OZ) * 10) / 10;
+  return `${Number.isInteger(oz) ? oz : oz.toFixed(1).replace(/\.0$/, '')}-oz`;
+}
+// British -> American ingredient names. Applied everywhere: none of these
+// British words means something different in an American recipe.
+const US_NAMES = [
+  [/\b(\d+)% fat (beef|pork|lamb|turkey|chicken) mince\b/gi, (a, n, m) => `lean ground ${m.toLowerCase()} (${100 - +n}% lean)`],
+  [/\b(beef|pork|lamb|turkey|chicken|veal) mince\b/gi, (a, m) => `ground ${m.toLowerCase()}`],
+  [/\bminced (beef|pork|lamb|turkey|chicken|veal)\b/gi, (a, m) => `ground ${m.toLowerCase()}`],
+  [/\bground \(minced\) /gi, 'ground '],
+  [/\baubergines?\b/gi, m => /s$/i.test(m) ? 'eggplants' : 'eggplant'],
+  [/\bcourgettes?\b/gi, 'zucchini'],
+  [/\bspring onion green tops\b|\bspring onion greens\b|\bgreen tops of (?:the )?spring onions?\b/gi, 'green onion tops'],
+  [/\bspring onions?\b/gi, m => /s$/i.test(m) ? 'green onions' : 'green onion'],
+  [/\brocket\b/gi, 'arugula'],
+  [/\bplain flour\b/gi, 'all-purpose flour'],
+  [/\bself[- ]raising flour\b/gi, 'self-rising flour'],
+  [/\bwholemeal\b/gi, 'whole wheat'],
+  [/\bdouble cream\b/gi, 'heavy cream'],
+  [/\bthickened cream\b/gi, 'heavy cream'],
+  [/\bsingle cream\b/gi, 'light cream'],
+  [/\bsoured cream\b/gi, 'sour cream'],
+  [/\bcaster sugar\b/gi, 'superfine sugar'],
+  [/\bicing sugar\b/gi, 'powdered sugar'],
+  [/\bicing \(powdered\) sugar\b/gi, 'powdered sugar'],
+  [/\btomato purée\b/gi, 'tomato paste'],
+  [/\b(?:tomato )?passata\b/gi, 'strained tomatoes (passata)'],
+  [/\bgarlic pur[ée]e\b/gi, 'garlic paste'],
+  [/\bginger pur[ée]e\b/gi, 'ginger paste'],
+  [/\bstock cubes?\b/gi, m => /s$/i.test(m) ? 'bouillon cubes' : 'bouillon cube'],
+  [/\bchilli flakes?\b/gi, 'red pepper flakes'],
+  [/\bkorean chilli flakes?\b/gi, 'Korean chili flakes (gochugaru)'],
+  [/\b(red|green) chill(i|ies)\b/gi, (a, c, n) => `${c.toLowerCase()} chile${n === 'ies' ? 's' : ''}`],
+  [/\bfresh chill(i|ies)\b/gi, (m, n) => `fresh chile${n === 'ies' ? 's' : ''}`],
+  [/\bchillies\b/gi, 'chiles'],
+  [/\bchilli\b/gi, 'chili'],
+  [/\byoghurt\b/gi, 'yogurt'],
+  [/\bking prawns?\b/gi, 'jumbo shrimp'],
+  [/\bprawns?\b/gi, 'shrimp'],
+  [/\bshrimp\/shrimp\b/gi, 'shrimp'],
+  [/\brapeseed oil\b/gi, 'canola oil'],
+  [/\bsultanas\b/gi, 'golden raisins'],
+  [/\bswede\b/gi, 'rutabaga'],
+  [/\bbeetroots?\b/gi, 'beets'],
+  [/\bmangetout\b/gi, 'snow peas'],
+  [/\bbroad beans\b/gi, 'fava beans'],
+  [/\bcos lettuce\b/gi, 'romaine lettuce'],
+  [/\bcavolo nero\b/gi, 'lacinato (Tuscan) kale'],
+  [/\bpak choi\b/gi, 'bok choy'],
+  [/\btenderstem broccoli\b/gi, 'broccolini'],
+  [/\bchestnut mushrooms\b/gi, 'cremini mushrooms'],
+  [/\bstreaky bacon\b/gi, 'bacon'],
+  [/\bbrown onions?\b/gi, m => /s$/i.test(m) ? 'yellow onions' : 'yellow onion'],
+  [/\bcornflour\b/gi, 'cornstarch'],
+  [/\bbicarbonate of soda\b/gi, 'baking soda'],
+  [/\bdemerara sugar\b/gi, 'turbinado sugar'],
+  [/\bfresh coriander\b|\bcoriander leaves\b/gi, 'fresh cilantro'],
+  [/\btinned\b/gi, 'canned'],
+  // "1 tin", "400g tins", "a tin of": a can. A "muffin tin" or "the tin" is a pan.
+  [/\b((?:\d+(?:\.\d+)?\s*(?:g|ml|oz)?|a|an|one|two|three)\s+)tin(s?)\b/gi, (a, pre, s) => `${pre}can${s}`],
+];
+// British spellings and kitchen words, only for recipes from British sources.
+const US_UK_ONLY = [
+  [/\btomato puree\b/gi, 'tomato paste'],
+  [/\bunder the grill\b/gi, 'under the broiler'],
+  [/\b(?:pre-?heat|heat|turn on) the grill\b/gi, m => m.replace(/grill/i, 'broiler')],
+  // "grill for 5 mins", "Grill the halloumi": the verb is "broil".
+  [/\bgrill\b(?=\s+(?:for|until|the|it|them|on|each|both|again|briefly|over|under|in|skin|cut|\d))/gi, 'broil'],
+  [/(^|[.!?]\s+)grill\b/gi, (m, p) => p + 'Broil'],
+  [/\bgrill\b/gi, 'broiler'],
+  [/\bgrilled\b/gi, 'broiled'],
+  [/\bgrilling\b/gi, 'broiling'],
+  [/\bhob\b/gi, 'stovetop'],
+  [/\bto the boil\b/gi, 'to a boil'],
+  [/\bon the boil\b/gi, 'boiling'],
+  [/\b(roasting|cake|loaf|baking|sandwich) tins?\b/gi, (m, k) => `${k} pan${/s$/i.test(m) ? 's' : ''}`],
+  [/\b((?:\d+|[¼½¾])[-\s]?inch(?:es)?(?: square| round| deep)?) tins?\b/gi, (m, k) => `${k} pan${/s$/i.test(m) ? 's' : ''}`],
+  [/\bfrying pan\b/gi, 'skillet'],
+  [/\bbaking tray\b/gi, 'baking sheet'],
+  [/\bclingfilm\b|\bcling film\b/gi, 'plastic wrap'],
+  [/\bkitchen paper\b/gi, 'paper towels'],
+  [/\btin foil\b/gi, 'aluminum foil'],
+  [/\baluminium\b/gi, 'aluminum'],
+  [/\bflavour/gi, 'flavor'], [/\bcolour/gi, 'color'], [/\bfavourite/gi, 'favorite'],
+  [/\bsavoury\b/gi, 'savory'], [/\bcentre\b/gi, 'center'], [/\blitres?\b/gi, m => m.replace(/re/, 'er')],
+  [/\bcaramelis(e|ed|es|ing)\b/gi, (m, e) => 'carameliz' + e],
+];
+// The replacement takes the original's case: "Spring Onion" -> "Green Onion",
+// "spring onion" -> "green onion", "Spring onion" -> "Green onion".
+function matchCase(orig, rep) {
+  if (!/[A-Z]/.test(orig)) return rep;
+  const words = orig.split(/\s+/).filter(w => /[a-z]/i.test(w));
+  const title = words.length > 1 && words.every(w => /^[^a-z]*[A-Z]/.test(w));
+  if (title) return rep.replace(/(^|[\s(-])([a-z])/g, (a, p, c) => p + c.toUpperCase()).replace(/\b(Of|And|Or|The)\b/g, w => w.toLowerCase());
+  return /^[A-Z]/.test(orig) ? rep[0].toUpperCase() + rep.slice(1) : rep;
+}
+function swap(s, rules) {
+  let out = String(s);
+  for (const [re, to] of rules) {
+    const before = out;
+    out = out.replace(re, (...a) => {
+      const m = a[0], r = typeof to === 'function' ? to(...a.slice(0, -2), a[a.length - 2], a[a.length - 1]) : to;
+      if (r === m) return m;
+      // The line already names the American word: it is explaining, not British.
+      const core = r.toLowerCase().replace(/\s*\(.*$/, '');
+      if (core.length > 3 && before.toLowerCase().includes(core)) return m;
+      return matchCase(m, r);
+    });
+  }
+  return out;
+}
+const usNames = s => dedupeNames(swap(String(s).replace(/\bground \(minced\) /gi, 'ground '), US_NAMES));
+const NUM_PART = String.raw`(?:\d+(?:\.\d+)?|\d*\.\d+|\d+\s+\d+\/\d+|\d+\/\d+)`;
+const parseNum = t => { t = String(t).trim(); let m;
+  if ((m = /^(\d+)\s+(\d+)\/(\d+)$/.exec(t))) return +m[1] + m[2] / m[3];
+  if ((m = /^(\d+)\/(\d+)$/.exec(t))) return m[1] / m[2];
+  return parseFloat(t); };
+// Metric amounts written inside text: "(about 180g each)", "a 2cm piece", "200C".
+// Patterns built from pieces are compiled once and reused (start-up converts
+// thousands of lines, and compiling per line was most of the cost).
+const reCache = new Map();
+function cachedRe(src, flags) {
+  const key = flags + '|' + src;
+  let re = reCache.get(key);
+  if (!re) { re = new RegExp(src, flags); reCache.set(key, re); }
+  re.lastIndex = 0;
+  return re;
+}
+const US_AMT = String.raw`[\d¼½¾⅓⅔][\d.\/¼½¾⅓⅔ ]*\s*(?:oz|ounces?|lbs?|pounds?|cups?|tbsp|tsp|tablespoons?|teaspoons?)\b`;
+const MET_AMT = String.raw`\d[\d.\/]*\s*(?:kg|g|ml|l)\b`;
+function dropMetricEcho(s) {
+  return String(s)
+    .replace(cachedRe(`(${US_AMT})\\s*\\/\\s*${MET_AMT}`, 'gi'), '$1')
+    .replace(cachedRe(`${MET_AMT}\\s*\\/\\s*(${US_AMT})`, 'gi'), '$1')
+    .replace(cachedRe(`(${US_AMT})\\s*\\(\\s*(?:about\\s*)?${MET_AMT}\\s*\\)`, 'gi'), '$1');
+}
+// "cornstarch (cornstarch)", "cornstarch / cornstarch" -> "cornstarch"
+function dedupeNames(s) {
+  s = String(s);
+  if (!/[(\/]|\b(?:tbsp|tsp|cups?|oz|lbs?)\s+(?:tbsp|tsp|cups?|oz|lbs?)\b/i.test(s)) return s;
+  return s
+    .replace(/\b(tbsp|tsp|cups?|oz|lbs?)\s+\1\b/gi, '$1')
+    .replace(/\b([a-z][a-z ]*?[a-z])\s*\(\s*\1\s*\)/gi, '$1')
+    .replace(/\b([a-z][a-z ]*?[a-z])\s*\/\s*\1\b/gi, '$1');
+}
+function usInlineAmounts(s) {
+  return usCm(dropMetricEcho(s)
+    .replace(cachedRe(`(${NUM_PART})\\s*(kg|g|ml|l|cl)\\b(?![-\\w])(?!\\s*(?:of\\s+)?(?:protein|fib(?:er|re)|carbs?|carbohydrates?|fat\\b|sugars?|net|sodium|salt|per serv))`, 'gi'), (all, n, u) => {
+      const v = parseNum(n), unit = u.toLowerCase();
+      if (unit === 'g') return gToUS(v);
+      if (unit === 'kg') return gToUS(v * 1000);
+      if (unit === 'ml') return mlToUS(v);
+      if (unit === 'cl') return mlToUS(v * 10);
+      return mlToUS(v * 1000);
+    }));
+}
+function usCm(s) {
+  return s
+    .replace(/(\d+(?:\.\d+)?)\s*cm\s*\/\s*(\d+(?:\.\d+)?)\s*(?:"|-?inch(?:es)?\b|in\b)/gi, '$2-inch')
+    .replace(/(\d+(?:\.\d+)?\s*(?:"|-?inch(?:es)?))\s*\/\s*\d+(?:\.\d+)?\s*cm\b/gi, '$1')
+    .replace(/((?:[\d¼½¾]+|\d+\/\d+)\s*-?\s*(?:"|inch(?:es)?))\s*\(\s*\d+(?:\.\d+)?\s*cm\s*\)/gi, '$1')
+    .replace(/(\d+(?:\.\d+)?)\s*(?:-|–|to)\s*(\d+(?:\.\d+)?)\s*cm\b/gi, (a, x, y) => `${cmToIn(+x)}-${cmToIn(+y)} inch`)
+    .replace(/(\d+(?:\.\d+)?)\s*cm\b/gi, (a, x) => `${cmToIn(+x)} inch`);
+}
+function cmToIn(cm) {
+  const inch = cm / 2.54;
+  return usNum(inch, inch >= 4 ? [] : inch >= 2 ? [0.5] : [0.25, 0.5, 0.75]).text;
+}
+// Oven temperatures: keep °F when a recipe gives both, convert Celsius-only
+// ones to the nearest 25 °F, the way US oven dials are marked.
+const GAS = { 1: 275, 2: 300, 3: 325, 4: 350, 5: 375, 6: 400, 7: 425, 8: 450, 9: 475 };
+function usTemps(s) {
+  const toF = c => { const f = c * 9 / 5 + 32; return c < 100 ? Math.round(f / 5) * 5 : Math.round(f / 25) * 25; };
+  const C = String.raw`(\d{2,3})\s*°?\s*C\b`, F = String.raw`(\d{2,3})\s*°?\s*F\b`;
+  const OVEN_TAIL = String.raw`(?:\s*\/\s*(?:(?:fan(?:\s*oven)?\s*)?\d{2,3}\s*°?\s*C(?:\s*fan)?|gas(?:\s*mark)?\s*\d+))*`;
+  return String(s)
+    // "350°F (175°C)", "350°F/177°C", "180C/350F", "200°C (400°F)": keep the °F.
+    .replace(cachedRe(`${F}\\s*\\(\\s*${C}(?:\\s*fan)?\\s*\\)`, 'gi'), (a, f) => `${f}°F`)
+    .replace(cachedRe(`${F}\\s*\\/\\s*${C}(?:\\s*fan)?`, 'gi'), (a, f) => `${f}°F`)
+    .replace(cachedRe(`${C}${OVEN_TAIL}\\s*\\(\\s*${F}\\s*\\)`, 'gi'), (a, c, f) => `${f}°F`)
+    .replace(cachedRe(`${C}${OVEN_TAIL}\\s*\\/\\s*${F}`, 'gi'), (a, c, f) => `${f}°F`)
+    .replace(cachedRe(`${C}${OVEN_TAIL}`, 'gi'), (a, c) => `${toF(+c)}°F`)
+    .replace(/\bgas(?:\s*mark)?\s*(\d)\b/gi, (a, g) => GAS[g] ? `${GAS[g]}°F` : a);
+}
+const METRIC_QTY = cachedRe(`^\\s*(${NUM_PART}|[¼½¾⅓⅔])\\s*(kg|g|ml|l|cl)\\b\\.?\\s*(.*)$`, 'i');
+const US_UNIT_RE = /\b(?:cups?|tbsp|tsp|tablespoons?|teaspoons?|oz|ounces?|lbs?|pounds?|quarts?|pints?)\b/i;
+const FRAC_CHARS = { '¼': 0.25, '½': 0.5, '¾': 0.75, '⅓': 1 / 3, '⅔': 2 / 3 };
+const fracNum = t => FRAC_CHARS[t] !== undefined ? FRAC_CHARS[t] : parseNum(t);
+
+const MET_RANGE = String.raw`(?:about\s*)?\d[\d.\/]*\s*(?:(?:kg|g|ml|l)\b\s*)?(?:(?:-|–|to)\s*\d[\d.\/]*\s*)?(?:kg|g|ml|l)\b`;
+function stripMetric(s) {
+  return String(s)
+    .replace(cachedRe(`\\(\\s*${MET_RANGE}\\s*\\)`, 'gi'), '')
+    .replace(cachedRe(`\\(\\s*${MET_RANGE}\\s*\\/\\s*`, 'gi'), '(')
+    .replace(cachedRe(`\\(\\s*${MET_RANGE}\\s*,\\s*`, 'gi'), '(')
+    .replace(cachedRe(`,\\s*${MET_RANGE}(?=\\s*[,)])`, 'gi'), '')
+    .replace(cachedRe(`${MET_RANGE}\\s*\\/\\s*`, 'gi'), '')
+    .replace(cachedRe(`\\s*\\/\\s*${MET_RANGE}`, 'gi'), '')
+    .replace(/^\s*\/\s*/, '')
+    .replace(/\(\s*\)/g, '').replace(/\s{2,}/g, ' ').replace(/\s+([,)])/g, '$1').trim();
+}
+// One quick look before the full conversion: almost every line in an American
+// recipe has nothing to change, and skipping those keeps start-up fast.
+const US_TRIGGER = /\d\s*(?:k?g|ml|l|cl|cm)\b|\d\s*°?\s*C\b|\bgas\b|aubergine|courgette|spring onion|rocket|\bmince\b|minced (?:beef|pork|lamb|turkey|chicken|veal)|\(minced\)|plain flour|self[- ]raising|wholemeal|double cream|thickened cream|single cream|soured cream|caster|icing|purée|passata|stock cube|chilli|yoghurt|prawn|rapeseed|sultana|swede|beetroot|mangetout|broad bean|cos lettuce|cavolo|pak choi|tenderstem|chestnut mush|streaky|brown onion|cornflour|bicarbonate|demerara|fresh coriander|coriander leaves|tinned|\d\s*(?:g|ml|oz)?\s*tins?\b|\b(?:a|an|one|two|three) tins?\b|\b(tbsp|tsp|cups?|oz|lbs?)\s+\1\b/i;
+// Kitchen words and spellings that only change in British recipes.
+const US_TRIGGER_UK = /coriander|tomato puree|grill|\bhob\b|frying pan|baking tray|\btins?\b|cling|kitchen paper|tin foil|aluminium|flavour|colour|favourite|savoury|centre|litre|caramelis|the boil/i;
+const needsUS = (uk, ...parts) => parts.some(p => p && (US_TRIGGER.test(p) || (uk && US_TRIGGER_UK.test(p))));
+function usIngredient(ing, uk) {
+  if (!needsUS(uk, String(ing.qty == null ? '' : ing.qty), String(ing.item == null ? '' : ing.item))) return ing;
+  let qty = String(ing.qty == null ? '' : ing.qty), item = String(ing.item == null ? '' : ing.item);
+  item = usNames(item);
+  // "2" + "x 400g Can Plum Tomatoes" / "1 × 400g tin chickpeas" -> "2 (14.5-oz) cans" + "plum tomatoes"
+  const both = `${/^(?:to taste|—|-)?$/.test(qty.trim()) ? '' : qty + ' '}${item}`.trim();
+  const can = /^([\d.¼½¾⅓⅔/ ]*?)\s*[x×]?\s*(\d+(?:\.\d+)?)\s*(g|ml)\s+(cans?|tins?|pouch(?:es)?|packs?|packets?|jars?|tubs?|bags?|bottles?)\b\s*(.*)$/i.exec(both);
+  if (can && /[x×]|\b(?:can|tin|pouch|pack|packet|jar|tub|bag|bottle)s?\b/i.test(both)) {
+    const count = can[1].trim() || '1';
+    const n = fracNum(count.replace(/\s+/g, ' ')) || 1;
+    let unit = can[4].toLowerCase().replace(/^tins?$/, 'can').replace(/(es|s)$/, '');
+    if (unit === 'pouche') unit = 'pouch';
+    const units = n > 1 ? (unit === 'pouch' ? 'pouches' : unit + 's') : unit;
+    const grams = can[3].toLowerCase() === 'ml' ? +can[2] : +can[2];
+    const rest = usNames(can[5]).replace(/^[,\s]+/, '');
+    return { qty: `${count} (${usCanSize(grams, rest)}) ${units}`, item: rest };
+  }
+  // Already American with a metric echo: "500 g / 1 lb", "¾ cup (150g)",
+  // "1¼ cups flour (150g, $0.22)" — keep the American amount, drop the metric.
+  const inner0 = /^\s*[\d.\/]+\s*(?:g|kg|ml|l)\b\s*\(([^)]*)\)\s*$/i.exec(qty);
+  if (inner0 && US_UNIT_RE.test(inner0[1])) qty = inner0[1].trim();
+  if (US_UNIT_RE.test(qty) || US_UNIT_RE.test(item)) {
+    qty = stripMetric(qty); item = usCm(stripMetric(item));
+    if (uk) item = dedupeNames(swap(item, US_UK_ONLY));
+    // "2 tbsp" + "tbsp ghee" -> "2 tbsp" + "ghee"
+    const unitEnd = /\b(tbsp|tsp|cups?|oz|lbs?)\s*$/i.exec(qty);
+    if (unitEnd) item = item.replace(cachedRe(`^${unitEnd[1]}\\s+`, 'i'), '');
+    return { qty: qty || ing.qty, item };
+  }
+  const inner = /^\s*[\d.\/]+\s*(?:g|kg|ml|l)\b\s*\(([^)]*)\)\s*$/i.exec(qty);
+  if (inner && US_UNIT_RE.test(inner[1])) qty = inner[1].trim();
+  const m = METRIC_QTY.exec(qty);
+  if (m && !US_UNIT_RE.test(qty)) {
+    const v = fracNum(m[1]), unit = m[2].toLowerCase(), tail = m[3] ? ' ' + usInlineAmounts(m[3]) : '';
+    let us;
+    if (unit === 'g' || unit === 'kg') {
+      const g = unit === 'kg' ? v * 1000 : v;
+      const d = densityFor(item);
+      if (d) {
+        us = gByVolume(g, d);
+        if (d.form && !cachedRe(d.form.split(',')[0], 'i').test(item)) item = /^(?:leaves|sprigs)/.test(d.form) ? `${item} ${d.form}` : `${item}, ${d.form}`;
+      } else us = gToUS(g);
+    } else if (/coconut (?:milk|cream)/i.test(item) && v >= 380 && v <= 420 && unit === 'ml') us = '1 (13.5-oz) can';
+    else us = mlToUS(unit === 'l' ? v * 1000 : unit === 'cl' ? v * 10 : v);
+    qty = us + tail;
+  }
+  item = usInlineAmounts(item);
+  if (uk) item = dedupeNames(swap(item, US_UK_ONLY));
+  return { qty, item };
+}
+function dropStepEchoes(s) {
+  return String(s).replace(cachedRe(`(${US_AMT}[^()]{0,40}?)\\s*\\(\\s*(?:about\\s*)?${MET_RANGE}\\s*\\)`, 'gi'), '$1');
+}
+function usText(s, uk, ctx) {
+  if (!needsUS(uk, s)) return s;
+  let out = usTemps(usInlineAmounts(usNames(dropStepEchoes(s)))).replace(/\b([Aa]) (8|11|18|80)\b/g, '$1n $2');
+  if (uk) {
+    out = swap(out, US_UK_ONLY);
+    // British "coriander" in a step is fresh cilantro only if the recipe uses fresh, not ground.
+    if (ctx && ctx.freshCoriander && !ctx.groundCoriander) out = out.replace(/\bcoriander\b(?![- ](?:seeds?|powder))/gi, m => matchCase(m, 'cilantro'));
+    out = dedupeNames(out);
+  }
+  return out;
+}
+// Recipes from British sites (or written the British way) also get the
+// kitchen-word and spelling changes.
+const UK_HINT = /\b(?:yoghurt|aubergine|courgette|hob|clingfilm|caster sugar|double cream|tinned|spring onion|°C|gas mark)\b|\d\s*C fan/i;
+function isBritish(r) {
+  if (/^fam-mob-/.test(r.id || '')) return true;
+  if (/^https?:\/\/[^\/?#]+\.uk(?:[\/:?#]|$)/i.test(r.source || '')) return true;
+  const text = [r.name, ...(r.ingredients || []).map(i => i && i.item), ...(r.steps || [])].join(' ');
+  return UK_HINT.test(text) && !/\b\d{3}\s*°\s*F\b/.test(text);
+}
+const usCache = typeof WeakMap !== 'undefined' ? new WeakMap() : null;
+// Cheap first look: could anything in this recipe change? (Used to put off
+// the full conversion until a recipe's ingredients or steps are read.)
+function usMaybe(r) {
+  if (!r || typeof r !== 'object') return false;
+  const uk = isBritish(r);
+  const all = [r.name, r.fodmapNote, r.notes, ...(r.ingredients || []).map(i => i && `${i.qty} ${i.item}`), ...(r.steps || [])].join('\n');
+  return needsUS(uk, all);
+}
+const usName = n => (typeof n === 'string' && needsUS(false, n) ? usNames(n) : n);
+function usRecipe(r) {
+  if (!r || typeof r !== 'object') return r;
+  if (usCache && usCache.has(r)) return usCache.get(r);
+  const uk = isBritish(r);
+  const all = [r.name, r.fodmapNote, r.notes, ...(r.ingredients || []).map(i => i && `${i.qty} ${i.item}`), ...(r.steps || [])].join('\n');
+  if (!needsUS(uk, all)) { if (usCache) usCache.set(r, r); return r; }
+  const ingText = (r.ingredients || []).map(i => i && i.item).join('\n');
+  const ctx = { freshCoriander: /fresh coriander|coriander leaves|cilantro|^coriander\b/im.test(ingText), groundCoriander: /ground coriander|coriander seeds?|coriander powder/i.test(ingText) };
+  let ingChanged = false, stepChanged = false;
+  const ingredients = Array.isArray(r.ingredients)
+    ? r.ingredients.map(i => { if (!i || typeof i.item !== 'string') return i; const j = usIngredient(i, uk); if (j !== i && (j.qty !== i.qty || j.item !== i.item)) { ingChanged = true; return j; } return i; }) : r.ingredients;
+  const steps = Array.isArray(r.steps)
+    ? r.steps.map(s => { if (typeof s !== 'string') return s; const t = usText(s, uk, ctx); if (t !== s) stepChanged = true; return t; }) : r.steps;
+  const name = typeof r.name === 'string' && needsUS(false, r.name) ? usNames(r.name) : r.name;
+  const fodmapNote = typeof r.fodmapNote === 'string' ? usText(r.fodmapNote, uk, ctx) : r.fodmapNote;
+  const notes = typeof r.notes === 'string' ? usText(r.notes, uk, ctx) : r.notes;
+  const changed = name !== r.name || fodmapNote !== r.fodmapNote || notes !== r.notes || ingChanged || stepChanged;
+  let out = r;
+  if (changed) {
+    out = Object.assign({}, r, { name, ingredients, steps });
+    if (r.fodmapNote !== undefined) out.fodmapNote = fodmapNote;
+    if (r.notes !== undefined) out.notes = notes;
+  }
+  if (usCache) usCache.set(r, out);
+  return out;
+}
+
 const api = { txt, findRecipes, findRecipesInLd, collectSteps, cleanStep, minutes, fmtTime,
-  splitIngredient, fodmapNote, pick, slugify, EMOJI, CATEGORY, toAppRecipe, cleanSourceUrl, fromText };
+  splitIngredient, fodmapNote, pick, slugify, EMOJI, CATEGORY, toAppRecipe, cleanSourceUrl, fromText,
+  usRecipe, usIngredient, usText, isBritish, usMaybe, usName };
 if (typeof module !== 'undefined' && module.exports) module.exports = api;
 else root.RecipeImport = api;
 })(typeof window !== 'undefined' ? window : globalThis);
