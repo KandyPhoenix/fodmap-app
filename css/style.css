@@ -1,3 +1,15 @@
+/* Archivo: SIL Open Font License 1.1 (fonts/OFL.txt). Variable weight 100–900
+   and width 62–125%; the expanded heavy cut is used for headings. */
+@font-face {
+  font-family: 'Archivo'; font-style: normal; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap;
+  src: url(../fonts/archivo-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Archivo'; font-style: normal; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap;
+  src: url(../fonts/archivo-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 
@@ -34,41 +46,24 @@
 
 
 
-  --primary: #1a1a2e;
-
-  --accent: #ff1c8d;
-
-  --accent-dark: #d90f74;
-
-  --accent-light: #ffe4f2;
-
-
-
-  --primary-dark: #10101f;
-
-
-
-  --primary-light: #ececf6;
-
-
-
-  --text: #2c3e50;
-
-
-
-  --text-muted: #7f8c8d;
-
-
-
-  --bg: #f4f4f9;
-
-
-
+  /* Palette: near-black ink, chartreuse lime, zinc greys */
+  --primary: #09090b;
+  --accent: #d1de26;
+  --accent-dark: #b5c11c;
+  --accent-light: #f4f7d0;
+  --accent-ink: #09090b;   /* accent used as TEXT: lime is unreadable on white */
+  --on-primary: #ffffff;   /* text on a --primary background */
+  --on-accent: #09090b;    /* text on a --accent (lime) background */
+  --header-bg: #09090b;
+  --primary-dark: #000000;
+  --primary-light: #f4f4f5;
+  --text: #27272a;
+  --text-muted: #71717a;
+  --bg: #f4f4f5;
   --card: #ffffff;
-
-
-
-  --border: #e6e6f0;
+  --border: #e4e4e7;
+  --font-body: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
 
 
@@ -116,38 +111,21 @@ body.dark {
 
 
 
-  --primary: #ff4fa8;
-  --accent: #ff4fa8;
-  --accent-dark: #ff1c8d;
-  --accent-light: #3a1530;
-
-
-
-  --primary-dark: #ff1c8d;
-
-
-
-  --primary-light: #2a1a33;
-
-
-
-  --text: #ecebf5;
-
-
-
-  --text-muted: #9a98b5;
-
-
-
-  --bg: #11111c;
-
-
-
-  --card: #1c1c2e;
-
-
-
-  --border: #2d2d45;
+  --primary: #d1de26;
+  --accent: #d1de26;
+  --accent-dark: #e2ec5c;
+  --accent-light: #2a2c0c;
+  --accent-ink: #d1de26;
+  --on-primary: #09090b;
+  --on-accent: #09090b;
+  --header-bg: #09090b;
+  --primary-dark: #e2ec5c;
+  --primary-light: #232327;
+  --text: #fafafa;
+  --text-muted: #a1a1aa;
+  --bg: #09090b;
+  --card: #18181b;
+  --border: #27272a;
 
 
 
@@ -168,10 +146,7 @@ body.dark {
 
 
 body {
-
-
-
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-body);
 
 
 
@@ -215,10 +190,7 @@ header {
 
 
 
-  background: var(--primary);
-
-
-
+  background: var(--header-bg);
   height: var(--header-h);
 
 
@@ -512,7 +484,7 @@ header {
 
 
 
-.nav-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+.nav-btn.active { color: var(--accent-ink); border-bottom-color: var(--accent); }
 
 
 
@@ -540,7 +512,7 @@ header {
 .nav-trigger:hover { color: var(--primary); background: var(--primary-light); }
 
 /* Highlight the trigger while one of its menu items is the active view */
-.nav-trigger.active { color: var(--accent); border-bottom-color: var(--accent); }
+.nav-trigger.active { color: var(--accent-ink); border-bottom-color: var(--accent); }
 
 .nav-caret { font-size: 10px; opacity: 0.7; }
 
@@ -644,7 +616,7 @@ header {
 
 .clip-btn { color: var(--primary); border-color: var(--primary); }
 
-.clip-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.clip-btn:hover { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
 
 
 
@@ -729,7 +701,7 @@ header {
 
 
 
-.rating-filter.active[data-rating="all"]    { background: var(--primary); border-color: var(--primary); color: white; }
+.rating-filter.active[data-rating="all"]    { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
 
 
 
@@ -1585,7 +1557,7 @@ main { max-width: 1600px; margin: 0 auto; padding: 16px; }
 
 
 
-  width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color: white;
+  width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color: var(--on-primary);
 
 
 
@@ -1615,7 +1587,7 @@ main { max-width: 1600px; margin: 0 auto; padding: 16px; }
 
 .fodmap-note-box { background: var(--primary-light); border-radius: 12px; padding: 14px 16px; border-left: 4px solid var(--primary); margin-top: 4px; }
 
-.rmodal-source-link { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--primary); color: #fff; border-radius: 10px; font-weight: 700; font-size: 14px; text-decoration: none; }
+.rmodal-source-link { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--primary); color: var(--on-primary); border-radius: 10px; font-weight: 700; font-size: 14px; text-decoration: none; }
 .rmodal-source-link:hover { opacity: 0.9; }
 
 
@@ -1696,7 +1668,7 @@ main { max-width: 1600px; margin: 0 auto; padding: 16px; }
 
 
 
-.serves-btn:hover { background: var(--primary); color: white; }
+.serves-btn:hover { background: var(--primary); color: var(--on-primary); }
 
 
 
@@ -1992,7 +1964,7 @@ main { max-width: 1600px; margin: 0 auto; padding: 16px; }
 
 
 
-.week-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+.week-btn:hover { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
 
 
 
@@ -2028,7 +2000,7 @@ main { max-width: 1600px; margin: 0 auto; padding: 16px; }
 
 
 
-.action-btn.primary { background: var(--primary); color: white; }
+.action-btn.primary { background: var(--primary); color: var(--on-primary); }
 
 
 
@@ -2128,7 +2100,7 @@ main { max-width: 1600px; margin: 0 auto; padding: 16px; }
 
 
 
-  color: white;
+  color: var(--on-primary);
 
 
 
@@ -2757,7 +2729,7 @@ body.dragging-meal { cursor: grabbing; user-select: none; -webkit-user-select: n
 .rf-photo-btns { display: flex; gap: 8px; flex-wrap: wrap; }
 .form-group .rf-photo-btns label.rf-photo-pick {
   display: inline-flex; align-items: center; margin: 0; cursor: pointer;
-  background: var(--primary); color: #fff; font-size: 13px; font-weight: 700;
+  background: var(--primary); color: var(--on-primary); font-size: 13px; font-weight: 700;
   text-transform: none; letter-spacing: normal;
 }
 .rf-photo-btns #rf-photo-remove { background: var(--primary-light); color: var(--text); }
@@ -2863,7 +2835,7 @@ body.dragging-meal { cursor: grabbing; user-select: none; -webkit-user-select: n
 
 
 
-.progress-nav-btn:hover:not(:disabled) { background: var(--primary); color: white; border-color: var(--primary); }
+.progress-nav-btn:hover:not(:disabled) { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
 
 
 
@@ -3627,7 +3599,7 @@ body.dragging-meal { cursor: grabbing; user-select: none; -webkit-user-select: n
 
 
 
-  border-radius: 50%; background: var(--primary); color: white; border: none;
+  border-radius: 50%; background: var(--primary); color: var(--on-primary); border: none;
 
 
 
@@ -4032,7 +4004,7 @@ body.dark .recipe-card.cookbook-recipe .recipe-card-banner {
 
 
 
-  width: 30px; height: 30px; border-radius: 50%; background: var(--primary); color: white;
+  width: 30px; height: 30px; border-radius: 50%; background: var(--primary); color: var(--on-primary);
 
 
 
@@ -4156,7 +4128,7 @@ body.dark .recipe-card.cookbook-recipe .recipe-card-banner {
 
 
 
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d55 100%);
+  background: linear-gradient(135deg, #09090b 0%, #3f3f46 100%);
 
 
 
@@ -4272,7 +4244,7 @@ body.dark .recipe-card.cookbook-recipe .recipe-card-banner {
 
 
 
-.subs-cat-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
+.subs-cat-btn.active { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
 
 
 
@@ -4684,7 +4656,7 @@ body.dark .recipe-card.cookbook-recipe .recipe-card-banner {
 
 
 
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d55 100%);
+  background: linear-gradient(135deg, #09090b 0%, #3f3f46 100%);
 
 
 
@@ -5176,7 +5148,7 @@ body.dark .recipe-card.cookbook-recipe .recipe-card-banner {
 
 
 
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d55 100%);
+  background: linear-gradient(135deg, #09090b 0%, #3f3f46 100%);
 
 
 
@@ -5320,7 +5292,7 @@ body.dark .recipe-card.cookbook-recipe .recipe-card-banner {
 
 
 
-.finds-cat-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+.finds-cat-btn.active { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
 
 
 
@@ -5784,7 +5756,7 @@ body.dark .recipe-card.cookbook-recipe .recipe-card-banner {
 
 
 
-.timer-preset:hover { background: var(--primary); color: white; border-color: var(--primary); }
+.timer-preset:hover { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
 
 
 
@@ -6144,7 +6116,7 @@ body.dark .action-btn { background: var(--bg); color: var(--text); border-color:
 
 
 
-body.dark .action-btn.primary { background: var(--primary); color: white; border-color: var(--primary); }
+body.dark .action-btn.primary { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
 
 
 
@@ -6802,7 +6774,7 @@ body.dark #scroll-top { background: var(--primary); }
 
 .rfilter:hover { border-color: var(--primary); color: var(--primary); }
 
-.rfilter.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.rfilter.active { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
 
 
 
@@ -6925,7 +6897,7 @@ body.dark #scroll-top { background: var(--primary); }
 .exclude-chip button {
   border: none;
   background: var(--primary);
-  color: #fff;
+  color: var(--on-primary);
   border-radius: 50%;
   width: 18px;
   height: 18px;
@@ -7226,7 +7198,7 @@ body.dark .rmodal-fav { background: rgba(40,55,46,0.92); }
 
 .reintro-status-btn.active.not-started { background: var(--bg); border-color: var(--text-muted); font-weight: 800; }
 
-.reintro-status-btn.active.testing   { background: var(--primary); color: #fff; border-color: var(--primary); }
+.reintro-status-btn.active.testing   { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
 
 .reintro-status-btn.active.tolerated { background: var(--green); color: #fff; border-color: var(--green); }
 
@@ -7301,7 +7273,7 @@ body.dark .rmodal-fav { background: rgba(40,55,46,0.92); }
   background: var(--card); font-size: 13px; font-weight: 700; color: var(--text-muted);
   cursor: pointer; transition: all 0.15s; white-space: nowrap;
 }
-.guide-tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+.guide-tab.active { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
 .guide-tab:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
 
 .guide-intro {
@@ -7879,7 +7851,7 @@ body.dark .wm-intro { color: #aaa; }
 .mind-week-tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 10px; }
 .mind-week-tab { flex: 0 0 auto; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 10px; padding: 6px 12px; cursor: pointer; font-weight: 700; display: flex; flex-direction: column; align-items: center; }
 .mind-week-tab span { font-size: 11px; font-weight: 500; color: var(--text-muted); }
-.mind-week-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.mind-week-tab.active { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .mind-week-tab.active span { color: rgba(255,255,255,0.85); }
 .mind-week-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
 .mind-pts { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
@@ -7950,3 +7922,22 @@ body.dark .wm-intro { color: #aaa; }
 body.dark .recipe-card-banner.has-img .recipe-card-emoji { background: rgba(30,30,40,0.9); }
 .rmodal-img { display: block; width: 100%; max-height: 280px; object-fit: cover; border-radius: 16px; margin: 0 auto 14px; }
 .rmodal-img + .rmodal-emoji { font-size: 36px; margin-bottom: 8px; }
+
+
+/* White pill on the dark hero: keep its text dark in both modes
+   (in dark mode --primary is lime, unreadable on white). */
+body.dark .finds-add-btn { color: #09090b; }
+/* Round +/- and week arrows: a dark face in dark mode so lime text reads. */
+body.dark .serves-btn, body.dark .week-btn { background: var(--card); }
+
+/* ── Display type: wide, heavy Archivo for titles ─────────── */
+h1, h2, h3,
+.logo-title, .rmodal-title, .modal-title, .form-title, .picker-title,
+.progress-title, .subs-hero-title, .finds-hero-title, .checker-hero-title,
+.subs-section-title, .nut-title, .week-label, .recipe-name {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.logo-title { letter-spacing: 0; }
