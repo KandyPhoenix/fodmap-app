@@ -1919,79 +1919,83 @@ const MOB_RECIPES = [
       "ingredients": [
           {
               "qty": "2",
-              "item": "Brown Onion"
+              "item": "yellow onions"
           },
           {
               "qty": "1 clove",
-              "item": "Garlic"
+              "item": "garlic"
           },
           {
               "qty": "1",
-              "item": "Lime"
+              "item": "lime"
           },
           {
-              "qty": "270g",
-              "item": "Basmati Rice"
+              "qty": "1½ cups",
+              "item": "basmati rice"
           },
           {
               "qty": "5",
-              "item": "Curry Leaf"
+              "item": "fresh curry leaves, optional (Indian grocery stores; leave them out if you can’t find them)"
           },
           {
               "qty": "4 fillets",
-              "item": "Cod"
+              "item": "cod, or haddock, pollock or another firm white fish"
           },
           {
-              "qty": "320ml",
-              "item": "Vegetable Stock"
+              "qty": "1⅓ cups",
+              "item": "vegetable broth"
           },
           {
-              "qty": "100g",
-              "item": "Frozen Peas"
+              "qty": "¾ cup",
+              "item": "frozen peas"
           },
           {
-              "qty": "15g",
-              "item": "Fresh Coriander"
+              "qty": "1 cup",
+              "item": "fresh cilantro leaves, loosely packed (about ½ oz)"
+          },
+          {
+              "qty": "as needed",
+              "item": "olive oil"
           },
           {
               "qty": "to taste",
-              "item": "Olive Oil"
+              "item": "salt and black pepper"
           },
           {
               "qty": "1 tbsp",
-              "item": "Garam Masala"
+              "item": "garam masala"
           },
           {
               "qty": "1 tsp",
-              "item": "Ground Turmeric"
+              "item": "ground turmeric"
           },
           {
               "qty": "½ tsp",
-              "item": "Chilli Powder"
+              "item": "chili powder"
           },
           {
               "qty": "½",
-              "item": "Cucumber"
+              "item": "cucumber, for the yogurt sauce"
           },
           {
-              "qty": "200g",
-              "item": "Greek Yoghurt"
+              "qty": "1 cup",
+              "item": "plain Greek yogurt, for the yogurt sauce"
           },
           {
               "qty": "¼ tsp",
-              "item": "Garam Masala"
+              "item": "garam masala, for the yogurt sauce"
           }
       ],
       "steps": [
-          "Stir all the spices together in a small bowl and set aside.",
-          "Peel and thinly slice the onions. Grate the garlic into a mixing bowl and add ½ the spice mix, the juice of the lime and a glug of olive oil. Season generously with salt and pepper and give it a good mix. Toss the fish through this mixture and set aside in the fridge to marinate.",
-          "Wash the rice until the water runs clear.",
-          "Set a frying pan with high sides over a medium heat with a generous drizzle of olive oil. Once hot, add the onions and cook, stirring occasionally, for 7-10 mins until golden brown. Transfer the onions to a plate.",
-          "Turn the heat down to medium and add another drizzle of olive oil. Add the curry leaves and cook until they splutter then stir in the remaining spice mix, rice and ½ the browned onion. Cook for a couple of seconds then pour in the stock. Bring to the boil then place a lid on, turn the heat down to low and let the rice cook undisturbed for 12 mins.",
-          "After 12 mins, scatter the peas over the rice and top with the fish. Place the lid back on and leave it on a low heat for 10 mins to finish cooking. Don’t remove the lid until finished. Heat the grill to high.",
-          "Meanwhile, make the yoghurt. Coarsely grate the cucumber and squeeze out as much water out as possible. Get the yoghurt in a bowl then stir through the grated cucumber and garam masala. Taste and season with salt.",
-          "When the fish cooking time is up, remove the lid and pop the pan under the grill for 3-4 mins until the fish has started to colour and is fully cooked through.",
-          "Fluff the rice using a fork and spoon into bowls. Top with the fish, a scattering of the remaining browned onions and a dollop of cucumber yoghurt. Finish with some coriander."
+          "Stir the 1 tbsp garam masala, the turmeric and the chili powder together in a small bowl and set aside. (Save the ¼ tsp garam masala for the yogurt sauce.)",
+          "Peel and thinly slice the onions. Grate the garlic into a mixing bowl and add half the spice mix, the juice of the lime and a splash of olive oil. Season generously with salt and pepper and mix well. Toss the fish in this mixture and set it aside in the fridge to marinate.",
+          "Rinse the rice in a strainer until the water runs clear.",
+          "Set a large, deep oven-safe skillet that has a lid over medium heat with a generous drizzle of olive oil. (It goes under the broiler later, so no plastic handles.) Once hot, add the onions and cook, stirring now and then, for 7-10 minutes until golden brown. Move the onions to a plate.",
+          "Keep the heat at medium and add another drizzle of olive oil. If you have curry leaves, add them and cook until they sizzle and pop. Stir in the rest of the spice mix, the rice and half of the browned onions. Cook for a few seconds, then pour in the broth. Bring to a boil, put the lid on, turn the heat to low and let the rice cook undisturbed for 12 minutes.",
+          "After 12 minutes, scatter the peas over the rice and lay the fish on top. Put the lid back on and cook on low for 10 more minutes. Don’t lift the lid until the time is up. Meanwhile, heat the broiler to high.",
+          "Make the yogurt sauce: coarsely grate the cucumber and squeeze out as much water as you can. Put the yogurt in a bowl and stir in the cucumber and the ¼ tsp garam masala. Taste and season with salt.",
+          "When the fish time is up, take the lid off and put the pan under the broiler for 3-4 minutes, until the fish starts to brown and is cooked through (opaque and flakes easily with a fork).",
+          "Fluff the rice with a fork and spoon it into bowls. Top with the fish, the rest of the browned onions and a spoonful of the cucumber yogurt. Finish with the cilantro."
       ],
       "fodmapNote": "Onion and garlic in the base — swap garlic-infused oil and spring-onion green tops to keep it low-FODMAP; peas are moderate, keep to ~1/4 cup per serve. Rice, cod and spices are safe; use lactose-free yogurt for the raita.",
       "nutrition": { "cal": 425, "protein": 33, "fiber": 4 }
