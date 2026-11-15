@@ -46,11 +46,11 @@ const MOB_RECIPES = [
         "item": "Carrot"
       },
       {
-        "qty": "3Clove",
+        "qty": "3 cloves",
         "item": "Garlic"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Tomato Purée"
       },
       {
@@ -62,11 +62,11 @@ const MOB_RECIPES = [
         "item": "Vegetable Stock Cube"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Sugar"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "White Wine Vinegar"
       },
       {
@@ -121,31 +121,31 @@ const MOB_RECIPES = [
         "item": "Butter"
       },
       {
-        "qty": "1",
-        "item": "Bulb Garlic"
+        "qty": "1 bulb",
+        "item": "Garlic"
       },
       {
-        "qty": "2tsp",
+        "qty": "2 tsp",
         "item": "Thyme"
       },
       {
-        "qty": "1.5",
-        "item": "L Boiling Water"
+        "qty": "1½ L",
+        "item": "Boiling Water"
       },
       {
         "qty": "2",
         "item": "Vegetable Stock Cube"
       },
       {
-        "qty": "1",
-        "item": "Loaf Sourdough"
+        "qty": "1 loaf",
+        "item": "Sourdough"
       },
       {
         "qty": "100g",
         "item": "Cheddar Cheese"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Apple Cider Vinegar"
       },
       {
@@ -204,7 +204,7 @@ const MOB_RECIPES = [
         "item": "White Onion"
       },
       {
-        "qty": "2Stalk",
+        "qty": "2 stalks",
         "item": "Celery"
       },
       {
@@ -216,11 +216,11 @@ const MOB_RECIPES = [
         "item": "Butter"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Ground Coriander"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Chilli Flakes"
       },
       {
@@ -228,8 +228,8 @@ const MOB_RECIPES = [
         "item": "Frozen Spinach"
       },
       {
-        "qty": "1",
-        "item": "L Chicken Stock"
+        "qty": "1 L",
+        "item": "Chicken Stock"
       },
       {
         "qty": "1kg",
@@ -277,7 +277,7 @@ const MOB_RECIPES = [
     "added": "2026-09-11",
     "ingredients": [
       {
-        "qty": "6Clove",
+        "qty": "6 cloves",
         "item": "Garlic"
       },
       {
@@ -305,7 +305,7 @@ const MOB_RECIPES = [
         "item": "Spring Onion"
       },
       {
-        "qty": "4tsp",
+        "qty": "4 tsp",
         "item": "Sesame Oil"
       }
     ],
@@ -346,11 +346,11 @@ const MOB_RECIPES = [
         "item": "White Onion"
       },
       {
-        "qty": "4Stalk",
+        "qty": "4 stalks",
         "item": "Celery"
       },
       {
-        "qty": "8Clove",
+        "qty": "8 cloves",
         "item": "Garlic"
       },
       {
@@ -366,15 +366,15 @@ const MOB_RECIPES = [
         "item": "x 700g Jar Butter Beans"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Chilli Flakes"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Fennel Seed"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Tomato Purée"
       },
       {
@@ -386,11 +386,11 @@ const MOB_RECIPES = [
         "item": "Parmesan"
       },
       {
-        "qty": "1",
-        "item": "L Chicken Stock"
+        "qty": "1 L",
+        "item": "Chicken Stock"
       },
       {
-        "qty": "2Slice",
+        "qty": "2 slices",
         "item": "Sourdough"
       },
       {
@@ -441,23 +441,23 @@ const MOB_RECIPES = [
         "item": "Garlic Clove"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Miso"
       },
       {
-        "qty": "3tbsp",
+        "qty": "3 tbsp",
         "item": "Sriracha"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Fish Sauce"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Honey"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Rice Wine Vinegar"
       },
       {
@@ -469,23 +469,23 @@ const MOB_RECIPES = [
         "item": "Water"
       },
       {
-        "qty": "2tsp",
+        "qty": "2 tsp",
         "item": "Sugar"
       },
       {
-        "qty": "1.5tbsp",
+        "qty": "1½ tbsp",
         "item": "Rice Wine Vinegar"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Salt"
       },
       {
-        "qty": "2",
-        "item": "Sheet Nori Seaweed"
+        "qty": "2 sheets",
+        "item": "Nori Seaweed"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Toasted Sesame Seeds"
       },
       {
@@ -501,16 +501,16 @@ const MOB_RECIPES = [
         "item": "Spinach"
       },
       {
-        "qty": "to taste",
-        "item": ".5tbsp Soy Sauce"
+        "qty": "½ tbsp",
+        "item": "Soy Sauce"
       },
       {
-        "qty": "to taste",
-        "item": ".5 Lemon"
+        "qty": "½",
+        "item": "Lemon"
       },
       {
-        "qty": "to taste",
-        "item": ".25Sheet Nori Seaweed"
+        "qty": "¼ sheet",
+        "item": "Nori Seaweed"
       }
     ],
     "steps": [
@@ -550,11 +550,11 @@ const MOB_RECIPES = [
         "item": "Garlic Clove"
       },
       {
-        "qty": "0.5",
+        "qty": "½",
         "item": "Lemon"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Dried Oregano"
       },
       {
@@ -647,15 +647,15 @@ const MOB_RECIPES = [
         "item": "Boneless Skinless Chicken Thigh"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Garlic Powder"
       },
       {
-        "qty": "to taste",
-        "item": ".5tbsp Chilli Powder"
+        "qty": "½ tbsp",
+        "item": "Chilli Powder"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Plain Flour"
       },
       {
@@ -663,15 +663,15 @@ const MOB_RECIPES = [
         "item": "Garlic Clove"
       },
       {
-        "qty": "3tbsp",
+        "qty": "3 tbsp",
         "item": "Gochujang"
       },
       {
-        "qty": "3tbsp",
+        "qty": "3 tbsp",
         "item": "Soy Sauce"
       },
       {
-        "qty": "3tbsp",
+        "qty": "3 tbsp",
         "item": "Honey"
       },
       {
@@ -691,7 +691,7 @@ const MOB_RECIPES = [
         "item": "Spring Onion"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Sesame Seeds"
       },
       {
@@ -750,15 +750,15 @@ const MOB_RECIPES = [
         "item": "Garlic Clove"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Red Wine Vinegar"
       },
       {
-        "qty": "3tbsp",
+        "qty": "3 tbsp",
         "item": "Olive Oil"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Dijon Mustard"
       },
       {
@@ -820,7 +820,7 @@ const MOB_RECIPES = [
         "item": "Cucumber"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Rice Vinegar"
       },
       {
@@ -828,15 +828,15 @@ const MOB_RECIPES = [
         "item": "Mayonnaise"
       },
       {
-        "qty": "1.5tbsp",
+        "qty": "1½ tbsp",
         "item": "Sriracha"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Soy Sauce"
       },
       {
-        "qty": "2tsp",
+        "qty": "2 tsp",
         "item": "Sesame Oil"
       },
       {
@@ -844,7 +844,7 @@ const MOB_RECIPES = [
         "item": "Nori Seaweed, to serve"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Shichimi Togarashi, to serve"
       }
     ],
@@ -896,11 +896,11 @@ const MOB_RECIPES = [
         "item": "Drained Sun-Dried Tomato"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Harissa Paste"
       },
       {
-        "qty": "4tsp",
+        "qty": "4 tsp",
         "item": "Tomato Purée"
       },
       {
@@ -946,11 +946,11 @@ const MOB_RECIPES = [
         "item": "Cherry Tomatoes"
       },
       {
-        "qty": "4tbsp",
+        "qty": "4 tbsp",
         "item": "Olive Oil"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Smoked Paprika"
       },
       {
@@ -978,11 +978,11 @@ const MOB_RECIPES = [
         "item": "Roasted Almond"
       },
       {
-        "qty": "0.5",
+        "qty": "½",
         "item": "Red Chilli"
       },
       {
-        "qty": "0.5",
+        "qty": "½",
         "item": "Lemon"
       }
     ],
@@ -1021,7 +1021,7 @@ const MOB_RECIPES = [
         "item": "Tenderstem Broccoli"
       },
       {
-        "qty": "3Clove",
+        "qty": "3 cloves",
         "item": "Garlic"
       },
       {
@@ -1096,11 +1096,11 @@ const MOB_RECIPES = [
         "item": "Skinless Chicken Thigh"
       },
       {
-        "qty": "6tbsp",
+        "qty": "6 tbsp",
         "item": "Yoghurt"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Harissa Paste"
       },
       {
@@ -1116,11 +1116,11 @@ const MOB_RECIPES = [
         "item": "Fresh Coriander"
       },
       {
-        "qty": "0.5",
+        "qty": "½",
         "item": "Cucumber"
       },
       {
-        "qty": "0.5",
+        "qty": "½",
         "item": "Lime"
       },
       {
@@ -1169,7 +1169,7 @@ const MOB_RECIPES = [
         "item": "Garlic Clove"
       },
       {
-        "qty": "4tbsp",
+        "qty": "4 tbsp",
         "item": "Oyster Sauce"
       },
       {
@@ -1181,7 +1181,7 @@ const MOB_RECIPES = [
         "item": "Coconut Milk"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Thai Yellow Curry Paste"
       },
       {
@@ -1193,7 +1193,7 @@ const MOB_RECIPES = [
         "item": "Lime"
       },
       {
-        "qty": "0.5tsp",
+        "qty": "½ tsp",
         "item": "Sugar"
       },
       {
@@ -1217,7 +1217,7 @@ const MOB_RECIPES = [
         "item": "Crispy Fried Onion"
       },
       {
-        "qty": "4tsp",
+        "qty": "4 tsp",
         "item": "Chilli Oil"
       }
     ],
@@ -1249,7 +1249,7 @@ const MOB_RECIPES = [
         "item": "Shallot"
       },
       {
-        "qty": "3Clove",
+        "qty": "3 cloves",
         "item": "Garlic"
       },
       {
@@ -1257,11 +1257,11 @@ const MOB_RECIPES = [
         "item": "Pork Sausage"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Butter"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Gochujang"
       },
       {
@@ -1269,7 +1269,7 @@ const MOB_RECIPES = [
         "item": "Single Cream"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Honey"
       },
       {
@@ -1334,7 +1334,7 @@ const MOB_RECIPES = [
     "added": "2026-09-11",
     "ingredients": [
       {
-        "qty": "2Stalk",
+        "qty": "2 stalks",
         "item": "Lemongrass"
       },
       {
@@ -1342,8 +1342,8 @@ const MOB_RECIPES = [
         "item": "Shallot"
       },
       {
-        "qty": "to taste",
-        "item": ".5 Aubergine"
+        "qty": "½",
+        "item": "Aubergine"
       },
       {
         "qty": "400ml",
@@ -1354,7 +1354,7 @@ const MOB_RECIPES = [
         "item": "Thai Basil"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Ground Turmeric"
       },
       {
@@ -1378,11 +1378,11 @@ const MOB_RECIPES = [
         "item": "Chicken Stock"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Fish Sauce"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Palm Sugar"
       },
       {
@@ -1410,7 +1410,7 @@ const MOB_RECIPES = [
         "item": "Red Chilli"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Crispy Fried Onion"
       }
     ],
@@ -1463,7 +1463,7 @@ const MOB_RECIPES = [
         "item": "Shoyu Soy Sauce"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "MSG"
       },
       {
@@ -1491,23 +1491,23 @@ const MOB_RECIPES = [
         "item": "Garlic Clove"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Gochujang"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Korean Chilli Flake"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Chinese Dark Soy Sauce"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Rice Vinegar"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Sugar"
       },
       {
@@ -1515,7 +1515,7 @@ const MOB_RECIPES = [
         "item": "5% Fat Pork Mince"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Vegetable Oil"
       },
       {
@@ -1563,7 +1563,7 @@ const MOB_RECIPES = [
         "item": "Fresh Ginger"
       },
       {
-        "qty": "6tbsp",
+        "qty": "6 tbsp",
         "item": "Tomato Purée"
       },
       {
@@ -1571,11 +1571,11 @@ const MOB_RECIPES = [
         "item": "Bay Leaf"
       },
       {
-        "qty": "0.5tsp",
+        "qty": "½ tsp",
         "item": "Chilli Powder"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Garam Masala"
       },
       {
@@ -1591,7 +1591,7 @@ const MOB_RECIPES = [
         "item": "Butter"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Fenugreek Leaf"
       },
       {
@@ -1650,31 +1650,31 @@ const MOB_RECIPES = [
         "item": "Cherry Tomatoes"
       },
       {
-        "qty": "2Clove",
+        "qty": "2 cloves",
         "item": "Garlic"
       },
       {
-        "qty": "1.5tbsp",
+        "qty": "1½ tbsp",
         "item": "Tomato Purée"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Harissa Paste"
       },
       {
-        "qty": "to taste",
-        "item": ".5tbsp Smoked Paprika"
+        "qty": "½ tbsp",
+        "item": "Smoked Paprika"
       },
       {
         "qty": "2",
         "item": "x 400g Can Butter Beans"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Vegan Cream Cheese"
       },
       {
-        "qty": "2Slice",
+        "qty": "2 slices",
         "item": "Crusty Bread"
       },
       {
@@ -1682,11 +1682,11 @@ const MOB_RECIPES = [
         "item": "Fresh Parsley"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Tahini"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Flaked Almond"
       }
     ],
@@ -1721,7 +1721,7 @@ const MOB_RECIPES = [
         "item": "Rice Noodle"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Miso"
       },
       {
@@ -1753,7 +1753,7 @@ const MOB_RECIPES = [
         "item": "Sesame Seeds, to serve"
       },
       {
-        "qty": "4tbsp",
+        "qty": "4 tbsp",
         "item": "Olive Oil"
       },
       {
@@ -1796,7 +1796,7 @@ const MOB_RECIPES = [
         "item": "Cavolo Nero"
       },
       {
-        "qty": "2Clove",
+        "qty": "2 cloves",
         "item": "Garlic"
       },
       {
@@ -1812,7 +1812,7 @@ const MOB_RECIPES = [
         "item": "Breadcrumb"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Dried Oregano"
       },
       {
@@ -1863,7 +1863,7 @@ const MOB_RECIPES = [
               "item": "Reserved Butter Bean Liquid"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Vegan Cream Cheese"
           },
           {
@@ -1871,7 +1871,7 @@ const MOB_RECIPES = [
               "item": "Cherry Tomatoes"
           },
           {
-              "qty": "5Clove",
+              "qty": "5 cloves",
               "item": "Garlic"
           },
           {
@@ -1922,7 +1922,7 @@ const MOB_RECIPES = [
               "item": "Brown Onion"
           },
           {
-              "qty": "1Clove",
+              "qty": "1 clove",
               "item": "Garlic"
           },
           {
@@ -1938,8 +1938,8 @@ const MOB_RECIPES = [
               "item": "Curry Leaf"
           },
           {
-              "qty": "4",
-              "item": "Fillet Cod"
+              "qty": "4 fillets",
+              "item": "Cod"
           },
           {
               "qty": "320ml",
@@ -1958,28 +1958,28 @@ const MOB_RECIPES = [
               "item": "Olive Oil"
           },
           {
-              "qty": "1tbsp",
+              "qty": "1 tbsp",
               "item": "Garam Masala"
           },
           {
-              "qty": "1tsp",
+              "qty": "1 tsp",
               "item": "Ground Turmeric"
           },
           {
-              "qty": "to taste",
-              "item": ".5tsp Chilli Powder"
+              "qty": "½ tsp",
+              "item": "Chilli Powder"
           },
           {
-              "qty": "to taste",
-              "item": ".5 Cucumber"
+              "qty": "½",
+              "item": "Cucumber"
           },
           {
               "qty": "200g",
               "item": "Greek Yoghurt"
           },
           {
-              "qty": "to taste",
-              "item": ".25tsp Garam Masala"
+              "qty": "¼ tsp",
+              "item": "Garam Masala"
           }
       ],
       "steps": [
@@ -2038,11 +2038,11 @@ const MOB_RECIPES = [
               "item": "Vegetable Stock"
           },
           {
-              "qty": "0.5tsp",
+              "qty": "½ tsp",
               "item": "Ground Turmeric"
           },
           {
-              "qty": "1tbsp",
+              "qty": "1 tbsp",
               "item": "Dried Mint"
           },
           {
@@ -2122,7 +2122,7 @@ const MOB_RECIPES = [
               "item": "Pickled Guindilla Chilli"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Capers"
           },
           {
@@ -2177,7 +2177,7 @@ const MOB_RECIPES = [
               "item": "Chicken Breast"
           },
           {
-              "qty": "3tbsp",
+              "qty": "3 tbsp",
               "item": "Flour"
           },
           {
@@ -2189,7 +2189,7 @@ const MOB_RECIPES = [
               "item": "Panko Breadcrumbs"
           },
           {
-              "qty": "1tbsp",
+              "qty": "1 tbsp",
               "item": "Sesame Seeds"
           },
           {
@@ -2201,39 +2201,39 @@ const MOB_RECIPES = [
               "item": "Red Chilli"
           },
           {
-              "qty": "1tsp",
+              "qty": "1 tsp",
               "item": "Sesame Oil"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Soy Sauce"
           },
           {
-              "qty": "3tbsp",
+              "qty": "3 tbsp",
               "item": "Honey"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Sweet Chilli Sauce"
           },
           {
-              "qty": "1tsp",
+              "qty": "1 tsp",
               "item": "Rice Wine Vinegar"
           },
           {
-              "qty": "0.5tsp",
+              "qty": "½ tsp",
               "item": "Chinese Five-Spice"
           },
           {
-              "qty": "3tbsp",
+              "qty": "3 tbsp",
               "item": "Sriracha"
           },
           {
-              "qty": "1tbsp",
+              "qty": "1 tbsp",
               "item": "Garlic Purée"
           },
           {
-              "qty": "1tbsp",
+              "qty": "1 tbsp",
               "item": "Ginger Paste"
           }
       ],
@@ -2266,7 +2266,7 @@ const MOB_RECIPES = [
       "added": "2026-09-13",
       "ingredients": [
           {
-              "qty": "3Stick",
+              "qty": "3 sticks",
               "item": "Celery"
           },
           {
@@ -2278,27 +2278,27 @@ const MOB_RECIPES = [
               "item": "Tinned Tuna in Spring Water"
           },
           {
-              "qty": "0.5",
+              "qty": "½",
               "item": "Lemon"
           },
           {
-              "qty": "1tbsp",
+              "qty": "1 tbsp",
               "item": "White Miso"
           },
           {
-              "qty": "1tbsp",
+              "qty": "1 tbsp",
               "item": "Mayonnaise"
           },
           {
-              "qty": "0.75tbsp",
+              "qty": "¾ tbsp",
               "item": "Sesame Oil"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Rice Vinegar"
           },
           {
-              "qty": "1tbsp",
+              "qty": "1 tbsp",
               "item": "Sesame Seeds"
           }
       ],
@@ -2329,7 +2329,7 @@ const MOB_RECIPES = [
       "added": "2026-09-13",
       "ingredients": [
           {
-              "qty": "4Clove",
+              "qty": "4 cloves",
               "item": "Garlic"
           },
           {
@@ -2426,7 +2426,7 @@ const MOB_RECIPES = [
               "item": "Lemon"
           },
           {
-              "qty": "4tbsp",
+              "qty": "4 tbsp",
               "item": "Ricotta"
           },
           {
@@ -2475,7 +2475,7 @@ const MOB_RECIPES = [
       "added": "2026-09-13",
       "ingredients": [
           {
-              "qty": "6Clove",
+              "qty": "6 cloves",
               "item": "Garlic"
           },
           {
@@ -2483,7 +2483,7 @@ const MOB_RECIPES = [
               "item": "Thai Red Chilli"
           },
           {
-              "qty": "0.25",
+              "qty": "¼",
               "item": "Savoy Cabbage"
           },
           {
@@ -2491,19 +2491,19 @@ const MOB_RECIPES = [
               "item": "Mint"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Fish Sauce"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Soy Sauce"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Oyster Sauce"
           },
           {
-              "qty": "2tsp",
+              "qty": "2 tsp",
               "item": "Sugar"
           },
           {
@@ -2589,15 +2589,15 @@ const MOB_RECIPES = [
               "item": "Chicken Stock"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Harissa Paste"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Mascarpone"
           },
           {
-              "qty": "1.5tbsp",
+              "qty": "1½ tbsp",
               "item": "Sherry Vinegar"
           },
           {
@@ -2669,27 +2669,27 @@ const MOB_RECIPES = [
               "item": "Fresh Coriander"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Chunky Peanut Butter"
           },
           {
-              "qty": "1.5tbsp",
+              "qty": "1½ tbsp",
               "item": "Curry Powder"
           },
           {
-              "qty": "1.5tsp",
+              "qty": "1½ tsp",
               "item": "Ground Cumin"
           },
           {
-              "qty": "1.5tsp",
+              "qty": "1½ tsp",
               "item": "Ground Coriander"
           },
           {
-              "qty": "1tsp",
+              "qty": "1 tsp",
               "item": "Paprika"
           },
           {
-              "qty": "1tsp",
+              "qty": "1 tsp",
               "item": "Chilli Powder"
           },
           {
@@ -2705,7 +2705,7 @@ const MOB_RECIPES = [
               "item": "Spinach"
           },
           {
-              "qty": "0.5tbsp",
+              "qty": "½ tbsp",
               "item": "Soy Sauce"
           },
           {
@@ -2713,7 +2713,7 @@ const MOB_RECIPES = [
               "item": "Lime"
           },
           {
-              "qty": "3tbsp",
+              "qty": "3 tbsp",
               "item": "Vegan Yoghurt"
           },
           {
@@ -2767,19 +2767,19 @@ const MOB_RECIPES = [
               "item": "Garlic Clove"
           },
           {
-              "qty": "1tsp",
+              "qty": "1 tsp",
               "item": "Ground Cumin"
           },
           {
-              "qty": "1tsp",
+              "qty": "1 tsp",
               "item": "Smoked Paprika"
           },
           {
-              "qty": "0.5tsp",
+              "qty": "½ tsp",
               "item": "Chilli Flakes"
           },
           {
-              "qty": "1tbsp",
+              "qty": "1 tbsp",
               "item": "Pomegranate Molasses"
           },
           {
@@ -2799,15 +2799,15 @@ const MOB_RECIPES = [
               "item": "Tomato"
           },
           {
-              "qty": "0.5",
+              "qty": "½",
               "item": "Red Onion"
           },
           {
-              "qty": "1tbsp",
+              "qty": "1 tbsp",
               "item": "Pomegranate Molasses"
           },
           {
-              "qty": "0.5",
+              "qty": "½",
               "item": "Lemon"
           },
           {
@@ -2815,11 +2815,11 @@ const MOB_RECIPES = [
               "item": "Flatbread, to serve"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Greek Yoghurt"
           },
           {
-              "qty": "0.5tsp",
+              "qty": "½ tsp",
               "item": "Sumac"
           },
           {
@@ -2871,16 +2871,16 @@ const MOB_RECIPES = [
               "item": "Cod Loin"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Cajun Seasoning"
           },
           {
-              "qty": "1tsp",
+              "qty": "1 tsp",
               "item": "Olive Oil"
           },
           {
-              "qty": "to taste",
-              "item": ".5x 400g Can Black Beans"
+              "qty": "½",
+              "item": "x 400g Can Black Beans"
           },
           {
               "qty": "10",
@@ -2891,7 +2891,7 @@ const MOB_RECIPES = [
               "item": "Fresh Coriander"
           },
           {
-              "qty": "1Clove",
+              "qty": "1 clove",
               "item": "Garlic Clove"
           },
           {
@@ -2899,7 +2899,7 @@ const MOB_RECIPES = [
               "item": "Fat-Free Yoghurt"
           },
           {
-              "qty": "2tbsp",
+              "qty": "2 tbsp",
               "item": "Pickled Jalapeño"
           },
           {
@@ -2988,7 +2988,7 @@ const MOB_RECIPES = [
               "item": "Lime"
           },
           {
-              "qty": "1tsp",
+              "qty": "1 tsp",
               "item": "Fish Sauce"
           },
           {
@@ -3041,7 +3041,7 @@ const MOB_RECIPES = [
               "item": "Banana Shallot"
           },
           {
-              "qty": "3Clove",
+              "qty": "3 cloves",
               "item": "Garlic Clove"
           },
           {
@@ -3049,7 +3049,7 @@ const MOB_RECIPES = [
               "item": "Gnocchi"
           },
           {
-              "qty": "0.5tsp",
+              "qty": "½ tsp",
               "item": "Chilli Flakes"
           },
           {
@@ -3061,8 +3061,8 @@ const MOB_RECIPES = [
               "item": "Water"
           },
           {
-              "qty": "1",
-              "item": "Handful Basil"
+              "qty": "1 handful",
+              "item": "Basil"
           },
           {
               "qty": "to taste",
@@ -3107,7 +3107,7 @@ const MOB_RECIPES = [
       "added": "2026-09-13",
       "ingredients": [
           {
-              "qty": "7Clove",
+              "qty": "7 cloves",
               "item": "Garlic"
           },
           {
@@ -3119,7 +3119,7 @@ const MOB_RECIPES = [
               "item": "Olive Oil"
           },
           {
-              "qty": "1tsp",
+              "qty": "1 tsp",
               "item": "Chilli Flakes"
           },
           {
@@ -3185,8 +3185,8 @@ const MOB_RECIPES = [
               "item": "Lemon Wedge, to serve"
           },
           {
-              "qty": "to taste",
-              "item": ".5 Cucumber"
+              "qty": "½",
+              "item": "Cucumber"
           },
           {
               "qty": "200g",
@@ -3213,15 +3213,15 @@ const MOB_RECIPES = [
               "item": "Garlic Clove"
           },
           {
-              "qty": "2tsp",
+              "qty": "2 tsp",
               "item": "Smoked Paprika"
           },
           {
-              "qty": "2tsp",
+              "qty": "2 tsp",
               "item": "Ground Cumin"
           },
           {
-              "qty": "2tsp",
+              "qty": "2 tsp",
               "item": "Ground Coriander"
           }
       ],
@@ -3270,7 +3270,7 @@ const MOB_RECIPES = [
         "item": "Chicken Stock"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Soy Sauce"
       },
       {
@@ -3343,7 +3343,7 @@ const MOB_RECIPES = [
         "item": "Chicken Breast"
       },
       {
-        "qty": "1Bunch",
+        "qty": "1 bunch",
         "item": "Spring Onion"
       },
       {
@@ -3351,7 +3351,7 @@ const MOB_RECIPES = [
         "item": "Coconut Milk"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Fish Sauce"
       },
       {
@@ -3359,11 +3359,11 @@ const MOB_RECIPES = [
         "item": "Egg Noodle"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Peanut Butter"
       },
       {
-        "qty": "3tbsp",
+        "qty": "3 tbsp",
         "item": "Soy Sauce"
       },
       {
@@ -3411,7 +3411,7 @@ const MOB_RECIPES = [
         "item": "Green Chilli"
       },
       {
-        "qty": "0.5",
+        "qty": "½",
         "item": "Orange"
       },
       {
@@ -3419,15 +3419,15 @@ const MOB_RECIPES = [
         "item": "Lime"
       },
       {
-        "qty": "3tbsp",
+        "qty": "3 tbsp",
         "item": "Miso"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Honey"
       },
       {
-        "qty": "3Clove",
+        "qty": "3 cloves",
         "item": "Garlic"
       },
       {
@@ -3480,27 +3480,27 @@ const MOB_RECIPES = [
     },
     "ingredients": [
       {
-        "qty": "4tsp",
+        "qty": "4 tsp",
         "item": "Poppy Seeds"
       },
       {
-        "qty": "4tsp",
+        "qty": "4 tsp",
         "item": "White Sesame Seed"
       },
       {
-        "qty": "4tsp",
+        "qty": "4 tsp",
         "item": "Black Sesame Seed"
       },
       {
-        "qty": "2tsp",
+        "qty": "2 tsp",
         "item": "Garlic Powder"
       },
       {
-        "qty": "2tsp",
+        "qty": "2 tsp",
         "item": "Onion Powder"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Salt"
       },
       {
@@ -3597,11 +3597,11 @@ const MOB_RECIPES = [
         "item": "Anchovy"
       },
       {
-        "qty": "3tbsp",
+        "qty": "3 tbsp",
         "item": "Gochujang"
       },
       {
-        "qty": "2tsp",
+        "qty": "2 tsp",
         "item": "Curry Powder"
       },
       {
@@ -3609,8 +3609,8 @@ const MOB_RECIPES = [
         "item": "Water"
       },
       {
-        "qty": "4",
-        "item": "Fillet Cod"
+        "qty": "4 fillets",
+        "item": "Cod"
       },
       {
         "qty": "1",
@@ -3659,7 +3659,7 @@ const MOB_RECIPES = [
         "item": "Chicken Breast"
       },
       {
-        "qty": "6Clove",
+        "qty": "6 cloves",
         "item": "Garlic"
       },
       {
@@ -3683,7 +3683,7 @@ const MOB_RECIPES = [
         "item": "Peanut"
       },
       {
-        "qty": "4tbsp",
+        "qty": "4 tbsp",
         "item": "Soy Sauce"
       },
       {
@@ -3770,7 +3770,7 @@ const MOB_RECIPES = [
         "item": "Fresh Parsley"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Chilli Flakes"
       },
       {
@@ -3823,8 +3823,8 @@ const MOB_RECIPES = [
         "item": "Ginger"
       },
       {
-        "qty": "4",
-        "item": "Fillet Cod"
+        "qty": "4 fillets",
+        "item": "Cod"
       },
       {
         "qty": "300g",
@@ -3835,23 +3835,23 @@ const MOB_RECIPES = [
         "item": "Spring Onion"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Red Pepper Flakes"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Curry Powder"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Soy Sauce"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Rice Vinegar"
       },
       {
-        "qty": "4tbsp",
+        "qty": "4 tbsp",
         "item": "Olive Oil"
       },
       {
@@ -3898,8 +3898,8 @@ const MOB_RECIPES = [
     },
     "ingredients": [
       {
-        "qty": "4",
-        "item": "Fillet Smoked Mackerel"
+        "qty": "4 fillets",
+        "item": "Smoked Mackerel"
       },
       {
         "qty": "200g",
@@ -3910,19 +3910,19 @@ const MOB_RECIPES = [
         "item": "Mint"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Wholegrain Mustard"
       },
       {
-        "qty": "1.5",
+        "qty": "1½",
         "item": "Lemon"
       },
       {
-        "qty": "5tbsp",
+        "qty": "5 tbsp",
         "item": "Olive Oil"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Honey"
       },
       {
@@ -3983,7 +3983,7 @@ const MOB_RECIPES = [
         "item": "Pak Choi"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Miso"
       },
       {
@@ -3991,15 +3991,15 @@ const MOB_RECIPES = [
         "item": "Dashi Powder"
       },
       {
-        "qty": "0.25tsp",
+        "qty": "¼ tsp",
         "item": "Ground White Pepper"
       },
       {
-        "qty": "0.5tbsp",
+        "qty": "½ tbsp",
         "item": "Sesame Oil"
       },
       {
-        "qty": "0.5tbsp",
+        "qty": "½ tbsp",
         "item": "Light Soy Sauce"
       },
       {
@@ -4011,7 +4011,7 @@ const MOB_RECIPES = [
         "item": "Fresh Coriander"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Chilli Oil"
       }
     ],
@@ -4065,7 +4065,7 @@ const MOB_RECIPES = [
         "item": "Garlic Clove"
       },
       {
-        "qty": "0.5tbsp",
+        "qty": "½ tbsp",
         "item": "Fajita Seasoning"
       },
       {
@@ -4156,7 +4156,7 @@ const MOB_RECIPES = [
         "item": "Olive Oil"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Mayonnaise"
       },
       {
@@ -4222,7 +4222,7 @@ const MOB_RECIPES = [
     },
     "ingredients": [
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Fennel Seed"
       },
       {
@@ -4254,7 +4254,7 @@ const MOB_RECIPES = [
         "item": "Hot Smoked Salmon Fillet"
       },
       {
-        "qty": "4Slice",
+        "qty": "4 slices",
         "item": "Rye Bread"
       },
       {
@@ -4262,7 +4262,7 @@ const MOB_RECIPES = [
         "item": "Egg"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Za’atar"
       },
       {
@@ -4322,11 +4322,11 @@ const MOB_RECIPES = [
         "item": "Crunchy Peanut Butter"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Rice Vinegar"
       },
       {
-        "qty": "3tbsp",
+        "qty": "3 tbsp",
         "item": "Crispy Chilli Oil"
       },
       {
@@ -4334,8 +4334,8 @@ const MOB_RECIPES = [
         "item": "Honey, optional"
       },
       {
-        "qty": "to taste",
-        "item": ".5 Red Cabbage"
+        "qty": "½",
+        "item": "Red Cabbage"
       },
       {
         "qty": "2",
@@ -4354,11 +4354,11 @@ const MOB_RECIPES = [
         "item": "Lime"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Sesame Oil"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Sesame Seeds"
       },
       {
@@ -4450,7 +4450,7 @@ const MOB_RECIPES = [
         "item": "Katsu Curry Paste"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Light Soy Sauce"
       },
       {
@@ -4503,7 +4503,7 @@ const MOB_RECIPES = [
         "item": "Shallot"
       },
       {
-        "qty": "1Stalk",
+        "qty": "1 stalk",
         "item": "Lemongrass Stalk"
       },
       {
@@ -4515,7 +4515,7 @@ const MOB_RECIPES = [
         "item": "Fresh Mint"
       },
       {
-        "qty": "1Clove",
+        "qty": "1 clove",
         "item": "Garlic Clove"
       },
       {
@@ -4527,7 +4527,7 @@ const MOB_RECIPES = [
         "item": "Lime"
       },
       {
-        "qty": "1.5tbsp",
+        "qty": "1½ tbsp",
         "item": "Fish Sauce"
       },
       {
@@ -4543,11 +4543,11 @@ const MOB_RECIPES = [
         "item": "Frozen Shelled Edamame"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Water"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Kecap Manis"
       },
       {
@@ -4563,7 +4563,7 @@ const MOB_RECIPES = [
         "item": "Cooked Jasmine Rice"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Sambal Oelek"
       },
       {
@@ -4609,11 +4609,11 @@ const MOB_RECIPES = [
         "item": "Vine Tomato"
       },
       {
-        "qty": "4tbsp",
+        "qty": "4 tbsp",
         "item": "Extra Virgin Olive Oil"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Dried Oregano"
       },
       {
@@ -4637,20 +4637,20 @@ const MOB_RECIPES = [
         "item": "Garlic Clove"
       },
       {
-        "qty": "to taste",
-        "item": ".5 Lemon"
+        "qty": "½",
+        "item": "Lemon"
       },
       {
         "qty": "4",
         "item": "Fresh Tuna Steak"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Olive Oil"
       },
       {
-        "qty": "to taste",
-        "item": ".5 Lemon"
+        "qty": "½",
+        "item": "Lemon"
       },
       {
         "qty": "to taste",
@@ -4736,7 +4736,7 @@ const MOB_RECIPES = [
         "item": "Chicken Mince"
       },
       {
-        "qty": "2.5tbsp",
+        "qty": "2½ tbsp",
         "item": "Olive Oil"
       },
       {
@@ -4802,7 +4802,7 @@ const MOB_RECIPES = [
         "item": "Lime"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Sugar"
       },
       {
@@ -4822,15 +4822,15 @@ const MOB_RECIPES = [
         "item": "Egg Yolk"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Gochujang"
       },
       {
-        "qty": "1tbsp",
+        "qty": "1 tbsp",
         "item": "Sesame Oil"
       },
       {
-        "qty": "2tbsp",
+        "qty": "2 tbsp",
         "item": "Toasted Sesame Seeds"
       },
       {
@@ -4893,7 +4893,7 @@ const MOB_RECIPES = [
         "item": "Garlic Clove"
       },
       {
-        "qty": "1tsp",
+        "qty": "1 tsp",
         "item": "Extra Virgin Olive Oil"
       },
       {

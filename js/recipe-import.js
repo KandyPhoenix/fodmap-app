@@ -73,13 +73,61 @@ function fmtTime(mins) {
 }
 
 // ── ingredient "2 cups flour, sifted" → { qty, item } ─────────
-const UNITS = String.raw`(?:ounces?|oz|lbs?|pounds?|cups?|tablespoons?|tbsps?|tbs|teaspoons?|tsps?|cloves?|packages?|packets?|envelopes?|cans?|jars?|bottles?|bags?|boxes|sticks?|slices?|sprigs?|heads?|stalks?|bunch(?:es)?|pinch(?:es)?|dash(?:es)?|quarts?|pints?|liters?|litres?|ml|g|kg|grams?|large|medium|small|whole)`;
-const NUM = String.raw`(?:\d+(?:[\.\/]\d+)?|[¼½¾⅓⅔⅛⅜⅝⅞])`;
+const UNITS = String.raw`(?:ounces?|oz|lbs?|pounds?|cups?|tablespoons?|tbsps?|tbs|teaspoons?|tsps?|cloves?|packages?|packets?|envelopes?|cans?|tins?|jars?|bottles?|bags?|boxes|sticks?|slices?|sprigs?|heads?|stalks?|bulbs?|fillets?|sheets?|loaf|loaves|handfuls?|knobs?|bunch(?:es)?|pinch(?:es)?|dash(?:es)?|quarts?|pints?|liters?|litres?|ml|l|g|kg|grams?|large|medium|small|whole)`;
+// ".5" counts as a number too (Mob writes ".5tsp", ".25Sheet").
+const NUM = String.raw`(?:\d+(?:[\.\/]\d+)?|\.\d+|[¼½¾⅓⅔⅛⅜⅝⅞])`;
 // \b after the unit matters: without it the "g" in "garlic" reads as grams.
 const QTY_RE = new RegExp(`^((?:${NUM}(?:\\s*[-–to]+\\s*${NUM})?\\s*)+(?:\\([^)]*\\)\\s*)?(?:${UNITS}\\b\\.?\\s*)?)(.+)$`, 'i');
 
+// Counting words read lower-case and agree with the amount: "3 Clove" -> "3 cloves".
+const COUNT_PLURAL = { clove: 'cloves', fillet: 'fillets', stalk: 'stalks', stick: 'sticks', slice: 'slices',
+  sheet: 'sheets', sprig: 'sprigs', bulb: 'bulbs', loaf: 'loaves', handful: 'handfuls', knob: 'knobs',
+  bunch: 'bunches', tin: 'tins', can: 'cans', head: 'heads' };
+const COUNT_SINGULAR = Object.fromEntries(Object.entries(COUNT_PLURAL).map(([one, many]) => [many, one]));
+const QTY_FRACTION = { 25: '¼', 5: '½', 75: '¾' };
+// The amount a qty starts with, for singular/plural: "1 1/2" -> 1.5, "3/4" -> 0.75,
+// "1½" -> 1.5, "3 to 4" -> 4 (a range reads plural if its top end is).
+const UNI_FRACTION = { '¼': 0.25, '½': 0.5, '¾': 0.75, '⅓': 1 / 3, '⅔': 2 / 3, '⅛': 0.125, '⅜': 0.375, '⅝': 0.625, '⅞': 0.875 };
+function leadAmount(q) {
+  const one = String.raw`(?:\d+\s+\d+\/\d+|\d+\/\d+|\d*\.?\d+[¼½¾⅓⅔⅛⅜⅝⅞]?|[¼½¾⅓⅔⅛⅜⅝⅞])`;
+  const m = new RegExp(`^\\s*(${one})(?:\\s*(?:-|–|to)\\s*(${one}))?`).exec(q);
+  if (!m) return 1;
+  const val = t => {
+    t = t.trim();
+    let mm;
+    if ((mm = /^(\d+)\s+(\d+)\/(\d+)$/.exec(t))) return +mm[1] + mm[2] / mm[3];
+    if ((mm = /^(\d+)\/(\d+)$/.exec(t))) return mm[1] / mm[2];
+    if ((mm = /^(\d*\.?\d*)([¼½¾⅓⅔⅛⅜⅝⅞])$/.exec(t))) return (parseFloat(mm[1]) || 0) + UNI_FRACTION[mm[2]];
+    return parseFloat(t);
+  };
+  return val(m[2] || m[1]);
+}
+function tidyQty(q) {
+  const amount = leadAmount(q);
+  // Only the measuring word itself, not a container size in brackets: "3 (15 ounce can)".
+  q = q.replace(/\([^)]*\)|\b([A-Za-z]+)\b/g, (all, w) => {
+    if (!w) return all;
+    const lw = w.toLowerCase(), one = COUNT_SINGULAR[lw] || lw;
+    if (!COUNT_PLURAL[one]) return all;
+    return amount > 1 ? COUNT_PLURAL[one] : one;
+  });
+  // A spoon measure gets a space after its number: "1tbsp" -> "1 tbsp".
+  q = q.replace(/(\d|[¼½¾])(?=(?:tsps?|tbsps?|tbs)\b)/gi, '$1 ');
+  // Halves and quarters as fractions, like the rest of the app: 0.5 -> ½, 1.5 -> 1½.
+  return q.replace(/(^|[^\d.])(\d*)\.(25|5|75)(?![\d.])/g,
+    (all, pre, whole, frac) => pre + (whole && whole !== '0' ? whole : '') + QTY_FRACTION[frac]);
+}
+
 function splitIngredient(raw) {
   let s = txt(raw);
+  // Mob-style shorthand: ".5tsp" -> "0.5tsp", and a counting word stuck to its
+  // number gets a space ("3Clove Garlic" -> "3 Clove Garlic"). Short units
+  // written that way on purpose (270g, 1tbsp) are left as they are.
+  s = s.replace(/^\.(\d)/, '0.$1');
+  s = s.replace(/^(\d+(?:\.\d+)?)([A-Za-z]{3,})\b/, (all, n, w) => /^(?:tsps?|tbsps?|tbs|lbs|kgs|mls)$/i.test(w) ? all : `${n} ${w}`);
+  // "2 tablespoon(s)", "1 stick(s)": plural only when the amount is over 1.
+  const many = leadAmount(s) > 1;
+  s = s.replace(/\b([A-Za-z]+)\((e?s)\)/gi, (all, w, suf) => many ? w + suf : w);
   // Budget Bytes prices every line: "1 tsp oregano ($0.10)".
   s = s.replace(/\s*\(\s*\$\d[\d.,]*\s*\)/g, '');
   // "1 16-ounce jar salsa" reads as two quantities unless the container size
@@ -87,10 +135,11 @@ function splitIngredient(raw) {
   s = s.replace(/(\d+(?:\.\d+)?)\s*-\s*(ounce|oz|pound|lb|gram|g)s?\b/gi, '($1 $2)');
   const m = QTY_RE.exec(s);
   let qty = '', item = s;
-  if (m && m[1].trim()) { qty = m[1].trim(); item = m[2].trim(); }
+  if (m && m[1].trim()) { qty = tidyQty(m[1].trim()); item = m[2].trim(); }
   // A metric/imperial echo left at the front of the item belongs with the qty:
   // "1/2 cup" + "(125 ml) white wine" -> "1/2 cup (125 ml)" + "white wine".
-  const lead = /^\(([^)]*)\)\s*(.+)$/.exec(item);
+  // Only a simple bracket: "(one (17.25 ounce) package)" stays with the item.
+  const lead = /^\(([^()]*)\)\s*(.+)$/.exec(item);
   if (lead) { qty = `${qty} (${lead[1]})`.trim(); item = lead[2]; }
   item = item.replace(/\s*\(\((.+)\)\)\s*$/, ', $1').replace(/\s*\((.+)\)\s*$/, ', $1');
   item = item.replace(/\s*,\s*(?=,)/g, '').replace(/^[,\s]+/, '').replace(/\s+,/g, ',').trim();
