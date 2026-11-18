@@ -180,7 +180,7 @@ const HEALTHY_SWAPS = [
     triggers: ['cream', 'thickened cream', 'heavy cream'],
     from: 'Heavy/thickened cream',
     to: 'LF evaporated milk or half cream + half LF milk',
-    benefit: 'Heavy cream has ~340 cal per 100ml. Lactose-free evaporated milk delivers similar richness at ~135 cal — a 60% calorie saving while still creating a velvety sauce.',
+    benefit: 'Heavy cream has ~340 cal per scant ½ cup. Lactose-free evaporated milk delivers similar richness at ~135 cal — a 60% calorie saving while still creating a velvety sauce.',
     emoji: '🥛'
   },
   {
@@ -2362,7 +2362,7 @@ const FOODS = [
       { amount: '2 tbsp (30ml)', rating: 'green', label: 'Low FODMAP' }
     ],
     fodmaps: [],
-    tip: 'Heavy cream is very low in lactose (about 0.5g per 100ml) because the fat separates from the lactose. 2 tbsp per person is low FODMAP. Use for richness in soups, sauces, and desserts. Avoid large amounts as a precaution.'
+    tip: 'Heavy cream is very low in lactose (about 0.5g per scant ½ cup) because the fat separates from the lactose. 2 tbsp per person is low FODMAP. Use for richness in soups, sauces, and desserts. Avoid large amounts as a precaution.'
   },
   {
     id: 'blue-cheese', name: 'Blue Cheese (aged)', emoji: '🧀', category: 'dairy', rating: 'green',
